@@ -4,7 +4,8 @@ import { groupIconMdPlugin, groupIconVitePlugin, localIconLoader } from "vitepre
 import { pagefindPlugin } from "vitepress-plugin-pagefind";
 import footnote from "markdown-it-footnote";
 import { loadMainData } from "../lib/dataLoader.js";
-import { confYamlCompilerPlugin, compileYamlFiles } from "./confYamlCompiler.js"; // Import the plugin
+// TODO rework: Remove
+// import { confYamlCompilerPlugin, compileYamlFiles } from "./confYamlCompiler.js"; // Import the plugin
 
 const prod = !!process.env.NETLIFY || !!process.env.CI; // Test for Netlify and GitLab CI/CD
 const extensionsNotHandledByVitePress = "xlsx,docx,zip,pdf";
@@ -16,7 +17,8 @@ const extensionsNotHandledByVitePress = "xlsx,docx,zip,pdf";
 process.env.VITE_EXTRA_EXTENSIONS = extensionsNotHandledByVitePress;
 
 // Compile files as soon, as possible
-await compileYamlFiles();
+// TODO rework: Remove
+// await compileYamlFiles();
 
 // Function to generate sidebar from `topLevelKey` in YAML
 function generateSidebarFromYaml(language, topLevelKey) {
@@ -300,7 +302,8 @@ export default defineConfig({
             preserveSymlinks: true,
         },
         plugins: [
-            confYamlCompilerPlugin(),
+            // TODO rework: Remove
+            // confYamlCompilerPlugin(),
             llmstxtPlugin(),
             groupIconVitePlugin({
                 customIcon: {
