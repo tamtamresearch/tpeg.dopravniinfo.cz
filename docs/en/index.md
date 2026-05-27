@@ -6,7 +6,7 @@ hero:
     text: "Study and pilot service of the TPEG standard"
     tagline: "Pilot, beta. The service may be paused or stopped at short notice."
     image:
-        src: /images/ŘSD_logo.svg
+        src: /images/logo.png
         alt: ŘSD
     actions:
         - theme: brand

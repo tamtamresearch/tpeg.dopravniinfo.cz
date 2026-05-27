@@ -26,7 +26,7 @@ There is **no** YAML/Nunjucks generation pipeline. Content is hand-written Markd
 docs/
 ├── .vitepress/config.js   # nav, sidebars, plugins, site metadata
 ├── .vitepress/theme/      # theme overrides
-├── public/                # static assets (logo, ŘSD_logo.svg, pdfs/)
+├── public/                # static assets (logo, pdfs/)
 ├── en/                    # published English content (root locale)
 │   ├── index.md           # home (VitePress `home` layout)
 │   ├── about/             # overview, license, contacts, issues
@@ -46,7 +46,7 @@ Top nav (6 items): **About · TPEG · Pilot · Technical · Subscribe · FAQ**. 
 - **Pre-commit hook reformats markdown.** `simple-git-hooks` + `lint-staged` run Prettier + ESLint on staged files. Expect markdown tables to be aligned and `*emphasis*` to be normalized to `_emphasis_` after commit. Don't fight it.
 - **Internal links** are absolute (e.g. `/technical/formats/tpeg2-tec`) — VitePress validates them at build time. Set `VITEPRESS_IGNORE_DEAD_LINKS=1` only for testing, never in CI.
 - **PDFs** live in `docs/public/pdfs/` and are referenced as `/pdfs/<file>`. The extension is excluded from VitePress routing via `VITE_EXTRA_EXTENSIONS`.
-- **Hero image** is `docs/public/images/ŘSD_logo.svg` (non-ASCII filename). Works on Windows + Vite; if you ever change hosting to a stricter target, rename to `rsd-logo.svg`.
+- **Hero image** is `docs/public/images/logo.png`
 
 ## Gotchas
 
