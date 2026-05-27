@@ -1,35 +1,22 @@
-# NDIC National Registry
+# Web - tpeg.dopravniinfo.cz
 
-Static site generator for the National Traffic Information Registry of Czech Republic ("Registry") website. Built with VitePress and configuration-driven templates using Nunjucks templating and automated configuration management.
+Static site generator for the TPEG website. Built with VitePress.
 
-## 📖 Concepts
+## Concepts
 
-**NDIC National Registry** is a web-based catalog of traffic data sources, formats, protocols, and providers for the National Traffic Information Registry of Czech Republic. The site serves as:
+**TPEG website** The site serves as:
 
-- A comprehensive directory of traffic data providers
-- A technical reference for data formats and protocols
-- A bilingual (Czech/English) documentation platform
-- A configuration-driven, maintainable documentation system
+- introduction for a data subscriber to new TPEG data source provided by RSD.
+- format and protocol information provider
 
 ---
 
-## ✨ Key Features
-
-- **Configuration-Driven Generation** - Content is generated from YAML configuration files, ensuring consistency and maintainability
-- **Multilingual Support** - Full Czech (cs) and English (en) versions with shared documentation assets
-- **Automated Build Pipeline** - YAML compilation, template rendering, and validation happen automatically
-- **Template System** - Nunjucks templates generate markdown pages from structured configuration data
-- **Modern Stack** - Built on VitePress for fast, SEO-friendly static site generation
-- **Quality Assurance** - Automated configuration validation, schema checking, and linting
-
----
-
-## 🚀 Quick Start
+## Quick Start
 
 ### Prerequisites
 
-- **Node.js** version 18 or higher
-- **npm**, **pnpm**, **yarn**, or **bun** package manager
+- **Node.js** version 20 or higher
+- **npm** package manager
 
 ### Installation
 
@@ -51,8 +38,6 @@ npm run docs:dev
 ```
 
 The site will be available at `http://localhost:5173`
-
-**Note:** The dev server automatically watches and compiles configuration files from `docs/data/conf_files/` (the primary source of truth).
 
 The server might not catch more significant changes like adding or deleting new files.
 In this case it is recommended to restart the server from the console (press key R).
@@ -77,66 +62,29 @@ npm run docs:preview
 
 ---
 
-## 🗂️ Architecture Overview
-
-### Configuration-Driven Generation
-
-**Primary source of truth:** The `docs/data/conf_files/` directory contains YAML configuration fragments that define all providers, sources, formats, and protocols.
-
-**Flow:**
-
-```
-docs/data/conf_files/ (YAML fragments)
-    ↓
-VitePress dev mode / ndic-build CLI
-    ↓
-docs/data/compiled.yaml (auto-generated)
-    ↓
-Nunjucks templates
-    ↓
-Markdown pages (docs/cs/, docs/en/)
-    ↓
-VitePress build
-    ↓
-Static site (docs/.vitepress/dist/)
-```
+## Architecture Overview
 
 ### Multilingual Support
 
-Content is generated in both Czech (cs) and English (en) with:
-
-- Separate content directories for each language
-- Shared static assets (PDFs, images, specifications)
-- Language-specific navigation and metadata
-- Automatic locale-based routing
+Currently only English (en) variant exists.
 
 ---
 
-## 📁 Project Structure
+## Project Structure
 
 ```
-vitepress-nationalregistry/
+tpeg.dopravniinfo.cz/
 ├── docs/
 │   ├── .vitepress/           # VitePress configuration
-│   ├── data/
-│   │   ├── conf_files/       # YAML fragments (PRIMARY SOURCE)
-│   │   └── compiled.yaml     # Compiled config (auto-generated)
-│   ├── templates/            # Nunjucks templates
-│   │   ├── cs/               # Czech templates
-│   │   └── en/               # English templates
-│   ├── scripts/              # Build and utility scripts
-│   │   └── ndic-build.js     # CLI tool for config management
 │   ├── public/               # Static assets
-│   │   └── docs/             # Documentation files (PDFs, specs)
-│   ├── cs/                   # Czech content (generated)
-│   └── en/                   # English content (generated)
-├── .gitlab-ci.yml            # GitLab CI/CD configuration
+│   ├── cs/                   # Czech content (empty)
+│   └── en/                   # English content
 └── package.json              # Dependencies and scripts
 ```
 
 ---
 
-## 📚 Documentation
+## Documentation
 
 - **[DEVELOPMENT.md](DEVELOPMENT.md)** - Development workflows, content authoring, deployment, and architecture details
 - **[CLI_REFERENCE.md](CLI_REFERENCE.md)** - Complete ndic-build CLI documentation

@@ -54,111 +54,6 @@ This serves the built site from `docs/.vitepress/dist/`
 
 ---
 
-## Configuration Management
-
-The project includes a dedicated CLI tool (`ndic-build`) for managing YAML configuration files. **This tool is primarily useful for larger configuration changes and when validation is required.**
-
-### When to use ndic-build CLI:
-
-- **Large configuration changes** - Refactoring multiple files
-- **Validation required** - Ensuring schema compliance and cross-references
-- **CI/CD pipelines** - Automated validation before deployment
-- **Troubleshooting** - Diagnosing configuration issues
-
-### When NOT needed:
-
-- **Daily content editing** - VitePress dev mode handles this automatically
-- **Small updates** - Single file edits are handled by dev server
-- **Quick iterations** - Dev mode is faster for testing changes
-
-### Compiling Configuration
-
-Compile YAML fragments into the main configuration file with validation:
-
-```bash
-node docs/scripts/ndic-build.js build
-```
-
-**Options:**
-
-- `--force` - Force rebuild even if files are up-to-date
-
-**This is useful when:**
-
-- Making large structural changes
-- Need to validate configuration
-- Preparing for production deployment
-- Running in CI/CD pipeline
-
-Example output:
-
-```
-📄 Step 1: Compiling configuration...
-✅ docs/data/compiled.yaml is up-to-date, skipping compilation
-
-📄 Step 2: Validating configuration...
-✅ Configuration validation passed
-📊 Configuration statistics:
-   providers: 2
-   sources: 25
-   formats: 27
-   protocols: 7
-```
-
-### Validating Configuration
-
-Validate configuration against schema:
-
-```bash
-node docs/scripts/ndic-build.js validate
-```
-
-### Watching for Changes
-
-Watch for configuration changes and auto-rebuild with validation:
-
-```bash
-node docs/scripts/ndic-build.js watch
-```
-
-Useful for development when editing configuration files and needing validation feedback.
-
-### Configuration Statistics
-
-View configuration file information:
-
-```bash
-node docs/scripts/ndic-build.js info
-```
-
-**For detailed CLI documentation, see [CLI_REFERENCE.md](CLI_REFERENCE.md)**
-
-### Development Workflow Comparison
-
-**For daily content editing (recommended):**
-
-```bash
-npm run docs:dev
-# Edit files in docs/data/conf_files/
-# Changes compile and display automatically
-# Fast, no validation
-```
-
-**For major changes or validation:**
-
-```bash
-# Terminal 1: Watch and validate changes
-node docs/scripts/ndic-build.js watch
-
-# Terminal 2: Dev server
-npm run docs:dev
-
-# Edit files in docs/data/conf_files/
-# Both compilation and validation happen
-```
-
----
-
 ## Available Scripts
 
 ### npm/pnpm Commands
@@ -232,46 +127,6 @@ npm run format
 
 ### Primary Content Locations
 
-#### 1. Registry Data (YAML Configuration)
-
-**Location:** `docs/data/conf_files/` - **PRIMARY SOURCE OF TRUTH**
-
-Edit YAML files to add, remove, or modify:
-
-- **Providers** - `providers/*.yaml` - Data provider organizations
-- **Sources** - `sources/*.yaml` - Individual data sources
-- **Formats** - `formats/*.yaml` - Data format specifications
-- **Protocols** - `protocols/*.yaml` - Communication protocols
-- **Organizations** - `organizations.yaml` - Organization details
-- **Persons** - `persons.yaml` - Contact persons
-- **Terms & Conditions** - `terms_and_conditions.yaml`
-
-**Development workflow:**
-
-1. Start dev server: `npm run docs:dev`
-2. Edit YAML files in `docs/data/conf_files/`
-3. Changes automatically compile and display in browser
-4. (Optional) Run validation before committing: `node docs/scripts/ndic-build.js validate`
-
-**For major changes requiring validation:**
-
-1. Terminal 1 - Run watch with validation: `node docs/scripts/ndic-build.js watch`
-2. Terminal 2 - Run dev server: `npm run docs:dev`
-3. Edit YAML files - both compilation and validation happen
-
-#### 2. Static Documentation
-
-**Location:** `docs/public/docs/`
-
-Add pre-generated documentation files:
-
-- **Format specifications** - PDFs, technical documentation
-- **Protocol documentation** - Implementation guides
-- **Provider documents** - Certificates, terms of service
-- **Images and diagrams** - Graphics, architecture diagrams
-
-These files are automatically available at `/docs/...` URL path.
-
 ### Configuration Structure
 
 Each configuration type follows a consistent structure with multilingual support:
@@ -288,50 +143,6 @@ entity_key:
 ```
 
 **See:** `docs/data/conf_files/README.md` for detailed schema documentation.
-
----
-
-## Template Customization
-
-### Template Structure
-
-Templates are located in `docs/templates/{cs,en}/` and organized by content type:
-
-```
-templates/
-├── cs/
-│   ├── about/        # Static pages
-│   ├── formats/      # Format pages
-│   │   ├── index.njk # List page
-│   │   └── one.njk   # Detail page
-│   ├── protocols/
-│   ├── providers/
-│   └── sources/
-└── en/
-    └── (same structure)
-```
-
-### Template Files
-
-- **`index.njk`** - Generates list/index pages showing all items in a category
-- **`one.njk`** - Generates individual detail pages for each entity
-
-### Template Variables
-
-Templates have access to:
-
-- `data` - The entire compiled configuration object
-- `locale` - Current language ('cs' or 'en')
-- `item` - Current entity being rendered (in `one.njk`)
-- Helper functions from `docs/lib/pathGenerators.js`
-
-### Example: Modifying a Template
-
-To change how source detail pages are rendered:
-
-1. Edit `docs/templates/en/sources/one.njk` (and/or `docs/templates/cs/sources/one.njk`)
-2. Modify the Nunjucks template
-3. Restart the dev server to see changes
 
 ---
 
@@ -364,21 +175,6 @@ export default defineConfig({
 });
 ```
 
-### Sidebar Configuration
-
-Sidebars are automatically generated from YAML configuration using the `generateSidebarFromYaml()` function:
-
-```javascript
-sidebar: {
-  '/sources/': [{
-    text: 'Sources',
-    items: generateSidebarFromYaml('en', 'sources')
-  }]
-}
-```
-
-This dynamically creates sidebar items from the `sources` section of `compiled.yaml`.
-
 ### Adding New Static Pages
 
 To add explanatory pages (FAQ, About, etc.):
@@ -399,35 +195,6 @@ Custom theme components: `docs/.vitepress/theme/`
 ---
 
 ## Quality & Validation
-
-### Configuration Validation
-
-#### Schema Validation
-
-All configuration is validated against a Zod schema defined in `docs/scripts/config-schema.js`.
-
-**Automatic validation:** Happens during `ndic-build build` command.
-
-**Manual validation:**
-
-```bash
-node docs/scripts/ndic-build.js validate
-```
-
-#### Cross-Reference Checking
-
-Verify that references between entities are valid:
-
-```bash
-node docs/scripts/ndic-build.js validate
-```
-
-This checks:
-
-- Provider references in sources
-- Format references in sources
-- Protocol references in sources
-- Person and organization references
 
 ### Linting & Formatting
 
@@ -540,34 +307,6 @@ To deploy manually:
 - Support for clean URLs (no `.html` extensions)
 
 ---
-
-## Tools & Utilities
-
-### ndic-build CLI
-
-Comprehensive CLI tool for configuration management and validation.
-
-**Location:** `docs/scripts/ndic-build.js`
-
-**Purpose:** Primarily for larger configuration changes and validation. For daily content editing, the VitePress dev server handles compilation automatically.
-
-**Use cases:**
-
-- Large-scale configuration refactoring
-- Pre-commit validation
-- CI/CD pipeline integration
-- Configuration troubleshooting
-- Cross-reference checking
-
-**Commands:**
-
-- `build` - Compile and validate (default)
-- `compile` - Compile YAML fragments without validation
-- `validate` - Validate existing `compiled.yaml`
-- `watch` - Watch and auto-rebuild with validation
-- `info` - Show configuration statistics
-
-**See:** [CLI_REFERENCE.md](CLI_REFERENCE.md) for detailed documentation.
 
 ### Helper Scripts
 
@@ -716,50 +455,6 @@ docs/data/conf_files/
 ├── persons.yaml
 └── terms_and_conditions.yaml
 ```
-
----
-
-## Migration from MkDocs
-
-This project was migrated from MkDocs (Python + Jinja2 + Doit) to VitePress (Node.js + Nunjucks).
-
-### Key Changes
-
-**Technology stack:**
-
-- **Static generator:** MkDocs → VitePress
-- **Templates:** Jinja2 → Nunjucks (similar syntax)
-- **Build tool:** Doit (Python) → npm scripts + Node.js
-- **Dev experience:** Slow rebuilds → Fast HMR
-
-**Directory changes:**
-
-- `conf_files/` → `docs/data/conf_files/`
-- `conf.yaml` → `docs/data/compiled.yaml`
-- `static_docs/` → `docs/public/docs/`
-- `build/` → `docs/.vitepress/dist/`
-
-**Command changes:**
-
-- `uv run doit auto` → `npm run docs:dev` (now auto-compiles)
-- `uv run doit build` → `npm run docs:build`
-- `uv run doit compile` → `node docs/scripts/ndic-build.js build` (now optional)
-
-### What Stayed the Same
-
-- Configuration structure and YAML schema
-- `conf_files/` as primary source of truth
-- Multilingual approach (Czech/English)
-- Entity types (providers, sources, formats, protocols)
-- Static file handling approach
-
-### For Contributors Familiar with MkDocs
-
-- Configuration files work the same way
-- Template syntax is nearly identical (Jinja2 vs Nunjucks)
-- Dev server now auto-compiles configuration (validation is optional)
-- Much faster development experience with HMR
-- Use npm commands instead of `uv run doit`
 
 ---
 
