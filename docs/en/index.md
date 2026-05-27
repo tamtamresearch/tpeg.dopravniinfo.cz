@@ -45,12 +45,12 @@ This site is the public face of the pilot. It's here to help you understand what
 
 ## What you'll find here
 
-- **[About](/about/)**: project scope, terms of use, contacts, how to report issues.
 - **[TPEG](/tpeg/)**: what the standard is and what it's good for.
-- **[Pilot](/pilot/)**: scope, status, and changelog of this pilot.
+- **[Pilot](/pilot/)**: scope and status of this pilot.
 - **[Technical](/technical/)**: the protocol and the two published TPEG2 formats, [TPEG2-TFP](/technical/formats/tpeg2-tfp) and [TPEG2-TEC](/technical/formats/tpeg2-tec).
 - **[Subscribe](/subscribe/)**: how to request access to the feed.
 - **[FAQ](/faq)**.
+- **[About](/about/)**: project scope, terms of use, contacts, how to report issues.
 
 ## Status
 

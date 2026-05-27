@@ -62,12 +62,12 @@ export default defineConfig({
 
             themeConfig: {
                 nav: [
-                    { text: "About", link: "/about/" },
                     { text: "TPEG", link: "/tpeg/" },
                     { text: "Pilot", link: "/pilot/" },
                     { text: "Technical", link: "/technical/" },
                     { text: "Subscribe", link: "/subscribe/" },
                     { text: "FAQ", link: "/faq" },
+                    { text: "About", link: "/about/" },
                 ],
 
                 sidebar: {
