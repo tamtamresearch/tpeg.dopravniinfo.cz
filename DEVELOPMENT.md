@@ -56,13 +56,13 @@ All content is **hand-written Markdown** under `docs/en/`. There is no compilati
 | --------------------------- | --------------------------------------------- |
 | `docs/en/index.md`          | Home page (VitePress `home` layout)           |
 | `docs/en/about/`            | About, license, contacts, issue tracker       |
-| `docs/en/tpeg/`             | What is TPEG, value proposition               |
+| `docs/en/tpeg/`             | What is TPEG, why TPEG fits this pilot        |
 | `docs/en/pilot/`            | Pilot scope & status, changelog               |
 | `docs/en/technical/`        | Protocol page and format pages                |
 | `docs/en/subscribe/`        | Subscription instructions and mailto template |
 | `docs/en/faq.md`            | FAQ                                           |
 | `docs/cs/`                  | Czech placeholder (locale dormant)            |
-| `docs/public/`              | Static assets (logo, hero image, PDFs)        |
+| `docs/public/`              | Static assets (logo, favicons, PDFs)          |
 | `docs/.vitepress/config.js` | Nav, sidebar, plugins, site metadata          |
 | `docs/.vitepress/theme/`    | Theme customisation                           |
 
@@ -141,7 +141,7 @@ If the deployment URL changes, update:
 | ------------------------------ | ------------------------------------ |
 | `vitepress-plugin-pagefind`    | Local search index                   |
 | `vitepress-plugin-llmstxt`     | LLM-friendly `llms.txt` for the site |
-| `vitepress-plugin-group-icons` | Custom icon support                  |
+| `vitepress-plugin-group-icons` | Icons on grouped/tabbed code blocks  |
 | `markdown-it-footnote`         | Markdown footnote syntax             |
 
 ---
@@ -150,4 +150,4 @@ If the deployment URL changes, update:
 
 - [VitePress documentation](https://vitepress.dev/)
 - [TPEG standards](https://tisa.org/) (TISA)
-- [ISO 21219](https://www.iso.org/standard/63110.html) - TPEG2
+- [ISO 21219-1](https://www.iso.org/standard/79437.html) - TPEG2 framework (current edition)
