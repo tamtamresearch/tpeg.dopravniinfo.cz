@@ -1,11 +1,11 @@
 # Technical specifications
 
-This section documents everything a consumer needs to integrate with the pilot TPEG service:
+This section documents what a consumer needs to integrate with the pilot TPEG service:
 
-- the **[delivery protocol](./protocol)** — how messages are exchanged between the service and a consumer;
-- the **[formats](./formats/)** — what those messages look like on the wire.
+- the **[delivery protocol](./protocol)**, how messages are exchanged between the service and a consumer;
+- the **[formats](./formats/)**, what those messages look like on the wire.
 
-> All specifications described here are part of the pilot and are versioned. Breaking changes are possible between pilot versions; see the [pilot changelog](/pilot/changelog).
+> Everything here is part of the pilot and is versioned. Breaking changes between pilot versions are possible. See the [pilot changelog](/pilot/changelog).
 
 ## At a glance
 
@@ -20,16 +20,16 @@ This section documents everything a consumer needs to integrate with the pilot T
 
 ## Published formats
 
-| Format                               | Identifier                        | Use                                                 |
-| ------------------------------------ | --------------------------------- | --------------------------------------------------- |
-| **[TPEG2-TEC](./formats/tpeg2-tec)** | `x-format:cz-ndic_tpeg2-tec-v0.1` | Traffic events — incidents, congestion, road works. |
-| **[TPEG2-TFP](./formats/tpeg2-tfp)** | `x-format:cz-ndic-tpeg2-tfp-v0.1` | Traffic flow and prediction.                        |
+| Format                               | Identifier                        | Use                                                |
+| ------------------------------------ | --------------------------------- | -------------------------------------------------- |
+| **[TPEG2-TEC](./formats/tpeg2-tec)** | `x-format:cz-ndic_tpeg2-tec-v0.1` | Traffic events. Incidents, congestion, road works. |
+| **[TPEG2-TFP](./formats/tpeg2-tfp)** | `x-format:cz-ndic-tpeg2-tfp-v0.1` | Traffic flow and prediction.                       |
 
-Each format has a dedicated **Format Specification Package (FSP)** on GitHub: `FORMAT.yaml` metadata, the entry XSD for validation, and a sample folder. Follow the links above for details.
+Each format has its own **Format Specification Package (FSP)** on GitHub. The FSP holds `FORMAT.yaml` metadata, the entry XSD for validation, and a sample folder. Follow the links above for details.
 
 ## How to get started
 
-1. Read the [protocol](./protocol) page to understand transport, polling cadence, and credentials.
-2. Pick the format(s) relevant to your use case and read their pages.
-3. Validate your parser against the XSD and the supplied samples from the FSP repositories.
+1. Read the [protocol](./protocol) page for transport, polling cadence, and credentials.
+2. Pick the format you care about and read its page.
+3. Validate your parser against the XSD and the samples in the FSP.
 4. [Subscribe](/subscribe/) to get production credentials and a sandbox URL.

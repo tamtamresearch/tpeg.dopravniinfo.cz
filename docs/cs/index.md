@@ -4,4 +4,4 @@ title: Česká verze není k dispozici
 
 # Czech locale dormant
 
-The Czech version of this site is not currently published. See the [English site](/).
+The Czech version of this site isn't published yet. See the [English site](/).

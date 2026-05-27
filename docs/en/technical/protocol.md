@@ -1,49 +1,49 @@
 # Protocol
 
-The pilot service delivers TPEG2 messages over an **IP-based protocol**. This page summarises what an integrator needs to know to consume the feed.
+The pilot service delivers TPEG2 messages over an **IP-based protocol**. This page is what an integrator needs to know to consume the feed.
 
-> This page is a public summary. Full protocol details — endpoints, credentials, polling parameters — are shared with consumers as part of the [subscription process](/subscribe/).
+> This is a public summary. Full protocol details (endpoints, credentials, polling parameters) are shared with consumers as part of [how to subscribe](/subscribe/).
 
 ## Transport
 
 - **Transport**: HTTPS over TCP/IP.
 - **Encoding**: TPEG2 XML payloads.
-- **Compression**: `gzip` content encoding is supported; clients are recommended to send `Accept-Encoding: gzip`.
+- **Compression**: `gzip` content encoding. Clients should send `Accept-Encoding: gzip`.
 - **Character set**: UTF-8.
 
 ## Interaction pattern
 
 The pilot supports a **pull model** as the primary interaction:
 
-1. The consumer issues an HTTPS GET against the per-format feed endpoint.
-2. The server returns the current TPEG2 service frame, containing the active messages for that format.
-3. The consumer applies the message-lifecycle rules (create / update / cancel) from the TPEG2 toolkit to maintain its local state.
+1. The consumer issues an HTTPS GET to the per-format feed endpoint.
+2. The server returns the current TPEG2 service frame with the active messages for that format.
+3. The consumer applies the message-lifecycle rules (create, update, cancel) from the TPEG2 toolkit to maintain its local state.
 
-Recommended polling cadence is documented in the per-format FSP metadata. Polling more frequently than recommended is discouraged; the source data does not update faster than the recommended cadence.
+Recommended polling cadence is in the per-format FSP metadata. Don't poll faster than recommended. The source data doesn't update faster than that.
 
-A push-style delivery may be offered to specific consumers on request.
+Push-style delivery may be offered to specific consumers on request.
 
 ## Authentication
 
-- Each subscriber receives an **individual credential** (HTTP header or basic auth — confirmed at onboarding).
-- Credentials are tied to a named consumer and may be **rotated** or **revoked** at any time, especially if the [terms of use](/about/license) are not respected.
+- Each subscriber gets an **individual credential** (HTTP header or basic auth, confirmed at onboarding).
+- Credentials are tied to a named consumer and can be **rotated** or **revoked** at any time, especially if the [terms of use](/about/license) aren't respected.
 
 ## Endpoints
 
-There is one endpoint per published format:
+One endpoint per published format:
 
 | Format                           | Identifier                        |
 | -------------------------------- | --------------------------------- |
 | [TPEG2-TEC](./formats/tpeg2-tec) | `x-format:cz-ndic_tpeg2-tec-v0.1` |
 | [TPEG2-TFP](./formats/tpeg2-tfp) | `x-format:cz-ndic-tpeg2-tfp-v0.1` |
 
-Endpoint URLs (sandbox + production), polling intervals, and recommended client behaviour are shared on subscription.
+Endpoint URLs (sandbox and production), polling intervals, and recommended client behaviour are shared on subscription.
 
 ## Versioning
 
-- Protocol changes are versioned in the [pilot changelog](/pilot/changelog).
-- Backwards-incompatible changes during the pilot are possible but will be announced to active subscribers in advance via e-mail.
+- Protocol changes are tracked in the [pilot changelog](/pilot/changelog).
+- Backwards-incompatible changes are possible during the pilot. We'll announce them to active subscribers by e-mail in advance.
 
 ## Reference implementations
 
-We are not publishing a reference client in the pilot phase. If you are working on an open-source TPEG2 client and would like to coordinate, please [get in touch](/about/contacts).
+We're not publishing a reference client in the pilot phase. If you're working on an open-source TPEG2 client and want to coordinate, [get in touch](/about/contacts).

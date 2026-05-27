@@ -1,6 +1,6 @@
 # Frequently asked questions
 
-A short list of questions we expect from potential consumers. If yours is not here, ask on the [GitHub discussions](https://github.com/tamtamresearch/tpeg.dopravniinfo.cz/discussions) or e-mail [tpeg@ceda.cz](mailto:tpeg@ceda.cz) and we will add it.
+A short list of questions we expect from people thinking about subscribing. If yours isn't here, ask on [GitHub discussions](https://github.com/tamtamresearch/tpeg.dopravniinfo.cz/discussions) or e-mail [tpeg@ceda.cz](mailto:tpeg@ceda.cz) and we'll add it.
 
 ---
 
@@ -8,18 +8,18 @@ A short list of questions we expect from potential consumers. If yours is not he
 
 ### Do you broadcast TPEG over DAB?
 
-**No.** The pilot is **IP-only**. TPEG is often associated with DAB broadcast because TPEG1 was designed primarily with broadcast in mind, but TPEG2 is delivery-channel-agnostic. We deliver TPEG2 XML over HTTPS — see the [Protocol](/technical/protocol) page.
+**No.** The pilot is **IP-only**. TPEG is often associated with DAB because TPEG1 was designed mainly with broadcast in mind, but TPEG2 doesn't care about the delivery channel. We deliver TPEG2 XML over HTTPS. See the [Protocol](/technical/protocol) page.
 
-If your use case specifically requires DAB transport, the pilot service does not cover it. Let us know — interest from real consumers helps shape what comes next.
+If your use case specifically needs DAB transport, the pilot doesn't cover it. Let us know anyway. Interest from real consumers helps shape what comes next.
 
 ### How often is the data updated?
 
-Update cadence depends on the format. Recommended polling intervals are documented in each format's FSP `FORMAT.yaml`. As a rough orientation:
+It depends on the format. Recommended polling intervals are in each format's FSP `FORMAT.yaml`. Roughly:
 
-- **TPEG2-TEC** — minute-scale, driven by source events;
-- **TPEG2-TFP** — sub-minute to minute scale for flow snapshots.
+- **TPEG2-TEC**: minute-scale, driven by source events.
+- **TPEG2-TFP**: sub-minute to minute scale for flow snapshots.
 
-Polling faster than recommended will not give you fresher data — the upstream source does not update faster.
+Polling faster than recommended won't give you fresher data. The upstream source doesn't update faster.
 
 ### What is the coverage area?
 
@@ -31,15 +31,15 @@ The Czech road network managed by ŘSD: motorways, expressways, and selected fir
 
 ### How much does the pilot cost?
 
-**Free of charge** for evaluation and integration testing during the pilot. See the [terms of use](/about/license) for the conditions and [pilot scope & status](/pilot/) for caveats about availability.
+**Free** for evaluation and integration testing during the pilot. See the [terms of use](/about/license) for the conditions and [pilot scope & status](/pilot/) for caveats about availability.
 
 ### Who can subscribe?
 
-Any identified organisation with a stated use case. We do not exclude commercial users from the pilot, but we expect transparency about intended use. The [subscription process](/subscribe/) lists what to include in the request.
+Any identified organisation with a stated use case. We don't exclude commercial users from the pilot, but we expect transparency about intended use. The [subscription process](/subscribe/) lists what to include in the request.
 
 ### Will the service still be there in six months?
 
-We do not guarantee it. The pilot exists to be evaluated; based on the evaluation, the service may be made permanent, may be transferred to a different operator, or may be discontinued. We will give active subscribers **prior notice** of any planned change via the operational e-mail address you supply.
+We can't guarantee it. The pilot exists to be evaluated. Based on the evaluation it may become permanent, may move to a different operator, or may be stopped. We'll give active subscribers prior notice of any planned change by e-mail, using the operational address you give us.
 
 ---
 
@@ -51,7 +51,7 @@ We do not guarantee it. The pilot exists to be evaluated; based on the evaluatio
 
 ### How do I validate my parser?
 
-Use the XSD and `samples/` from each format's FSP repository. The procedure is described on each format page ([TEC](/technical/formats/tpeg2-tec), [TFP](/technical/formats/tpeg2-tfp)).
+Use the XSD and `samples/` from each format's FSP repository. The procedure is on each format page ([TEC](/technical/formats/tpeg2-tec), [TFP](/technical/formats/tpeg2-tfp)).
 
 ### Which location referencing methods do you use?
 
@@ -59,4 +59,4 @@ Per-format. Both formats support **TMC** for compatibility and **OpenLR** for ma
 
 ---
 
-_This FAQ will grow as questions come in. Help us shape it: [open a discussion](https://github.com/tamtamresearch/tpeg.dopravniinfo.cz/discussions)._
+_The FAQ will grow as questions come in. [Open a discussion](https://github.com/tamtamresearch/tpeg.dopravniinfo.cz/discussions) if you have one._

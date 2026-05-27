@@ -1,29 +1,29 @@
 # About
 
-The **Pilot TPEG service in Czechia** is a study and pilot operation of the [TPEG](/tpeg/) standard for distribution of traffic and travel information on the Czech road network.
+The **Pilot TPEG service in Czechia** is a pilot deployment of the [TPEG](/tpeg/) standard for distribution of traffic and travel information on the Czech road network.
 
-The pilot is operated by **CEDA Maps a.s.** (IČ 26429632) in cooperation with the Czech road authority **ŘSD** (Ředitelství silnic a dálnic) and the **NDIC** national traffic information centre.
+It's operated by **CEDA Maps a.s.** (IČ 26429632) for the Czech road authority **ŘSD** (Ředitelství silnic a dálnic) and the **NDIC** national traffic information centre.
 
 ## Purpose
 
-This site exists to:
+The site is here to:
 
-- Present the pilot service — its [scope, status, and roadmap](/pilot/) — so potential consumers understand what they can rely on today.
-- Document the [protocol and formats](/technical/) used, so a consumer can plan and implement integration.
-- Walk a consumer through the [subscription process](/subscribe/).
-- Provide a channel — issues and discussions on GitHub — for feedback and questions.
+- explain what the pilot is and where it stands today (see [scope and status](/pilot/));
+- document the [protocol and formats](/technical/) so you can plan an integration;
+- walk you through [how to subscribe](/subscribe/);
+- give you a place to ask questions and report problems on GitHub.
 
-We are explicitly looking for **potential consumers** of TPEG-formatted traffic information and would like to hear about their needs, expectations, and the use they intend to make of the data.
+We want to hear from people who'd actually consume the data. Tell us what you want to do with it and we'll do our best to help.
 
-## What this is _not_
+## What this isn't
 
-- **Not a production data product.** This is a pilot. See the [pilot scope and status](/pilot/) page for the current implementation state and known limitations.
-- **Not a TPEG broadcast over DAB.** Distribution is over an IP-based protocol. See the [FAQ](/faq) for details.
-- **Not a registry of traffic-information sources.** For the Czech National Access Point and the national registry of traffic information, see the relevant ŘSD resources.
+- **Not a production data product.** It's a pilot. See [scope and status](/pilot/) for what works today and what doesn't.
+- **Not a TPEG broadcast over DAB.** Delivery is over IP. See the [FAQ](/faq).
+- **Not the national registry.** For the Czech National Access Point and the registry of traffic-information sources, see ŘSD's own resources.
 
 ## Quick links
 
-- [Terms of use and license for the data](/about/license)
+- [Terms of use](/about/license)
 - [Contacts](/about/contacts)
 - [Issue tracker and discussions](/about/issues)
-- [Subscribe to the feed](/subscribe/)
+- [Subscribe](/subscribe/)
