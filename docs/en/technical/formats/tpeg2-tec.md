@@ -8,7 +8,7 @@ Czech profile of the TPEG2 **Traffic Event Compact** application format.
 | **Family**      | TPEG2 (ISO 21219)                 |
 | **Application** | TEC, Traffic Event Compact        |
 | **Encoding**    | XML                               |
-| **Status**      | Pilot, v0.1                       |
+| **Status**      | Pilot                             |
 
 ## What it carries
 
@@ -35,9 +35,7 @@ The exact set of supported methods is in the FSP `FORMAT.yaml`.
 
 The full specification (`FORMAT.yaml` metadata, entry XSD, and `samples/` folder) is in a dedicated GitHub repository:
 
-- 📦 **FSP**: [tamtamresearch/x-format_cz-ndic_tpeg2-tec-v0.1](https://github.com/tamtamresearch/x-format_cz-ndic_tpeg2-tec-v0.1)
-
-> ⚠️ The pilot format is **v0.1**. Breaking changes between minor versions are possible until the format leaves pilot status.
+- **FSP**: [tamtamresearch/x-format_cz-ndic_tpeg2-tec-v0.1](https://github.com/tamtamresearch/x-format_cz-ndic_tpeg2-tec-v0.1)
 
 ## Validating your parser
 

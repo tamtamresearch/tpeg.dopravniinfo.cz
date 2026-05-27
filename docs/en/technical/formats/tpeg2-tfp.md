@@ -8,7 +8,7 @@ Czech profile of the TPEG2 **Traffic Flow & Prediction** application format.
 | **Family**      | TPEG2 (ISO 21219)                 |
 | **Application** | TFP, Traffic Flow & Prediction    |
 | **Encoding**    | XML                               |
-| **Status**      | Pilot, v0.1                       |
+| **Status**      | Pilot                             |
 
 ## What it carries
 
@@ -32,11 +32,9 @@ The supported set is in the FSP `FORMAT.yaml`.
 
 ## Where to get the spec
 
-- 📦 **FSP**: [tamtamresearch/x-format_cz-ndic_tpeg2-tfp-v0.1](https://github.com/tamtamresearch/x-format_cz-ndic_tpeg2-tfp-v0.1)
+- **FSP**: [tamtamresearch/x-format_cz-ndic_tpeg2-tfp-v0.1](https://github.com/tamtamresearch/x-format_cz-ndic_tpeg2-tfp-v0.1)
 
 The FSP repository contains `FORMAT.yaml`, the entry XSD, and `samples/`.
-
-> ⚠️ The pilot format is **v0.1**. Expect refinements as we learn from real consumers.
 
 ## Validating your parser
 
