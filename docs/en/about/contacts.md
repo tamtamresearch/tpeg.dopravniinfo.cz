@@ -4,7 +4,7 @@
 
 **CEDA Maps a.s.** (IČ 26429632)
 
-- 📧 Subscription and general questions: [tpeg@ceda.cz](mailto:tpeg@ceda.cz)
+- Subscription and general questions: [tpeg@ceda.cz](mailto:tpeg@ceda.cz)
 - [www.ceda.cz](https://www.ceda.cz)
 
 ## Data source
