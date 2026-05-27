@@ -41,7 +41,6 @@ Endpoint URLs (sandbox and production), polling intervals, and recommended clien
 
 ## Versioning
 
-- Protocol changes are tracked in the [pilot changelog](/pilot/changelog).
 - Backwards-incompatible changes are possible during the pilot. We'll announce them to active subscribers by e-mail in advance.
 
 ## Reference implementations

@@ -97,10 +97,7 @@ export default defineConfig({
                         {
                             text: "Pilot",
                             collapsed: false,
-                            items: [
-                                { text: "Scope & status", link: "/pilot/" },
-                                { text: "Changelog", link: "/pilot/changelog" },
-                            ],
+                            items: [{ text: "Scope & status", link: "/pilot/" }],
                         },
                     ],
                     "/technical/": [

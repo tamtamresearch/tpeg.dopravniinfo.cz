@@ -5,7 +5,7 @@ This section documents what a consumer needs to integrate with the pilot TPEG se
 - the **[delivery protocol](./protocol)**, how messages are exchanged between the service and a consumer;
 - the **[formats](./formats/)**, what those messages look like on the wire.
 
-> Everything here is part of the pilot and is versioned. Breaking changes between pilot versions are possible. See the [pilot changelog](/pilot/changelog).
+> This is pilot-stage documentation. Specs and endpoints can change in breaking ways. Active subscribers are notified by e-mail in advance.
 
 ## At a glance
 

@@ -44,5 +44,3 @@ Delivery is over the IP protocol described in the [Technical](/technical/) secti
 - Want to try the data? Start with [how to subscribe](/subscribe/).
 - Want to discuss the format profile or a use case? [Open a discussion](https://github.com/tamtamresearch/tpeg.dopravniinfo.cz/discussions) on GitHub.
 - Found a defect? [File an issue](https://github.com/tamtamresearch/tpeg.dopravniinfo.cz/issues).
-
-See the [changelog](./changelog) for what's changed.
