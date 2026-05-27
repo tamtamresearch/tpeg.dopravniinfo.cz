@@ -1,0 +1,170 @@
+
+
+<!doctype html>
+
+<html lang="cs" data-content_root="./">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>NDIC DDR XML - Běžné dopravní informace &#8212; Dokumentace pro NDIC DDR XML - Běžné dopravní informace 3.4rev0</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/bizstyle.css?v=532c1bf3" />
+    
+    <script src="_static/documentation_options.js?v=fb715ff9"></script>
+    <script src="_static/doctools.js?v=888ff710"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/translations.js?v=0275affc"></script>
+    <script src="_static/bizstyle.js"></script>
+    <link rel="index" title="Rejstřík" href="genindex.html" />
+    <link rel="search" title="Vyhledávání" href="search.html" />
+    <link rel="next" title="Úvod" href="introduction.html" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <!--[if lt IE 9]>
+    <script src="_static/css3-mediaqueries.js"></script>
+    <![endif]-->
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigace</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="Obecný rejstřík"
+             accesskey="I">rejstřík</a></li>
+        <li class="right" >
+          <a href="introduction.html" title="Úvod"
+             accesskey="N">další</a> |</li>
+        <li class="nav-item nav-item-0"><a href="#">Dokumentace pro NDIC DDR XML - Běžné dopravní informace 3.4rev0</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">NDIC DDR XML - Běžné dopravní informace</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="project">
+<h1>NDIC DDR XML - Běžné dopravní informace<a class="headerlink" href="#project" title="Link to this heading">¶</a></h1>
+<p>Identifikátor a verze:</p>
+<dl class="field-list simple">
+<dt class="field-odd">uri<span class="colon">:</span></dt>
+<dd class="field-odd"><p>cz-ndic_ddr-common-v3.4</p>
+</dd>
+<dt class="field-even">Formát<span class="colon">:</span></dt>
+<dd class="field-even"><p>3.4</p>
+</dd>
+<dt class="field-odd">Specifikace<span class="colon">:</span></dt>
+<dd class="field-odd"><p>3.4rev0</p>
+</dd>
+<dt class="field-even">Aktualizováno<span class="colon">:</span></dt>
+<dd class="field-even"><p>2021-04-09</p>
+</dd>
+</dl>
+<p>Typ formátu:</p>
+<dl class="field-list simple">
+<dt class="field-odd">Publikace<span class="colon">:</span></dt>
+<dd class="field-odd"><p>DDR</p>
+</dd>
+<dt class="field-even">Rozšiřuje<span class="colon">:</span></dt>
+<dd class="field-even"><p>—</p>
+</dd>
+</dl>
+<p>Vydavatel a autor:</p>
+<dl class="field-list simple">
+<dt class="field-odd">Vydavatel<span class="colon">:</span></dt>
+<dd class="field-odd"><p>NDIC</p>
+</dd>
+<dt class="field-even">Autor<span class="colon">:</span></dt>
+<dd class="field-even"><p>Jan Vlčinský, Petr Bureš</p>
+</dd>
+</dl>
+<p>Tento dokument popisuje datový formát, datového distribučního rozhraní (DDR) NDIC používaný pro poskytování běžných dopravních informací obecného charakteru (nehody atp.) a stupňů provozu. Významná revize formátu a doplnění popisu polohy OpenLR.</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">Úvod</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="introduction.html#obecne-pojmy">Obecné pojmy</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="concepts.html">Koncepty</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="concepts.html#casti-xml-dokumentu">Části XML dokumentu</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="concepts.html#popisovani-poloh">Popisování poloh</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="concepts.html#popis-polohy-pomoci-alert-c">Popis polohy pomocí ALERT-C</a></li>
+<li class="toctree-l2"><a class="reference internal" href="concepts.html#popis-polohy-pomoci-useku-site-global-network">Popis polohy pomocí úseků sítě Global Network</a></li>
+<li class="toctree-l2"><a class="reference internal" href="concepts.html#popis-polohy-pomoci-ciselniku-uir-adr">Popis polohy pomocí číselníku UIR-ADR</a></li>
+<li class="toctree-l2"><a class="reference internal" href="concepts.html#popis-polohy-metodou-openlr">Popis polohy metodou OpenLR</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="examples.html">Příloha A: Příklady zpráv</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="examples.html#obstacle-xml-nehoda">obstacle.xml - nehoda</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="format.html">Příloha B: Reprezentativní XML Schéma RELAX NG</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="format.html#relax-ng-compact-syntax-schema-rnc">RELAX NG Compact Syntax Schema (RNC)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="altschemas.html">Příloha C: Alternativní XML Schéma: W3C XML Schema 1.0 (XSD)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="altschemas.html#schema-cs-koren-schematu"><cite>schema-cs</cite> - kořen schématu</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="CHANGELOG.html">Changelog</a></li>
+</ul>
+</div>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="#">
+              <img class="logo" src="_static/RSD-logo-07.jpg" alt="Logo"/>
+            </a></p>
+  <div>
+    <h4>Další téma</h4>
+    <p class="topless"><a href="introduction.html"
+                          title="další kapitola">Úvod</a></p>
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>Tato stránka</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/index.rst.txt"
+            rel="nofollow">Ukázat zdroj</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Rychlé vyhledávání</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="OK" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigace</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="Obecný rejstřík"
+             >rejstřík</a></li>
+        <li class="right" >
+          <a href="introduction.html" title="Úvod"
+             >další</a> |</li>
+        <li class="nav-item nav-item-0"><a href="#">Dokumentace pro NDIC DDR XML - Běžné dopravní informace 3.4rev0</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">NDIC DDR XML - Běžné dopravní informace</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+    &#169; Veškerá práva vyhrazena 2021, TamTam Research s.r.o..
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.5.
+    </div>
+  </body>
+</html>

@@ -1,0 +1,14 @@
+name:
+    "cs": RDS-TMC vysílání
+    "en": RDS-TMC broadcast
+version_info:
+    version: v98
+    publish_date: 2000-08-04
+interface: "UECP/RSD"
+communication_method: continuos stream
+description:
+    "cs": Dopravní informace jsou převedeny do formy UECP příkazů přijaty a odvysílány vysílačem ve formě RDS proudu dat přidruženého k VKV vysílání. Následně přijaty a dekódovány navigačním přístrojem. Vysílání RDS má řadu limitací, zejména velmi nízkou kapacitu, cca 1 zpráva / s vedoucí k praktickému omezení maximálního počtu aktuálních zpráv ve vysílání na cca 300.
+    "en": Traffic information is converted into the form of UECP commands, received and broadcast by the transmitter in the form of an RDS data stream coupled with VHF broadcasting. Subsequently received and decoded by the navigation device. RDS broadcasting has a number of limitations, especially a very low capacity, approx. 1 message / s, leading to a practical limitation of the maximum number of actual messages in a broadcast to approx. 300.
+additional_description:
+    "cs": Více informací například [pira.cz](https://pira.cz/RDS.pdf),  [wiki](https://cs.wikipedia.org/wiki/Radio_Data_System).
+    "en": For more information see [pira.cz](https://pira.cz/RDS.pdf), [wiki](https://en.wikipedia.org/wiki/Radio_Data_System).

@@ -1,0 +1,557 @@
+
+
+<!doctype html>
+
+<html lang="en" data-content_root="./">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Appendix A: Message examples &#8212; NDIC - DATEX II Situation Publication - Restrictions 1.2rev0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/bizstyle.css?v=532c1bf3" />
+    
+    <script src="_static/documentation_options.js?v=7affd9da"></script>
+    <script src="_static/doctools.js?v=888ff710"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/bizstyle.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Appendix B: W3C XML Schema" href="format.html" />
+    <link rel="prev" title="Concepts" href="concepts.html" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <!--[if lt IE 9]>
+    <script src="_static/css3-mediaqueries.js"></script>
+    <![endif]-->
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="format.html" title="Appendix B: W3C XML Schema"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="concepts.html" title="Concepts"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">NDIC - DATEX II Situation Publication - Restrictions 1.2rev0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Appendix A: Message examples</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="appendix-a-message-examples">
+<span id="examples"></span><h1>Appendix A: Message examples<a class="headerlink" href="#appendix-a-message-examples" title="Link to this heading">¶</a></h1>
+<section id="restriction-xml-road-works-single-lane-alternate-traffic">
+<h2>restriction.xml - road works, single lane alternate traffic<a class="headerlink" href="#restriction-xml-road-works-single-lane-alternate-traffic" title="Link to this heading">¶</a></h2>
+<p>Publication contains exactly one message about road works with single lane alternate traffic.</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span>
+<span class="nt">&lt;d2LogicalModel</span><span class="w"> </span><span class="na">modelBaseVersion=</span><span class="s">&quot;2&quot;</span><span class="w"> </span><span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span><span class="w"> </span><span class="na">xmlns=</span><span class="s">&quot;http://datex2.eu/schema/2/2_0&quot;</span><span class="w"> </span><span class="na">xsi:schemaLocation=</span><span class="s">&quot;http://datex2.eu/schema/2/2_0 ../schema/schema.xsd&quot;</span><span class="nt">&gt;</span>
+<span class="w">  </span><span class="nt">&lt;exchange&gt;</span>
+<span class="w">    </span><span class="nt">&lt;supplierIdentification&gt;</span>
+<span class="w">      </span><span class="nt">&lt;country&gt;</span>cz<span class="nt">&lt;/country&gt;</span>
+<span class="w">      </span><span class="nt">&lt;nationalIdentifier&gt;</span>DIC<span class="nt">&lt;/nationalIdentifier&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/supplierIdentification&gt;</span>
+<span class="w">  </span><span class="nt">&lt;/exchange&gt;</span>
+<span class="w">  </span><span class="nt">&lt;payloadPublication</span><span class="w"> </span><span class="na">xsi:type=</span><span class="s">&quot;SituationPublication&quot;</span><span class="w"> </span><span class="na">lang=</span><span class="s">&quot;cs&quot;</span><span class="nt">&gt;</span>
+<span class="w">      </span><span class="nt">&lt;feedType&gt;</span>x-format:cz-ndic_d2-common-v1.2<span class="nt">&lt;/feedType&gt;</span>
+<span class="w">    </span><span class="nt">&lt;publicationTime&gt;</span>2023-08-30T09:18:24+02:00<span class="nt">&lt;/publicationTime&gt;</span>
+<span class="w">    </span><span class="nt">&lt;publicationCreator&gt;</span>
+<span class="w">      </span><span class="nt">&lt;country&gt;</span>cz<span class="nt">&lt;/country&gt;</span>
+<span class="w">      </span><span class="nt">&lt;nationalIdentifier&gt;</span>NDIC<span class="nt">&lt;/nationalIdentifier&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/publicationCreator&gt;</span>
+<span class="w">    </span><span class="nt">&lt;situation</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;3bdeb91a-d680-47e5-ab5c-c3b9b4a13006&quot;</span><span class="w"> </span><span class="na">version=</span><span class="s">&quot;6&quot;</span><span class="nt">&gt;</span>
+<span class="w">      </span><span class="nt">&lt;situationVersionTime&gt;</span>2023-08-30T07:00:02+02:00<span class="nt">&lt;/situationVersionTime&gt;</span>
+<span class="w">      </span><span class="nt">&lt;headerInformation&gt;</span>
+<span class="w">        </span><span class="nt">&lt;confidentiality&gt;</span>noRestriction<span class="nt">&lt;/confidentiality&gt;</span>
+<span class="w">        </span><span class="nt">&lt;informationStatus&gt;</span>real<span class="nt">&lt;/informationStatus&gt;</span>
+<span class="w">        </span><span class="nt">&lt;urgency&gt;</span>normalUrgency<span class="nt">&lt;/urgency&gt;</span>
+<span class="w">      </span><span class="nt">&lt;/headerInformation&gt;</span>
+<span class="w">    </span><span class="cm">&lt;!-- situation record 1 --&gt;</span>
+<span class="w">      </span><span class="nt">&lt;situationRecord</span><span class="w"> </span><span class="na">version=</span><span class="s">&quot;6&quot;</span><span class="w"> </span><span class="na">xsi:type=</span><span class="s">&quot;ConstructionWorks&quot;</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;3bdeb91a-d680-47e5-ab5c-c3b9b4a13006_ConstructionWorks&quot;</span><span class="nt">&gt;</span>
+<span class="w">        </span><span class="nt">&lt;situationRecordCreationTime&gt;</span>2023-08-30T07:00:04+02:00<span class="nt">&lt;/situationRecordCreationTime&gt;</span>
+<span class="w">        </span><span class="nt">&lt;situationRecordVersionTime&gt;</span>2023-08-30T07:00:02+02:00<span class="nt">&lt;/situationRecordVersionTime&gt;</span>
+<span class="w">        </span><span class="nt">&lt;probabilityOfOccurrence&gt;</span>riskOf<span class="nt">&lt;/probabilityOfOccurrence&gt;</span>
+<span class="w">        </span><span class="nt">&lt;source&gt;</span>
+<span class="w">          </span><span class="nt">&lt;sourceIdentification&gt;</span>RSD<span class="nt">&lt;/sourceIdentification&gt;</span>
+<span class="w">        </span><span class="nt">&lt;/source&gt;</span>
+<span class="w">        </span><span class="nt">&lt;validity&gt;</span>
+<span class="w">          </span><span class="nt">&lt;validityStatus&gt;</span>definedByValidityTimeSpec<span class="nt">&lt;/validityStatus&gt;</span>
+<span class="w">          </span><span class="nt">&lt;validityTimeSpecification&gt;</span>
+<span class="w">            </span><span class="nt">&lt;overallStartTime&gt;</span>2023-08-30T07:00:00+02:00<span class="nt">&lt;/overallStartTime&gt;</span>
+<span class="w">            </span><span class="nt">&lt;overallEndTime&gt;</span>2023-09-01T23:59:00+02:00<span class="nt">&lt;/overallEndTime&gt;</span>
+<span class="w">          </span><span class="nt">&lt;/validityTimeSpecification&gt;</span>
+<span class="w">        </span><span class="nt">&lt;/validity&gt;</span>
+<span class="w">        </span><span class="nt">&lt;generalPublicComment&gt;</span>
+<span class="w">          </span><span class="nt">&lt;comment&gt;</span>
+<span class="w">            </span><span class="nt">&lt;values&gt;</span>
+<span class="w">              </span><span class="nt">&lt;value</span><span class="w"> </span><span class="na">lang=</span><span class="s">&quot;cs&quot;</span><span class="nt">&gt;</span>silnice<span class="w"> </span>I/10<span class="w"> </span>(ulice<span class="w"> </span>Krkonošská),<span class="w"> </span>Desná,<span class="w"> </span>okr.<span class="w"> </span>Jablonec<span class="w"> </span>nad<span class="w"> </span>Nisou,<span class="w"> </span>stavební<span class="w"> </span>práce,<span class="w"> </span>kyvadlový<span class="w"> </span>provoz<span class="w"> </span>jedním<span class="w"> </span>jízdním<span class="w"> </span>pruhem,<span class="w"> </span>Od<span class="w"> </span>30.08.2023<span class="w"> </span>07:00<span class="w"> </span>Do<span class="w"> </span>01.09.2023<span class="w"> </span>23:59,<span class="w"> </span>Z<span class="w"> </span>důvodu<span class="w"> </span>provádění<span class="w"> </span>stavebních<span class="w"> </span>prací<span class="w"> </span>bude<span class="w"> </span>na<span class="w"> </span>dotčeném<span class="w"> </span>úseku<span class="w"> </span>silnice<span class="w"> </span>I/10<span class="w">  </span>provedena<span class="w"> </span>
+částečná<span class="w"> </span>uzavírka<span class="w"> </span>provozu,<span class="w"> </span>která<span class="w"> </span>bude<span class="w"> </span>označena<span class="w"> </span>dle<span class="w"> </span>schváleného<span class="w"> </span>dopravně<span class="w"> </span>
+inženýrského<span class="w"> </span>opatření.<span class="w"> </span>V<span class="w"> </span>průběhu<span class="w"> </span>provádění<span class="w"> </span>stavebních<span class="w"> </span>prací<span class="w"> </span>bude<span class="w"> </span>doprava<span class="w"> </span>řízena<span class="w"> </span>kyvadlově<span class="w"> </span>
+dvoucestným<span class="w"> </span>signalizačním<span class="w"> </span>zařízením.,<span class="w"> </span>Vydal:<span class="w"> </span>Krajský<span class="w"> </span>úřad<span class="w"> </span>Libereckého<span class="w"> </span>kraje<span class="nt">&lt;/value&gt;</span>
+<span class="w">            </span><span class="nt">&lt;/values&gt;</span>
+<span class="w">          </span><span class="nt">&lt;/comment&gt;</span>
+<span class="w">        </span><span class="nt">&lt;/generalPublicComment&gt;</span>
+<span class="w">        </span><span class="nt">&lt;urlLink&gt;</span>
+<span class="w">          </span><span class="nt">&lt;urlLinkAddress&gt;</span>https://dopravniinfo.cz/te/3bdeb91a-d680-47e5-ab5c-c3b9b4a13006<span class="nt">&lt;/urlLinkAddress&gt;</span>
+<span class="w">          </span><span class="nt">&lt;urlLinkType&gt;</span>html<span class="nt">&lt;/urlLinkType&gt;</span>
+<span class="w">        </span><span class="nt">&lt;/urlLink&gt;</span>
+<span class="w">        </span><span class="nt">&lt;groupOfLocations</span><span class="w"> </span><span class="na">xsi:type=</span><span class="s">&quot;Linear&quot;</span><span class="nt">&gt;</span>
+<span class="w">          </span><span class="nt">&lt;alertCLinear</span><span class="w"> </span><span class="na">xsi:type=</span><span class="s">&quot;AlertCMethod2Linear&quot;</span><span class="nt">&gt;</span>
+<span class="w">            </span><span class="nt">&lt;alertCLocationCountryCode&gt;</span>CZ<span class="nt">&lt;/alertCLocationCountryCode&gt;</span>
+<span class="w">            </span><span class="nt">&lt;alertCLocationTableNumber&gt;</span>25<span class="nt">&lt;/alertCLocationTableNumber&gt;</span>
+<span class="w">            </span><span class="nt">&lt;alertCLocationTableVersion&gt;</span>9.0<span class="nt">&lt;/alertCLocationTableVersion&gt;</span>
+<span class="w">            </span><span class="nt">&lt;alertCDirection&gt;</span>
+<span class="w">              </span><span class="nt">&lt;alertCDirectionCoded&gt;</span>negative<span class="nt">&lt;/alertCDirectionCoded&gt;</span>
+<span class="w">            </span><span class="nt">&lt;/alertCDirection&gt;</span>
+<span class="w">            </span><span class="nt">&lt;alertCMethod2PrimaryPointLocation&gt;</span>
+<span class="w">              </span><span class="nt">&lt;alertCLocation&gt;</span>
+<span class="w">                </span><span class="nt">&lt;specificLocation&gt;</span>8973<span class="nt">&lt;/specificLocation&gt;</span>
+<span class="w">              </span><span class="nt">&lt;/alertCLocation&gt;</span>
+<span class="w">            </span><span class="nt">&lt;/alertCMethod2PrimaryPointLocation&gt;</span>
+<span class="w">            </span><span class="nt">&lt;alertCMethod2SecondaryPointLocation&gt;</span>
+<span class="w">              </span><span class="nt">&lt;alertCLocation&gt;</span>
+<span class="w">                </span><span class="nt">&lt;specificLocation&gt;</span>8974<span class="nt">&lt;/specificLocation&gt;</span>
+<span class="w">              </span><span class="nt">&lt;/alertCLocation&gt;</span>
+<span class="w">            </span><span class="nt">&lt;/alertCMethod2SecondaryPointLocation&gt;</span>
+<span class="w">          </span><span class="nt">&lt;/alertCLinear&gt;</span>
+<span class="w">          </span><span class="nt">&lt;linearWithinLinearElement&gt;</span>
+<span class="w">            </span><span class="nt">&lt;directionRelativeOnLinearSection&gt;</span>aligned<span class="nt">&lt;/directionRelativeOnLinearSection&gt;</span>
+<span class="w">            </span><span class="nt">&lt;linearElement&gt;</span>
+<span class="w">              </span><span class="nt">&lt;roadNumber&gt;</span>10<span class="nt">&lt;/roadNumber&gt;</span>
+<span class="w">            </span><span class="nt">&lt;/linearElement&gt;</span>
+<span class="w">            </span><span class="nt">&lt;fromPoint</span><span class="w"> </span><span class="na">xsi:type=</span><span class="s">&quot;DistanceFromLinearElementStart&quot;</span><span class="nt">&gt;</span>
+<span class="w">              </span><span class="nt">&lt;distanceAlong&gt;</span>106797<span class="nt">&lt;/distanceAlong&gt;</span>
+<span class="w">            </span><span class="nt">&lt;/fromPoint&gt;</span>
+<span class="w">            </span><span class="nt">&lt;toPoint</span><span class="w"> </span><span class="na">xsi:type=</span><span class="s">&quot;DistanceFromLinearElementStart&quot;</span><span class="nt">&gt;</span>
+<span class="w">              </span><span class="nt">&lt;distanceAlong&gt;</span>107507<span class="nt">&lt;/distanceAlong&gt;</span>
+<span class="w">            </span><span class="nt">&lt;/toPoint&gt;</span>
+<span class="w">          </span><span class="nt">&lt;/linearWithinLinearElement&gt;</span>
+<span class="w">          </span><span class="nt">&lt;linearExtension&gt;</span>
+<span class="w">            </span><span class="nt">&lt;openlrExtendedLinear&gt;</span>
+<span class="w">              </span><span class="nt">&lt;firstDirection&gt;</span>
+<span class="w">                </span><span class="nt">&lt;openlrLocationReferencePoint&gt;</span>
+<span class="w">                  </span><span class="nt">&lt;openlrCoordinate&gt;</span>
+<span class="w">                    </span><span class="nt">&lt;latitude&gt;</span>50.765282088427412<span class="nt">&lt;/latitude&gt;</span>
+<span class="w">                    </span><span class="nt">&lt;longitude&gt;</span>15.337521544012871<span class="nt">&lt;/longitude&gt;</span>
+<span class="w">                  </span><span class="nt">&lt;/openlrCoordinate&gt;</span>
+<span class="w">                  </span><span class="nt">&lt;openlrLineAttributes&gt;</span>
+<span class="w">                    </span><span class="nt">&lt;openlrFunctionalRoadClass&gt;</span>FRC1<span class="nt">&lt;/openlrFunctionalRoadClass&gt;</span>
+<span class="w">                    </span><span class="nt">&lt;openlrFormOfWay&gt;</span>singleCarriageway<span class="nt">&lt;/openlrFormOfWay&gt;</span>
+<span class="w">                    </span><span class="nt">&lt;openlrBearing&gt;</span>112<span class="nt">&lt;/openlrBearing&gt;</span>
+<span class="w">                  </span><span class="nt">&lt;/openlrLineAttributes&gt;</span>
+<span class="w">                  </span><span class="nt">&lt;openlrPathAttributes&gt;</span>
+<span class="w">                    </span><span class="nt">&lt;openlrLowestFRCToNextLRPoint&gt;</span>FRC1<span class="nt">&lt;/openlrLowestFRCToNextLRPoint&gt;</span>
+<span class="w">                    </span><span class="nt">&lt;openlrDistanceToNextLRPoint&gt;</span>1240<span class="nt">&lt;/openlrDistanceToNextLRPoint&gt;</span>
+<span class="w">                  </span><span class="nt">&lt;/openlrPathAttributes&gt;</span>
+<span class="w">                </span><span class="nt">&lt;/openlrLocationReferencePoint&gt;</span>
+<span class="w">                </span><span class="nt">&lt;openlrLastLocationReferencePoint&gt;</span>
+<span class="w">                  </span><span class="nt">&lt;openlrCoordinate&gt;</span>
+<span class="w">                    </span><span class="nt">&lt;latitude&gt;</span>50.763208691718496<span class="nt">&lt;/latitude&gt;</span>
+<span class="w">                    </span><span class="nt">&lt;longitude&gt;</span>15.347566415800618<span class="nt">&lt;/longitude&gt;</span>
+<span class="w">                  </span><span class="nt">&lt;/openlrCoordinate&gt;</span>
+<span class="w">                  </span><span class="nt">&lt;openlrLineAttributes&gt;</span>
+<span class="w">                    </span><span class="nt">&lt;openlrFunctionalRoadClass&gt;</span>FRC1<span class="nt">&lt;/openlrFunctionalRoadClass&gt;</span>
+<span class="w">                    </span><span class="nt">&lt;openlrFormOfWay&gt;</span>singleCarriageway<span class="nt">&lt;/openlrFormOfWay&gt;</span>
+<span class="w">                    </span><span class="nt">&lt;openlrBearing&gt;</span>283<span class="nt">&lt;/openlrBearing&gt;</span>
+<span class="w">                  </span><span class="nt">&lt;/openlrLineAttributes&gt;</span>
+<span class="w">                </span><span class="nt">&lt;/openlrLastLocationReferencePoint&gt;</span>
+<span class="w">                </span><span class="nt">&lt;openlrOffsets&gt;</span>
+<span class="w">                  </span><span class="nt">&lt;openlrPositiveOffset&gt;</span>120<span class="nt">&lt;/openlrPositiveOffset&gt;</span>
+<span class="w">                  </span><span class="nt">&lt;openlrNegativeOffset&gt;</span>418<span class="nt">&lt;/openlrNegativeOffset&gt;</span>
+<span class="w">                </span><span class="nt">&lt;/openlrOffsets&gt;</span>
+<span class="w">              </span><span class="nt">&lt;/firstDirection&gt;</span>
+<span class="w">            </span><span class="nt">&lt;/openlrExtendedLinear&gt;</span>
+<span class="w">            </span><span class="nt">&lt;globalNetworkLinear&gt;</span>
+<span class="w">              </span><span class="nt">&lt;networkVersion&gt;</span>22.12<span class="nt">&lt;/networkVersion&gt;</span>
+<span class="w">              </span><span class="nt">&lt;linearGeometryType&gt;</span>continuous<span class="nt">&lt;/linearGeometryType&gt;</span>
+<span class="w">              </span><span class="nt">&lt;startPoint&gt;</span>
+<span class="w">                </span><span class="nt">&lt;sjtskPointCoordinates&gt;</span>
+<span class="w">                  </span><span class="nt">&lt;sjtskX&gt;</span>-668325.9586937<span class="nt">&lt;/sjtskX&gt;</span>
+<span class="w">                  </span><span class="nt">&lt;sjtskY&gt;</span>-976774.250129909<span class="nt">&lt;/sjtskY&gt;</span>
+<span class="w">                </span><span class="nt">&lt;/sjtskPointCoordinates&gt;</span>
+<span class="w">              </span><span class="nt">&lt;/startPoint&gt;</span>
+<span class="w">              </span><span class="nt">&lt;endPoint&gt;</span>
+<span class="w">                </span><span class="nt">&lt;sjtskPointCoordinates&gt;</span>
+<span class="w">                  </span><span class="nt">&lt;sjtskX&gt;</span>-668050.419197776<span class="nt">&lt;/sjtskX&gt;</span>
+<span class="w">                  </span><span class="nt">&lt;sjtskY&gt;</span>-976823.636025029<span class="nt">&lt;/sjtskY&gt;</span>
+<span class="w">                </span><span class="nt">&lt;/sjtskPointCoordinates&gt;</span>
+<span class="w">              </span><span class="nt">&lt;/endPoint&gt;</span>
+<span class="w">              </span><span class="nt">&lt;linearWithinLinearGNElement&gt;</span>
+<span class="w">                </span><span class="nt">&lt;sectionId&gt;</span>126853<span class="nt">&lt;/sectionId&gt;</span>
+<span class="w">                </span><span class="nt">&lt;directionRelativeOnLinearSection&gt;</span>opposite<span class="nt">&lt;/directionRelativeOnLinearSection&gt;</span>
+<span class="w">                </span><span class="nt">&lt;orderOfSection&gt;</span>0<span class="nt">&lt;/orderOfSection&gt;</span>
+<span class="w">                </span><span class="nt">&lt;fromPoint</span><span class="w"> </span><span class="na">xsi:type=</span><span class="s">&quot;PercentageDistanceAlongLinearElement&quot;</span><span class="nt">&gt;</span>
+<span class="w">                  </span><span class="nt">&lt;percentageDistanceAlong&gt;</span>0.0922403254250082<span class="nt">&lt;/percentageDistanceAlong&gt;</span>
+<span class="w">                </span><span class="nt">&lt;/fromPoint&gt;</span>
+<span class="w">                </span><span class="nt">&lt;toPoint</span><span class="w"> </span><span class="na">xsi:type=</span><span class="s">&quot;PercentageDistanceAlongLinearElement&quot;</span><span class="nt">&gt;</span>
+<span class="w">                  </span><span class="nt">&lt;percentageDistanceAlong&gt;</span>0<span class="nt">&lt;/percentageDistanceAlong&gt;</span>
+<span class="w">                </span><span class="nt">&lt;/toPoint&gt;</span>
+<span class="w">              </span><span class="nt">&lt;/linearWithinLinearGNElement&gt;</span>
+<span class="w">              </span><span class="nt">&lt;linearWithinLinearGNElement&gt;</span>
+<span class="w">                </span><span class="nt">&lt;sectionId&gt;</span>126599<span class="nt">&lt;/sectionId&gt;</span>
+<span class="w">                </span><span class="nt">&lt;directionRelativeOnLinearSection&gt;</span>opposite<span class="nt">&lt;/directionRelativeOnLinearSection&gt;</span>
+<span class="w">                </span><span class="nt">&lt;orderOfSection&gt;</span>1<span class="nt">&lt;/orderOfSection&gt;</span>
+<span class="w">                </span><span class="nt">&lt;fromPoint</span><span class="w"> </span><span class="na">xsi:type=</span><span class="s">&quot;PercentageDistanceAlongLinearElement&quot;</span><span class="nt">&gt;</span>
+<span class="w">                  </span><span class="nt">&lt;percentageDistanceAlong&gt;</span>1<span class="nt">&lt;/percentageDistanceAlong&gt;</span>
+<span class="w">                </span><span class="nt">&lt;/fromPoint&gt;</span>
+<span class="w">                </span><span class="nt">&lt;toPoint</span><span class="w"> </span><span class="na">xsi:type=</span><span class="s">&quot;PercentageDistanceAlongLinearElement&quot;</span><span class="nt">&gt;</span>
+<span class="w">                  </span><span class="nt">&lt;percentageDistanceAlong&gt;</span>0<span class="nt">&lt;/percentageDistanceAlong&gt;</span>
+<span class="w">                </span><span class="nt">&lt;/toPoint&gt;</span>
+<span class="w">              </span><span class="nt">&lt;/linearWithinLinearGNElement&gt;</span>
+<span class="w">              </span><span class="nt">&lt;linearWithinLinearGNElement&gt;</span>
+<span class="w">                </span><span class="nt">&lt;sectionId&gt;</span>1461717<span class="nt">&lt;/sectionId&gt;</span>
+<span class="w">                </span><span class="nt">&lt;directionRelativeOnLinearSection&gt;</span>opposite<span class="nt">&lt;/directionRelativeOnLinearSection&gt;</span>
+<span class="w">                </span><span class="nt">&lt;orderOfSection&gt;</span>2<span class="nt">&lt;/orderOfSection&gt;</span>
+<span class="w">                </span><span class="nt">&lt;fromPoint</span><span class="w"> </span><span class="na">xsi:type=</span><span class="s">&quot;PercentageDistanceAlongLinearElement&quot;</span><span class="nt">&gt;</span>
+<span class="w">                  </span><span class="nt">&lt;percentageDistanceAlong&gt;</span>1<span class="nt">&lt;/percentageDistanceAlong&gt;</span>
+<span class="w">                </span><span class="nt">&lt;/fromPoint&gt;</span>
+<span class="w">                </span><span class="nt">&lt;toPoint</span><span class="w"> </span><span class="na">xsi:type=</span><span class="s">&quot;PercentageDistanceAlongLinearElement&quot;</span><span class="nt">&gt;</span>
+<span class="w">                  </span><span class="nt">&lt;percentageDistanceAlong&gt;</span>0<span class="nt">&lt;/percentageDistanceAlong&gt;</span>
+<span class="w">                </span><span class="nt">&lt;/toPoint&gt;</span>
+<span class="w">              </span><span class="nt">&lt;/linearWithinLinearGNElement&gt;</span>
+<span class="w">              </span><span class="nt">&lt;linearWithinLinearGNElement&gt;</span>
+<span class="w">                </span><span class="nt">&lt;sectionId&gt;</span>1461719<span class="nt">&lt;/sectionId&gt;</span>
+<span class="w">                </span><span class="nt">&lt;directionRelativeOnLinearSection&gt;</span>opposite<span class="nt">&lt;/directionRelativeOnLinearSection&gt;</span>
+<span class="w">                </span><span class="nt">&lt;orderOfSection&gt;</span>3<span class="nt">&lt;/orderOfSection&gt;</span>
+<span class="w">                </span><span class="nt">&lt;fromPoint</span><span class="w"> </span><span class="na">xsi:type=</span><span class="s">&quot;PercentageDistanceAlongLinearElement&quot;</span><span class="nt">&gt;</span>
+<span class="w">                  </span><span class="nt">&lt;percentageDistanceAlong&gt;</span>1<span class="nt">&lt;/percentageDistanceAlong&gt;</span>
+<span class="w">                </span><span class="nt">&lt;/fromPoint&gt;</span>
+<span class="w">                </span><span class="nt">&lt;toPoint</span><span class="w"> </span><span class="na">xsi:type=</span><span class="s">&quot;PercentageDistanceAlongLinearElement&quot;</span><span class="nt">&gt;</span>
+<span class="w">                  </span><span class="nt">&lt;percentageDistanceAlong&gt;</span>0<span class="nt">&lt;/percentageDistanceAlong&gt;</span>
+<span class="w">                </span><span class="nt">&lt;/toPoint&gt;</span>
+<span class="w">              </span><span class="nt">&lt;/linearWithinLinearGNElement&gt;</span>
+<span class="w">              </span><span class="nt">&lt;linearWithinLinearGNElement&gt;</span>
+<span class="w">                </span><span class="nt">&lt;sectionId&gt;</span>2901326<span class="nt">&lt;/sectionId&gt;</span>
+<span class="w">                </span><span class="nt">&lt;directionRelativeOnLinearSection&gt;</span>opposite<span class="nt">&lt;/directionRelativeOnLinearSection&gt;</span>
+<span class="w">                </span><span class="nt">&lt;orderOfSection&gt;</span>4<span class="nt">&lt;/orderOfSection&gt;</span>
+<span class="w">                </span><span class="nt">&lt;fromPoint</span><span class="w"> </span><span class="na">xsi:type=</span><span class="s">&quot;PercentageDistanceAlongLinearElement&quot;</span><span class="nt">&gt;</span>
+<span class="w">                  </span><span class="nt">&lt;percentageDistanceAlong&gt;</span>1<span class="nt">&lt;/percentageDistanceAlong&gt;</span>
+<span class="w">                </span><span class="nt">&lt;/fromPoint&gt;</span>
+<span class="w">                </span><span class="nt">&lt;toPoint</span><span class="w"> </span><span class="na">xsi:type=</span><span class="s">&quot;PercentageDistanceAlongLinearElement&quot;</span><span class="nt">&gt;</span>
+<span class="w">                  </span><span class="nt">&lt;percentageDistanceAlong&gt;</span>0.147949455079654<span class="nt">&lt;/percentageDistanceAlong&gt;</span>
+<span class="w">                </span><span class="nt">&lt;/toPoint&gt;</span>
+<span class="w">              </span><span class="nt">&lt;/linearWithinLinearGNElement&gt;</span>
+<span class="w">            </span><span class="nt">&lt;/globalNetworkLinear&gt;</span>
+<span class="w">          </span><span class="nt">&lt;/linearExtension&gt;</span>
+<span class="w">        </span><span class="nt">&lt;/groupOfLocations&gt;</span>
+<span class="w">        </span><span class="nt">&lt;subjects&gt;</span>
+<span class="w">          </span><span class="nt">&lt;subjectTypeOfWorks&gt;</span>other<span class="nt">&lt;/subjectTypeOfWorks&gt;</span>
+<span class="w">        </span><span class="nt">&lt;/subjects&gt;</span>
+<span class="w">        </span><span class="nt">&lt;constructionWorkType&gt;</span>constructionWork<span class="nt">&lt;/constructionWorkType&gt;</span>
+<span class="w">      </span><span class="nt">&lt;/situationRecord&gt;</span>
+<span class="w">    </span><span class="cm">&lt;!-- situation record 2 --&gt;</span>
+<span class="w">      </span><span class="nt">&lt;situationRecord</span><span class="w"> </span><span class="na">version=</span><span class="s">&quot;6&quot;</span><span class="w"> </span><span class="na">xsi:type=</span><span class="s">&quot;RoadOrCarriagewayOrLaneManagement&quot;</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;3bdeb91a-d680-47e5-ab5c-c3b9b4a13006_RoadOrCarriagewayOrLaneManagement&quot;</span><span class="nt">&gt;</span>
+<span class="w">        </span><span class="nt">&lt;situationRecordCreationTime&gt;</span>2023-08-30T07:00:04+02:00<span class="nt">&lt;/situationRecordCreationTime&gt;</span>
+<span class="w">        </span><span class="nt">&lt;situationRecordVersionTime&gt;</span>2023-08-30T07:00:02+02:00<span class="nt">&lt;/situationRecordVersionTime&gt;</span>
+<span class="w">        </span><span class="nt">&lt;probabilityOfOccurrence&gt;</span>riskOf<span class="nt">&lt;/probabilityOfOccurrence&gt;</span>
+<span class="w">        </span><span class="nt">&lt;source&gt;</span>
+<span class="w">          </span><span class="nt">&lt;sourceIdentification&gt;</span>RSD<span class="nt">&lt;/sourceIdentification&gt;</span>
+<span class="w">        </span><span class="nt">&lt;/source&gt;</span>
+<span class="w">        </span><span class="nt">&lt;validity&gt;</span>
+<span class="w">          </span><span class="nt">&lt;validityStatus&gt;</span>definedByValidityTimeSpec<span class="nt">&lt;/validityStatus&gt;</span>
+<span class="w">          </span><span class="nt">&lt;validityTimeSpecification&gt;</span>
+<span class="w">            </span><span class="nt">&lt;overallStartTime&gt;</span>2023-08-30T07:00:00+02:00<span class="nt">&lt;/overallStartTime&gt;</span>
+<span class="w">            </span><span class="nt">&lt;overallEndTime&gt;</span>2023-09-01T23:59:00+02:00<span class="nt">&lt;/overallEndTime&gt;</span>
+<span class="w">          </span><span class="nt">&lt;/validityTimeSpecification&gt;</span>
+<span class="w">        </span><span class="nt">&lt;/validity&gt;</span>
+<span class="w">        </span><span class="nt">&lt;generalPublicComment&gt;</span>
+<span class="w">          </span><span class="nt">&lt;comment&gt;</span>
+<span class="w">            </span><span class="nt">&lt;values&gt;</span>
+<span class="w">              </span><span class="nt">&lt;value</span><span class="w"> </span><span class="na">lang=</span><span class="s">&quot;cs&quot;</span><span class="nt">&gt;</span>silnice<span class="w"> </span>I/10<span class="w"> </span>(ulice<span class="w"> </span>Krkonošská),<span class="w"> </span>Desná,<span class="w"> </span>okr.<span class="w"> </span>Jablonec<span class="w"> </span>nad<span class="w"> </span>Nisou,<span class="w"> </span>stavební<span class="w"> </span>práce,<span class="w"> </span>kyvadlový<span class="w"> </span>provoz<span class="w"> </span>jedním<span class="w"> </span>jízdním<span class="w"> </span>pruhem,<span class="w"> </span>Od<span class="w"> </span>30.08.2023<span class="w"> </span>07:00<span class="w"> </span>Do<span class="w"> </span>01.09.2023<span class="w"> </span>23:59,<span class="w"> </span>Z<span class="w"> </span>důvodu<span class="w"> </span>provádění<span class="w"> </span>stavebních<span class="w"> </span>prací<span class="w"> </span>bude<span class="w"> </span>na<span class="w"> </span>dotčeném<span class="w"> </span>úseku<span class="w"> </span>silnice<span class="w"> </span>I/10<span class="w">  </span>provedena<span class="w"> </span>
+částečná<span class="w"> </span>uzavírka<span class="w"> </span>provozu,<span class="w"> </span>která<span class="w"> </span>bude<span class="w"> </span>označena<span class="w"> </span>dle<span class="w"> </span>schváleného<span class="w"> </span>dopravně<span class="w"> </span>
+inženýrského<span class="w"> </span>opatření.<span class="w"> </span>V<span class="w"> </span>průběhu<span class="w"> </span>provádění<span class="w"> </span>stavebních<span class="w"> </span>prací<span class="w"> </span>bude<span class="w"> </span>doprava<span class="w"> </span>řízena<span class="w"> </span>kyvadlově<span class="w"> </span>
+dvoucestným<span class="w"> </span>signalizačním<span class="w"> </span>zařízením.,<span class="w"> </span>Vydal:<span class="w"> </span>Krajský<span class="w"> </span>úřad<span class="w"> </span>Libereckého<span class="w"> </span>kraje<span class="nt">&lt;/value&gt;</span>
+<span class="w">            </span><span class="nt">&lt;/values&gt;</span>
+<span class="w">          </span><span class="nt">&lt;/comment&gt;</span>
+<span class="w">        </span><span class="nt">&lt;/generalPublicComment&gt;</span>
+<span class="w">        </span><span class="nt">&lt;urlLink&gt;</span>
+<span class="w">          </span><span class="nt">&lt;urlLinkAddress&gt;</span>https://dopravniinfo.cz/te/3bdeb91a-d680-47e5-ab5c-c3b9b4a13006<span class="nt">&lt;/urlLinkAddress&gt;</span>
+<span class="w">          </span><span class="nt">&lt;urlLinkType&gt;</span>html<span class="nt">&lt;/urlLinkType&gt;</span>
+<span class="w">        </span><span class="nt">&lt;/urlLink&gt;</span>
+<span class="w">        </span><span class="nt">&lt;groupOfLocations</span><span class="w"> </span><span class="na">xsi:type=</span><span class="s">&quot;Linear&quot;</span><span class="nt">&gt;</span>
+<span class="w">          </span><span class="nt">&lt;alertCLinear</span><span class="w"> </span><span class="na">xsi:type=</span><span class="s">&quot;AlertCMethod2Linear&quot;</span><span class="nt">&gt;</span>
+<span class="w">            </span><span class="nt">&lt;alertCLocationCountryCode&gt;</span>CZ<span class="nt">&lt;/alertCLocationCountryCode&gt;</span>
+<span class="w">            </span><span class="nt">&lt;alertCLocationTableNumber&gt;</span>25<span class="nt">&lt;/alertCLocationTableNumber&gt;</span>
+<span class="w">            </span><span class="nt">&lt;alertCLocationTableVersion&gt;</span>9.0<span class="nt">&lt;/alertCLocationTableVersion&gt;</span>
+<span class="w">            </span><span class="nt">&lt;alertCDirection&gt;</span>
+<span class="w">              </span><span class="nt">&lt;alertCDirectionCoded&gt;</span>negative<span class="nt">&lt;/alertCDirectionCoded&gt;</span>
+<span class="w">            </span><span class="nt">&lt;/alertCDirection&gt;</span>
+<span class="w">            </span><span class="nt">&lt;alertCMethod2PrimaryPointLocation&gt;</span>
+<span class="w">              </span><span class="nt">&lt;alertCLocation&gt;</span>
+<span class="w">                </span><span class="nt">&lt;specificLocation&gt;</span>8973<span class="nt">&lt;/specificLocation&gt;</span>
+<span class="w">              </span><span class="nt">&lt;/alertCLocation&gt;</span>
+<span class="w">            </span><span class="nt">&lt;/alertCMethod2PrimaryPointLocation&gt;</span>
+<span class="w">            </span><span class="nt">&lt;alertCMethod2SecondaryPointLocation&gt;</span>
+<span class="w">              </span><span class="nt">&lt;alertCLocation&gt;</span>
+<span class="w">                </span><span class="nt">&lt;specificLocation&gt;</span>8974<span class="nt">&lt;/specificLocation&gt;</span>
+<span class="w">              </span><span class="nt">&lt;/alertCLocation&gt;</span>
+<span class="w">            </span><span class="nt">&lt;/alertCMethod2SecondaryPointLocation&gt;</span>
+<span class="w">          </span><span class="nt">&lt;/alertCLinear&gt;</span>
+<span class="w">          </span><span class="nt">&lt;linearWithinLinearElement&gt;</span>
+<span class="w">            </span><span class="nt">&lt;directionRelativeOnLinearSection&gt;</span>aligned<span class="nt">&lt;/directionRelativeOnLinearSection&gt;</span>
+<span class="w">            </span><span class="nt">&lt;linearElement&gt;</span>
+<span class="w">              </span><span class="nt">&lt;roadNumber&gt;</span>10<span class="nt">&lt;/roadNumber&gt;</span>
+<span class="w">            </span><span class="nt">&lt;/linearElement&gt;</span>
+<span class="w">            </span><span class="nt">&lt;fromPoint</span><span class="w"> </span><span class="na">xsi:type=</span><span class="s">&quot;DistanceFromLinearElementStart&quot;</span><span class="nt">&gt;</span>
+<span class="w">              </span><span class="nt">&lt;distanceAlong&gt;</span>106797<span class="nt">&lt;/distanceAlong&gt;</span>
+<span class="w">            </span><span class="nt">&lt;/fromPoint&gt;</span>
+<span class="w">            </span><span class="nt">&lt;toPoint</span><span class="w"> </span><span class="na">xsi:type=</span><span class="s">&quot;DistanceFromLinearElementStart&quot;</span><span class="nt">&gt;</span>
+<span class="w">              </span><span class="nt">&lt;distanceAlong&gt;</span>107507<span class="nt">&lt;/distanceAlong&gt;</span>
+<span class="w">            </span><span class="nt">&lt;/toPoint&gt;</span>
+<span class="w">          </span><span class="nt">&lt;/linearWithinLinearElement&gt;</span>
+<span class="w">          </span><span class="nt">&lt;linearExtension&gt;</span>
+<span class="w">            </span><span class="nt">&lt;openlrExtendedLinear&gt;</span>
+<span class="w">              </span><span class="nt">&lt;firstDirection&gt;</span>
+<span class="w">                </span><span class="nt">&lt;openlrLocationReferencePoint&gt;</span>
+<span class="w">                  </span><span class="nt">&lt;openlrCoordinate&gt;</span>
+<span class="w">                    </span><span class="nt">&lt;latitude&gt;</span>50.765282088427412<span class="nt">&lt;/latitude&gt;</span>
+<span class="w">                    </span><span class="nt">&lt;longitude&gt;</span>15.337521544012871<span class="nt">&lt;/longitude&gt;</span>
+<span class="w">                  </span><span class="nt">&lt;/openlrCoordinate&gt;</span>
+<span class="w">                  </span><span class="nt">&lt;openlrLineAttributes&gt;</span>
+<span class="w">                    </span><span class="nt">&lt;openlrFunctionalRoadClass&gt;</span>FRC1<span class="nt">&lt;/openlrFunctionalRoadClass&gt;</span>
+<span class="w">                    </span><span class="nt">&lt;openlrFormOfWay&gt;</span>singleCarriageway<span class="nt">&lt;/openlrFormOfWay&gt;</span>
+<span class="w">                    </span><span class="nt">&lt;openlrBearing&gt;</span>112<span class="nt">&lt;/openlrBearing&gt;</span>
+<span class="w">                  </span><span class="nt">&lt;/openlrLineAttributes&gt;</span>
+<span class="w">                  </span><span class="nt">&lt;openlrPathAttributes&gt;</span>
+<span class="w">                    </span><span class="nt">&lt;openlrLowestFRCToNextLRPoint&gt;</span>FRC1<span class="nt">&lt;/openlrLowestFRCToNextLRPoint&gt;</span>
+<span class="w">                    </span><span class="nt">&lt;openlrDistanceToNextLRPoint&gt;</span>1240<span class="nt">&lt;/openlrDistanceToNextLRPoint&gt;</span>
+<span class="w">                  </span><span class="nt">&lt;/openlrPathAttributes&gt;</span>
+<span class="w">                </span><span class="nt">&lt;/openlrLocationReferencePoint&gt;</span>
+<span class="w">                </span><span class="nt">&lt;openlrLastLocationReferencePoint&gt;</span>
+<span class="w">                  </span><span class="nt">&lt;openlrCoordinate&gt;</span>
+<span class="w">                    </span><span class="nt">&lt;latitude&gt;</span>50.763208691718496<span class="nt">&lt;/latitude&gt;</span>
+<span class="w">                    </span><span class="nt">&lt;longitude&gt;</span>15.347566415800618<span class="nt">&lt;/longitude&gt;</span>
+<span class="w">                  </span><span class="nt">&lt;/openlrCoordinate&gt;</span>
+<span class="w">                  </span><span class="nt">&lt;openlrLineAttributes&gt;</span>
+<span class="w">                    </span><span class="nt">&lt;openlrFunctionalRoadClass&gt;</span>FRC1<span class="nt">&lt;/openlrFunctionalRoadClass&gt;</span>
+<span class="w">                    </span><span class="nt">&lt;openlrFormOfWay&gt;</span>singleCarriageway<span class="nt">&lt;/openlrFormOfWay&gt;</span>
+<span class="w">                    </span><span class="nt">&lt;openlrBearing&gt;</span>283<span class="nt">&lt;/openlrBearing&gt;</span>
+<span class="w">                  </span><span class="nt">&lt;/openlrLineAttributes&gt;</span>
+<span class="w">                </span><span class="nt">&lt;/openlrLastLocationReferencePoint&gt;</span>
+<span class="w">                </span><span class="nt">&lt;openlrOffsets&gt;</span>
+<span class="w">                  </span><span class="nt">&lt;openlrPositiveOffset&gt;</span>120<span class="nt">&lt;/openlrPositiveOffset&gt;</span>
+<span class="w">                  </span><span class="nt">&lt;openlrNegativeOffset&gt;</span>418<span class="nt">&lt;/openlrNegativeOffset&gt;</span>
+<span class="w">                </span><span class="nt">&lt;/openlrOffsets&gt;</span>
+<span class="w">              </span><span class="nt">&lt;/firstDirection&gt;</span>
+<span class="w">            </span><span class="nt">&lt;/openlrExtendedLinear&gt;</span>
+<span class="w">            </span><span class="nt">&lt;globalNetworkLinear&gt;</span>
+<span class="w">              </span><span class="nt">&lt;networkVersion&gt;</span>22.12<span class="nt">&lt;/networkVersion&gt;</span>
+<span class="w">              </span><span class="nt">&lt;linearGeometryType&gt;</span>continuous<span class="nt">&lt;/linearGeometryType&gt;</span>
+<span class="w">              </span><span class="nt">&lt;startPoint&gt;</span>
+<span class="w">                </span><span class="nt">&lt;sjtskPointCoordinates&gt;</span>
+<span class="w">                  </span><span class="nt">&lt;sjtskX&gt;</span>-668325.9586937<span class="nt">&lt;/sjtskX&gt;</span>
+<span class="w">                  </span><span class="nt">&lt;sjtskY&gt;</span>-976774.250129909<span class="nt">&lt;/sjtskY&gt;</span>
+<span class="w">                </span><span class="nt">&lt;/sjtskPointCoordinates&gt;</span>
+<span class="w">              </span><span class="nt">&lt;/startPoint&gt;</span>
+<span class="w">              </span><span class="nt">&lt;endPoint&gt;</span>
+<span class="w">                </span><span class="nt">&lt;sjtskPointCoordinates&gt;</span>
+<span class="w">                  </span><span class="nt">&lt;sjtskX&gt;</span>-668050.419197776<span class="nt">&lt;/sjtskX&gt;</span>
+<span class="w">                  </span><span class="nt">&lt;sjtskY&gt;</span>-976823.636025029<span class="nt">&lt;/sjtskY&gt;</span>
+<span class="w">                </span><span class="nt">&lt;/sjtskPointCoordinates&gt;</span>
+<span class="w">              </span><span class="nt">&lt;/endPoint&gt;</span>
+<span class="w">              </span><span class="nt">&lt;linearWithinLinearGNElement&gt;</span>
+<span class="w">                </span><span class="nt">&lt;sectionId&gt;</span>126853<span class="nt">&lt;/sectionId&gt;</span>
+<span class="w">                </span><span class="nt">&lt;directionRelativeOnLinearSection&gt;</span>opposite<span class="nt">&lt;/directionRelativeOnLinearSection&gt;</span>
+<span class="w">                </span><span class="nt">&lt;orderOfSection&gt;</span>0<span class="nt">&lt;/orderOfSection&gt;</span>
+<span class="w">                </span><span class="nt">&lt;fromPoint</span><span class="w"> </span><span class="na">xsi:type=</span><span class="s">&quot;PercentageDistanceAlongLinearElement&quot;</span><span class="nt">&gt;</span>
+<span class="w">                  </span><span class="nt">&lt;percentageDistanceAlong&gt;</span>0.0922403254250082<span class="nt">&lt;/percentageDistanceAlong&gt;</span>
+<span class="w">                </span><span class="nt">&lt;/fromPoint&gt;</span>
+<span class="w">                </span><span class="nt">&lt;toPoint</span><span class="w"> </span><span class="na">xsi:type=</span><span class="s">&quot;PercentageDistanceAlongLinearElement&quot;</span><span class="nt">&gt;</span>
+<span class="w">                  </span><span class="nt">&lt;percentageDistanceAlong&gt;</span>0<span class="nt">&lt;/percentageDistanceAlong&gt;</span>
+<span class="w">                </span><span class="nt">&lt;/toPoint&gt;</span>
+<span class="w">              </span><span class="nt">&lt;/linearWithinLinearGNElement&gt;</span>
+<span class="w">              </span><span class="nt">&lt;linearWithinLinearGNElement&gt;</span>
+<span class="w">                </span><span class="nt">&lt;sectionId&gt;</span>126599<span class="nt">&lt;/sectionId&gt;</span>
+<span class="w">                </span><span class="nt">&lt;directionRelativeOnLinearSection&gt;</span>opposite<span class="nt">&lt;/directionRelativeOnLinearSection&gt;</span>
+<span class="w">                </span><span class="nt">&lt;orderOfSection&gt;</span>1<span class="nt">&lt;/orderOfSection&gt;</span>
+<span class="w">                </span><span class="nt">&lt;fromPoint</span><span class="w"> </span><span class="na">xsi:type=</span><span class="s">&quot;PercentageDistanceAlongLinearElement&quot;</span><span class="nt">&gt;</span>
+<span class="w">                  </span><span class="nt">&lt;percentageDistanceAlong&gt;</span>1<span class="nt">&lt;/percentageDistanceAlong&gt;</span>
+<span class="w">                </span><span class="nt">&lt;/fromPoint&gt;</span>
+<span class="w">                </span><span class="nt">&lt;toPoint</span><span class="w"> </span><span class="na">xsi:type=</span><span class="s">&quot;PercentageDistanceAlongLinearElement&quot;</span><span class="nt">&gt;</span>
+<span class="w">                  </span><span class="nt">&lt;percentageDistanceAlong&gt;</span>0<span class="nt">&lt;/percentageDistanceAlong&gt;</span>
+<span class="w">                </span><span class="nt">&lt;/toPoint&gt;</span>
+<span class="w">              </span><span class="nt">&lt;/linearWithinLinearGNElement&gt;</span>
+<span class="w">              </span><span class="nt">&lt;linearWithinLinearGNElement&gt;</span>
+<span class="w">                </span><span class="nt">&lt;sectionId&gt;</span>1461717<span class="nt">&lt;/sectionId&gt;</span>
+<span class="w">                </span><span class="nt">&lt;directionRelativeOnLinearSection&gt;</span>opposite<span class="nt">&lt;/directionRelativeOnLinearSection&gt;</span>
+<span class="w">                </span><span class="nt">&lt;orderOfSection&gt;</span>2<span class="nt">&lt;/orderOfSection&gt;</span>
+<span class="w">                </span><span class="nt">&lt;fromPoint</span><span class="w"> </span><span class="na">xsi:type=</span><span class="s">&quot;PercentageDistanceAlongLinearElement&quot;</span><span class="nt">&gt;</span>
+<span class="w">                  </span><span class="nt">&lt;percentageDistanceAlong&gt;</span>1<span class="nt">&lt;/percentageDistanceAlong&gt;</span>
+<span class="w">                </span><span class="nt">&lt;/fromPoint&gt;</span>
+<span class="w">                </span><span class="nt">&lt;toPoint</span><span class="w"> </span><span class="na">xsi:type=</span><span class="s">&quot;PercentageDistanceAlongLinearElement&quot;</span><span class="nt">&gt;</span>
+<span class="w">                  </span><span class="nt">&lt;percentageDistanceAlong&gt;</span>0<span class="nt">&lt;/percentageDistanceAlong&gt;</span>
+<span class="w">                </span><span class="nt">&lt;/toPoint&gt;</span>
+<span class="w">              </span><span class="nt">&lt;/linearWithinLinearGNElement&gt;</span>
+<span class="w">              </span><span class="nt">&lt;linearWithinLinearGNElement&gt;</span>
+<span class="w">                </span><span class="nt">&lt;sectionId&gt;</span>1461719<span class="nt">&lt;/sectionId&gt;</span>
+<span class="w">                </span><span class="nt">&lt;directionRelativeOnLinearSection&gt;</span>opposite<span class="nt">&lt;/directionRelativeOnLinearSection&gt;</span>
+<span class="w">                </span><span class="nt">&lt;orderOfSection&gt;</span>3<span class="nt">&lt;/orderOfSection&gt;</span>
+<span class="w">                </span><span class="nt">&lt;fromPoint</span><span class="w"> </span><span class="na">xsi:type=</span><span class="s">&quot;PercentageDistanceAlongLinearElement&quot;</span><span class="nt">&gt;</span>
+<span class="w">                  </span><span class="nt">&lt;percentageDistanceAlong&gt;</span>1<span class="nt">&lt;/percentageDistanceAlong&gt;</span>
+<span class="w">                </span><span class="nt">&lt;/fromPoint&gt;</span>
+<span class="w">                </span><span class="nt">&lt;toPoint</span><span class="w"> </span><span class="na">xsi:type=</span><span class="s">&quot;PercentageDistanceAlongLinearElement&quot;</span><span class="nt">&gt;</span>
+<span class="w">                  </span><span class="nt">&lt;percentageDistanceAlong&gt;</span>0<span class="nt">&lt;/percentageDistanceAlong&gt;</span>
+<span class="w">                </span><span class="nt">&lt;/toPoint&gt;</span>
+<span class="w">              </span><span class="nt">&lt;/linearWithinLinearGNElement&gt;</span>
+<span class="w">              </span><span class="nt">&lt;linearWithinLinearGNElement&gt;</span>
+<span class="w">                </span><span class="nt">&lt;sectionId&gt;</span>2901326<span class="nt">&lt;/sectionId&gt;</span>
+<span class="w">                </span><span class="nt">&lt;directionRelativeOnLinearSection&gt;</span>opposite<span class="nt">&lt;/directionRelativeOnLinearSection&gt;</span>
+<span class="w">                </span><span class="nt">&lt;orderOfSection&gt;</span>4<span class="nt">&lt;/orderOfSection&gt;</span>
+<span class="w">                </span><span class="nt">&lt;fromPoint</span><span class="w"> </span><span class="na">xsi:type=</span><span class="s">&quot;PercentageDistanceAlongLinearElement&quot;</span><span class="nt">&gt;</span>
+<span class="w">                  </span><span class="nt">&lt;percentageDistanceAlong&gt;</span>1<span class="nt">&lt;/percentageDistanceAlong&gt;</span>
+<span class="w">                </span><span class="nt">&lt;/fromPoint&gt;</span>
+<span class="w">                </span><span class="nt">&lt;toPoint</span><span class="w"> </span><span class="na">xsi:type=</span><span class="s">&quot;PercentageDistanceAlongLinearElement&quot;</span><span class="nt">&gt;</span>
+<span class="w">                  </span><span class="nt">&lt;percentageDistanceAlong&gt;</span>0.147949455079654<span class="nt">&lt;/percentageDistanceAlong&gt;</span>
+<span class="w">                </span><span class="nt">&lt;/toPoint&gt;</span>
+<span class="w">              </span><span class="nt">&lt;/linearWithinLinearGNElement&gt;</span>
+<span class="w">            </span><span class="nt">&lt;/globalNetworkLinear&gt;</span>
+<span class="w">          </span><span class="nt">&lt;/linearExtension&gt;</span>
+<span class="w">        </span><span class="nt">&lt;/groupOfLocations&gt;</span>
+<span class="w">        </span><span class="nt">&lt;complianceOption&gt;</span>mandatory<span class="nt">&lt;/complianceOption&gt;</span>
+<span class="w">        </span><span class="nt">&lt;roadOrCarriagewayOrLaneManagementType&gt;</span>singleAlternateLineTraffic<span class="nt">&lt;/roadOrCarriagewayOrLaneManagementType&gt;</span>
+<span class="w">      </span><span class="nt">&lt;/situationRecord&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/situation&gt;</span>
+<span class="w">  </span><span class="nt">&lt;/payloadPublication&gt;</span>
+<span class="nt">&lt;/d2LogicalModel&gt;</span>
+</pre></div>
+</div>
+<section id="root-element-and-publication-envelope">
+<h3>Root element and publication envelope<a class="headerlink" href="#root-element-and-publication-envelope" title="Link to this heading">¶</a></h3>
+<p>Root element <cite>d2LogicalModel</cite> declares, that this message is using DATEX II.</p>
+<p>Element <cite>exchange</cite> contains provider identifier.</p>
+<p>Element <cite>payloadPublication</cite> is an envelope for actual information payload containing general information and one or more elements <cite>situation</cite>, (in our case there is one).</p>
+<p>Attribute <cite>xsi:type=”SituationPublication”</cite> in element <cite>payloadPublication</cite> determines, that this envelope is of type Situation publication.</p>
+<p>Element <cite>feedType</cite> states publication schema by its uri.</p>
+<p>Element <cite>publicationTime</cite> states publication time of this publication (file) as a whole.</p>
+<p>Element <cite>publicationCreator</cite> identifies creator of the publication.</p>
+</section>
+<section id="description-of-one-specific-situation">
+<h3>Description of one specific situation<a class="headerlink" href="#description-of-one-specific-situation" title="Link to this heading">¶</a></h3>
+<p>The following element <cite>situation</cite> may be repeated and describes individual separate traffic information. The <cite>situationRecord</cite> element occurs exactly twice in the <cite>situation</cite> element in this case.</p>
+<p>The <cite>situationVersionTime</cite> element indicates the time of release of this version of the situation as a whole.</p>
+<p>The <cite>headerInformation</cite> element describes how the described information is handled.</p>
+<p>The <cite>probabilityOfOccurrence</cite> element with value <cite>riskOf</cite> refers to a planned closure that has not yet occurred.</p>
+<p>The <cite>urlLink</cite> element contains a link to a web site where more information about the situation is available.</p>
+<section id="event-description-what-happened">
+<h4>Event description (what happened)<a class="headerlink" href="#event-description-what-happened" title="Link to this heading">¶</a></h4>
+<p>The first element <cite>situationRecord</cite> of type <cite>xsi:type=”ConstructionWorks”</cite> contains the description of the cause, i.e. the ongoing construction work <cite>constructionWork</cite>.
+The second element <cite>situationRecord</cite> of type <cite>xsi:type=”RoadOrCarriagewayOrLaneManagement”</cite> contains a description of the impact, i.e. alternating one-way traffic <cite>singleAlternateLineTraffic</cite>.</p>
+<p>Both elements of <cite>situationRecord</cite> are children of the <cite>OperatorActions</cite> class used in this format.</p>
+<p>A <cite>complianceOption</cite> with value <cite>mandatory</cite> specifies that this is a binding constraint.</p>
+</section>
+<section id="time-validity">
+<h4>Time validity<a class="headerlink" href="#time-validity" title="Link to this heading">¶</a></h4>
+<p>Estimated time validity is given in a structure <cite>validity</cite> by values of validity interval start <cite>overallStartTime</cite> and validity interval end <cite>overallEndTime</cite>.</p>
+</section>
+<section id="event-location">
+<h4>Event location<a class="headerlink" href="#event-location" title="Link to this heading">¶</a></h4>
+<p>The location of the event described directly in the <cite>groupOfLocations</cite> element by the nested description is of the <cite>xsi:type=”Linear”</cite> type, i.e. the linear location type.</p>
+<p>In the example, 4 location descriptions are used:</p>
+<ul class="simple">
+<li><p>tmc location using location tables in the <cite>alertCLinear</cite> element of type <cite>AlertCMethod2Linear</cite>,</p></li>
+<li><p>description using stationing in the <cite>linearWithinLinearElement</cite> element,</p></li>
+<li><p>description by reference to Global Network section ids in the <cite>globalNetworkLinear</cite> extension, and</p></li>
+<li><p>description using the OpenLR routing method in the <cite>openlrExtendedLinear</cite> extension.</p></li>
+</ul>
+<p>All location description methods used express the same location.</p>
+</section>
+<section id="additional-content">
+<h4>Additional content<a class="headerlink" href="#additional-content" title="Link to this heading">¶</a></h4>
+<p>The document states time of its first version in <cite>situationRecordCreationTime</cite> and time of current version in <cite>situationRecordVersionTime</cite> for each <cite>situationRecord</cite>.</p>
+<p>Element <cite>source</cite> lists the the creator of this information, who is responsible for its accuracy.</p>
+<p>The <cite>generalPublicComment</cite> element contains a general description of the event described in the message, usually only in italics. It is a free description of the situation by its creator.</p>
+</section>
+</section>
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="index.html">
+              <img class="logo" src="_static/RSD-logo-07.jpg" alt="Logo"/>
+            </a></p>
+  <div>
+    <h3><a href="index.html">Table of Contents</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">Appendix A: Message examples</a><ul>
+<li><a class="reference internal" href="#restriction-xml-road-works-single-lane-alternate-traffic">restriction.xml - road works, single lane alternate traffic</a><ul>
+<li><a class="reference internal" href="#root-element-and-publication-envelope">Root element and publication envelope</a></li>
+<li><a class="reference internal" href="#description-of-one-specific-situation">Description of one specific situation</a><ul>
+<li><a class="reference internal" href="#event-description-what-happened">Event description (what happened)</a></li>
+<li><a class="reference internal" href="#time-validity">Time validity</a></li>
+<li><a class="reference internal" href="#event-location">Event location</a></li>
+<li><a class="reference internal" href="#additional-content">Additional content</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  </div>
+  <div>
+    <h4>Previous topic</h4>
+    <p class="topless"><a href="concepts.html"
+                          title="previous chapter">Concepts</a></p>
+  </div>
+  <div>
+    <h4>Next topic</h4>
+    <p class="topless"><a href="format.html"
+                          title="next chapter">Appendix B: W3C XML Schema</a></p>
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/examples.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="format.html" title="Appendix B: W3C XML Schema"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="concepts.html" title="Concepts"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">NDIC - DATEX II Situation Publication - Restrictions 1.2rev0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Appendix A: Message examples</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+    &#169; Copyright 2023, TamTam Research s.r.o..
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.5.
+    </div>
+  </body>
+</html>

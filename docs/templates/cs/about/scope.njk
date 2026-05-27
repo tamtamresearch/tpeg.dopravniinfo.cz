@@ -1,0 +1,20 @@
+# Stav implementace Registru a historie změn
+
+| Poslední verze meta dat | {{ data.registry_metadata.version_history[0].date }} |
+|-|-|
+| Jazykové verze registru | {% for lang in data.registry_metadata.language %} `{{lang}}` {% endfor %} |
+
+## Stav implementace
+
+Registr dopravních informací je implementací národního přístupového místa (NAP) formou meta datového adresáře. Uvádí zdroje poskytované na území Česka, zejména zdroje poskytované NDIC. Způsob registrace nových zdrojů je manuální.
+
+V přípravě je verze 2.0 která významně změní funkčnost systému (očekávaný termín spuštění nové verze je polovina 2026). 
+
+## Historie verzí Registru
+
+Podkapitoly níže uvádí veškeré změny obsahu (C) a struktury (S) registru.
+
+{% for version in data.registry_metadata.version_history %}
+### verze: {{ version.id }}, datum: {{ version.date }}, typ změny: {{ version.type }}
+{{ version.description | locstr(lang) }}
+{% endfor %}

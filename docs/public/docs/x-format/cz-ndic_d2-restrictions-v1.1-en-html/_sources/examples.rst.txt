@@ -1,0 +1,87 @@
+.. _examples:
+
+============================
+Appendix A: Message examples
+============================
+
+.. spelling::
+
+    nolorries
+
+restriction.xml - road closed for vehicles heavier than 3.5 tons
+================================================================
+
+Publication contains exactly one message about road closure for vehicles heavier than 3.5 tons.
+
+.. literalinclude:: ../../samples/restriction.xml
+   :language: xml
+
+Root element and publication envelope
+-------------------------------------
+
+Root element `d2LogicalModel` declares, that this message is using DATEX II.
+
+Element `exchange` contains provider identifier.
+
+Element `payloadPublication` is an envelope for actual information payload containing general information and one or more elements `situation`, (in our case there is one).
+
+Attribute `xsi:type="SituationPublication"` in element `payloadPublication` determines, that this envelope is of type Situation publication.
+
+Element `feedType` states publication schema by its uri.
+
+Element `publicationTime` states publication time of this publication (file) as a whole.
+
+Element `publicationCreator` identifies creator of the publication.
+
+
+Description of one specific situation
+-------------------------------------
+
+Element `situation` describes a particular event, more particular events means more `situation` elements. Each `situation` element may contain one or more individual sub-messages, elements `situationRecord`. In this case occurs in the element `situation` just once.
+
+Element `situationVersionTime` sets the time of the publication of this version of the situation.
+
+Element `headerInformation` describes how to handle the information described.
+
+Event description (what happened)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Attribute `xsi:type="RoadOrCarriagewayOrLaneManagement"` of element
+`situationRecord` defines event type.
+In DATEX II model [d2ref]_ it can be verified, that given attribute is of type
+descendant of class `OperatorActions` in following descendant sequence
+`RoadOrCarriagewayOrLaneManagement` -> `NetworkManagement` -> `OperatorActions`.
+
+Element `complianceOption` with value `mandatory` states that the restriction is mandatory.
+
+Element `forVehiclesWithCharacteristicsOf` specifies by value `lorry` in
+`vehicleType` that only heavy vehicles are affected by restriction and
+`grossWeightCharacteristic` states that only vehicles heavier than 3.5 tons
+are affected.
+
+Element `roadOrCarriagewayOrLaneManagementType` with value `roadClosed` states
+that the road is closed for given vehicle types.
+
+Time validity
+^^^^^^^^^^^^^
+
+Estimated time validity is given in a structure `validity` by values of validity interval start `overallStartTime` and validity interval end `overallEndTime`.
+
+Event location
+^^^^^^^^^^^^^^
+
+Event location is described in element `groupOfLocations` directly by
+embedded description. Reference to predefined locations is not used.
+Attribute `xsi:type="Linear"` states, that given element is of type linear location, which can be expressed by different location referencing methods.
+
+The position of linear type is represented by three descriptions. First, using  element `alertCLinear` of type `AlertCMethod2Linear`, then using a general description of the position on the road in element `linearWithinLinearElement` and then described using Global Network links in element `globalNetworkLinear`.
+
+All location referencing methods used are describing the same location.
+
+
+Additional content
+^^^^^^^^^^^^^^^^^^
+
+The document states time of its first version in `situationRecordCreationTime` and time of current version in `situationRecordVersionTime` for each `situationRecord`.
+
+Element `source` lists the the creator of this information, who is responsible for its accuracy.

@@ -1,0 +1,94 @@
+========
+Concepts
+========
+
+Described format allows publishing weather related information impacting driving conditions for a set of predefined locations. This information belongs to category of traffic information, it is not published in predefined intervals, the contents carry event type information, like "dense fog".
+
+Publication type SituationPublication
+=====================================
+
+Format is based on DATEX II publication of type `SituationPublication`
+[16157-3]_. Profile uses only small subset of possible structures.
+
+.. literalinclude:: ../../samples/visibility.xml
+   :language: xml
+   :linenos:
+   :lineno-match:
+   :end-before: <situation
+
+Event description
+=================
+
+Each event is described by the `situation` element, the described situation can evolve in time, so the element is versioned and has its unique identifier. 
+
+The `situationRecord` element can occur multiple times in the `situation` element (each time of a different type). The `situationRecord` element can evolve over time, so the element is versioned and has its own unique identifier derived from the identifier of the parent situation.
+
+  
+In particular, this publication includes:
+
+- weather effects such as rain, wind, fog, snow, ice, etc.
+
+This publication does not include any status information. The impacts of the event are not described.
+
+Most of the structures provided by the `TrafficElement/Conditions` class are used to describe events. See the W3C XML Schema or possibly [d2ref]_ for the exact definition. e.g.
+
+.. literalinclude:: ../../samples/visibility.xml
+   :language: xml
+   :linenos:
+   :lineno-match:
+   :start-after: </publicationCreator>
+   :end-before: <situationRecordCreationTime>
+   
+An indication that this is a safety-related event according to Delegated Regulation 886/2013 is given in the `safetyRelatedMessage` tag.
+
+.. literalinclude:: ../../samples/visibility.xml
+   :language: xml
+   :linenos:
+   :lineno-match:
+   :start-after: </groupOfLocations>
+   :end-before: <poorEnvironmentType>
+
+
+Location description (by predefined locations)
+==============================================
+
+The position can be described by a point or a short linear section on the road network, given by the presence of a weather station. Since the position of the weather sensing sensors does not change, the location in this profile is described by a reference (id) to a predefined location set defined in different document. The reference points to a class instance `PredefinedLocation` from package `PredefinedLocationsPublication`. Therefore, the location is not described directly in the file.
+
+Location of weather information is determined by reference to a set of predefined locations. To look up given location, it is necessary to obtain publication `PredefinedLocationsPublication`, related to this source of information and inside find location of identical type (by `targetClass`, here `PredefinedLocation`), with the same identifier and version.
+
+The location for which the weather information is valid is specified by the `groupOfLocations` element re-typed to `xsi:type="LocationByReference"`, that includes element `predefinedLocationReference` with the attribute `targetClass="PredefinedLocation"`.
+
+
+.. literalinclude:: ../../samples/visibility.xml
+   :language: xml
+   :linenos:
+   :lineno-match:
+   :start-after: </generalPublicComment>
+   :end-before: <situationRecordExtension>
+
+The position description methods are further described in the chapter "Location referencing".
+
+=============
+Time validity
+=============
+
+Time validity is stated independently for every single `SituationRecord` described in a situation and is defined by a time interval between two time instants. The class `Validity` is used with an instance of class `OverallPeriod` in the role of `validityTimeSpecification` and elements `overallStartTime` and `overallStopTime` to define start and end of the interval.
+
+Apart from methods mentioned above, no other methods for time validity
+specification are allowed (e.g. hours of validity or days of validity).
+
+.. literalinclude:: ../../samples/visibility.xml
+   :language: xml
+   :linenos:
+   :lineno-match:
+   :start-after: </source>
+   :end-before: <generalPublicComment
+
+====================
+Location referencing
+====================
+
+The format describes routes exclusively by a reference to set of predefined locations (class `PredefinedLocation`) in publication `PredefinedLocationsPublication` [16157-3]_.
+
+Location referencing methods are out of scope of this document and are described elsewhere.
+

@@ -1,0 +1,102 @@
+========
+Koncepty
+========
+
+Popisovaný formát umožňuje poskytování předdefinovaných poloh, předdefinovaných zařízení, které využívají publikace stavových událostí (data z detektorů, data o počasí a pod.).
+
+Publikace typu MeasurementSiteTablePublication
+==============================================
+
+Formát vychází z DATEX II publikace typu `MeasurementSiteTablePublication` z 
+[16157-5]_. Profil využívá většiny datových struktur, který tato
+publikace nabízí a navíc ji rozšiřuje o vlastní popisy poloh.
+
+.. literalinclude:: ../../samples/measurement_site_table.xml
+   :language: xml
+   :linenos:
+   :lineno-match:
+   :end-before: <measurementSiteTable
+
+Popis předdefinovaných zařízení (measurementSiteTable a measurementSiteRecord)
+==============================================================================
+
+`MeasurementSiteTablePublication` předepisuje popis pomocí třídy `measurementSiteTable`, která agreguje instance třídy `measurementSiteRecord`. Mimo to obsahuje `measurementSiteTable` název příslušné tabulky zařízení.
+
+Element `measurementSiteTable` popisuje konkrétní tabulku zařízení, těch může být vice v závislosti na typu zařízení, jejich vlastníkovi či dalších parametrech. Popisovaná tabulka zařízení se může měnit v čase, element je tedy verzovaný a má svůj unikátní identifikátor. Každá tabulka `measurementSiteTable` obsahuje popis alespoň jednoho zařízení v elementu `measurementSiteRecord`.
+
+Zařízení může být popsáno i volným textem prostřednictvím elementu `measurementSiteName`.
+
+Každý element `measurementSiteRecord` popisuje různé měřicí zařízení s různými měřicími schopnostmi `measurementSpecificCharacteristics`, tj. měření intenzity, rychlosti, hustoty apod. Schopnosti zařízení stanovené v elementu `measurementSiteRecord` se mohou časem měnit, je tedy verzován a má identifikátor jedinečný v rámci jedné tabulky.
+
+Schopnosti `measurementSpecificCharacteristics` měřicího zařízení zahrnují zejména:
+
+- vlhkost vzduchu,
+- měření jednotlivých vozidel (rychlost, rychlost atd.),
+- znečištění,
+- srážky,
+- tlak,
+- záření,
+- podmínky povrchu vozovky,
+- teplota,
+- dopravní koncentrace,
+- dopravní tok,
+- dopravní rychlost,
+- dopravní rychlost,
+- dopravní stav,
+- cestovní čas,
+- viditelnost a
+- vítr.
+
+Některé `measurementSpecificCharacteristics`, kde to má smysl, mohou být dále specifikovány pozičními argumenty a určením vozidla (tj. intenzita pro nákladní vozidla, teplota vozovky ve druhém pruhu). Každá schopnost je indexována (jednoznačně v rámci jednoho zařízení). Index se používá pro odkazování na schopnost z dynamické publikace.
+
+.. literalinclude:: ../../samples/measurement_site_table.xml
+   :language: xml
+   :linenos:
+   :lineno-match:
+   :start-after: <!-- detector measurement table begin -->
+   :end-before: <!--end of overall characteristics: flow, occupancy and speed -->
+
+
+Popis předdefinovaných poloh (bodové či liniové lokace)
+========================================================
+
+Poloha každého zařízení je specifikována v elementu `measurementSiteLocation`.
+
+Poloha může být popsána bodem nebo krátkým liniovým úsekem na silniční síti.  Nepoužívají se polohy typu oblast. 
+Poloha zařízení `measurementSiteLocation` může být popsána více různými způsoby. 
+
+.. literalinclude:: ../../samples/measurement_site_table.xml
+   :language: xml
+   :linenos:
+   :lineno-match:
+   :start-after: <!-- location description start -->
+   :end-before: <!-- location description end -->
+
+===============
+Časová platnost
+===============
+
+Doba od kdy záznamy uvedené v publikaci platí, je uvedena hromadně pro všechny předdefinované zařízení dobou vydání publikace, tedy elementem `publicationTime`. Nově vydaná publikace vždy obsahuje i ty předešlé, nové mají nové id a aktualizace vyšší verzi. Uvnitř záznamů `measurementSiteTable` není žádný časový záznam uveden. 
+
+.. literalinclude:: ../../samples/measurement_site_table.xml
+   :language: xml
+   :linenos:
+   :lineno-match:
+   :start-after: <feedType
+   :end-before: <publicationCreator
+
+================
+Popisování poloh
+================
+
+Veškeré zařízení v této publikaci obsahují element pro popis jejich polohy `measurementSiteLocation`. Při popisu předdefinovaných poloh se využívají instance třídy `Location`, konkrétně potomci třídy `NetworkLocation`, jmenovitě buď třídou `Point`, nebo `Linear`. 
+
+.. literalinclude:: ../../samples/measurement_site_table.xml
+   :language: xml
+   :linenos:
+   :lineno-match:
+   :start-after: <!-- location description start -->
+   :end-before: <!-- location description end -->
+
+
+K popisu polohy je možné použít 3 metody pro popis liniové lokace a 4 metody pro popis bodové lokace v závislosti na jejich dostupnosti v dané lokalitě. Měl by být uveden alespoň jeden popis.

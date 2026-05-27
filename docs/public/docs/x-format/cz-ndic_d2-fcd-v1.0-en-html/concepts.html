@@ -1,0 +1,480 @@
+
+
+<!doctype html>
+
+<html lang="en" data-content_root="./">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Concepts &#8212; NDIC - DATEX II Elaborated Data Publication - FCD 1.0rev2 documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/bizstyle.css?v=532c1bf3" />
+    
+    <script src="_static/documentation_options.js?v=c8eeaf64"></script>
+    <script src="_static/doctools.js?v=888ff710"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/bizstyle.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Annex A: Examples of messages" href="examples.html" />
+    <link rel="prev" title="Introduction" href="introduction.html" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <!--[if lt IE 9]>
+    <script src="_static/css3-mediaqueries.js"></script>
+    <![endif]-->
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="examples.html" title="Annex A: Examples of messages"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="introduction.html" title="Introduction"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">NDIC - DATEX II Elaborated Data Publication - FCD 1.0rev2 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Concepts</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="concepts">
+<h1>Concepts<a class="headerlink" href="#concepts" title="Link to this heading">¶</a></h1>
+<p>The described format allows the provision of floating car data (FCD) information. This includes travel times, traffic flow speeds, traffic levels and estimation of congestion lengths on a set of predefined locations.</p>
+<section id="publications-of-type-elaborateddatapublication">
+<h2>Publications of type ElaboratedDataPublication<a class="headerlink" href="#publications-of-type-elaborateddatapublication" title="Link to this heading">¶</a></h2>
+<p>The format is based on the DATEX II publication type <cite>ElaboratedDataPublication</cite> <a class="reference internal" href="introduction.html#id11" id="id1"><span>[16157-5]</span></a> and uses it to transfer information about <strong>travel times</strong>, <strong>speeds</strong> and <strong>traffic levels</strong> on a set of predefined locations.
+The information about <strong>traffic levels</strong>, <strong>length of queues</strong> with their <strong>start and end</strong> is added via the level B extension of the <cite>TrafficStatus</cite> class of the DATEX II model.</p>
+<p>Information about <strong>data quality</strong> and <strong>number of FCD vehicles</strong> on the segment, including their type, is added via the level B extension of the <cite>TravelTimeData</cite> class of the DATEX II model.</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span>
+<span class="linenos"> 2</span><span class="nt">&lt;d2LogicalModel</span><span class="w"> </span><span class="na">modelBaseVersion=</span><span class="s">&quot;2&quot;</span><span class="w"> </span><span class="na">xmlns=</span><span class="s">&quot;http://datex2.eu/schema/2/2_0&quot;</span><span class="w"> </span><span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span><span class="w"> </span><span class="na">xsi:schemaLocation=</span><span class="s">&quot;http://datex2.eu/schema/2/2_0 ../schema/schema.xsd&quot;</span><span class="nt">&gt;</span>
+<span class="linenos"> 3</span><span class="w">  </span><span class="nt">&lt;exchange&gt;</span>
+<span class="linenos"> 4</span><span class="w">    </span><span class="nt">&lt;supplierIdentification&gt;</span>
+<span class="linenos"> 5</span><span class="w">      </span><span class="nt">&lt;country&gt;</span>cz<span class="nt">&lt;/country&gt;</span>
+<span class="linenos"> 6</span><span class="w">      </span><span class="nt">&lt;nationalIdentifier&gt;</span>ŘSD<span class="nt">&lt;/nationalIdentifier&gt;</span>
+<span class="linenos"> 7</span><span class="w">    </span><span class="nt">&lt;/supplierIdentification&gt;</span>
+<span class="linenos"> 8</span><span class="w">  </span><span class="nt">&lt;/exchange&gt;</span>
+<span class="linenos"> 9</span><span class="w">  </span><span class="nt">&lt;payloadPublication</span><span class="w"> </span><span class="na">lang=</span><span class="s">&quot;cs&quot;</span><span class="w"> </span><span class="na">xsi:type=</span><span class="s">&quot;ElaboratedDataPublication&quot;</span><span class="nt">&gt;</span>
+<span class="linenos">10</span><span class="w">    </span><span class="nt">&lt;feedType&gt;</span>x-format:cz-ndic_d2-fcd-v1.0<span class="nt">&lt;/feedType&gt;</span>
+<span class="linenos">11</span><span class="w">    </span><span class="nt">&lt;publicationTime&gt;</span>2017-11-18T00:00:06+01:00<span class="nt">&lt;/publicationTime&gt;</span>
+<span class="linenos">12</span><span class="w">    </span><span class="nt">&lt;publicationCreator&gt;</span>
+<span class="linenos">13</span><span class="w">      </span><span class="nt">&lt;country&gt;</span>cz<span class="nt">&lt;/country&gt;</span>
+<span class="linenos">14</span><span class="w">      </span><span class="nt">&lt;nationalIdentifier&gt;</span>ŘSD<span class="nt">&lt;/nationalIdentifier&gt;</span>
+<span class="linenos">15</span><span class="w">    </span><span class="nt">&lt;/publicationCreator&gt;</span>
+<span class="linenos">16</span><span class="w">    </span><span class="nt">&lt;periodDefault&gt;</span>300<span class="nt">&lt;/periodDefault&gt;</span>
+<span class="linenos">17</span><span class="w">    </span><span class="nt">&lt;timeDefault&gt;</span>2017-11-17T23:59:35+01:00<span class="nt">&lt;/timeDefault&gt;</span>
+<span class="linenos">18</span><span class="w">    </span><span class="nt">&lt;headerInformation&gt;</span>
+<span class="linenos">19</span><span class="w">      </span><span class="nt">&lt;confidentiality&gt;</span>noRestriction<span class="nt">&lt;/confidentiality&gt;</span>
+<span class="linenos">20</span><span class="w">      </span><span class="nt">&lt;informationStatus&gt;</span>real<span class="nt">&lt;/informationStatus&gt;</span>
+<span class="linenos">21</span><span class="w">    </span><span class="nt">&lt;/headerInformation&gt;</span>
+</pre></div>
+</div>
+<p>FCD information for a particular route/segment is listed in 3 <cite>elaboratedData</cite> elements, since the <cite>elaboratedData</cite> element can only hold <strong>one type of information at one time</strong>:</p>
+<ul class="simple">
+<li><p>traffic density in the <cite>TrafficStatus</cite> class + traffic levels (by CZ) and congestions in its extension,</p></li>
+<li><p>traffic speed in class <cite>TrafficSpeed</cite> and</p></li>
+<li><p>travel time in class <cite>TravelTimeData</cite> + quality parameters in its extension.</p></li>
+</ul>
+<p>The <cite>elaboratedData</cite> element does not have its own unique identifier and is uniquely determined by the publication time and the referenced location identifier.</p>
+<p>The identification of the profile of the transport information provided is given in the <cite>feedType</cite> element referring to the specific documentation published in the NAP (national access point).</p>
+</section>
+<section id="calculated-fcd-information">
+<h2>Calculated FCD information<a class="headerlink" href="#calculated-fcd-information" title="Link to this heading">¶</a></h2>
+<p>The status information included in this profile is:</p>
+<ul class="simple">
+<li><p>traffic flow speed [km/h] per</p>
+<ul>
+<li><p>actual conditions</p></li>
+<li><p>in free flow conditions (freeFlow)</p></li>
+</ul>
+</li>
+<li><p>travel times [s] per</p>
+<ul>
+<li><p>actual conditions</p></li>
+<li><p>in free flow conditions (freeFlow)</p></li>
+</ul>
+</li>
+<li><p>actual delay [s] (as the difference between actual - free flow travel times)</p></li>
+<li><p>traffic density [-] (as determined by the <cite>trafficStatusEnum</cite> enumeration)</p></li>
+</ul>
+<p>Other information included in this profile is:</p>
+<ul class="simple">
+<li><p>system response times [s] (as the difference between the input data availability time and the status information calculation time)</p></li>
+</ul>
+<p>The status information included in this profile by extension of the <cite>TrafficStatus</cite> class is:</p>
+<ul class="simple">
+<li><p>traffic levels [-] (1-5 as used in the Czech Republic)</p></li>
+<li><p>queues on the segment, estimation of their length [m] and estimation of the start [%] and end [%] of the queue on the referenced segment</p></li>
+</ul>
+<p>The common qualitative parameters included in this profile by extending the <cite>TravelTimeData</cite> class are:</p>
+<ul class="simple">
+<li><p>data confidence level [-]</p></li>
+<li><p>number of FCD vehicle probes on the segment [-]</p></li>
+</ul>
+<p><strong>Information included by the extension is shown in Figure 1.</strong></p>
+<figure class="align-default" id="id4">
+<img alt="TrafficStatus and TravelTimeData class extension" src="_images/NdicFcdExtension.png" />
+<figcaption>
+<p><span class="caption-text">TrafficStatus and TravelTimeData class extension.</span><a class="headerlink" href="#id4" title="Link to this image">¶</a></p>
+</figcaption>
+</figure>
+<p>The following articles are dedicated to the description of each status information.</p>
+<section id="data-reliability-measures">
+<h3>Data Reliability Measures<a class="headerlink" href="#data-reliability-measures" title="Link to this heading">¶</a></h3>
+<p>The <strong>Data Reliability Rate</strong> characterizes the quality of the data sample and has values &lt;0-1&gt; where 1 means 100% reliable data. The quality of the data sample is evaluated by the age of the input positions used, their number, etc. The calculation formula is not part of this profile.</p>
+<p>The data reliability rate is given for a segment in the <cite>travelTimeDataExtension</cite> in the <cite>supplierCalculatedDataQuality</cite> element and applies to all <cite>elaboratedData</cite> elements related to the segment.</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="linenos">96</span><span class="w">        </span><span class="nt">&lt;travelTimeDataExtension&gt;</span>
+<span class="linenos">97</span><span class="w">            </span><span class="nt">&lt;qualityParameters&gt;</span>
+<span class="linenos">98</span><span class="w">              </span><span class="nt">&lt;supplierCalculatedDataQuality&gt;</span>1<span class="nt">&lt;/supplierCalculatedDataQuality&gt;</span>
+</pre></div>
+</div>
+<p>The profile allows (but does not require) specifying the data reliability rate for each calculated value separately by the <cite>supplierCalculatedDataQuality</cite> attribute. If specified, this value takes precedence over the value at a more generic level.</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="linenos">92</span><span class="w">        </span><span class="nt">&lt;freeFlowSpeed</span><span class="w"> </span><span class="na">supplierCalculatedDataQuality=</span><span class="s">&quot;0.8&quot;</span><span class="nt">&gt;</span>
+<span class="linenos">93</span><span class="w">          </span><span class="nt">&lt;speed&gt;</span>50<span class="nt">&lt;/speed&gt;</span>
+<span class="linenos">94</span><span class="w">        </span><span class="nt">&lt;/freeFlowSpeed&gt;</span>
+</pre></div>
+</div>
+</section>
+<section id="actual-number-of-floating-vehicles">
+<h3>Actual number of floating vehicles<a class="headerlink" href="#actual-number-of-floating-vehicles" title="Link to this heading">¶</a></h3>
+<p>The actual <strong>number of floating vehicles</strong> from which the values were calculated is given in the <cite>numberOfFcdVehicles</cite> element of the <cite>trafficStatusExtension</cite> element and applies to all <cite>elaboratedData</cite> elements related to the segment.</p>
+<p>The <strong>number of floating vehicles</strong> can be specified in more detail by vehicle category. The vehicle category is expressed by the value of the <cite>vehicleType</cite> element embedded in the <cite>vehicleGroup</cite> element. One <cite>vehicleGroup</cite> may be used for each value of <cite>vehicleType</cite>, with the value of <cite>anyVehicle</cite> being used to express the total number of vehicles of all categories.</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 99</span><span class="w">              </span><span class="nt">&lt;numberOfFcdVehicles&gt;</span>
+<span class="linenos">100</span><span class="w">                </span><span class="nt">&lt;vehicleGroup&gt;</span>
+<span class="linenos">101</span><span class="w">                  </span><span class="nt">&lt;count&gt;</span>9<span class="nt">&lt;/count&gt;</span>
+<span class="linenos">102</span><span class="w">                  </span><span class="nt">&lt;vehicleType&gt;</span>anyVehicle<span class="nt">&lt;/vehicleType&gt;</span>
+<span class="linenos">103</span><span class="w">                </span><span class="nt">&lt;/vehicleGroup&gt;</span>
+<span class="linenos">104</span><span class="w">              </span><span class="nt">&lt;/numberOfFcdVehicles&gt;</span>
+</pre></div>
+</div>
+<p>The profile allows (but does not require) specifying the total number of vehicle probes used for each calculated value separately by the <cite>numberOfInputValuesUsed</cite> attribute.</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="linenos">34</span><span class="w">        </span><span class="nt">&lt;trafficStatus</span><span class="w"> </span><span class="na">numberOfInputValuesUsed=</span><span class="s">&quot;9&quot;</span><span class="w"> </span><span class="na">supplierCalculatedDataQuality=</span><span class="s">&quot;1&quot;</span><span class="nt">&gt;</span>
+<span class="linenos">35</span><span class="w">          </span><span class="nt">&lt;trafficStatusValue&gt;</span>congested<span class="nt">&lt;/trafficStatusValue&gt;</span>
+<span class="linenos">36</span><span class="w">        </span><span class="nt">&lt;/trafficStatus&gt;</span>
+</pre></div>
+</div>
+<p>Some statistics, such as <cite>freeFlowSpeed</cite> or <cite>freeFlowTravelTime</cite>, are independent of the number of floating vehicles. In this case, the value of the number of vehicles, if specified by the <cite>numberOfInputValuesUsed</cite> attribute, is set to <cite>9999</cite>.</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="linenos">88</span><span class="w">        </span><span class="nt">&lt;freeFlowTravelTime</span><span class="w"> </span><span class="na">numberOfInputValuesUsed=</span><span class="s">&quot;9999&quot;</span><span class="w"> </span><span class="na">supplierCalculatedDataQuality=</span><span class="s">&quot;1&quot;</span><span class="nt">&gt;</span>
+<span class="linenos">89</span><span class="w">          </span><span class="nt">&lt;duration&gt;</span>259<span class="nt">&lt;/duration&gt;</span>
+<span class="linenos">90</span><span class="w">        </span><span class="nt">&lt;/freeFlowTravelTime&gt;</span>
+</pre></div>
+</div>
+</section>
+<section id="traffic-flow-speed">
+<h3>Traffic flow speed<a class="headerlink" href="#traffic-flow-speed" title="Link to this heading">¶</a></h3>
+<p>The <strong>traffic flow speed</strong> [km/h] on the segment is given by two separate <cite>elaboratedData</cite> elements. The actual average speed <cite>averageVehicleSpeed</cite> in the measured time interval is given in the <cite>TrafficSpeed</cite> class of the <cite>basicData</cite> element.</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="linenos">67</span><span class="w">        </span><span class="nt">&lt;averageVehicleSpeed&gt;</span>
+<span class="linenos">68</span><span class="w">          </span><span class="nt">&lt;speed&gt;</span>38<span class="nt">&lt;/speed&gt;</span>
+<span class="linenos">69</span><span class="w">        </span><span class="nt">&lt;/averageVehicleSpeed&gt;</span>
+</pre></div>
+</div>
+<p>The <cite>freeFlowSpeed</cite> [km/h] on the segment is specified in the <cite>TravelTimeData</cite> class in the <cite>basicData</cite> element.</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="linenos">92</span><span class="w">        </span><span class="nt">&lt;freeFlowSpeed</span><span class="w"> </span><span class="na">supplierCalculatedDataQuality=</span><span class="s">&quot;0.8&quot;</span><span class="nt">&gt;</span>
+<span class="linenos">93</span><span class="w">          </span><span class="nt">&lt;speed&gt;</span>50<span class="nt">&lt;/speed&gt;</span>
+<span class="linenos">94</span><span class="w">        </span><span class="nt">&lt;/freeFlowSpeed&gt;</span>
+</pre></div>
+</div>
+</section>
+<section id="travel-time-and-actual-delay">
+<h3>Travel time and actual delay<a class="headerlink" href="#travel-time-and-actual-delay" title="Link to this heading">¶</a></h3>
+<p>The <strong>Travel Time</strong> [s] is given in the <cite>basicData</cite> element with <cite>xsi:type=”TravelTimeData”</cite>. There are 2 different types of travel times used in this profile:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><cite>travelTime</cite>: actual average travel time.</p></li>
+<li><p><cite>freeFlowTravelTime</cite>: free flow travel time</p></li>
+</ul>
+</div></blockquote>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="linenos">83</span><span class="w">        </span><span class="nt">&lt;vehicleType&gt;</span>anyVehicle<span class="nt">&lt;/vehicleType&gt;</span>
+<span class="linenos">84</span><span class="w">        </span><span class="nt">&lt;travelTime</span><span class="w"> </span><span class="na">numberOfInputValuesUsed=</span><span class="s">&quot;9&quot;</span><span class="w"> </span><span class="na">supplierCalculatedDataQuality=</span><span class="s">&quot;1&quot;</span><span class="nt">&gt;</span>
+<span class="linenos">85</span><span class="w">          </span><span class="nt">&lt;duration&gt;</span>549<span class="nt">&lt;/duration&gt;</span>
+<span class="linenos">86</span><span class="w">        </span><span class="nt">&lt;/travelTime&gt;</span>
+<span class="linenos">87</span><span class="w">        </span><span class="cm">&lt;!-- historical data from fcd vehicles database --&gt;</span>
+<span class="linenos">88</span><span class="w">        </span><span class="nt">&lt;freeFlowTravelTime</span><span class="w"> </span><span class="na">numberOfInputValuesUsed=</span><span class="s">&quot;9999&quot;</span><span class="w"> </span><span class="na">supplierCalculatedDataQuality=</span><span class="s">&quot;1&quot;</span><span class="nt">&gt;</span>
+<span class="linenos">89</span><span class="w">          </span><span class="nt">&lt;duration&gt;</span>259<span class="nt">&lt;/duration&gt;</span>
+<span class="linenos">90</span><span class="w">        </span><span class="nt">&lt;/freeFlowTravelTime&gt;</span>
+</pre></div>
+</div>
+<p>The profile provides information about the travel time without distinguishing the vehicle type.</p>
+<p>The <strong>actual delay</strong> is expressed implicitly as the difference between the values of the actual average travel time (<cite>travelTime</cite>) and the free flow travel time (<cite>freeFlowTravelTime</cite>).</p>
+</section>
+<section id="traffic-levels">
+<h3>Traffic levels<a class="headerlink" href="#traffic-levels" title="Link to this heading">¶</a></h3>
+<p><strong>Traffic status</strong> is expressed by <cite>TrafficStatusEnum</cite> enumeration as defined in standard <a class="reference internal" href="introduction.html#id9" id="id2"><span>[16157-3]</span></a> in table A.125.</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="linenos">34</span><span class="w">        </span><span class="nt">&lt;trafficStatus</span><span class="w"> </span><span class="na">numberOfInputValuesUsed=</span><span class="s">&quot;9&quot;</span><span class="w"> </span><span class="na">supplierCalculatedDataQuality=</span><span class="s">&quot;1&quot;</span><span class="nt">&gt;</span>
+<span class="linenos">35</span><span class="w">          </span><span class="nt">&lt;trafficStatusValue&gt;</span>congested<span class="nt">&lt;/trafficStatusValue&gt;</span>
+<span class="linenos">36</span><span class="w">        </span><span class="nt">&lt;/trafficStatus&gt;</span>
+</pre></div>
+</div>
+<table class="docutils align-default" id="id5">
+<caption><span class="caption-text">Values of the “TrafficStatusEnum” enumeration.</span><a class="headerlink" href="#id5" title="Link to this table">¶</a></caption>
+<colgroup>
+<col style="width: 13.1%" />
+<col style="width: 13.1%" />
+<col style="width: 73.8%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>value</p></th>
+<th class="head"><p>Meaning</p></th>
+<th class="head"><p>Definition</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>impossible</p></td>
+<td><p>Traffic collapse</p></td>
+<td><p>Vehicles on the roads are stationary or in convoys only moving very slowly, the average speed is very low.</p></td>
+</tr>
+<tr class="row-odd"><td><p>congested</p></td>
+<td><p>Traffic congestion</p></td>
+<td><p>Vehicle queues are formed, traffic is not flowing smoothly, average speed is significantly reduced, intersection passage is impaired.</p></td>
+</tr>
+<tr class="row-even"><td><p>heavy</p></td>
+<td><p>Heavy traffic</p></td>
+<td><p>Streams of vehicles form, traffic is flowing, but speed is below the maximum speed limit.</p></td>
+</tr>
+<tr class="row-odd"><td><p>freeFlow</p></td>
+<td><p>Flowing traffic</p></td>
+<td><p>Traffic is flowing in that direction. Traffic is moving at or above the speed limit and drivers are free to change lanes.</p></td>
+</tr>
+<tr class="row-even"><td><p>unknown</p></td>
+<td><p>Unknown</p></td>
+<td><p>Traffic conditions are unknown.</p></td>
+</tr>
+</tbody>
+</table>
+<p>The <cite>TrafficStatus</cite> class is extended (level B extension) to explicitly specify the traffic levels as defined and used in the CR. The traffic levels (1-5) are specified in the <cite>TrafficLevel</cite> class using the phrases “level1” to “level5”, in the <cite>trafficLevelValue</cite> element.</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="linenos">40</span><span class="w">             </span><span class="nt">&lt;trafficLevel&gt;</span>
+<span class="linenos">41</span><span class="w">              </span><span class="nt">&lt;trafficLevelValue&gt;</span>level4<span class="nt">&lt;/trafficLevelValue&gt;</span>
+<span class="linenos">42</span><span class="w">            </span><span class="nt">&lt;/trafficLevel&gt;</span>
+</pre></div>
+</div>
+<p>The <cite>TrafficLevel</cite> is calculated as the % difference between the current traffic flow speed and the traffic flow speed on the free segment.</p>
+<table class="docutils align-default" id="id6">
+<caption><span class="caption-text">Calculation in the definition of traffic stages in the FCD publication</span><a class="headerlink" href="#id6" title="Link to this table">¶</a></caption>
+<colgroup>
+<col style="width: 10.0%" />
+<col style="width: 70.0%" />
+<col style="width: 20.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Degree</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p>% of difference</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>single vehicle operation only, driving is smooth</p></td>
+<td><p>&lt;85 %, 100 %)</p></td>
+</tr>
+<tr class="row-odd"><td><p>2</p></td>
+<td><p>small groups of vehicles, smooth running, passing intersections without problems</p></td>
+<td><p>&lt;75 %, 85 %)</p></td>
+</tr>
+<tr class="row-even"><td><p>3</p></td>
+<td><p>vehicle streams are forming, traffic is smooth but speed is below the maximum speed limit</p></td>
+<td><p>&lt;50 %, 75 %)</p></td>
+</tr>
+<tr class="row-odd"><td><p>4</p></td>
+<td><p>vehicle queues are forming, traffic is not flowing, average speed is significantly reduced, passing the intersections is impaired</p></td>
+<td><p>&lt;20 %, 50 %)</p></td>
+</tr>
+<tr class="row-even"><td><p>5</p></td>
+<td><p>traffic collapse - vehicles are stationary on the roads or moving very slowly in convoys, average speed is very low</p></td>
+<td><p>&lt;0 %, 20 %)</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="congestions">
+<h3>Congestions<a class="headerlink" href="#congestions" title="Link to this heading">¶</a></h3>
+<p>The <strong>congestions</strong> on a segment are expressed implicitly by the traffic status “level4” and “level5” and by the presence of the <cite>queueInformation</cite> element, which was added to the <cite>TrafficStatus</cite> class via the DATEX II type B extension.</p>
+<p>Segments are internally divided into smaller parts (sections of the Global Network, GN road network). The presence of congestion is evaluated with respect to GN sections as a decrease in the travelled speed of this section <strong>below 30 % of the free-flow speed.</strong>.</p>
+<p>The <cite>queueInformation</cite> element contains aggregated values from individual congested sections of the segment. If none of the sections of the segment were congested, the <cite>queueInformation</cite> element is not present. The element is present only once per segment, the values of its attributes are adapted to this (for more, see the description of the attributes and the image below).</p>
+<figure class="align-default" id="id7">
+<img alt="Representation of the aggregation of individual congestions on a segment" src="_images/congestion.png" />
+<figcaption>
+<p><span class="caption-text">Representation of the aggregation of individual congestions on a segment</span><a class="headerlink" href="#id7" title="Link to this image">¶</a></p>
+</figcaption>
+</figure>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="linenos">43</span><span class="w">            </span><span class="nt">&lt;queueInformation&gt;</span>
+<span class="linenos">44</span><span class="w">              </span><span class="nt">&lt;queue&gt;</span>
+<span class="linenos">45</span><span class="w">                </span><span class="nt">&lt;queueLength&gt;</span>148<span class="nt">&lt;/queueLength&gt;</span>
+<span class="linenos">46</span><span class="w">                </span><span class="cm">&lt;!-- start of the queue (tail) at the 0.4 of the length of the segment --&gt;</span>
+<span class="linenos">47</span><span class="w">                </span><span class="nt">&lt;fromPoint&gt;</span>0.4<span class="nt">&lt;/fromPoint&gt;</span>
+<span class="linenos">48</span><span class="w">                </span><span class="cm">&lt;!-- end of the queue (head) at the 0.9 of the length of the segment --&gt;</span>
+<span class="linenos">49</span><span class="w">                </span><span class="nt">&lt;toPoint&gt;</span>0.9<span class="nt">&lt;/toPoint&gt;</span>
+<span class="linenos">50</span><span class="w">              </span><span class="nt">&lt;/queue&gt;</span>
+<span class="linenos">51</span><span class="w">            </span><span class="nt">&lt;/queueInformation&gt;</span>
+</pre></div>
+</div>
+<p>The length of a queue on a referenced segment is expressed in the <cite>queueLength</cite> element and is aggregated length of the traffic congestion for all sections of the segment [m]. i.e. the sum of the lengths of the <strong>congested</strong> Global Network sections (even non-contiguous) lying on the segment.</p>
+<p>The start and end of the queue is given by the optional <cite>fromPoint</cite> and <cite>toPoint</cite> attributes, expressing the relative <cite>coordinates</cite> of the queue relative to the beginning segment in the direction of traffic. A queue, according to this definition, starts (<cite>fromPoint</cite>) at the point where vehicles enter it and ends (<cite>toPoint</cite>) at the point where they leave it and continue on their route. <strong>See Figure 2.</strong></p>
+<p>In the case of multiple split congestions on a segment, for example, a congestion detected on GN sections 1 and 3, the <cite>fromPoint</cite> attribute only gives information about the 1st congestion and <cite>toPoint</cite> is calculated by using the <cite>queueLength</cite> value.</p>
+<figure class="align-default" id="id8">
+<img alt="Example of referencing the relative position of a queue on a segment." src="_images/queue_position.png" />
+<figcaption>
+<p><span class="caption-text">Example of referencing the relative position of a queue on a segment.</span><a class="headerlink" href="#id8" title="Link to this image">¶</a></p>
+</figcaption>
+</figure>
+</section>
+</section>
+<section id="providing-only-currently-available-data">
+<h2>Providing only currently available data<a class="headerlink" href="#providing-only-currently-available-data" title="Link to this heading">¶</a></h2>
+<p>In case of unavailability of input data for the status information calculation on a given segment, only qualitative parameters are given for this segment and, and if available, also historical data in the <cite>basicData</cite> element of the <cite>TravelTimeData</cite> class.</p>
+<p>Thus, a segment for which actual status data exists is covered by 3 <cite>elaboratedData</cite> elements, while a segment for which no actual data exists is covered only by one element.</p>
+</section>
+</section>
+<section id="temporal-validity">
+<h1>Temporal validity<a class="headerlink" href="#temporal-validity" title="Link to this heading">¶</a></h1>
+<p>The publication is periodically updated, the value in the <cite>periodDefault</cite> element specifies the normal length of the update interval in seconds (normally 5 minutes).</p>
+<p>The value of <cite>publicationTime</cite> specifies when the publication was created, but <strong>not the reference time of the calculation</strong>.</p>
+<p>The <cite>timeDefault</cite> value specifies the <strong>common reference time of all record values</strong> and is the end time of a particular measurement and calculation period.</p>
+<p>No other determination of data validity is used.</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="linenos">11</span><span class="w">    </span><span class="nt">&lt;publicationTime&gt;</span>2017-11-18T00:00:06+01:00<span class="nt">&lt;/publicationTime&gt;</span>
+<span class="linenos">12</span><span class="w">    </span><span class="nt">&lt;publicationCreator&gt;</span>
+<span class="linenos">13</span><span class="w">      </span><span class="nt">&lt;country&gt;</span>cz<span class="nt">&lt;/country&gt;</span>
+<span class="linenos">14</span><span class="w">      </span><span class="nt">&lt;nationalIdentifier&gt;</span>ŘSD<span class="nt">&lt;/nationalIdentifier&gt;</span>
+<span class="linenos">15</span><span class="w">    </span><span class="nt">&lt;/publicationCreator&gt;</span>
+<span class="linenos">16</span><span class="w">    </span><span class="nt">&lt;periodDefault&gt;</span>300<span class="nt">&lt;/periodDefault&gt;</span>
+<span class="linenos">17</span><span class="w">    </span><span class="nt">&lt;timeDefault&gt;</span>2017-11-17T23:59:35+01:00<span class="nt">&lt;/timeDefault&gt;</span>
+</pre></div>
+</div>
+<section id="fcd-input-data-age">
+<h2>FCD input data age<a class="headerlink" href="#fcd-input-data-age" title="Link to this heading">¶</a></h2>
+<p>Each individual record is described by a <cite>basicData</cite> element, and in its <cite>measurementOrCalculationTime</cite> element gives the time last input information used to calculate status values. The update takes place regularly at an interval of 1 minute. At that time, the routes of all vehicles with respect to travelled sections (parts of segments) of the monitored network are evaluated. The last update of the segment status occurs when the last vehicle leaves the segment.</p>
+<p>The age of the input data used for each record can be calculated as the difference between the <cite>timeDefault</cite> of the entire publication and the <cite>measurementOrCalculationTime</cite> value of that record. The age of the input data can be used to determine <strong>system response time</strong>.</p>
+<p>The status values of individual records are calculated using both actual input data and historical data. The status values of a record without new input data from the FCD vehicle probes may still change in subsequent publications as historical data is gradually taken into account. The calculation algorithm used is beyond the scope of this documentation.</p>
+<p>In case of insufficient underlying data for the calculation of the statuses (according to the calculation algorithm), elements containing information on <strong>actual</strong> speed, traffic stages and travel time are omitted.</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="linenos">16</span><span class="w">    </span><span class="nt">&lt;periodDefault&gt;</span>300<span class="nt">&lt;/periodDefault&gt;</span>
+<span class="linenos">17</span><span class="w">    </span><span class="nt">&lt;timeDefault&gt;</span>2017-11-17T23:59:35+01:00<span class="nt">&lt;/timeDefault&gt;</span>
+<span class="linenos">18</span><span class="w">    </span><span class="nt">&lt;headerInformation&gt;</span>
+<span class="linenos">19</span><span class="w">      </span><span class="nt">&lt;confidentiality&gt;</span>noRestriction<span class="nt">&lt;/confidentiality&gt;</span>
+<span class="linenos">20</span><span class="w">      </span><span class="nt">&lt;informationStatus&gt;</span>real<span class="nt">&lt;/informationStatus&gt;</span>
+<span class="linenos">21</span><span class="w">    </span><span class="nt">&lt;/headerInformation&gt;</span>
+<span class="linenos">22</span><span class="w">    </span><span class="cm">&lt;!-- information from one segment --&gt;</span>
+<span class="linenos">23</span><span class="w">    </span><span class="cm">&lt;!-- traffic status element --&gt;</span>
+<span class="linenos">24</span><span class="w">    </span><span class="nt">&lt;elaboratedData&gt;</span>
+<span class="linenos">25</span><span class="w">      </span><span class="nt">&lt;source&gt;</span>
+<span class="linenos">26</span><span class="w">        </span><span class="nt">&lt;sourceIdentification&gt;</span>ndic-secid-1-01<span class="nt">&lt;/sourceIdentification&gt;</span>
+<span class="linenos">27</span><span class="w">      </span><span class="nt">&lt;/source&gt;</span>
+<span class="linenos">28</span><span class="w">      </span><span class="nt">&lt;basicData</span><span class="w"> </span><span class="na">xsi:type=</span><span class="s">&quot;TrafficStatus&quot;</span><span class="nt">&gt;</span>
+<span class="linenos">29</span><span class="w">        </span><span class="nt">&lt;measurementOrCalculationTime&gt;</span>2017-11-17T23:57:35+01:00<span class="nt">&lt;/measurementOrCalculationTime&gt;</span>
+</pre></div>
+</div>
+<p>The degree to which historical data is used in the calculation of the state value is reflected in the value of <cite>supplierCalculatedDataQuality</cite>, among other things.</p>
+</section>
+</section>
+<section id="location-description">
+<h1>Location Description<a class="headerlink" href="#location-description" title="Link to this heading">¶</a></h1>
+<p>FCD data are measured at predefined road segments. The segment length can be given by ALERT-C location points distance, sections of the road network used (GlobalNetwork), or requirements based on the physical layout of the road.</p>
+<p>The location of FCD segment is expressed by a reference in a <cite>pertinentLocation</cite> element to a set of predefined locations in a <cite>PredefinedLocationsPublication</cite> <a class="reference internal" href="introduction.html#id9" id="id3"><span>[16157-3]</span></a> associated with this information source.</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="linenos">30</span><span class="w">        </span><span class="nt">&lt;pertinentLocation</span><span class="w"> </span><span class="na">xsi:type=</span><span class="s">&quot;LocationByReference&quot;</span><span class="nt">&gt;</span>
+<span class="linenos">31</span><span class="w">          </span><span class="nt">&lt;predefinedLocationReference</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;6D476A44-AA44-4947-AA4B-7C4DD79BB67E&quot;</span><span class="w"> </span><span class="na">targetClass=</span><span class="s">&quot;PredefinedLocation&quot;</span><span class="w"> </span><span class="na">version=</span><span class="s">&quot;0&quot;</span><span class="nt">/&gt;</span>
+<span class="linenos">32</span><span class="w">        </span><span class="nt">&lt;/pertinentLocation&gt;</span>
+</pre></div>
+</div>
+<p>In addition to describing the location with the <cite>PredefinedLocation</cite> element, the format optionally allows the location to be described with an additional reference, the provider’s internal identifier, in the <cite>source element</cite>.</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="linenos">25</span><span class="w">      </span><span class="nt">&lt;source&gt;</span>
+<span class="linenos">26</span><span class="w">        </span><span class="nt">&lt;sourceIdentification&gt;</span>ndic-secid-1-01<span class="nt">&lt;/sourceIdentification&gt;</span>
+<span class="linenos">27</span><span class="w">      </span><span class="nt">&lt;/source&gt;</span>
+</pre></div>
+</div>
+<p>Location description methods are beyond the scope of this document and are described elsewhere.</p>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="index.html">
+              <img class="logo" src="_static/RSD-logo-07.jpg" alt="Logo"/>
+            </a></p>
+  <div>
+    <h3><a href="index.html">Table of Contents</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">Concepts</a><ul>
+<li><a class="reference internal" href="#publications-of-type-elaborateddatapublication">Publications of type ElaboratedDataPublication</a></li>
+<li><a class="reference internal" href="#calculated-fcd-information">Calculated FCD information</a><ul>
+<li><a class="reference internal" href="#data-reliability-measures">Data Reliability Measures</a></li>
+<li><a class="reference internal" href="#actual-number-of-floating-vehicles">Actual number of floating vehicles</a></li>
+<li><a class="reference internal" href="#traffic-flow-speed">Traffic flow speed</a></li>
+<li><a class="reference internal" href="#travel-time-and-actual-delay">Travel time and actual delay</a></li>
+<li><a class="reference internal" href="#traffic-levels">Traffic levels</a></li>
+<li><a class="reference internal" href="#congestions">Congestions</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#providing-only-currently-available-data">Providing only currently available data</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#temporal-validity">Temporal validity</a><ul>
+<li><a class="reference internal" href="#fcd-input-data-age">FCD input data age</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#location-description">Location Description</a></li>
+</ul>
+
+  </div>
+  <div>
+    <h4>Previous topic</h4>
+    <p class="topless"><a href="introduction.html"
+                          title="previous chapter">Introduction</a></p>
+  </div>
+  <div>
+    <h4>Next topic</h4>
+    <p class="topless"><a href="examples.html"
+                          title="next chapter">Annex A: Examples of messages</a></p>
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/concepts.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="examples.html" title="Annex A: Examples of messages"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="introduction.html" title="Introduction"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">NDIC - DATEX II Elaborated Data Publication - FCD 1.0rev2 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Concepts</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+    &#169; Copyright 2022, TamTam Research s.r.o..
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.5.
+    </div>
+  </body>
+</html>

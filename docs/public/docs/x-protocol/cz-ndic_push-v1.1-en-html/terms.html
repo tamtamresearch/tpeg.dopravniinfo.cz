@@ -1,0 +1,156 @@
+
+
+<!doctype html>
+
+<html lang="en" data-content_root="./">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Terms and Abbreviations &#8212; NDIC HTTP Protocol for Sending All Changes on Occurrence 1.1rev1 documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/bizstyle.css?v=532c1bf3" />
+    
+    <script src="_static/documentation_options.js?v=02661a48"></script>
+    <script src="_static/doctools.js?v=888ff710"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/bizstyle.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Architecture" href="architecture.html" />
+    <link rel="prev" title="NDIC HTTP Protocol for Sending All Changes on Occurrence" href="index.html" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <!--[if lt IE 9]>
+    <script src="_static/css3-mediaqueries.js"></script>
+    <![endif]-->
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="architecture.html" title="Architecture"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="NDIC HTTP Protocol for Sending All Changes on Occurrence"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">NDIC HTTP Protocol for Sending All Changes on Occurrence 1.1rev1 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Terms and Abbreviations</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="terms-and-abbreviations">
+<h1>Terms and Abbreviations<a class="headerlink" href="#terms-and-abbreviations" title="Link to this heading">¶</a></h1>
+<dl class="field-list simple">
+<dt class="field-odd">provider<span class="colon">:</span></dt>
+<dd class="field-odd"><p>an entity that provides messages to subscribers</p>
+</dd>
+<dt class="field-even">subscriber<span class="colon">:</span></dt>
+<dd class="field-even"><p>an entity that receives messages from the provider</p>
+</dd>
+<dt class="field-odd">message<span class="colon">:</span></dt>
+<dd class="field-odd"><p>a complete data object containing one or more records, transmitted between the provider and the subscriber in a single step.</p>
+</dd>
+<dt class="field-even">record<span class="colon">:</span></dt>
+<dd class="field-even"><p>comprehensive information of a certain type with its own identifier and a time validity.</p>
+</dd>
+<dt class="field-odd">change record<span class="colon">:</span></dt>
+<dd class="field-odd"><p>a record that provides an updated description of a record with the same identifier that the subscriber previously received.</p>
+</dd>
+<dt class="field-even">change message<span class="colon">:</span></dt>
+<dd class="field-even"><p>a message that contains several new or changed records, thus not conveying a complete view of the state of all records.</p>
+</dd>
+<dt class="field-odd">snapshot<span class="colon">:</span></dt>
+<dd class="field-odd"><p>a message that describes a comprehensive view of all relevant records at a given moment.</p>
+</dd>
+<dt class="field-even">curl<span class="colon">:</span></dt>
+<dd class="field-even"><p>cURL is a command-line tool that allows, among other things, the initiation of HTTP communication with a web server. Users can send HTTP requests, modify headers and data, and receive responses.</p>
+</dd>
+<dt class="field-odd">source<span class="colon">:</span></dt>
+<dd class="field-odd"><p>a service that enables the provision of messages by a specific provider, for a specific region, in a specific message format, and using a specific protocol.</p>
+</dd>
+<dt class="field-even">subscription registry<span class="colon">:</span></dt>
+<dd class="field-even"><p>a web application available at <a class="reference external" href="https://mobilitydata.rsd.cz">https://mobilitydata.rsd.cz</a>, allowing subscribers to create accounts and manage message subscriptions from various sources. The subscription registry also enables subscription management on the provider’s side (subscription approvals, etc.).</p>
+</dd>
+<dt class="field-odd">subscription<span class="colon">:</span></dt>
+<dd class="field-odd"><p>a record in the subscription registry describing the parameters of what data the subscriber wants to receive from a source and how it should be done.</p>
+</dd>
+<dt class="field-even">acceptable duration of (subscriber’s system) unavailability<span class="colon">:</span></dt>
+<dd class="field-even"><p>the time during which the subscriber’s system can be unavailable, while the provider’s system continues to attempt to reestablish previous communication. Exceeding this time will block the subscription, and the provider will cease to send data. This time is usually 24 hours but may vary.</p>
+</dd>
+<dt class="field-odd">maximal interval for repeated delivery attempts<span class="colon">:</span></dt>
+<dd class="field-odd"><p>the longest interval between repeated attempts to resend a message to an unavailable subscriber’s system. This time is typically 15 minutes but may vary.</p>
+</dd>
+</dl>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="index.html">
+              <img class="logo" src="_static/RSD-logo-07.jpg" alt="Logo"/>
+            </a></p>
+  <div>
+    <h4>Previous topic</h4>
+    <p class="topless"><a href="index.html"
+                          title="previous chapter">NDIC HTTP Protocol for Sending All Changes on Occurrence</a></p>
+  </div>
+  <div>
+    <h4>Next topic</h4>
+    <p class="topless"><a href="architecture.html"
+                          title="next chapter">Architecture</a></p>
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/terms.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="architecture.html" title="Architecture"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="NDIC HTTP Protocol for Sending All Changes on Occurrence"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">NDIC HTTP Protocol for Sending All Changes on Occurrence 1.1rev1 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Terms and Abbreviations</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+    &#169; Copyright 2023, TamTam Research s.r.o..
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.5.
+    </div>
+  </body>
+</html>

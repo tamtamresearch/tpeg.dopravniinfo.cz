@@ -1,0 +1,44 @@
+cz-ndic_ddr-winter:
+    name:
+        "cs": DDR - Zimní sjízdnost
+        "en": DDR - Winter Driving Conditions
+    description:
+        "cs": Zimní sjízdnost, na území celé ČR v oblastech spravovaných ŘSD, poskytovaná NDIC ve chvíli jejich vzniku, ve formátu DDR NDIC pro zimní zpravodajství. Není poskytováno mimo zimní sezónu.
+        "en": Winter driving conditions, provided by NDIC for the whole Czechia from regions maintained by ŘSD, pushed on occurrence, in a DDR format for winter driving conditions. Provided only in winter season.
+    content:
+        content_type: "dynamic"
+        resource_type: "data set"
+        dataset:
+            category: [Unexpected road events and conditions]
+            detailed_type: [Poor road conditions, Weather conditions affecting road surface and visibility]
+        language: [cs]
+    temporal:
+        start_date: 2005-01-01
+    coverage:
+        area: CZ0
+        network: [Motorways, Arterial road network, Regional roads]
+    transport_modes: [car, truck, motorcycle, bus]
+    responsibilities:
+        publisher: cz-ndic
+    conditions_of_use:
+        contract_or_licence: Contract and Free of charge
+        # process for applying for data
+        terms_and_conditions: ddrcontract
+    access_info:
+        formats:
+            - cz-ndic_ddr-winter-v3.2.5
+        protocols:
+            - cz-ndic_push-v1.1
+        access_point: ["NDIC/data subscription"]
+    quality_information:
+        status:
+            "cs": provozní
+            "en": production
+        status_description:
+            "cs": Poskytováno pouze v zimním období, od 1/2022 zpětně kompatibilní rozšíření funkcionality protokolu poskytování.
+            "en": Provided only in winter season, from 1/2022 backwards compatible enhancement of delivery protocol.
+        update_frequency: On occurrence
+        quality_assesment:
+            "cs": interní procesy kontroly a křížová verifikace
+            "en": internal control mechanism and cross validation
+        ec_acts: []

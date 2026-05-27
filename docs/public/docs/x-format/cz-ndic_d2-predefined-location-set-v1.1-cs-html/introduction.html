@@ -1,0 +1,217 @@
+
+
+<!doctype html>
+
+<html lang="cs" data-content_root="./">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Úvod &#8212; Dokumentace pro NDIC - DATEX II Predefined Location Publication - Sada předdefinovaných poloh 1.1rev0</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/bizstyle.css?v=532c1bf3" />
+    
+    <script src="_static/documentation_options.js?v=65a9e0b9"></script>
+    <script src="_static/doctools.js?v=888ff710"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/translations.js?v=0275affc"></script>
+    <script src="_static/bizstyle.js"></script>
+    <link rel="index" title="Rejstřík" href="genindex.html" />
+    <link rel="search" title="Vyhledávání" href="search.html" />
+    <link rel="next" title="Koncepty" href="concepts.html" />
+    <link rel="prev" title="NDIC - DATEX II Predefined Location Publication - Sada předdefinovaných poloh" href="index.html" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <!--[if lt IE 9]>
+    <script src="_static/css3-mediaqueries.js"></script>
+    <![endif]-->
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigace</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="Obecný rejstřík"
+             accesskey="I">rejstřík</a></li>
+        <li class="right" >
+          <a href="concepts.html" title="Koncepty"
+             accesskey="N">další</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="NDIC - DATEX II Predefined Location Publication - Sada předdefinovaných poloh"
+             accesskey="P">předchozí</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Dokumentace pro NDIC - DATEX II Predefined Location Publication - Sada předdefinovaných poloh 1.1rev0</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Úvod</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="uvod">
+<h1>Úvod<a class="headerlink" href="#uvod" title="Link to this heading">¶</a></h1>
+<p>Tento dokument je určen pro poskytovatele či odběratele dat. Odběratel jej použije k zhodnocení formátu a pro případnou implementaci importu dat z přijatých XML souborů do vlastního informačního systému. Poskytovatel jej použije jako předepsanou šablonu výstupních dat a k implementaci exportu dat z vlastního informačního systému do systému NDIC.</p>
+<p>Najdete zde:</p>
+<ul class="simple">
+<li><p>koncepční popis publikovaných informací</p></li>
+<li><p>informaci o používaných metodách popisu polohy</p></li>
+<li><p>W3C XML Schéma formátu</p></li>
+<li><p>vzorek dat</p></li>
+</ul>
+<p>Následující témata jsou mimo rámec tohoto popisu a jejich případné uvedení je pouze informativní:</p>
+<ul class="simple">
+<li><p>protokol přenosu včetně přístupového bodu, životního cyklu atp.</p></li>
+<li><p>související datové formáty</p></li>
+<li><p>typický původ dat</p></li>
+<li><p>typické použití dat</p></li>
+</ul>
+<section id="obecne-pojmy">
+<h2>Obecné pojmy<a class="headerlink" href="#obecne-pojmy" title="Link to this heading">¶</a></h2>
+<p>Tento dokument používá následující pojmy:</p>
+<dl class="glossary">
+<dt id="term-format">formát<a class="headerlink" href="#term-format" title="Link to this term">¶</a></dt><dd><p>popis datové struktury pro přenos nějakého typu informace.</p>
+</dd>
+<dt id="term-protokol">protokol<a class="headerlink" href="#term-protokol" title="Link to this term">¶</a></dt><dd><p>popis procesu a pravidel pro přenos dat.</p>
+</dd>
+<dt id="term-NDIC">NDIC<a class="headerlink" href="#term-NDIC" title="Link to this term">¶</a></dt><dd><p>národní dopravně informační centrum</p>
+</dd>
+<dt id="term-DDR">DDR<a class="headerlink" href="#term-DDR" title="Link to this term">¶</a></dt><dd><p>datové distribuční rozhraní, proprietární formát NDIC</p>
+</dd>
+<dt id="term-DATEX-II-model">DATEX II model<a class="headerlink" href="#term-DATEX-II-model" title="Link to this term">¶</a></dt><dd><p>model tříd pro popisování informací souvisejících se silniční
+dopravou. Model tříd ve formě UML je platformně nezávislý.</p>
+<p>Jednou ze specifických platforem pro vyjádření modelu je XML.</p>
+<p>Model je rozsáhlý (sestává z několika tisíc strukturálních položek
+reprezentujících pojem včetně definice). Referenční data (UML
+model tříd ve formátu Enterprise Architect souboru EAP, XML Schéma a
+další) viz <a class="reference internal" href="#d2ref" id="id1"><span>[d2ref]</span></a>.
+Další podpůrné informace viz <a class="reference internal" href="#d2supp" id="id2"><span>[d2supp]</span></a>.</p>
+</dd>
+<dt id="term-DATEX-II-profil">(DATEX II) profil<a class="headerlink" href="#term-DATEX-II-profil" title="Link to this term">¶</a></dt><dd><p>zjednodušený model tříd, postačující pro konkrétní potřeby. Profil vzniká z modelu výběrem jeho konkrétních částí.</p>
+</dd>
+<dt id="term-DATEX-II-rozsireni">(DATEX II) rozšíření<a class="headerlink" href="#term-DATEX-II-rozsireni" title="Link to this term">¶</a></dt><dd><p>rozšířený DATEX II model, doplňující struktury, které v základním modelu chybí a jsou zapotřebí pro konkrétní potřeby.</p>
+</dd>
+<dt id="term-rozsireni-urovne-B">rozšíření úrovně B<a class="headerlink" href="#term-rozsireni-urovne-B" title="Link to this term">¶</a></dt><dd><p>Rozšíření DATEX II modelu, které je zpětně kompatibilní
+se základním DATEX II modelem, i když obsahuje přidané
+struktury. <a class="reference internal" href="#id7" id="id3"><span>[16157-1]</span></a></p>
+</dd>
+<dt id="term-rozsireni-urovne-C">rozšíření úrovně C<a class="headerlink" href="#term-rozsireni-urovne-C" title="Link to this term">¶</a></dt><dd><p>Rozšíření DATEX II modelu, které není zpětně kompatibilní se základním DATEX II modelem.</p>
+</dd>
+<dt id="term-publikace">publikace<a class="headerlink" href="#term-publikace" title="Link to this term">¶</a></dt><dd><p>prvek DATEX II modelu, sloužící jako obálka přenášeného
+obsahu určitého typu. Každá zasílaná DATEX II zpráva obsahuje
+právě jeden prvek typu publikace. Existuje řada typů publikace,
+např. <cite>SituationPublication</cite> <a class="reference internal" href="#id9" id="id4"><span>[16157-3]</span></a>, <cite>ElaboratedDataPublication</cite>
+<a class="reference internal" href="#id11" id="id5"><span>[16157-5]</span></a>, <cite>PredefinedLocationsPublication</cite> <a class="reference internal" href="#id9" id="id6"><span>[16157-3]</span></a> atd.</p>
+</dd>
+<dt id="term-W3C-XML-Schema">(W3C) XML Schéma<a class="headerlink" href="#term-W3C-XML-Schema" title="Link to this term">¶</a></dt><dd><p>jazyk, kterým lze definovat pravidla pro strukturu XML dokumentu.</p>
+</dd>
+<dt id="term-XSD">XSD<a class="headerlink" href="#term-XSD" title="Link to this term">¶</a></dt><dd><p>XML dokument, obsahující XML Schéma. Někdy též synonymum pro XML Schéma samotné.</p>
+</dd>
+<dt id="term-uri">uri<a class="headerlink" href="#term-uri" title="Link to this term">¶</a></dt><dd><p>text, který slouží jako unikátní identifikátor. V tomto dokumentu má každý formát své uri.</p>
+</dd>
+</dl>
+<div role="list" class="citation-list">
+<div class="citation" id="id7" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id3">16157-1</a><span class="fn-bracket">]</span></span>
+<p>ČSN CEN TS 16157-1: Inteligentní dopravní systémy – Specifikace výměnného formátu DATEX II pro řízení dopravy a dopravní informace - Část 1: Obecný rámec a architektura</p>
+</div>
+<div class="citation" id="id8" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>16157-2<span class="fn-bracket">]</span></span>
+<p>ČSN CEN TS 16157-2: Inteligentní dopravní systémy – Specifikace výměnného formátu DATEX II pro řízení dopravy a dopravní informace - Část 2: Označování pozice</p>
+</div>
+<div class="citation" id="id9" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>16157-3<span class="fn-bracket">]</span></span>
+<span class="backrefs">(<a role="doc-backlink" href="#id4">1</a>,<a role="doc-backlink" href="#id6">2</a>)</span>
+<p>ČSN CEN TS 16157-3: Inteligentní dopravní systémy – Specifikace výměnného formátu DATEX II pro řízení dopravy a dopravní informace – Část 3: Publikace situace</p>
+</div>
+<div class="citation" id="id10" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>16157-4<span class="fn-bracket">]</span></span>
+<p>ČSN CEN TS 16157-4: Inteligentní dopravní systémy – Specifikace výměnného formátu DATEX II pro řízení dopravy a dopravní informace – Část 4: Publikace proměnného dopravního značení</p>
+</div>
+<div class="citation" id="id11" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id5">16157-5</a><span class="fn-bracket">]</span></span>
+<p>ČSN CEN TS 16157-5: Inteligentní dopravní systémy – Specifikace výměnného formátu DATEX II pro řízení dopravy a dopravní informace – Část 5: Publikace naměřených a zpracovaných dat</p>
+</div>
+<div class="citation" id="d2ref" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">d2ref</a><span class="fn-bracket">]</span></span>
+<p>DATEX II Current version/Reference set, <a class="reference external" href="https://docs.datex2.eu/downloads/">https://docs.datex2.eu/downloads/</a> (dostupné jen přihlášeným uživatelům).</p>
+</div>
+<div class="citation" id="d2supp" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id2">d2supp</a><span class="fn-bracket">]</span></span>
+<p>DATEX II Current version/Supporting, <a class="reference external" href="https://docs.datex2.eu/">https://docs.datex2.eu/</a> (dostupné jen přihlášeným uživatelům).</p>
+</div>
+</div>
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="index.html">
+              <img class="logo" src="_static/RSD-logo-07.jpg" alt="Logo"/>
+            </a></p>
+  <div>
+    <h3><a href="index.html">Table of Contents</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">Úvod</a><ul>
+<li><a class="reference internal" href="#obecne-pojmy">Obecné pojmy</a></li>
+</ul>
+</li>
+</ul>
+
+  </div>
+  <div>
+    <h4>Přechozí téma</h4>
+    <p class="topless"><a href="index.html"
+                          title="předchozí kapitola">NDIC - DATEX II Predefined Location Publication - Sada předdefinovaných poloh</a></p>
+  </div>
+  <div>
+    <h4>Další téma</h4>
+    <p class="topless"><a href="concepts.html"
+                          title="další kapitola">Koncepty</a></p>
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>Tato stránka</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/introduction.rst.txt"
+            rel="nofollow">Ukázat zdroj</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Rychlé vyhledávání</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="OK" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigace</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="Obecný rejstřík"
+             >rejstřík</a></li>
+        <li class="right" >
+          <a href="concepts.html" title="Koncepty"
+             >další</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="NDIC - DATEX II Predefined Location Publication - Sada předdefinovaných poloh"
+             >předchozí</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Dokumentace pro NDIC - DATEX II Predefined Location Publication - Sada předdefinovaných poloh 1.1rev0</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Úvod</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+    &#169; Veškerá práva vyhrazena 2023, TamTam Research s.r.o..
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.5.
+    </div>
+  </body>
+</html>

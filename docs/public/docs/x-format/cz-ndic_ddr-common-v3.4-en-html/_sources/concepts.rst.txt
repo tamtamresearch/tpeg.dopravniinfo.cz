@@ -1,0 +1,259 @@
+========
+Concepts
+========
+
+This section highlights main concepts, used by this format. For complete
+description refer to schemas with definitions in comments.
+
+In this section are provided some snippets of real XML documents. For more
+examples, see :ref:`examples`
+
+XML Document Sections
+=====================
+
+The XML Document is built using following elements and sections:
+
+- DOC (document root)
+- INF (metadata)
+- MJD (container for messages)
+- MSG (message)
+
+Document root (`DOC`)
+---------------------
+
+The `DOC` element represents single publication (one instance of information message).
+
+The `xmlns` attribute refers to the version of the schema used.
+
+The `id` attribute specifies the identity of the publication as a whole.
+
+The `country` attribute specifies the code of the country in which the events contained in the message are located. There must not be events from more than one country in one report.
+
+.. literalinclude:: ../../samples/obstacle.xml
+   :language: xml
+   :linenos:
+   :end-before: <INF
+
+Metadata (`INF`)
+----------------
+
+`INF` element provides meta-information about whole publication:
+
+- a reference to the ALERT-C event code list (versions) used in the event description 
+- reference to the ALERT-C location table (country code, table number and version) used to describe locations
+- reference to the GDF 4.0 map set used (type of network used, network version and country for which the network was created)
+- reference to the code list of organizational units of the Czech Republic UIR-ADR (structure version, data version and issue date)
+
+.. literalinclude:: ../../samples/obstacle.xml
+   :language: xml
+   :linenos:
+   :start-after: country="CZ">
+   :end-before: <MSG
+
+Message container (`MJD`)
+-------------------------
+
+Single traffic messages are located in a parent element `MJD`. It can contain
+one or more messages.
+
+
+Traffic Message (`MSG`)
+-----------------------
+
+Particular message is represented by a `MSG` element. The message itself has following sections:
+
+- validity in time `MTIME`
+- textual description of the event `MTXT`
+- event description `MEVT` (*what* has happened)
+- location reference `MLOC` (*where*) to linear location
+- description of the position according to the UIR-ADR `MDST` code list
+- detour description `DIVLOC`
+
+
+Message identity and version
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The message itself has unique identifier `id`, version, type, provider and message veracity information.
+
+.. literalinclude:: ../../samples/obstacle.xml
+   :language: xml
+   :linenos:
+   :lineno-match:
+   :start-after: <MJD
+   :end-before: <MTIME>
+
+The `id` attribute indicates the identity of the message, it does not change during its updates.
+
+The `version` attribute indicates the version of the message. Versions start with the number `1` and with each update the version is increased by one.
+
+The `type` attribute specifies the type of message and can take the values `TI` for common traffic information and `TL` for traffic status information (e.g. travel times).
+
+The `provider` attribute specifies the abbreviation of the provider (originator) of the message.
+
+The `authorized` attribute indicates whether the event was verified on the spot by the Police. Most messages are verified, the attribute has the value `true`, but for example, for an unsecured accident location, the value of the attribute is `false` until on-site verification.
+   
+Message time validity (`MTIME`)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The validity of a message over time is specified by a simple validity interval from - to, using time zones.
+
+.. literalinclude:: ../../samples/obstacle.xml
+   :language: xml
+   :linenos:
+   :lineno-match:
+   :start-after: authorized="true">
+   :end-before: <MTXT
+
+Message text (`MTXT`)
+^^^^^^^^^^^^^^^^^^^^^
+
+DDR uses a text description of the event as specified by the operator in the `MTXT` tag. This text contains both a description of the event itself and its location.
+
+.. literalinclude:: ../../samples/obstacle.xml
+   :language: xml
+   :linenos:
+   :lineno-match:
+   :start-after: </MTIME>
+   :end-before: <MEVT>
+   
+
+Event description (`MEVT`)
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+DDR uses the ALERT-C event code list to describe the event and respects all the rules given by ALERT-C (multiple event codes, quantifiers).
+
+The `MEVT` tag contains the message text composed of the values   of individual events from the ALERT-C event catalog.
+
+In addition to the codes from the ALERT-C code list, a free text description as entered by the operator is used.
+
+.. literalinclude:: ../../samples/obstacle.xml
+   :language: xml
+   :linenos:
+   :lineno-match:
+   :start-after: <MTXT>
+   :end-before: <MLOC 
+   
+   
+Location description (`MLOC`)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+DDR uses either a point location reference (e.g., an accident), a line location reference (e.g., a column) on a road network, or an area location reference to describe a location.
+
+The following location description methods may be used in DDR (at least one must be used):
+
+- free text description (as entered by the operator) in the `TXPL` tag.
+- ALERT-C location codes (primary location, direction and range) in the `TMCL` tag.
+- GlobalNetwork road network segments reference in the `SNTL` tag.
+- Mileage with a reference to a road (using its number) in the `CHAIN` tag
+- Coordinates (WGS-84 and SJTSK) of the beginning (from the driver's point of view = end of the queue) and the end of the event in the `SNTL/COORD` tag and. `SNTL/COORDEND` tag.
+- OpenLR dynamic localization allowing location description using routing points on a road network in the `OLR` tag.
+
+.. note ::
+
+	The position can also be described by several unrelated sections of the road network. This is indicated by the attribute `geometry_type` with the value `non-continuos`. Then the `TMCL`, `SNTL`, `CHAIN`, `OLR` tags may appear more than once. The `TMCL` tag can appear more than once, even if the location is of the `continuos` type, in the case of consecutive TMC sections.
+
+.. literalinclude:: ../../samples/obstacle.xml
+   :language: xml
+   :linenos:
+   :lineno-match:
+   :start-after: </MEVT>
+   :end-before: <MDST>
+   
+Destination description (`MDST`)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The UIR-ADR code list is used to describe the area (to the street name level of detail). Reference to the organizational area in the UIR-ADR code list is in the `MDST` tag
+
+.. literalinclude:: ../../samples/obstacle.xml
+   :language: xml
+   :linenos:
+   :lineno-match:
+   :start-after: </MLOC>
+   :end-before: <DIVLOC>
+   
+
+Diversion description (`DIVLOC`)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+All available linear descriptions and text descriptions can be used to describe the diversion (in the `DIVLOC` tag). A detour can be specified for different types of vehicles on different routes.
+
+.. literalinclude:: ../../samples/obstacle.xml
+   :language: xml
+   :linenos:
+   :lineno-match:
+   :start-after: </MDST>
+   :end-before: </MSG>
+
+====================
+Location referencing
+====================
+
+Following is a selection of most used location referencing methods.
+
+Location description by means of ALERT-C
+========================================
+
+The first method describes position by ALERT-C codes, by element `TMCL`. The use of this method depends on the presence of the ALERT-C location at a given location.
+
+The `TMCL` method uses the primary location (attribute `primarycode`), extent (attribute `extent`) and direction (attribute `direction`) element to describe the event. Used location table is described at the level of document in element `INF`, so all messages `MSG` in the document must use same location table.
+
+The primary location is, by the ALERT-C principle, the place where the accident occurred or where the driver leaves the problem area. The secondary location is the end of the traffic queue or the place where the driver first enters the problem area.
+
+.. literalinclude:: ../../samples/obstacle.xml
+   :language: xml
+   :linenos:
+   :lineno-match:
+   :start-after: <TXPL>
+   :end-before: <SNTL
+
+
+Location description using the Global Network
+=============================================
+
+The second method uses for location description identifiers of affected sections of the road network, specified by Global Network (GN) database, and event start and (end) coordinates (in the S-JTSK and WGS-84 reference system). 
+
+The `COORD` element describes the coordinates of the  "start" of an event in the direction of traffic. In case of a linear event, the coordinates indicate the start of the event in terms of the direction of traffic, the place to which the driver arrives first, in TMC it is the secondary location.
+
+The `COORDEND` element describes the "end" coordinates of the event in the direction of traffic. In case of a linear event, the coordinates indicate the end of the event in terms of the direction of traffic, i.e. the place where the driver leaves the problem area, in TMC it is the primary location
+
+The `STEL` element describes specific sections of the GN network by their identifier `el_code`, directionality of the section `el_dir` and by the order of their appearance `order`, as they follow each other on the network.
+
+This is native means of location referencing by NDIC.
+
+.. literalinclude:: ../../samples/obstacle.xml
+   :language: xml
+   :linenos:
+   :lineno-match:
+   :start-after: <TMCL
+   :end-before: <CHAIN
+
+Location description by enumeration UIR-ADR and road name
+=========================================================
+
+The third method uses the "address" of the street or road (name, area, number, etc.).
+
+The `MDST/DEST` element describes the destination area by the administrative area affected and specific roads or streets affected. In elements `ROAD` or `STREET`.
+
+.. literalinclude:: ../../samples/obstacle.xml
+   :language: xml
+   :linenos:
+   :lineno-match:
+   :start-after: </MLOC>
+   :end-before: <DIVLOC>
+   
+Location description using OpenLR
+=================================
+
+The fourth method uses the **OpenLR** routing method for dynamic location description [http://www.openlr.org/method.html].
+
+This makes it possible to mark significant points of the route on the provider's map on which the traffic problem is located and, together with selected attributes of these points and related road attributes, to transmit them to the recipient. According to the information provided, the end user device then tries to route the location on its map; if succeeds, it can find the exact location of the problem on this route.
+
+The `OLR` element encapsulates the information needed by the OpenLR method.
+
+.. literalinclude:: ../../samples/obstacle.xml
+   :language: xml
+   :linenos:
+   :lineno-match:
+   :start-after: <CHAIN 
+   :end-before: </MLOC>
+

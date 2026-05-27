@@ -1,0 +1,44 @@
+name:
+    "cs": TMC lokační tabulka v11
+    "en": TMC Location Table v11
+description:
+    "cs": Předdefinovaný zjednodušený logicky provázaný popis prvků silniční sítě celé ČR, dle normy ČSN EN 14819-3. Využívaný pro odkazování na polohu dopravní události.
+    "en": Predefined simplified logically interconnected road elements network description for the whole Czechia according to EN 14819-3. Used for location referencing of the traffic information.
+content:
+    content_type: "static"
+    resource_type: "data set"
+    dataset:
+        category: [Static road network data]
+        detailed_type: [Junctions, Road classification]
+    language: [cs]
+temporal:
+    start_date: 2025-08-04
+coverage:
+    area: CZ0
+    network: [Motorways, Arterial road network, Regional roads, Urban and local roads]
+transport_modes: [car, truck, motorcycle, bus]
+responsibilities:
+    publisher: cz-ndic
+conditions_of_use:
+    contract_or_licence: Contract and Free of charge
+    # process for applying for data
+    terms_and_conditions: ltcontract
+access_info:
+    formats:
+        - tisa_tmc-location-table-v2.6
+    protocols:
+        - cz-ndic_pull-v1.1
+    access_point: ["NDIC/data subscription"]
+    access_url: ["https://mobilitydata.rsd.cz/DataSource/Detail?dsid=6860C2BB"]
+quality_information:
+    status:
+        "cs": provozní
+        "en": production
+    status_description:
+        "cs": verze 11, s parametry CID=11 a TABCD=25, vydáno 4.8.2025.
+        "en": version 11, with CID=11 a TABCD=25 parameters, released on 2023/08/04.
+    update_frequency: Less frequent than yearly
+    quality_assesment:
+        "cs": interní procesy kontroly a křížová verifikace
+        "en": internal control mechanism and cross validation
+    ec_acts: [rtti, tisa]

@@ -1,0 +1,219 @@
+
+
+<!doctype html>
+
+<html lang="cs" data-content_root="./">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Koncepty &#8212; Dokumentace pro NDIC - DATEX II Situation Publication - Počasí 1.2rev0</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/bizstyle.css?v=532c1bf3" />
+    
+    <script src="_static/documentation_options.js?v=b948a732"></script>
+    <script src="_static/doctools.js?v=888ff710"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/translations.js?v=0275affc"></script>
+    <script src="_static/bizstyle.js"></script>
+    <link rel="index" title="Rejstřík" href="genindex.html" />
+    <link rel="search" title="Vyhledávání" href="search.html" />
+    <link rel="next" title="Příloha A: Příklady zpráv" href="examples.html" />
+    <link rel="prev" title="Úvod" href="introduction.html" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <!--[if lt IE 9]>
+    <script src="_static/css3-mediaqueries.js"></script>
+    <![endif]-->
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigace</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="Obecný rejstřík"
+             accesskey="I">rejstřík</a></li>
+        <li class="right" >
+          <a href="examples.html" title="Příloha A: Příklady zpráv"
+             accesskey="N">další</a> |</li>
+        <li class="right" >
+          <a href="introduction.html" title="Úvod"
+             accesskey="P">předchozí</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Dokumentace pro NDIC - DATEX II Situation Publication - Počasí 1.2rev0</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Koncepty</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="koncepty">
+<h1>Koncepty<a class="headerlink" href="#koncepty" title="Link to this heading">¶</a></h1>
+<p>Popisovaný formát umožňuje publikovat informace o počasí a sjízdnosti komunikací pro sadu předem definovaných míst.
+Jedná se o dopravní informace, nejsou publikovány pravidelně, ale pouze při předem stanovených situacích, například hustá mlha, atp.</p>
+<section id="publikace-typu-situationpublication">
+<h2>Publikace typu SituationPublication<a class="headerlink" href="#publikace-typu-situationpublication" title="Link to this heading">¶</a></h2>
+<p>Formát vychází z DATEX II publikace typu <cite>SituationPublication</cite>
+<a class="reference internal" href="introduction.html#id9" id="id1"><span>[16157-3]</span></a>. Profil využívá jen malé podmnožiny z možných struktur.</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span>
+<span class="linenos"> 2</span><span class="nt">&lt;d2LogicalModel</span><span class="w"> </span><span class="na">modelBaseVersion=</span><span class="s">&quot;2&quot;</span>
+<span class="linenos"> 3</span><span class="na">xmlns=</span><span class="s">&quot;http://datex2.eu/schema/2/2_0&quot;</span>
+<span class="linenos"> 4</span><span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span>
+<span class="linenos"> 5</span><span class="na">xsi:schemaLocation=</span><span class="s">&quot;http://datex2.eu/schema/2/2_0 ../schema/schema.xsd&quot;</span><span class="nt">&gt;</span>
+<span class="linenos"> 6</span><span class="w">  </span><span class="nt">&lt;exchange&gt;</span>
+<span class="linenos"> 7</span><span class="w">    </span><span class="nt">&lt;supplierIdentification&gt;</span>
+<span class="linenos"> 8</span><span class="w">      </span><span class="nt">&lt;country&gt;</span>cz<span class="nt">&lt;/country&gt;</span>
+<span class="linenos"> 9</span><span class="w">      </span><span class="nt">&lt;nationalIdentifier&gt;</span>NDIC<span class="nt">&lt;/nationalIdentifier&gt;</span>
+<span class="linenos">10</span><span class="w">    </span><span class="nt">&lt;/supplierIdentification&gt;</span>
+<span class="linenos">11</span><span class="w">  </span><span class="nt">&lt;/exchange&gt;</span>
+<span class="linenos">12</span><span class="w">  </span><span class="nt">&lt;payloadPublication</span><span class="w"> </span><span class="na">lang=</span><span class="s">&quot;cs&quot;</span><span class="w"> </span><span class="na">xsi:type=</span><span class="s">&quot;SituationPublication&quot;</span><span class="nt">&gt;</span>
+<span class="linenos">13</span><span class="w">    </span><span class="nt">&lt;feedType&gt;</span>x-format:cz-ndic_d2-weather-v1.2<span class="nt">&lt;/feedType&gt;</span>
+<span class="linenos">14</span><span class="w">    </span><span class="nt">&lt;publicationTime&gt;</span>2017-07-15T04:27:59+02:00<span class="nt">&lt;/publicationTime&gt;</span>
+<span class="linenos">15</span><span class="w">    </span><span class="nt">&lt;publicationCreator&gt;</span>
+<span class="linenos">16</span><span class="w">      </span><span class="nt">&lt;country&gt;</span>cz<span class="nt">&lt;/country&gt;</span>
+<span class="linenos">17</span><span class="w">      </span><span class="nt">&lt;nationalIdentifier&gt;</span>NDIC<span class="nt">&lt;/nationalIdentifier&gt;</span>
+<span class="linenos">18</span><span class="w">    </span><span class="nt">&lt;/publicationCreator&gt;</span>
+</pre></div>
+</div>
+</section>
+<section id="popis-udalosti">
+<h2>Popis události<a class="headerlink" href="#popis-udalosti" title="Link to this heading">¶</a></h2>
+<p>Každá událost je popsána elementem <cite>situation</cite>, popisovaná situace se může vyvíjet v čase, element je tedy verzovaný a má svůj unikátní identifikátor.</p>
+<p>Element <cite>situationRecord</cite> se v elementu <cite>situation</cite> může vyskytovat vícekrát (pokaždé jiného typu). Element <cite>situationRecord</cite> se může vyvíjet v čase, element je tedy verzovaný a má svůj unikátní identifikátor odvozený od identifikátoru nadřazené situace.</p>
+<p>Do publikace dopravní situace zejména patří:</p>
+<ul class="simple">
+<li><p>vlivy počasí jako déšť, vítr, mlha, sníh, náledí atp.</p></li>
+</ul>
+<p>Do této publikace nepatří jakékoliv stavové informace. Dopady události nejsou popisované.</p>
+<p>Pro popis událostí je využita většina struktur, poskytovaných třídou <cite>TrafficElement/Conditions</cite>. Přesné vymezení viz W3C XML schéma nebo případně <a class="reference internal" href="introduction.html#d2ref" id="id2"><span>[d2ref]</span></a>. např.</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="linenos">19</span><span class="w">    </span><span class="nt">&lt;situation</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;MeteoService15.1&quot;</span><span class="w"> </span><span class="na">version=</span><span class="s">&quot;5&quot;</span><span class="nt">&gt;</span>
+<span class="linenos">20</span><span class="w">      </span><span class="nt">&lt;situationVersionTime&gt;</span>2017-07-15T04:27:21+02:00<span class="nt">&lt;/situationVersionTime&gt;</span>
+<span class="linenos">21</span><span class="w">      </span><span class="nt">&lt;headerInformation&gt;</span>
+<span class="linenos">22</span><span class="w">        </span><span class="nt">&lt;confidentiality&gt;</span>noRestriction<span class="nt">&lt;/confidentiality&gt;</span>
+<span class="linenos">23</span><span class="w">        </span><span class="nt">&lt;informationStatus&gt;</span>real<span class="nt">&lt;/informationStatus&gt;</span>
+<span class="linenos">24</span><span class="w">        </span><span class="nt">&lt;urgency&gt;</span>normalUrgency<span class="nt">&lt;/urgency&gt;</span>
+<span class="linenos">25</span><span class="w">      </span><span class="nt">&lt;/headerInformation&gt;</span>
+<span class="linenos">26</span><span class="w">      </span><span class="nt">&lt;situationRecord</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;MeteoService15.1_PoorEnvironmentConditions&quot;</span>
+<span class="linenos">27</span><span class="w">      </span><span class="na">version=</span><span class="s">&quot;5&quot;</span><span class="w"> </span><span class="na">xsi:type=</span><span class="s">&quot;PoorEnvironmentConditions&quot;</span><span class="nt">&gt;</span>
+</pre></div>
+</div>
+<p>Indikace toho že se jedná o událost související s bezpečností provozu dle Nařízení s přenesenou pravomocí 886/2013 je uvedena v tagu <cite>safetyRelatedMessage</cite></p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="linenos">58</span><span class="w">        </span><span class="nt">&lt;situationRecordExtension&gt;</span>
+<span class="linenos">59</span><span class="w">          </span><span class="nt">&lt;situationRecordExtendedApproved&gt;</span>
+<span class="linenos">60</span><span class="w">            </span><span class="nt">&lt;safetyRelatedMessage&gt;</span>true<span class="nt">&lt;/safetyRelatedMessage&gt;</span>
+<span class="linenos">61</span><span class="w">          </span><span class="nt">&lt;/situationRecordExtendedApproved&gt;</span>
+<span class="linenos">62</span><span class="w">        </span><span class="nt">&lt;/situationRecordExtension&gt;</span>
+</pre></div>
+</div>
+</section>
+<section id="popis-polohy-udalosti-predem-definovana-mista-na-silnicni-siti">
+<h2>Popis polohy události (předem definovaná místa na silniční síti)<a class="headerlink" href="#popis-polohy-udalosti-predem-definovana-mista-na-silnicni-siti" title="Link to this heading">¶</a></h2>
+<p>Poloha může být popsána bodem nebo krátkým liniovým úsekem na silniční síti, daným většinou přítomností meteostanice. Vzhledem k tomu, že se poloha senzorů snímajících stav počasí nemění, využívá tento profil pro popis polohy odkazu na předem definovanou polohu popsanou instancí třídy <cite>PredefinedLocation</cite> z balíčku <cite>PredefinedLocationsPublication</cite>. Poloha tedy není popsána přímo v souboru.</p>
+<p>Poloha události (např. náledí) je tedy vyjádřena odkazem do sady předem definovaných míst. Pro dohledání místa je proto nutno získat publikaci <cite>PredefinedLocationsPublication</cite> související s tímto zdrojem informací a v něm dohledat polohu shodného typu (dle <cite>targetClass</cite>, zde <cite>PredefinedLocation</cite>), se stejným identifikátorem a verzí.</p>
+<p>Poloha pro kterou událost související s počasím platí, je specifikována v elementu <cite>groupOfLocations</cite> přetypovaným na <cite>xsi:type=“LocationByReference“</cite>. Samotný odkaz je proveden vnořeným elementem <cite>predefinedLocationReference</cite> s atributem <cite>targetClass=“PredefinedLocation“</cite>.</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="linenos">54</span><span class="w">        </span><span class="nt">&lt;groupOfLocations</span><span class="w"> </span><span class="na">xsi:type=</span><span class="s">&quot;LocationByReference&quot;</span><span class="nt">&gt;</span>
+<span class="linenos">55</span><span class="w">          </span><span class="nt">&lt;predefinedLocationReference</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;73D74C70-BFA8-408F-86CD-49B3689D9F5D&quot;</span>
+<span class="linenos">56</span><span class="w">          </span><span class="na">targetClass=</span><span class="s">&quot;PredefinedLocation&quot;</span><span class="w"> </span><span class="na">version=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="linenos">57</span><span class="w">        </span><span class="nt">&lt;/groupOfLocations&gt;</span>
+</pre></div>
+</div>
+<p>Způsoby popisu polohy jsou dále popsány v kapitole „Popisování poloh“.</p>
+</section>
+</section>
+<section id="casova-platnost">
+<h1>Časová platnost<a class="headerlink" href="#casova-platnost" title="Link to this heading">¶</a></h1>
+<p>Časová platnost je uvedena pro každou jednotlivou událost (<cite>SituationRecord</cite>) samostatně a je vymezena časovým intervalem mezi dvěma časovými okamžiky. Třída Validity využívá výhradně instanci třídy <cite>OverallPeriod</cite> v roli <cite>validityTimeSpecification</cite> a elementy <cite>overallStartTime</cite> a <cite>overallStopTime</cite> definují začátek a konec tohoto intervalu.</p>
+<p>Profil nedovoluje žádné další metody určení časové platnosti mimo výše uvedené (např. hodiny platnosti nebo dny platnosti).</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="linenos">39</span><span class="w">        </span><span class="nt">&lt;validity&gt;</span>
+<span class="linenos">40</span><span class="w">          </span><span class="nt">&lt;validityStatus&gt;</span>definedByValidityTimeSpec<span class="nt">&lt;/validityStatus&gt;</span>
+<span class="linenos">41</span><span class="w">          </span><span class="nt">&lt;validityTimeSpecification&gt;</span>
+<span class="linenos">42</span><span class="w">            </span><span class="nt">&lt;overallStartTime&gt;</span>2017-07-15T04:26:50+02:00<span class="nt">&lt;/overallStartTime&gt;</span>
+<span class="linenos">43</span><span class="w">            </span><span class="nt">&lt;overallEndTime&gt;</span>2017-07-15T04:46:50+02:00<span class="nt">&lt;/overallEndTime&gt;</span>
+<span class="linenos">44</span><span class="w">          </span><span class="nt">&lt;/validityTimeSpecification&gt;</span>
+<span class="linenos">45</span><span class="w">        </span><span class="nt">&lt;/validity&gt;</span>
+</pre></div>
+</div>
+</section>
+<section id="popisovani-poloh">
+<h1>Popisování poloh<a class="headerlink" href="#popisovani-poloh" title="Link to this heading">¶</a></h1>
+<p>Formát popisuje polohy výhradně odkazem do sady předem definovaných poloh (třída <cite>PredefinedLocation</cite>) v publikaci <cite>PredefinedLocationsPublication</cite> <a class="reference internal" href="introduction.html#id9" id="id3"><span>[16157-3]</span></a>.</p>
+<p>Metody popisu polohy jsou mimo rámec tohoto dokumentu a jsou popsány jinde.</p>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="index.html">
+              <img class="logo" src="_static/RSD-logo-07.jpg" alt="Logo"/>
+            </a></p>
+  <div>
+    <h3><a href="index.html">Table of Contents</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">Koncepty</a><ul>
+<li><a class="reference internal" href="#publikace-typu-situationpublication">Publikace typu SituationPublication</a></li>
+<li><a class="reference internal" href="#popis-udalosti">Popis události</a></li>
+<li><a class="reference internal" href="#popis-polohy-udalosti-predem-definovana-mista-na-silnicni-siti">Popis polohy události (předem definovaná místa na silniční síti)</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#casova-platnost">Časová platnost</a></li>
+<li><a class="reference internal" href="#popisovani-poloh">Popisování poloh</a></li>
+</ul>
+
+  </div>
+  <div>
+    <h4>Přechozí téma</h4>
+    <p class="topless"><a href="introduction.html"
+                          title="předchozí kapitola">Úvod</a></p>
+  </div>
+  <div>
+    <h4>Další téma</h4>
+    <p class="topless"><a href="examples.html"
+                          title="další kapitola">Příloha A: Příklady zpráv</a></p>
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>Tato stránka</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/concepts.rst.txt"
+            rel="nofollow">Ukázat zdroj</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Rychlé vyhledávání</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="OK" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigace</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="Obecný rejstřík"
+             >rejstřík</a></li>
+        <li class="right" >
+          <a href="examples.html" title="Příloha A: Příklady zpráv"
+             >další</a> |</li>
+        <li class="right" >
+          <a href="introduction.html" title="Úvod"
+             >předchozí</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Dokumentace pro NDIC - DATEX II Situation Publication - Počasí 1.2rev0</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Koncepty</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+    &#169; Veškerá práva vyhrazena 2023, TamTam Research s.r.o..
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.5.
+    </div>
+  </body>
+</html>

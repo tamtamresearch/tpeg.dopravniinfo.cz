@@ -1,0 +1,57 @@
+Platform independent messaging pattern
+======================================
+
+Messages flow in one direction from provider to consumer.
+
+Messages are of type "delta message". It is assumed, complete sequence of messages in one session shall allow creating snapshot for given moment.
+
+Provider takes care to send messages only in one thread to deliver them in order.
+
+So called session starts at by a subscription (not arranged by this protocol) and provider sends one or more messages allowing to build snapshot for given moment. Consumer receives the messages and uses them to build own snapshot.
+
+After initial set of messages, following messages are sent by the provider at the moment new update is created. Technically there is no difference between sending initial set of messages and delta messages sent on occurrence of a change.
+
+Consumer shall save each received message and confirm, it was safely received.
+
+If consumer has temporary problems to receive the message properly, it may reject to confirm successful message reception. However, it will serve only as request to resend the same message again. Consumer shall not assume, the message will get somehow improved or corrected by next attempt.
+
+Rejecting a message blocks sending any further updates (following delta messages) until the rejected message is considered successfully delivered or it is considered expired.
+
+If provider does not receive confirmation of message reception, it shall keep retrying until success. In extreme case it may assume there is no chance to succeed in future and stop sending any further messages. The protocol does not provide any mean to inform consumer about provider quitting further delivery of messages.
+
+Consumer shall accept scenario, where some message is delivered multiple times.
+
+If consumer miss some delta message, the only safe method to build valid snapshot is to start new session.
+
+.. uml::
+   :caption: Platform independent sequence diagram
+   :scale: 50%
+   :align: center
+
+   actor ProviderAdmin as "Provider (admin)"
+   Boundary Provider as "Provider"
+   Boundary Consumer as "Consumer"
+   actor ConsumerAdmin as "Consumer (admin)"
+   group Session
+        group Configuring subscription
+                ConsumerAdmin -> ProviderAdmin: Subscribe(data source, delivery url)
+                ProviderAdmin -> Provider: Configure
+        end
+        group Sending initial set of valid messages
+            Provider -> Consumer: Initial set of valid messages, batch # 1
+            Provider -> Consumer: Initial set of valid messages, batch # n
+        end
+        group Delivering delta messages as they occur
+            Provider -> Consumer: Delta message # 1
+            Provider -> Consumer: Delta message # 2
+            group Repeated attempts to deliver message after failed delivery
+                    Provider -> Consumer: Delta message # 3 (delivery failed)
+            end
+            Provider -> Consumer: Delta message # 3 (successful delivery)
+            Provider -> Consumer: Delta message # n
+        end
+        group Session termination
+            note over Provider, Consumer: On consumer request or after long period of delivery problems.
+            ProviderAdmin -> Provider: Cancel session configuration.
+        end
+   end

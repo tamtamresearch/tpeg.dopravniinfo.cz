@@ -1,0 +1,36 @@
+# Seznam zdrojů
+
+**Zdroj** je reálná služba, umožňující odběr dopravních informací.
+
+V následujících tabulkách jsou zdroje rozděleny podle typu, na dynamické a statické. U každého zdroje je uveden:
+
+- poskytovatel
+- název zdroje včetně jeho unikátního uri, formátu a verze
+- stav zdroje a odpovídající Nařízení
+- popis zdroje
+
+### Dynamické zdroje
+
+| Poskytovatel | Název / id / formát | Stav /<br/> nařízení[^narizeni] | Popis |
+|-|-|-|-|
+{% for srckey, srccfg in sources -%}
+{% if srccfg.content.content_type == 'dynamic' %}
+| [{{ providers[srccfg.responsibilities.publisher].name | locstr(lang) }}](../providers/{{ srccfg.responsibilities.publisher }}) | [{{ srccfg.name | locstr(lang) }}]({{ srckey }}) <br/><br/> `{{ srckey }}` <br/> {% for format_id in srccfg.access_info.formats -%}{% set format = formats[format_id] -%}`{{ format.model_version }}` {% endfor %} | {{ srccfg.quality_information.status | locstr(lang) }} <br/><br/> {% for act in srccfg.quality_information.ec_acts -%}`{{ act }}` {% endfor %} | {{ srccfg.description | locstr(lang) | trim }} |
+{% endif -%}
+{% endfor %}
+
+### Statické zdroje
+
+| Poskytovatel | Název / id / formát | Stav /<br/> nařízení[^narizeni] | Popis |
+|-|-|-|-|
+{% for srckey, srccfg in sources -%}
+{% if srccfg.content.content_type == 'static' %}
+| [{{ providers[srccfg.responsibilities.publisher].name | locstr(lang) }}](../providers/{{ srccfg.responsibilities.publisher }}) | [{{ srccfg.name | locstr(lang) }}]({{ srckey }}) <br/><br/> `{{ srckey }}` <br/> {% for format_id in srccfg.access_info.formats -%}{% set format = formats[format_id] -%}`{{ format.model_version }}` {% endfor %} | {{ srccfg.quality_information.status | locstr(lang) }} <br/><br/> {% for act in srccfg.quality_information.ec_acts -%}`{{ act }}` {% endfor %} | {{ srccfg.description | locstr(lang) | trim }} |
+{% endif -%}
+{% endfor %}
+
+
+[^narizeni]: - Nařízení Komise č. [886/2013](https://eur-lex.europa.eu/eli/reg_del/2013/886) „poskytování informací souvisejících s bezpečností silničního provozu“, dále odkazované jako `srti`
+    - Nařízení Komise č. [885/2013](https://eur-lex.europa.eu/legal-content/CS/TXT/PDF/?uri=CELEX:32013R0885&from=CS) „poskytování informací o parkovacích místech pro nákladní dopravu“, dále odkazované jako `sstp`
+    - Nařízení Komise č. [2022/670](https://eur-lex.europa.eu/eli/reg_del/2022/670) „poskytování informací o dopravním provozu v reálném čase“, dále odkazované jako `rtti`
+    - Nařízení Komise č. [2017/1926](https://eur-lex.europa.eu/eli/reg_del/2017/1926) „poskytování multimodálních informačních služeb o cestování v celé Unii“, dále odkazované jako `mmtis`

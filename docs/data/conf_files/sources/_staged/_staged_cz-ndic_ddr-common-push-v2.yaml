@@ -1,0 +1,47 @@
+# cz-ndic_ddr-common-push-v2:
+# name:
+# "cs": DDR - Běžné dopravní informace
+# "en": DDR - Common Traffic Information
+# description:
+# "cs": Běžné dopravní informace (nehody, uzavírky, práce na silnici...), na území celé ČR, poskytované NDIC, ve chvíli jejich vzniku, ve formátu DDR NDIC pro běžné dopravní informace. Významná revize formátu a doplnění popisu polohy OpenLR.
+# "en": Common traffic information (accidents, closures, roadworks...), provided by NDIC for the whole Czechia, pushed on occurrence, in a DDR format for common traffic information. Major revision of the format and addition of new location method OpenLR.
+# content:
+# content_type: "dynamic"
+# resource_type: "data set"
+# dataset:
+# category: [Road work, Unexpected road events and conditions, Real-time traffic data]
+# detailed_type: [Long-term road works, Short-term road works, Accidents and incidents, Poor road conditions, Weather conditions affecting road surface and visibility, Location and length of queues]
+# language: [cs]
+# linked_sources:
+# - cz-ndic_tmc-location-table-v10.1
+# temporal:
+# start_date: 2021-04-01
+# coverage:
+# area: CZ0
+# network: [Motorways, Arterial road network, Regional roads, Urban and local roads]
+# transport_modes: [car, truck, motorcycle, bus]
+# responsibilities:
+# publisher: cz-ndic
+# conditions_of_use:
+# contract_or_licence: Contract and Free of charge
+# # process for applying for data
+# terms_and_conditions: ddrcontract
+# access_info:
+# formats:
+# - cz-ndic_ddr-common-v3.4
+# protocols:
+# - cz-ndic_push-v1.1
+# access_point: ["NDIC/data subscription"]
+# quality_information:
+# status:
+# "cs": v přípravě
+# "en": in preparation
+# status_description:
+# "cs": poskytováno jako náhrada za zdroj [cz-ndic_ddr-common](../sources/cz-ndic_ddr-common.md).
+# "en": published as a replacement of the [cz-ndic_ddr-common](../sources/cz-ndic_ddr-common.md) source.
+# update_frequency: On occurrence
+# quality_assesment:
+# "cs": interní procesy kontroly a křížová verifikace
+# "en": internal control mechanism and cross validation
+# ec_acts: [rtti,srti]
+

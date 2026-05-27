@@ -1,0 +1,67 @@
+"NDIC/data subscription":
+    web: ["https://mobilitydata.rsd.cz"]
+    note:
+        "cs": Datový portál ŘSD pro odběr konkrétních datových zdrojů.
+        "en": Data portal od RSD for data subscription to a specific data sources.
+    status:
+        "cs": v provozu (od 2021/07/01)
+        "en": in operation (from 2021/07/01)
+"NDIC/trafic map":
+    web: ["https://dopravniinfo.gov.cz/"]
+    note:
+        "cs": Mapový webový portál NDIC se událostmi v dopravě včetně informací o hustotě provozu, kamerách a portálech s dopravními informacemi. Poslední aktualizace 05/2021.
+        "en": NDIC map web portal with event and status traffic information including cameras and VMSes. Last update 05/2021.
+    status:
+        "cs": v provozu
+        "en": in operation
+"NDIC/general info":
+    web: ["https://dopravniinfo.gov.cz/information"]
+    note:
+        "cs": Webová stránka s obecnými informacemi o NDIC.
+        "en": Web site with NDIC general information.
+    status:
+        "cs": v provozu
+        "en": in operation
+"EU/general data portal":
+    web: ["https://data.europa.eu/data/datasets/etpa"]
+    note:
+        "cs": Datový portál EU, část s informacemi o odpočívkách (etpa).
+        "en": EU Data Portal, part with Rest Area Information (etpa).
+    status:
+        "cs": v provozu
+        "en": in operation
+"TTR/sparql service":
+    web: ["https://lod.tamtamresearch.com/sparql"]
+    note:
+        "cs": SPARQL Rozhraní pro dotazování SRTI otevřených propojených dat ve formě RDF provozované TamTam Research.
+        "en": SAPRQL interface for querying of SRTI linked open data in a RDF format operated by TamTam Research.
+    status:
+        "cs": v provozu
+        "en": in operation
+"CRO/Radiozurnal rds-tmc":
+    web: ["https://ctu.gov.cz/vyhledavaci-databaze/prehled-rozhlasovych-vysilacu/vyhledavani"]
+    note:
+        "cs": RDS-TMC služba na stanici ČRo 1 Radiožurnál s parametry PI kód 232F (použijte pro vyhledávání vysílačů, výše). Mapa pokrytí [https://fmscan.org](https://fmscan.org/net.php?r=f&m=m&itu=CZE&pxf=%26%23268%3BRo+Radio%9Eurn%E1l).
+        "en": RDS-TMC service on station CRo 1 Radiožurnál with parameters PI code 232F (add to the lookup above). Signal coverage map [https://fmscan.org](https://fmscan.org/net.php?r=f&m=m&itu=CZE&pxf=%26%23268%3BRo+Radio%9Eurn%E1l).
+    status:
+        "cs": v provozu
+        "en": in operation
+"MDCR/public trasport info":
+    web:
+        [
+            "https://md.gov.cz/Dokumenty/Verejna-doprava/Jizdni-rady,-kalendare-pro-jizdni-rady,-metodi-(1)/Jizdni-rady-verejne-dopravy",
+        ]
+    note:
+        "cs": Webová stránka s odkazy na soubory ke stažení obsahující popisy struktury i samotná data o veřejné dopravě pro formáty publikované CIS JŘ (CSV, JDF a NeTEx).
+        "en": Web page with links to downloadable files containing descriptions of the structure and the public transport data itself for the formats published by the CIS JR (CSV, JDF and NeTEx).
+    status:
+        "cs": v provozu
+        "en": in operation
+"MDCR/portal cisjr":
+    web: ["https://portal.cisjr.cz/pub/netex/"]
+    note:
+        "cs": Souborový portál s datovými soubory veřejné hromadné dopravy (jízdní řády) a dokumentací k volnému stažení
+        "en": File server with a public access to public transport data files (timetables) and documentation.
+    status:
+        "cs": v provozu
+        "en": in operation

@@ -1,0 +1,707 @@
+
+
+<!doctype html>
+
+<html lang="cs" data-content_root="./">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Příloha B: Reprezentativní XML Schéma RELAX NG &#8212; Dokumentace pro NDIC - DDR XML - Běžné dopravní informace 3.2.5rev1</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/bizstyle.css?v=532c1bf3" />
+    
+    <script src="_static/documentation_options.js?v=79fea9f0"></script>
+    <script src="_static/doctools.js?v=888ff710"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/translations.js?v=0275affc"></script>
+    <script src="_static/bizstyle.js"></script>
+    <link rel="index" title="Rejstřík" href="genindex.html" />
+    <link rel="search" title="Vyhledávání" href="search.html" />
+    <link rel="next" title="Changelog" href="CHANGELOG.html" />
+    <link rel="prev" title="Příloha A: Příklady zpráv" href="examples.html" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <!--[if lt IE 9]>
+    <script src="_static/css3-mediaqueries.js"></script>
+    <![endif]-->
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigace</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="Obecný rejstřík"
+             accesskey="I">rejstřík</a></li>
+        <li class="right" >
+          <a href="CHANGELOG.html" title="Changelog"
+             accesskey="N">další</a> |</li>
+        <li class="right" >
+          <a href="examples.html" title="Příloha A: Příklady zpráv"
+             accesskey="P">předchozí</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Dokumentace pro NDIC - DDR XML - Běžné dopravní informace 3.2.5rev1</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Příloha B: Reprezentativní XML Schéma RELAX NG</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="priloha-b-reprezentativni-xml-schema-relax-ng">
+<h1>Příloha B: Reprezentativní XML Schéma RELAX NG<a class="headerlink" href="#priloha-b-reprezentativni-xml-schema-relax-ng" title="Link to this heading">¶</a></h1>
+<p>K popisu struktury XML Je použito RELAX NG schéma v kompaktním formátu. Doporučujeme zkusit dané schéma přečíst, protože se nám tato forma jeví jako nejkompaktnější a nejčitelnější z dostupných typů schémat.</p>
+<p>Pokud však trváte na použití W3C XML Schema 1.0, přikládáme i tento typ schématu, které je vytvořeno konverzí z RELAX NG.</p>
+<section id="relax-ng-compact-syntax-schema-rnc">
+<h2>RELAX NG Compact Syntax Schema (RNC)<a class="headerlink" href="#relax-ng-compact-syntax-schema-rnc" title="Link to this heading">¶</a></h2>
+<p>RNC schéma popisuje očekávané struktury XML dokumentu.</p>
+<p>Kořenový element je uveden pomocí <cite>start =</cite>.</p>
+<p>Všechny další <cite>&lt;SomeName&gt; =</cite> elementy definují tzv. vzory.</p>
+<p>V našem schématu jsou následující sekce:</p>
+<ul class="simple">
+<li><p>prolog (deklarace jmenného prostoru)</p></li>
+<li><p>vložení jiných schéma (není využito v tomto případě)</p></li>
+<li><p>definice kořenového elementu (<cite>start =</cite>)</p></li>
+<li><p>vzory pro elementy</p></li>
+<li><p>vzory pro atributy</p></li>
+<li><p>vzory pro datové typy</p></li>
+</ul>
+<p>Komentáře <cite>##</cite> poskytují více detailů k významu jednotlivých částí.</p>
+<section id="trafficinformation-rnc-koren-schematu">
+<h3><cite>TrafficInformation.rnc</cite> - kořen schématu<a class="headerlink" href="#trafficinformation-rnc-koren-schematu" title="Link to this heading">¶</a></h3>
+<div class="highlight-rnc notranslate"><div class="highlight"><pre><span></span><span class="kd">default</span> <span class="kn">namespace</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+
+start <span class="o">=</span>
+
+<span class="cp">## Zapouzdřuje celý dokument pro výměnu informací</span>
+<span class="kd">element</span><span class="nv"> DOC </span><span class="p">{</span>
+
+    <span class="cp">## Verze XML definice</span>
+    <span class="kd">attribute</span><span class="nv"> version </span><span class="p">{</span> type-formatVersion <span class="p">}</span><span class="o">,</span>
+
+    <span class="cp">## Jednoznačný identifikátor dokumentu</span>
+    <span class="cp">##</span>
+    <span class="cp">## GUID může mít různý tvar (6-4, 6-4-4-4-6, 8-4-4-4-12, číslo, ...), vždy je</span>
+    <span class="cp">## však unikátní.</span>
+    <span class="kd">attribute</span><span class="nv"> id </span><span class="p">{</span> <span class="kt">text</span> <span class="p">}</span><span class="o">,</span>
+
+    <span class="cp">## Kód země, ve které se události obsažené ve zprávě nachází</span>
+    <span class="cp">##</span>
+    <span class="cp">## V jedné zprávě se nesmí nacházet událostí z více státu.</span>
+    <span class="kd">attribute</span><span class="nv"> country </span><span class="p">{</span> type-country <span class="p">}</span><span class="o">,</span>
+
+    <span class="cp">## Použitá datová sada. Datová sada seskupuje údaje související s informací</span>
+    <span class="cp">##</span>
+    <span class="cp">## Varianty &quot;basic&quot; a &quot;custom&quot; vyřazeny</span>
+    <span class="kd">attribute</span><span class="nv"> DataSet </span><span class="p">{</span> <span class="s2">&quot;extended&quot;</span> <span class="p">}</span><span class="o">,</span>
+
+    <span class="cp">## Informace o subjektech, které si vyměnují XML dokument</span>
+    <span class="kd">element</span><span class="nv"> INF </span><span class="p">{</span>
+
+        <span class="cp">## Zkratka systému, ve kterém byla dopravní informace pořízena</span>
+        <span class="cp">##</span>
+        <span class="cp">## Například: &quot;JSDI_NDIC&quot;</span>
+        <span class="kd">attribute</span><span class="nv"> sender </span><span class="p">{</span> <span class="kt">text</span> <span class="p">}</span><span class="o">,</span>
+
+        <span class="cp">## Zkratka systému/subjektu, pro který je zpráva určena napr. HZS</span>
+        <span class="kd">attribute</span><span class="nv"> receiver </span><span class="p">{</span> <span class="kt">text</span> <span class="p">}</span><span class="o">,</span>
+
+        <span class="cp">## Typ přenosu použitý k předání dokumentu</span>
+        <span class="kd">attribute</span><span class="nv"> transmission </span><span class="p">{</span> <span class="s2">&quot;HTTP&quot;</span> <span class="o">|</span> <span class="s2">&quot;SMTP&quot;</span> <span class="o">|</span> <span class="s2">&quot;FTP&quot;</span> <span class="o">|</span> <span class="s2">&quot;SOAP&quot;</span> <span class="p">}</span><span class="o">,</span>
+
+        <span class="cp">## Informace o verzích jednotlivých datových sad</span>
+        <span class="kd">element</span><span class="nv"> DAT </span><span class="p">{</span>
+        
+            <span class="cp">## Obsahuje informace o katalogu událostí Alert-C</span>
+            <span class="kd">element</span><span class="nv"> EVTT </span><span class="p">{</span>
+
+                <span class="cp">## Verze katalogu Alert-C</span>
+                <span class="kd">attribute</span><span class="nv"> version </span><span class="p">{</span> type-AlertCEventTableVersion <span class="p">}</span><span class="o">,</span>
+
+                <span class="cp">## Jazyková verze</span>
+                <span class="kd">attribute</span><span class="nv"> language </span><span class="p">{</span> type-language-cz <span class="p">}</span>
+            <span class="p">}</span><span class="o">,</span>
+            
+            <span class="cp">## Obsahuje informace o lokační tabulce</span>
+            <span class="c1"># TODO: Není obsažen v dokumentaci</span>
+            <span class="c1"># TODO: Některé vzorky jej neobsahují</span>
+            <span class="kd">element</span><span class="nv"> LOCT </span><span class="p">{</span>
+            
+                <span class="cp">## Verze lokační tabulky</span>
+                <span class="kd">attribute</span><span class="nv"> version </span><span class="p">{</span> type-AlertCLocationTableVersion <span class="p">}</span><span class="o">,</span>
+                
+                <span class="cp">## Číslo lokační tabulky</span>
+                <span class="kd">attribute</span><span class="nv"> number </span><span class="p">{</span> <span class="kt">xsd:positiveInteger</span> <span class="p">}</span><span class="o">,</span>
+                
+                <span class="cp">## Číslo země podle číselníku Alert-C</span>
+                <span class="kd">attribute</span><span class="nv"> country </span><span class="p">{</span> <span class="kt">xsd:positiveInteger</span> <span class="p">}</span>
+            <span class="p">}</span><span class="o">?,</span>
+            
+            <span class="cp">## Informace o datové sadě sítě komunikací, na kterou jsou lokalizovány</span>
+            <span class="cp">## dopravní události</span>
+            <span class="cp">##</span>
+            <span class="cp">## Povinný v případě, že zpráva obsahuje lokalizaci na síť komunikací</span>
+            <span class="kd">element</span><span class="nv"> SNET </span><span class="p">{</span>
+                 
+                <span class="cp">## Informace o typu použité sítě komunikací</span>
+                <span class="cp">##</span>
+                <span class="cp">## &quot;SN&quot; = streetnet &quot;GN&quot; = GlobalNetwork</span>
+                <span class="kd">attribute</span><span class="nv"> type </span><span class="p">{</span> type-snet-type <span class="p">}</span><span class="o">,</span>
+
+                <span class="cp">## Informace o verzi sítě</span>
+                <span class="kd">attribute</span><span class="nv"> version </span><span class="p">{</span> type-networkVersion <span class="p">}</span><span class="o">,</span>
+                
+                <span class="cp">## Země, pro kterou je vytvořena síť komunikací </span>
+                <span class="kd">attribute</span><span class="nv"> country </span><span class="p">{</span> <span class="s2">&quot;CZ&quot;</span> <span class="p">}</span>
+            <span class="p">}</span><span class="o">?,</span>
+            
+            <span class="cp">## Informace o datové sadě UIRADR</span>
+            <span class="c1"># Dokumentace hovoří o elementu UIADR (chyba z přehlédnutí)</span>
+            <span class="c1"># Dokumentace dovoluje uvézt pouze v případě, že zpráva obsahuje české události s vyplněnou informací o</span>
+            <span class="c1"># místu události v souladu s republikovým číselníkem UIRADR.</span>
+            <span class="kd">element</span><span class="nv"> UIRADR </span><span class="p">{</span>
+            
+                <span class="cp">## Informace o verzi struktury</span>
+                <span class="kd">attribute</span><span class="nv"> structure </span><span class="p">{</span> <span class="kt">text</span> <span class="p">}</span><span class="o">,</span>
+                
+                <span class="cp">## Informace o verzi dat</span>
+                <span class="kd">attribute</span><span class="nv"> version </span><span class="p">{</span> type-nonZeroDecimal <span class="p">}</span><span class="o">,</span>
+                
+                <span class="cp">## Datum vydání verze dat</span>
+                <span class="kd">attribute</span><span class="nv"> date </span><span class="p">{</span> <span class="kt">xsd:date</span> <span class="p">}</span><span class="o">?</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span><span class="o">,</span>
+    
+    <span class="cp">## Zapouzdřuje veškeré informace o dopravních informacích</span>
+    <span class="kd">element</span><span class="nv"> MJD </span><span class="p">{</span>
+    
+        <span class="cp">## Počet dopravních informací, které jsou zapouzdřeny v MJD</span>
+        <span class="kd">attribute</span><span class="nv"> count </span><span class="p">{</span> <span class="kt">xsd:positiveInteger</span> <span class="p">}</span><span class="o">,</span>
+        
+        <span class="cp">## Představuje jednu zprávu v dokumentu</span>
+        <span class="kd">element</span><span class="nv">-MSG*</span>
+<span class="nv">    }</span>
+<span class="nv">}</span>
+
+<span class="nv">############################################################</span>
+
+<span class="nv">element-MSG =</span>
+
+<span class="nv">## Představuje jednu zprávu v dokumentu</span>
+<span class="nv">element MSG </span><span class="p">{</span>
+
+    <span class="cp">## Jednoznačný identifikátor zprávy</span>
+    <span class="cp">##</span>
+    <span class="cp">## Formát jednotlivých ID se liší podle poskytovatele události.</span>
+    <span class="kd">attribute</span><span class="nv"> id </span><span class="p">{</span> <span class="kt">text</span> <span class="p">}</span><span class="o">,</span>
+    
+    <span class="cp">## Číslo verze zprávy</span>
+    <span class="cp">##</span>
+    <span class="cp">## Nová = 1, aktualizace, vždy +1</span>
+    <span class="c1"># TODO: Existují zprávy s version = &quot;0&quot;</span>
+    <span class="kd">attribute</span><span class="nv"> version </span><span class="p">{</span> <span class="kt">xsd:nonNegativeInteger</span> <span class="p">}</span><span class="o">,</span>
+    
+    <span class="cp">## Typ poskytované informace</span>
+    <span class="cp">##</span>
+    <span class="cp">## &quot;TI&quot; – dopravní informace, &quot;TL&quot; – dopravní intenzita </span>
+    <span class="c1"># Typ &quot;WCOND&quot; je popsán jako samostatný formát</span>
+    <span class="kd">attribute</span><span class="nv"> type </span><span class="p">{</span> <span class="s2">&quot;TI&quot;</span> <span class="o">|</span> <span class="s2">&quot;TL&quot;</span> <span class="p">}</span><span class="o">,</span>
+    
+    <span class="cp">## Typ poskytované informace z hlediska jejího charakteru</span>
+    <span class="cp">##</span>
+    <span class="cp">## Rozlišujeme událost na:</span>
+    <span class="cp">## plánovanou z hlediska úředního povolení / skutečný stav</span>
+    <span class="kd">attribute</span><span class="nv"> planned </span><span class="p">{</span> <span class="kt">xsd:boolean</span> <span class="p">}</span><span class="o">,</span>
+
+    <span class="cp">## Časové informace o zprávě</span>
+    <span class="kd">element</span><span class="nv"> MTIME </span><span class="p">{</span>
+    
+        <span class="cp">## Popisuje (konstantní) formát datetime.</span>
+        <span class="kd">attribute</span><span class="nv"> format </span><span class="p">{</span> <span class="s2">&quot;YYYY-MM-DDThh:mm:ssTZD&quot;</span> <span class="p">}</span><span class="o">,</span>
+
+        <span class="cp">## Čas kdy byla zpráva vygenerována</span>
+        <span class="kd">element</span><span class="nv"> TGEN </span><span class="p">{</span> <span class="kt">xsd:dateTime</span> <span class="p">}</span><span class="o">,</span>
+        
+        <span class="cp">## Čas od kdy zpráva platí nebo bude platná</span>
+        <span class="kd">element</span><span class="nv"> TSTA </span><span class="p">{</span> <span class="kt">xsd:dateTime</span> <span class="p">}</span><span class="o">,</span>
+
+        <span class="cp">## Čas do kdy bude zpráva platná</span>
+        <span class="kd">element</span><span class="nv"> TSTO </span><span class="p">{</span> <span class="kt">xsd:dateTime</span> <span class="p">}</span>
+    <span class="p">}</span><span class="o">,</span>
+    
+    <span class="cp">## Kompletní textový popis události vyjadřující KDE, CO, KDY, případně JAK dlouho</span>
+    <span class="kd">element</span><span class="nv"> MTXT </span><span class="p">{</span>
+    
+        <span class="cp">## Jazyk, ve kterém je zpráva napsaná </span>
+        <span class="kd">attribute</span><span class="nv"> language </span><span class="p">{</span> type-language-cz <span class="p">}</span><span class="o">,</span>
+        
+        <span class="cp">## Popis</span>
+        <span class="kt">text</span>
+    <span class="p">}</span><span class="o">,</span>
+    
+    <span class="cp">## Informace o události </span>
+    <span class="kd">element</span><span class="nv">-MEVT,</span>
+<span class="nv">    </span>
+<span class="nv">    ## Informace o místu události</span>
+<span class="nv">    element-MLOC,</span>
+<span class="nv">    </span>
+<span class="nv">    ## Informace o místě události v souladu s republikovým číselníkem UIRADR</span>
+<span class="nv">    # Dokumentace povoluje vynechat v případě, že zpráva neobsahuje české události s vyplněnou informací o</span>
+<span class="nv">    # místu události v souladu s republikovým číselníkem UIRADR</span>
+<span class="nv">    element-MDST?,</span>
+<span class="nv">    </span>
+<span class="nv">    ## Informace o trase objížďky</span>
+<span class="nv">    ##</span>
+<span class="nv">    ## Povinný pouze v případě, je-li vyplněna trasa objížďky</span>
+<span class="nv">    element-DIVLOC?</span>
+<span class="nv">}</span>
+
+<span class="nv">############################################################</span>
+
+<span class="nv">element-MEVT =</span>
+
+<span class="nv">## Zapouzdřuje veškeré informace o události </span>
+<span class="nv">element MEVT </span><span class="p">{</span>
+
+    <span class="cp">## Informace o události - atributy jsou vázány na normu 14819-1</span>
+    <span class="cp">##</span>
+    <span class="cp">## Povinný v případě, že zpráva obsahuje informace v kódování ALERT-C</span>
+    <span class="kd">element</span><span class="nv"> TMCE </span><span class="p">{</span>
+        
+        <span class="cp">## Určuje skutečnou hodnotu urgentnosti události zadané operátorem dle ALERT-C</span>
+        <span class="cp">## &quot;N&quot; normální &quot;U&quot; je standardní &quot;X&quot; jsou mimořádně urgentní </span>
+        <span class="kd">attribute</span><span class="nv"> urgencyvalue </span><span class="p">{</span> <span class="s2">&quot;N&quot;</span> <span class="o">|</span> <span class="s2">&quot;U&quot;</span> <span class="o">|</span> <span class="s2">&quot;X&quot;</span> <span class="p">}</span><span class="o">,</span>
+        
+        <span class="cp">## Určuje skutečnou hodnotu směrovosti události zadané operátorem vzhledem k ovlivněnému směru provozu dle ALERT-C</span>
+        <span class="cp">##</span>
+        <span class="cp">## &quot;1&quot;: událostí je ovlivněn jeden směr provozu </span>
+        <span class="cp">## &quot;2&quot;: událostí jsou ovlivněny oba dva směry</span>
+        <span class="kd">attribute</span><span class="nv"> directionalityvalue </span><span class="p">{</span> <span class="s2">&quot;1&quot;</span> <span class="o">|</span> <span class="s2">&quot;2&quot;</span> <span class="p">}</span><span class="o">,</span>
+        
+        <span class="cp">## Určuje skutečnou hodnotu typu trvání události zadané operátorem dle ALERT-C</span>
+        <span class="cp">##</span>
+        <span class="cp">## &quot;D&quot; nebo &quot;(D)&quot; krátkodobá &quot;L&quot; nebo &quot;(L)&quot; déletrvající</span>
+        <span class="c1"># TODO: V dokumentaci uveden format: &quot;kladné celé číslo&quot;</span>
+        <span class="c1"># TODO: V reálných datech se vyskytuje i prázdná hodnota</span>
+        <span class="kd">attribute</span><span class="nv"> timescalevalue </span><span class="p">{</span> type-time-scale-value <span class="p">}</span><span class="o">,</span>
+        
+        <span class="cp">## Textový popis doby platnosti celku zprávy – viz číselník Alert-C</span>
+        <span class="cp">##</span>
+        <span class="cp">## Povinný v případě je-li čas trvání stanoven výběrem z číselníku </span>
+        <span class="kd">attribute</span><span class="nv"> durationtext </span><span class="p">{</span> <span class="kt">text</span> <span class="p">}</span><span class="o">?,</span>
+        
+        <span class="cp">## Určuje jestli je doporučena objížďka či ne</span>
+        <span class="cp">##</span>
+        <span class="cp">## &quot;true&quot; – doporučuje objížďku, &quot;false&quot; – nedoporučuje objížďku</span>
+        <span class="c1"># TODO: Dokumentace popisuje &quot;True&quot; a &quot;False&quot; (velká písmena)</span>
+        <span class="kd">attribute</span><span class="nv"> diversion </span><span class="p">{</span> <span class="kt">xsd:boolean</span> <span class="p">}</span><span class="o">,</span>
+        
+        <span class="cp">## Informace o čísle události v katalogu událostí o jeho aktualizační třídě,</span>
+        <span class="cp">## kvantifikátoru, pořadí (pokud je zpráv více za sebou) včetně textového popisu aktualizační třídy a události.</span>
+        <span class="cp">##</span>
+        <span class="cp">## Může se max. 3x opakovat</span>
+        <span class="kd">element</span><span class="nv"> EVI </span><span class="p">{</span>
+        
+            <span class="cp">## Číslo z katalogu událostí Alert-C</span>
+            <span class="kd">attribute</span><span class="nv"> eventcode </span><span class="p">{</span> <span class="kt">xsd:positiveInteger</span> <span class="p">}</span><span class="o">,</span>
+
+            <span class="cp">## Informace o aktualizační třídě události</span>
+            <span class="cp">##</span>
+            <span class="cp">## Odpovídá číselníku Alert-C</span>
+            <span class="kd">attribute</span><span class="nv"> updateclass </span><span class="p">{</span> <span class="kt">xsd:positiveInteger</span> <span class="p">}</span><span class="o">,</span>
+                
+            <span class="cp">## Kvantifikátor události podle číselníku Alert-C</span>
+            <span class="cp">##</span>
+            <span class="cp">## Povinný, pokud byl použit kvantifikátor</span>
+            <span class="kd">attribute</span><span class="nv"> quantifier </span><span class="p">{</span> <span class="kt">xsd:nonNegativeInteger</span> <span class="p">}</span><span class="o">?,</span>
+
+            <span class="cp">## Pořadí zprávy</span>
+            <span class="kd">attribute</span><span class="nv"> eventorder </span><span class="p">{</span> <span class="kt">xsd:integer</span> <span class="p">{</span> <span class="na">minInclusive</span><span class="o">=</span><span class="na">&quot;1&quot;</span> <span class="na">maxInclusive</span><span class="o">=</span><span class="na">&quot;3&quot;</span> <span class="p">}</span> <span class="p">}</span><span class="o">,</span>
+            
+            <span class="cp">## Textový popis skupiny události podle ALERT-C</span>
+            <span class="kd">element</span><span class="nv"> TXUCL </span><span class="p">{</span>
+            
+                <span class="cp">## Jazyk ve kterém text psaný</span>
+                <span class="kd">attribute</span><span class="nv"> language </span><span class="p">{</span> type-language-cz <span class="p">}</span><span class="o">,</span>
+                
+                <span class="cp">## Vlastní popis</span>
+                <span class="kt">text</span>
+            <span class="p">}</span><span class="o">,</span>
+            
+            <span class="cp">## Textový popis kódu události podle ALERT-C</span>
+            <span class="kd">element</span><span class="nv"> TXEVC </span><span class="p">{</span>
+            
+                <span class="cp">## Jazyk, ve kterém text napsaný</span>
+                <span class="kd">attribute</span><span class="nv"> language </span><span class="p">{</span> type-language-cz <span class="p">}</span><span class="o">,</span>
+                
+                <span class="cp">## Vlastni popis</span>
+                <span class="kt">text</span>
+            <span class="p">}</span>
+        <span class="p">}</span>+<span class="o">,</span>
+        
+        <span class="cp">## Informace o čísle doplňkové události, rychlostním limitu a délce ovlivněného úseku komunikace</span>
+        <span class="cp">##</span>
+        <span class="cp">## Element je povinný, pokud byla zadána doplňková událost</span>
+        <span class="kd">element</span><span class="nv"> SPI </span><span class="p">{</span>
+        
+            <span class="cp">## Číslo doplňkové události podle katalogu Alert-C</span>
+            <span class="kd">attribute</span><span class="nv"> supinfocode </span><span class="p">{</span> <span class="kt">xsd:positiveInteger</span> <span class="p">}</span><span class="o">,</span>
+            
+            <span class="cp">## Text doplňkové události podle katalogu Alert-C</span>
+            <span class="kd">attribute</span><span class="nv"> supinfotext </span><span class="p">{</span> <span class="kt">text</span> <span class="p">}</span><span class="o">,</span>
+            
+            <span class="cp">## Kód rychlostního limitu podle Alert-C</span>
+            <span class="cp">##</span>
+            <span class="cp">## Atribut je povinný, byl-li údaj zadán</span>
+            <span class="kd">attribute</span><span class="nv"> speedlimit </span><span class="p">{</span> <span class="kt">xsd:integer</span> <span class="p">{</span> <span class="na">minInclusive</span><span class="o">=</span><span class="na">&quot;1&quot;</span> <span class="na">maxInclusive</span><span class="o">=</span><span class="na">&quot;26&quot;</span> <span class="p">}</span> <span class="p">}</span><span class="o">?,</span>
+            
+            <span class="cp">## Kód délky ovlivněné komunikace podle katalogu Alert-C</span>
+            <span class="cp">##</span>
+            <span class="cp">## 0 = úsek je delší než 100 km;</span>
+            <span class="cp">## 1-10 = úsek je 1 až 10 km (1 km interval);</span>
+            <span class="cp">## 11-15 = úsek je 12 až 20 km (2 km interval);</span>
+            <span class="cp">## 16-31 = úsek je 25 až 100 km (5 km interval);</span>
+            <span class="cp">##</span>
+            <span class="cp">## Atribut je povinný, byl-li údaj zadán</span>
+            <span class="kd">attribute</span><span class="nv"> length </span><span class="p">{</span> <span class="kt">xsd:integer</span> <span class="p">{</span> <span class="na">minInclusive</span><span class="o">=</span><span class="na">&quot;0&quot;</span> <span class="na">maxInclusive</span><span class="o">=</span><span class="na">&quot;31&quot;</span> <span class="p">}</span> <span class="p">}</span><span class="o">?</span>
+        <span class="p">}</span><span class="o">?,</span>
+        
+        <span class="cp">## Informace o objížďce dle ALERT-C.</span>
+        <span class="cp">##</span>
+        <span class="cp">## Element je povinný, je-li doporučena objížďka </span>
+        <span class="kd">element</span><span class="nv"> DIV </span><span class="p">{</span>
+        
+            <span class="cp">## Kód doplňkové informace dle ALERT-C</span>
+            <span class="cp">##</span>
+            <span class="cp">## Atribut je povinný, pokud je specifikována doplňková informace </span>
+            <span class="kd">attribute</span><span class="nv"> diversioncode </span><span class="p">{</span> <span class="kt">xsd:positiveInteger</span> <span class="p">}</span><span class="o">?,</span>
+            
+            <span class="cp">## Text doplňkové informace dle jejího kódu ALERT-C</span>
+            <span class="cp">##</span>
+            <span class="cp">## Není-li zadán diversioncode je hodnota &quot;Doporučuje se objetí místa události&quot;</span>
+            <span class="kd">attribute</span><span class="nv"> diversiontext </span><span class="p">{</span> <span class="kt">text</span> <span class="p">}</span><span class="o">,</span>
+            
+            <span class="cp">## Jazyk ve kterém je zpráva napsaná </span>
+            <span class="kd">attribute</span><span class="nv"> language </span><span class="p">{</span> type-language-cz <span class="p">}</span>
+        <span class="p">}</span><span class="o">?,</span>
+        
+        <span class="cp">## Text zprávy složený z hodnot jednotlivých událostí z ALERT-C katalogu událostí</span>
+        <span class="kd">element</span><span class="nv"> TXTMCE </span><span class="p">{</span>
+        
+            <span class="cp">## Jazyk ve kterém je zpráva napsaná</span>
+            <span class="kd">attribute</span><span class="nv"> language </span><span class="p">{</span> type-language-cz <span class="p">}</span><span class="o">,</span>
+
+            <span class="cp">## Vlastní zpráva</span>
+            <span class="kt">text</span>
+        <span class="p">}</span>
+    <span class="p">}</span><span class="o">?,</span>
+    
+    <span class="cp">## Volný text zadaný operátorem</span>
+    <span class="cp">##</span>
+    <span class="cp">## Element je povinný pouze v případě, kdy je obsažen ve zprávě</span>
+    <span class="kd">element</span><span class="nv"> OTXT </span><span class="p">{</span>
+
+        <span class="cp">## Vlastní text</span>
+        <span class="kt">text</span>
+    <span class="p">}</span><span class="o">?</span>
+<span class="p">}</span>
+
+<span class="cp">############################################################	</span>
+
+<span class="kd">element</span><span class="nv">-MLOC =</span>
+
+<span class="nv">## Informace o místu události</span>
+<span class="nv">element MLOC </span><span class="p">{</span>
+
+    <span class="cp">## Textová informace popisující místo události nebo trasu objížďky</span>
+    <span class="kd">element</span><span class="nv">-TXPL,</span>
+<span class="nv">    </span>
+<span class="nv">    ## Informace o místu události zakódované pomocí lokalizační databáze</span>
+<span class="nv">    element TMCL </span><span class="p">{</span>
+
+        <span class="cp">## Číselný kód primární TMC lokace</span>
+        <span class="cp">##</span>
+        <span class="cp">## Musí být v seznamu kódů lokalizačních bodů </span>
+        <span class="c1"># TODO: V dokumentaci uveden jako &quot;Primarycode&quot;</span>
+        <span class="kd">attribute</span><span class="nv"> primarycode </span><span class="p">{</span> <span class="kt">xsd:positiveInteger</span> <span class="p">}</span><span class="o">,</span>
+        
+        <span class="cp">## Rozsah lokace</span>
+        <span class="c1"># TODO: V dokumentaci uveden jako &quot;Extent&quot;</span>
+        <span class="kd">attribute</span><span class="nv"> extent </span><span class="p">{</span> <span class="kt">xsd:integer</span> <span class="p">{</span> <span class="na">minInclusive</span><span class="o">=</span><span class="na">&quot;0&quot;</span> <span class="na">maxInclusive</span><span class="o">=</span><span class="na">&quot;32&quot;</span> <span class="p">}</span> <span class="p">}</span><span class="o">,</span>
+        
+        <span class="cp">## Udává směr dopravního problému</span>
+        <span class="c1"># TODO: V dokumentaci uveden jako &quot;Direction&quot;</span>
+        <span class="kd">attribute</span><span class="nv"> direction </span><span class="p">{</span> <span class="s2">&quot;+&quot;</span> <span class="o">|</span> <span class="s2">&quot;-&quot;</span> <span class="p">}</span><span class="o">,</span>
+        
+        <span class="cp">## Kód komunikace v lokalizační databázi</span>
+        <span class="c1"># TODO: V dokumentaci uveden jako &quot;Roadid&quot;</span>
+        <span class="kd">attribute</span><span class="nv"> roadid </span><span class="p">{</span> <span class="kt">xsd:positiveInteger</span> <span class="p">}</span>
+    <span class="p">}</span><span class="o">?,</span>
+    
+    <span class="cp">## Informace o místu události zadané pomocí úseků použité sítě komunikací</span>
+    <span class="kd">element</span><span class="nv"> SNTL </span><span class="p">{</span>
+    
+        <span class="cp">## Název použitého souřadného systému</span>
+        <span class="cp">##</span>
+        <span class="cp">## Požadovaný typ souřadného systému je nutno specifikovat v požadavcích při realizaci odběru informací</span>
+        <span class="kd">attribute</span><span class="nv"> coordsystem </span><span class="p">{</span> type-coord-system <span class="p">}</span><span class="o">,</span>
+        
+        <span class="cp">## Počet ovlivněných úseků sítě komunikací</span>
+        <span class="c1"># TODO: V dokumentaci uveden jako &quot;Count&quot;</span>
+        <span class="kd">attribute</span><span class="nv"> count </span><span class="p">{</span> <span class="kt">xsd:positiveInteger</span> <span class="p">}</span><span class="o">,</span>
+        
+        <span class="cp">## Souřadnice události nebo zpravodajské oblasti v souřadnicovém systému.</span>
+		<span class="cp">## U linivé události souřadnice značí počátek události ve smyslu směru dopravy </span>
+		<span class="cp">## (místo ke kterému dorazí řidič jako první, v TMC je to sekundární lokace).</span>
+        <span class="cp">##</span>
+        <span class="cp">## Definovaném v DOC\MJD\MSG\MLOC\SNTL – atribut „coordsystem“</span>
+        <span class="kd">element</span><span class="nv"> COORD </span><span class="p">{</span>
+        
+            <span class="cp">## Souřadnice x</span>
+            <span class="kd">attribute</span><span class="nv"> x </span><span class="p">{</span> <span class="kt">xsd:decimal</span> <span class="p">}</span><span class="o">,</span>
+
+            <span class="cp">## Souřadnice y</span>
+            <span class="kd">attribute</span><span class="nv"> y </span><span class="p">{</span> <span class="kt">xsd:decimal</span> <span class="p">}</span>
+        <span class="p">}</span><span class="o">,</span>
+        
+        <span class="cp">## Seznam čísel ovlivněných úseku</span>
+        <span class="kd">element</span><span class="nv"> STEL </span><span class="p">{</span>
+        
+            <span class="cp">## Identifikátor úseku v síti komunikací</span>
+            <span class="kd">attribute</span><span class="nv"> el_code </span><span class="p">{</span> <span class="kt">xsd:positiveInteger</span> <span class="p">}</span>
+        <span class="p">}</span>+
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="cp">############################################################	</span>
+
+<span class="kd">element</span><span class="nv">-MDST =</span>
+
+<span class="nv">## Informace o místě události v souladu s republikovým číselníkem UIRADR</span>
+<span class="nv">##</span>
+<span class="nv">## Povinný v případě, že zpráva obsahuje české události s vyplněnou informací o</span>
+<span class="nv">## místu události v souladu s republikovým číselníkem UIRADR.</span>
+<span class="nv">element MDST </span><span class="p">{</span>
+
+    <span class="cp">## Informace o názvu a kódu administrativních jednotek</span>
+    <span class="cp">##</span>
+    <span class="cp">## Může se opakovat v případě, že událost leží na hranici administrativní</span>
+    <span class="cp">## jednotky, resp. v několika jednotkách</span>
+    <span class="kd">element</span><span class="nv"> DEST </span><span class="p">{</span>
+    
+        <span class="cp">## Název státu</span>
+        <span class="kd">attribute</span><span class="nv"> CountryName </span><span class="p">{</span> <span class="kt">text</span> <span class="p">}</span><span class="o">,</span>
+        
+        <span class="cp">## Název městské části</span>
+        <span class="cp">##</span>
+        <span class="cp">## Atribut je poviný pouze v případě, že událost leží v obci s tímto členěním</span>
+        <span class="kd">attribute</span><span class="nv"> TownDistrictName </span><span class="p">{</span> <span class="kt">text</span> <span class="p">}</span><span class="o">?,</span>
+        
+        <span class="cp">## Kód městské části</span>
+        <span class="cp">## Atribut je povinný pouze v případě, že událost leží v obci s tímto členěním</span>
+        <span class="kd">attribute</span><span class="nv"> TownDistrictCode </span><span class="p">{</span> <span class="kt">xsd:integer</span> <span class="p">}</span><span class="o">?,</span>
+
+        <span class="cp">## Název obce</span>
+        <span class="kd">attribute</span><span class="nv"> TownName </span><span class="p">{</span> <span class="kt">text</span> <span class="p">}</span><span class="o">,</span>
+        
+        <span class="cp">## Kód obce</span>
+        <span class="kd">attribute</span><span class="nv"> TownCode </span><span class="p">{</span> <span class="kt">xsd:positiveInteger</span> <span class="p">}</span><span class="o">,</span>
+        
+        <span class="cp">## Název okresu</span>
+        <span class="kd">attribute</span><span class="nv"> TownShip </span><span class="p">{</span> <span class="kt">text</span> <span class="p">}</span><span class="o">,</span>
+        
+        <span class="cp">## Kód okresu</span>
+        <span class="kd">attribute</span><span class="nv"> TownShipCode </span><span class="p">{</span> <span class="kt">xsd:positiveInteger</span> <span class="p">}</span><span class="o">,</span>
+        
+        <span class="cp">## Název kraje</span>
+        <span class="kd">attribute</span><span class="nv"> RegionName </span><span class="p">{</span> <span class="kt">text</span> <span class="p">}</span><span class="o">,</span>
+        
+        <span class="cp">## Kód okresu</span>
+        <span class="kd">attribute</span><span class="nv"> RegionCode </span><span class="p">{</span> <span class="kt">xsd:positiveInteger</span> <span class="p">}</span><span class="o">,</span>
+        
+        <span class="cp">## Informace o administrativní jednotce ulice</span>
+        <span class="cp">##</span>
+        <span class="cp">## Povinný, jestliže se jedná o liniovou událost.</span>
+        <span class="cp">##</span>
+        <span class="cp">## Pro každý úsek, kterým událost prochází, bude generován jeden node STRE.</span>
+        <span class="cp">## Opakující se názvy jsou vyloučeny.</span>
+        <span class="kd">element</span><span class="nv"> STRE </span><span class="p">{</span>
+        
+            <span class="cp">## Název ulice</span>
+            <span class="cp">##</span>
+            <span class="cp">## Povinný, je-li k dispozici v datech podkladové sítě komunikací</span>
+            <span class="kd">attribute</span><span class="nv"> StreetName </span><span class="p">{</span> <span class="kt">text</span> <span class="p">}</span><span class="o">?,</span>
+            
+            <span class="cp">## Kód ulice</span>
+            <span class="cp">##</span>
+            <span class="cp">## Povinný, je-li k dispozici v datech podkladové sítě komunikací</span>
+            <span class="kd">attribute</span><span class="nv"> StreetCode </span><span class="p">{</span> <span class="kt">xsd:positiveInteger</span> <span class="p">}</span><span class="o">?</span>
+        <span class="p">}</span><span class="o">*,</span>
+        
+        <span class="cp">## Informace o komunikaci vzhledem k UIRADR</span>
+        <span class="cp">##</span>
+        <span class="cp">## Povinný, jestliže se jedná o liniovou událost.</span>
+        <span class="cp">##</span>
+        <span class="cp">## Pro každý úsek, kterým událost prochází bude generován jeden node ROAD.</span>
+        <span class="cp">## Opakující se názvy jsou vyloučeny.</span>
+        <span class="kd">element</span><span class="nv"> ROAD </span><span class="p">{</span>
+        
+            <span class="cp">## Číslo komunikace</span>
+            <span class="cp">##</span>
+            <span class="cp">## Povinný, je-li k dispozici v datech podkladové sítě komunikací</span>
+            <span class="kd">attribute</span><span class="nv"> RoadNumber </span><span class="p">{</span> <span class="kt">text</span> <span class="p">}</span><span class="o">?,</span>
+            
+            <span class="cp">## Třída komunikace</span>
+            <span class="kd">attribute</span><span class="nv"> RoadClass </span><span class="p">{</span>
+
+                <span class="cp">## dálnice</span>
+                <span class="s2">&quot;0&quot;</span> <span class="o">|</span>
+
+                <span class="cp">## silnice 1.třídy</span>
+                <span class="s2">&quot;1&quot;</span> <span class="o">|</span>
+
+                <span class="cp">## silnice 2.třídy</span>
+                <span class="s2">&quot;2&quot;</span> <span class="o">|</span>
+
+                <span class="cp">## silnice 3.třídy</span>
+                <span class="s2">&quot;3&quot;</span> <span class="o">|</span>
+
+                <span class="cp">## ostatní silnice</span>
+                <span class="s2">&quot;4&quot;</span> <span class="o">|</span>
+
+                <span class="cp">## rychlostní komunikace</span>
+                <span class="s2">&quot;5&quot;</span>
+            <span class="p">}</span>
+        <span class="p">}</span><span class="o">*</span>
+    <span class="p">}</span>+
+<span class="p">}</span>
+
+<span class="cp">############################################################	</span>
+
+<span class="kd">element</span><span class="nv">-DIVLOC =</span>
+
+<span class="nv">## Informace o trase objížďky</span>
+<span class="nv">##</span>
+<span class="nv">## Povinný pouze v případě, je-li vyplněna trasa objížďky</span>
+<span class="nv">element DIVLOC </span><span class="p">{</span>
+
+    <span class="cp">## Lokalizace a detailní informace o trase objížďky</span>
+    <span class="kd">element</span><span class="nv"> DIVROUTE </span><span class="p">{</span>
+        
+        <span class="cp">## Podrobnější informace týkající se charakteru objížďky</span>
+        <span class="kd">attribute</span><span class="nv"> description </span><span class="p">{</span> <span class="kt">text</span> <span class="p">}</span>
+    <span class="p">}</span>+
+<span class="p">}</span>
+
+<span class="cp">############################################################	</span>
+	
+<span class="kd">element</span><span class="nv">-TXPL =</span>
+
+<span class="nv">## Textová informace popisující místo události nebo trasu objížďky </span>
+<span class="nv">element TXPL </span><span class="p">{</span> <span class="kt">text</span> <span class="p">}</span>
+
+<span class="cp">############################################################</span>
+
+type-nonZeroDecimal <span class="o">=</span> <span class="kt">xsd:decimal</span> <span class="p">{</span> <span class="na">minExclusive</span><span class="o">=</span><span class="na">&quot;0.0&quot;</span> <span class="p">}</span>
+
+type-formatVersion <span class="o">=</span> type-nonZeroDecimal
+
+type-version <span class="o">=</span> <span class="kt">xsd:positiveInteger</span>
+
+<span class="kt">type-AlertCEventTableVersion</span> = type-nonZeroDecimal
+
+type-AlertCLocationTableVersion <span class="o">=</span> type-nonZeroDecimal
+
+type-language-cz <span class="o">=</span> <span class="s2">&quot;CZ&quot;</span>
+
+type-country <span class="o">=</span> <span class="s2">&quot;CZ&quot;</span> <span class="o">|</span> <span class="s2">&quot;AT&quot;</span> <span class="o">|</span> <span class="s2">&quot;DE&quot;</span> <span class="o">|</span> <span class="s2">&quot;SK&quot;</span> <span class="o">|</span> <span class="s2">&quot;PL&quot;</span>
+
+type-snet-type <span class="o">=</span> <span class="s2">&quot;SN&quot;</span> <span class="o">|</span> <span class="s2">&quot;GN&quot;</span>
+
+type-networkVersion <span class="o">=</span> type-nonZeroDecimal
+
+type-time-scale-value <span class="o">=</span> <span class="s2">&quot;D&quot;</span> <span class="o">|</span> <span class="s2">&quot;(D)&quot;</span> <span class="o">|</span> <span class="s2">&quot;L&quot;</span> <span class="o">|</span> <span class="s2">&quot;(L)&quot;</span> <span class="o">|</span> <span class="s2">&quot;&quot;</span>
+
+type-coord-system <span class="o">=</span> <span class="s2">&quot;S-JTSK&quot;</span> <span class="o">|</span> <span class="s2">&quot;WGS-84&quot;</span>
+</pre></div>
+</div>
+</section>
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="index.html">
+              <img class="logo" src="_static/RSD-logo-07.jpg" alt="Logo"/>
+            </a></p>
+  <div>
+    <h3><a href="index.html">Table of Contents</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">Příloha B: Reprezentativní XML Schéma RELAX NG</a><ul>
+<li><a class="reference internal" href="#relax-ng-compact-syntax-schema-rnc">RELAX NG Compact Syntax Schema (RNC)</a><ul>
+<li><a class="reference internal" href="#trafficinformation-rnc-koren-schematu"><cite>TrafficInformation.rnc</cite> - kořen schématu</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  </div>
+  <div>
+    <h4>Přechozí téma</h4>
+    <p class="topless"><a href="examples.html"
+                          title="předchozí kapitola">Příloha A: Příklady zpráv</a></p>
+  </div>
+  <div>
+    <h4>Další téma</h4>
+    <p class="topless"><a href="CHANGELOG.html"
+                          title="další kapitola">Changelog</a></p>
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>Tato stránka</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/format.rst.txt"
+            rel="nofollow">Ukázat zdroj</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Rychlé vyhledávání</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="OK" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigace</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="Obecný rejstřík"
+             >rejstřík</a></li>
+        <li class="right" >
+          <a href="CHANGELOG.html" title="Changelog"
+             >další</a> |</li>
+        <li class="right" >
+          <a href="examples.html" title="Příloha A: Příklady zpráv"
+             >předchozí</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Dokumentace pro NDIC - DDR XML - Běžné dopravní informace 3.2.5rev1</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Příloha B: Reprezentativní XML Schéma RELAX NG</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+    &#169; Veškerá práva vyhrazena 2023, TamTam Research s.r.o..
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.5.
+    </div>
+  </body>
+</html>

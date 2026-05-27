@@ -1,0 +1,19 @@
+Koncepty
+========
+
+:poskytovatel:	strana, která poskytuje data odběrateli.
+:odběratel:	strana, která odebírá data od poskytovatele.
+:doručovací url:	url, obsluhované HTTP serverem odběratele, které je schopno přijímat HTTP POST požadavky s tělem obsahujícím výhradně zasílanou zprávu.
+:událost:	informace s identitou a platností v čase, která něco popisuje. Událost se může v čase měnit.
+:situace:	množina událostí.
+:snímek:	situace, popisující všechny události, relevantní pro jeden časový okamžik.
+:zpráva:	data zasílaná poskytovatelem odběrateli, která popisují nějakou informaci.
+:rozdílová zpráva: zpráva, popisující změny v situaci. Zahrnuje detaily o vytvoření, úpravě a smazání jedné nebo více událostí.
+:subskripce:	skutečnost, že nějaký odběratel má u poskytovatele nakonfigurováno doručovací url pro odběr dat.
+:relace:	sekvence všech zpráv, poskytnutých v rámci jedné subskripce.
+
+Poskytovatel poskytuje změnové zprávy. Na úvod, po vytvoření subskripce, odešle změnové zprávy popisující všechny události, které byly vytvořené v minulosti a které stále ještě platí.
+
+Tyto změnové zprávy by měly umožnit odběrateli vytvoření vlastního výchozího snímku.
+
+Následně, jak se situace mění, jsou odběrateli odeslány další změnové zprávy a odběratel by měl být schopen si aktualizovat vlastní snímek postupně změnu za změnou.

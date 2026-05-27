@@ -1,0 +1,62 @@
+===================================================================================
+Typical Process of Establishing and Operating a Subscription with the PUSH Protocol
+===================================================================================
+
+.. uml::
+   :caption: Subscription Establishment and Operation
+   :align: center
+
+    @startuml
+    skinparam BoxPadding 15
+    participant event_src as "Information Source"
+    box "Sender"
+        actor pub_admin as "Administrator"
+        boundary reg_sub as "Subscription\nRegistry"
+        database pub_db as "Database\nwith Records"
+        control pub_proc as "Delivery Process"
+    end box
+    box "Subscriber"
+        actor recv_admin as "Administrator"
+        boundary recv_url as "Subscriber's URL"
+        database recv_db as "Database\nwith Records"
+    end box
+    recv_admin -> reg_sub: Establishing Subscription
+    pub_admin -> reg_sub: Approval of Subscription
+    reg_sub -> pub_proc: Delivery Configuration
+    group Sending the Initial Batch of Currently Valid Messages
+            loop n times
+            pub_proc -> recv_url: Message Delivery
+            recv_url -> recv_db: Record Storage
+            recv_url --> pub_proc: HTTP Status 200: OK
+            end
+    end
+    group Record Change or Update
+            event_src -> pub_db: Update
+            pub_db -> pub_proc: Change Detected
+            pub_proc -> recv_url: Message Delivery (Change)
+            recv_url -> recv_db: Record Storage
+            recv_url --> pub_proc: HTTP Status 200: OK
+    end
+    @enduml
+
+Implementation of the Subscriber System
+=======================================
+
+The subscriber implements a web service capable of receiving HTTP POST requests at the subscriber's URL (specific to a particular subscription). The request body contains the provided message, which the subscriber stores for further processing.
+
+This web service is then exposed at a publicly accessible address. It is desirable for the domain to be secured using TLS (thus accessible via the HTTPS protocol) and to implement authentication through Basic authentication (per RFC 7617). The subscriber should verify, for example, using tools like curl, that the service is accessible and functional. For further purposes, they should make a note of the target URL and the username and password for authentication.
+
+Subscription Establishment
+==========================
+
+The subscriber visits the Subscription Registry, creates an account if necessary, and proceeds to create a new subscription. For the selected source, which offers the desired content and uses the PUSH protocol, they primarily enter the URL to which the provider will send data and provide a username and password. These details correspond to the URL and username and password that the subscriber's system is ready to serve.
+
+Activation of Delivery
+======================
+
+Upon activating the established subscription (which may take some time in the case of internal approval by the provider), the provider sends the first batch of messages containing records that are valid at that moment.
+
+Ongoing Delivery of Changes
+===========================
+
+From this point onwards, the provider's system awaits an internal update of the provided content, and as soon as this occurs, it sends the subscriber a new message.

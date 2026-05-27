@@ -1,0 +1,26 @@
+name:
+    "cs": DDR - FCD Data
+    "en": DDR - FCD Data
+version_info:
+    version: "2.0"
+    publish_date: 2023-02-16
+encoding: UTF-8
+syntax: XML
+#schema.type
+grammar: RELAX NG Compact Syntax (RNC)
+model: DDR
+model_version: DDR v3.4
+#model.profile_base
+model_description: DDR v3.4/ElaboratedData
+#extended_parts
+model_extension: "none"
+description:
+    "cs": Formát datového distribučního rozhraní (DDR) NDIC používaný pro poskytování informací z plovoucích vozidel (dojezdové doby, rychlost a stupně dopravy, stupně dopravy a délka kolon, počet vozidel, typy) na předem dané sadě poloh. <b>Odděleně podle typu vozidla.</b>
+    "en": Format of data distribution interface (DDR) of NDIC used to provide information from floating car data (travel time, speed and traffic levels, traffic levels and queue lengths, number of vehicles, types) on set of predefined locations. <b>Separately by a vehicle type.</b>
+additional_description:
+    "cs": <b>Datový formát není zpětně kompatibilní s původním formátem ([zde](../formats/cz-ndic_ddr-fcd-v1.0.md)), zavádí do položek hierarchickou strukturu, nově je pojmenovává a upravuje význam.</b>
+    "en": <b>The data format is not backward compatible with the original format ([here](../formats/cz-ndic_ddr-fcd-v1.0.md)), introduces a hierarchical structure to the elements, renames them and modifies the meaning.</b>
+publications:
+    html: [cs, en]
+    pdf: [cs, en]
+    zip: [en-cs]

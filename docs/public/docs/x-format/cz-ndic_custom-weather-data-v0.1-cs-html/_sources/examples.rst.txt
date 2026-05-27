@@ -1,0 +1,14 @@
+.. _examples:
+
+=========================
+Příloha A: Příklady zpráv
+=========================
+
+
+MT-000.xml - Data naměřená jednou meteohláskou
+==============================================
+
+Publikace obsahuje data z jednoho měření jedné meteohlásky.
+
+.. literalinclude:: samples/MT-000.xml
+   :language: xml

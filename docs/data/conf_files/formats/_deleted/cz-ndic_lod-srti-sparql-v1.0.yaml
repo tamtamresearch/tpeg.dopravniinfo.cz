@@ -1,0 +1,42 @@
+name:
+    "cs": RDF - Dopravní informace souvisící s bezpečností silničního provozu
+    "en": RDF - Safety-related road traffic information
+version_info:
+    version: v1.0
+    publish_date: 2022-07-01
+encoding: UTF-8
+syntax: RDF
+#schema.type
+grammar: SHACL
+model: DATEX II
+model_version: DATEX II v3.3
+#model.profile_base
+model_description: DATEX II v3.3/SitationPublication, SRTI subset
+#extended_parts
+model_extension: "none"
+description:
+    "cs": |
+        Ontologický model dopravní situace odvozený z DATEX II Publikace Situace, verze 3.3, použitý pro poskytování dopravních informací souvisících s bezpečností silničního provozu. Data jsou uložena jako tzv. RDF triplety podle zásad otevřených [propojených dat](https://www.w3.org/standards/semanticweb/data). Data uložená v databázi RDF záznamů jsou ohraničena schématem [SHACL](https://www.w3.org/TR/shacl).
+    "en": |
+        Ontological traffic situation model derived from DATEX II Situation Publication, version 3.3, used for providing traffic information related to road safety. The data are stored as so-called RDF triplets according to the principles of [linked open data](https://www.w3.org/standards/semanticweb/data). The data stored in the RDF record database is bounded by the [SHACL](https://www.w3.org/TR/shacl) schema.
+additional_description:
+    "cs": |
+        Pro usnadnění použití dotazů je vhodné znát slovníky / použitou ontologii:
+
+        - [https://cef.uv.es/lodroadtran18/def/transporte/dtx_srti](https://cef.uv.es/lodroadtran18/def/transporte/dtx_srti)
+        - [https://cef.uv.es/lodroadtran18/def/transporte/dtx_srti/administrativeUnit](https://cef.uv.es/lodroadtran18/def/transporte/dtx_srti/administrativeUnit)
+        - [https://cef.uv.es/lodroadtran18/def/transporte/dtx_srti/roads](https://cef.uv.es/lodroadtran18/def/transporte/dtx_srti/roads)
+
+        Podrobná dokumentace formátu je dostupná na [https://lod.tamtamresearch.com/docs](https://lod.tamtamresearch.com/docs)
+    "en": |
+        To facilitate queries it is advisable to know the vocabularies / used ontology:
+
+        - [https://cef.uv.es/lodroadtran18/def/transporte/dtx_srti](https://cef.uv.es/lodroadtran18/def/transporte/dtx_srti)
+        - [https://cef.uv.es/lodroadtran18/def/transporte/dtx_srti/administrativeUnit](https://cef.uv.es/lodroadtran18/def/transporte/dtx_srti/administrativeUnit)
+        - [https://cef.uv.es/lodroadtran18/def/transporte/dtx_srti/roads](https://cef.uv.es/lodroadtran18/def/transporte/dtx_srti/roads)
+
+        Detailed documentation of the format is at [https://lod.tamtamresearch.com/docs](https://lod.tamtamresearch.com/docs).
+publications:
+    # html: [cs]
+    pdf: [en]
+    zip: [en-cs]

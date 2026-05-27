@@ -1,0 +1,499 @@
+
+
+<!doctype html>
+
+<html lang="en" data-content_root="./">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Appendix A: Publication example &#8212; NDIC - DATEX II Measurement Site Table Publication - Predefined Equipment Set 1.0rev0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/bizstyle.css?v=532c1bf3" />
+    
+    <script src="_static/documentation_options.js?v=5b6ea117"></script>
+    <script src="_static/doctools.js?v=888ff710"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/bizstyle.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Appendix B: W3C XML Schema" href="format.html" />
+    <link rel="prev" title="Concepts" href="concepts.html" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <!--[if lt IE 9]>
+    <script src="_static/css3-mediaqueries.js"></script>
+    <![endif]-->
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="format.html" title="Appendix B: W3C XML Schema"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="concepts.html" title="Concepts"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">NDIC - DATEX II Measurement Site Table Publication - Predefined Equipment Set 1.0rev0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Appendix A: Publication example</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="appendix-a-publication-example">
+<span id="examples"></span><h1>Appendix A: Publication example<a class="headerlink" href="#appendix-a-publication-example" title="Link to this heading">¶</a></h1>
+<section id="measurement-site-table-xml-predefined-location-set-with-two-locations">
+<h2>measurement_site_table.xml - predefined location set with two locations<a class="headerlink" href="#measurement-site-table-xml-predefined-location-set-with-two-locations" title="Link to this heading">¶</a></h2>
+<p>Publication contains two predefined equipments (in two tables, one for detectors and other for wheather stations).</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span>
+<span class="nt">&lt;d2LogicalModel</span><span class="w"> </span><span class="na">modelBaseVersion=</span><span class="s">&quot;2&quot;</span><span class="w"> </span><span class="na">xmlns=</span><span class="s">&quot;http://datex2.eu/schema/2/2_0&quot;</span><span class="w"> </span><span class="na">xmlns:xsd=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema&quot;</span><span class="w"> </span><span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span><span class="nt">&gt;</span>
+<span class="w">  </span><span class="nt">&lt;exchange&gt;</span>
+<span class="w">    </span><span class="nt">&lt;supplierIdentification&gt;</span>
+<span class="w">      </span><span class="nt">&lt;country&gt;</span>cz<span class="nt">&lt;/country&gt;</span>
+<span class="w">      </span><span class="nt">&lt;nationalIdentifier&gt;</span>DRU<span class="nt">&lt;/nationalIdentifier&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/supplierIdentification&gt;</span>
+<span class="w">  </span><span class="nt">&lt;/exchange&gt;</span>
+<span class="w">  </span><span class="nt">&lt;payloadPublication</span><span class="w"> </span><span class="na">lang=</span><span class="s">&quot;cs&quot;</span><span class="w"> </span><span class="na">xsi:type=</span><span class="s">&quot;MeasurementSiteTablePublication&quot;</span><span class="nt">&gt;</span>
+<span class="w">    </span><span class="nt">&lt;feedType&gt;</span>cz-ndic_d2-measutrement-site-table-v1.0<span class="nt">&lt;/feedType&gt;</span>
+<span class="w">    </span><span class="nt">&lt;publicationTime&gt;</span>2018-01-29T08:00:29+02:00<span class="nt">&lt;/publicationTime&gt;</span>
+<span class="w">    </span><span class="nt">&lt;publicationCreator&gt;</span>
+<span class="w">      </span><span class="nt">&lt;country&gt;</span>cz<span class="nt">&lt;/country&gt;</span>
+<span class="w">      </span><span class="nt">&lt;nationalIdentifier&gt;</span>DRU<span class="nt">&lt;/nationalIdentifier&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/publicationCreator&gt;</span>
+<span class="w">    </span><span class="nt">&lt;headerInformation&gt;</span>
+<span class="w">      </span><span class="nt">&lt;confidentiality&gt;</span>noRestriction<span class="nt">&lt;/confidentiality&gt;</span>
+<span class="w">      </span><span class="nt">&lt;informationStatus&gt;</span>real<span class="nt">&lt;/informationStatus&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/headerInformation&gt;</span>
+<span class="w">    </span><span class="cm">&lt;!-- detector measurement table begin --&gt;</span>
+<span class="w">    </span><span class="nt">&lt;measurementSiteTable</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;CZ_DRU_MST_DET&quot;</span><span class="w"> </span><span class="na">version=</span><span class="s">&quot;1&quot;</span><span class="nt">&gt;</span>
+<span class="w">      </span><span class="nt">&lt;measurementSiteTableIdentification&gt;</span>Tabulka<span class="w"> </span>detektoru<span class="w"> </span>v<span class="w"> </span>HDRU<span class="nt">&lt;/measurementSiteTableIdentification&gt;</span>
+<span class="w">      </span><span class="nt">&lt;measurementSiteRecord</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;1307&quot;</span><span class="w"> </span><span class="na">version=</span><span class="s">&quot;1&quot;</span><span class="nt">&gt;</span>
+<span class="w">        </span><span class="nt">&lt;measurementSiteName&gt;</span>
+<span class="w">          </span><span class="nt">&lt;values&gt;</span>
+<span class="w">            </span><span class="nt">&lt;value</span><span class="w"> </span><span class="na">lang=</span><span class="s">&quot;cs&quot;</span><span class="nt">&gt;</span>název<span class="w"> </span>umístění<span class="w"> </span>detektoru<span class="nt">&lt;/value&gt;</span>
+<span class="w">          </span><span class="nt">&lt;/values&gt;</span>
+<span class="w">        </span><span class="nt">&lt;/measurementSiteName&gt;</span>
+<span class="w">        </span><span class="cm">&lt;!--start of overall characteristics: flow, occupancy and speed --&gt;</span>
+<span class="w">        </span><span class="nt">&lt;measurementSpecificCharacteristics</span><span class="w"> </span><span class="na">index=</span><span class="s">&quot;1&quot;</span><span class="nt">&gt;</span>
+<span class="w">          </span><span class="nt">&lt;measurementSpecificCharacteristics&gt;</span>
+<span class="w">            </span><span class="nt">&lt;specificMeasurementValueType&gt;</span>trafficFlow<span class="nt">&lt;/specificMeasurementValueType&gt;</span>
+<span class="w">            </span><span class="nt">&lt;specificVehicleCharacteristics&gt;</span>
+<span class="w">              </span><span class="nt">&lt;vehicleType&gt;</span>anyVehicle<span class="nt">&lt;/vehicleType&gt;</span>
+<span class="w">            </span><span class="nt">&lt;/specificVehicleCharacteristics&gt;</span>
+<span class="w">          </span><span class="nt">&lt;/measurementSpecificCharacteristics&gt;</span>
+<span class="w">        </span><span class="nt">&lt;/measurementSpecificCharacteristics&gt;</span>
+<span class="w">        </span><span class="nt">&lt;measurementSpecificCharacteristics</span><span class="w"> </span><span class="na">index=</span><span class="s">&quot;2&quot;</span><span class="nt">&gt;</span>
+<span class="w">          </span><span class="nt">&lt;measurementSpecificCharacteristics&gt;</span>
+<span class="w">            </span><span class="nt">&lt;specificMeasurementValueType&gt;</span>trafficConcentration<span class="nt">&lt;/specificMeasurementValueType&gt;</span>
+<span class="w">            </span><span class="nt">&lt;specificVehicleCharacteristics&gt;</span>
+<span class="w">              </span><span class="nt">&lt;vehicleType&gt;</span>anyVehicle<span class="nt">&lt;/vehicleType&gt;</span>
+<span class="w">            </span><span class="nt">&lt;/specificVehicleCharacteristics&gt;</span>
+<span class="w">          </span><span class="nt">&lt;/measurementSpecificCharacteristics&gt;</span>
+<span class="w">        </span><span class="nt">&lt;/measurementSpecificCharacteristics&gt;</span>
+<span class="w">        </span><span class="nt">&lt;measurementSpecificCharacteristics</span><span class="w"> </span><span class="na">index=</span><span class="s">&quot;3&quot;</span><span class="nt">&gt;</span>
+<span class="w">          </span><span class="nt">&lt;measurementSpecificCharacteristics&gt;</span>
+<span class="w">            </span><span class="nt">&lt;specificMeasurementValueType&gt;</span>trafficSpeed<span class="nt">&lt;/specificMeasurementValueType&gt;</span>
+<span class="w">            </span><span class="nt">&lt;specificVehicleCharacteristics&gt;</span>
+<span class="w">              </span><span class="nt">&lt;vehicleType&gt;</span>anyVehicle<span class="nt">&lt;/vehicleType&gt;</span>
+<span class="w">            </span><span class="nt">&lt;/specificVehicleCharacteristics&gt;</span>
+<span class="w">          </span><span class="nt">&lt;/measurementSpecificCharacteristics&gt;</span>
+<span class="w">        </span><span class="nt">&lt;/measurementSpecificCharacteristics&gt;</span>
+<span class="w">        </span><span class="cm">&lt;!--end of overall characteristics: flow, occupancy and speed --&gt;</span>
+<span class="w">        </span><span class="cm">&lt;!--start of vehicle flow per hour, classes: 16-21 </span>
+<span class="cm">          just wild guessing</span>
+<span class="cm">          class 16 = car</span>
+<span class="cm">          class 17 = lorry</span>
+<span class="cm">          class 18 = trailer</span>
+<span class="cm">          class 19 = van</span>
+<span class="cm">          class 20 = bus</span>
+<span class="cm">          class 21 = motorcycle</span>
+<span class="cm">      --&gt;</span>
+<span class="w">        </span><span class="nt">&lt;measurementSpecificCharacteristics</span><span class="w"> </span><span class="na">index=</span><span class="s">&quot;4&quot;</span><span class="nt">&gt;</span>
+<span class="w">          </span><span class="nt">&lt;measurementSpecificCharacteristics&gt;</span>
+<span class="w">            </span><span class="nt">&lt;specificMeasurementValueType&gt;</span>trafficFlow<span class="nt">&lt;/specificMeasurementValueType&gt;</span>
+<span class="w">            </span><span class="nt">&lt;specificVehicleCharacteristics&gt;</span>
+<span class="w">              </span><span class="nt">&lt;vehicleType&gt;</span>car<span class="nt">&lt;/vehicleType&gt;</span>
+<span class="w">            </span><span class="nt">&lt;/specificVehicleCharacteristics&gt;</span>
+<span class="w">          </span><span class="nt">&lt;/measurementSpecificCharacteristics&gt;</span>
+<span class="w">        </span><span class="nt">&lt;/measurementSpecificCharacteristics&gt;</span>
+<span class="w">        </span><span class="nt">&lt;measurementSpecificCharacteristics</span><span class="w"> </span><span class="na">index=</span><span class="s">&quot;5&quot;</span><span class="nt">&gt;</span>
+<span class="w">          </span><span class="nt">&lt;measurementSpecificCharacteristics&gt;</span>
+<span class="w">            </span><span class="nt">&lt;specificMeasurementValueType&gt;</span>trafficFlow<span class="nt">&lt;/specificMeasurementValueType&gt;</span>
+<span class="w">            </span><span class="nt">&lt;specificVehicleCharacteristics&gt;</span>
+<span class="w">              </span><span class="nt">&lt;vehicleType&gt;</span>lorry<span class="nt">&lt;/vehicleType&gt;</span>
+<span class="w">            </span><span class="nt">&lt;/specificVehicleCharacteristics&gt;</span>
+<span class="w">          </span><span class="nt">&lt;/measurementSpecificCharacteristics&gt;</span>
+<span class="w">        </span><span class="nt">&lt;/measurementSpecificCharacteristics&gt;</span>
+<span class="w">        </span><span class="nt">&lt;measurementSpecificCharacteristics</span><span class="w"> </span><span class="na">index=</span><span class="s">&quot;6&quot;</span><span class="nt">&gt;</span>
+<span class="w">          </span><span class="nt">&lt;measurementSpecificCharacteristics&gt;</span>
+<span class="w">            </span><span class="nt">&lt;specificMeasurementValueType&gt;</span>trafficFlow<span class="nt">&lt;/specificMeasurementValueType&gt;</span>
+<span class="w">            </span><span class="nt">&lt;specificVehicleCharacteristics&gt;</span>
+<span class="w">              </span><span class="nt">&lt;vehicleType&gt;</span>trailer<span class="nt">&lt;/vehicleType&gt;</span>
+<span class="w">            </span><span class="nt">&lt;/specificVehicleCharacteristics&gt;</span>
+<span class="w">          </span><span class="nt">&lt;/measurementSpecificCharacteristics&gt;</span>
+<span class="w">        </span><span class="nt">&lt;/measurementSpecificCharacteristics&gt;</span>
+<span class="w">        </span><span class="nt">&lt;measurementSpecificCharacteristics</span><span class="w"> </span><span class="na">index=</span><span class="s">&quot;7&quot;</span><span class="nt">&gt;</span>
+<span class="w">          </span><span class="nt">&lt;measurementSpecificCharacteristics&gt;</span>
+<span class="w">            </span><span class="nt">&lt;specificMeasurementValueType&gt;</span>trafficFlow<span class="nt">&lt;/specificMeasurementValueType&gt;</span>
+<span class="w">            </span><span class="nt">&lt;specificVehicleCharacteristics&gt;</span>
+<span class="w">              </span><span class="nt">&lt;vehicleType&gt;</span>van<span class="nt">&lt;/vehicleType&gt;</span>
+<span class="w">            </span><span class="nt">&lt;/specificVehicleCharacteristics&gt;</span>
+<span class="w">          </span><span class="nt">&lt;/measurementSpecificCharacteristics&gt;</span>
+<span class="w">        </span><span class="nt">&lt;/measurementSpecificCharacteristics&gt;</span>
+<span class="w">        </span><span class="nt">&lt;measurementSpecificCharacteristics</span><span class="w"> </span><span class="na">index=</span><span class="s">&quot;8&quot;</span><span class="nt">&gt;</span>
+<span class="w">          </span><span class="nt">&lt;measurementSpecificCharacteristics&gt;</span>
+<span class="w">            </span><span class="nt">&lt;specificMeasurementValueType&gt;</span>trafficFlow<span class="nt">&lt;/specificMeasurementValueType&gt;</span>
+<span class="w">            </span><span class="nt">&lt;specificVehicleCharacteristics&gt;</span>
+<span class="w">              </span><span class="nt">&lt;vehicleType&gt;</span>bus<span class="nt">&lt;/vehicleType&gt;</span>
+<span class="w">            </span><span class="nt">&lt;/specificVehicleCharacteristics&gt;</span>
+<span class="w">          </span><span class="nt">&lt;/measurementSpecificCharacteristics&gt;</span>
+<span class="w">        </span><span class="nt">&lt;/measurementSpecificCharacteristics&gt;</span>
+<span class="w">        </span><span class="nt">&lt;measurementSpecificCharacteristics</span><span class="w"> </span><span class="na">index=</span><span class="s">&quot;9&quot;</span><span class="nt">&gt;</span>
+<span class="w">          </span><span class="nt">&lt;measurementSpecificCharacteristics&gt;</span>
+<span class="w">            </span><span class="nt">&lt;specificMeasurementValueType&gt;</span>trafficFlow<span class="nt">&lt;/specificMeasurementValueType&gt;</span>
+<span class="w">            </span><span class="nt">&lt;specificVehicleCharacteristics&gt;</span>
+<span class="w">              </span><span class="nt">&lt;vehicleType&gt;</span>motorcycle<span class="nt">&lt;/vehicleType&gt;</span>
+<span class="w">            </span><span class="nt">&lt;/specificVehicleCharacteristics&gt;</span>
+<span class="w">          </span><span class="nt">&lt;/measurementSpecificCharacteristics&gt;</span>
+<span class="w">        </span><span class="nt">&lt;/measurementSpecificCharacteristics&gt;</span>
+<span class="w">        </span><span class="cm">&lt;!--end of vehicle flow per hour, classes: 16-21 --&gt;</span>
+<span class="w">        </span><span class="cm">&lt;!--start of occupancy, classes: 16-21 --&gt;</span>
+<span class="w">        </span><span class="nt">&lt;measurementSpecificCharacteristics</span><span class="w"> </span><span class="na">index=</span><span class="s">&quot;10&quot;</span><span class="nt">&gt;</span>
+<span class="w">          </span><span class="nt">&lt;measurementSpecificCharacteristics&gt;</span>
+<span class="w">            </span><span class="nt">&lt;specificMeasurementValueType&gt;</span>trafficConcentration<span class="nt">&lt;/specificMeasurementValueType&gt;</span>
+<span class="w">            </span><span class="nt">&lt;specificVehicleCharacteristics&gt;</span>
+<span class="w">              </span><span class="nt">&lt;vehicleType&gt;</span>car<span class="nt">&lt;/vehicleType&gt;</span>
+<span class="w">            </span><span class="nt">&lt;/specificVehicleCharacteristics&gt;</span>
+<span class="w">          </span><span class="nt">&lt;/measurementSpecificCharacteristics&gt;</span>
+<span class="w">        </span><span class="nt">&lt;/measurementSpecificCharacteristics&gt;</span>
+<span class="w">        </span><span class="nt">&lt;measurementSpecificCharacteristics</span><span class="w"> </span><span class="na">index=</span><span class="s">&quot;11&quot;</span><span class="nt">&gt;</span>
+<span class="w">          </span><span class="nt">&lt;measurementSpecificCharacteristics&gt;</span>
+<span class="w">            </span><span class="nt">&lt;specificMeasurementValueType&gt;</span>trafficConcentration<span class="nt">&lt;/specificMeasurementValueType&gt;</span>
+<span class="w">            </span><span class="nt">&lt;specificVehicleCharacteristics&gt;</span>
+<span class="w">              </span><span class="nt">&lt;vehicleType&gt;</span>lorry<span class="nt">&lt;/vehicleType&gt;</span>
+<span class="w">            </span><span class="nt">&lt;/specificVehicleCharacteristics&gt;</span>
+<span class="w">          </span><span class="nt">&lt;/measurementSpecificCharacteristics&gt;</span>
+<span class="w">        </span><span class="nt">&lt;/measurementSpecificCharacteristics&gt;</span>
+<span class="w">        </span><span class="nt">&lt;measurementSpecificCharacteristics</span><span class="w"> </span><span class="na">index=</span><span class="s">&quot;12&quot;</span><span class="nt">&gt;</span>
+<span class="w">          </span><span class="nt">&lt;measurementSpecificCharacteristics&gt;</span>
+<span class="w">            </span><span class="nt">&lt;specificMeasurementValueType&gt;</span>trafficConcentration<span class="nt">&lt;/specificMeasurementValueType&gt;</span>
+<span class="w">            </span><span class="nt">&lt;specificVehicleCharacteristics&gt;</span>
+<span class="w">              </span><span class="nt">&lt;vehicleType&gt;</span>trailer<span class="nt">&lt;/vehicleType&gt;</span>
+<span class="w">            </span><span class="nt">&lt;/specificVehicleCharacteristics&gt;</span>
+<span class="w">          </span><span class="nt">&lt;/measurementSpecificCharacteristics&gt;</span>
+<span class="w">        </span><span class="nt">&lt;/measurementSpecificCharacteristics&gt;</span>
+<span class="w">        </span><span class="nt">&lt;measurementSpecificCharacteristics</span><span class="w"> </span><span class="na">index=</span><span class="s">&quot;13&quot;</span><span class="nt">&gt;</span>
+<span class="w">          </span><span class="nt">&lt;measurementSpecificCharacteristics&gt;</span>
+<span class="w">            </span><span class="nt">&lt;specificMeasurementValueType&gt;</span>trafficConcentration<span class="nt">&lt;/specificMeasurementValueType&gt;</span>
+<span class="w">            </span><span class="nt">&lt;specificVehicleCharacteristics&gt;</span>
+<span class="w">              </span><span class="nt">&lt;vehicleType&gt;</span>van<span class="nt">&lt;/vehicleType&gt;</span>
+<span class="w">            </span><span class="nt">&lt;/specificVehicleCharacteristics&gt;</span>
+<span class="w">          </span><span class="nt">&lt;/measurementSpecificCharacteristics&gt;</span>
+<span class="w">        </span><span class="nt">&lt;/measurementSpecificCharacteristics&gt;</span>
+<span class="w">        </span><span class="nt">&lt;measurementSpecificCharacteristics</span><span class="w"> </span><span class="na">index=</span><span class="s">&quot;14&quot;</span><span class="nt">&gt;</span>
+<span class="w">          </span><span class="nt">&lt;measurementSpecificCharacteristics&gt;</span>
+<span class="w">            </span><span class="nt">&lt;specificMeasurementValueType&gt;</span>trafficConcentration<span class="nt">&lt;/specificMeasurementValueType&gt;</span>
+<span class="w">            </span><span class="nt">&lt;specificVehicleCharacteristics&gt;</span>
+<span class="w">              </span><span class="nt">&lt;vehicleType&gt;</span>bus<span class="nt">&lt;/vehicleType&gt;</span>
+<span class="w">            </span><span class="nt">&lt;/specificVehicleCharacteristics&gt;</span>
+<span class="w">          </span><span class="nt">&lt;/measurementSpecificCharacteristics&gt;</span>
+<span class="w">        </span><span class="nt">&lt;/measurementSpecificCharacteristics&gt;</span>
+<span class="w">        </span><span class="nt">&lt;measurementSpecificCharacteristics</span><span class="w"> </span><span class="na">index=</span><span class="s">&quot;15&quot;</span><span class="nt">&gt;</span>
+<span class="w">          </span><span class="nt">&lt;measurementSpecificCharacteristics&gt;</span>
+<span class="w">            </span><span class="nt">&lt;specificMeasurementValueType&gt;</span>trafficConcentration<span class="nt">&lt;/specificMeasurementValueType&gt;</span>
+<span class="w">            </span><span class="nt">&lt;specificVehicleCharacteristics&gt;</span>
+<span class="w">              </span><span class="nt">&lt;vehicleType&gt;</span>motorcycle<span class="nt">&lt;/vehicleType&gt;</span>
+<span class="w">            </span><span class="nt">&lt;/specificVehicleCharacteristics&gt;</span>
+<span class="w">          </span><span class="nt">&lt;/measurementSpecificCharacteristics&gt;</span>
+<span class="w">        </span><span class="nt">&lt;/measurementSpecificCharacteristics&gt;</span>
+<span class="w">        </span><span class="cm">&lt;!--end of occupancy, classes: 16-21 --&gt;</span>
+<span class="w">        </span><span class="cm">&lt;!--start averagge speed, classes: 16,18,19 --&gt;</span>
+<span class="w">        </span><span class="nt">&lt;measurementSpecificCharacteristics</span><span class="w"> </span><span class="na">index=</span><span class="s">&quot;16&quot;</span><span class="nt">&gt;</span>
+<span class="w">          </span><span class="nt">&lt;measurementSpecificCharacteristics&gt;</span>
+<span class="w">            </span><span class="nt">&lt;specificMeasurementValueType&gt;</span>trafficSpeed<span class="nt">&lt;/specificMeasurementValueType&gt;</span>
+<span class="w">            </span><span class="nt">&lt;specificVehicleCharacteristics&gt;</span>
+<span class="w">              </span><span class="nt">&lt;vehicleType&gt;</span>car<span class="nt">&lt;/vehicleType&gt;</span>
+<span class="w">            </span><span class="nt">&lt;/specificVehicleCharacteristics&gt;</span>
+<span class="w">          </span><span class="nt">&lt;/measurementSpecificCharacteristics&gt;</span>
+<span class="w">        </span><span class="nt">&lt;/measurementSpecificCharacteristics&gt;</span>
+<span class="w">        </span><span class="nt">&lt;measurementSpecificCharacteristics</span><span class="w"> </span><span class="na">index=</span><span class="s">&quot;17&quot;</span><span class="nt">&gt;</span>
+<span class="w">          </span><span class="nt">&lt;measurementSpecificCharacteristics&gt;</span>
+<span class="w">            </span><span class="nt">&lt;specificMeasurementValueType&gt;</span>trafficSpeed<span class="nt">&lt;/specificMeasurementValueType&gt;</span>
+<span class="w">            </span><span class="nt">&lt;specificVehicleCharacteristics&gt;</span>
+<span class="w">              </span><span class="nt">&lt;vehicleType&gt;</span>lorry<span class="nt">&lt;/vehicleType&gt;</span>
+<span class="w">            </span><span class="nt">&lt;/specificVehicleCharacteristics&gt;</span>
+<span class="w">          </span><span class="nt">&lt;/measurementSpecificCharacteristics&gt;</span>
+<span class="w">        </span><span class="nt">&lt;/measurementSpecificCharacteristics&gt;</span>
+<span class="w">        </span><span class="nt">&lt;measurementSpecificCharacteristics</span><span class="w"> </span><span class="na">index=</span><span class="s">&quot;18&quot;</span><span class="nt">&gt;</span>
+<span class="w">          </span><span class="nt">&lt;measurementSpecificCharacteristics&gt;</span>
+<span class="w">            </span><span class="nt">&lt;specificMeasurementValueType&gt;</span>trafficSpeed<span class="nt">&lt;/specificMeasurementValueType&gt;</span>
+<span class="w">            </span><span class="nt">&lt;specificVehicleCharacteristics&gt;</span>
+<span class="w">              </span><span class="nt">&lt;vehicleType&gt;</span>trailer<span class="nt">&lt;/vehicleType&gt;</span>
+<span class="w">            </span><span class="nt">&lt;/specificVehicleCharacteristics&gt;</span>
+<span class="w">          </span><span class="nt">&lt;/measurementSpecificCharacteristics&gt;</span>
+<span class="w">        </span><span class="nt">&lt;/measurementSpecificCharacteristics&gt;</span>
+<span class="w">        </span><span class="nt">&lt;measurementSpecificCharacteristics</span><span class="w"> </span><span class="na">index=</span><span class="s">&quot;19&quot;</span><span class="nt">&gt;</span>
+<span class="w">          </span><span class="nt">&lt;measurementSpecificCharacteristics&gt;</span>
+<span class="w">            </span><span class="nt">&lt;specificMeasurementValueType&gt;</span>trafficSpeed<span class="nt">&lt;/specificMeasurementValueType&gt;</span>
+<span class="w">            </span><span class="nt">&lt;specificVehicleCharacteristics&gt;</span>
+<span class="w">              </span><span class="nt">&lt;vehicleType&gt;</span>van<span class="nt">&lt;/vehicleType&gt;</span>
+<span class="w">            </span><span class="nt">&lt;/specificVehicleCharacteristics&gt;</span>
+<span class="w">          </span><span class="nt">&lt;/measurementSpecificCharacteristics&gt;</span>
+<span class="w">        </span><span class="nt">&lt;/measurementSpecificCharacteristics&gt;</span>
+<span class="w">        </span><span class="nt">&lt;measurementSpecificCharacteristics</span><span class="w"> </span><span class="na">index=</span><span class="s">&quot;20&quot;</span><span class="nt">&gt;</span>
+<span class="w">          </span><span class="nt">&lt;measurementSpecificCharacteristics&gt;</span>
+<span class="w">            </span><span class="nt">&lt;specificMeasurementValueType&gt;</span>trafficSpeed<span class="nt">&lt;/specificMeasurementValueType&gt;</span>
+<span class="w">            </span><span class="nt">&lt;specificVehicleCharacteristics&gt;</span>
+<span class="w">              </span><span class="nt">&lt;vehicleType&gt;</span>bus<span class="nt">&lt;/vehicleType&gt;</span>
+<span class="w">            </span><span class="nt">&lt;/specificVehicleCharacteristics&gt;</span>
+<span class="w">          </span><span class="nt">&lt;/measurementSpecificCharacteristics&gt;</span>
+<span class="w">        </span><span class="nt">&lt;/measurementSpecificCharacteristics&gt;</span>
+<span class="w">        </span><span class="nt">&lt;measurementSpecificCharacteristics</span><span class="w"> </span><span class="na">index=</span><span class="s">&quot;21&quot;</span><span class="nt">&gt;</span>
+<span class="w">          </span><span class="nt">&lt;measurementSpecificCharacteristics&gt;</span>
+<span class="w">            </span><span class="nt">&lt;specificMeasurementValueType&gt;</span>trafficSpeed<span class="nt">&lt;/specificMeasurementValueType&gt;</span>
+<span class="w">            </span><span class="nt">&lt;specificVehicleCharacteristics&gt;</span>
+<span class="w">              </span><span class="nt">&lt;vehicleType&gt;</span>motorcycle<span class="nt">&lt;/vehicleType&gt;</span>
+<span class="w">            </span><span class="nt">&lt;/specificVehicleCharacteristics&gt;</span>
+<span class="w">          </span><span class="nt">&lt;/measurementSpecificCharacteristics&gt;</span>
+<span class="w">        </span><span class="nt">&lt;/measurementSpecificCharacteristics&gt;</span>
+<span class="w">        </span><span class="cm">&lt;!-- location description start --&gt;</span>
+<span class="w">        </span><span class="nt">&lt;measurementSiteLocation</span><span class="w"> </span><span class="na">xsi:type=</span><span class="s">&quot;Point&quot;</span><span class="nt">&gt;</span>
+<span class="w">          </span><span class="nt">&lt;pointWithinLinearGNElement&gt;</span>
+<span class="w">            </span><span class="nt">&lt;sectionId&gt;</span>822309<span class="nt">&lt;/sectionId&gt;</span>
+<span class="w">            </span><span class="nt">&lt;directionRelativeOnLinearSection&gt;</span>aligned<span class="nt">&lt;/directionRelativeOnLinearSection&gt;</span>
+<span class="w">            </span><span class="nt">&lt;networkVersion&gt;</span>
+<span class="w">              </span><span class="nt">&lt;values&gt;</span>
+<span class="w">                </span><span class="nt">&lt;value</span><span class="w"> </span><span class="na">lang=</span><span class="s">&quot;cs&quot;</span><span class="nt">&gt;</span>16.12<span class="nt">&lt;/value&gt;</span>
+<span class="w">              </span><span class="nt">&lt;/values&gt;</span>
+<span class="w">            </span><span class="nt">&lt;/networkVersion&gt;</span>
+<span class="w">            </span><span class="nt">&lt;distanceAlongLinearElement</span><span class="w"> </span><span class="na">xsi:type=</span><span class="s">&quot;PercentageDistanceAlongLinearElement&quot;</span><span class="nt">&gt;</span>
+<span class="w">              </span><span class="nt">&lt;percentageDistanceAlong&gt;</span>0.662356475026882<span class="nt">&lt;/percentageDistanceAlong&gt;</span>
+<span class="w">            </span><span class="nt">&lt;/distanceAlongLinearElement&gt;</span>
+<span class="w">          </span><span class="nt">&lt;/pointWithinLinearGNElement&gt;</span>
+<span class="w">        </span><span class="nt">&lt;/measurementSiteLocation&gt;</span>
+<span class="w">        </span><span class="cm">&lt;!-- location description end --&gt;</span>
+<span class="w">      </span><span class="nt">&lt;/measurementSiteRecord&gt;</span>
+<span class="w">      </span><span class="cm">&lt;!-- other measurement site records will be the same --&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/measurementSiteTable&gt;</span>
+<span class="w">    </span><span class="cm">&lt;!-- detector measurement table end --&gt;</span>
+<span class="w">    </span><span class="cm">&lt;!-- weather station  measurement table begin --&gt;</span>
+<span class="w">    </span><span class="nt">&lt;measurementSiteTable</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;CZ_DRU_MST_WEA&quot;</span><span class="w"> </span><span class="na">version=</span><span class="s">&quot;1&quot;</span><span class="nt">&gt;</span>
+<span class="w">      </span><span class="nt">&lt;measurementSiteRecord</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;12&quot;</span><span class="w"> </span><span class="na">version=</span><span class="s">&quot;1&quot;</span><span class="nt">&gt;</span>
+<span class="w">        </span><span class="nt">&lt;measurementSiteName&gt;</span>
+<span class="w">          </span><span class="nt">&lt;values&gt;</span>
+<span class="w">            </span><span class="nt">&lt;value</span><span class="w"> </span><span class="na">lang=</span><span class="s">&quot;cs&quot;</span><span class="nt">&gt;</span>název<span class="w"> </span>umístění<span class="w"> </span>meteostanice<span class="nt">&lt;/value&gt;</span>
+<span class="w">          </span><span class="nt">&lt;/values&gt;</span>
+<span class="w">        </span><span class="nt">&lt;/measurementSiteName&gt;</span>
+<span class="w">        </span><span class="cm">&lt;!--precip_type + precipitation --&gt;</span>
+<span class="w">        </span><span class="nt">&lt;measurementSpecificCharacteristics</span><span class="w"> </span><span class="na">index=</span><span class="s">&quot;1&quot;</span><span class="nt">&gt;</span>
+<span class="w">          </span><span class="nt">&lt;measurementSpecificCharacteristics&gt;</span>
+<span class="w">            </span><span class="nt">&lt;specificMeasurementValueType&gt;</span>precipitationInformation<span class="nt">&lt;/specificMeasurementValueType&gt;</span>
+<span class="w">          </span><span class="nt">&lt;/measurementSpecificCharacteristics&gt;</span>
+<span class="w">        </span><span class="nt">&lt;/measurementSpecificCharacteristics&gt;</span>
+<span class="w">        </span><span class="cm">&lt;!--road_status --&gt;</span>
+<span class="w">        </span><span class="nt">&lt;measurementSpecificCharacteristics</span><span class="w"> </span><span class="na">index=</span><span class="s">&quot;2&quot;</span><span class="nt">&gt;</span>
+<span class="w">          </span><span class="nt">&lt;measurementSpecificCharacteristics&gt;</span>
+<span class="w">            </span><span class="nt">&lt;specificMeasurementValueType&gt;</span>roadSurfaceConditionInformation<span class="nt">&lt;/specificMeasurementValueType&gt;</span>
+<span class="w">          </span><span class="nt">&lt;/measurementSpecificCharacteristics&gt;</span>
+<span class="w">        </span><span class="nt">&lt;/measurementSpecificCharacteristics&gt;</span>
+<span class="w">        </span><span class="cm">&lt;!--road_temp 1 + freez_temp --&gt;</span>
+<span class="w">        </span><span class="nt">&lt;measurementSpecificCharacteristics</span><span class="w"> </span><span class="na">index=</span><span class="s">&quot;3&quot;</span><span class="nt">&gt;</span>
+<span class="w">          </span><span class="nt">&lt;measurementSpecificCharacteristics&gt;</span>
+<span class="w">            </span><span class="nt">&lt;specificMeasurementValueType&gt;</span>roadSurfaceConditionInformation<span class="nt">&lt;/specificMeasurementValueType&gt;</span>
+<span class="w">          </span><span class="nt">&lt;/measurementSpecificCharacteristics&gt;</span>
+<span class="w">        </span><span class="nt">&lt;/measurementSpecificCharacteristics&gt;</span>
+<span class="w">        </span><span class="cm">&lt;!--road_temp 2 + freez_temp --&gt;</span>
+<span class="w">        </span><span class="nt">&lt;measurementSpecificCharacteristics</span><span class="w"> </span><span class="na">index=</span><span class="s">&quot;4&quot;</span><span class="nt">&gt;</span>
+<span class="w">          </span><span class="nt">&lt;measurementSpecificCharacteristics&gt;</span>
+<span class="w">            </span><span class="nt">&lt;specificMeasurementValueType&gt;</span>roadSurfaceConditionInformation<span class="nt">&lt;/specificMeasurementValueType&gt;</span>
+<span class="w">          </span><span class="nt">&lt;/measurementSpecificCharacteristics&gt;</span>
+<span class="w">        </span><span class="nt">&lt;/measurementSpecificCharacteristics&gt;</span>
+<span class="w">        </span><span class="cm">&lt;!--air_temp + dewpoint --&gt;</span>
+<span class="w">        </span><span class="nt">&lt;measurementSpecificCharacteristics</span><span class="w"> </span><span class="na">index=</span><span class="s">&quot;5&quot;</span><span class="nt">&gt;</span>
+<span class="w">          </span><span class="nt">&lt;measurementSpecificCharacteristics&gt;</span>
+<span class="w">            </span><span class="nt">&lt;specificMeasurementValueType&gt;</span>temperatureInformation<span class="nt">&lt;/specificMeasurementValueType&gt;</span>
+<span class="w">          </span><span class="nt">&lt;/measurementSpecificCharacteristics&gt;</span>
+<span class="w">        </span><span class="nt">&lt;/measurementSpecificCharacteristics&gt;</span>
+<span class="w">        </span><span class="cm">&lt;!--humidity --&gt;</span>
+<span class="w">        </span><span class="nt">&lt;measurementSpecificCharacteristics</span><span class="w"> </span><span class="na">index=</span><span class="s">&quot;6&quot;</span><span class="nt">&gt;</span>
+<span class="w">          </span><span class="nt">&lt;measurementSpecificCharacteristics&gt;</span>
+<span class="w">            </span><span class="nt">&lt;specificMeasurementValueType&gt;</span>humidityInformation<span class="nt">&lt;/specificMeasurementValueType&gt;</span>
+<span class="w">          </span><span class="nt">&lt;/measurementSpecificCharacteristics&gt;</span>
+<span class="w">        </span><span class="nt">&lt;/measurementSpecificCharacteristics&gt;</span>
+<span class="w">        </span><span class="cm">&lt;!--wind_dir +  wind_sp--&gt;</span>
+<span class="w">        </span><span class="nt">&lt;measurementSpecificCharacteristics</span><span class="w"> </span><span class="na">index=</span><span class="s">&quot;7&quot;</span><span class="nt">&gt;</span>
+<span class="w">          </span><span class="nt">&lt;measurementSpecificCharacteristics&gt;</span>
+<span class="w">            </span><span class="nt">&lt;specificMeasurementValueType&gt;</span>windInformation<span class="nt">&lt;/specificMeasurementValueType&gt;</span>
+<span class="w">          </span><span class="nt">&lt;/measurementSpecificCharacteristics&gt;</span>
+<span class="w">        </span><span class="nt">&lt;/measurementSpecificCharacteristics&gt;</span>
+<span class="w">        </span><span class="cm">&lt;!--visibility--&gt;</span>
+<span class="w">        </span><span class="nt">&lt;measurementSpecificCharacteristics</span><span class="w"> </span><span class="na">index=</span><span class="s">&quot;8&quot;</span><span class="nt">&gt;</span>
+<span class="w">          </span><span class="nt">&lt;measurementSpecificCharacteristics&gt;</span>
+<span class="w">            </span><span class="nt">&lt;specificMeasurementValueType&gt;</span>visibilityInformation<span class="nt">&lt;/specificMeasurementValueType&gt;</span>
+<span class="w">          </span><span class="nt">&lt;/measurementSpecificCharacteristics&gt;</span>
+<span class="w">        </span><span class="nt">&lt;/measurementSpecificCharacteristics&gt;</span>
+<span class="w">        </span><span class="cm">&lt;!-- location description start --&gt;</span>
+<span class="w">        </span><span class="nt">&lt;measurementSiteLocation</span><span class="w"> </span><span class="na">xsi:type=</span><span class="s">&quot;Point&quot;</span><span class="nt">&gt;</span>
+<span class="w">          </span><span class="nt">&lt;pointWithinLinearGNElement&gt;</span>
+<span class="w">            </span><span class="nt">&lt;sectionId&gt;</span>822309<span class="nt">&lt;/sectionId&gt;</span>
+<span class="w">            </span><span class="nt">&lt;directionRelativeOnLinearSection&gt;</span>aligned<span class="nt">&lt;/directionRelativeOnLinearSection&gt;</span>
+<span class="w">            </span><span class="nt">&lt;networkVersion&gt;</span>
+<span class="w">              </span><span class="nt">&lt;values&gt;</span>
+<span class="w">                </span><span class="nt">&lt;value</span><span class="w"> </span><span class="na">lang=</span><span class="s">&quot;cs&quot;</span><span class="nt">&gt;</span>16.12<span class="nt">&lt;/value&gt;</span>
+<span class="w">              </span><span class="nt">&lt;/values&gt;</span>
+<span class="w">            </span><span class="nt">&lt;/networkVersion&gt;</span>
+<span class="w">            </span><span class="nt">&lt;distanceAlongLinearElement</span><span class="w"> </span><span class="na">xsi:type=</span><span class="s">&quot;PercentageDistanceAlongLinearElement&quot;</span><span class="nt">&gt;</span>
+<span class="w">              </span><span class="nt">&lt;percentageDistanceAlong&gt;</span>0.662356475026882<span class="nt">&lt;/percentageDistanceAlong&gt;</span>
+<span class="w">            </span><span class="nt">&lt;/distanceAlongLinearElement&gt;</span>
+<span class="w">          </span><span class="nt">&lt;/pointWithinLinearGNElement&gt;</span>
+<span class="w">        </span><span class="nt">&lt;/measurementSiteLocation&gt;</span>
+<span class="w">        </span><span class="cm">&lt;!-- location description end --&gt;</span>
+<span class="w">      </span><span class="nt">&lt;/measurementSiteRecord&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/measurementSiteTable&gt;</span>
+<span class="w">    </span><span class="cm">&lt;!-- weather station  measurement table end --&gt;</span>
+<span class="w">  </span><span class="nt">&lt;/payloadPublication&gt;</span>
+<span class="nt">&lt;/d2LogicalModel&gt;</span>
+</pre></div>
+</div>
+<section id="root-element-and-publication-envelope">
+<h3>Root element and publication envelope<a class="headerlink" href="#root-element-and-publication-envelope" title="Link to this heading">¶</a></h3>
+<p>Root element <cite>d2LogicalModel</cite> declares, that this message is using DATEX II.</p>
+<p>Element <cite>exchange</cite> contains provider identifier.</p>
+<p>Element <cite>payloadPublication</cite> is an envelope for actual information payload containing general information and one or more elements <cite>measurementSiteTable</cite>, (in our case there are two) containing elements <cite>measurementSiteRecord</cite>.</p>
+<p>Attribute <cite>xsi:type=”MeasurementSiteTablePublication”</cite> in element <cite>payloadPublication</cite> determines, that this envelope is of type predefined equipment publication.</p>
+<p>Element <cite>feedType</cite> states publiacation schema by its uri.</p>
+<p>Element <cite>publicationTime</cite> states publication time of this publication as a whole.</p>
+<p>Element <cite>publicationCreator</cite> identifies creator of the publication.</p>
+</section>
+<section id="description-of-predefined-equipment">
+<h3>Description of predefined equipment<a class="headerlink" href="#description-of-predefined-equipment" title="Link to this heading">¶</a></h3>
+<p>Predefined equipment is described in measurement site tables uniquely identified by id and version in the example <cite>id=”CZ_DRU_MST_DET”</cite> for a detector table and <cite>id=”CZ_DRU_MST_WEA”</cite> for weather station table.</p>
+<p>Each table, in the example, contain just one element describing respective equipment capabilities. The identification of the equipment is unique within the table. Detector having <cite>id=”1307”</cite> and <cite>id=”12”</cite> for weather station.</p>
+<section id="equipment-description-cz-dru-mst-det-1307">
+<h4>Equipment description (CZ_DRU_MST_DET, 1307)<a class="headerlink" href="#equipment-description-cz-dru-mst-det-1307" title="Link to this heading">¶</a></h4>
+<p>Element <cite>measurementSiteRecord</cite> contains a textual description of the equipment.</p>
+<p>The equipment (traffic detector) has 21 capabilities defined. They are vehicle categorized versions of three traffic variables:</p>
+<ul class="simple">
+<li><p>traffic flow,</p></li>
+<li><p>traffic concentration,</p></li>
+<li><p>traffic speed.</p></li>
+</ul>
+<p>First 3 capabilities <cite>measurementSpecificCharacteristics</cite> with indexes 1-3 describe flow, occupancy and speed for all vehicles. Remaining capabilities describe these traffic values categorized by vehicle type.</p>
+<p>E.g. capabilities with indexes 4-9 describe traffic flow for:</p>
+<ul class="simple">
+<li><p>car,</p></li>
+<li><p>lorry,</p></li>
+<li><p>trailer,</p></li>
+<li><p>van,</p></li>
+<li><p>bus,</p></li>
+<li><p>motorcycle.</p></li>
+</ul>
+<p>Tha capabilities <cite>measurementSpecificCharacteristics</cite> with indexes 10-15 describe categorized occupency and 16-21 categorized speed.</p>
+<p>Element <cite>measurementSiteLocation</cite> of type <cite>xsi:type=”Point”</cite> contains individual location description methods, in our case just one the description using Global Network links in element <cite>pointWithinLinearGNElement</cite>.</p>
+</section>
+<section id="equipment-description-cz-dru-mst-wea-12">
+<h4>Equipment description (CZ_DRU_MST_WEA, 12)<a class="headerlink" href="#equipment-description-cz-dru-mst-wea-12" title="Link to this heading">¶</a></h4>
+<p>Element <cite>measurementSiteRecord</cite> contains a textual description of the equipment.</p>
+<p>The equipment (weather station) has 8 capabilities defined. They are:</p>
+<ul class="simple">
+<li><p>precipitation,</p></li>
+<li><p>road surface conditions (3x),</p></li>
+<li><p>temperature,</p></li>
+<li><p>humidity,</p></li>
+<li><p>visibility and</p></li>
+<li><p>wind.</p></li>
+</ul>
+<p>The road surface conditions is there 3 times (indexes 2-4). First one defines overall characteristics and is used to convey road status. Remaining two are road lane related measurements (one for each lane).</p>
+<p>Element <cite>measurementSiteLocation</cite> of type <cite>xsi:type=”Point”</cite> contains individual location description methods, in our case just one the description using Global Network links in element <cite>pointWithinLinearGNElement</cite>.</p>
+</section>
+</section>
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="index.html">
+              <img class="logo" src="_static/RSD-logo-07.jpg" alt="Logo"/>
+            </a></p>
+  <div>
+    <h3><a href="index.html">Table of Contents</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">Appendix A: Publication example</a><ul>
+<li><a class="reference internal" href="#measurement-site-table-xml-predefined-location-set-with-two-locations">measurement_site_table.xml - predefined location set with two locations</a><ul>
+<li><a class="reference internal" href="#root-element-and-publication-envelope">Root element and publication envelope</a></li>
+<li><a class="reference internal" href="#description-of-predefined-equipment">Description of predefined equipment</a><ul>
+<li><a class="reference internal" href="#equipment-description-cz-dru-mst-det-1307">Equipment description (CZ_DRU_MST_DET, 1307)</a></li>
+<li><a class="reference internal" href="#equipment-description-cz-dru-mst-wea-12">Equipment description (CZ_DRU_MST_WEA, 12)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  </div>
+  <div>
+    <h4>Previous topic</h4>
+    <p class="topless"><a href="concepts.html"
+                          title="previous chapter">Concepts</a></p>
+  </div>
+  <div>
+    <h4>Next topic</h4>
+    <p class="topless"><a href="format.html"
+                          title="next chapter">Appendix B: W3C XML Schema</a></p>
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/examples.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="format.html" title="Appendix B: W3C XML Schema"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="concepts.html" title="Concepts"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">NDIC - DATEX II Measurement Site Table Publication - Predefined Equipment Set 1.0rev0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Appendix A: Publication example</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+    &#169; Copyright 2018, TamTam Research s.r.o..
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.5.
+    </div>
+  </body>
+</html>

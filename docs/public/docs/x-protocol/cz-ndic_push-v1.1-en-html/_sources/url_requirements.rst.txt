@@ -1,0 +1,26 @@
+=====================================
+Requirements for the Subscriber's URL
+=====================================
+
+This chapter describes the requirements that a service handling the subscriber's URL, where messages are sent by the provider, must meet.
+
+HTTP POST and Status Code 200
+=============================
+
+The URL must accept HTTP POST requests, with the request body containing the sent message.
+
+The received message must be responded to with an HTTP status code of 200 - OK.
+
+Support for Content-Encoding: gzip
+==================================
+
+If the subscription was configured with content delivery using gzip compression, the service must accept content declared with the "Content-Encoding: gzip" header.
+
+Authentication, Authorization, and HTTPS
+========================================
+
+The PUSH protocol does not strictly require the use of HTTPS and Basic Authentication. However, if these are not implemented, the subscriber's system is at risk of receiving unauthorized content.
+
+The URL is advised to run over HTTPS.
+
+The URL is advised to be secured using Basic Authentication as prescribed by RFC 7617.

@@ -1,0 +1,21 @@
+.. _examples:
+
+=========================
+Příloha A: Příklady zpráv
+=========================
+
+ADDdata-001.xml - úspěšná měření
+================================
+
+Zpráva obsahuje data naměřená jedním detektorem.
+
+.. literalinclude:: samples/ADDdata-001.xml
+   :language: xml
+
+ADDdata-002.xml - problémy s měřením
+====================================
+
+Zpráva obsahuje informaci o problémech s měřením.
+
+.. literalinclude:: samples/ADDdata-002.xml
+   :language: xml

@@ -1,0 +1,433 @@
+
+
+<!doctype html>
+
+<html lang="en" data-content_root="./">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Concepts &#8212; NDIC - DATEX II Situation Publication - Restrictions 1.2rev0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/bizstyle.css?v=532c1bf3" />
+    
+    <script src="_static/documentation_options.js?v=7affd9da"></script>
+    <script src="_static/doctools.js?v=888ff710"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/bizstyle.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Appendix A: Message examples" href="examples.html" />
+    <link rel="prev" title="Introduction" href="introduction.html" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <!--[if lt IE 9]>
+    <script src="_static/css3-mediaqueries.js"></script>
+    <![endif]-->
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="examples.html" title="Appendix A: Message examples"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="introduction.html" title="Introduction"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">NDIC - DATEX II Situation Publication - Restrictions 1.2rev0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Concepts</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="concepts">
+<h1>Concepts<a class="headerlink" href="#concepts" title="Link to this heading">¶</a></h1>
+<p>Described format allows publishing information about road actual and planned closures and restrictions.</p>
+<section id="publication-type-situationpublication">
+<h2>Publication type SituationPublication<a class="headerlink" href="#publication-type-situationpublication" title="Link to this heading">¶</a></h2>
+<p>Format is based on DATEX II publication of type <cite>SituationPublication</cite>
+<a class="reference internal" href="introduction.html#id9" id="id1"><span>[16157-3]</span></a>. Profile uses only small subset of possible structures.</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span>
+<span class="linenos"> 2</span><span class="nt">&lt;d2LogicalModel</span><span class="w"> </span><span class="na">modelBaseVersion=</span><span class="s">&quot;2&quot;</span><span class="w"> </span><span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span><span class="w"> </span><span class="na">xmlns=</span><span class="s">&quot;http://datex2.eu/schema/2/2_0&quot;</span><span class="w"> </span><span class="na">xsi:schemaLocation=</span><span class="s">&quot;http://datex2.eu/schema/2/2_0 ../schema/schema.xsd&quot;</span><span class="nt">&gt;</span>
+<span class="linenos"> 3</span><span class="w">  </span><span class="nt">&lt;exchange&gt;</span>
+<span class="linenos"> 4</span><span class="w">    </span><span class="nt">&lt;supplierIdentification&gt;</span>
+<span class="linenos"> 5</span><span class="w">      </span><span class="nt">&lt;country&gt;</span>cz<span class="nt">&lt;/country&gt;</span>
+<span class="linenos"> 6</span><span class="w">      </span><span class="nt">&lt;nationalIdentifier&gt;</span>DIC<span class="nt">&lt;/nationalIdentifier&gt;</span>
+<span class="linenos"> 7</span><span class="w">    </span><span class="nt">&lt;/supplierIdentification&gt;</span>
+<span class="linenos"> 8</span><span class="w">  </span><span class="nt">&lt;/exchange&gt;</span>
+<span class="linenos"> 9</span><span class="w">  </span><span class="nt">&lt;payloadPublication</span><span class="w"> </span><span class="na">xsi:type=</span><span class="s">&quot;SituationPublication&quot;</span><span class="w"> </span><span class="na">lang=</span><span class="s">&quot;cs&quot;</span><span class="nt">&gt;</span>
+<span class="linenos">10</span><span class="w">      </span><span class="nt">&lt;feedType&gt;</span>x-format:cz-ndic_d2-common-v1.2<span class="nt">&lt;/feedType&gt;</span>
+<span class="linenos">11</span><span class="w">    </span><span class="nt">&lt;publicationTime&gt;</span>2023-08-30T09:18:24+02:00<span class="nt">&lt;/publicationTime&gt;</span>
+<span class="linenos">12</span><span class="w">    </span><span class="nt">&lt;publicationCreator&gt;</span>
+<span class="linenos">13</span><span class="w">      </span><span class="nt">&lt;country&gt;</span>cz<span class="nt">&lt;/country&gt;</span>
+<span class="linenos">14</span><span class="w">      </span><span class="nt">&lt;nationalIdentifier&gt;</span>NDIC<span class="nt">&lt;/nationalIdentifier&gt;</span>
+<span class="linenos">15</span><span class="w">    </span><span class="nt">&lt;/publicationCreator&gt;</span>
+</pre></div>
+</div>
+</section>
+<section id="event-description">
+<h2>Event description<a class="headerlink" href="#event-description" title="Link to this heading">¶</a></h2>
+<p>Each event is described by the <cite>situation</cite> element, the described situation can evolve in time, so the element is versioned and has its unique identifier.</p>
+<p>The <cite>situationRecord</cite> element can occur more than once in the <cite>situation</cite> element (but each time of a different type), it is usually information related to one event, situation. The <cite>situationRecord</cite> element can evolve over time, so the element is versioned and has its unique identifier derived from the identifier of the parent situation.</p>
+<p>The traffic situation publication in particular includes:</p>
+<ul class="simple">
+<li><p>Road manager actions</p>
+<ul>
+<li><p>Road works</p></li>
+<li><p>Road management</p>
+<ul>
+<li><p>Road closures</p></li>
+<li><p>Detours</p></li>
+<li><p>Speed limits</p></li>
+<li><p>Change of traffic arrangements</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This publication does not include any status information.</p>
+</div>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>This publication is fully included in the d2-common publication where road closures and road works are published along the other information.</p>
+</div>
+<p>Only the structure provided by the <cite>OperatorActions</cite> class is used to describe events. See the W3C XML Schema or <a class="reference internal" href="introduction.html#d2ref" id="id2"><span>[d2ref]</span></a> as appropriate for the exact definition.</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="linenos">24</span><span class="w">      </span><span class="nt">&lt;situationRecord</span><span class="w"> </span><span class="na">version=</span><span class="s">&quot;6&quot;</span><span class="w"> </span><span class="na">xsi:type=</span><span class="s">&quot;ConstructionWorks&quot;</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;3bdeb91a-d680-47e5-ab5c-c3b9b4a13006_ConstructionWorks&quot;</span><span class="nt">&gt;</span>
+</pre></div>
+</div>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="linenos">197</span><span class="w">      </span><span class="nt">&lt;situationRecord</span><span class="w"> </span><span class="na">version=</span><span class="s">&quot;6&quot;</span><span class="w"> </span><span class="na">xsi:type=</span><span class="s">&quot;RoadOrCarriagewayOrLaneManagement&quot;</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;3bdeb91a-d680-47e5-ab5c-c3b9b4a13006_RoadOrCarriagewayOrLaneManagement&quot;</span><span class="nt">&gt;</span>
+</pre></div>
+</div>
+<p>The impact of the event is described in the <cite>impact</cite> element, either in the form of expected delay or an estimate of the residual capacity of the road (when closure = 0).</p>
+<p>Any additional supplementary information on the event is given by an html link in the <cite>urlLink</cite> element.</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="linenos">48</span><span class="w">        </span><span class="nt">&lt;urlLink&gt;</span>
+<span class="linenos">49</span><span class="w">          </span><span class="nt">&lt;urlLinkAddress&gt;</span>https://dopravniinfo.cz/te/3bdeb91a-d680-47e5-ab5c-c3b9b4a13006<span class="nt">&lt;/urlLinkAddress&gt;</span>
+<span class="linenos">50</span><span class="w">          </span><span class="nt">&lt;urlLinkType&gt;</span>html<span class="nt">&lt;/urlLinkType&gt;</span>
+<span class="linenos">51</span><span class="w">        </span><span class="nt">&lt;/urlLink&gt;</span>
+</pre></div>
+</div>
+<p>The indication that this is a safety-related event according to the Delegated Regulation 886/2013 is given in the <cite>safetyRelatedMessage</cite> tag.</p>
+</section>
+<section id="location-description">
+<h2>Location description<a class="headerlink" href="#location-description" title="Link to this heading">¶</a></h2>
+<p>Each <cite>SituationRecord</cite> has its own position description, which may (or may not) differ within a <cite>Situation</cite>. For example, one <cite>SituationRecord</cite> describing a point source problem that resulted in a linear problem (the second <cite>SituationRecord</cite>).</p>
+<p>A location tends to be described in a <cite>SituationRecord</cite> by multiple methods, all referring to the same slice of reality.</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="linenos">52</span><span class="w">        </span><span class="nt">&lt;groupOfLocations</span><span class="w"> </span><span class="na">xsi:type=</span><span class="s">&quot;Linear&quot;</span><span class="nt">&gt;</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="time-validity">
+<h1>Time validity<a class="headerlink" href="#time-validity" title="Link to this heading">¶</a></h1>
+<p>Time validity is stated independently for every single event (<cite>SituationRecord</cite>) described in a situation and is defined by a time interval between two time instants. The class Validity uses exclusively an instance of class <cite>OverallPeriod</cite> in the role of <cite>validityTimeSpecification</cite> and elements <cite>overallStartTime</cite> and <cite>overallStopTime</cite> to define start and end of the interval.</p>
+<p>Setting a week-day and recurring time validity within the specified period, e.g. for recurring intermittent nightly tunnel closure, is not allowed. For such information, splitting to more messages valid in respective times is used.</p>
+<p>Used time validity intervals may fall into past, present or future.</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="linenos">31</span><span class="w">        </span><span class="nt">&lt;validity&gt;</span>
+<span class="linenos">32</span><span class="w">          </span><span class="nt">&lt;validityStatus&gt;</span>definedByValidityTimeSpec<span class="nt">&lt;/validityStatus&gt;</span>
+<span class="linenos">33</span><span class="w">          </span><span class="nt">&lt;validityTimeSpecification&gt;</span>
+<span class="linenos">34</span><span class="w">            </span><span class="nt">&lt;overallStartTime&gt;</span>2023-08-30T07:00:00+02:00<span class="nt">&lt;/overallStartTime&gt;</span>
+<span class="linenos">35</span><span class="w">            </span><span class="nt">&lt;overallEndTime&gt;</span>2023-09-01T23:59:00+02:00<span class="nt">&lt;/overallEndTime&gt;</span>
+<span class="linenos">36</span><span class="w">          </span><span class="nt">&lt;/validityTimeSpecification&gt;</span>
+<span class="linenos">37</span><span class="w">        </span><span class="nt">&lt;/validity&gt;</span>
+</pre></div>
+</div>
+</section>
+<section id="id3">
+<h1>Location description<a class="headerlink" href="#id3" title="Link to this heading">¶</a></h1>
+<p>When describing locations, nested descriptions of instances of the <cite>Location</cite> class are <strong>always</strong> used, namely the descendants of the <cite>NetworkLocation</cite> class.</p>
+<p>The <cite>Linear</cite> class is always used to describe a position, regardless of the fact that it may be a point position, e.g. an accident, expressible by a single coordinate. The reason for this is to unify descriptions between multiple methods. Area type position descriptions and separate point position descriptions are not used.</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="linenos">52</span><span class="w">        </span><span class="nt">&lt;groupOfLocations</span><span class="w"> </span><span class="na">xsi:type=</span><span class="s">&quot;Linear&quot;</span><span class="nt">&gt;</span>
+</pre></div>
+</div>
+<p>Multiple methods can be used to describe a location, depending on their availability in a given location. At least one description must be given.</p>
+<p>The following description lists the methods used for location description. For more details, see the <cite>en-ndic_d2-predefined-location-set-v1.1</cite> profile documentation.</p>
+<section id="location-description-by-means-of-alert-c">
+<h2>Location description by means of ALERT-C<a class="headerlink" href="#location-description-by-means-of-alert-c" title="Link to this heading">¶</a></h2>
+<p>The method describes the position using ALERT-C codes, class <cite>alertCLinear</cite> of type <cite>AlertCMethod2Linear</cite> is used. The use of this method depends on the presence of an ALERT-C location at a given location.</p>
+<p>The <cite>alertCLinear</cite> method uses a primary location (<cite>alertCMethod2PrimaryPointLocation</cite> element), a secondary location (<cite>alertCMethod2SecondaryPointLocation</cite> element) to describe the event. Of course, the method also contains elements allowing to identify a specific location table.</p>
+<p>The primary location is, according to the ALERT-C principle, the place where the accident occurred or where the driver leaves the problem area. The secondary location is the end of the convoy or where the driver first enters the problem area.</p>
+<p>In order to find out the direction of the situation, the <cite>alertCDirectionCoded</cite> element is used, which takes the value <cite>positive</cite> if the direction of the traffic flow agrees with the coding of the given route.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>WARNING, the meaning of this attribute is therefore exactly the opposite of the <cite>direction</cite> attribute in RDS-TMC, which is used to find the secondary location.</p>
+</div>
+<p>The <cite>alertCLinear</cite> element may occur multiple times in the situation description for long events that must be described by more than one ALERT-C path. This is because ALERT-C only allows locations to be chained within a single path.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The <cite>alertCLinear</cite> method is also used to describe a <strong>point location</strong> (even the inside of an intersection or tunnel, i.e. a short segment). When primary and secondary locations are the same. The direction can be read from the <cite>alertCDirectionCoded</cite> element).</p>
+</div>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="linenos">53</span><span class="w">          </span><span class="nt">&lt;alertCLinear</span><span class="w"> </span><span class="na">xsi:type=</span><span class="s">&quot;AlertCMethod2Linear&quot;</span><span class="nt">&gt;</span>
+<span class="linenos">54</span><span class="w">            </span><span class="nt">&lt;alertCLocationCountryCode&gt;</span>CZ<span class="nt">&lt;/alertCLocationCountryCode&gt;</span>
+<span class="linenos">55</span><span class="w">            </span><span class="nt">&lt;alertCLocationTableNumber&gt;</span>25<span class="nt">&lt;/alertCLocationTableNumber&gt;</span>
+<span class="linenos">56</span><span class="w">            </span><span class="nt">&lt;alertCLocationTableVersion&gt;</span>9.0<span class="nt">&lt;/alertCLocationTableVersion&gt;</span>
+<span class="linenos">57</span><span class="w">            </span><span class="nt">&lt;alertCDirection&gt;</span>
+<span class="linenos">58</span><span class="w">              </span><span class="nt">&lt;alertCDirectionCoded&gt;</span>negative<span class="nt">&lt;/alertCDirectionCoded&gt;</span>
+<span class="linenos">59</span><span class="w">            </span><span class="nt">&lt;/alertCDirection&gt;</span>
+<span class="linenos">60</span><span class="w">            </span><span class="nt">&lt;alertCMethod2PrimaryPointLocation&gt;</span>
+<span class="linenos">61</span><span class="w">              </span><span class="nt">&lt;alertCLocation&gt;</span>
+<span class="linenos">62</span><span class="w">                </span><span class="nt">&lt;specificLocation&gt;</span>8973<span class="nt">&lt;/specificLocation&gt;</span>
+<span class="linenos">63</span><span class="w">              </span><span class="nt">&lt;/alertCLocation&gt;</span>
+<span class="linenos">64</span><span class="w">            </span><span class="nt">&lt;/alertCMethod2PrimaryPointLocation&gt;</span>
+<span class="linenos">65</span><span class="w">            </span><span class="nt">&lt;alertCMethod2SecondaryPointLocation&gt;</span>
+<span class="linenos">66</span><span class="w">              </span><span class="nt">&lt;alertCLocation&gt;</span>
+<span class="linenos">67</span><span class="w">                </span><span class="nt">&lt;specificLocation&gt;</span>8974<span class="nt">&lt;/specificLocation&gt;</span>
+<span class="linenos">68</span><span class="w">              </span><span class="nt">&lt;/alertCLocation&gt;</span>
+<span class="linenos">69</span><span class="w">            </span><span class="nt">&lt;/alertCMethod2SecondaryPointLocation&gt;</span>
+<span class="linenos">70</span><span class="w">          </span><span class="nt">&lt;/alertCLinear&gt;</span>
+<span class="linenos">71</span><span class="w">          </span><span class="nt">&lt;linearWithinLinearElement&gt;</span>
+<span class="linenos">72</span><span class="w">            </span><span class="nt">&lt;directionRelativeOnLinearSection&gt;</span>aligned<span class="nt">&lt;/directionRelativeOnLinearSection&gt;</span>
+<span class="linenos">73</span><span class="w">            </span><span class="nt">&lt;linearElement&gt;</span>
+<span class="linenos">74</span><span class="w">              </span><span class="nt">&lt;roadNumber&gt;</span>10<span class="nt">&lt;/roadNumber&gt;</span>
+<span class="linenos">75</span><span class="w">            </span><span class="nt">&lt;/linearElement&gt;</span>
+<span class="linenos">76</span><span class="w">            </span><span class="nt">&lt;fromPoint</span><span class="w"> </span><span class="na">xsi:type=</span><span class="s">&quot;DistanceFromLinearElementStart&quot;</span><span class="nt">&gt;</span>
+<span class="linenos">77</span><span class="w">              </span><span class="nt">&lt;distanceAlong&gt;</span>106797<span class="nt">&lt;/distanceAlong&gt;</span>
+<span class="linenos">78</span><span class="w">            </span><span class="nt">&lt;/fromPoint&gt;</span>
+<span class="linenos">79</span><span class="w">            </span><span class="nt">&lt;toPoint</span><span class="w"> </span><span class="na">xsi:type=</span><span class="s">&quot;DistanceFromLinearElementStart&quot;</span><span class="nt">&gt;</span>
+<span class="linenos">80</span><span class="w">              </span><span class="nt">&lt;distanceAlong&gt;</span>107507<span class="nt">&lt;/distanceAlong&gt;</span>
+<span class="linenos">81</span><span class="w">            </span><span class="nt">&lt;/toPoint&gt;</span>
+<span class="linenos">82</span><span class="w">          </span><span class="nt">&lt;/linearWithinLinearElement&gt;</span>
+</pre></div>
+</div>
+</section>
+<section id="location-description-using-mileage">
+<h2>Location description using mileage<a class="headerlink" href="#location-description-using-mileage" title="Link to this heading">¶</a></h2>
+<p>The method uses <cite>linearWithinLinearElement</cite> for the description of the position using mileage. The <cite>roadNumber</cite> element describes the number of the affected road, the <cite>directionRelativeOnLinearSection</cite> element describes the direction of the affected road, and the <cite>fromPoint</cite> and <cite>toPoint</cite> elements describe the distance of the start and end of the event from the start of the road.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The <cite>linearWithinLinearElement</cite> method is also used to describe a <strong>point location</strong> (even the inside of an intersection or tunnel, i.e. a short section). When the offsets <cite>fromPoint</cite> and <cite>toPoint</cite> refer to a segment with zero length.</p>
+</div>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="linenos">71</span><span class="w">          </span><span class="nt">&lt;linearWithinLinearElement&gt;</span>
+<span class="linenos">72</span><span class="w">            </span><span class="nt">&lt;directionRelativeOnLinearSection&gt;</span>aligned<span class="nt">&lt;/directionRelativeOnLinearSection&gt;</span>
+<span class="linenos">73</span><span class="w">            </span><span class="nt">&lt;linearElement&gt;</span>
+<span class="linenos">74</span><span class="w">              </span><span class="nt">&lt;roadNumber&gt;</span>10<span class="nt">&lt;/roadNumber&gt;</span>
+<span class="linenos">75</span><span class="w">            </span><span class="nt">&lt;/linearElement&gt;</span>
+<span class="linenos">76</span><span class="w">            </span><span class="nt">&lt;fromPoint</span><span class="w"> </span><span class="na">xsi:type=</span><span class="s">&quot;DistanceFromLinearElementStart&quot;</span><span class="nt">&gt;</span>
+<span class="linenos">77</span><span class="w">              </span><span class="nt">&lt;distanceAlong&gt;</span>106797<span class="nt">&lt;/distanceAlong&gt;</span>
+<span class="linenos">78</span><span class="w">            </span><span class="nt">&lt;/fromPoint&gt;</span>
+<span class="linenos">79</span><span class="w">            </span><span class="nt">&lt;toPoint</span><span class="w"> </span><span class="na">xsi:type=</span><span class="s">&quot;DistanceFromLinearElementStart&quot;</span><span class="nt">&gt;</span>
+<span class="linenos">80</span><span class="w">              </span><span class="nt">&lt;distanceAlong&gt;</span>107507<span class="nt">&lt;/distanceAlong&gt;</span>
+<span class="linenos">81</span><span class="w">            </span><span class="nt">&lt;/toPoint&gt;</span>
+<span class="linenos">82</span><span class="w">          </span><span class="nt">&lt;/linearWithinLinearElement&gt;</span>
+</pre></div>
+</div>
+</section>
+<section id="location-description-using-the-global-network-extension">
+<h2>Location description using the Global Network extension<a class="headerlink" href="#location-description-using-the-global-network-extension" title="Link to this heading">¶</a></h2>
+<p>Native method of position input in NDIC using <strong>Extension of DATEX II model type B</strong>.</p>
+<p>The method describes, in the <cite>globalNetworkLinear</cite> element, the location using the segments <cite>linearWithinLinearGNElement</cite> of the Global Network (GN) road network, identified by the <cite>networkVersion</cite> version. Each segment contains a sequence, an identifier referring to the GN, and a relative truncation (for the first and last segment). Furthermore, the position is bounded by the elements <cite>startPoint</cite> and <cite>endPoint</cite> in coordinates (here S-JTSK).</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The <cite>globalNetworkLinear</cite> method is also used to describe a <strong>point location</strong> (even the inside of an intersection or tunnel, i.e. a short segment). The <cite>startPoint</cite> and <cite>endPoint</cite> positions contain the same coordinate.</p>
+</div>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="linenos">118</span><span class="w">            </span><span class="nt">&lt;globalNetworkLinear&gt;</span>
+<span class="linenos">119</span><span class="w">              </span><span class="nt">&lt;networkVersion&gt;</span>22.12<span class="nt">&lt;/networkVersion&gt;</span>
+<span class="linenos">120</span><span class="w">              </span><span class="nt">&lt;linearGeometryType&gt;</span>continuous<span class="nt">&lt;/linearGeometryType&gt;</span>
+<span class="linenos">121</span><span class="w">              </span><span class="nt">&lt;startPoint&gt;</span>
+<span class="linenos">122</span><span class="w">                </span><span class="nt">&lt;sjtskPointCoordinates&gt;</span>
+<span class="linenos">123</span><span class="w">                  </span><span class="nt">&lt;sjtskX&gt;</span>-668325.9586937<span class="nt">&lt;/sjtskX&gt;</span>
+<span class="linenos">124</span><span class="w">                  </span><span class="nt">&lt;sjtskY&gt;</span>-976774.250129909<span class="nt">&lt;/sjtskY&gt;</span>
+<span class="linenos">125</span><span class="w">                </span><span class="nt">&lt;/sjtskPointCoordinates&gt;</span>
+<span class="linenos">126</span><span class="w">              </span><span class="nt">&lt;/startPoint&gt;</span>
+<span class="linenos">127</span><span class="w">              </span><span class="nt">&lt;endPoint&gt;</span>
+<span class="linenos">128</span><span class="w">                </span><span class="nt">&lt;sjtskPointCoordinates&gt;</span>
+<span class="linenos">129</span><span class="w">                  </span><span class="nt">&lt;sjtskX&gt;</span>-668050.419197776<span class="nt">&lt;/sjtskX&gt;</span>
+<span class="linenos">130</span><span class="w">                  </span><span class="nt">&lt;sjtskY&gt;</span>-976823.636025029<span class="nt">&lt;/sjtskY&gt;</span>
+<span class="linenos">131</span><span class="w">                </span><span class="nt">&lt;/sjtskPointCoordinates&gt;</span>
+<span class="linenos">132</span><span class="w">              </span><span class="nt">&lt;/endPoint&gt;</span>
+<span class="linenos">133</span><span class="w">              </span><span class="nt">&lt;linearWithinLinearGNElement&gt;</span>
+<span class="linenos">134</span><span class="w">                </span><span class="nt">&lt;sectionId&gt;</span>126853<span class="nt">&lt;/sectionId&gt;</span>
+<span class="linenos">135</span><span class="w">                </span><span class="nt">&lt;directionRelativeOnLinearSection&gt;</span>opposite<span class="nt">&lt;/directionRelativeOnLinearSection&gt;</span>
+<span class="linenos">136</span><span class="w">                </span><span class="nt">&lt;orderOfSection&gt;</span>0<span class="nt">&lt;/orderOfSection&gt;</span>
+<span class="linenos">137</span><span class="w">                </span><span class="nt">&lt;fromPoint</span><span class="w"> </span><span class="na">xsi:type=</span><span class="s">&quot;PercentageDistanceAlongLinearElement&quot;</span><span class="nt">&gt;</span>
+<span class="linenos">138</span><span class="w">                  </span><span class="nt">&lt;percentageDistanceAlong&gt;</span>0.0922403254250082<span class="nt">&lt;/percentageDistanceAlong&gt;</span>
+<span class="linenos">139</span><span class="w">                </span><span class="nt">&lt;/fromPoint&gt;</span>
+<span class="linenos">140</span><span class="w">                </span><span class="nt">&lt;toPoint</span><span class="w"> </span><span class="na">xsi:type=</span><span class="s">&quot;PercentageDistanceAlongLinearElement&quot;</span><span class="nt">&gt;</span>
+<span class="linenos">141</span><span class="w">                  </span><span class="nt">&lt;percentageDistanceAlong&gt;</span>0<span class="nt">&lt;/percentageDistanceAlong&gt;</span>
+<span class="linenos">142</span><span class="w">                </span><span class="nt">&lt;/toPoint&gt;</span>
+<span class="linenos">143</span><span class="w">              </span><span class="nt">&lt;/linearWithinLinearGNElement&gt;</span>
+<span class="linenos">144</span><span class="w">              </span><span class="nt">&lt;linearWithinLinearGNElement&gt;</span>
+<span class="linenos">145</span><span class="w">                </span><span class="nt">&lt;sectionId&gt;</span>126599<span class="nt">&lt;/sectionId&gt;</span>
+<span class="linenos">146</span><span class="w">                </span><span class="nt">&lt;directionRelativeOnLinearSection&gt;</span>opposite<span class="nt">&lt;/directionRelativeOnLinearSection&gt;</span>
+<span class="linenos">147</span><span class="w">                </span><span class="nt">&lt;orderOfSection&gt;</span>1<span class="nt">&lt;/orderOfSection&gt;</span>
+<span class="linenos">148</span><span class="w">                </span><span class="nt">&lt;fromPoint</span><span class="w"> </span><span class="na">xsi:type=</span><span class="s">&quot;PercentageDistanceAlongLinearElement&quot;</span><span class="nt">&gt;</span>
+<span class="linenos">149</span><span class="w">                  </span><span class="nt">&lt;percentageDistanceAlong&gt;</span>1<span class="nt">&lt;/percentageDistanceAlong&gt;</span>
+<span class="linenos">150</span><span class="w">                </span><span class="nt">&lt;/fromPoint&gt;</span>
+<span class="linenos">151</span><span class="w">                </span><span class="nt">&lt;toPoint</span><span class="w"> </span><span class="na">xsi:type=</span><span class="s">&quot;PercentageDistanceAlongLinearElement&quot;</span><span class="nt">&gt;</span>
+<span class="linenos">152</span><span class="w">                  </span><span class="nt">&lt;percentageDistanceAlong&gt;</span>0<span class="nt">&lt;/percentageDistanceAlong&gt;</span>
+<span class="linenos">153</span><span class="w">                </span><span class="nt">&lt;/toPoint&gt;</span>
+<span class="linenos">154</span><span class="w">              </span><span class="nt">&lt;/linearWithinLinearGNElement&gt;</span>
+<span class="linenos">155</span><span class="w">              </span><span class="nt">&lt;linearWithinLinearGNElement&gt;</span>
+<span class="linenos">156</span><span class="w">                </span><span class="nt">&lt;sectionId&gt;</span>1461717<span class="nt">&lt;/sectionId&gt;</span>
+<span class="linenos">157</span><span class="w">                </span><span class="nt">&lt;directionRelativeOnLinearSection&gt;</span>opposite<span class="nt">&lt;/directionRelativeOnLinearSection&gt;</span>
+<span class="linenos">158</span><span class="w">                </span><span class="nt">&lt;orderOfSection&gt;</span>2<span class="nt">&lt;/orderOfSection&gt;</span>
+<span class="linenos">159</span><span class="w">                </span><span class="nt">&lt;fromPoint</span><span class="w"> </span><span class="na">xsi:type=</span><span class="s">&quot;PercentageDistanceAlongLinearElement&quot;</span><span class="nt">&gt;</span>
+<span class="linenos">160</span><span class="w">                  </span><span class="nt">&lt;percentageDistanceAlong&gt;</span>1<span class="nt">&lt;/percentageDistanceAlong&gt;</span>
+<span class="linenos">161</span><span class="w">                </span><span class="nt">&lt;/fromPoint&gt;</span>
+<span class="linenos">162</span><span class="w">                </span><span class="nt">&lt;toPoint</span><span class="w"> </span><span class="na">xsi:type=</span><span class="s">&quot;PercentageDistanceAlongLinearElement&quot;</span><span class="nt">&gt;</span>
+<span class="linenos">163</span><span class="w">                  </span><span class="nt">&lt;percentageDistanceAlong&gt;</span>0<span class="nt">&lt;/percentageDistanceAlong&gt;</span>
+<span class="linenos">164</span><span class="w">                </span><span class="nt">&lt;/toPoint&gt;</span>
+<span class="linenos">165</span><span class="w">              </span><span class="nt">&lt;/linearWithinLinearGNElement&gt;</span>
+<span class="linenos">166</span><span class="w">              </span><span class="nt">&lt;linearWithinLinearGNElement&gt;</span>
+<span class="linenos">167</span><span class="w">                </span><span class="nt">&lt;sectionId&gt;</span>1461719<span class="nt">&lt;/sectionId&gt;</span>
+<span class="linenos">168</span><span class="w">                </span><span class="nt">&lt;directionRelativeOnLinearSection&gt;</span>opposite<span class="nt">&lt;/directionRelativeOnLinearSection&gt;</span>
+<span class="linenos">169</span><span class="w">                </span><span class="nt">&lt;orderOfSection&gt;</span>3<span class="nt">&lt;/orderOfSection&gt;</span>
+<span class="linenos">170</span><span class="w">                </span><span class="nt">&lt;fromPoint</span><span class="w"> </span><span class="na">xsi:type=</span><span class="s">&quot;PercentageDistanceAlongLinearElement&quot;</span><span class="nt">&gt;</span>
+<span class="linenos">171</span><span class="w">                  </span><span class="nt">&lt;percentageDistanceAlong&gt;</span>1<span class="nt">&lt;/percentageDistanceAlong&gt;</span>
+<span class="linenos">172</span><span class="w">                </span><span class="nt">&lt;/fromPoint&gt;</span>
+<span class="linenos">173</span><span class="w">                </span><span class="nt">&lt;toPoint</span><span class="w"> </span><span class="na">xsi:type=</span><span class="s">&quot;PercentageDistanceAlongLinearElement&quot;</span><span class="nt">&gt;</span>
+<span class="linenos">174</span><span class="w">                  </span><span class="nt">&lt;percentageDistanceAlong&gt;</span>0<span class="nt">&lt;/percentageDistanceAlong&gt;</span>
+<span class="linenos">175</span><span class="w">                </span><span class="nt">&lt;/toPoint&gt;</span>
+<span class="linenos">176</span><span class="w">              </span><span class="nt">&lt;/linearWithinLinearGNElement&gt;</span>
+<span class="linenos">177</span><span class="w">              </span><span class="nt">&lt;linearWithinLinearGNElement&gt;</span>
+<span class="linenos">178</span><span class="w">                </span><span class="nt">&lt;sectionId&gt;</span>2901326<span class="nt">&lt;/sectionId&gt;</span>
+<span class="linenos">179</span><span class="w">                </span><span class="nt">&lt;directionRelativeOnLinearSection&gt;</span>opposite<span class="nt">&lt;/directionRelativeOnLinearSection&gt;</span>
+<span class="linenos">180</span><span class="w">                </span><span class="nt">&lt;orderOfSection&gt;</span>4<span class="nt">&lt;/orderOfSection&gt;</span>
+<span class="linenos">181</span><span class="w">                </span><span class="nt">&lt;fromPoint</span><span class="w"> </span><span class="na">xsi:type=</span><span class="s">&quot;PercentageDistanceAlongLinearElement&quot;</span><span class="nt">&gt;</span>
+<span class="linenos">182</span><span class="w">                  </span><span class="nt">&lt;percentageDistanceAlong&gt;</span>1<span class="nt">&lt;/percentageDistanceAlong&gt;</span>
+<span class="linenos">183</span><span class="w">                </span><span class="nt">&lt;/fromPoint&gt;</span>
+<span class="linenos">184</span><span class="w">                </span><span class="nt">&lt;toPoint</span><span class="w"> </span><span class="na">xsi:type=</span><span class="s">&quot;PercentageDistanceAlongLinearElement&quot;</span><span class="nt">&gt;</span>
+<span class="linenos">185</span><span class="w">                  </span><span class="nt">&lt;percentageDistanceAlong&gt;</span>0.147949455079654<span class="nt">&lt;/percentageDistanceAlong&gt;</span>
+<span class="linenos">186</span><span class="w">                </span><span class="nt">&lt;/toPoint&gt;</span>
+<span class="linenos">187</span><span class="w">              </span><span class="nt">&lt;/linearWithinLinearGNElement&gt;</span>
+<span class="linenos">188</span><span class="w">            </span><span class="nt">&lt;/globalNetworkLinear&gt;</span>
+</pre></div>
+</div>
+</section>
+<section id="location-description-using-openlr-extension">
+<h2>Location description using OpenLR extension<a class="headerlink" href="#location-description-using-openlr-extension" title="Link to this heading">¶</a></h2>
+<p>The OpenLR method in the <cite>openlrExtendedLinear</cite> element, uses a routing algorithm to describe the location and thus allows on-the-fly localization.</p>
+<p>The method uses the reference points <cite>openlrLocationReferencePoint</cite> and <cite>openlrLastLocationReferencePoint</cite> containing coordinates, road direction, and a road type. These reference points are used as the start and end to find the road which is further refined using offsets to the actual extent of the event. In case 2 points are not enough the method allows to use intermediate points.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>To describe a <strong>point location</strong> (even the inside of an intersection or tunnel, i.e. a short segment) the <cite>openlrExtendedLinear</cite> method is also used, when offsets refer to a segment with zero length.</p>
+</div>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 84</span><span class="w">            </span><span class="nt">&lt;openlrExtendedLinear&gt;</span>
+<span class="linenos"> 85</span><span class="w">              </span><span class="nt">&lt;firstDirection&gt;</span>
+<span class="linenos"> 86</span><span class="w">                </span><span class="nt">&lt;openlrLocationReferencePoint&gt;</span>
+<span class="linenos"> 87</span><span class="w">                  </span><span class="nt">&lt;openlrCoordinate&gt;</span>
+<span class="linenos"> 88</span><span class="w">                    </span><span class="nt">&lt;latitude&gt;</span>50.765282088427412<span class="nt">&lt;/latitude&gt;</span>
+<span class="linenos"> 89</span><span class="w">                    </span><span class="nt">&lt;longitude&gt;</span>15.337521544012871<span class="nt">&lt;/longitude&gt;</span>
+<span class="linenos"> 90</span><span class="w">                  </span><span class="nt">&lt;/openlrCoordinate&gt;</span>
+<span class="linenos"> 91</span><span class="w">                  </span><span class="nt">&lt;openlrLineAttributes&gt;</span>
+<span class="linenos"> 92</span><span class="w">                    </span><span class="nt">&lt;openlrFunctionalRoadClass&gt;</span>FRC1<span class="nt">&lt;/openlrFunctionalRoadClass&gt;</span>
+<span class="linenos"> 93</span><span class="w">                    </span><span class="nt">&lt;openlrFormOfWay&gt;</span>singleCarriageway<span class="nt">&lt;/openlrFormOfWay&gt;</span>
+<span class="linenos"> 94</span><span class="w">                    </span><span class="nt">&lt;openlrBearing&gt;</span>112<span class="nt">&lt;/openlrBearing&gt;</span>
+<span class="linenos"> 95</span><span class="w">                  </span><span class="nt">&lt;/openlrLineAttributes&gt;</span>
+<span class="linenos"> 96</span><span class="w">                  </span><span class="nt">&lt;openlrPathAttributes&gt;</span>
+<span class="linenos"> 97</span><span class="w">                    </span><span class="nt">&lt;openlrLowestFRCToNextLRPoint&gt;</span>FRC1<span class="nt">&lt;/openlrLowestFRCToNextLRPoint&gt;</span>
+<span class="linenos"> 98</span><span class="w">                    </span><span class="nt">&lt;openlrDistanceToNextLRPoint&gt;</span>1240<span class="nt">&lt;/openlrDistanceToNextLRPoint&gt;</span>
+<span class="linenos"> 99</span><span class="w">                  </span><span class="nt">&lt;/openlrPathAttributes&gt;</span>
+<span class="linenos">100</span><span class="w">                </span><span class="nt">&lt;/openlrLocationReferencePoint&gt;</span>
+<span class="linenos">101</span><span class="w">                </span><span class="nt">&lt;openlrLastLocationReferencePoint&gt;</span>
+<span class="linenos">102</span><span class="w">                  </span><span class="nt">&lt;openlrCoordinate&gt;</span>
+<span class="linenos">103</span><span class="w">                    </span><span class="nt">&lt;latitude&gt;</span>50.763208691718496<span class="nt">&lt;/latitude&gt;</span>
+<span class="linenos">104</span><span class="w">                    </span><span class="nt">&lt;longitude&gt;</span>15.347566415800618<span class="nt">&lt;/longitude&gt;</span>
+<span class="linenos">105</span><span class="w">                  </span><span class="nt">&lt;/openlrCoordinate&gt;</span>
+<span class="linenos">106</span><span class="w">                  </span><span class="nt">&lt;openlrLineAttributes&gt;</span>
+<span class="linenos">107</span><span class="w">                    </span><span class="nt">&lt;openlrFunctionalRoadClass&gt;</span>FRC1<span class="nt">&lt;/openlrFunctionalRoadClass&gt;</span>
+<span class="linenos">108</span><span class="w">                    </span><span class="nt">&lt;openlrFormOfWay&gt;</span>singleCarriageway<span class="nt">&lt;/openlrFormOfWay&gt;</span>
+<span class="linenos">109</span><span class="w">                    </span><span class="nt">&lt;openlrBearing&gt;</span>283<span class="nt">&lt;/openlrBearing&gt;</span>
+<span class="linenos">110</span><span class="w">                  </span><span class="nt">&lt;/openlrLineAttributes&gt;</span>
+<span class="linenos">111</span><span class="w">                </span><span class="nt">&lt;/openlrLastLocationReferencePoint&gt;</span>
+<span class="linenos">112</span><span class="w">                </span><span class="nt">&lt;openlrOffsets&gt;</span>
+<span class="linenos">113</span><span class="w">                  </span><span class="nt">&lt;openlrPositiveOffset&gt;</span>120<span class="nt">&lt;/openlrPositiveOffset&gt;</span>
+<span class="linenos">114</span><span class="w">                  </span><span class="nt">&lt;openlrNegativeOffset&gt;</span>418<span class="nt">&lt;/openlrNegativeOffset&gt;</span>
+<span class="linenos">115</span><span class="w">                </span><span class="nt">&lt;/openlrOffsets&gt;</span>
+<span class="linenos">116</span><span class="w">              </span><span class="nt">&lt;/firstDirection&gt;</span>
+<span class="linenos">117</span><span class="w">            </span><span class="nt">&lt;/openlrExtendedLinear&gt;</span>
+</pre></div>
+</div>
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="index.html">
+              <img class="logo" src="_static/RSD-logo-07.jpg" alt="Logo"/>
+            </a></p>
+  <div>
+    <h3><a href="index.html">Table of Contents</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">Concepts</a><ul>
+<li><a class="reference internal" href="#publication-type-situationpublication">Publication type SituationPublication</a></li>
+<li><a class="reference internal" href="#event-description">Event description</a></li>
+<li><a class="reference internal" href="#location-description">Location description</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#time-validity">Time validity</a></li>
+<li><a class="reference internal" href="#id3">Location description</a><ul>
+<li><a class="reference internal" href="#location-description-by-means-of-alert-c">Location description by means of ALERT-C</a></li>
+<li><a class="reference internal" href="#location-description-using-mileage">Location description using mileage</a></li>
+<li><a class="reference internal" href="#location-description-using-the-global-network-extension">Location description using the Global Network extension</a></li>
+<li><a class="reference internal" href="#location-description-using-openlr-extension">Location description using OpenLR extension</a></li>
+</ul>
+</li>
+</ul>
+
+  </div>
+  <div>
+    <h4>Previous topic</h4>
+    <p class="topless"><a href="introduction.html"
+                          title="previous chapter">Introduction</a></p>
+  </div>
+  <div>
+    <h4>Next topic</h4>
+    <p class="topless"><a href="examples.html"
+                          title="next chapter">Appendix A: Message examples</a></p>
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/concepts.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="examples.html" title="Appendix A: Message examples"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="introduction.html" title="Introduction"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">NDIC - DATEX II Situation Publication - Restrictions 1.2rev0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Concepts</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+    &#169; Copyright 2023, TamTam Research s.r.o..
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.5.
+    </div>
+  </body>
+</html>

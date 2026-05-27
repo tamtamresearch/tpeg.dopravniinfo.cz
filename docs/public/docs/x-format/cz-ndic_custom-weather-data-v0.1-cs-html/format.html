@@ -1,0 +1,290 @@
+
+
+<!doctype html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="cs">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Příloha B: Reprezentativní XML Schéma RELAX NG &#8212; Dokumentace pro Vlastní XML - Měřená data - Data z meteohlásek 0.1.0</title>
+    <link rel="stylesheet" href="_static/bizstyle.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/translations.js"></script>
+    <script type="text/javascript" src="_static/bizstyle.js"></script>
+    <link rel="index" title="Rejstřík" href="genindex.html" />
+    <link rel="search" title="Vyhledávání" href="search.html" />
+    <link rel="prev" title="Příloha A: Příklady zpráv" href="examples.html" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <!--[if lt IE 9]>
+    <script type="text/javascript" src="_static/css3-mediaqueries.js"></script>
+    <![endif]-->
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigace</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="Obecný rejstřík"
+             accesskey="I">rejstřík</a></li>
+        <li class="right" >
+          <a href="examples.html" title="Příloha A: Příklady zpráv"
+             accesskey="P">předchozí</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Dokumentace pro Vlastní XML - Měřená data - Data z meteohlásek 0.1.0</a> &#187;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="index.html">
+              <img class="logo" src="_static/logo.png" alt="Logo"/>
+            </a></p>
+  <h3><a href="index.html">Obsah</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Příloha B: Reprezentativní XML Schéma RELAX NG</a><ul>
+<li><a class="reference internal" href="#relax-ng-compact-syntax-schema-rnc">RELAX NG Compact Syntax Schema (RNC)</a><ul>
+<li><a class="reference internal" href="#schem-rnc-koren-schematu"><cite>schem.rnc</cite> - kořen schématu</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  <h4>Přechozí téma</h4>
+  <p class="topless"><a href="examples.html"
+                        title="předchozí kapitola">Příloha A: Příklady zpráv</a></p>
+  <div role="note" aria-label="source link">
+    <h3>Tato stránka</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/format.rst.txt"
+            rel="nofollow">Ukázat zdroj</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Rychlé vyhledávání</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="OK" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="priloha-b-reprezentativni-xml-schema-relax-ng">
+<h1>Příloha B: Reprezentativní XML Schéma RELAX NG<a class="headerlink" href="#priloha-b-reprezentativni-xml-schema-relax-ng" title="Trvalý odkaz na tento nadpis">¶</a></h1>
+<p>K popisu struktury XML Je použito RELAX NG schéma v kompaktním formátu. Doporučujeme zkusit dané schéma přečíst, protože se nám tato forma jeví jako nejkompaktnější a nejčitelnější z dostupných typů schémat.</p>
+<p>Pokud však trváte na použití W3C XML Schema 1.0, přikládáme i tento typ schématu, které je vytvořeno konverzí z RELAX NG.</p>
+<div class="section" id="relax-ng-compact-syntax-schema-rnc">
+<h2>RELAX NG Compact Syntax Schema (RNC)<a class="headerlink" href="#relax-ng-compact-syntax-schema-rnc" title="Trvalý odkaz na tento nadpis">¶</a></h2>
+<p>RNC schéma popisuje očekávané struktury XML dokumentu.</p>
+<p>Kořenový element je uveden pomocí <cite>start =</cite>.</p>
+<p>Všechny další <cite>&lt;SomeName&gt; =</cite> elementy definují tzv. vzory.</p>
+<p>V našem schématu jsou následující sekce:</p>
+<ul class="simple">
+<li>prolog (deklarace jmenného prostoru)</li>
+<li>vložení jiných schéma (není využito v tomto případě)</li>
+<li>definice kořenového elementu (<cite>start =</cite>)</li>
+<li>vzory pro elementy</li>
+<li>vzory pro atributy</li>
+<li>vzory pro datové typy</li>
+</ul>
+<p>Komentáře <cite>##</cite> poskytují více detailů k významu jednotlivých částí.</p>
+<div class="section" id="schem-rnc-koren-schematu">
+<h3><cite>schem.rnc</cite> - kořen schématu<a class="headerlink" href="#schem-rnc-koren-schematu" title="Trvalý odkaz na tento nadpis">¶</a></h3>
+<div class="highlight-JavaScript notranslate"><div class="highlight"><pre><span></span>default namespace = &quot;&quot;
+## Varování: schéma bylo vytvořeno odvozením ze vzorků
+
+start =
+
+## Kořenový prvek dokumentu
+element msg {
+  attribute type { &quot;data&quot; },
+
+  ## Čas publikace dokumentu
+  element datetime { xsd:dateTime },
+
+  ## Identifikátor odesílatele
+  element sender { &quot;JSDI_TDDR&quot; },
+
+  ## Identifikátor příjemce
+  element receiver { &quot;DACSServerMT&quot; },
+
+  ## Metoda přenosu
+  element transmission { &quot;HTTP SOAP&quot; },
+
+  ## Data naměřená jednou meteohláskou
+  element meteo {
+    attribute automatic { &quot;&quot; },
+
+    ## Identifikátor metohlásky
+    attribute id { xsd:integer },
+
+    ## Identifikátor sady měření
+    element data_id { type-guid },
+
+    ## Identifikátor stavu měření
+    element status_generalized { 
+      
+      ## OK
+      &quot;1&quot; |
+
+      ## Chyba
+      &quot;2&quot; |
+
+      ## Zařízení nezobrazuje požadovaný text nebo znak
+      &quot;3&quot; |
+
+      ## Mimo provoz
+      &quot;4&quot; |
+
+      ## Neznámý stav
+      &quot;5&quot; |
+
+      ## Ztráta komunikace se zařízením
+      &quot;6&quot; |
+
+      ## Ztráta komunikace s komunikačním modulem
+      &quot;7&quot;
+    },
+
+    ## Čas měření
+    element datetime { type-datetime-spaced },
+
+    ## Typ srážek
+    element precip_type {
+
+      ## TODO
+      &quot;0&quot; |
+
+      ## TODO
+      &quot;1&quot; | 
+
+      ## TODO
+      &quot;2&quot; |
+
+      ## TODO
+      &quot;3&quot; |
+
+      ## TODO
+      &quot;4&quot;
+
+    }?,
+
+    ## Stav vozovky
+    element road_status {
+        
+      ## sucho
+      &quot;0&quot; |
+
+      ## vlhko
+      &quot;1&quot; |
+
+      ## mokro
+      &quot;2&quot; |
+
+      ## namraza
+      &quot;3&quot; |
+
+      ## sníh
+      &quot;4&quot; |
+
+      ## led
+      &quot;5&quot; |
+
+      ## zbytková sůl
+      &quot;6&quot; |
+
+      ## moznost namrzaní
+      &quot;7&quot; |
+
+      ## mokro/nasoleno
+      &quot;8&quot; |
+
+      ## nelze zjistit
+      &quot;99&quot;
+    }*,
+
+    ## Teplota vozovky
+    element road_temp {
+        attribute sensor
+            { xsd:integer }?, type-degree-celsius
+        }*,
+
+    ## Bod mrznutí
+    element freez_temp { type-degree-celsius }*,
+
+    ## Srážky v mm za hodinu
+    element precipitation { xsd:decimal }?,
+
+    ## Teplota vzduchu
+    element air_temp { type-degree-celsius }?,
+
+    ## Rosný bod
+    element dewpoint { type-degree-celsius }?,
+
+    ## Vlhkost v procentech
+    element humidity { xsd:decimal }?,
+
+    ## Viditelnost v metrech
+    element visibility { xsd:decimal }?,
+
+    ## Směr větru (0-360 stupňů, 0 je na sever)
+    element wind_dir { xsd:decimal }?,
+
+    ## Rychlost větru v m/s
+    element wind_sp { xsd:decimal }?
+  }+
+}
+
+## Čas vyjádřený jako xsd:datetime, ale místo &quot;T&quot; je &quot; &quot;
+type-datetime-spaced = 
+  attribute format { &quot;yyyy-MM-dd HH:mm:sszzz&quot; }?,
+  xsd:string { pattern = &quot;\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2}[\+\-]\d{2}:\d{2}&quot; }
+
+## GUID in format 8-4-4-4-12
+type-guid =
+  xsd:string { pattern = &quot;[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}&quot; }
+
+type-degree-celsius = 
+    xsd:decimal
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigace</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="Obecný rejstřík"
+             >rejstřík</a></li>
+        <li class="right" >
+          <a href="examples.html" title="Příloha A: Příklady zpráv"
+             >předchozí</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Dokumentace pro Vlastní XML - Měřená data - Data z meteohlásek 0.1.0</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2018, TamTam Research s.r.o..
+      Vytvořeno pomocí <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.4.
+    </div>
+  </body>
+</html>

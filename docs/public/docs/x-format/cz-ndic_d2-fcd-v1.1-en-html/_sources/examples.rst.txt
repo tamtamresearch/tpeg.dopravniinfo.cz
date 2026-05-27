@@ -1,0 +1,166 @@
+.. _examples:
+
+=============================
+Annex A: Examples of messages
+=============================
+
+samples/fcd-all-lorry-car-sample.xml - FCD data on 1 segment
+============================================================
+
+.. literalinclude:: ../../samples/fcd-all-lorry-car-sample.xml
+   :language: xml
+
+Root element and the publication envelope
+-----------------------------------------
+
+The root element `d2LogicalModel` declares that this is a message using DATEX II.
+
+The `exchange` element identifies the provider of the publication, **ŘSD**..
+
+The `payloadPublication` of type `ElaboratedDataPublication` contains, in this example 9 `elaboratedData` elements with calculated traffic parameters for **ONE** segment.
+
+The `feedType` element specifies the type of publication, by the uri of the schema **x-format:cz-ndic_d2-fcd-v1.1**.
+
+The `publicationTime` element specifies the time of the publication **2022-12-18T00:00:06+01:00**.
+
+The `publicationCreator` element identifies the creator of the publication, **ŘSD**.
+
+The `timeDefault` element indicates the time of calculation of all FCD values in the  publication **2022-12-17T23:59:35+01:00**. 
+
+General characteristics of the `elaboratedData` elements
+--------------------------------------------------------
+A few characteristics are similar/same for all `elaboratedData` elements, they are listed below.
+
+Location reference
+^^^^^^^^^^^^^^^^^^
+
+The segment location in `predefinedLocationReference` elements refers to data item  id **6D476A44-AA44-4947-AA4B-7C4DD79BB67E** with version **0** defined in another publication of type `PredefinedLocationsPublication` which is not described in detail here.
+
+The sample contains FCD information for one physical location (route with identifier **6D476A44-AA44-4947-AA4B-7C4DD79BB67E**).
+
+Temporal validity
+^^^^^^^^^^^^^^^^^
+
+The last time of occurrence of vehicle probes on the measured segment is given in the `measurementOrCalculationTime` elements  is **2022-12-17T23:57:35+01:00**. This value may be different for each segment and for vehicle type.
+
+Measurement quality
+^^^^^^^^^^^^^^^^^^^
+
+The measurement quality given in the `supplierCalculatedDataQuality` attributes of the calculated values, for all vehicles, is **1**. It means "reliable". The measurement quality for passenger vehicles is **0.850** and for lorries is **0.750**.
+
+This value should be the same for all actual measurement values on the segment.
+
+Number of vehicles on the segment
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The number of vehicle probes on the segment `numberOfInputValuesUsed` at the time of measurement (300 s) is **9**, out of which **4** were lorries and **5** passenger vehicles.
+
+This value should be the same for all the actual measurement values on a given segment.
+
+Source identification
+^^^^^^^^^^^^^^^^^^^^^
+
+The optional `sourceIdentification` is provided only in first element `elaboratedData` , as and example, and may provide an alternative route identification. 
+
+Traffic levels and queues
+-------------------------
+
+The first 3 elements `elaboratedData` of type `TrafficStatus` describe calculated traffic status and queues
+
+All 3 elements indicate traffic status ( `trafficStatus` ) on a four-level scale, as **congested**.
+
+Traffic levels
+^^^^^^^^^^^^^^
+All 3 elements indicate level of service on a five-level scale, as level 4 = **level4** (equivalent of congested).
+
+Queue length
+^^^^^^^^^^^^
+
+All 3 elements indicate queues, different per vehicle type. 
+
+The aggregate `length` of the queue on the segment at that time was **148 m** for all vehicles and **89 m** for cars and **148 m** for lorries.
+
+The `toPoint` elements specify the same queue end (**0.9** of the segment length).
+ The `fromPoint` elements specifies different start at **0.6** for passenger vehicles and **0.4** for lorries (and all vehicles) in relative coordinates.
+
+Measured speed
+--------------
+
+The next 3 elements `elaboratedData` of type `TrafficSpeed` describe the computed traffic flow speed.
+
+Traffic speed
+^^^^^^^^^^^^^
+
+All 3 elements indicate current average vehicle speed `averageVehicleSpeed`. This is **38 km/h** for all vehicles and**58 km/h** for passenger vehicles and **18 km/h** for lorries.
+
+Travel time and speed
+---------------------
+
+Last 3 elements `elaboratedData` of type `TravelTimeData` describe the calculated actual and free flow travel times and free flow speed.
+
+Travel time
+^^^^^^^^^^^
+
+The `travelTime` element specifies the average current travel time of **549 s** for all vehicles, **499 s** for cars and **587 s** for lorries.
+
+The `freeFlowTravelTime` element gives an average travel time in free flowing traffic of **259 s** for all vehicles, **259 s** for cars and **279 s** for lorries.
+
+Speed
+^^^^^
+
+The `freeFlowSpeed` element indicates the average speed in flowing traffic of **50 km/h** for all vehicles, **55 km/h** for cars and **50 km/h** for lorries.
+
+
+samples/fcd-all-lorry-car-sample-no-data.xml - no FCD data on 1 segment
+=======================================================================
+
+The sample contains FCD information for the same location as the previous sample. The difference between the samples is the **unavailability of data to calculate status information**.
+
+.. literalinclude:: ../../samples/fcd-all-lorry-car-sample-no-data.xml
+   :language: xml
+
+In the sections below, we only list the differences from the previous sample.
+
+General characteristics of the `elaboratedData` elements
+--------------------------------------------------------
+A few characteristics are similar/same for all `elaboratedData` elements, they are listed below.
+
+Temporal validity
+^^^^^^^^^^^^^^^^^
+
+The last time of occurrence of vehicle probes on the measured segment is given in the `measurementOrCalculationTime` elements  is **2022-12-17T22:57:35+01:00**, about an hour ago.
+
+Measurement quality
+^^^^^^^^^^^^^^^^^^^
+
+Irrelevant, no data to calculate.
+
+Number of vehicles on the segment
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Irrelevant, no data to calculate.
+
+Traffic levels and queues
+-------------------------
+
+Irrelevant, no data to calculate.
+
+Measured speed
+--------------
+
+Irrelevant, no data to calculate.
+
+Travel time and speed
+---------------------
+
+The 3 elements `elaboratedData` of type `TravelTimeData` contains only information about the free flowing traffic flow.
+
+Travel time
+^^^^^^^^^^^
+
+The `freeFlowTravelTime` element gives an average travel time in free flowing traffic of **259 s** for all vehicles, **259 s** for cars and **279 s** for lorries.
+
+Speed
+^^^^^
+
+The `freeFlowSpeed` element indicates an average speed in flowing traffic of **50 km/h** for all vehicles, **55 km/h** for cars and **50 km/h** for lorries.

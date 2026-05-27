@@ -1,0 +1,55 @@
+.. _examples:
+
+============================
+Příloha A: Příklad publikace
+============================
+
+predefined_location_set-fcd.xml - publikace se 3 předdefinovanými polohami
+==========================================================================
+
+Publikace obsahuje 3 předdefinované polohy.
+
+.. literalinclude:: ../../samples/predefined_location_set-fcd.xml
+   :language: xml
+
+Kořenový element a obálka publikace
+-----------------------------------
+
+Kořenový element `d2LogicalModel` deklaruje, že se jedná o zprávu používající DATEX II.
+
+Element `exchange` obsahuje identifikátor poskytovatele.
+
+Element `payloadPublication` je obálkou pro přenos samotných informací,
+obsahující především elementy `predefinedLocationContainer`, kterých je v publikaci tolik kolik je předdefinovaných poloh.
+
+Atribut `xsi:type="PredefinedLocationsPublication"` v elementu `payloadPublication`
+určuje, že tato obálka je typu Publikace předdefinovaných poloh.
+
+Element `feedType` uvádí typ publikace, uri schématu.
+
+Element `publicationTime` uvádí čas vydání této publikace jako celku.
+
+Element `publicationCreator` identifikuje tvůrce publikace.
+
+Popis předdefinovaných poloh
+---------------------------- 
+
+Předem definovaná poloha události je popsána v elementu `predefinedLocationContainer` a to přímo vnořeným popisem. 
+
+Publikace v příkladu popisuje 3 předdefinované polohy s identifikátory `id="TS25760T25761"`, `id="TS25761T25760"` a `id="TS27072T27073"`. Všechny polohy obsahují 3 metody popisující stejný výsek reality. Jedná se o úseky sítě na kterou jsou lokalizována data z FCD.
+
+Metody popisu polohy 
+^^^^^^^^^^^^^^^^^^^^
+
+Element `predefinedLocationName` obsahuje název lokace, v tomto případě shodný s identifikátorem.
+
+Element `location` pak samotnou definici polohy. Atribut `xsi:type="Linear"` uvádí, že jde o lineární typ polohy.
+
+V příkladu jsou u všech `predefinedLocationContainer` použity 3 popisy polohy: 
+
+- tmc lokalizace pomocí lokačních tabulek v elementu `alertCLinear` typu `AlertCMethod2Linear`,
+- popis pomocí odkazů na id úseků v síti Global Network v rozšíření `globalNetworkLinear` a
+- popis pomocí routovací metody OpenLR v rozšíření `openlrExtendedLinear`.
+
+
+

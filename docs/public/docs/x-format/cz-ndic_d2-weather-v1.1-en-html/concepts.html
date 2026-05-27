@@ -1,0 +1,243 @@
+
+
+<!doctype html>
+
+<html lang="en" data-content_root="./">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Concepts &#8212; NDIC - DATEX II Situation Publication - Weather 1.1rev0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/bizstyle.css?v=532c1bf3" />
+    
+    <script src="_static/documentation_options.js?v=a61e9e51"></script>
+    <script src="_static/doctools.js?v=888ff710"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/bizstyle.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Appendix A: Message examples" href="examples.html" />
+    <link rel="prev" title="Introduction" href="introduction.html" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <!--[if lt IE 9]>
+    <script src="_static/css3-mediaqueries.js"></script>
+    <![endif]-->
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="examples.html" title="Appendix A: Message examples"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="introduction.html" title="Introduction"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">NDIC - DATEX II Situation Publication - Weather 1.1rev0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Concepts</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="concepts">
+<h1>Concepts<a class="headerlink" href="#concepts" title="Link to this heading">¶</a></h1>
+<p>Described format allows publishing weather related information impacting driving conditions for a set of predefined locations. This information belongs to category of traffic information, it is not published in predefined intervals, the contents carry event type information, like “dense fog”.</p>
+<section id="publication-type-situationpublication">
+<h2>Publication type SituationPublication<a class="headerlink" href="#publication-type-situationpublication" title="Link to this heading">¶</a></h2>
+<p>Format is based on DATEX II publication of type <cite>SituationPublication</cite>
+<a class="reference internal" href="introduction.html#id9" id="id1"><span>[16157-3]</span></a>. Profile uses only small subset of possible structures.</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span>
+<span class="linenos"> 2</span><span class="nt">&lt;d2LogicalModel</span><span class="w"> </span><span class="na">modelBaseVersion=</span><span class="s">&quot;2&quot;</span>
+<span class="linenos"> 3</span><span class="na">xmlns=</span><span class="s">&quot;http://datex2.eu/schema/2/2_0&quot;</span>
+<span class="linenos"> 4</span><span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span>
+<span class="linenos"> 5</span><span class="na">xsi:schemaLocation=</span><span class="s">&quot;http://datex2.eu/schema/2/2_0 ../schema/schema.xsd&quot;</span><span class="nt">&gt;</span>
+<span class="linenos"> 6</span>
+<span class="linenos"> 7</span><span class="w">  </span><span class="nt">&lt;exchange&gt;</span>
+<span class="linenos"> 8</span><span class="w">    </span><span class="nt">&lt;supplierIdentification&gt;</span>
+<span class="linenos"> 9</span><span class="w">      </span><span class="nt">&lt;country&gt;</span>cz<span class="nt">&lt;/country&gt;</span>
+<span class="linenos">10</span><span class="w">      </span><span class="nt">&lt;nationalIdentifier&gt;</span>NDIC<span class="nt">&lt;/nationalIdentifier&gt;</span>
+<span class="linenos">11</span><span class="w">    </span><span class="nt">&lt;/supplierIdentification&gt;</span>
+<span class="linenos">12</span><span class="w">  </span><span class="nt">&lt;/exchange&gt;</span>
+<span class="linenos">13</span><span class="w">  </span><span class="nt">&lt;payloadPublication</span><span class="w"> </span><span class="na">lang=</span><span class="s">&quot;cs&quot;</span><span class="w"> </span><span class="na">xsi:type=</span><span class="s">&quot;SituationPublication&quot;</span><span class="nt">&gt;</span>
+<span class="linenos">14</span><span class="w">    </span><span class="nt">&lt;feedType&gt;</span>x-format:cz-ndic_d2-weather-v1.1<span class="nt">&lt;/feedType&gt;</span>
+<span class="linenos">15</span><span class="w">    </span><span class="nt">&lt;publicationTime&gt;</span>2017-07-15T04:27:59+02:00<span class="nt">&lt;/publicationTime&gt;</span>
+<span class="linenos">16</span><span class="w">    </span><span class="nt">&lt;publicationCreator&gt;</span>
+<span class="linenos">17</span><span class="w">      </span><span class="nt">&lt;country&gt;</span>cz<span class="nt">&lt;/country&gt;</span>
+<span class="linenos">18</span><span class="w">      </span><span class="nt">&lt;nationalIdentifier&gt;</span>NDIC<span class="nt">&lt;/nationalIdentifier&gt;</span>
+<span class="linenos">19</span><span class="w">    </span><span class="nt">&lt;/publicationCreator&gt;</span>
+</pre></div>
+</div>
+</section>
+<section id="event-description-only-trafficelement-conditions">
+<h2>Event description (only TrafficElement/Conditions)<a class="headerlink" href="#event-description-only-trafficelement-conditions" title="Link to this heading">¶</a></h2>
+<p><cite>SituationPublication</cite> requires description by means of class <cite>Situation</cite>, which aggregates instances of class <cite>SituationRecord</cite>, namely descendants of class <cite>Conditions</cite>. Besides the <cite>SituationRecord</cite> it contains elements with information about service availability.</p>
+<p>Element <cite>situation</cite> describes one particular event, more particular events means more <cite>situation</cite> elements. Since the situation described may evolve over time, the element is versioned and has unique identifier. Each <cite>situation</cite> element contains one or more <cite>situationRecord</cite> elements.</p>
+<p>The <cite>situationRecord</cite> element may, in the element <cite>situation</cite>, occur several times (each element describing different aspect of the situation, i.e. accident in one record leading to a queue described in another record). The <cite>situationRecord</cite> element may evolve over time, so the element is versioned and has unique identifier.</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="linenos">20</span><span class="w">    </span><span class="nt">&lt;situation</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;MeteoService15.1&quot;</span><span class="w"> </span><span class="na">version=</span><span class="s">&quot;5&quot;</span><span class="nt">&gt;</span>
+<span class="linenos">21</span><span class="w">      </span><span class="nt">&lt;situationVersionTime&gt;</span>2017-07-15T04:27:21+02:00<span class="nt">&lt;/situationVersionTime&gt;</span>
+<span class="linenos">22</span><span class="w">      </span><span class="nt">&lt;headerInformation&gt;</span>
+<span class="linenos">23</span><span class="w">        </span><span class="nt">&lt;confidentiality&gt;</span>noRestriction<span class="nt">&lt;/confidentiality&gt;</span>
+<span class="linenos">24</span><span class="w">        </span><span class="nt">&lt;informationStatus&gt;</span>real<span class="nt">&lt;/informationStatus&gt;</span>
+<span class="linenos">25</span><span class="w">        </span><span class="nt">&lt;urgency&gt;</span>normalUrgency<span class="nt">&lt;/urgency&gt;</span>
+<span class="linenos">26</span><span class="w">      </span><span class="nt">&lt;/headerInformation&gt;</span>
+<span class="linenos">27</span><span class="w">      </span><span class="nt">&lt;situationRecord</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;MeteoService15.1_PoorEnvironmentConditions&quot;</span>
+<span class="linenos">28</span><span class="w">      </span><span class="na">version=</span><span class="s">&quot;5&quot;</span><span class="w"> </span><span class="na">xsi:type=</span><span class="s">&quot;PoorEnvironmentConditions&quot;</span><span class="nt">&gt;</span>
+<span class="linenos">29</span><span class="w">        </span><span class="nt">&lt;situationRecordCreationTime&gt;</span>2017-07-15T04:25:59+02:00<span class="nt">&lt;/situationRecordCreationTime&gt;</span>
+<span class="linenos">30</span><span class="w">        </span><span class="nt">&lt;situationRecordVersionTime&gt;</span>2017-07-15T04:27:21+02:00<span class="nt">&lt;/situationRecordVersionTime&gt;</span>
+<span class="linenos">31</span><span class="w">        </span><span class="nt">&lt;probabilityOfOccurrence&gt;</span>certain<span class="nt">&lt;/probabilityOfOccurrence&gt;</span>
+<span class="linenos">32</span><span class="w">        </span><span class="nt">&lt;source&gt;</span>
+<span class="linenos">33</span><span class="w">          </span><span class="nt">&lt;sourceIdentification&gt;</span>ITSMTNDIC<span class="nt">&lt;/sourceIdentification&gt;</span>
+<span class="linenos">34</span><span class="w">          </span><span class="nt">&lt;sourceName&gt;</span>
+<span class="linenos">35</span><span class="w">            </span><span class="nt">&lt;values&gt;</span>
+<span class="linenos">36</span><span class="w">              </span><span class="nt">&lt;value</span><span class="w"> </span><span class="na">lang=</span><span class="s">&quot;cs&quot;</span><span class="nt">&gt;</span>Správci<span class="w"> </span>meteohlásek<span class="w"> </span>DI<span class="nt">&lt;/value&gt;</span>
+<span class="linenos">37</span><span class="w">            </span><span class="nt">&lt;/values&gt;</span>
+<span class="linenos">38</span><span class="w">          </span><span class="nt">&lt;/sourceName&gt;</span>
+<span class="linenos">39</span><span class="w">        </span><span class="nt">&lt;/source&gt;</span>
+<span class="linenos">40</span><span class="w">        </span><span class="nt">&lt;validity&gt;</span>
+<span class="linenos">41</span><span class="w">          </span><span class="nt">&lt;validityStatus&gt;</span>definedByValidityTimeSpec<span class="nt">&lt;/validityStatus&gt;</span>
+<span class="linenos">42</span><span class="w">          </span><span class="nt">&lt;validityTimeSpecification&gt;</span>
+<span class="linenos">43</span><span class="w">            </span><span class="nt">&lt;overallStartTime&gt;</span>2017-07-15T04:26:50+02:00<span class="nt">&lt;/overallStartTime&gt;</span>
+<span class="linenos">44</span><span class="w">            </span><span class="nt">&lt;overallEndTime&gt;</span>2017-07-15T04:46:50+02:00<span class="nt">&lt;/overallEndTime&gt;</span>
+<span class="linenos">45</span><span class="w">          </span><span class="nt">&lt;/validityTimeSpecification&gt;</span>
+<span class="linenos">46</span><span class="w">        </span><span class="nt">&lt;/validity&gt;</span>
+<span class="linenos">47</span><span class="w">        </span><span class="nt">&lt;generalPublicComment&gt;</span>
+<span class="linenos">48</span><span class="w">          </span><span class="nt">&lt;comment&gt;</span>
+<span class="linenos">49</span><span class="w">            </span><span class="nt">&lt;values&gt;</span>
+<span class="linenos">50</span><span class="w">              </span><span class="nt">&lt;value</span><span class="w"> </span><span class="na">lang=</span><span class="s">&quot;cs&quot;</span><span class="nt">&gt;</span>Hustá<span class="w"> </span>mlha,<span class="w"> </span>viditelnost<span class="w"> </span>menší<span class="w"> </span>než<span class="w"> </span>30<span class="w"> </span>m,
+<span class="linenos">51</span><span class="w">              </span>Vysocanská<span class="nt">&lt;/value&gt;</span>
+<span class="linenos">52</span><span class="w">            </span><span class="nt">&lt;/values&gt;</span>
+<span class="linenos">53</span><span class="w">          </span><span class="nt">&lt;/comment&gt;</span>
+<span class="linenos">54</span><span class="w">        </span><span class="nt">&lt;/generalPublicComment&gt;</span>
+<span class="linenos">55</span><span class="w">        </span><span class="nt">&lt;groupOfLocations</span><span class="w"> </span><span class="na">xsi:type=</span><span class="s">&quot;LocationByReference&quot;</span><span class="nt">&gt;</span>
+<span class="linenos">56</span><span class="w">          </span><span class="nt">&lt;predefinedLocationReference</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;73D74C70-BFA8-408F-86CD-49B3689D9F5D&quot;</span>
+<span class="linenos">57</span><span class="w">          </span><span class="na">targetClass=</span><span class="s">&quot;PredefinedLocation&quot;</span><span class="w"> </span><span class="na">version=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="linenos">58</span><span class="w">        </span><span class="nt">&lt;/groupOfLocations&gt;</span>
+<span class="linenos">59</span><span class="w">        </span><span class="nt">&lt;poorEnvironmentType&gt;</span>denseFog<span class="nt">&lt;/poorEnvironmentType&gt;</span>
+<span class="linenos">60</span><span class="w">        </span><span class="nt">&lt;visibility&gt;</span>
+<span class="linenos">61</span><span class="w">          </span><span class="nt">&lt;minimumVisibilityDistance&gt;</span>
+<span class="linenos">62</span><span class="w">            </span><span class="nt">&lt;integerMetreDistance&gt;</span>30<span class="nt">&lt;/integerMetreDistance&gt;</span>
+<span class="linenos">63</span><span class="w">          </span><span class="nt">&lt;/minimumVisibilityDistance&gt;</span>
+<span class="linenos">64</span><span class="w">        </span><span class="nt">&lt;/visibility&gt;</span>
+<span class="linenos">65</span><span class="w">      </span><span class="nt">&lt;/situationRecord&gt;</span>
+</pre></div>
+</div>
+</section>
+<section id="location-description-by-predefined-locations">
+<h2>Location description (by predefined locations)<a class="headerlink" href="#location-description-by-predefined-locations" title="Link to this heading">¶</a></h2>
+<p>The position can be described by a point or a short linear section on the road network, given by the presence of a weather station. Since the position of the weather sensing sensors does not change, the location in this profile is described by a reference (id) to a predefined location set defined in different document. The reference points to a class instance <cite>PredefinedLocation</cite> from package <cite>PredefinedLocationsPublication</cite>. Therefore, the location is not described directly in the file.</p>
+<p>Location of weather information is determined by reference to a set of predefined locations. To look up given location, it is necessary to obtain publication <cite>PredefinedLocationsPublication</cite>, related to this source of information and inside find location of identical type (by <cite>targetClass</cite>, here <cite>PredefinedLocation</cite>), with the same identifier and version.</p>
+<p>The location for which the weather information is valid is specified by the <cite>groupOfLocations</cite> element re-typed to <cite>xsi:type=”LocationByReference”</cite>, that includes element <cite>predefinedLocationReference</cite> with the attribute <cite>targetClass=”PredefinedLocation”</cite>.</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="linenos">55</span><span class="w">        </span><span class="nt">&lt;groupOfLocations</span><span class="w"> </span><span class="na">xsi:type=</span><span class="s">&quot;LocationByReference&quot;</span><span class="nt">&gt;</span>
+<span class="linenos">56</span><span class="w">          </span><span class="nt">&lt;predefinedLocationReference</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;73D74C70-BFA8-408F-86CD-49B3689D9F5D&quot;</span>
+<span class="linenos">57</span><span class="w">          </span><span class="na">targetClass=</span><span class="s">&quot;PredefinedLocation&quot;</span><span class="w"> </span><span class="na">version=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="linenos">58</span><span class="w">        </span><span class="nt">&lt;/groupOfLocations&gt;</span>
+</pre></div>
+</div>
+<p>The position description methods are further described in the chapter “Location description”.</p>
+</section>
+</section>
+<section id="time-validity">
+<h1>Time validity<a class="headerlink" href="#time-validity" title="Link to this heading">¶</a></h1>
+<p>Time validity is stated independently for every single <cite>SituationRecord</cite> described in a situation and is defined by a time interval between two time instants. The class <cite>Validity</cite> is used with an instance of class <cite>OverallPeriod</cite> in the role of <cite>validityTimeSpecification</cite> and elements <cite>overallStartTime</cite> and <cite>overallStopTime</cite> to define start and end of the interval.</p>
+<p>Apart from methods mentioned above, no other methods for time validity
+specification are allowed (e.g. hours of validity or days of validity).</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="linenos">40</span><span class="w">        </span><span class="nt">&lt;validity&gt;</span>
+<span class="linenos">41</span><span class="w">          </span><span class="nt">&lt;validityStatus&gt;</span>definedByValidityTimeSpec<span class="nt">&lt;/validityStatus&gt;</span>
+<span class="linenos">42</span><span class="w">          </span><span class="nt">&lt;validityTimeSpecification&gt;</span>
+<span class="linenos">43</span><span class="w">            </span><span class="nt">&lt;overallStartTime&gt;</span>2017-07-15T04:26:50+02:00<span class="nt">&lt;/overallStartTime&gt;</span>
+<span class="linenos">44</span><span class="w">            </span><span class="nt">&lt;overallEndTime&gt;</span>2017-07-15T04:46:50+02:00<span class="nt">&lt;/overallEndTime&gt;</span>
+<span class="linenos">45</span><span class="w">          </span><span class="nt">&lt;/validityTimeSpecification&gt;</span>
+<span class="linenos">46</span><span class="w">        </span><span class="nt">&lt;/validity&gt;</span>
+</pre></div>
+</div>
+</section>
+<section id="location-referencing">
+<h1>Location referencing<a class="headerlink" href="#location-referencing" title="Link to this heading">¶</a></h1>
+<p>The format describes routes exclusively by a reference to set of predefined locations (class <cite>PredefinedLocation</cite>) in publication <cite>PredefinedLocationsPublication</cite> <a class="reference internal" href="introduction.html#id9" id="id2"><span>[16157-3]</span></a>.</p>
+<p>Location referencing methods are out of scope of this document and are described elsewhere.</p>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="index.html">
+              <img class="logo" src="_static/RSD-logo-07.jpg" alt="Logo"/>
+            </a></p>
+  <div>
+    <h3><a href="index.html">Table of Contents</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">Concepts</a><ul>
+<li><a class="reference internal" href="#publication-type-situationpublication">Publication type SituationPublication</a></li>
+<li><a class="reference internal" href="#event-description-only-trafficelement-conditions">Event description (only TrafficElement/Conditions)</a></li>
+<li><a class="reference internal" href="#location-description-by-predefined-locations">Location description (by predefined locations)</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#time-validity">Time validity</a></li>
+<li><a class="reference internal" href="#location-referencing">Location referencing</a></li>
+</ul>
+
+  </div>
+  <div>
+    <h4>Previous topic</h4>
+    <p class="topless"><a href="introduction.html"
+                          title="previous chapter">Introduction</a></p>
+  </div>
+  <div>
+    <h4>Next topic</h4>
+    <p class="topless"><a href="examples.html"
+                          title="next chapter">Appendix A: Message examples</a></p>
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/concepts.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="examples.html" title="Appendix A: Message examples"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="introduction.html" title="Introduction"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">NDIC - DATEX II Situation Publication - Weather 1.1rev0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Concepts</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+    &#169; Copyright 2018, TamTam Research s.r.o..
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.5.
+    </div>
+  </body>
+</html>

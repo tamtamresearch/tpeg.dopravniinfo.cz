@@ -1,0 +1,31 @@
+==================================================================================================================================
+|project|
+==================================================================================================================================
+.. keep the under/overlines long to match possibly long project name
+
+Identifikátor a verze:
+
+:uri: |uri|
+:Formát: |version|
+:Specifikace: |release|
+:Aktualizováno: |today|
+
+Typ formátu:
+
+:Publikace: |profile_base|
+:Rozšiřuje: |extended_parts|
+
+Vydavatel a autor:
+
+:Vydavatel: NDIC 
+:Autor: Jan Vlčinský, Petr Bureš
+
+|perex|
+
+.. toctree::
+   :maxdepth: 2
+
+   introduction
+   concepts
+   examples
+   format

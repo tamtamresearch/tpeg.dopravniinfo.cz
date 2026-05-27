@@ -1,0 +1,28 @@
+==========================================
+Unavailability and Other Special Scenarios
+==========================================
+
+Short-Term Unavailability of the Subscriber System
+==================================================
+
+If, for any reason, the subscriber system becomes temporarily unavailable (connectivity outage, system restarts, brief downtime, etc.), the provider's system attempts to resend messages repeatedly, with the interval between retries gradually increasing. Once the subscriber system's availability is restored, temporarily undelivered messages are then delivered. However, records that naturally expired during the unavailability period may not be sent.
+
+Subscriber System Unavailability Exceeding the Tolerated Duration
+=================================================================
+
+If the subscriber system's unavailability duration surpasses the tolerated unavailability period, the delivery is completely suspended.
+
+Manual Suspension of Subscription
+=================================
+
+The Subscription Registry allows subscribers to manually suspend their subscription.
+
+Resuming a Suspended Subscription
+=================================
+
+A subscriber can resume a suspended subscription in the Subscription Registry. Messages containing records that were created or changed during the suspension period and are still valid are sent at the beginning. Records that were created or changed during the suspension period but are no longer valid upon resumption are not sent. The subscription then continues in the normal mode.
+
+Resetting Subscriptions
+=======================
+
+A subscriber can perform a subscription reset through the Subscription Registry. This immediately results in an initial batch of messages containing all currently valid records, similar to the messages sent during activation. Subsequent messages continue to be sent when records change.

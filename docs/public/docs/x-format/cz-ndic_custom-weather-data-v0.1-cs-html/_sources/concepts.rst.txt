@@ -1,0 +1,41 @@
+========
+Koncepty
+========
+
+Tato kapitola popisuje základní koncepce, používané v tomto formátu. Detailní popis viz definice ve schématech.
+
+Tato kapitola uvádí krátké ukázky ze skutečných XML dokumentů. Více ukázek viz :ref:`examples`.
+
+Části XML dokumentu
+===================
+
+XML Dokument sestává z následujících částí:
+
+- `msg` (document root plus some metadata)
+- `meteo` (data from weather station)
+
+Kořen dokumentu `msg`
+---------------------
+
+Element `msg` představuje jednotlivou publikaci (jednu instanci přenášených dat).
+
+
+.. literalinclude:: samples/MT-000.xml
+   :language: xml
+   :linenos:
+   :end-before: <meteo
+
+
+Metadata (`meteo`)
+------------------
+
+Element `meteo` nese informace o jednotlivém měření. Těchto elementů může být přítomno i několik.
+
+- Meteohláska je identifikován hodnotou atributu `id` (číselník hlásek není součástí této publikace).
+- Samotné měření je identifikováne hodnotou elementu `data_id`.
+
+.. literalinclude:: samples/MT-000.xml
+   :language: xml
+   :linenos:
+   :start-after: transmission
+   :end-before: </msg

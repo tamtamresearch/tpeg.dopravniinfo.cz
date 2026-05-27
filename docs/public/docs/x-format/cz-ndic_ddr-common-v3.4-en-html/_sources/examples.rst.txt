@@ -1,0 +1,14 @@
+.. _examples:
+
+============================
+Appendix A: Message examples
+============================
+
+
+obstacle.xml - blocked road
+===========================
+
+Publication contains exactly one message about blocked road and traffic congestion.
+
+.. literalinclude:: ../../samples/obstacle.xml
+   :language: xml

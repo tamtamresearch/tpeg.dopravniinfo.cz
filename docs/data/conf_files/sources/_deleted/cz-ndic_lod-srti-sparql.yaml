@@ -1,0 +1,69 @@
+name:
+    "cs": LOD - Dopravní informace souvisící s bezpečností silničního provozu pomocí SPARQL
+    "en": LOD - Safety-related road traffic information via SPARQL
+description:
+    "cs": Dopravní informace související s bezpečností silničního provozu z celé ČR dle Nařízení EK [2013/886 - SRTI](https://eur-lex.europa.eu/eli/reg_del/2013/886) dostupná ve formátu otevřených dat, prostřednictvím rozhraní SPARQL.
+    "en": Traffic information from the whole Czechia related to road safety according to the EC Regulation [2013/886 - SRTI](https://eur-lex.europa.eu/eli/reg_del/2013/886). available in an open data format via SPARQL interface.
+additional_description:
+    "cs": |
+        Data jsou podmnožinou zdroje dat [DATEX II - Běžné dopravní informace](cz-ndic_d2-common.md).
+
+        Rozhraní SPARQL je služba, která umožňuje provádět dotazy na data uložená v RDF pomocí jazyka SPARQL. Tímto způsobem lze k informacím NDIC přistupovat a transformovat je podle zásad [propojených dat](https://www.w3.org/TR/?filter-tr-name=semantic), což usnadňuje jejich opakované použití.
+
+        Pro provádění dotazů je nutné znát jazyk SPARQL, který definovala organizace W3C [zde](https://www.w3.org/TR/rdf-sparql-query). 
+        V katalogu jsou k dispozici údaje (datové soubory) o silnicích, správních jednotkách a událostech.
+
+        Vytvořeno v rámci projektu [CEF 2018-EU-IA-0088](http://cef.uv.es/lodroadtran18) TamTam Research. Podrobná dokumentace zdroje a rozhraní SPARQL je dostupná na [https://lod.tamtamresearch.com/docs](https://lod.tamtamresearch.com/docs)
+    "en": |
+        The data are a subset of the data source [DATEX II - Common Traffic Information](cz-ndic_d2-common.md)
+
+        The SPARQL interface is a service that allows queries to be made on data stored in RDF using the SPARQL language. In this way, NAP DGT information can be accessed and transformed according to the principles of Linked Data, facilitating its reuse.
+
+        In order to perform queries it is necessary to know the SPARQL language, defined by the W3C here.
+        Data (datasets) on roads, administrative units and incidents are available in the catalogue.
+
+        Created in the CEF project [CEF 2018-EU-IA-0088](http://cef.uv.es/lodroadtran18) by TamTam Research. Detailed documentation of the source and the SPARQL interface is at [https://lod.tamtamresearch.com/docs](https://lod.tamtamresearch.com/docs).
+content:
+    content_type: "dynamic"
+    resource_type: "data set"
+    dataset:
+        category: [Road work, Unexpected road events and conditions, Real-time traffic data]
+        detailed_type:
+            [
+                Long-term road works,
+                Short-term road works,
+                Accidents and incidents,
+                Poor road conditions,
+                Weather conditions affecting road surface and visibility,
+            ]
+    language: [cs]
+temporal:
+    start_date: 2022-07-01
+coverage:
+    area: CZ0
+    network: [Motorways, Arterial road network]
+transport_modes: [car, truck, motorcycle, bus]
+responsibilities:
+    publisher: cz-ndic
+conditions_of_use:
+    contract_or_licence: CC BY 4.0
+    # process for applying for data
+    # terms_and_conditions: ddrcontract
+access_info:
+    formats:
+        - cz-ndic_lod-srti-sparql-v1.0
+    protocols:
+        - cz-ndic_sparql-v1.0
+    access_point: ["TTR/sparql service"]
+quality_information:
+    status:
+        "cs": testovací provoz
+        "en": test run
+    status_description:
+        "cs": Od 07/2022 v testovacím módu, od 09/2022 v provozním módu.
+        "en": From 07/2022 in a test mode, from 09/2022 in production mode.
+    update_frequency: On occurrence
+    quality_assesment:
+        "cs": Data jsou odvozena ze zdroje [DATEX II - Common Traffic Information](../sources/cz-ndic_d2-common.md) jsou pro něj platné veškeré kontroly platné pro původní zdroj.
+        "en": Data is converted from the [DATEX II - Common Traffic Information](../sources/cz-ndic_d2-common.md) source. All quality procedures of the original source apply.
+    ec_acts: [srti]

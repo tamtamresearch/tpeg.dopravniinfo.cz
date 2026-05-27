@@ -1,0 +1,54 @@
+name:
+    "cs": DATEX II - Hustota provozu (předdefinované polohy) v1.1
+    "en": DATEX II - Traffic Status (predefined locations) v1.1
+description:
+    "cs": Předdefinované polohy, které jsou využívány v publikacích stavových událostí hustota provozu, na území celé ČR, na vyžádání poskytované NDIC, v profilu předdefinovaných poloh formátu **DATEX II verze 2.3**.
+    "en": Predefined location data used to reference traffic level status oriented events, for the whole Czechia, provided by NDIC for download at users request, in a predefined locations profile of **DATEX II model version 2.3**.
+additional_description:
+    "cs": Datový zdroj popisuje polohu sledovaných úseků pro vyhodnocování hustoty provozu, ty jsou v místech úsekových měření a strategických detektorů dopravních parametrů. Poloha je popsána pomocí TMC lokační tabulky (LT), OpenLR, staničením a vlastní extenzí pro Global Network (GN). Podkladová data (LT, GN) jsou pravidelně aktualizována.
+    "en": The data source defines the location of monitored segments used for traffic density evaluation. These segments correspond to sites of section-based measurements and strategic detectors of traffic parameters. Location referencing is provided via the TMC Location Table (LT), OpenLR, road stationing, and a custom extension for the Global Network (GN). The underlying datasets (LT, GN) are regularly updated.
+content:
+    content_type: "static"
+    resource_type: "data set"
+    dataset:
+        category: [Static road network data]
+        detailed_type: [Junctions, Road classification]
+    language: [cs]
+linked_sources:
+    - cz-ndic_tmc-location-table-v11.0
+temporal:
+    start_date: 2018-01-01
+    last_update: 2025-09-23
+coverage:
+    area: CZ0
+    network: [Motorways, Arterial road network, Regional roads, Urban and local roads]
+transport_modes: [car, truck, motorcycle, bus]
+responsibilities:
+    publisher: cz-ndic
+conditions_of_use:
+    contract_or_licence: Contract and Free of charge
+    # process for applying for data
+    terms_and_conditions: ddrcontract
+access_info:
+    formats:
+        - cz-ndic_d2-predefined-location-set-v1.1
+    protocols:
+        - cz-ndic_pull-v1.1
+    access_point: ["NDIC/data subscription"]
+    access_url:
+        [
+            "https://mobilitydata.rsd.cz/DataSource/Detail?dsid=F8FF4FB6",
+            "https://mobilitydata.rsd.cz/DataSource/Detail?dsid=EFE34F90",
+        ]
+quality_information:
+    status:
+        "cs": "provozní"
+        "en": "production"
+    status_description:
+        "cs": Od 23.9.2025 změna Global Network (GN) na verzi 25.06 a lokační tabulky (LT) na verzi 11.0, původní verze s GN 24.12 a LT 11 je k dispozici na portálu ŘSD a prostřednictvím url ke stažení.
+        "en": As of 2025/09/23, the Global Network (GN) has been updated to version 25.06 and the Location Tables (LT) to version 11.0. The previous versions—GN 24.12 and LT 11—remain available for download via the ŘSD portal and direct URL access.
+    update_frequency: Less frequent than yearly
+    quality_assesment:
+        "cs": interní procesy kontroly a křížová verifikace
+        "en": internal control mechanism and cross validation
+    ec_acts: [rtti]

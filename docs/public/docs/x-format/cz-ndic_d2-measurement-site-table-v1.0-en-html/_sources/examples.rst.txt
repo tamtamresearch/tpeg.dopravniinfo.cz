@@ -1,0 +1,81 @@
+.. _examples:
+
+===============================
+Appendix A: Publication example
+===============================
+
+measurement_site_table.xml - predefined location set with two locations
+=======================================================================
+
+Publication contains two predefined equipments (in two tables, one for detectors and other for wheather stations).
+
+.. literalinclude:: ../../samples/measurement_site_table.xml
+   :language: xml
+
+Root element and publication envelope
+-------------------------------------
+
+Root element `d2LogicalModel` declares, that this message is using DATEX II.
+
+Element `exchange` contains provider identifier.
+
+Element `payloadPublication` is an envelope for actual information payload containing general information and one or more elements `measurementSiteTable`, (in our case there are two) containing elements `measurementSiteRecord`.
+
+Attribute `xsi:type="MeasurementSiteTablePublication"` in element `payloadPublication` determines, that this envelope is of type predefined equipment publication.
+
+Element `feedType` states publiacation schema by its uri.
+
+Element `publicationTime` states publication time of this publication as a whole.
+
+Element `publicationCreator` identifies creator of the publication.
+
+Description of predefined equipment
+-----------------------------------
+
+Predefined equipment is described in measurement site tables uniquely identified by id and version in the example `id="CZ_DRU_MST_DET"` for a detector table and `id="CZ_DRU_MST_WEA"` for weather station table.
+
+Each table, in the example, contain just one element describing respective equipment capabilities. The identification of the equipment is unique within the table. Detector having `id="1307"` and `id="12"` for weather station.
+
+Equipment description (CZ_DRU_MST_DET, 1307)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Element `measurementSiteRecord` contains a textual description of the equipment.
+
+The equipment (traffic detector) has 21 capabilities defined. They are vehicle categorized versions of three traffic variables:
+
+- traffic flow,
+- traffic concentration,
+- traffic speed.
+
+First 3 capabilities `measurementSpecificCharacteristics` with indexes 1-3 describe flow, occupancy and speed for all vehicles. Remaining capabilities describe these traffic values categorized by vehicle type. 
+
+E.g. capabilities with indexes 4-9 describe traffic flow for:
+
+- car,
+- lorry,
+- trailer,
+- van,
+- bus,
+- motorcycle.
+
+Tha capabilities `measurementSpecificCharacteristics` with indexes 10-15 describe categorized occupency and 16-21 categorized speed.
+
+Element `measurementSiteLocation` of type `xsi:type="Point"` contains individual location description methods, in our case just one the description using Global Network links in element `pointWithinLinearGNElement`.
+
+Equipment description (CZ_DRU_MST_WEA, 12)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Element `measurementSiteRecord` contains a textual description of the equipment.
+
+The equipment (weather station) has 8 capabilities defined. They are:
+
+- precipitation,
+- road surface conditions (3x),
+- temperature,
+- humidity,
+- visibility and
+- wind.
+
+The road surface conditions is there 3 times (indexes 2-4). First one defines overall characteristics and is used to convey road status. Remaining two are road lane related measurements (one for each lane).
+
+Element `measurementSiteLocation` of type `xsi:type="Point"` contains individual location description methods, in our case just one the description using Global Network links in element `pointWithinLinearGNElement`.

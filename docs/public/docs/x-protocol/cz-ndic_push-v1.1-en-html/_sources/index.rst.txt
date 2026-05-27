@@ -1,0 +1,31 @@
+==================================================================================================================================
+|project|
+==================================================================================================================================
+.. keep the under/overlines long to match possibly long project name
+
+Identifier and version:
+
+:uri: |uri|
+:Protocol: |version|
+:Specification: |release|
+:Updated: |today|
+
+Publisher and author:
+
+:Publisher: Národní Dopravní Informační Centrum
+:Author: |author|
+
+|perex|
+
+.. toctree::
+   :maxdepth: 2
+
+   terms
+   architecture
+   message_record
+   typical_deployment
+   special_scenarios
+   url_requirements
+   faq
+   biblio
+

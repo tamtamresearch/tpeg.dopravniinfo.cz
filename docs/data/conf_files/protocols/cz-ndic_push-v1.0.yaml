@@ -1,0 +1,14 @@
+name:
+    "cs": HTTP PUSH v okamžiku změny
+    "en": HTTP PUSH on Change occurrence
+version_info:
+    version: v1.0
+    publish_date: 2015-08-04
+interface: HTTP/HTTPS
+communication_method: Push on occurrence
+description:
+    "cs": Odeslání změn (HTTP POST) v okamžiku vzniku na web server odběratele.
+    "en": Dispatch of changes (HTTP POST) on occurrence to the subscriber web server
+publications:
+    html: [cs, en]
+    pdf: [cs, en]

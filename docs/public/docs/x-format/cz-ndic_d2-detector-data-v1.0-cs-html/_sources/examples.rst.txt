@@ -1,0 +1,72 @@
+.. _examples:
+
+=========================
+Příloha A: Příklady zpráv
+=========================
+
+detector-data.xml - dopravní data naměřená na jednom zařízení
+=============================================================
+
+Publikace obsahuje jeden záznam o jednom zařízení schopném několika různých měření (schopnosti).
+
+Podrobnosti o zařízení (schopnosti a poloha) jsou definovány v publikaci typu `MeasurementSiteTablePublication`, zde nejsou podrobně popsány.
+
+Zařízení je označeno odkazem na tabulku měřicích míst `id="CZ_DRU_MST_DET"` (s verzí) a odkazem na místo měření `id="1307"` (s verzí).
+
+.. literalinclude:: ../../samples/detector-data.xml
+   :language: xml
+
+Kořenový prvek a obálka publikace
+---------------------------------
+
+Kořenový element `d2LogicalModel` deklaruje, že se jedná o zprávu používající DATEX II.
+
+Element `exchange` obsahuje identifikátor poskytovatele.
+
+Element `payloadPublication` je obálkou pro přenos samotných informací, obsahující odkaz na tabulku měřících míst `measurementSiteTableReference` a jeden element `siteMeasurements`.
+
+Atribut `xsi:type="MeasuredDataPublication"` v elementu `payloadPublication`
+určuje, že tato obálka je typu Publikace měřených dat.
+
+Element `feedType` uvádí typ publikace, uri schématu.
+
+Element `publicationTime` uvádí čas vydání této publikace jako celku, což může být čas, pro který byly vypočteny všechny hodnoty provozního stavu (začátek platnosti).
+
+Element `publicationCreator` identifikuje tvůrce publikace.
+
+Dopravní veličiny z jednoho měřícího místa
+------------------------------------------
+
+Element `siteMeasurements` obsahuje jedno nebo více měření naměřených na konkrétním zařízení `measurementSiteReference`. `measurementSiteReference` je identifikován podle id a verze.
+
+Element `measureTimeDefault` udává čas platnosti sady měření v rámci jednoho místa měření. Je také čas, kdy byly vytvořeny naměřené provozní údaje (tj. konec měřící periody).
+
+Následující element `measuredValue` (identifikovaný indexem) se může opakovat a popisuje měřené provozní údaje (schopnosti) pro konkrétní měřicí místo.
+
+Zařízení (dopravní detektor) umožňuje 21 různých měření (schopností). Jedná se o kategorizované verze tří dopravních veličin:
+
+- intenzita,
+- obsazenost a
+- rychlost.
+
+První tři schopnosti odkazované v elementech `measuredValue` s indexy 1-3 popisují intenzitu, obsazenost a rychlost pro všechna vozidla. Zbývající schopnosti popisují tyto dopravní veličiny kategorizované podle typu vozidla.
+
+Např. schopnosti s indexy 4-9 popisují intenzity pro:
+
+- auto,
+- nákladní automobil,
+- přívěs,
+- dodávka,
+- autobus,
+- motocykl.
+
+Schopnosti `measuredValue` s indexy 10-15 popisují kategorizovanou obsazenost a schopnosti 16-21 kategorizovanou rychlost.
+
+Elementy `measuredValue` s indexy 17, 20 a 21 nejsou k dispozici, protože hodnota rychlosti nebyla vypočítána (žádná vozidla této třídy během období měření).
+
+Vnořený prvek `basicData` obsahuje aktuální naměřenou hodnotu daného typu.
+
+Časová platnost
+^^^^^^^^^^^^^^^
+
+Začátek platnosti měřených dat je stanoven povinným prvkem `measureTimeDefault`.

@@ -1,0 +1,67 @@
+============
+Architektura
+============
+
+Tato kapitola popisuje klíčové systémy a aktéry, kteří se podílí na poskytování informací metodou PUSH.
+
+.. uml::
+   :caption: Klíčové systémy a aktéři
+   :align: center
+
+    @startuml
+    folder publisher as "Poskytovatel" {
+        actor pub_admin as "Správce"
+        boundary reg_sub as "Registr odběrů"
+        database pub_db as "Databáze\nse záznamy"
+        control pub_proc as "Proces zasílání"
+    }
+    folder recv as "Odběratel" {
+        actor recv_admin as "Správce"
+        boundary recv_url as "URL odběratele"
+        database recv_db as "Databáze\nse záznamy"
+    }
+    component event_src as "zdroj\ninformací"
+    component recv_app as "Aplikace\nodběratele"
+    event_src -> pub_db: aktualizace
+    pub_admin -> reg_sub
+    recv_admin -> reg_sub
+    recv_admin --> recv_url
+    pub_proc -> recv_url
+    reg_sub --> pub_proc
+    pub_db -> pub_proc
+    recv_url -> recv_db
+    recv_db -> recv_app
+    @enduml
+
+Externí aktéři
+==============
+
+Externí aktéři sice nějak ovlivňují či využívají popisovaný protokol, nejsou však předmětem samotné specifikace.
+
+Externí zdroj informací zajišťuje přímo či nepřímo aktualizaci záznamů v databázi poskytovatele.
+
+Aplikace odběratele nějakým způsobem na straně odběratele využívá informace, které přijal od poskytovatele.
+
+Poskytovatel
+============
+
+Poskytovatel zajišťuje běh systému a procesů poskytování informací.
+
+Správce (poskytovatele) schvaluje v registru odběrů odběry, které vytvořil nějaký odběratel.
+
+Registr odběrů konfiguruje proces zasílání.
+
+Databáze se záznamy ukládá aktuální informace a notifikuje proces zasílání o změnách.
+
+Proces zasílání zajišťuje pro schválené odběry zasílání zpráv se záznamy na URL odběratelů.
+
+Odběratel
+=========
+
+Odběratel žádá o zasílání informací (zřízením odběru) a zajišťuje systémy a procesy jejich odběru.
+
+Správce odběratele konfiguruje v registru odběrů URL (odběratele) pro příjem dat.
+
+URL odběratele (resp. obslužný systém) přijímá zprávy se změnovými zprávami, ukládá je do databáze záznamů a potvrzuje jejich přijetí poskytovateli.
+
+Databáze se záznamy (odběratele) ukládá přijaté záznamy, aby zajistila vlastním aplikacím povědomí o aktuálně platných záznamech.

@@ -1,0 +1,62 @@
+.. _examples:
+
+============================
+Appendix A: Message examples
+============================
+
+meteo-data.xml - weather data measured at one equipment
+=======================================================
+
+Publication contains one record for one equipment capable to measure several weather related characteristics.
+
+Equipment details (capabilities and location) are defined in different publication of type `MeasurementSiteTablePublication`, which is not described here in detail.
+
+The equipment, is identified by a measurement site table reference `id="CZ_DRU_MST_WEA"` (with version), and by measurement site reference `id="12"`, (with version).
+
+
+.. literalinclude:: ../../samples/meteo-data.xml
+   :language: xml
+
+Root element and publication envelope
+-------------------------------------
+
+Root element `d2LogicalModel` declares, that this message is using DATEX II.
+
+Element `exchange` contains provider identifier.
+
+Element `payloadPublication` is an envelope for actual information payload containing general information, measurement site table reference `measurementSiteTableReference` and one element `siteMeasurements`.
+
+Attribute `xsi:type="MeasuredDataPublication"` in element `payloadPublication` determines, that this envelope is of type Measured data publication.
+
+Element `feedType` states publication schema by its uri.
+
+Element `publicationTime` gives publication time for the whole publication which might be the time, for which were all traffic status values calculated (start of validity).
+
+Element `publicationCreator` identifies creator of the publication.
+
+Description of weather data at one place
+----------------------------------------
+
+The element `siteMeasurements` contains one or more measurements referenced to a particular road equipment `measurementSiteReference`. The `measurementSiteReference` is identified by id and version.
+
+`measurementTimeDefault` element gives time of validity for the set of measurement within one measurement site. It is also the time, when measured weather data were created (i.e. the end of the measurement period).
+
+Following element `measuredValue` can be repeated and describes a measured weather data for a particular measurement site. 
+
+The equipment (weather station) has 9 capabilities defined (defined in `MeasurementSiteTablePublication`). They are:
+
+- precipitation,
+- road surface conditions (3x),
+- temperature,
+- humidity,
+- visibility and
+- wind.
+
+The road surface conditions is there 3 times (indexes 2-4). First one defines overall characteristics and is used to convey road status. Remaining two are road lane related measurements (one for each lane) the latter form the two is in faulty state `measurementEquipmentFault`. 
+
+Nested element `basicData` contains the actual measured value of the given type.
+
+Time validity
+^^^^^^^^^^^^^
+
+Start of validity for measured data is stated by mandatory element `measurementTimeDefault`.

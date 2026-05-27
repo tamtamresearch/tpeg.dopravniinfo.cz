@@ -1,0 +1,236 @@
+
+
+<!doctype html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="cs">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Příloha A: Příklady zpráv &#8212; Dokumentace pro NDIC - DATEX II Situation Publication - Obsazenost parkovišť 1.0.0</title>
+    <link rel="stylesheet" href="_static/bizstyle.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/translations.js"></script>
+    <script type="text/javascript" src="_static/bizstyle.js"></script>
+    <link rel="index" title="Rejstřík" href="genindex.html" />
+    <link rel="search" title="Vyhledávání" href="search.html" />
+    <link rel="next" title="Příloha B: W3C XML Schéma" href="format.html" />
+    <link rel="prev" title="Koncepty" href="concepts.html" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <!--[if lt IE 9]>
+    <script type="text/javascript" src="_static/css3-mediaqueries.js"></script>
+    <![endif]-->
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigace</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="Obecný rejstřík"
+             accesskey="I">rejstřík</a></li>
+        <li class="right" >
+          <a href="format.html" title="Příloha B: W3C XML Schéma"
+             accesskey="N">další</a> |</li>
+        <li class="right" >
+          <a href="concepts.html" title="Koncepty"
+             accesskey="P">předchozí</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Dokumentace pro NDIC - DATEX II Situation Publication - Obsazenost parkovišť 1.0.0</a> &#187;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="index.html">
+              <img class="logo" src="_static/logo.png" alt="Logo"/>
+            </a></p>
+  <h3><a href="index.html">Obsah</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Příloha A: Příklady zpráv</a><ul>
+<li><a class="reference internal" href="#parking-xml-obsazenost-50">parking.xml - obsazenost 50 %</a><ul>
+<li><a class="reference internal" href="#korenovy-element-a-obalka-publikace">Kořenový element a obálka publikace</a></li>
+<li><a class="reference internal" href="#popis-jedne-konkretni-situace">Popis jedné konkrétní situace</a><ul>
+<li><a class="reference internal" href="#popis-udalosti-co-se-stalo">Popis události (co se stalo)</a></li>
+<li><a class="reference internal" href="#casova-platnost">Časová platnost</a></li>
+<li><a class="reference internal" href="#poloha-udalosti">Poloha události</a></li>
+<li><a class="reference internal" href="#dalsi-obsah">Další obsah</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  <h4>Přechozí téma</h4>
+  <p class="topless"><a href="concepts.html"
+                        title="předchozí kapitola">Koncepty</a></p>
+  <h4>Další téma</h4>
+  <p class="topless"><a href="format.html"
+                        title="další kapitola">Příloha B: W3C XML Schéma</a></p>
+  <div role="note" aria-label="source link">
+    <h3>Tato stránka</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/examples.rst.txt"
+            rel="nofollow">Ukázat zdroj</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Rychlé vyhledávání</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="OK" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="priloha-a-priklady-zprav">
+<span id="examples"></span><h1>Příloha A: Příklady zpráv<a class="headerlink" href="#priloha-a-priklady-zprav" title="Trvalý odkaz na tento nadpis">¶</a></h1>
+<div class="section" id="parking-xml-obsazenost-50">
+<h2>parking.xml - obsazenost 50 %<a class="headerlink" href="#parking-xml-obsazenost-50" title="Trvalý odkaz na tento nadpis">¶</a></h2>
+<p>Publikace obsahuje právě jednu zprávu o obsazenosti parkoviště P+R Černý most na 50 %.</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span>
+<span class="nt">&lt;d2LogicalModel</span> <span class="na">modelBaseVersion=</span><span class="s">&quot;2&quot;</span> <span class="na">xmlns=</span><span class="s">&quot;http://datex2.eu/schema/2/2_0&quot;</span>
+<span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;exchange&gt;</span>
+    <span class="nt">&lt;supplierIdentification&gt;</span>
+      <span class="nt">&lt;country&gt;</span>cz<span class="nt">&lt;/country&gt;</span>
+      <span class="nt">&lt;nationalIdentifier&gt;</span>ITSPARKING<span class="nt">&lt;/nationalIdentifier&gt;</span>
+    <span class="nt">&lt;/supplierIdentification&gt;</span>
+  <span class="nt">&lt;/exchange&gt;</span>
+  <span class="nt">&lt;payloadPublication</span> <span class="na">lang=</span><span class="s">&quot;cs&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;SituationPublication&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;feedType&gt;</span>x-format:cz-ndic_d2-common-v1.1<span class="nt">&lt;/feedType&gt;</span>
+    <span class="nt">&lt;publicationTime&gt;</span>2016-05-18T18:49:21+02:00<span class="nt">&lt;/publicationTime&gt;</span>
+    <span class="nt">&lt;publicationCreator&gt;</span>
+      <span class="nt">&lt;country&gt;</span>cz<span class="nt">&lt;/country&gt;</span>
+      <span class="nt">&lt;nationalIdentifier&gt;</span>DRU<span class="nt">&lt;/nationalIdentifier&gt;</span>
+    <span class="nt">&lt;/publicationCreator&gt;</span>
+    <span class="nt">&lt;situation</span> <span class="na">id=</span><span class="s">&quot;PR-2&quot;</span> <span class="na">version=</span><span class="s">&quot;8387&quot;</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;situationVersionTime&gt;</span>
+      2016-05-18T18:48:51+02:00<span class="nt">&lt;/situationVersionTime&gt;</span>
+      <span class="nt">&lt;headerInformation&gt;</span>
+        <span class="nt">&lt;confidentiality&gt;</span>noRestriction<span class="nt">&lt;/confidentiality&gt;</span>
+        <span class="nt">&lt;informationStatus&gt;</span>real<span class="nt">&lt;/informationStatus&gt;</span>
+        <span class="nt">&lt;urgency&gt;</span>normalUrgency<span class="nt">&lt;/urgency&gt;</span>
+      <span class="nt">&lt;/headerInformation&gt;</span>
+      <span class="nt">&lt;situationRecord</span> <span class="na">id=</span><span class="s">&quot;PR-2_CarParks&quot;</span> <span class="na">version=</span><span class="s">&quot;8387&quot;</span>
+      <span class="na">xsi:type=</span><span class="s">&quot;CarParks&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;situationRecordCreationTime&gt;</span>
+        2016-05-18T18:49:21+02:00<span class="nt">&lt;/situationRecordCreationTime&gt;</span>
+        <span class="nt">&lt;situationRecordVersionTime&gt;</span>
+        2016-05-18T18:48:51+02:00<span class="nt">&lt;/situationRecordVersionTime&gt;</span>
+        <span class="nt">&lt;probabilityOfOccurrence&gt;</span>riskOf<span class="nt">&lt;/probabilityOfOccurrence&gt;</span>
+        <span class="nt">&lt;source&gt;</span>
+          <span class="nt">&lt;sourceIdentification&gt;</span>ITSPARKING<span class="nt">&lt;/sourceIdentification&gt;</span>
+          <span class="nt">&lt;sourceName&gt;</span>
+            <span class="nt">&lt;values&gt;</span>
+              <span class="nt">&lt;value</span> <span class="na">lang=</span><span class="s">&quot;cs&quot;</span><span class="nt">&gt;</span>Správci parkovišť<span class="nt">&lt;/value&gt;</span>
+            <span class="nt">&lt;/values&gt;</span>
+          <span class="nt">&lt;/sourceName&gt;</span>
+        <span class="nt">&lt;/source&gt;</span>
+        <span class="nt">&lt;validity&gt;</span>
+          <span class="nt">&lt;validityStatus&gt;</span>definedByValidityTimeSpec<span class="nt">&lt;/validityStatus&gt;</span>
+          <span class="nt">&lt;validityTimeSpecification&gt;</span>
+            <span class="nt">&lt;overallStartTime&gt;</span>2016-05-18T18:48:51+02:00<span class="nt">&lt;/overallStartTime&gt;</span>
+            <span class="nt">&lt;overallEndTime&gt;</span>2016-05-18T19:03:51+02:00<span class="nt">&lt;/overallEndTime&gt;</span>
+          <span class="nt">&lt;/validityTimeSpecification&gt;</span>
+        <span class="nt">&lt;/validity&gt;</span>
+        <span class="nt">&lt;generalPublicComment&gt;</span>
+          <span class="nt">&lt;comment&gt;</span>
+            <span class="nt">&lt;values&gt;</span>
+              <span class="nt">&lt;value</span> <span class="na">lang=</span><span class="s">&quot;cs&quot;</span><span class="nt">&gt;</span>P+R Černý Most, Chlumecká, 50% obsazeno,
+              18.05.2016 18:48:51<span class="nt">&lt;/value&gt;</span>
+            <span class="nt">&lt;/values&gt;</span>
+          <span class="nt">&lt;/comment&gt;</span>
+        <span class="nt">&lt;/generalPublicComment&gt;</span>
+        <span class="nt">&lt;groupOfLocations</span> <span class="na">xsi:type=</span><span class="s">&quot;LocationByReference&quot;</span><span class="nt">&gt;</span>
+          <span class="nt">&lt;predefinedLocationReference</span> <span class="na">id=</span><span class="s">&quot;98D69F80-7E63-422B-A9B7-EEACE24C055C&quot;</span>
+          <span class="na">targetClass=</span><span class="s">&quot;PredefinedLocation&quot;</span> <span class="na">version=</span><span class="s">&quot;1&quot;</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;/groupOfLocations&gt;</span>
+        <span class="nt">&lt;carParkIdentity&gt;</span>P+R Černý Most<span class="nt">&lt;/carParkIdentity&gt;</span>
+        <span class="nt">&lt;carParkOccupancy&gt;</span>50<span class="nt">&lt;/carParkOccupancy&gt;</span>
+      <span class="nt">&lt;/situationRecord&gt;</span>
+    <span class="nt">&lt;/situation&gt;</span>
+  <span class="nt">&lt;/payloadPublication&gt;</span>
+<span class="nt">&lt;/d2LogicalModel&gt;</span>
+</pre></div>
+</div>
+<div class="section" id="korenovy-element-a-obalka-publikace">
+<h3>Kořenový element a obálka publikace<a class="headerlink" href="#korenovy-element-a-obalka-publikace" title="Trvalý odkaz na tento nadpis">¶</a></h3>
+<p>Kořenový element <cite>d2LogicalModel</cite> deklaruje, že se jedná o zprávu používající formát DATEX II.</p>
+<p>Element <cite>exchange</cite> obsahuje identifikátor poskytovatele.</p>
+<p>Element <cite>payloadPublication</cite> je obálkou pro přenos samotných informací, obsahující především elementy <cite>situation</cite>, kterých může být mnoho (v našem případě je jeden).</p>
+<p>Atribut <cite>xsi:type=“SituationPublication“</cite> v elementu <cite>payloadPublication</cite> určuje, že tato obálka je typu Publikace situace.</p>
+<p>Element <cite>feedType</cite> uvádí typ publikace, uri schématu.</p>
+<p>Element <cite>publicationTime</cite> uvádí čas vydání této publikace jako celku.</p>
+<p>Element <cite>publicationCreator</cite> identifikuje tvůrce publikace.</p>
+</div>
+<div class="section" id="popis-jedne-konkretni-situace">
+<h3>Popis jedné konkrétní situace<a class="headerlink" href="#popis-jedne-konkretni-situace" title="Trvalý odkaz na tento nadpis">¶</a></h3>
+<p>Následující element <cite>situation</cite> se může opakovat a popisuje jednotlivé samostatné dopravní informace. Element <cite>situationRecord</cite> se v tomto případě vyskytuje v elementu <cite>situation</cite> právě jednou.</p>
+<p>Element <cite>situationVersionTime</cite> uvádí čas vydání této verze situace jako celku.</p>
+<p>Element <cite>headerInformation</cite> popisuje způsob nakládání s popisovanými informacemi.</p>
+<div class="section" id="popis-udalosti-co-se-stalo">
+<h4>Popis události (co se stalo)<a class="headerlink" href="#popis-udalosti-co-se-stalo" title="Trvalý odkaz na tento nadpis">¶</a></h4>
+<p>Atribut <cite>xsi:type=“CarParks“</cite> elementu <cite>situationRecord</cite> určuje typ zprávy, jedinou používanou třídu v tomto formátu.</p>
+<p>Z této třídy jsou pak níže využity elementy <cite>carParkIdentity</cite> s hodnotou <cite>P+R Černý Most</cite> a element <cite>carParkOccupancy</cite> udávající konkrétní hodnotu obsazenosti <cite>50</cite> procent.</p>
+</div>
+<div class="section" id="casova-platnost">
+<h4>Časová platnost<a class="headerlink" href="#casova-platnost" title="Trvalý odkaz na tento nadpis">¶</a></h4>
+<p>Časová platnost situace je určena ve strukturách <cite>validity</cite> odhadem časového intervalu platnosti hodnotami od <cite>overallStartTime</cite> do <cite>overallEndTime</cite>.</p>
+</div>
+<div class="section" id="poloha-udalosti">
+<h4>Poloha události<a class="headerlink" href="#poloha-udalosti" title="Trvalý odkaz na tento nadpis">¶</a></h4>
+<p>Poloha události je vyjádřena odkazem do sady předem definovaných míst. Pro dohledání místa je proto nutno získat publikaci
+<cite>PredefinedLocationsPublication</cite> související s tímto zdrojem informací a v něm dohledat polohu shodného typu (dle <cite>targetClass</cite>, zde <cite>PredefinedLocation</cite>), se stejným identifikátorem a verzí.</p>
+<p>Poloha, pro kterou informace o počasí platí, je specifikována pomocí elementu <cite>groupOfLocations</cite>. Ten má vždy <cite>xsi:type=“LocationByReference“</cite>. Samotný odkaz je proveden vnořeným elementem <cite>predefinedLocationReference</cite> s atributem <cite>targetClass=“PredefinedLocation“</cite>.</p>
+<p>Atribut <cite>id=“98D69F80-7E63-422B-A9B7-EEACE24C055C“</cite> odkazuje na předem definovanou polohu s daným identifikátorem a atribut <cite>version=“1“</cite> upřesňuje, o kterou verzi popisu polohy jde.</p>
+</div>
+<div class="section" id="dalsi-obsah">
+<h4>Další obsah<a class="headerlink" href="#dalsi-obsah" title="Trvalý odkaz na tento nadpis">¶</a></h4>
+<p>Mimo časovou platnost situace dokument uvádí čas vydání první verze <cite>situationRecordCreationTime</cite> a aktuální verze <cite>situationRecordVersionTime</cite> záznamu <cite>situationRecord</cite>.</p>
+<p>Element <cite>source</cite> uvádí tvůrce této informace, tedy kdo tuto informaci vytvořil a odpovídá za její správnost.</p>
+<p>Element <cite>generalPublicComment</cite> obsahuje obecný popis děje popsaného ve zprávě, většinou pouze v čj. Jedná se o volný popis situace jejím tvůrcem.</p>
+</div>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigace</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="Obecný rejstřík"
+             >rejstřík</a></li>
+        <li class="right" >
+          <a href="format.html" title="Příloha B: W3C XML Schéma"
+             >další</a> |</li>
+        <li class="right" >
+          <a href="concepts.html" title="Koncepty"
+             >předchozí</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Dokumentace pro NDIC - DATEX II Situation Publication - Obsazenost parkovišť 1.0.0</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2017, TamTam Research s.r.o..
+      Vytvořeno pomocí <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.4.
+    </div>
+  </body>
+</html>

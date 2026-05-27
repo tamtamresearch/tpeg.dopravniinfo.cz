@@ -1,0 +1,28 @@
+Changelog
+=========
+
+version 1.2
+
+- corrected location of globalNetworkLinear and globalNetworkPoint in the XML tree (as extension)
+- corrected type of the networkVersion to the simple string from multilingual string
+- excluded from documentation not used location reference methods (mainly point location references since they are not used for predefined location sets
+- simplified documentation
+- included changelog in the documentation
+
+version 1.1.0
+
+- added pointByCoordinates to concepts, schema and samples
+- added feed type to schema and samples
+- added OpenLR location to schema
+
+version 1.0.1
+
+- revision of the documentation, proofreading, changes to examples
+
+version 1.0.0 
+
+- Initial format and documentation
+
+
+
+

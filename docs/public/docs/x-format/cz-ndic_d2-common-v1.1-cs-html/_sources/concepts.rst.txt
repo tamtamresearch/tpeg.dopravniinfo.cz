@@ -1,0 +1,189 @@
+========
+Koncepty
+========
+
+Popisovaný formát umožňuje poskytování obecných informací o dopravní situaci. Jedná se zejména o nehody, omezení, uzavírky, stavy dopravy, aktivity na silnici atp.
+
+Publikace typu SituationPublication
+===================================
+
+Formát vychází z DATEX II publikace typu `SituationPublication` [16157-3]_. Profil využívá většiny datových struktur, který tato publikace nabízí.
+
+.. literalinclude:: ../../samples/accident.xml
+   :language: xml
+   :linenos:
+   :lineno-match:
+   :end-before: <situation
+
+Popis události (Situation a SituationRecords)
+=============================================
+
+`SituationPublication` předepisuje popis pomocí třídy `Situation`, která agreguje instance třídy `SituationRecord` (resp. její potomky). Mimo to obsahuje `Situation` hlavičku s obecným popisem dostupnosti služby.
+
+Element `situation` se může opakovat a popisuje jednotlivé samostatné dopravní informace. Popisovaná situace se může vyvíjet v čase, element je tedy verzovaný a má svůj unikátní identifikátor. 
+
+Element `situationRecord` se v elementu `situation` může vyskytnout i vícekrát (pokaždé ale jiného typu), většinou se pak jedná o informace související s jednou událostí, situací. Element `situationRecord` se může vyvíjet v čase, element je tedy verzovaný a má svůj unikátní identifikátor.
+
+Do publikace dopravní situace zejména patří:
+
+- Zvýšená dopravní zátěž, tj. tvorby kolon, dopravní kolaps
+- Nehody
+- Aktivity na komunikaci,
+- Podmínky provozu
+
+  - stav vozovky vztažený k počasí (sníh, voda atd.)
+  - stav vozovky ostatní (písek, olej, rozsypaný náklad atd.)
+  - podmínky dané prostředím (srážky, viditelnost, vítr atd.)
+
+- Akce správce komunikace
+
+  - Práce na silnici
+  - Správa komunikace
+
+    - Objížďky
+    - Omezení rychlosti
+    - Změna uspořádání dopravy
+
+Pro popis událostí je využita většina struktur, poskytovaných třídou `SiutationPublication`. Přesné vymezení viz W3C XML schéma nebo případně [d2ref]_.
+
+.. literalinclude:: ../../samples/accident.xml
+   :language: xml
+   :linenos:
+   :lineno-match:
+   :start-after: </publicationCreator>
+   :end-before: </payloadPublication>
+
+Popis polohy události (bodové či liniové lokace)
+================================================
+
+Poloha může být popsána bodem nebo krátkým liniovým úsekem, oba typy vždy vztažené k silniční síti.  Nepoužívají se polohy typu oblast a samostatné bodové polohy bez vazby na linii. Každý `SituationRecord` má svůj popis polohy, který se může (a nemusí) v rámci jedné `Situation` lišit. Například jeden `SituationRecord` popisující bodový zdroj problému, který vyústil v liniový problém (druhý `SituationRecord`).
+Poloha je popsána přímo v souboru pomocí několika různých metod. 
+
+.. literalinclude:: ../../samples/accident.xml
+   :language: xml
+   :linenos:
+   :lineno-match:
+   :start-after: </generalPublicComment>
+   :end-before: <accidentType
+
+Způsoby popisu polohy jsou dále popsány v kapitole "Popisování poloh".
+
+===============
+Časová platnost
+===============
+
+Časová platnost je uvedena pro každou jednotlivou událost (`SituationRecord`) samostatně a je vymezena časovým intervalem mezi dvěma časovými okamžiky. Třída Validity využívá výhradně instanci třídy `OverallPeriod` v roli `validityTimeSpecification` a elementy `overallStartTime` a `overallStopTime` definují začátek a konec tohoto intervalu. 
+
+V popisu časové platnosti se nepoužívají opakující se intervaly hodinové či denní platnosti, například pro opakované noční uzavírky tunelů. Opakovaná událost se popíše pomocí více po sobě jdoucích událostí, platných v daném čase.
+
+Použité intervaly platnosti mohou spadat do minulosti, současnosti i budoucnosti.
+
+.. literalinclude:: ../../samples/accident.xml
+   :language: xml
+   :linenos:
+   :lineno-match:
+   :start-after: <probabilityOfOccurrence>
+   :end-before: <generalPublicComment
+
+================
+Popisování poloh
+================
+
+Polohy popisovaných událostí jsou různorodé a nelze je předem připravit. Z toho důvodu nelze využít popis pomocí odkazu na `PrefefinedLocationPublication`. Při popisu poloh se proto vždy využívají vnořené popisy instancí třídy `Location`, konkrétně potomci třídy `NetworkLocation`, jmenovitě buď třídou `Point`, nebo `Linear`. Popis polohy je vnořen v elementu `groupOfLocations` přetypovaným na typ `Point`, nebo `Linear`.
+
+.. literalinclude:: ../../samples/accident.xml
+   :language: xml
+   :linenos:
+   :lineno-match:
+   :start-after: </generalPublicComment>
+   :end-before: <alertCLinear
+
+K popisu polohy je možné použít 3 metody pro popis liniové lokace a 3 metody pro popis bodové lokace v závislosti na jejich dostupnosti v dané lokalitě. Měl by být uveden alespoň jeden popis. Nepoužívá se bodový popis lokace bez vazby na liniovou lokaci.
+
+Následující popis obsahuje pouze výběr nejpoužívanějších metod popisu polohy.
+
+Popis polohy pomocí ALERT-C
+===========================
+
+Metoda popisuje polohu pomocí ALERT-C kódů, třídou `alertCLinear` typu `AlertCMethod2Linear`, pro liniové lokace, či `alertCPoint` typu `AlertCMethod2Point`, pro bodové lokace. Jiné typy popisu ALERT-C se nepoužívají. Použití této metody závisí na přítomnosti ALERT-C lokace v daném místě.
+
+Metoda `alertCLinear` používá k popisu události primární lokaci (element `alertCMethod2PrimaryPointLocation`), sekundární lokaci (element `alertCMethod2SecondaryPointLocation`) a směr (element `alertCDirection`). Metoda samozřejmě obsahuje i prvky umožňující identifikaci konkrétní lokační tabulky.
+
+Element `alertCLinear` se může v popisu situace vyskytnout vícekrát a to pro dlouhé události, které musí být popsány více než jednou ALERT-C cestou. ALERT-C totiž umožňuje řetězit lokace pouze v rámci jedné cesty.
+
+Primární lokace je dle principu ALERT-C místo kde došlo k nehodě, či kde řidič opouští problémovou oblast. Sekundární lokace je konec kolony či místo, kde řidič poprvé vjíždí do problémové oblasti. 
+
+Tato metoda je v mírném nesouladu se systémy RDS-TMC, kde se ALERT-C lokalizace používá ve tvaru: primární lokace, směr a rozsah. Sekundární lokace stejně jako mezilehlé lokace se dohledávají v lokační tabulce. Jsou li tedy systémy příjemce uzpůsobeny rekonstrukci události dle RDS-TMC bude je nutné upravit.
+
+Pro popis bodové lokace (i vnitřek křižovatky či tunelu, tedy krátký úsek) se používá metoda `alertCPoint`. Ta používá k popisu události primární lokaci (element `alertCMethod2PrimaryPointLocation`) a směr (element `alertCDirection`). Metoda samozřejmě obsahuje i prvky umožňující identifikaci konkrétní lokační tabulky.
+
+.. literalinclude:: ../../samples/brokendownvehicles.xml
+   :language: xml
+   :linenos:
+   :lineno-match:
+   :start-after: </supplementaryPositionalDescription>
+   :end-before: <linearWithinLinearElement>
+
+Pokud je potřeba vyjádřit krátkou liniovou lokaci pokrytou jedním ALERT-C bodem (například most, tunel, vnitřek křižovatky, atp.) i pomocí jiných polohopisných metod, nezbývá než použít pro její vyjádření metodu alertCLinear (kde druhá lokace je rovna té první). Všechny popisy polohy totiž musí být jednoho typu, tedy buď bodové nebo liniové.
+
+Popis polohy pomocí vztahu k obecně popsanému úseku silniční sítě
+=================================================================
+
+Metoda používá pro popis polohy "adresu" komunikace (název, oblast, číslo, atp.) a vzdálenost polohy události od počátku a konce této komunikace. Pro popis úseku se používá třída `linearWithinLinearElement` a pro popis bodu třída `pointAlongLinearElement`. Použití této metody závisí na přítomnosti vhodného popisu komunikace (ideální například pro dálnice).
+
+Element `roadNumber` popisuje číslo ovlivněné komunikace, element `directionRelativeOnLinearSection` popisuje směr ovlivněné komunikace a elementy `fromPoint` a `toPoint` popisují vzdálenost počátku a konce události od počátku silnice.
+
+.. literalinclude:: ../../samples/brokendownvehicles.xml
+   :language: xml
+   :linenos:
+   :lineno-match:
+   :start-after: </alertCLinear>
+   :end-before: <globalNetworkLinear>
+
+Metoda pro popis bodového místa `pointAlongLinearElement` se liší tím, že pouze popisuje jednu vzdálenost od počátku identifikované komunikace místo dvou.
+
+
+Popis polohy pomocí rozšíření Global Network
+============================================
+
+Toto je metoda využívající rozšíření DATEX II modelu úrovně B.
+
+Metoda používá pro popis polohy konkrétní identifikátory úseků ovlivněné silniční sítě tak, jak jsou zaneseny v databázi Global Network (GN) a souřadnice počátku a konce události (v referenčním systému S-JTSK). Koncový a počáteční úsek je zkrácen pomocí relativní vzdálenosti bodu začátku a konce události vzhledem k úseku GN.
+
+Pro popis úseku se používá třída `globalNetworkLinear` a pro popis bodu třída `pointWithinLinearGNElement`.
+
+Element `globalNetworkLinear` popisuje polohu jedné události na síti. Obsahuje identifikátor verze sítě `networkVersion`, body ohraničující počátek a konec události elementy `startPoint` a `endPoint` v souřadnicích (zde S-JTSK). A jeden či více elementů `linearWithinLinearGNElement` který popisuje konkrétní úseky sítě GN prostřednictvím jejich směru, identifikátoru, pořadí v lokaci a relativního zkrácení (pro první a poslední úsek). 
+
+Toto je nativní způsob zadávání polohy v NDIC.
+
+.. literalinclude:: ../../samples/brokendownvehicles.xml
+   :language: xml
+   :linenos:
+   :lineno-match:
+   :start-after: </linearWithinLinearElement>
+   :end-before: </groupOfLocations>
+
+Metoda pro popis bodového místa `pointWithinLinearGNElement` pouze popisuje jednu vzdálenost od počátku identifikovaného segmentu GN místo dvou. Je velmi podobná metodě `pointAlongLinearElement`.
+
+Popis polohy pomocí souřadnic
+=============================
+
+Popis polohy pouze pomocí souřadnic, bez vazby na liniovou lokaci není dovolen. 
+
+Obě definované metody `pointByCoordinates` a  `pointByMultiCoordinates` je tedy možné použít pouze v rámci v předchozím textu definovaných popisech.
+
+Bodovou polohu je možné popsat pomocí souřadnic referenčního systému. Je možné použít 2 různé popisy podle toho je li potřeba popsat polohu v referenčním systému WGS-84 či S-JTSK. 
+
+V případě standardního popisu prostřednictvím souřadnic v systému WGS-84 se použije element `pointByCoordinates`. 
+
+Pokud je nutné popsat polohu prostřednictvím souřadnic v systému S-JTSK se použije element `pointByMultiCoordinates` ten umožňuje jak popis ve standardním WGS-84 tak i v české projekci S-JTSK.
+Toto je metoda využívající rozšíření DATEX II modelu úrovně B.
+
+
+.. literalinclude:: ../../samples/accident.xml
+   :language: xml
+   :linenos:
+   :lineno-match:
+   :start-after: </linearGeometryType>
+   :end-before: <endPoint>
+

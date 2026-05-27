@@ -1,0 +1,34 @@
+.. NDIC HTTP push all deltas on occurrence documentation master file, created by
+   sphinx-quickstart on Thu Aug 17 08:11:18 2017.
+   You can adapt this file completely to your liking, but it should at least
+   contain the root `toctree` directive.
+
+Protocol: NDIC HTTP push all deltas on occurrence
+=================================================
+
+:uri:	cz-ndic_push-v1.0
+:protocol:	1.0
+:specification:	1.0.1
+:Author: 	Jan Vlčinský
+:Date: 	2016-05-24
+:Contact: 	http://registr.dopravniinfo.cz
+:Organization: 	NDIC
+
+This document describes protocol, used to send data from provider to consumer at the moment, new version of data occurs. The protocol uses HTTP POST.
+
+This protocol is used by NDIC to send updates of data in DDR format, however, it can be used by any other subject to send any kind of data in any format.
+
+In this document we abbreviate the protocol name to PUSH.
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Contents:
+
+   quick_summary
+   concepts
+   pim_pattern
+   http_impl
+   testing
+
+
+

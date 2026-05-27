@@ -1,0 +1,32 @@
+name:
+    "cs": DATEX II VMS Table Publication – Proměnné dopravní značení
+    "en": DATEX II VMS Table Publication – Variable Message Signs
+version_info:
+    version: "1.1"
+    publish_date: 2023-08-23
+encoding: UTF-8
+syntax: XML
+#schema.type
+grammar: W3C XML Schema (XSD)
+model: DATEX II
+model_version: DATEX II v3.3
+#model.profile_base
+model_description: DATEX II v3.3/VmsTablePublication
+#extended_parts
+model_extension: "none"
+description:
+    "cs": |
+        Profil odvozený z DATEX II VMS Table Publication, verze 3.3, používaný pro informování dlouhodobě neměnném stavu proměnného dopravního značení (poloha, konfigurace).
+    "en": |
+        Profile derived from DATEX II VMS Table Publication, version 3.3, used for publishing information about tong term valid status of Variable Message Signs (location, configuration).
+additional_description:
+    "cs": |
+        <i>Aktualizace profilu (1.0 -> 1.1) obsahuje rozšíření hodnot atributu physicalSupportEnum</i>
+        <b>Součástí popisu formátu je překladová tabulka VMS a detailní ukázka příkladů včetně obrazové dokumentace.</b>
+    "en": |
+        <i>Profile update (1.0 -> 1.1) contains broadening selection of values of physicalSupportEnum attribute.</i>
+        <b>The part of the format is a mapping table traffic signs (VMS) to this DATEX II profile and detailed picture documentation of the samples.</b>
+publications:
+    html: []
+    pdf: [cs, en]
+    zip: [en-cs]

@@ -1,0 +1,19 @@
+=========================
+Příloha B: W3C XML Schéma
+=========================
+
+Struktura XML přenášené zprávy je závazně definována pomocí
+následujícího W3C XML Schématu:
+
+`schema.xsd`
+============
+.. literalinclude:: ../../schema/schema.xsd
+   :language: xml
+   :linenos:
+   :lineno-match:
+   :lines: 1-1000
+.. literalinclude:: ../../schema/schema.xsd
+   :language: xml
+   :linenos:
+   :lineno-match:
+   :lines: 1001-

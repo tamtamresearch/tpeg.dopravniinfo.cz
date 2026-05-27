@@ -1,0 +1,96 @@
+========
+Koncepty
+========
+
+Popisovaný formát umožňuje poskytnutí dlouhodobě platných (statických) informací o parkovištích,
+jejich uspořádání, vybavení a poskytovaných službách.
+
+Struktura publikace `ParkingTablePublication`
+=============================================
+
+Informace o parkovištích jsou relativně statického charakteru  a jsou poskytované pomocí publikace `ParkingTablePublication` [16157-6]_.
+
+Každá jedna publikace je reprezentována jedním XML dokumentem.
+
+V každé publikaci je jedna tabulka odpočívek `parkingTable`, sestávající ze záznamů
+sady odpočívek ve formě `parkingRecord`.
+
+Organizace odpočívky `parkingRecord`
+====================================
+
+*Skupina parkovišť* `GroupOfParkingSites` se v tomto profilu *nepoužívá*.
+
+*Odpočívka* `ParkingRecord` je základním prvkem, ke které jsou stručně uvedeny *základní statistické údaje* o počtech typů parkovacích míst a dále obsahuje *fyzické skupiny parkovacích míst* (podle prostorového uspořádání) s veškerými potřebnými detaily.
+
+Statistika počtů parkovacích míst
+---------------------------------
+
+K popisu statistiky počtů míst pro různé typy vozidel je použito stručné
+varianty `GroupOfParkingSpaces` s atributem `parkingTypeOfGroup` s hodnotou `statisticsOnly`.
+
+Tyto statistické skupiny jsou velmi stručné a prakticky uvádí jen počty pro odpočívku jako celek.
+
+Je požadováno, aby byla použita minimálně skupina pro mrazící vozidla a to i v případě, že počet
+takových míst je nula.
+
+Fyzické skupiny parkovacích míst
+--------------------------------
+ 
+*Fyzické skupiny parkovacích míst* také využívají `GroupOfParkingspaces`, slouží ale k vyjádření organizace odpočívky podle toho, jak se dá k uvedeným skupinám míst dojet (s případnou podporou navigačních tabulí).
+
+V tomto případě má již skupina bohatější informační obsah, uvádí např. společné charakteristiky pro svá místa.
+
+Parkovací místa
+---------------
+
+*Parkovací místo* `ParkingSpace` je nejnižším organizačním prvkem parkoviště.
+
+Vjezdy a výjezdy
+================
+Každá odpočívka má vlastní množinu vjezdů a výjezdů `ParkingAccess`.
+
+Služby a vybavení
+=================
+
+Na parkovišti, skupině parkovacích míst nebo přímo na parkovacím místě mohou být k dispozici různé služby či vybavení (`ParkingEquipmentOrFacility` s realizací třídami `ServiceFacility`, `Equipment` nebo `ElectricCharging`). Příkladem mohou být např. restaurace, dobíjecí stanice pro elektromobily, přípojka pro mrazící vůz apod. 
+
+Adresář kontaktů
+================
+Pro každé parkoviště musí být uveden minimálně jeden kontakt (element s typem `ContactDetails`) na provozovatele. Nepovinně mohou být uvedeny také další typy konktaktních informací (bezpečnostní služba, servisní služba atp.).
+
+Identifikátory objektů
+======================
+
+Identifikace textovým identifikátorem (`id`)
+--------------------------------------------
+Řada typů objektů je identifikována unikátním identifikátore ve formě textového řetězce. Některé
+mohou být navíc verzované.
+
+Příkladem mohou být:
+
+- `parkingTable`: verzovaný, unikátní v rámci publikace.
+- `parkingRecord`: verzovaný, unikátní v rámci odpočívky.
+- `parkingAccess`: neverzovaný, unikátní v rámci odpočívky.
+- element typu `ContactDetail`: verzovaný, unikátní v rámci publikace.
+
+Identifikace pořadovým číslem (`index`)
+---------------------------------------
+
+Řada typů objektů je identifikována svým pořadovým číslem. Čísla začínají na hodnotě `1` a
+pokračují souvislou řadou.
+
+Příkladem mohou být:
+
+- `groupIndex`: index skupiny parkovacích míst v rámci `parkingRecord`.
+- `equipmentOrServiceFacilityIndex`: index služby nebo vybavení v rámci `parkingRecord`.
+- `parkingSpaceIndex`: index parkovacího místa v rámci `parkingRecord`.
+- `scenarioIndex`: index scénáře použití v rámci `parkingRecord`.
+
+Popis polohy
+============
+
+Poloha odpočívky `parkingLocation` se uvádí přibližným geometrickým středem v GPS souřadnicích `pointByCoordinates`. Dále je poloha popsána pomocí ALERT-C lokalizace `alertCPoint`, pokud pro danou odpočívku existuje (pokut je tedy odpočívka explicitně zavedena v ALERT-C tabulce). Další metodou popisu polohy je umístění podél komunikace `pointAlongLinearElement`, obsahující název  a směr komunikace a staničení. 
+
+Schéma dovoluje i popis v OpenLR.
+
+Více viz [16157-2]_.

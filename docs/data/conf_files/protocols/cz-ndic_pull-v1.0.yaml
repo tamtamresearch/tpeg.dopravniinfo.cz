@@ -1,0 +1,22 @@
+name:
+    "cs": HTTP PULL na vyžádání
+    "en": HTTP PULL Upon Request
+version_info:
+    version: v1.0
+    publish_date: 2015-08-04
+interface: HTTP/HTTPS
+communication_method: Pull on request
+description:
+    "cs": |
+        Distribuce datové sady (statické datové sady či snímky dopravní situace) na vyžádání odběratelem, metodou HTTP PULL.
+    "en": |
+        Distribution of data sets (static data sets or traffic information snapshots) upon subscribers request by , HTTP PULL.
+additional_description:
+    "cs": |
+        Více v registru odběrů poskytovatele [https://mobilitydata.rsd.cz](https://mobilitydata.rsd.cz).
+        Samotný odběr je parametrizován pomocí hodnoty **pls_key**, která je uvedená u každého statického datového zdroje.
+    "en": |
+        More in the subscription register [https://mobilitydata.rsd.cz](https://mobilitydata.rsd.cz).
+        The subscription itself is parametrized by a value of **pls_key** attribute of the respective static data source.
+publications:
+    pdf: [cs]

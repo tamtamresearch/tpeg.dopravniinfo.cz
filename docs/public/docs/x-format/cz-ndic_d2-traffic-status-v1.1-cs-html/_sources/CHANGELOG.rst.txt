@@ -1,0 +1,15 @@
+Changelog
+=========
+
+version 1.1.0
+
+- added feed type to schema and samples
+- added sourceIdentification to samples
+
+version 1.0.1
+
+- revision of the documentation, proofreading, changes to examples
+
+version 1.0.0 
+
+- Initial format and documentation

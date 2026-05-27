@@ -1,0 +1,19 @@
+Changelog
+=========
+
+version 1.2
+
+- added urlLink to situationRecord for additional description on the web
+- added: feedDescription and safetyRelatedMessage tags
+
+version 1.1.0
+
+- added feed type to schema and samples
+
+version 1.0.1
+
+- revision of the documentation, proofreading, changes to examples, some texts regarding locations and concepts have been modified to be more specific.
+
+version 1.0.0 
+
+- Initial format and documentation

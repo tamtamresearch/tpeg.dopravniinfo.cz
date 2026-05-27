@@ -1,0 +1,36 @@
+# List of Traffic Information Sources
+
+**Source** is a real service allowing subscription to traffic information.
+
+In the following tables, the sources are divided by type, into dynamic and static. Each row of the table lists:
+
+- provider
+- name of the resource, including its unique uri, format and version
+- status of the resource and its corresponding Delegated Regulation(s)
+- description of the resource
+
+## Dynamic sources
+
+| Provider | Name / id / format | Status /<br/> Regulation[^regulation] | Description |
+|-|-|-|-|
+{% for srckey, srccfg in sources -%}
+{% if srccfg.content.content_type == 'dynamic' %}
+| [{{ providers[srccfg.responsibilities.publisher].name | locstr(lang) }}](../providers/{{ srccfg.responsibilities.publisher }}) | [{{ srccfg.name | locstr(lang) }}]({{ srckey }}) <br/><br/> `{{ srckey }}` <br/> {% for format_id in srccfg.access_info.formats -%}{% set format = formats[format_id] -%}`{{ format.model_version }}` {% endfor %} | {{ srccfg.quality_information.status | locstr(lang) }} <br/><br/> {% for act in srccfg.quality_information.ec_acts -%}`{{ act }}` {% endfor %} | {{ srccfg.description | locstr(lang) | trim }} |
+{% endif -%}
+{% endfor %}
+
+## Static sources
+
+| Provider | Name / id / format | Status /<br/> Regulation[^regulation] | Description |
+|-|-|-|-|
+{% for srckey, srccfg in sources -%}
+{% if srccfg.content.content_type == 'static' %}
+| [{{ providers[srccfg.responsibilities.publisher].name | locstr(lang) }}](../providers/{{ srccfg.responsibilities.publisher }}) | [{{ srccfg.name | locstr(lang) }}]({{ srckey }}) <br/><br/> `{{ srckey }}` <br/> {% for format_id in srccfg.access_info.formats -%}{% set format = formats[format_id] -%}`{{ format.model_version }}` {% endfor %} | {{ srccfg.quality_information.status | locstr(lang) }} <br/><br/> {% for act in srccfg.quality_information.ec_acts -%}`{{ act }}` {% endfor %} | {{ srccfg.description | locstr(lang) | trim }} |
+{% endif -%}
+{% endfor %}
+
+
+[^regulation]: - Commission Regulation [886/2013](https://eur-lex.europa.eu/eli/reg_del/2013/886) – “provision of safety related traffic information” (`srti`)
+    - Commission Regulation [885/2013](https://eur-lex.europa.eu/eli/reg_del/2013/885) – “provision of parking information for safe and secure truck parking” (`sstp`)
+    - Commission Regulation [2022/670](https://eur-lex.europa.eu/eli/reg_del/2022/670) – “provision of real time traffic information” (`rtti`)
+    - Commission Regulation [2017/1926](https://eur-lex.europa.eu/eli/reg_del/2017/1926) – “provision of EU-wide multimodal travel information services” (`mmtis`)

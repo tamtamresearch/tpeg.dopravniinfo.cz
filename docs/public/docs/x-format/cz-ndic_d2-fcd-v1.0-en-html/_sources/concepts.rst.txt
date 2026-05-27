@@ -1,0 +1,333 @@
+========
+Concepts
+========
+
+The described format allows the provision of floating car data (FCD) information. This includes travel times, traffic flow speeds, traffic levels and estimation of congestion lengths on a set of predefined locations.
+
+Publications of type ElaboratedDataPublication
+==============================================
+
+The format is based on the DATEX II publication type `ElaboratedDataPublication` [16157-5]_ and uses it to transfer information about **travel times**, **speeds** and **traffic levels** on a set of predefined locations.
+The information about **traffic levels**, **length of queues** with their **start and end** is added via the level B extension of the `TrafficStatus` class of the DATEX II model. 
+
+Information about **data quality** and **number of FCD vehicles** on the segment, including their type, is added via the level B extension of the `TravelTimeData` class of the DATEX II model. 
+
+.. literalinclude:: ../../samples/fcd-compatibility-mode.xml
+   :language: xml
+   :linenos:
+   :lineno-match:
+   :end-before: <!-- information from one segment -->
+
+FCD information for a particular route/segment is listed in 3 `elaboratedData` elements, since the `elaboratedData` element can only hold **one type of information at one time**:
+
+* traffic density in the `TrafficStatus` class + traffic levels (by CZ) and congestions in its extension,
+* traffic speed in class `TrafficSpeed` and
+* travel time in class `TravelTimeData` + quality parameters in its extension.
+ 
+The `elaboratedData` element does not have its own unique identifier and is uniquely determined by the publication time and the referenced location identifier.
+
+The identification of the profile of the transport information provided is given in the `feedType` element referring to the specific documentation published in the NAP (national access point).
+
+
+Calculated FCD information
+==========================
+
+The status information included in this profile is:
+
+* traffic flow speed [km/h] per
+
+  - actual conditions
+  - in free flow conditions (freeFlow)
+* travel times [s] per
+
+  - actual conditions
+  - in free flow conditions (freeFlow)
+* actual delay [s] (as the difference between actual - free flow travel times)
+* traffic density [-] (as determined by the `trafficStatusEnum` enumeration)
+
+Other information included in this profile is:
+
+* system response times [s] (as the difference between the input data availability time and the status information calculation time)
+
+The status information included in this profile by extension of the `TrafficStatus` class is:
+
+* traffic levels [-] (1-5 as used in the Czech Republic)
+* queues on the segment, estimation of their length [m] and estimation of the start [%] and end [%] of the queue on the referenced segment
+
+The common qualitative parameters included in this profile by extending the `TravelTimeData` class are:
+
+* data confidence level [-]
+* number of FCD vehicle probes on the segment [-]
+
+
+**Information included by the extension is shown in Figure 1.**
+
+.. figure:: img/NdicFcdExtension.png
+  :alt: TrafficStatus and TravelTimeData class extension
+
+  TrafficStatus and TravelTimeData class extension. 
+
+The following articles are dedicated to the description of each status information. 
+
+Data Reliability Measures
+-------------------------
+
+The **Data Reliability Rate** characterizes the quality of the data sample and has values <0-1> where 1 means 100% reliable data. The quality of the data sample is evaluated by the age of the input positions used, their number, etc. The calculation formula is not part of this profile.
+
+The data reliability rate is given for a segment in the `travelTimeDataExtension` in the `supplierCalculatedDataQuality` element and applies to all `elaboratedData` elements related to the segment. 
+
+.. literalinclude:: ../../samples/fcd-compatibility-mode.xml
+   :language: xml
+   :linenos:
+   :lineno-match:
+   :start-after: <!-- extension: quality parameters and number of vehicles on the segment -->
+   :end-before: <numberOfFcdVehicles>
+   
+The profile allows (but does not require) specifying the data reliability rate for each calculated value separately by the `supplierCalculatedDataQuality` attribute. If specified, this value takes precedence over the value at a more generic level.
+
+.. literalinclude:: ../../samples/fcd-compatibility-mode.xml
+   :language: xml
+   :linenos:
+   :lineno-match:
+   :start-after: <!-- free flow vehicle speed information -->
+   :end-before: <!-- extension: quality parameters and number of vehicles on the segment -->
+
+Actual number of floating vehicles
+----------------------------------
+
+The actual **number of floating vehicles** from which the values were calculated is given in the `numberOfFcdVehicles` element of the `trafficStatusExtension` element and applies to all `elaboratedData` elements related to the segment. 
+
+The **number of floating vehicles** can be specified in more detail by vehicle category. The vehicle category is expressed by the value of the `vehicleType` element embedded in the `vehicleGroup` element. One `vehicleGroup` may be used for each value of `vehicleType`, with the value of `anyVehicle` being used to express the total number of vehicles of all categories.
+
+.. literalinclude:: ../../samples/fcd-compatibility-mode.xml
+   :language: xml
+   :linenos:
+   :lineno-match:
+   :start-after: <supplierCalculatedDataQuality>
+   :end-before: </qualityParameters>
+
+The profile allows (but does not require) specifying the total number of vehicle probes used for each calculated value separately by the `numberOfInputValuesUsed` attribute.
+
+.. literalinclude:: ../../samples/fcd-compatibility-mode.xml
+   :language: xml
+   :linenos:
+   :lineno-match:
+   :start-after: <!-- traffic status information -->
+   :end-before: <!-- extension: traffic level and queue information -->
+
+Some statistics, such as `freeFlowSpeed` or `freeFlowTravelTime`, are independent of the number of floating vehicles. In this case, the value of the number of vehicles, if specified by the `numberOfInputValuesUsed` attribute, is set to `9999`. 
+
+.. literalinclude:: ../../samples/fcd-compatibility-mode.xml
+   :language: xml
+   :linenos:
+   :lineno-match:
+   :start-after: <!-- historical data from fcd vehicles database -->
+   :end-before: <!-- free flow vehicle speed information -->
+
+Traffic flow speed
+------------------
+
+The **traffic flow speed** [km/h] on the segment is given by two separate `elaboratedData` elements. The actual average speed `averageVehicleSpeed` in the measured time interval is given in the `TrafficSpeed` class of the `basicData` element.
+
+.. literalinclude:: ../../samples/fcd-compatibility-mode.xml
+   :language: xml
+   :linenos:
+   :lineno-match:
+   :start-after: <!-- average vehicle speed information -->
+   :end-before: </basicData>
+
+The `freeFlowSpeed` [km/h] on the segment is specified in the `TravelTimeData` class in the `basicData` element.
+
+.. literalinclude:: ../../samples/fcd-compatibility-mode.xml
+   :language: xml
+   :linenos:
+   :lineno-match:
+   :start-after: <!-- free flow vehicle speed information -->
+   :end-before: <!-- extension: quality parameters and number of vehicles on the segment -->
+
+Travel time and actual delay
+----------------------------
+
+The **Travel Time** [s] is given in the `basicData` element with `xsi:type="TravelTimeData"`. There are 2 different types of travel times used in this profile:
+
+   * `travelTime`: actual average travel time.
+   * `freeFlowTravelTime`: free flow travel time
+
+.. literalinclude:: ../../samples/fcd-compatibility-mode.xml
+   :language: xml
+   :linenos:
+   :lineno-match:
+   :start-after: <!-- travel time information -->
+   :end-before: <!-- free flow vehicle speed information -->
+
+
+The profile provides information about the travel time without distinguishing the vehicle type.
+
+The **actual delay** is expressed implicitly as the difference between the values of the actual average travel time (`travelTime`) and the free flow travel time (`freeFlowTravelTime`).
+
+
+Traffic levels
+--------------
+
+**Traffic status** is expressed by `TrafficStatusEnum` enumeration as defined in standard [16157-3]_ in table A.125.
+
+
+.. literalinclude:: ../../samples/fcd-compatibility-mode.xml
+   :language: xml
+   :linenos:
+   :lineno-match:
+   :start-after: <!-- traffic status information -->
+   :end-before: <!-- extension: traffic level and queue information -->
+
+.. csv-table:: Values of the "TrafficStatusEnum" enumeration.
+    :header-rows: 1
+    :widths: 8,8,45
+
+    "value", "Meaning", "Definition" 
+     "impossible", "Traffic collapse", "Vehicles on the roads are stationary or in convoys only moving very slowly, the average speed is very low."
+    "congested", "Traffic congestion", "Vehicle queues are formed, traffic is not flowing smoothly, average speed is significantly reduced, intersection passage is impaired."
+    "heavy", "Heavy traffic", "Streams of vehicles form, traffic is flowing, but speed is below the maximum speed limit."
+    "freeFlow", "Flowing traffic", "Traffic is flowing in that direction. Traffic is moving at or above the speed limit and drivers are free to change lanes."
+    "unknown", "Unknown", "Traffic conditions are unknown."
+
+The `TrafficStatus` class is extended (level B extension) to explicitly specify the traffic levels as defined and used in the CR. The traffic levels (1-5) are specified in the `TrafficLevel` class using the phrases "level1" to "level5", in the `trafficLevelValue` element. 
+
+.. literalinclude:: ../../samples/fcd-compatibility-mode.xml
+   :language: xml
+   :linenos:
+   :lineno-match:
+   :start-after: <ndicFcdExtension>
+   :end-before: <queueInformation>
+
+The `TrafficLevel` is calculated as the % difference between the current traffic flow speed and the traffic flow speed on the free segment.
+
+.. list-table:: Calculation in the definition of traffic stages in the FCD publication
+   :widths: 10 70 20
+   :header-rows: 1
+   
+   * - Degree
+     - Description
+     - % of difference
+   * - 1
+     - single vehicle operation only, driving is smooth
+     - <85 %, 100 %)
+   * - 2
+     - small groups of vehicles, smooth running, passing intersections without problems
+     - <75 %, 85 %)
+   * - 3
+     - vehicle streams are forming, traffic is smooth but speed is below the maximum speed limit
+     - <50 %, 75 %)
+   * - 4
+     - vehicle queues are forming, traffic is not flowing, average speed is significantly reduced, passing the intersections is impaired
+     - <20 %, 50 %)
+   * - 5
+     - traffic collapse - vehicles are stationary on the roads or moving very slowly in convoys, average speed is very low
+     - <0 %, 20 %)
+
+
+Congestions
+-----------
+
+The **congestions** on a segment are expressed implicitly by the traffic status "level4" and "level5" and by the presence of the `queueInformation` element, which was added to the `TrafficStatus` class via the DATEX II type B extension. 
+
+Segments are internally divided into smaller parts (sections of the Global Network, GN road network). The presence of congestion is evaluated with respect to GN sections as a decrease in the travelled speed of this section **below 30 % of the free-flow speed.**.
+
+The `queueInformation` element contains aggregated values from individual congested sections of the segment. If none of the sections of the segment were congested, the `queueInformation` element is not present. The element is present only once per segment, the values of its attributes are adapted to this (for more, see the description of the attributes and the image below).
+
+.. figure:: img/congestion.png
+  :alt: Representation of the aggregation of individual congestions on a segment
+  
+  Representation of the aggregation of individual congestions on a segment
+
+.. literalinclude:: ../../samples/fcd-compatibility-mode.xml
+   :language: xml
+   :linenos:
+   :lineno-match:
+   :start-after: </trafficLevel>
+   :end-before: </ndicFcdExtension>
+
+The length of a queue on a referenced segment is expressed in the `queueLength` element and is aggregated length of the traffic congestion for all sections of the segment [m]. i.e. the sum of the lengths of the **congested** Global Network sections (even non-contiguous) lying on the segment.
+
+The start and end of the queue is given by the optional `fromPoint` and `toPoint` attributes, expressing the relative `coordinates` of the queue relative to the beginning segment in the direction of traffic. A queue, according to this definition, starts (`fromPoint`) at the point where vehicles enter it and ends (`toPoint`) at the point where they leave it and continue on their route. **See Figure 2.** 
+
+In the case of multiple split congestions on a segment, for example, a congestion detected on GN sections 1 and 3, the `fromPoint` attribute only gives information about the 1st congestion and `toPoint` is calculated by using the `queueLength` value.
+
+.. figure:: img/queue_position.png
+  :alt: Example of referencing the relative position of a queue on a segment.
+
+  Example of referencing the relative position of a queue on a segment. 
+
+Providing only currently available data
+=======================================
+
+In case of unavailability of input data for the status information calculation on a given segment, only qualitative parameters are given for this segment and, and if available, also historical data in the `basicData` element of the `TravelTimeData` class.
+
+Thus, a segment for which actual status data exists is covered by 3 `elaboratedData` elements, while a segment for which no actual data exists is covered only by one element.
+
+=================
+Temporal validity
+=================
+
+The publication is periodically updated, the value in the `periodDefault` element specifies the normal length of the update interval in seconds (normally 5 minutes).
+
+The value of `publicationTime` specifies when the publication was created, but **not the reference time of the calculation**.
+
+The `timeDefault` value specifies the **common reference time of all record values** and is the end time of a particular measurement and calculation period.
+
+No other determination of data validity is used.
+
+.. literalinclude:: ../../samples/fcd-compatibility-mode.xml
+   :language: xml
+   :linenos:
+   :lineno-match:
+   :start-after: <feedType>
+   :end-before: <headerInformation>
+
+FCD input data age
+==================
+
+Each individual record is described by a `basicData` element, and in its `measurementOrCalculationTime` element gives the time last input information used to calculate status values. The update takes place regularly at an interval of 1 minute. At that time, the routes of all vehicles with respect to travelled sections (parts of segments) of the monitored network are evaluated. The last update of the segment status occurs when the last vehicle leaves the segment.
+
+The age of the input data used for each record can be calculated as the difference between the `timeDefault` of the entire publication and the `measurementOrCalculationTime` value of that record. The age of the input data can be used to determine **system response time**.
+
+The status values of individual records are calculated using both actual input data and historical data. The status values of a record without new input data from the FCD vehicle probes may still change in subsequent publications as historical data is gradually taken into account. The calculation algorithm used is beyond the scope of this documentation.
+
+In case of insufficient underlying data for the calculation of the statuses (according to the calculation algorithm), elements containing information on **actual** speed, traffic stages and travel time are omitted.
+
+.. literalinclude:: ../../samples/fcd-compatibility-mode.xml
+   :language: xml
+   :linenos:
+   :lineno-match:
+   :start-after: </publicationCreator>
+   :end-before: <pertinentLocation
+
+The degree to which historical data is used in the calculation of the state value is reflected in the value of `supplierCalculatedDataQuality`, among other things.
+
+====================
+Location Description
+====================
+
+FCD data are measured at predefined road segments. The segment length can be given by ALERT-C location points distance, sections of the road network used (GlobalNetwork), or requirements based on the physical layout of the road.
+
+The location of FCD segment is expressed by a reference in a `pertinentLocation` element to a set of predefined locations in a `PredefinedLocationsPublication` [16157-3]_ associated with this information source.
+
+.. literalinclude:: ../../samples/fcd-compatibility-mode.xml
+   :language: xml
+   :linenos:
+   :lineno-match:
+   :start-after: <measurementOrCalculationTime>
+   :end-before: <!-- traffic status information -->
+   
+ 
+
+In addition to describing the location with the `PredefinedLocation` element, the format optionally allows the location to be described with an additional reference, the provider's internal identifier, in the `source element`.
+
+.. literalinclude:: ../../samples/fcd-compatibility-mode.xml
+   :language: xml
+   :linenos:
+   :lineno-match:
+   :start-after: <elaboratedData>
+   :end-before: <basicData xsi:type="TrafficStatus">
+
+Location description methods are beyond the scope of this document and are described elsewhere.
+

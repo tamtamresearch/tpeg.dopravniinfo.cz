@@ -1,0 +1,32 @@
+name:
+    "cs": TMC lokační tabulka
+    "en": TMC Location Table
+version_info:
+    version: v2.6
+    publish_date: 2016-12-08
+encoding: UTF-8
+syntax: CSV
+#schema.type
+grammar: other
+model: EN ISO 14819-3
+model_version: TISA 2.6
+#model.profile_base
+model_description: EN ISO 14819-3:2019 / TISA 2.6
+#extended_parts
+model_extension: "none"
+description:
+    "cs": Zjednodušený popis silniční sítě, dle normy ČSN EN 14819-3, sestávající se z vzájemně logicky provázaných prvků reprezentovaných uzly či jinými významnými body silniční sítě, úseky silniční sítě a oblastmi. Těmto prvkům jsou v lokační tabulce přiděleny jednoznačné identifikátory, které jsou následně používány při popisování polohy dopravní události. Jak poskytovatel, tak odběratel musí disponovat těmito tabulkami, aby mohl přijaté dopravní informaci přiřadit její polohu. Přiložený dokument popisuje výměnný formát specifikovaný organizací TISA.
+    "en": Simplified road network description according to CSN EN 14819-3, consisting of logically interconnected elements represented by nodes or other important points of the road network, sections of the road network and areas. These elements are assigned unique identifiers in the location table, which are then used to describe the location of a traffic event. Both the provider and the subscriber must have these tables in order to assign location to the received traffic information. The attached document describes the exchange format specified by TISA.
+publications:
+    pdf: [cs, en]
+linked_documents:
+    - description:
+          cs: Koupě normy ba stránkách ČSN online
+          en: Purchase of the standard on ČSN online web pages
+      language: cs
+      web: https://csnonline.agentura-cas.cz/Vysledky.aspx
+    - description:
+          cs: Popis TMC lokační tabulky na stránkách https://www.standardland.cz/
+          en: Description of TMC location table on https://www.standardland.cz/
+      language: cs
+      web: https://www.standardland.cz/alert-c-lokacni-tabulka/i2?s=14819-3

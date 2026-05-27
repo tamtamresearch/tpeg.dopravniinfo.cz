@@ -1,0 +1,379 @@
+
+
+<!doctype html>
+
+<html lang="cs" data-content_root="./">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Koncepty &#8212; Dokumentace pro NDIC - DDR XML - Běžné dopravní informace 3.2.5rev1</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/bizstyle.css?v=532c1bf3" />
+    
+    <script src="_static/documentation_options.js?v=79fea9f0"></script>
+    <script src="_static/doctools.js?v=888ff710"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/translations.js?v=0275affc"></script>
+    <script src="_static/bizstyle.js"></script>
+    <link rel="index" title="Rejstřík" href="genindex.html" />
+    <link rel="search" title="Vyhledávání" href="search.html" />
+    <link rel="next" title="Příloha A: Příklady zpráv" href="examples.html" />
+    <link rel="prev" title="Úvod" href="introduction.html" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <!--[if lt IE 9]>
+    <script src="_static/css3-mediaqueries.js"></script>
+    <![endif]-->
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigace</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="Obecný rejstřík"
+             accesskey="I">rejstřík</a></li>
+        <li class="right" >
+          <a href="examples.html" title="Příloha A: Příklady zpráv"
+             accesskey="N">další</a> |</li>
+        <li class="right" >
+          <a href="introduction.html" title="Úvod"
+             accesskey="P">předchozí</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Dokumentace pro NDIC - DDR XML - Běžné dopravní informace 3.2.5rev1</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Koncepty</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="koncepty">
+<h1>Koncepty<a class="headerlink" href="#koncepty" title="Link to this heading">¶</a></h1>
+<p>Tato kapitola popisuje základní koncepce, používané v tomto formátu. Detailní popis viz definice ve schématech.</p>
+<p>Tato kapitola uvádí krátké ukázky ze skutečných XML dokumentů. Více ukázek viz <a class="reference internal" href="examples.html#examples"><span class="std std-ref">Příloha A: Příklady zpráv</span></a>.</p>
+<section id="casti-xml-dokumentu">
+<h2>Části XML dokumentu<a class="headerlink" href="#casti-xml-dokumentu" title="Link to this heading">¶</a></h2>
+<p>XML dokument staví na následujících elementech a částech:
+- DOC (kořen dokumentu)
+- INF (metadata)
+- MJD (kontejner pro zprávy)
+- MSG (zprávy)</p>
+<section id="koren-dokumentu-doc">
+<h3>Kořen dokumentu (<cite>DOC</cite>)<a class="headerlink" href="#koren-dokumentu-doc" title="Link to this heading">¶</a></h3>
+<p>Element <cite>DOC</cite> představuje jednotlivou publikaci (jednu instanci přenášených dat).</p>
+<p>Atribut <cite>id</cite> uvádí identitu dané publikace jako celku.</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span>
+<span class="linenos"> 2</span><span class="nt">&lt;DOC</span><span class="w"> </span><span class="na">DataSet=</span><span class="s">&quot;extended&quot;</span><span class="w"> </span><span class="na">country=</span><span class="s">&quot;CZ&quot;</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;7e78a1b7-86c1-41be-b980-442d447f7b16&quot;</span><span class="w"> </span><span class="na">version=</span><span class="s">&quot;3.0&quot;</span><span class="nt">&gt;</span>
+<span class="linenos"> 3</span><span class="w">  </span><span class="nt">&lt;INF</span><span class="w"> </span><span class="na">receiver=</span><span class="s">&quot;JB007&quot;</span><span class="w"> </span><span class="na">sender=</span><span class="s">&quot;JSDI_NDIC&quot;</span><span class="w"> </span><span class="na">transmission=</span><span class="s">&quot;HTTP&quot;</span><span class="nt">&gt;</span>
+<span class="linenos"> 4</span><span class="w">    </span><span class="nt">&lt;DAT&gt;</span>
+<span class="linenos"> 5</span><span class="w">      </span><span class="nt">&lt;EVTT</span><span class="w"> </span><span class="na">language=</span><span class="s">&quot;CZ&quot;</span><span class="w"> </span><span class="na">version=</span><span class="s">&quot;2.01&quot;</span><span class="nt">/&gt;</span>
+<span class="linenos"> 6</span><span class="w">      </span><span class="nt">&lt;LOCT</span><span class="w"> </span><span class="na">country=</span><span class="s">&quot;2&quot;</span><span class="w"> </span><span class="na">number=</span><span class="s">&quot;25&quot;</span><span class="w"> </span><span class="na">version=</span><span class="s">&quot;5.0&quot;</span><span class="nt">/&gt;</span>
+<span class="linenos"> 7</span><span class="w">      </span><span class="nt">&lt;SNET</span><span class="w"> </span><span class="na">country=</span><span class="s">&quot;CZ&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;GN&quot;</span><span class="w"> </span><span class="na">version=</span><span class="s">&quot;14.12&quot;</span><span class="nt">/&gt;</span>
+<span class="linenos"> 8</span><span class="w">      </span><span class="nt">&lt;UIRADR</span><span class="w"> </span><span class="na">structure=</span><span class="s">&quot;4.2&quot;</span><span class="w"> </span><span class="na">version=</span><span class="s">&quot;972&quot;</span><span class="nt">/&gt;</span>
+<span class="linenos"> 9</span><span class="w">    </span><span class="nt">&lt;/DAT&gt;</span>
+<span class="linenos">10</span><span class="w">  </span><span class="nt">&lt;/INF&gt;</span>
+<span class="linenos">11</span><span class="w">  </span><span class="nt">&lt;MJD</span><span class="w"> </span><span class="na">count=</span><span class="s">&quot;1&quot;</span><span class="nt">&gt;</span>
+</pre></div>
+</div>
+</section>
+<section id="metadata-inf">
+<h3>Metadata (<cite>INF</cite>)<a class="headerlink" href="#metadata-inf" title="Link to this heading">¶</a></h3>
+<p>Element <cite>INF</cite> popisuje meta-informace o celé publikaci:</p>
+<ul class="simple">
+<li><p>referenci na číselník událostí ALERT-C (verzí) použitý v publikaci pro popis událostí</p></li>
+<li><p>referenci na lokační tabulku ALERT-C (kódem země, číslem tabulky a verzí) použitou pro popis poloh v publikaci</p></li>
+<li><p>referenci na použitou GDF 4.0 mapovou sadu (vydavatel a verze)</p></li>
+<li><p>referenci na číselník organizačních jednotek ČR UIR-ADR</p></li>
+</ul>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="w">  </span><span class="nt">&lt;INF</span><span class="w"> </span><span class="na">receiver=</span><span class="s">&quot;JB007&quot;</span><span class="w"> </span><span class="na">sender=</span><span class="s">&quot;JSDI_NDIC&quot;</span><span class="w"> </span><span class="na">transmission=</span><span class="s">&quot;HTTP&quot;</span><span class="nt">&gt;</span>
+<span class="linenos">2</span><span class="w">    </span><span class="nt">&lt;DAT&gt;</span>
+<span class="linenos">3</span><span class="w">      </span><span class="nt">&lt;EVTT</span><span class="w"> </span><span class="na">language=</span><span class="s">&quot;CZ&quot;</span><span class="w"> </span><span class="na">version=</span><span class="s">&quot;2.01&quot;</span><span class="nt">/&gt;</span>
+<span class="linenos">4</span><span class="w">      </span><span class="nt">&lt;LOCT</span><span class="w"> </span><span class="na">country=</span><span class="s">&quot;2&quot;</span><span class="w"> </span><span class="na">number=</span><span class="s">&quot;25&quot;</span><span class="w"> </span><span class="na">version=</span><span class="s">&quot;5.0&quot;</span><span class="nt">/&gt;</span>
+<span class="linenos">5</span><span class="w">      </span><span class="nt">&lt;SNET</span><span class="w"> </span><span class="na">country=</span><span class="s">&quot;CZ&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;GN&quot;</span><span class="w"> </span><span class="na">version=</span><span class="s">&quot;14.12&quot;</span><span class="nt">/&gt;</span>
+<span class="linenos">6</span><span class="w">      </span><span class="nt">&lt;UIRADR</span><span class="w"> </span><span class="na">structure=</span><span class="s">&quot;4.2&quot;</span><span class="w"> </span><span class="na">version=</span><span class="s">&quot;972&quot;</span><span class="nt">/&gt;</span>
+<span class="linenos">7</span><span class="w">    </span><span class="nt">&lt;/DAT&gt;</span>
+<span class="linenos">8</span><span class="w">  </span><span class="nt">&lt;/INF&gt;</span>
+<span class="linenos">9</span><span class="w">  </span><span class="nt">&lt;MJD</span><span class="w"> </span><span class="na">count=</span><span class="s">&quot;1&quot;</span><span class="nt">&gt;</span>
+</pre></div>
+</div>
+</section>
+<section id="kontejner-na-zpravy-mjd">
+<h3>Kontejner na zprávy (<cite>MJD</cite>)<a class="headerlink" href="#kontejner-na-zpravy-mjd" title="Link to this heading">¶</a></h3>
+<p>Jednotlivé zprávy jsou umístěny do jednoho společného rodičovského elementu <cite>MJD</cite>. Tento element může obsahovat jednu nebo více zpráv.</p>
+</section>
+<section id="zprava-msg">
+<h3>Zpráva (<cite>MSG</cite>)<a class="headerlink" href="#zprava-msg" title="Link to this heading">¶</a></h3>
+<p>Jednotlivé zprávy jsou reprezentovány elementem <cite>MSG</cite>.</p>
+<p>Samotná zpráva má následující části:</p>
+<ul class="simple">
+<li><p>platnost v čase <cite>MTIME</cite></p></li>
+<li><p>textový popis celé události <cite>MTXT</cite></p></li>
+<li><p>popis události <cite>MEVT</cite> (<em>co</em> se stalo)</p></li>
+<li><p>popis polohy <cite>MLOC</cite> (<em>kde</em> se to stalo)</p></li>
+<li><p>odkaz na region v UIR-ADR <cite>MDST</cite></p></li>
+</ul>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="linenos">12</span><span class="w">    </span><span class="nt">&lt;MSG</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;{ff808181-5024-3057-0150-44cdefe07f8a}&quot;</span><span class="w"> </span><span class="na">planned=</span><span class="s">&quot;false&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;TI&quot;</span><span class="w"> </span><span class="na">version=</span><span class="s">&quot;6&quot;</span><span class="nt">&gt;</span>
+<span class="linenos">13</span><span class="w">      </span><span class="nt">&lt;MTIME</span><span class="w"> </span><span class="na">format=</span><span class="s">&quot;YYYY-MM-DDThh:mm:ssTZD&quot;</span><span class="nt">&gt;</span>
+<span class="linenos">14</span><span class="w">        </span><span class="nt">&lt;TGEN&gt;</span>2015-10-08T03:13:12+02:00<span class="nt">&lt;/TGEN&gt;</span>
+<span class="linenos">15</span><span class="w">        </span><span class="nt">&lt;TSTA&gt;</span>2015-10-08T02:10:00+02:00<span class="nt">&lt;/TSTA&gt;</span>
+<span class="linenos">16</span><span class="w">        </span><span class="nt">&lt;TSTO&gt;</span>2015-10-08T03:55:00+02:00<span class="nt">&lt;/TSTO&gt;</span>
+<span class="linenos">17</span><span class="w">      </span><span class="nt">&lt;/MTIME&gt;</span>
+<span class="linenos">18</span><span class="w">      </span><span class="nt">&lt;MTXT</span><span class="w"> </span><span class="na">language=</span><span class="s">&quot;CZ&quot;</span><span class="nt">&gt;</span>Od<span class="w"> </span>8.10.2015<span class="w"> </span>02:10<span class="w"> </span>do<span class="w"> </span>03:55;<span class="w"> </span>na<span class="w"> </span>silnici<span class="w"> </span>13<span class="w"> </span>u<span class="w"> </span>obce
+<span class="linenos">19</span><span class="w">      </span>Frýdlant<span class="w"> </span>okres<span class="w"> </span>Liberec;<span class="w"> </span>havarované<span class="w"> </span>vozidlo;<span class="w"> </span>probíhá<span class="w"> </span>vyšetřování
+<span class="linenos">20</span><span class="w">      </span>nehody;<span class="w"> </span>havárie<span class="w"> </span>OA,<span class="w"> </span>se<span class="w"> </span>zraněním,<span class="w"> </span>složky<span class="w"> </span>IZS<span class="w"> </span>jsou<span class="w"> </span>na<span class="w"> </span>místě.<span class="nt">&lt;/MTXT&gt;</span>
+<span class="linenos">21</span><span class="w">      </span><span class="nt">&lt;MEVT&gt;</span>
+<span class="linenos">22</span><span class="w">        </span><span class="nt">&lt;TMCE</span><span class="w"> </span><span class="na">directionalityvalue=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">diversion=</span><span class="s">&quot;false&quot;</span><span class="w"> </span><span class="na">timescalevalue=</span><span class="s">&quot;(D)&quot;</span><span class="w"> </span><span class="na">urgencyvalue=</span><span class="s">&quot;N&quot;</span><span class="nt">&gt;</span>
+<span class="linenos">23</span><span class="w">          </span><span class="nt">&lt;EVI</span><span class="w"> </span><span class="na">eventcode=</span><span class="s">&quot;211&quot;</span><span class="w"> </span><span class="na">eventorder=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">updateclass=</span><span class="s">&quot;4&quot;</span><span class="nt">&gt;</span>
+<span class="linenos">24</span><span class="w">            </span><span class="nt">&lt;TXUCL</span><span class="w"> </span><span class="na">language=</span><span class="s">&quot;CZ&quot;</span><span class="nt">&gt;</span>Dopravní<span class="w"> </span>události<span class="nt">&lt;/TXUCL&gt;</span>
+<span class="linenos">25</span><span class="w">            </span><span class="nt">&lt;TXEVC</span><span class="w"> </span><span class="na">language=</span><span class="s">&quot;CZ&quot;</span><span class="nt">&gt;</span>havarované<span class="w"> </span>vozidlo<span class="nt">&lt;/TXEVC&gt;</span>
+<span class="linenos">26</span><span class="w">          </span><span class="nt">&lt;/EVI&gt;</span>
+<span class="linenos">27</span><span class="w">          </span><span class="nt">&lt;EVI</span><span class="w"> </span><span class="na">eventcode=</span><span class="s">&quot;344&quot;</span><span class="w"> </span><span class="na">eventorder=</span><span class="s">&quot;2&quot;</span><span class="w"> </span><span class="na">updateclass=</span><span class="s">&quot;3&quot;</span><span class="nt">&gt;</span>
+<span class="linenos">28</span><span class="w">            </span><span class="nt">&lt;TXUCL</span><span class="w"> </span><span class="na">language=</span><span class="s">&quot;CZ&quot;</span><span class="nt">&gt;</span>Nehody<span class="nt">&lt;/TXUCL&gt;</span>
+<span class="linenos">29</span><span class="w">            </span><span class="nt">&lt;TXEVC</span><span class="w"> </span><span class="na">language=</span><span class="s">&quot;CZ&quot;</span><span class="nt">&gt;</span>probíhá<span class="w"> </span>vyšetřování<span class="w"> </span>nehody<span class="nt">&lt;/TXEVC&gt;</span>
+<span class="linenos">30</span><span class="w">          </span><span class="nt">&lt;/EVI&gt;</span>
+<span class="linenos">31</span><span class="w">          </span><span class="nt">&lt;TXTMCE</span><span class="w"> </span><span class="na">language=</span><span class="s">&quot;CZ&quot;</span><span class="nt">&gt;</span>havarované<span class="w"> </span>vozidlo<span class="w"> </span>probíhá<span class="w"> </span>vyšetřování
+<span class="linenos">32</span><span class="w">          </span>nehody<span class="nt">&lt;/TXTMCE&gt;</span>
+<span class="linenos">33</span><span class="w">        </span><span class="nt">&lt;/TMCE&gt;</span>
+<span class="linenos">34</span><span class="w">        </span><span class="nt">&lt;OTXT&gt;</span>havarované<span class="w"> </span>vozidlo;<span class="w"> </span>probíhá<span class="w"> </span>vyšetřování<span class="w"> </span>nehody;<span class="w"> </span>havárie<span class="w"> </span>OA,
+<span class="linenos">35</span><span class="w">        </span>se<span class="w"> </span>zraněním,<span class="w"> </span>složky<span class="w"> </span>IZS<span class="w"> </span>jsou<span class="w"> </span>na<span class="w"> </span>místě.<span class="nt">&lt;/OTXT&gt;</span>
+<span class="linenos">36</span><span class="w">      </span><span class="nt">&lt;/MEVT&gt;</span>
+<span class="linenos">37</span><span class="w">      </span><span class="nt">&lt;MLOC&gt;</span>
+<span class="linenos">38</span><span class="w">        </span><span class="nt">&lt;TXPL&gt;</span>na<span class="w"> </span>silnici<span class="w"> </span>13<span class="w"> </span>u<span class="w"> </span>obce<span class="w"> </span>Frýdlant<span class="w"> </span>okres<span class="w"> </span>Liberec<span class="nt">&lt;/TXPL&gt;</span>
+<span class="linenos">39</span><span class="w">        </span><span class="nt">&lt;TMCL</span><span class="w"> </span><span class="na">direction=</span><span class="s">&quot;+&quot;</span><span class="w"> </span><span class="na">extent=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">primarycode=</span><span class="s">&quot;16366&quot;</span><span class="w"> </span><span class="na">roadid=</span><span class="s">&quot;332&quot;</span><span class="nt">/&gt;</span>
+<span class="linenos">40</span><span class="w">        </span><span class="nt">&lt;SNTL</span><span class="w"> </span><span class="na">coordsystem=</span><span class="s">&quot;S-JTSK&quot;</span><span class="w"> </span><span class="na">count=</span><span class="s">&quot;1&quot;</span><span class="nt">&gt;</span>
+<span class="linenos">41</span><span class="w">          </span><span class="nt">&lt;COORD</span><span class="w"> </span><span class="na">x=</span><span class="s">&quot;-687866&quot;</span><span class="w"> </span><span class="na">y=</span><span class="s">&quot;-962713&quot;</span><span class="nt">/&gt;</span>
+<span class="linenos">42</span><span class="w">          </span><span class="nt">&lt;STEL</span><span class="w"> </span><span class="na">el_code=</span><span class="s">&quot;2303555&quot;</span><span class="nt">/&gt;</span>
+<span class="linenos">43</span><span class="w">        </span><span class="nt">&lt;/SNTL&gt;</span>
+<span class="linenos">44</span><span class="w">      </span><span class="nt">&lt;/MLOC&gt;</span>
+<span class="linenos">45</span><span class="w">      </span><span class="nt">&lt;MDST&gt;</span>
+<span class="linenos">46</span><span class="w">        </span><span class="nt">&lt;DEST</span><span class="w"> </span><span class="na">CountryName=</span><span class="s">&quot;Česká republika&quot;</span><span class="w"> </span><span class="na">RegionCode=</span><span class="s">&quot;78&quot;</span><span class="w"> </span><span class="na">RegionName=</span><span class="s">&quot;Liberecký&quot;</span><span class="w"> </span><span class="na">TownCode=</span><span class="s">&quot;564028&quot;</span><span class="w"> </span><span class="na">TownName=</span><span class="s">&quot;Frýdlant&quot;</span><span class="w"> </span><span class="na">TownShip=</span><span class="s">&quot;Liberec&quot;</span><span class="w"> </span><span class="na">TownShipCode=</span><span class="s">&quot;3505&quot;</span><span class="nt">&gt;</span>
+<span class="linenos">47</span><span class="w">          </span><span class="nt">&lt;ROAD</span><span class="w"> </span><span class="na">RoadClass=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">RoadNumber=</span><span class="s">&quot;13&quot;</span><span class="nt">/&gt;</span>
+<span class="linenos">48</span><span class="w">        </span><span class="nt">&lt;/DEST&gt;</span>
+<span class="linenos">49</span><span class="w">      </span><span class="nt">&lt;/MDST&gt;</span>
+<span class="linenos">50</span><span class="w">    </span><span class="nt">&lt;/MSG&gt;</span>
+</pre></div>
+</div>
+<section id="identita-zpravy-a-verze">
+<h4>Identita zprávy a verze<a class="headerlink" href="#identita-zpravy-a-verze" title="Link to this heading">¶</a></h4>
+<p>Samotná zpráva má vlastní unikátní identifikátor <cite>id</cite> a verzi. Verze začínají číslem <cite>1</cite> a s každou aktualizací je verze zvýšena o jedničku.</p>
+<p>Platnost zprávy v čase je specifikována jednoduchým intervalem platnosti od - do.</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="linenos">12</span><span class="w">    </span><span class="nt">&lt;MSG</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;{ff808181-5024-3057-0150-44cdefe07f8a}&quot;</span><span class="w"> </span><span class="na">planned=</span><span class="s">&quot;false&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;TI&quot;</span><span class="w"> </span><span class="na">version=</span><span class="s">&quot;6&quot;</span><span class="nt">&gt;</span>
+<span class="linenos">13</span><span class="w">      </span><span class="nt">&lt;MTIME</span><span class="w"> </span><span class="na">format=</span><span class="s">&quot;YYYY-MM-DDThh:mm:ssTZD&quot;</span><span class="nt">&gt;</span>
+<span class="linenos">14</span><span class="w">        </span><span class="nt">&lt;TGEN&gt;</span>2015-10-08T03:13:12+02:00<span class="nt">&lt;/TGEN&gt;</span>
+<span class="linenos">15</span><span class="w">        </span><span class="nt">&lt;TSTA&gt;</span>2015-10-08T02:10:00+02:00<span class="nt">&lt;/TSTA&gt;</span>
+<span class="linenos">16</span><span class="w">        </span><span class="nt">&lt;TSTO&gt;</span>2015-10-08T03:55:00+02:00<span class="nt">&lt;/TSTO&gt;</span>
+<span class="linenos">17</span><span class="w">      </span><span class="nt">&lt;/MTIME&gt;</span>
+</pre></div>
+</div>
+</section>
+<section id="popis-udalosti">
+<h4>Popis události<a class="headerlink" href="#popis-udalosti" title="Link to this heading">¶</a></h4>
+<p>DDR používá číselník událostí ALERT-C a respektuje všechna pravidla daná ALERT-C (kódy vícečetných událostí, kvantifikátory …)</p>
+<p>Kromě kódů z číselníku ALERT-C, je použit volný textový popis tak jak byl zadán operátorem.</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="linenos">21</span><span class="w">      </span><span class="nt">&lt;MEVT&gt;</span>
+<span class="linenos">22</span><span class="w">        </span><span class="nt">&lt;TMCE</span><span class="w"> </span><span class="na">directionalityvalue=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">diversion=</span><span class="s">&quot;false&quot;</span><span class="w"> </span><span class="na">timescalevalue=</span><span class="s">&quot;(D)&quot;</span><span class="w"> </span><span class="na">urgencyvalue=</span><span class="s">&quot;N&quot;</span><span class="nt">&gt;</span>
+<span class="linenos">23</span><span class="w">          </span><span class="nt">&lt;EVI</span><span class="w"> </span><span class="na">eventcode=</span><span class="s">&quot;211&quot;</span><span class="w"> </span><span class="na">eventorder=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">updateclass=</span><span class="s">&quot;4&quot;</span><span class="nt">&gt;</span>
+<span class="linenos">24</span><span class="w">            </span><span class="nt">&lt;TXUCL</span><span class="w"> </span><span class="na">language=</span><span class="s">&quot;CZ&quot;</span><span class="nt">&gt;</span>Dopravní<span class="w"> </span>události<span class="nt">&lt;/TXUCL&gt;</span>
+<span class="linenos">25</span><span class="w">            </span><span class="nt">&lt;TXEVC</span><span class="w"> </span><span class="na">language=</span><span class="s">&quot;CZ&quot;</span><span class="nt">&gt;</span>havarované<span class="w"> </span>vozidlo<span class="nt">&lt;/TXEVC&gt;</span>
+<span class="linenos">26</span><span class="w">          </span><span class="nt">&lt;/EVI&gt;</span>
+<span class="linenos">27</span><span class="w">          </span><span class="nt">&lt;EVI</span><span class="w"> </span><span class="na">eventcode=</span><span class="s">&quot;344&quot;</span><span class="w"> </span><span class="na">eventorder=</span><span class="s">&quot;2&quot;</span><span class="w"> </span><span class="na">updateclass=</span><span class="s">&quot;3&quot;</span><span class="nt">&gt;</span>
+<span class="linenos">28</span><span class="w">            </span><span class="nt">&lt;TXUCL</span><span class="w"> </span><span class="na">language=</span><span class="s">&quot;CZ&quot;</span><span class="nt">&gt;</span>Nehody<span class="nt">&lt;/TXUCL&gt;</span>
+<span class="linenos">29</span><span class="w">            </span><span class="nt">&lt;TXEVC</span><span class="w"> </span><span class="na">language=</span><span class="s">&quot;CZ&quot;</span><span class="nt">&gt;</span>probíhá<span class="w"> </span>vyšetřování<span class="w"> </span>nehody<span class="nt">&lt;/TXEVC&gt;</span>
+<span class="linenos">30</span><span class="w">          </span><span class="nt">&lt;/EVI&gt;</span>
+<span class="linenos">31</span><span class="w">          </span><span class="nt">&lt;TXTMCE</span><span class="w"> </span><span class="na">language=</span><span class="s">&quot;CZ&quot;</span><span class="nt">&gt;</span>havarované<span class="w"> </span>vozidlo<span class="w"> </span>probíhá<span class="w"> </span>vyšetřování
+<span class="linenos">32</span><span class="w">          </span>nehody<span class="nt">&lt;/TXTMCE&gt;</span>
+<span class="linenos">33</span><span class="w">        </span><span class="nt">&lt;/TMCE&gt;</span>
+<span class="linenos">34</span><span class="w">        </span><span class="nt">&lt;OTXT&gt;</span>havarované<span class="w"> </span>vozidlo;<span class="w"> </span>probíhá<span class="w"> </span>vyšetřování<span class="w"> </span>nehody;<span class="w"> </span>havárie<span class="w"> </span>OA,
+<span class="linenos">35</span><span class="w">        </span>se<span class="w"> </span>zraněním,<span class="w"> </span>složky<span class="w"> </span>IZS<span class="w"> </span>jsou<span class="w"> </span>na<span class="w"> </span>místě.<span class="nt">&lt;/OTXT&gt;</span>
+<span class="linenos">36</span><span class="w">      </span><span class="nt">&lt;/MEVT&gt;</span>
+</pre></div>
+</div>
+</section>
+<section id="popis-polohy">
+<h4>Popis polohy<a class="headerlink" href="#popis-polohy" title="Link to this heading">¶</a></h4>
+<p>DDR používá k popisu polohy buď bodovou polohu (např. nehoda), liniovou polohu (např. kolona) na silniční síti či oblast.</p>
+<p>V DDR mohou být použity následující metody popisu polohy (alespoň jedna musí být použita):</p>
+<ul class="simple">
+<li><p>volný textový popis (tak jak byl zadán operátorem).</p></li>
+<li><p>Odkaz na polohu pomocí ALERT-C kódů (primární lokace, směr a rozsah).</p></li>
+<li><p>Odkaz na segmenty silniční sítě GlobalNetwork.</p></li>
+<li><p>Souřadnice (WGS-84, či SJTSK) počátku události (z pohledu řidiče = konec kolony).</p></li>
+<li><p>Odkaz na organizační oblast v číselníku UIR-ADR.</p></li>
+<li><p>Kilometrovníky s odkazem na komunikaci /pomocí jejího čísla)</p></li>
+</ul>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="linenos">37</span><span class="w">      </span><span class="nt">&lt;MLOC&gt;</span>
+<span class="linenos">38</span><span class="w">        </span><span class="nt">&lt;TXPL&gt;</span>na<span class="w"> </span>silnici<span class="w"> </span>13<span class="w"> </span>u<span class="w"> </span>obce<span class="w"> </span>Frýdlant<span class="w"> </span>okres<span class="w"> </span>Liberec<span class="nt">&lt;/TXPL&gt;</span>
+<span class="linenos">39</span><span class="w">        </span><span class="nt">&lt;TMCL</span><span class="w"> </span><span class="na">direction=</span><span class="s">&quot;+&quot;</span><span class="w"> </span><span class="na">extent=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">primarycode=</span><span class="s">&quot;16366&quot;</span><span class="w"> </span><span class="na">roadid=</span><span class="s">&quot;332&quot;</span><span class="nt">/&gt;</span>
+<span class="linenos">40</span><span class="w">        </span><span class="nt">&lt;SNTL</span><span class="w"> </span><span class="na">coordsystem=</span><span class="s">&quot;S-JTSK&quot;</span><span class="w"> </span><span class="na">count=</span><span class="s">&quot;1&quot;</span><span class="nt">&gt;</span>
+<span class="linenos">41</span><span class="w">          </span><span class="nt">&lt;COORD</span><span class="w"> </span><span class="na">x=</span><span class="s">&quot;-687866&quot;</span><span class="w"> </span><span class="na">y=</span><span class="s">&quot;-962713&quot;</span><span class="nt">/&gt;</span>
+<span class="linenos">42</span><span class="w">          </span><span class="nt">&lt;STEL</span><span class="w"> </span><span class="na">el_code=</span><span class="s">&quot;2303555&quot;</span><span class="nt">/&gt;</span>
+<span class="linenos">43</span><span class="w">        </span><span class="nt">&lt;/SNTL&gt;</span>
+<span class="linenos">44</span><span class="w">      </span><span class="nt">&lt;/MLOC&gt;</span>
+<span class="linenos">45</span><span class="w">      </span><span class="nt">&lt;MDST&gt;</span>
+<span class="linenos">46</span><span class="w">        </span><span class="nt">&lt;DEST</span><span class="w"> </span><span class="na">CountryName=</span><span class="s">&quot;Česká republika&quot;</span><span class="w"> </span><span class="na">RegionCode=</span><span class="s">&quot;78&quot;</span><span class="w"> </span><span class="na">RegionName=</span><span class="s">&quot;Liberecký&quot;</span><span class="w"> </span><span class="na">TownCode=</span><span class="s">&quot;564028&quot;</span><span class="w"> </span><span class="na">TownName=</span><span class="s">&quot;Frýdlant&quot;</span><span class="w"> </span><span class="na">TownShip=</span><span class="s">&quot;Liberec&quot;</span><span class="w"> </span><span class="na">TownShipCode=</span><span class="s">&quot;3505&quot;</span><span class="nt">&gt;</span>
+<span class="linenos">47</span><span class="w">          </span><span class="nt">&lt;ROAD</span><span class="w"> </span><span class="na">RoadClass=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">RoadNumber=</span><span class="s">&quot;13&quot;</span><span class="nt">/&gt;</span>
+<span class="linenos">48</span><span class="w">        </span><span class="nt">&lt;/DEST&gt;</span>
+<span class="linenos">49</span><span class="w">      </span><span class="nt">&lt;/MDST&gt;</span>
+</pre></div>
+</div>
+</section>
+</section>
+</section>
+</section>
+<section id="popisovani-poloh">
+<h1>Popisování poloh<a class="headerlink" href="#popisovani-poloh" title="Link to this heading">¶</a></h1>
+<p>Níže uvedeme blíže jednotlivé metody popisu polohy.</p>
+<section id="popis-polohy-pomoci-alert-c">
+<h2>Popis polohy pomocí ALERT-C<a class="headerlink" href="#popis-polohy-pomoci-alert-c" title="Link to this heading">¶</a></h2>
+<p>První metoda je popis polohy pomocí ALERT-C kódů, v elementu <cite>TMCL</cite>. Použití této metody závisí na přítomnosti ALERT-C lokace v daném místě.</p>
+<p>Element <cite>TMCL</cite> používá k popisu události primární lokaci (atribut <cite>primarycode</cite>), rozsah (atribut <cite>extent</cite>) a směr (atribut <cite>direction</cite>). Použitá lokační tabulka je odkazována na úrovni celého dokumentu (musí tedy být pro všechny zprávy <cite>MSG</cite> v dokumentu stejná.</p>
+<p>Primární lokace je dle principu ALERT-C místo kde došlo k nehodě, či kde řidič opouští problémovou oblast. Sekundární lokace je konec kolony či místo, kde řidič poprvé vjíždí do problémové oblasti.</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="linenos">39</span><span class="w">        </span><span class="nt">&lt;TMCL</span><span class="w"> </span><span class="na">direction=</span><span class="s">&quot;+&quot;</span><span class="w"> </span><span class="na">extent=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">primarycode=</span><span class="s">&quot;16366&quot;</span><span class="w"> </span><span class="na">roadid=</span><span class="s">&quot;332&quot;</span><span class="nt">/&gt;</span>
+</pre></div>
+</div>
+<div class="admonition important">
+<p class="admonition-title">Důležité</p>
+<p>Atribut <cite>direction</cite> je chybně reportován. Místo hodnoty „+“ je použita hodnota „-“ a opačně.
+Tuto chybu neopravujeme protože předpokládáme že je již historicky zapracovaná do systémů odběratelů.
+Při implementaci ALERT-C lokalizace prosím obraťte směr udávaný v souboru na opačný.</p>
+</div>
+</section>
+<section id="popis-polohy-pomoci-useku-site-global-network">
+<h2>Popis polohy pomocí úseků sítě Global Network<a class="headerlink" href="#popis-polohy-pomoci-useku-site-global-network" title="Link to this heading">¶</a></h2>
+<p>Druhá metoda používá pro popis polohy konkrétní identifikátory úseků ovlivněné silniční sítě tak, jak jsou zaneseny v databázi Global Network (GN) a souřadnice počátku a konce události (v referenčním systému S-JTSK či WGS-84).</p>
+<p>Element <cite>COORD</cite> popisuje souřadnice „počátku“ události ve směru dopravy. U liniové události souřadnice značí počátek události ve smyslu směru dopravy, místo ke kterému dorazí řidič jako první, v TMC je to sekundární lokace.</p>
+<p>Volitelně lze ve formátu zpřístupnit i konec události ve směru dopravy <cite>COORDEND</cite>, U liniové události souřadnice značí konec události ve smyslu směru dopravy, tj. místo kde řidič opouští problémovou oblast, v TMC je to primární lokace)</p>
+<p>Element <cite>STEL</cite> popisuje konkrétní úseky sítě GN prostřednictvím jejich identifikátoru. (Tyto elementy nemusí být pořadí tak jak na sebe na síti navazují) .</p>
+<p>Toto je nativní způsob zadávání polohy v NDIC.</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="linenos">48</span><span class="w">        </span><span class="nt">&lt;SNTL</span><span class="w"> </span><span class="na">coordsystem=</span><span class="s">&quot;S-JTSK&quot;</span><span class="w"> </span><span class="na">count=</span><span class="s">&quot;5&quot;</span><span class="nt">&gt;</span>
+<span class="linenos">49</span><span class="w">          </span><span class="nt">&lt;COORD</span><span class="w"> </span><span class="na">x=</span><span class="s">&quot;-599220&quot;</span><span class="w"> </span><span class="na">y=</span><span class="s">&quot;-1163113&quot;</span><span class="nt">/&gt;</span>
+<span class="linenos">50</span><span class="w">          </span><span class="nt">&lt;STEL</span><span class="w"> </span><span class="na">el_code=</span><span class="s">&quot;725704&quot;</span><span class="nt">/&gt;</span>
+<span class="linenos">51</span><span class="w">          </span><span class="nt">&lt;STEL</span><span class="w"> </span><span class="na">el_code=</span><span class="s">&quot;725706&quot;</span><span class="nt">/&gt;</span>
+<span class="linenos">52</span><span class="w">          </span><span class="nt">&lt;STEL</span><span class="w"> </span><span class="na">el_code=</span><span class="s">&quot;638420&quot;</span><span class="nt">/&gt;</span>
+<span class="linenos">53</span><span class="w">          </span><span class="nt">&lt;STEL</span><span class="w"> </span><span class="na">el_code=</span><span class="s">&quot;638412&quot;</span><span class="nt">/&gt;</span>
+<span class="linenos">54</span><span class="w">          </span><span class="nt">&lt;STEL</span><span class="w"> </span><span class="na">el_code=</span><span class="s">&quot;638377&quot;</span><span class="nt">/&gt;</span>
+<span class="linenos">55</span><span class="w">        </span><span class="nt">&lt;/SNTL&gt;</span>
+</pre></div>
+</div>
+</section>
+<section id="popis-polohy-pomoci-ciselniku-uir-adr">
+<h2>Popis polohy pomocí číselníku UIR-ADR<a class="headerlink" href="#popis-polohy-pomoci-ciselniku-uir-adr" title="Link to this heading">¶</a></h2>
+<p>Třetí metoda používá pro popis polohy „adresu“ komunikace (název, oblast, číslo, atp.).</p>
+<p>Element <cite>MDST/DEST</cite> popisuje cílovou destinaci problémové události, uvádí konkrétní oblast a v elementech <cite>ROAD</cite> či <cite>STREET</cite> číslo či název ovlivněné komunikace.</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="linenos">57</span><span class="w">      </span><span class="nt">&lt;MDST&gt;</span>
+<span class="linenos">58</span><span class="w">        </span><span class="nt">&lt;DEST</span><span class="w"> </span><span class="na">CountryName=</span><span class="s">&quot;Česká republika&quot;</span><span class="w"> </span><span class="na">RegionCode=</span><span class="s">&quot;116&quot;</span><span class="w"> </span><span class="na">RegionName=</span><span class="s">&quot;Jihomoravský&quot;</span><span class="w"> </span><span class="na">TownCode=</span><span class="s">&quot;582786&quot;</span><span class="w"> </span><span class="na">TownDistrictCode=</span><span class="s">&quot;550973&quot;</span><span class="w"> </span><span class="na">TownDistrictName=</span><span class="s">&quot;Brno-střed&quot;</span><span class="w"> </span><span class="na">TownName=</span><span class="s">&quot;Brno&quot;</span><span class="w"> </span><span class="na">TownShip=</span><span class="s">&quot;Brnoměsto&quot;</span><span class="w"> </span><span class="na">TownShipCode=</span><span class="s">&quot;3702&quot;</span><span class="nt">&gt;</span>
+<span class="linenos">59</span><span class="w">          </span><span class="nt">&lt;STRE</span><span class="w"> </span><span class="na">StreetCode=</span><span class="s">&quot;22063&quot;</span><span class="w"> </span><span class="na">StreetName=</span><span class="s">&quot;Cejl&quot;</span><span class="nt">/&gt;</span>
+<span class="linenos">60</span><span class="w">          </span><span class="nt">&lt;STRE</span><span class="w"> </span><span class="na">StreetCode=</span><span class="s">&quot;23035&quot;</span><span class="w"> </span><span class="na">StreetName=</span><span class="s">&quot;Dvorského&quot;</span><span class="nt">/&gt;</span>
+<span class="linenos">61</span><span class="w">          </span><span class="nt">&lt;STRE</span><span class="w"> </span><span class="na">StreetCode=</span><span class="s">&quot;28339&quot;</span><span class="w"> </span><span class="na">StreetName=</span><span class="s">&quot;Malinovského náměstí&quot;</span><span class="nt">/&gt;</span>
+<span class="linenos">62</span><span class="w">          </span><span class="nt">&lt;STRE</span><span class="w"> </span><span class="na">StreetCode=</span><span class="s">&quot;28916&quot;</span><span class="w"> </span><span class="na">StreetName=</span><span class="s">&quot;Nové sady&quot;</span><span class="nt">/&gt;</span>
+<span class="linenos">63</span><span class="w">          </span><span class="nt">&lt;STRE</span><span class="w"> </span><span class="na">StreetCode=</span><span class="s">&quot;30007&quot;</span><span class="w"> </span><span class="na">StreetName=</span><span class="s">&quot;Polní&quot;</span><span class="nt">/&gt;</span>
+<span class="linenos">64</span><span class="w">          </span><span class="nt">&lt;STRE</span><span class="w"> </span><span class="na">StreetCode=</span><span class="s">&quot;30031&quot;</span><span class="w"> </span><span class="na">StreetName=</span><span class="s">&quot;Ponávka&quot;</span><span class="nt">/&gt;</span>
+<span class="linenos">65</span><span class="w">          </span><span class="nt">&lt;STRE</span><span class="w"> </span><span class="na">StreetCode=</span><span class="s">&quot;30481&quot;</span><span class="w"> </span><span class="na">StreetName=</span><span class="s">&quot;Příkop&quot;</span><span class="nt">/&gt;</span>
+<span class="linenos">66</span><span class="w">          </span><span class="nt">&lt;STRE</span><span class="w"> </span><span class="na">StreetCode=</span><span class="s">&quot;32131&quot;</span><span class="w"> </span><span class="na">StreetName=</span><span class="s">&quot;Renneská třída&quot;</span><span class="nt">/&gt;</span>
+<span class="linenos">67</span><span class="w">          </span><span class="nt">&lt;STRE</span><span class="w"> </span><span class="na">StreetCode=</span><span class="s">&quot;33081&quot;</span><span class="w"> </span><span class="na">StreetName=</span><span class="s">&quot;Nádražní&quot;</span><span class="nt">/&gt;</span>
+<span class="linenos">68</span><span class="w">          </span><span class="nt">&lt;STRE</span><span class="w"> </span><span class="na">StreetCode=</span><span class="s">&quot;33529&quot;</span><span class="w"> </span><span class="na">StreetName=</span><span class="s">&quot;Benešova&quot;</span><span class="nt">/&gt;</span>
+<span class="linenos">69</span><span class="w">          </span><span class="nt">&lt;STRE</span><span class="w"> </span><span class="na">StreetCode=</span><span class="s">&quot;33537&quot;</span><span class="w"> </span><span class="na">StreetName=</span><span class="s">&quot;Milady Horákové&quot;</span><span class="nt">/&gt;</span>
+<span class="linenos">70</span><span class="w">          </span><span class="nt">&lt;STRE</span><span class="w"> </span><span class="na">StreetCode=</span><span class="s">&quot;34584&quot;</span><span class="w"> </span><span class="na">StreetName=</span><span class="s">&quot;Vídeňská&quot;</span><span class="nt">/&gt;</span>
+<span class="linenos">71</span><span class="w">          </span><span class="nt">&lt;STRE</span><span class="w"> </span><span class="na">StreetCode=</span><span class="s">&quot;34932&quot;</span><span class="w"> </span><span class="na">StreetName=</span><span class="s">&quot;Vsetínská&quot;</span><span class="nt">/&gt;</span>
+<span class="linenos">72</span><span class="w">          </span><span class="nt">&lt;STRE</span><span class="w"> </span><span class="na">StreetCode=</span><span class="s">&quot;36871&quot;</span><span class="w"> </span><span class="na">StreetName=</span><span class="s">&quot;Strážní&quot;</span><span class="nt">/&gt;</span>
+<span class="linenos">73</span><span class="w">        </span><span class="nt">&lt;/DEST&gt;</span>
+<span class="linenos">74</span><span class="w">        </span><span class="nt">&lt;DEST</span><span class="w"> </span><span class="na">CountryName=</span><span class="s">&quot;Česká republika&quot;</span><span class="w"> </span><span class="na">RegionCode=</span><span class="s">&quot;116&quot;</span><span class="w"> </span><span class="na">RegionName=</span><span class="s">&quot;Jihomoravský&quot;</span><span class="w"> </span><span class="na">TownCode=</span><span class="s">&quot;582786&quot;</span><span class="w"> </span><span class="na">TownDistrictCode=</span><span class="s">&quot;551031&quot;</span><span class="w"> </span><span class="na">TownDistrictName=</span><span class="s">&quot;Brno-sever&quot;</span><span class="w"> </span><span class="na">TownName=</span><span class="s">&quot;Brno&quot;</span><span class="w"> </span><span class="na">TownShip=</span><span class="s">&quot;Brnoměsto&quot;</span><span class="w"> </span><span class="na">TownShipCode=</span><span class="s">&quot;3702&quot;</span><span class="nt">&gt;</span>
+<span class="linenos">75</span><span class="w">          </span><span class="nt">&lt;STRE</span><span class="w"> </span><span class="na">StreetCode=</span><span class="s">&quot;27791&quot;</span><span class="w"> </span><span class="na">StreetName=</span><span class="s">&quot;Merhautova&quot;</span><span class="nt">/&gt;</span>
+<span class="linenos">76</span><span class="w">          </span><span class="nt">&lt;STRE</span><span class="w"> </span><span class="na">StreetCode=</span><span class="s">&quot;33537&quot;</span><span class="w"> </span><span class="na">StreetName=</span><span class="s">&quot;Milady Horákové&quot;</span><span class="nt">/&gt;</span>
+<span class="linenos">77</span><span class="w">        </span><span class="nt">&lt;/DEST&gt;</span>
+<span class="linenos">78</span><span class="w">      </span><span class="nt">&lt;/MDST&gt;</span>
+</pre></div>
+</div>
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="index.html">
+              <img class="logo" src="_static/RSD-logo-07.jpg" alt="Logo"/>
+            </a></p>
+  <div>
+    <h3><a href="index.html">Table of Contents</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">Koncepty</a><ul>
+<li><a class="reference internal" href="#casti-xml-dokumentu">Části XML dokumentu</a><ul>
+<li><a class="reference internal" href="#koren-dokumentu-doc">Kořen dokumentu (<cite>DOC</cite>)</a></li>
+<li><a class="reference internal" href="#metadata-inf">Metadata (<cite>INF</cite>)</a></li>
+<li><a class="reference internal" href="#kontejner-na-zpravy-mjd">Kontejner na zprávy (<cite>MJD</cite>)</a></li>
+<li><a class="reference internal" href="#zprava-msg">Zpráva (<cite>MSG</cite>)</a><ul>
+<li><a class="reference internal" href="#identita-zpravy-a-verze">Identita zprávy a verze</a></li>
+<li><a class="reference internal" href="#popis-udalosti">Popis události</a></li>
+<li><a class="reference internal" href="#popis-polohy">Popis polohy</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#popisovani-poloh">Popisování poloh</a><ul>
+<li><a class="reference internal" href="#popis-polohy-pomoci-alert-c">Popis polohy pomocí ALERT-C</a></li>
+<li><a class="reference internal" href="#popis-polohy-pomoci-useku-site-global-network">Popis polohy pomocí úseků sítě Global Network</a></li>
+<li><a class="reference internal" href="#popis-polohy-pomoci-ciselniku-uir-adr">Popis polohy pomocí číselníku UIR-ADR</a></li>
+</ul>
+</li>
+</ul>
+
+  </div>
+  <div>
+    <h4>Přechozí téma</h4>
+    <p class="topless"><a href="introduction.html"
+                          title="předchozí kapitola">Úvod</a></p>
+  </div>
+  <div>
+    <h4>Další téma</h4>
+    <p class="topless"><a href="examples.html"
+                          title="další kapitola">Příloha A: Příklady zpráv</a></p>
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>Tato stránka</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/concepts.rst.txt"
+            rel="nofollow">Ukázat zdroj</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Rychlé vyhledávání</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="OK" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigace</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="Obecný rejstřík"
+             >rejstřík</a></li>
+        <li class="right" >
+          <a href="examples.html" title="Příloha A: Příklady zpráv"
+             >další</a> |</li>
+        <li class="right" >
+          <a href="introduction.html" title="Úvod"
+             >předchozí</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Dokumentace pro NDIC - DDR XML - Běžné dopravní informace 3.2.5rev1</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Koncepty</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+    &#169; Veškerá práva vyhrazena 2023, TamTam Research s.r.o..
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.5.
+    </div>
+  </body>
+</html>

@@ -1,0 +1,185 @@
+========
+Concepts
+========
+
+Described format allows publishing general information about traffic situation. Common traffic information include, in particular, accidents, restrictions, closures, traffic conditions, road activities, etc.
+
+Publication type SituationPublication
+=====================================
+
+Format is based on DATEX II publication of type `SituationPublication` [16157-3]_. The profile uses most of data structures, provided by this type of publication.
+
+.. literalinclude:: ../../samples/accident.xml
+   :language: xml
+   :linenos:
+   :lineno-match:
+   :end-before: <situation
+
+Event description (Situation a SituationRecords)
+================================================
+
+`SituationPublication` requires description by means of class `Situation`, which aggregates instances of class `SituationRecord` (or its descendants). `Situation` also contains elements with general service availability information.
+
+Element `situation` describes one particular event, more particular events means more `situation` elements. Since the situation described may evolve over time, the element is versioned and has unique identifier. Each `situation` element contains one or more `situationRecord` elements.
+
+The `situationRecord` element may, in the element `situation`, occur several times (each element describing different aspect of the situation, i.e. accident in one record leading to a queue described in another record). The `situationRecord` element may evolve over time, so the element is versioned and has unique identifier.
+
+The traffic situation publication in particular includes:
+
+- Increased traffic levels, i.e. queuing traffic, stationary traffic
+- Accidents
+- Activities at the roadside,
+- Operating conditions
+
+  - road conditions related to weather (snow, water, etc.)
+  - other road condition  (sand, oil, spilled load, etc.)
+  - conditions given by the environment (precipitation, visibility, wind, etc.)
+
+- Operator Actions
+  - Roadwork
+  - Communication management
+  
+    - Detours
+    - Speed limitation
+    - Changing of traffic organization
+
+For situation description, most of the structures, provided by `SituationPublication` class can be used. For more details see W3C XML schema or [d2ref]_.
+
+.. literalinclude:: ../../samples/accident.xml
+   :language: xml
+   :linenos:
+   :lineno-match:
+   :start-after: </publicationCreator>
+   :end-before: </payloadPublication>
+
+Location description (Point or linear road network segment)
+===========================================================
+
+*Location* is a point or linear segment, both referenced to a road network segment. Location of type area and single point locations without a road segment reference are not used. The location may be described by means of several methods (at least by one). Each `SituationRecord` has to have its own location description. Within one `Situation`, the `SituationRecord` location descriptions, may differ in  i.e. one `SituationRecord` describing point source that caused a linear problem (second `SituationRecord`).
+
+.. literalinclude:: ../../samples/accident.xml
+   :language: xml
+   :linenos:
+   :lineno-match:
+   :start-after: </generalPublicComment>
+   :end-before: <accidentType
+
+The position description methods are further described in the chapter "Location description".
+
+=============
+Time validity
+=============
+
+Time validity is stated independently for every single `SituationRecord` described in a situation and is defined by a time interval between two time instants. The class `Validity` is used with an instance of class `OverallPeriod` in the role of `validityTimeSpecification` and elements `overallStartTime` and `overallStopTime` to define start and end of the interval.
+
+Setting a week-day and recurring time validity within the specified period, e.g. for recurring intermittent nightly tunnel closure, is not allowed. For such information, splitting to more messages valid in respective times is used.
+
+Used time validity intervals may fall into past, present or future.
+
+.. literalinclude:: ../../samples/accident.xml
+   :language: xml
+   :linenos:
+   :lineno-match:
+   :start-after: </probabilityOfOccurrence
+   :end-before: <generalPublicComment
+
+====================
+Location description
+====================
+
+The locations of the events varies thus its description can not be prepared in advance. For this reason, description by reference to `PrefefinedLocationPublication` can not be used. Element `groupOfLocations` with type `Point` or `Linear` (descendants of `NetworkLocation`) contains description of one physical location in one or more location referencing methods.
+
+.. literalinclude:: ../../samples/accident.xml
+   :language: xml
+   :linenos:
+   :lineno-match:
+   :start-after: </generalPublicComment>
+   :end-before: <alertCLinear
+
+Three location description methods for a linear location and three location description methods for point location can be used to describe the location. The method use depends on method availability at the location. At least one location description should be used. Point description without a linear reference is not allowed.
+
+Following is a selection of most used location referencing methods.
+
+Location description by means of ALERT-C
+========================================
+
+The method describes position by ALERT-C codes, by class `alertCLinear` of the `AlertCMethod2Linear` type for linear locations and by class `alertCPoint` of the `AlertCMethod2Point` type for point locations. Other methods of ALERT-C description are not used. The use of this method depends on the presence of the ALERT-C location at a given location.
+
+The `alertCLinear` method uses the primary location (element `alertCMethod2PrimaryPointLocation`), secondary location (element `alertCMethod2SecondaryPointLocation`) and direction (`alertCDirection`) element to describe the event. Of course, the method also includes elements that allows to identify a particular location table.
+
+Element `alertCLinear` can appear more than once in a situation location description. This could happen for long events that must be described by more than one ALERT-C route. ALERT-C allows to chain (reference between) locations only within one route.
+
+The primary location is, by the ALERT-C principle, the place where the accident occurred or where the driver leaves the problem area. The secondary location is the end of the traffic queue or the place where the driver first enters the problem area.
+
+This method is not optimal because the RDS-TMC uses to describe the event location the primary location, direction and extent, looking up the secondary and intermittent locations in the location table. Therefore, if the recipient systems are adapted to RDS-TMC event reconstruction, it will be necessary to modify them.
+
+The `alertCPoint` method is used to describe the point location (the inside of a junction or a tunnel, a short section). This method uses the primary location (element `alertCMethod2PrimaryPointLocation`) and the direction (`alertCDirection`) to describe the event. Of course, the method also includes elements that allow to identify a particular location table.
+
+.. literalinclude:: ../../samples/brokendownvehicles.xml
+   :language: xml
+   :linenos:
+   :lineno-match:
+   :start-after: </supplementaryPositionalDescription>
+   :end-before: <linearWithinLinearElement>
+
+However, if it is necessary to express the short location covered by one ALERT-C point also by other methods, then the `alertCLinear` method has to be used (where the secondary location is equal to the primary), since the methods describing one location must be of same type e.g. point or linear.
+
+Location description using a textual description of the road network
+====================================================================
+
+The method uses the "address" of the street or road (name, area, number, etc.) and the distance of the event location from the beginning and the end of the road. For description of linear locations, the `linearWithinLinearElement` class is used and for point locations the `pointAlongLinearElement` class is used. The use of this method depends on the presence of a proper description of the road (ideal for motorways).
+
+The `roadNumber` element describes the number of the affected road, element `DirectionRelativeOnLinearSection` describes the direction of affected traffic, and the `fromPoint` and `toPoint` elements describes distance of the start and the end of the event from the beginning of the road.
+
+.. literalinclude:: ../../samples/brokendownvehicles.xml
+   :language: xml
+   :linenos:
+   :lineno-match:
+   :start-after: </alertCLinear>
+   :end-before: <globalNetworkLinear>
+
+The method for description of a point event `PointAlongLinearElement` differs by simply describing one distance from the beginning of the identified road instead of two.
+
+Location description using the Global Network extension
+=======================================================
+
+This is a DATEX II model extension type B.
+
+The method uses for location description identifiers of affected sections of the road network, specified by Global Network (GN) database, and event start and end coordinates (in the S-JTSK reference system). The last and initial segments are truncated by the relative distance of the start and end points of the event relative to the GN segment.
+
+The `globalNetworkLinear` class is used to describe the linear location and `pointWithinLinearGNElement` for point location description.
+
+The `globalNetworkLinear` element describes the location of one event on the network. It contains the network version identifier `networkVersion`, the points bounding the beginning and end of the event (`startPoint` and `endPoint` in coordinates, here S-JTSK). And one or more `linearWithinLinearGNElement` elements that describe specific segments of the GN database by their direction, identifier, location order, and relative truncation (for the first and last sections).
+
+This is native means of location referencing by NDIC.
+
+.. literalinclude:: ../../samples/brokendownvehicles.xml
+   :language: xml
+   :linenos:
+   :lineno-match:
+   :start-after: </linearWithinLinearElement>
+   :end-before: </groupOfLocations>
+
+The method for description of a point location `pointWithinLinearGNElement` only describes one distance from the beginning of the identified segment of GN database instead of two distances. Is very similar to the `pointAlongLinearElement` method.
+
+Location description using Coordinates
+======================================
+
+Point location description without a reference to the linear is not allowed.
+
+Both methods `pointByCoordinates` and  `pointByMultiCoordinates` could be used only within the framework of the above defined methods.
+
+The point location is described using geographic coordinates. Two methods may be used based on used coordinate reference system. 
+
+Method `pointByCoordinates` is used for description of position in WGS-84 coordinate system.
+
+Method `pointByMultiCoordinates` is used to describe location by one ore more coordinate systems, one of which being Czech system S-JTSK and second WGS-84.
+This is a DATEX II model extension type B.
+
+.. literalinclude:: ../../samples/accident.xml
+   :language: xml
+   :linenos:
+   :lineno-match:
+   :start-after: </linearGeometryType>
+   :end-before: <endPoint>
+

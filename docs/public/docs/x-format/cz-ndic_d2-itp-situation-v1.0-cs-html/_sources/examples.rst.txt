@@ -1,0 +1,13 @@
+.. _examples:
+
+=========================
+Příloha A: Příklady zpráv
+=========================
+
+situation_vrazne.xml - Aktuální situace na odpočívce Vražné
+===========================================================
+
+Publikace popisuje aktuální stav parkoviště na odpočívce Vražné. Příklad obsahuje jen jediný element typu `parkingRecordStatus` typu `ParkingSiteStatus`, skutečná publikace by takových elementů obsahovala mnoho, např. pro všechny odpočívky provozované jedním operátorem.
+
+.. literalinclude:: ../../samples/situation_vrazne.xml
+   :language: xml

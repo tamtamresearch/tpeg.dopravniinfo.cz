@@ -1,0 +1,29 @@
+Testování doručovacího url z příkazové řádky
+============================================
+
+Následující příklady předpokládají, že doručovací url je http://localhost:8080/upload/data .
+
+Vytvořte soubor s názvem data.xml, obsah může být např.::
+
+    <root\>
+
+Použití příkazové utility curl
+------------------------------
+
+curl je populární příkazová utilita pro HTTP komunikaci. Více viz https://en.wikipedia.org/wiki/CURL#curl
+
+Data mohou být pomocí curl zaslána na doručovací url takto::
+
+    $ curl -H "Content-Type: application/xml" -X POST -d @data.xml http://localhost:8080/upload/data
+
+Dojde tím k zaslání HTTP POST požadavku na adresu http://localhost:8080/upload/data při (volitelném) použití hlavičky "Content-Type: application/xml" a s použitím obsahu souboru data.xml v těle POST požadavku.
+
+Použití příkazové utility httpie
+--------------------------------
+
+Další populární příkazovou utilitou pro zasílání HTTP požadavku je httpie, která poskytuje spustitelný program s názvem http. Více viz: https://github.com/jkbrzt/httpie
+
+Data mohou být na doručovací url zaslána pomocí programu http takto::
+
+    $ http POST http://localhost:8080/upload/data <data.xml
+

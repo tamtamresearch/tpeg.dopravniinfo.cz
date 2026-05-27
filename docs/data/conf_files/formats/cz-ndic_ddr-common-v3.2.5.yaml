@@ -1,0 +1,23 @@
+name:
+    "cs": DDR - Běžné dopravní informace a stupně provozu
+    "en": DDR - Common Traffic Information and Traffic Statuses
+version_info:
+    version: "3.2.5"
+    publish_date: 2010-01-01
+encoding: UTF-8
+syntax: XML
+#schema.type
+grammar: RELAX NG Compact Syntax (RNC)
+model: DDR
+model_version: DDR v3.2.5
+#model.profile_base
+model_description: DDR v3.2.5/Common
+#extended_parts
+model_extension: "none"
+description:
+    "cs": Formát datového distribučního rozhraní (DDR) NDIC používaný pro poskytování běžných dopravních informací obecného charakteru (nehody, uzavírky, omezení, atp.) a stupňů provozu.
+    "en": Format of data distribution interface (DDR) of NDIC used for publishing of common traffic information (accidents, closures, restrictions, etc.) and traffic statuses.
+publications:
+    html: [cs, en]
+    pdf: [cs, en]
+    zip: [en-cs]

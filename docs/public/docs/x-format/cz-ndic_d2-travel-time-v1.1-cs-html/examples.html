@@ -1,0 +1,238 @@
+
+
+<!doctype html>
+
+<html lang="cs" data-content_root="./">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Příloha A: Příklady zpráv &#8212; Dokumentace pro NDIC - DATEX II Elaborated Data Publication - Dojezdové doby 1.1rev0</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/bizstyle.css?v=532c1bf3" />
+    
+    <script src="_static/documentation_options.js?v=65a9e0b9"></script>
+    <script src="_static/doctools.js?v=888ff710"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/translations.js?v=0275affc"></script>
+    <script src="_static/bizstyle.js"></script>
+    <link rel="index" title="Rejstřík" href="genindex.html" />
+    <link rel="search" title="Vyhledávání" href="search.html" />
+    <link rel="next" title="Příloha B: W3C XML Schéma" href="format.html" />
+    <link rel="prev" title="Koncepty" href="concepts.html" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <!--[if lt IE 9]>
+    <script src="_static/css3-mediaqueries.js"></script>
+    <![endif]-->
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigace</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="Obecný rejstřík"
+             accesskey="I">rejstřík</a></li>
+        <li class="right" >
+          <a href="format.html" title="Příloha B: W3C XML Schéma"
+             accesskey="N">další</a> |</li>
+        <li class="right" >
+          <a href="concepts.html" title="Koncepty"
+             accesskey="P">předchozí</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Dokumentace pro NDIC - DATEX II Elaborated Data Publication - Dojezdové doby 1.1rev0</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Příloha A: Příklady zpráv</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="priloha-a-priklady-zprav">
+<span id="examples"></span><h1>Příloha A: Příklady zpráv<a class="headerlink" href="#priloha-a-priklady-zprav" title="Link to this heading">¶</a></h1>
+<section id="travel-time-xml-dojezdova-doba-na-jedne-trase">
+<h2>travel-time.xml - dojezdová doba na jedné trase<a class="headerlink" href="#travel-time-xml-dojezdova-doba-na-jedne-trase" title="Link to this heading">¶</a></h2>
+<p>Publikace obsahuje jeden záznam o dojezdových dobách na jedné trase.</p>
+<p>Trasy jsou definovány v jiné publikaci typu <cite>PredefinedLocationsPublication</cite>, která zde není detailně popisována.</p>
+<p>Dojezdová doba k trase s identifikátorem <cite>56472218-da2f-4986-880a-3ad8e3d2bf32</cite> je <cite>251</cite> sekund.</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span>
+<span class="nt">&lt;d2LogicalModel</span><span class="w"> </span><span class="na">modelBaseVersion=</span><span class="s">&quot;2&quot;</span><span class="w"> </span><span class="na">xmlns=</span><span class="s">&quot;http://datex2.eu/schema/2/2_0&quot;</span><span class="w"> </span><span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span><span class="w"> </span><span class="na">xsi:schemaLocation=</span><span class="s">&quot;http://datex2.eu/schema/2/2_0 ../schema/schema.xsd&quot;</span><span class="nt">&gt;</span>
+<span class="w">  </span><span class="nt">&lt;exchange&gt;</span>
+<span class="w">    </span><span class="nt">&lt;supplierIdentification&gt;</span>
+<span class="w">      </span><span class="nt">&lt;country&gt;</span>cz<span class="nt">&lt;/country&gt;</span>
+<span class="w">      </span><span class="nt">&lt;nationalIdentifier&gt;</span>ŘSD<span class="nt">&lt;/nationalIdentifier&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/supplierIdentification&gt;</span>
+<span class="w">  </span><span class="nt">&lt;/exchange&gt;</span>
+<span class="w">  </span><span class="nt">&lt;payloadPublication</span><span class="w"> </span><span class="na">lang=</span><span class="s">&quot;cs&quot;</span><span class="w"> </span><span class="na">xsi:type=</span><span class="s">&quot;ElaboratedDataPublication&quot;</span><span class="nt">&gt;</span>
+<span class="w">    </span><span class="nt">&lt;feedType&gt;</span>x-format:cz-ndic_d2-travel-time-v1.1<span class="nt">&lt;/feedType&gt;</span>
+<span class="w">    </span><span class="nt">&lt;publicationTime&gt;</span>2017-11-18T00:00:06+01:00<span class="nt">&lt;/publicationTime&gt;</span>
+<span class="w">    </span><span class="nt">&lt;publicationCreator&gt;</span>
+<span class="w">      </span><span class="nt">&lt;country&gt;</span>cz<span class="nt">&lt;/country&gt;</span>
+<span class="w">      </span><span class="nt">&lt;nationalIdentifier&gt;</span>ŘSD<span class="nt">&lt;/nationalIdentifier&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/publicationCreator&gt;</span>
+<span class="w">    </span><span class="nt">&lt;periodDefault&gt;</span>300<span class="nt">&lt;/periodDefault&gt;</span>
+<span class="w">    </span><span class="nt">&lt;timeDefault&gt;</span>2017-11-17T23:59:35+01:00<span class="nt">&lt;/timeDefault&gt;</span>
+<span class="w">    </span><span class="nt">&lt;headerInformation&gt;</span>
+<span class="w">      </span><span class="nt">&lt;confidentiality&gt;</span>noRestriction<span class="nt">&lt;/confidentiality&gt;</span>
+<span class="w">      </span><span class="nt">&lt;informationStatus&gt;</span>real<span class="nt">&lt;/informationStatus&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/headerInformation&gt;</span>
+<span class="w">    </span><span class="nt">&lt;elaboratedData&gt;</span>
+<span class="w">      </span><span class="nt">&lt;source&gt;</span>
+<span class="w">        </span><span class="nt">&lt;sourceIdentification&gt;</span>SectionID=1<span class="nt">&lt;/sourceIdentification&gt;</span>
+<span class="w">      </span><span class="nt">&lt;/source&gt;</span>
+<span class="w">      </span><span class="nt">&lt;basicData</span><span class="w"> </span><span class="na">xsi:type=</span><span class="s">&quot;TravelTimeData&quot;</span><span class="nt">&gt;</span>
+<span class="w">        </span><span class="nt">&lt;pertinentLocation</span><span class="w"> </span><span class="na">xsi:type=</span><span class="s">&quot;LocationByReference&quot;</span><span class="nt">&gt;</span>
+<span class="w">          </span><span class="nt">&lt;predefinedLocationReference</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;56472218-da2f-4986-880a-3ad8e3d2bf32&quot;</span><span class="w"> </span><span class="na">targetClass=</span><span class="s">&quot;PredefinedLocation&quot;</span><span class="w"> </span><span class="na">version=</span><span class="s">&quot;1&quot;</span><span class="nt">/&gt;</span>
+<span class="w">        </span><span class="nt">&lt;/pertinentLocation&gt;</span>
+<span class="w">        </span><span class="nt">&lt;vehicleType&gt;</span>anyVehicle<span class="nt">&lt;/vehicleType&gt;</span>
+<span class="w">        </span><span class="nt">&lt;travelTime&gt;</span>
+<span class="w">          </span><span class="nt">&lt;duration&gt;</span>251<span class="nt">&lt;/duration&gt;</span>
+<span class="w">        </span><span class="nt">&lt;/travelTime&gt;</span>
+<span class="w">      </span><span class="nt">&lt;/basicData&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/elaboratedData&gt;</span>
+<span class="w">    </span><span class="nt">&lt;elaboratedData&gt;</span>
+<span class="w">      </span><span class="nt">&lt;source&gt;</span>
+<span class="w">        </span><span class="nt">&lt;sourceIdentification&gt;</span>SectionID=2<span class="nt">&lt;/sourceIdentification&gt;</span>
+<span class="w">      </span><span class="nt">&lt;/source&gt;</span>
+<span class="w">      </span><span class="nt">&lt;basicData</span><span class="w"> </span><span class="na">xsi:type=</span><span class="s">&quot;TravelTimeData&quot;</span><span class="nt">&gt;</span>
+<span class="w">        </span><span class="nt">&lt;pertinentLocation</span><span class="w"> </span><span class="na">xsi:type=</span><span class="s">&quot;LocationByReference&quot;</span><span class="nt">&gt;</span>
+<span class="w">          </span><span class="nt">&lt;predefinedLocationReference</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot; 26353878-23a3-4937-8933-3d763399a040&quot;</span><span class="w"> </span><span class="na">targetClass=</span><span class="s">&quot;PredefinedLocation&quot;</span><span class="w"> </span><span class="na">version=</span><span class="s">&quot;1&quot;</span><span class="nt">/&gt;</span>
+<span class="w">        </span><span class="nt">&lt;/pertinentLocation&gt;</span>
+<span class="w">        </span><span class="nt">&lt;vehicleType&gt;</span>anyVehicle<span class="nt">&lt;/vehicleType&gt;</span>
+<span class="w">        </span><span class="nt">&lt;travelTime&gt;</span>
+<span class="w">          </span><span class="nt">&lt;duration&gt;</span>250<span class="nt">&lt;/duration&gt;</span>
+<span class="w">        </span><span class="nt">&lt;/travelTime&gt;</span>
+<span class="w">      </span><span class="nt">&lt;/basicData&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/elaboratedData&gt;</span>
+<span class="w">    </span><span class="nt">&lt;elaboratedData&gt;</span>
+<span class="w">      </span><span class="nt">&lt;source&gt;</span>
+<span class="w">        </span><span class="nt">&lt;sourceIdentification&gt;</span>SectionID=3<span class="nt">&lt;/sourceIdentification&gt;</span>
+<span class="w">      </span><span class="nt">&lt;/source&gt;</span>
+<span class="w">      </span><span class="nt">&lt;basicData</span><span class="w"> </span><span class="na">xsi:type=</span><span class="s">&quot;TravelTimeData&quot;</span><span class="nt">&gt;</span>
+<span class="w">        </span><span class="nt">&lt;pertinentLocation</span><span class="w"> </span><span class="na">xsi:type=</span><span class="s">&quot;LocationByReference&quot;</span><span class="nt">&gt;</span>
+<span class="w">          </span><span class="nt">&lt;predefinedLocationReference</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;d8063ebf-5add-4562-aaaa-1afe3b5e6065&quot;</span><span class="w"> </span><span class="na">targetClass=</span><span class="s">&quot;PredefinedLocation&quot;</span><span class="w"> </span><span class="na">version=</span><span class="s">&quot;1&quot;</span><span class="nt">/&gt;</span>
+<span class="w">        </span><span class="nt">&lt;/pertinentLocation&gt;</span>
+<span class="w">        </span><span class="nt">&lt;vehicleType&gt;</span>anyVehicle<span class="nt">&lt;/vehicleType&gt;</span>
+<span class="w">        </span><span class="nt">&lt;travelTime&gt;</span>
+<span class="w">          </span><span class="nt">&lt;duration&gt;</span>285<span class="nt">&lt;/duration&gt;</span>
+<span class="w">        </span><span class="nt">&lt;/travelTime&gt;</span>
+<span class="w">      </span><span class="nt">&lt;/basicData&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/elaboratedData&gt;</span>
+<span class="w">  </span><span class="nt">&lt;/payloadPublication&gt;</span>
+<span class="nt">&lt;/d2LogicalModel&gt;</span>
+</pre></div>
+</div>
+<section id="korenovy-element-a-obalka-publikace">
+<h3>Kořenový element a obálka publikace<a class="headerlink" href="#korenovy-element-a-obalka-publikace" title="Link to this heading">¶</a></h3>
+<p>Kořenový element <cite>d2LogicalModel</cite> deklaruje, že se jedná o zprávu, používající DATEX II.</p>
+<p>Element <cite>exchange</cite> obsahuje identifikátor poskytovatele.</p>
+<p>Element <cite>payloadPublication</cite> je obálkou pro přenos samotných informací, obsahující především elementy <cite>elaboratedData</cite>, kterých může být mnoho (v této ukázce je jeden).</p>
+<p>Atribut <cite>xsi:type=“ElaboratedDataPublication“</cite> v elementu <cite>payloadPublication</cite> určuje, že tato obálka je typu Vypočtená data.</p>
+<p>Element <cite>feedType</cite> uvádí typ publikace, uri schématu.</p>
+<p>Element <cite>publicationTime</cite> uvádí čas vydání publikace.</p>
+<p>Element <cite>publicationCreator</cite> identifikuje tvůrce publikace.</p>
+<p><cite>timeDefault</cite> element uvádí čas platnosti vypočtených dojezdových dob, je to čas výpočtu všech hodnot dojezdových dob.</p>
+<p>Element <cite>periodDefault</cite> uvádí vzorkovací periodu v sekundách.</p>
+</section>
+<section id="popis-vypoctene-dojezdove-doby-na-jedne-trase">
+<h3>Popis vypočtené dojezdové doby na jedné trase<a class="headerlink" href="#popis-vypoctene-dojezdove-doby-na-jedne-trase" title="Link to this heading">¶</a></h3>
+<p>Následující element <cite>elaboratedData</cite> se může opakovat a popisuje jednotlivé dílčí vypočtené dojezdové doby.</p>
+<p>Element <cite>sourceIdentification</cite> uvádí identifikaci úseku / zařízení, ke snadnější identifikaci  jako doplněk k identifikátoru polohy.</p>
+<p>Zanořený element <cite>basicData</cite> svým atributem <cite>xsi:type=“TravelTimeData“</cite> uvádí, že hodnoty jsou ve významu dojezdové doby.</p>
+<section id="poloha-stavove-informace">
+<h4>Poloha stavové informace<a class="headerlink" href="#poloha-stavove-informace" title="Link to this heading">¶</a></h4>
+<p>Atribut <cite>id=“56472218-da2f-4986-880a-3ad8e3d2bf32“</cite> v elementu <cite>predefinedLocationReference</cite> odkazuje na předem definovanou trasu s daným identifikátorem a atribut <cite>version=“1“</cite> upřesňuje, o kterou verzi popisu polohy jde.</p>
+</section>
+<section id="dojezdova-doba">
+<h4>Dojezdová doba<a class="headerlink" href="#dojezdova-doba" title="Link to this heading">¶</a></h4>
+<p>Element <cite>travelTime</cite> uvádí v <cite>duration</cite> dojezdovou dobu v sekundách.</p>
+</section>
+<section id="casova-platnost">
+<h4>Časová platnost<a class="headerlink" href="#casova-platnost" title="Link to this heading">¶</a></h4>
+<p>Počátek platnosti uvedených hodnot je uveden společně pro všechny záznamy a to v elementu <cite>timeDefault</cite>.</p>
+</section>
+</section>
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="index.html">
+              <img class="logo" src="_static/RSD-logo-07.jpg" alt="Logo"/>
+            </a></p>
+  <div>
+    <h3><a href="index.html">Table of Contents</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">Příloha A: Příklady zpráv</a><ul>
+<li><a class="reference internal" href="#travel-time-xml-dojezdova-doba-na-jedne-trase">travel-time.xml - dojezdová doba na jedné trase</a><ul>
+<li><a class="reference internal" href="#korenovy-element-a-obalka-publikace">Kořenový element a obálka publikace</a></li>
+<li><a class="reference internal" href="#popis-vypoctene-dojezdove-doby-na-jedne-trase">Popis vypočtené dojezdové doby na jedné trase</a><ul>
+<li><a class="reference internal" href="#poloha-stavove-informace">Poloha stavové informace</a></li>
+<li><a class="reference internal" href="#dojezdova-doba">Dojezdová doba</a></li>
+<li><a class="reference internal" href="#casova-platnost">Časová platnost</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  </div>
+  <div>
+    <h4>Přechozí téma</h4>
+    <p class="topless"><a href="concepts.html"
+                          title="předchozí kapitola">Koncepty</a></p>
+  </div>
+  <div>
+    <h4>Další téma</h4>
+    <p class="topless"><a href="format.html"
+                          title="další kapitola">Příloha B: W3C XML Schéma</a></p>
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>Tato stránka</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/examples.rst.txt"
+            rel="nofollow">Ukázat zdroj</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Rychlé vyhledávání</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="OK" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigace</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="Obecný rejstřík"
+             >rejstřík</a></li>
+        <li class="right" >
+          <a href="format.html" title="Příloha B: W3C XML Schéma"
+             >další</a> |</li>
+        <li class="right" >
+          <a href="concepts.html" title="Koncepty"
+             >předchozí</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Dokumentace pro NDIC - DATEX II Elaborated Data Publication - Dojezdové doby 1.1rev0</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Příloha A: Příklady zpráv</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+    &#169; Veškerá práva vyhrazena 2018, TamTam Research s.r.o..
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.5.
+    </div>
+  </body>
+</html>

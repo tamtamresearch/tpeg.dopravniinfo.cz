@@ -1,0 +1,247 @@
+
+
+<!doctype html>
+
+<html lang="en" data-content_root="./">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Concepts &#8212; NDIC - DATEX II Measured Data Publication - Weather Data 1.0rev0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/bizstyle.css?v=532c1bf3" />
+    
+    <script src="_static/documentation_options.js?v=5b6ea117"></script>
+    <script src="_static/doctools.js?v=888ff710"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/bizstyle.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Appendix A: Message examples" href="examples.html" />
+    <link rel="prev" title="Introduction" href="introduction.html" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <!--[if lt IE 9]>
+    <script src="_static/css3-mediaqueries.js"></script>
+    <![endif]-->
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="examples.html" title="Appendix A: Message examples"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="introduction.html" title="Introduction"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">NDIC - DATEX II Measured Data Publication - Weather Data 1.0rev0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Concepts</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="concepts">
+<h1>Concepts<a class="headerlink" href="#concepts" title="Link to this heading">¶</a></h1>
+<p>Described format allows publishing weather data (humidity, pollution, precipitation, road surface conditions, temperature, visibility and wind) for set of predefined weather station sites.</p>
+<section id="publication-type-measureddatapublication">
+<h2>Publication type MeasuredDataPublication<a class="headerlink" href="#publication-type-measureddatapublication" title="Link to this heading">¶</a></h2>
+<p>Format is based on DATEX II publication of type <cite>MeasuredDataPublication</cite>
+<a class="reference internal" href="introduction.html#id11" id="id1"><span>[16157-5]</span></a> and is used to publish traffic data for a set of predefined measuring equipment.</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span>
+<span class="linenos"> 2</span><span class="nt">&lt;d2LogicalModel</span><span class="w"> </span><span class="na">modelBaseVersion=</span><span class="s">&quot;2&quot;</span><span class="w"> </span><span class="na">xmlns=</span><span class="s">&quot;http://datex2.eu/schema/2/2_0&quot;</span><span class="w"> </span><span class="na">xmlns:xsd=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema&quot;</span><span class="w"> </span><span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span><span class="nt">&gt;</span>
+<span class="linenos"> 3</span><span class="w">  </span><span class="nt">&lt;exchange&gt;</span>
+<span class="linenos"> 4</span><span class="w">    </span><span class="nt">&lt;supplierIdentification&gt;</span>
+<span class="linenos"> 5</span><span class="w">      </span><span class="nt">&lt;country&gt;</span>cz<span class="nt">&lt;/country&gt;</span>
+<span class="linenos"> 6</span><span class="w">      </span><span class="nt">&lt;nationalIdentifier&gt;</span>DRU<span class="nt">&lt;/nationalIdentifier&gt;</span>
+<span class="linenos"> 7</span><span class="w">    </span><span class="nt">&lt;/supplierIdentification&gt;</span>
+<span class="linenos"> 8</span><span class="w">  </span><span class="nt">&lt;/exchange&gt;</span>
+<span class="linenos"> 9</span><span class="w">  </span><span class="nt">&lt;payloadPublication</span><span class="w"> </span><span class="na">lang=</span><span class="s">&quot;cs&quot;</span><span class="w"> </span><span class="na">xsi:type=</span><span class="s">&quot;MeasuredDataPublication&quot;</span><span class="nt">&gt;</span>
+<span class="linenos">10</span><span class="w">    </span><span class="nt">&lt;feedType&gt;</span>x-format:cz-ndic_d2-weather-data-v1.0<span class="nt">&lt;/feedType&gt;</span>
+<span class="linenos">11</span><span class="w">    </span><span class="nt">&lt;publicationTime&gt;</span>2018-03-21T15:59:20+02:00<span class="nt">&lt;/publicationTime&gt;</span>
+<span class="linenos">12</span><span class="w">    </span><span class="nt">&lt;publicationCreator&gt;</span>
+<span class="linenos">13</span><span class="w">      </span><span class="nt">&lt;country&gt;</span>cz<span class="nt">&lt;/country&gt;</span>
+<span class="linenos">14</span><span class="w">      </span><span class="nt">&lt;nationalIdentifier&gt;</span>DRU<span class="nt">&lt;/nationalIdentifier&gt;</span>
+<span class="linenos">15</span><span class="w">    </span><span class="nt">&lt;/publicationCreator&gt;</span>
+</pre></div>
+</div>
+<p>Traffic data is provided in element <cite>measurementSiteReference</cite> for a particular measuring equipment defined in a static publication <cite>MeasurementSiteTablePublication</cite> that is referenced via its unique id and version in the element <cite>measurementSiteTableReference</cite>.</p>
+<p>Element <cite>measurementSiteReference</cite> with a set of measurements for a particular measuring site should appear in <cite>siteMeasurements</cite> multiple times (each time for different weather station).</p>
+</section>
+<section id="predefined-measurement-sites">
+<h2>Predefined measurement sites<a class="headerlink" href="#predefined-measurement-sites" title="Link to this heading">¶</a></h2>
+<p>The <em>measuring equipment</em> capability and location does not change. The measurement station is therefore, in this profile, described by a reference (id) to a predefined measurement site table publication defined in different document. The reference points to a class instance <cite>MeasurementSiteRecord</cite> from package <cite>MeasurementSiteTablePublication</cite>. Therefore, the location and capabilities of the equipment is not described directly in the file.</p>
+<p>The equipment information (location and capabilities) is determined by reference to a set of predefined equipment. To look up given equipment, it is necessary to obtain publication <cite>MeasurementSiteTablePublication</cite>, related to this source of information and inside find location of identical type (by <cite>targetClass</cite>, here <cite>MeasurementSiteRecord</cite>), with the same identifier and version located within the same measurement table.</p>
+<p>Fully qualified identifier of the measurement site consists of:</p>
+<ul class="simple">
+<li><p>measurement site table id and version and by</p></li>
+<li><p>measurement site record id and version.</p></li>
+</ul>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="linenos">16</span><span class="w">    </span><span class="nt">&lt;measurementSiteTableReference</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;CZ_DRU_MST_WEA&quot;</span><span class="w"> </span><span class="na">targetClass=</span><span class="s">&quot;MeasurementSiteTable&quot;</span><span class="w"> </span><span class="na">version=</span><span class="s">&quot;1&quot;</span><span class="nt">/&gt;</span>
+<span class="linenos">17</span><span class="w">    </span><span class="nt">&lt;headerInformation&gt;</span>
+<span class="linenos">18</span><span class="w">      </span><span class="nt">&lt;confidentiality&gt;</span>noRestriction<span class="nt">&lt;/confidentiality&gt;</span>
+<span class="linenos">19</span><span class="w">      </span><span class="nt">&lt;informationStatus&gt;</span>real<span class="nt">&lt;/informationStatus&gt;</span>
+<span class="linenos">20</span><span class="w">    </span><span class="nt">&lt;/headerInformation&gt;</span>
+<span class="linenos">21</span><span class="w">    </span><span class="nt">&lt;siteMeasurements&gt;</span>
+<span class="linenos">22</span><span class="w">      </span><span class="nt">&lt;measurementSiteReference</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;12&quot;</span><span class="w"> </span><span class="na">targetClass=</span><span class="s">&quot;MeasurementSiteRecord&quot;</span><span class="w"> </span><span class="na">version=</span><span class="s">&quot;1&quot;</span><span class="nt">/&gt;</span>
+<span class="linenos">23</span><span class="w">      </span><span class="nt">&lt;measurementTimeDefault&gt;</span>2018-03-21T15:59:20+02:00<span class="nt">&lt;/measurementTimeDefault&gt;</span>
+</pre></div>
+</div>
+</section>
+<section id="weather-station-capabilities">
+<h2>Weather station capabilities<a class="headerlink" href="#weather-station-capabilities" title="Link to this heading">¶</a></h2>
+<p>Each weather station, in this profile, is capable of different set of measurements:</p>
+<ul class="simple">
+<li><p>humidity,</p></li>
+<li><p>pollution,</p></li>
+<li><p>precipitation,</p></li>
+<li><p>road surface conditions,</p></li>
+<li><p>temperature,</p></li>
+<li><p>visibility and</p></li>
+<li><p>wind.</p></li>
+</ul>
+<p>The full list of possible measurements given by the weather station is called a capability and set in the <cite>MeasurementSiteTablePublication</cite> for each weather station verbatim as a number of <cite>measurementSpecificCharacteristics</cite> identified within the record by an index. To refer to that particular capability (i.e. precipitation) from this publication the capability index is used.</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="linenos">25</span><span class="w">      </span><span class="nt">&lt;measuredValue</span><span class="w"> </span><span class="na">index=</span><span class="s">&quot;1&quot;</span><span class="nt">&gt;</span>
+<span class="linenos">26</span><span class="w">        </span><span class="nt">&lt;measuredValue&gt;</span>
+<span class="linenos">27</span><span class="w">          </span><span class="nt">&lt;basicData</span><span class="w"> </span><span class="na">xsi:type=</span><span class="s">&quot;PrecipitationInformation&quot;</span><span class="nt">&gt;</span>
+<span class="linenos">28</span><span class="w">            </span><span class="nt">&lt;precipitationDetail&gt;</span>
+<span class="linenos">29</span><span class="w">              </span><span class="nt">&lt;precipitationType&gt;</span>rain<span class="nt">&lt;/precipitationType&gt;</span>
+<span class="linenos">30</span><span class="w">              </span><span class="nt">&lt;precipitationIntensity&gt;</span>
+<span class="linenos">31</span><span class="w">                </span><span class="nt">&lt;millimetresPerHourIntensity&gt;</span>10<span class="nt">&lt;/millimetresPerHourIntensity&gt;</span>
+<span class="linenos">32</span><span class="w">              </span><span class="nt">&lt;/precipitationIntensity&gt;</span>
+<span class="linenos">33</span><span class="w">            </span><span class="nt">&lt;/precipitationDetail&gt;</span>
+<span class="linenos">34</span><span class="w">          </span><span class="nt">&lt;/basicData&gt;</span>
+<span class="linenos">35</span><span class="w">        </span><span class="nt">&lt;/measuredValue&gt;</span>
+<span class="linenos">36</span><span class="w">      </span><span class="nt">&lt;/measuredValue&gt;</span>
+<span class="linenos">37</span><span class="w">      </span><span class="cm">&lt;!--road_status --&gt;</span>
+<span class="linenos">38</span><span class="w">      </span><span class="nt">&lt;measuredValue</span><span class="w"> </span><span class="na">index=</span><span class="s">&quot;2&quot;</span><span class="nt">&gt;</span>
+<span class="linenos">39</span><span class="w">        </span><span class="nt">&lt;measuredValue&gt;</span>
+<span class="linenos">40</span><span class="w">          </span><span class="nt">&lt;basicData</span><span class="w"> </span><span class="na">xsi:type=</span><span class="s">&quot;RoadSurfaceConditionInformation&quot;</span><span class="nt">&gt;</span>
+<span class="linenos">41</span><span class="w">            </span><span class="nt">&lt;weatherRelatedRoadConditionType&gt;</span>surfaceWater<span class="nt">&lt;/weatherRelatedRoadConditionType&gt;</span>
+<span class="linenos">42</span><span class="w">            </span><span class="nt">&lt;roadSurfaceConditionMeasurements&gt;</span>
+<span class="linenos">43</span><span class="w">              </span><span class="nt">&lt;waterFilmThickness&gt;</span>
+<span class="linenos">44</span><span class="w">                </span><span class="nt">&lt;floatingPointMetreDistance&gt;</span>0.01<span class="nt">&lt;/floatingPointMetreDistance&gt;</span>
+<span class="linenos">45</span><span class="w">              </span><span class="nt">&lt;/waterFilmThickness&gt;</span>
+<span class="linenos">46</span><span class="w">            </span><span class="nt">&lt;/roadSurfaceConditionMeasurements&gt;</span>
+<span class="linenos">47</span><span class="w">          </span><span class="nt">&lt;/basicData&gt;</span>
+<span class="linenos">48</span><span class="w">        </span><span class="nt">&lt;/measuredValue&gt;</span>
+<span class="linenos">49</span><span class="w">      </span><span class="nt">&lt;/measuredValue&gt;</span>
+</pre></div>
+</div>
+</section>
+<section id="publishing-only-currently-available-data">
+<h2>Publishing only currently available data<a class="headerlink" href="#publishing-only-currently-available-data" title="Link to this heading">¶</a></h2>
+<p>Format provides information about capabilities with known status. Either value is known (could be zero) or the capability is in faulty state (i.e. unknown). Only situation when respective capability <cite>measuredValue</cite> with given index value is not present is when the value could not be calculated (i.e. for rain intensity when there is no rain).</p>
+</section>
+</section>
+<section id="time-validity">
+<h1>Time validity<a class="headerlink" href="#time-validity" title="Link to this heading">¶</a></h1>
+<p>The time of validity for all measured data at one measurement site is given by the mandatory element <cite>measuremetnTimeDefault</cite> nested in <cite>measurementSiteReference</cite>. So each measurement site has to have its own validity time set up.
+Validity time means end of the measurement period, when data is calculated and provided.</p>
+<p>No further specification of validity is used.</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="linenos">10</span><span class="w">    </span><span class="nt">&lt;feedType&gt;</span>x-format:cz-ndic_d2-weather-data-v1.0<span class="nt">&lt;/feedType&gt;</span>
+<span class="linenos">11</span><span class="w">    </span><span class="nt">&lt;publicationTime&gt;</span>2018-03-21T15:59:20+02:00<span class="nt">&lt;/publicationTime&gt;</span>
+<span class="linenos">12</span><span class="w">    </span><span class="nt">&lt;publicationCreator&gt;</span>
+<span class="linenos">13</span><span class="w">      </span><span class="nt">&lt;country&gt;</span>cz<span class="nt">&lt;/country&gt;</span>
+<span class="linenos">14</span><span class="w">      </span><span class="nt">&lt;nationalIdentifier&gt;</span>DRU<span class="nt">&lt;/nationalIdentifier&gt;</span>
+<span class="linenos">15</span><span class="w">    </span><span class="nt">&lt;/publicationCreator&gt;</span>
+<span class="linenos">16</span><span class="w">    </span><span class="nt">&lt;measurementSiteTableReference</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;CZ_DRU_MST_WEA&quot;</span><span class="w"> </span><span class="na">targetClass=</span><span class="s">&quot;MeasurementSiteTable&quot;</span><span class="w"> </span><span class="na">version=</span><span class="s">&quot;1&quot;</span><span class="nt">/&gt;</span>
+<span class="linenos">17</span><span class="w">    </span><span class="nt">&lt;headerInformation&gt;</span>
+<span class="linenos">18</span><span class="w">      </span><span class="nt">&lt;confidentiality&gt;</span>noRestriction<span class="nt">&lt;/confidentiality&gt;</span>
+<span class="linenos">19</span><span class="w">      </span><span class="nt">&lt;informationStatus&gt;</span>real<span class="nt">&lt;/informationStatus&gt;</span>
+<span class="linenos">20</span><span class="w">    </span><span class="nt">&lt;/headerInformation&gt;</span>
+<span class="linenos">21</span><span class="w">    </span><span class="nt">&lt;siteMeasurements&gt;</span>
+<span class="linenos">22</span><span class="w">      </span><span class="nt">&lt;measurementSiteReference</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;12&quot;</span><span class="w"> </span><span class="na">targetClass=</span><span class="s">&quot;MeasurementSiteRecord&quot;</span><span class="w"> </span><span class="na">version=</span><span class="s">&quot;1&quot;</span><span class="nt">/&gt;</span>
+<span class="linenos">23</span><span class="w">      </span><span class="nt">&lt;measurementTimeDefault&gt;</span>2018-03-21T15:59:20+02:00<span class="nt">&lt;/measurementTimeDefault&gt;</span>
+</pre></div>
+</div>
+</section>
+<section id="location-referencing">
+<h1>Location referencing<a class="headerlink" href="#location-referencing" title="Link to this heading">¶</a></h1>
+<p>The format does not describe locations, they are expected as a part of equipment specification in publication <cite>MeasurementSiteTablePublication</cite> <a class="reference internal" href="introduction.html#id11" id="id2"><span>[16157-5]</span></a>.</p>
+<p>Location referencing methods are out of scope of this document and are described elsewhere.</p>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="index.html">
+              <img class="logo" src="_static/RSD-logo-07.jpg" alt="Logo"/>
+            </a></p>
+  <div>
+    <h3><a href="index.html">Table of Contents</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">Concepts</a><ul>
+<li><a class="reference internal" href="#publication-type-measureddatapublication">Publication type MeasuredDataPublication</a></li>
+<li><a class="reference internal" href="#predefined-measurement-sites">Predefined measurement sites</a></li>
+<li><a class="reference internal" href="#weather-station-capabilities">Weather station capabilities</a></li>
+<li><a class="reference internal" href="#publishing-only-currently-available-data">Publishing only currently available data</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#time-validity">Time validity</a></li>
+<li><a class="reference internal" href="#location-referencing">Location referencing</a></li>
+</ul>
+
+  </div>
+  <div>
+    <h4>Previous topic</h4>
+    <p class="topless"><a href="introduction.html"
+                          title="previous chapter">Introduction</a></p>
+  </div>
+  <div>
+    <h4>Next topic</h4>
+    <p class="topless"><a href="examples.html"
+                          title="next chapter">Appendix A: Message examples</a></p>
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/concepts.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="examples.html" title="Appendix A: Message examples"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="introduction.html" title="Introduction"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">NDIC - DATEX II Measured Data Publication - Weather Data 1.0rev0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Concepts</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+    &#169; Copyright 2018, TamTam Research s.r.o..
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.5.
+    </div>
+  </body>
+</html>

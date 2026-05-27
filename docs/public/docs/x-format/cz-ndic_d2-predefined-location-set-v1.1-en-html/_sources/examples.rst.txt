@@ -1,0 +1,49 @@
+.. _examples:
+
+===============================
+Appendix A: Publication example
+===============================
+
+predefined_location_set.xml - predefined location set with two locations
+========================================================================
+
+Publication contains two predefined locations.
+
+  .. literalinclude:: ../../samples/predefined_location_set.xml
+   :language: xml
+
+Root element and publication envelope
+-------------------------------------
+
+Root element `d2LogicalModel` declares, that this message is using DATEX II.
+
+Element `exchange` contains provider identifier.
+
+Element `payloadPublication` is an envelope for actual information payload containing general information and one or more elements `predefinedLocationContainer`, (in our case there are two).
+
+Attribute `xsi:type="PredefinedLocationsPublication"` in element `payloadPublication` determines, that this envelope is of type predefined location publication.
+
+Element `feedType` states publication schema by its uri.
+
+Element `publicationTime` states publication time of this publication as a whole.
+
+Element `publicationCreator` identifies creator of the publication.
+
+Description of predefined locations
+-----------------------------------
+
+Predefined locations are described in elements `predefinedLocationContainer` using these unique identifiers `id="dde51831-2f37-4f07-8429-286a9d08106c"` and `id="da0a5990-530c-426a-a6fd-ce88aeeb8aab"`.
+
+Location description (dde51831-2f37-4f07-8429-286a9d08106c)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Element `predefinedLocationName` contains a textual description of a physical location.
+
+Element `location` of type `xsi:type="Linear"` contains individual location description methods, in our case just one the description using Global Network links in element `globalNetworkLinear`.
+
+Location description (da0a5990-530c-426a-a6fd-ce88aeeb8aab)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Element `predefinedLocationName` contains a textual description of a physical location.
+
+Element `location` of type `xsi:type="Linear"` contains individual location description methods, in our case two. First one the description using location tables and ALERT-C location in `alertCLinear` element, the second one using Global Network links in element `globalNetworkLinear`.

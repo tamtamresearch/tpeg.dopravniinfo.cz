@@ -1,0 +1,90 @@
+========
+Koncepty
+========
+
+Popisovaný formát umožňuje publikovat provozní data (intenzita, obsazenost a rychlost) pro sadu předdefinovaných míst dopravních detektorů.
+
+Typ publikace MeasuredDataPublication
+=====================================
+
+Formát vychází z publikace DATEX II typu `MeasuredDataPublication` [16157-5]_ a slouží k publikování dat o provozu pro sadu předdefinovaných měřicích zařízení.
+
+.. literalinclude:: ../../samples/detector-data.xml
+   :language: xml
+   :linenos:
+   :lineno-match:
+   :end-before: <measurementSiteTableReference
+
+Údaje o provozu jsou poskytovány v prvku `measurementSiteReference` pro určité měřicí zařízení definované ve statické publikaci  `MeasurementSiteTablePublication`, která je odkazována pomocí jedinečného id a verze v prvku `measurementSiteTableReference`.
+
+Prvek `measurementSiteReference` se sadou měření pro konkrétní měřicí místo se může objevit v `siteMeasurements` vícekrát (pro různé detektory).
+
+Předdefinované místa měření
+===========================
+
+Schopnosti a poloha dopravního detektoru se nemění. Měřící stanice je proto v tomto profilu popsána odkazem (id) do předdefinované publikace tabulek měřicích míst definovaných v jiném dokumentu. Odkaz vede na instanci třídy `MeasurementSiteRecord` z balíčku` MeasurementSiteTablePublication`. Poloha a schopnosti zařízení proto nejsou popsány přímo v souboru.
+
+Informace o zařízení (poloha a schopnosti) jsou určeny odkazem na soubor předdefinovaných zařízení. Pro vyhledání daného zařízení je nutné získat publikaci `MeasurementSiteTablePublication`, která se vztahuje k tomuto zdroji informací a nalézt v ní záznam stejného typu (podle `targetClass`, zde `MeasurementSiteRecord`) se odpovídajícím identifikátorem a verzí umístěný v rámci odpovídající tabulky měřících míst.
+
+Plně kvalifikovaný identifikátor měřicího místa se skládá z:
+
+- id a verze tabulky měřících míst a
+- id a verze měřícího místa.
+
+.. literalinclude:: ../../samples/detector-data.xml
+   :language: xml
+   :linenos:
+   :lineno-match:
+   :start-after: </publicationCreator>
+   :end-before: <!--start of overall characteristics: flow, occupancy and speed -->
+
+Schopnosti dopravního detektoru
+===============================
+
+Každý detektor je, v tomto profilu, schopen různých sad měření:
+
+- intenzita provozu,
+- obsazenost a
+- rychlost.
+
+Měření mohou být, ve `MeasurementSiteTablePublication`, dále specifikována polohou (konkrétní jízdní pruh) a kategorií vozidla (tj. intenzita nákladních vozidel, teplota vozovky ve druhém jízdním pruhu).
+
+Úplný seznam možných měření daných detektorem, nazývaných schopnosti, je stanoven v `MeasurementSiteTablePublication` pro každý detektor doslovně, jako výskyt záznamů `measurementSpecificCharacteristics` identifikovaných indexem. Pro odkazování na konkrétní schopnost (tj. intenzita pro nákladní automobily), použije se index schopnosti.
+
+.. literalinclude:: ../../samples/detector-data.xml
+   :language: xml
+   :linenos:
+   :lineno-match:
+   :start-after: <!--start of overall characteristics: flow, occupancy and speed -->
+   :end-before: <!--end of overall characteristics: flow, occupancy and speed -->
+
+Intenzita je vypočítána jako vozidla za hodinu, obsazenost v procentech a rychlost v km za hodinu. Definice schopnosti, tj. její vztah k kategorii vozidla nebo umístění v jízdním pruhu, není vyjádřen v dynamické publikaci.
+
+Zveřejnění pouze aktuálně dostupných dat
+========================================
+
+Formát poskytuje informace o schopnostech se známým stavem. Publikována je každá známá hodnota (může být nula) či informace, že je daná schopnost (měření) chybové (např. neznámé). K publikaci hodnoty schopnosti v elementu `measuredValue` s danou hodnotou indexu, nedojde pouze tehdy není li možno hodnotu vypočíst (tj. rychlost vozidel konkrétní kategorie, pokud tato konkrétní kategorie nebyla přítomna).
+
+===============
+Časová platnost
+===============
+
+Doba platnosti všech dat na naměřených jedním zařízením je dána povinným prvkem `measuremetnTimeDefault` vnořeným v `measurementSiteReference`. Každé místo měření musí tedy mít vlastní čas platnosti.
+Dobou platnosti se rozumí konec měřící periody, kdy jsou vypočteny a poskytnuty údaje.
+
+Žádná další specifikace platnosti není použita.
+
+.. literalinclude:: ../../samples/detector-data.xml
+   :language: xml
+   :linenos:
+   :lineno-match:
+   :start-after: <payloadPublication
+   :end-before: <!--start of overall
+
+====================
+Odkazování na polohu
+====================
+
+Formát nepopisuje polohu, ten se očekává jako součást specifikace zařízení v publikaci `MeasurementSiteTablePublication` [16157-5]_.
+
+Metody odkazování na polohu jsou mimo rozsah tohoto dokumentu a jsou popsány jinde.

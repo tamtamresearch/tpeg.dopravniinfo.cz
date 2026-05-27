@@ -1,0 +1,269 @@
+
+
+<!doctype html>
+
+<html lang="en" data-content_root="./">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Concepts &#8212; NDIC - DATEX II Measurement Site Table Publication - Predefined Equipment Set 1.0rev0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/bizstyle.css?v=532c1bf3" />
+    
+    <script src="_static/documentation_options.js?v=5b6ea117"></script>
+    <script src="_static/doctools.js?v=888ff710"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/bizstyle.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Appendix A: Publication example" href="examples.html" />
+    <link rel="prev" title="Introduction" href="introduction.html" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <!--[if lt IE 9]>
+    <script src="_static/css3-mediaqueries.js"></script>
+    <![endif]-->
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="examples.html" title="Appendix A: Publication example"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="introduction.html" title="Introduction"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">NDIC - DATEX II Measurement Site Table Publication - Predefined Equipment Set 1.0rev0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Concepts</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="concepts">
+<h1>Concepts<a class="headerlink" href="#concepts" title="Link to this heading">¶</a></h1>
+<p>Described format allows publishing of predefined equipment data used to reference status oriented events (detector data, weather data etc.).</p>
+<section id="publication-type-measurementsitetablepublication">
+<h2>Publication type MeasurementSiteTablePublication<a class="headerlink" href="#publication-type-measurementsitetablepublication" title="Link to this heading">¶</a></h2>
+<p>Format is based on DATEX II publication of type <cite>MeasurementSiteTablePublication</cite>
+<a class="reference internal" href="introduction.html#id11" id="id1"><span>[16157-5]</span></a>. The profile uses most of data structures, provided by this type of publication and extends it by proprietary location referencing.</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span>
+<span class="linenos"> 2</span><span class="nt">&lt;d2LogicalModel</span><span class="w"> </span><span class="na">modelBaseVersion=</span><span class="s">&quot;2&quot;</span><span class="w"> </span><span class="na">xmlns=</span><span class="s">&quot;http://datex2.eu/schema/2/2_0&quot;</span><span class="w"> </span><span class="na">xmlns:xsd=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema&quot;</span><span class="w"> </span><span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span><span class="nt">&gt;</span>
+<span class="linenos"> 3</span><span class="w">  </span><span class="nt">&lt;exchange&gt;</span>
+<span class="linenos"> 4</span><span class="w">    </span><span class="nt">&lt;supplierIdentification&gt;</span>
+<span class="linenos"> 5</span><span class="w">      </span><span class="nt">&lt;country&gt;</span>cz<span class="nt">&lt;/country&gt;</span>
+<span class="linenos"> 6</span><span class="w">      </span><span class="nt">&lt;nationalIdentifier&gt;</span>DRU<span class="nt">&lt;/nationalIdentifier&gt;</span>
+<span class="linenos"> 7</span><span class="w">    </span><span class="nt">&lt;/supplierIdentification&gt;</span>
+<span class="linenos"> 8</span><span class="w">  </span><span class="nt">&lt;/exchange&gt;</span>
+<span class="linenos"> 9</span><span class="w">  </span><span class="nt">&lt;payloadPublication</span><span class="w"> </span><span class="na">lang=</span><span class="s">&quot;cs&quot;</span><span class="w"> </span><span class="na">xsi:type=</span><span class="s">&quot;MeasurementSiteTablePublication&quot;</span><span class="nt">&gt;</span>
+<span class="linenos">10</span><span class="w">    </span><span class="nt">&lt;feedType&gt;</span>cz-ndic_d2-measutrement-site-table-v1.0<span class="nt">&lt;/feedType&gt;</span>
+<span class="linenos">11</span><span class="w">    </span><span class="nt">&lt;publicationTime&gt;</span>2018-01-29T08:00:29+02:00<span class="nt">&lt;/publicationTime&gt;</span>
+<span class="linenos">12</span><span class="w">    </span><span class="nt">&lt;publicationCreator&gt;</span>
+<span class="linenos">13</span><span class="w">      </span><span class="nt">&lt;country&gt;</span>cz<span class="nt">&lt;/country&gt;</span>
+<span class="linenos">14</span><span class="w">      </span><span class="nt">&lt;nationalIdentifier&gt;</span>DRU<span class="nt">&lt;/nationalIdentifier&gt;</span>
+<span class="linenos">15</span><span class="w">    </span><span class="nt">&lt;/publicationCreator&gt;</span>
+<span class="linenos">16</span><span class="w">    </span><span class="nt">&lt;headerInformation&gt;</span>
+<span class="linenos">17</span><span class="w">      </span><span class="nt">&lt;confidentiality&gt;</span>noRestriction<span class="nt">&lt;/confidentiality&gt;</span>
+<span class="linenos">18</span><span class="w">      </span><span class="nt">&lt;informationStatus&gt;</span>real<span class="nt">&lt;/informationStatus&gt;</span>
+<span class="linenos">19</span><span class="w">    </span><span class="nt">&lt;/headerInformation&gt;</span>
+<span class="linenos">20</span><span class="w">    </span><span class="cm">&lt;!-- detector measurement table begin --&gt;</span>
+</pre></div>
+</div>
+</section>
+<section id="predefined-equipment-description-measurementsitetable-and-measurementsiterecord">
+<h2>Predefined equipment description (measurementSiteTable and measurementSiteRecord)<a class="headerlink" href="#predefined-equipment-description-measurementsitetable-and-measurementsiterecord" title="Link to this heading">¶</a></h2>
+<p><cite>MeasurementSiteTablePublication</cite> requires description by means of class <cite>measurementSiteTable</cite>, which aggregates instances of class <cite>measurementSiteRecord</cite>. <cite>measurementSiteTable</cite> also name of the respective table.</p>
+<p>Element <cite>measurementSiteTable</cite> describes a particular type of sites (usually), more particular types of sites or more infrastructure operators means more <cite>measurementSiteTable</cite> elements. Since the equipment described may change over time, the element is versioned and has unique identifier. Each <cite>measurementSiteTable</cite> element contains one or more <cite>measurementSiteRecord</cite> elements.</p>
+<p>Textual description of each <cite>measurementSiteRecord</cite> could be located within a  <cite>measurementSiteName</cite> element.</p>
+<p>Each <cite>measurementSiteRecord</cite> element is describing different measuring equipment with different measuring capabilities <cite>measurementSpecificCharacteristics</cite> i.e. measuring of traffic flow, speed, density, etc. The capabilities of <cite>measurementSiteRecord</cite> element might change in time, so the element is versioned and has an identifier unique within the scope of one measrement table.</p>
+<p>The capabilities <cite>measurementSpecificCharacteristics</cite> of the measuring equipment in particular includes:</p>
+<ul class="simple">
+<li><p>humidity,</p></li>
+<li><p>individual vehicle measurements (headway, speed, etc.),</p></li>
+<li><p>pollution,</p></li>
+<li><p>precipitation,</p></li>
+<li><p>pressure,</p></li>
+<li><p>radiation,</p></li>
+<li><p>road surface conditions,</p></li>
+<li><p>temperature,</p></li>
+<li><p>traffic concentration,</p></li>
+<li><p>traffic flow,</p></li>
+<li><p>traffic headway,</p></li>
+<li><p>traffic speed,</p></li>
+<li><p>traffic status,</p></li>
+<li><p>travel time,</p></li>
+<li><p>visibility and</p></li>
+<li><p>wind.</p></li>
+</ul>
+<p>Some <cite>measurementSpecificCharacteristics</cite>, where it matters can be further specified by positional arguments and vehicle specification (i.e. traffic flow of heavy vehicles, road temperature in second lane). Each capability is indexed (uniquely within one equipment). The index is used for capability referencing from the dynamic publication.</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="linenos">21</span><span class="w">    </span><span class="nt">&lt;measurementSiteTable</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;CZ_DRU_MST_DET&quot;</span><span class="w"> </span><span class="na">version=</span><span class="s">&quot;1&quot;</span><span class="nt">&gt;</span>
+<span class="linenos">22</span><span class="w">      </span><span class="nt">&lt;measurementSiteTableIdentification&gt;</span>Tabulka<span class="w"> </span>detektoru<span class="w"> </span>v<span class="w"> </span>HDRU<span class="nt">&lt;/measurementSiteTableIdentification&gt;</span>
+<span class="linenos">23</span><span class="w">      </span><span class="nt">&lt;measurementSiteRecord</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;1307&quot;</span><span class="w"> </span><span class="na">version=</span><span class="s">&quot;1&quot;</span><span class="nt">&gt;</span>
+<span class="linenos">24</span><span class="w">        </span><span class="nt">&lt;measurementSiteName&gt;</span>
+<span class="linenos">25</span><span class="w">          </span><span class="nt">&lt;values&gt;</span>
+<span class="linenos">26</span><span class="w">            </span><span class="nt">&lt;value</span><span class="w"> </span><span class="na">lang=</span><span class="s">&quot;cs&quot;</span><span class="nt">&gt;</span>název<span class="w"> </span>umístění<span class="w"> </span>detektoru<span class="nt">&lt;/value&gt;</span>
+<span class="linenos">27</span><span class="w">          </span><span class="nt">&lt;/values&gt;</span>
+<span class="linenos">28</span><span class="w">        </span><span class="nt">&lt;/measurementSiteName&gt;</span>
+<span class="linenos">29</span><span class="w">        </span><span class="cm">&lt;!--start of overall characteristics: flow, occupancy and speed --&gt;</span>
+<span class="linenos">30</span><span class="w">        </span><span class="nt">&lt;measurementSpecificCharacteristics</span><span class="w"> </span><span class="na">index=</span><span class="s">&quot;1&quot;</span><span class="nt">&gt;</span>
+<span class="linenos">31</span><span class="w">          </span><span class="nt">&lt;measurementSpecificCharacteristics&gt;</span>
+<span class="linenos">32</span><span class="w">            </span><span class="nt">&lt;specificMeasurementValueType&gt;</span>trafficFlow<span class="nt">&lt;/specificMeasurementValueType&gt;</span>
+<span class="linenos">33</span><span class="w">            </span><span class="nt">&lt;specificVehicleCharacteristics&gt;</span>
+<span class="linenos">34</span><span class="w">              </span><span class="nt">&lt;vehicleType&gt;</span>anyVehicle<span class="nt">&lt;/vehicleType&gt;</span>
+<span class="linenos">35</span><span class="w">            </span><span class="nt">&lt;/specificVehicleCharacteristics&gt;</span>
+<span class="linenos">36</span><span class="w">          </span><span class="nt">&lt;/measurementSpecificCharacteristics&gt;</span>
+<span class="linenos">37</span><span class="w">        </span><span class="nt">&lt;/measurementSpecificCharacteristics&gt;</span>
+<span class="linenos">38</span><span class="w">        </span><span class="nt">&lt;measurementSpecificCharacteristics</span><span class="w"> </span><span class="na">index=</span><span class="s">&quot;2&quot;</span><span class="nt">&gt;</span>
+<span class="linenos">39</span><span class="w">          </span><span class="nt">&lt;measurementSpecificCharacteristics&gt;</span>
+<span class="linenos">40</span><span class="w">            </span><span class="nt">&lt;specificMeasurementValueType&gt;</span>trafficConcentration<span class="nt">&lt;/specificMeasurementValueType&gt;</span>
+<span class="linenos">41</span><span class="w">            </span><span class="nt">&lt;specificVehicleCharacteristics&gt;</span>
+<span class="linenos">42</span><span class="w">              </span><span class="nt">&lt;vehicleType&gt;</span>anyVehicle<span class="nt">&lt;/vehicleType&gt;</span>
+<span class="linenos">43</span><span class="w">            </span><span class="nt">&lt;/specificVehicleCharacteristics&gt;</span>
+<span class="linenos">44</span><span class="w">          </span><span class="nt">&lt;/measurementSpecificCharacteristics&gt;</span>
+<span class="linenos">45</span><span class="w">        </span><span class="nt">&lt;/measurementSpecificCharacteristics&gt;</span>
+<span class="linenos">46</span><span class="w">        </span><span class="nt">&lt;measurementSpecificCharacteristics</span><span class="w"> </span><span class="na">index=</span><span class="s">&quot;3&quot;</span><span class="nt">&gt;</span>
+<span class="linenos">47</span><span class="w">          </span><span class="nt">&lt;measurementSpecificCharacteristics&gt;</span>
+<span class="linenos">48</span><span class="w">            </span><span class="nt">&lt;specificMeasurementValueType&gt;</span>trafficSpeed<span class="nt">&lt;/specificMeasurementValueType&gt;</span>
+<span class="linenos">49</span><span class="w">            </span><span class="nt">&lt;specificVehicleCharacteristics&gt;</span>
+<span class="linenos">50</span><span class="w">              </span><span class="nt">&lt;vehicleType&gt;</span>anyVehicle<span class="nt">&lt;/vehicleType&gt;</span>
+<span class="linenos">51</span><span class="w">            </span><span class="nt">&lt;/specificVehicleCharacteristics&gt;</span>
+<span class="linenos">52</span><span class="w">          </span><span class="nt">&lt;/measurementSpecificCharacteristics&gt;</span>
+<span class="linenos">53</span><span class="w">        </span><span class="nt">&lt;/measurementSpecificCharacteristics&gt;</span>
+</pre></div>
+</div>
+</section>
+<section id="equipment-location-description-point-or-linear-segment">
+<h2>Equipment location description (point or linear segment)<a class="headerlink" href="#equipment-location-description-point-or-linear-segment" title="Link to this heading">¶</a></h2>
+<p>Each equipment location is specified within the element <cite>measurementSiteLocation</cite>.</p>
+<p><em>Location</em> is a point or linear segment on road network. Location type area is not used. The locations may be described by means of several methods, locations are described in line (not referenced to another publication)</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="linenos">213</span><span class="w">        </span><span class="nt">&lt;measurementSiteLocation</span><span class="w"> </span><span class="na">xsi:type=</span><span class="s">&quot;Point&quot;</span><span class="nt">&gt;</span>
+<span class="linenos">214</span><span class="w">          </span><span class="nt">&lt;pointWithinLinearGNElement&gt;</span>
+<span class="linenos">215</span><span class="w">            </span><span class="nt">&lt;sectionId&gt;</span>822309<span class="nt">&lt;/sectionId&gt;</span>
+<span class="linenos">216</span><span class="w">            </span><span class="nt">&lt;directionRelativeOnLinearSection&gt;</span>aligned<span class="nt">&lt;/directionRelativeOnLinearSection&gt;</span>
+<span class="linenos">217</span><span class="w">            </span><span class="nt">&lt;networkVersion&gt;</span>
+<span class="linenos">218</span><span class="w">              </span><span class="nt">&lt;values&gt;</span>
+<span class="linenos">219</span><span class="w">                </span><span class="nt">&lt;value</span><span class="w"> </span><span class="na">lang=</span><span class="s">&quot;cs&quot;</span><span class="nt">&gt;</span>16.12<span class="nt">&lt;/value&gt;</span>
+<span class="linenos">220</span><span class="w">              </span><span class="nt">&lt;/values&gt;</span>
+<span class="linenos">221</span><span class="w">            </span><span class="nt">&lt;/networkVersion&gt;</span>
+<span class="linenos">222</span><span class="w">            </span><span class="nt">&lt;distanceAlongLinearElement</span><span class="w"> </span><span class="na">xsi:type=</span><span class="s">&quot;PercentageDistanceAlongLinearElement&quot;</span><span class="nt">&gt;</span>
+<span class="linenos">223</span><span class="w">              </span><span class="nt">&lt;percentageDistanceAlong&gt;</span>0.662356475026882<span class="nt">&lt;/percentageDistanceAlong&gt;</span>
+<span class="linenos">224</span><span class="w">            </span><span class="nt">&lt;/distanceAlongLinearElement&gt;</span>
+<span class="linenos">225</span><span class="w">          </span><span class="nt">&lt;/pointWithinLinearGNElement&gt;</span>
+<span class="linenos">226</span><span class="w">        </span><span class="nt">&lt;/measurementSiteLocation&gt;</span>
+</pre></div>
+</div>
+<p>The position description methods are further described in the chapter “Location description”.</p>
+</section>
+</section>
+<section id="time-validity">
+<h1>Time validity<a class="headerlink" href="#time-validity" title="Link to this heading">¶</a></h1>
+<p>The publication start of validity is defined by <cite>publicationTime</cite> for all predefined equipment in the publication. No other time record is contained in the publication. In case of new publication due to changes to predefined equipment set, existing equipment remains the same, new equipment get new id and updated equipment got its version increased.</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="linenos">11</span><span class="w">    </span><span class="nt">&lt;publicationTime&gt;</span>2018-01-29T08:00:29+02:00<span class="nt">&lt;/publicationTime&gt;</span>
+</pre></div>
+</div>
+</section>
+<section id="location-referencing">
+<h1>Location referencing<a class="headerlink" href="#location-referencing" title="Link to this heading">¶</a></h1>
+<p>All  equipment predefined in this publication has its location set up within element <cite>measurementSiteLocation</cite> with type <cite>Point</cite> or <cite>Linear</cite> that contains description of the equipment physical location in one or more location referencing methods.</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="linenos">213</span><span class="w">        </span><span class="nt">&lt;measurementSiteLocation</span><span class="w"> </span><span class="na">xsi:type=</span><span class="s">&quot;Point&quot;</span><span class="nt">&gt;</span>
+<span class="linenos">214</span><span class="w">          </span><span class="nt">&lt;pointWithinLinearGNElement&gt;</span>
+<span class="linenos">215</span><span class="w">            </span><span class="nt">&lt;sectionId&gt;</span>822309<span class="nt">&lt;/sectionId&gt;</span>
+<span class="linenos">216</span><span class="w">            </span><span class="nt">&lt;directionRelativeOnLinearSection&gt;</span>aligned<span class="nt">&lt;/directionRelativeOnLinearSection&gt;</span>
+<span class="linenos">217</span><span class="w">            </span><span class="nt">&lt;networkVersion&gt;</span>
+<span class="linenos">218</span><span class="w">              </span><span class="nt">&lt;values&gt;</span>
+<span class="linenos">219</span><span class="w">                </span><span class="nt">&lt;value</span><span class="w"> </span><span class="na">lang=</span><span class="s">&quot;cs&quot;</span><span class="nt">&gt;</span>16.12<span class="nt">&lt;/value&gt;</span>
+<span class="linenos">220</span><span class="w">              </span><span class="nt">&lt;/values&gt;</span>
+<span class="linenos">221</span><span class="w">            </span><span class="nt">&lt;/networkVersion&gt;</span>
+<span class="linenos">222</span><span class="w">            </span><span class="nt">&lt;distanceAlongLinearElement</span><span class="w"> </span><span class="na">xsi:type=</span><span class="s">&quot;PercentageDistanceAlongLinearElement&quot;</span><span class="nt">&gt;</span>
+<span class="linenos">223</span><span class="w">              </span><span class="nt">&lt;percentageDistanceAlong&gt;</span>0.662356475026882<span class="nt">&lt;/percentageDistanceAlong&gt;</span>
+<span class="linenos">224</span><span class="w">            </span><span class="nt">&lt;/distanceAlongLinearElement&gt;</span>
+<span class="linenos">225</span><span class="w">          </span><span class="nt">&lt;/pointWithinLinearGNElement&gt;</span>
+<span class="linenos">226</span><span class="w">        </span><span class="nt">&lt;/measurementSiteLocation&gt;</span>
+</pre></div>
+</div>
+<p>Three location description methods for a linear location and four location description methods for point location can be used to describe the location. The method use depends on method availability at the location. At least one location description should be used.</p>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="index.html">
+              <img class="logo" src="_static/RSD-logo-07.jpg" alt="Logo"/>
+            </a></p>
+  <div>
+    <h3><a href="index.html">Table of Contents</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">Concepts</a><ul>
+<li><a class="reference internal" href="#publication-type-measurementsitetablepublication">Publication type MeasurementSiteTablePublication</a></li>
+<li><a class="reference internal" href="#predefined-equipment-description-measurementsitetable-and-measurementsiterecord">Predefined equipment description (measurementSiteTable and measurementSiteRecord)</a></li>
+<li><a class="reference internal" href="#equipment-location-description-point-or-linear-segment">Equipment location description (point or linear segment)</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#time-validity">Time validity</a></li>
+<li><a class="reference internal" href="#location-referencing">Location referencing</a></li>
+</ul>
+
+  </div>
+  <div>
+    <h4>Previous topic</h4>
+    <p class="topless"><a href="introduction.html"
+                          title="previous chapter">Introduction</a></p>
+  </div>
+  <div>
+    <h4>Next topic</h4>
+    <p class="topless"><a href="examples.html"
+                          title="next chapter">Appendix A: Publication example</a></p>
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/concepts.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="examples.html" title="Appendix A: Publication example"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="introduction.html" title="Introduction"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">NDIC - DATEX II Measurement Site Table Publication - Predefined Equipment Set 1.0rev0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Concepts</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+    &#169; Copyright 2018, TamTam Research s.r.o..
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.5.
+    </div>
+  </body>
+</html>

@@ -1,0 +1,23 @@
+Changelog
+=========
+
+version 2.0 
+
+- Rewrite of CONGESTION tag, where formerly was outside of ALL, CAr and TRUCK tags, now is inside allowing to have different values for different types of traffic flows.
+
+version 1.1.0 
+
+- Complete rewrite of the specification. Formerly based on a tmc tag holding in as attributes all values
+
+.. code
+
+	<tmc id="TS04713T06001" timestamp="2021-10-07 12:36:12+02:00" count="1" speed="27" travel_time="19" delay="10" freeflow_speed="50" freeflow_time="9" reliability="0.500" reaction_time="60" traffic_level="3" congestion="0"/>
+	
+- the information is now structured into SEGMENTs, with id, version and update time and information contained within the tag is furthermore separated in to tags
+  - ALL with traffic parameters for non-divided traffic flow
+  - CAR and TRUCK for information about separated traffic flows
+  - CONGESTION for congestion length information
+
+version 1.0.0 
+
+- Initial format and documentation 

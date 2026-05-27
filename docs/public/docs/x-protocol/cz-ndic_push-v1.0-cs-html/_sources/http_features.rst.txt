@@ -1,0 +1,8 @@
+Ostatní vlastnosti HTTP
+=======================
+
+:autorizace:	Autorizace se nepoužívá. Po dohodě je možno použít odmítání požadavků zaslaných z jiných než dohodnutých IP adres.
+:komprese:	Odběratel nemůže přinutit poskytovatel k zasílání komprimovaných dat (s použitím content-encoding: gzip). Veškerý obsah je doručován tak jak je bez jakéhokoliv zakódování.
+:content type:	Očekávaný content-type záleží na specifikaci formátu a dohodě a jeho určení je mimo rámec specifikace tohoto protokolu. Ve většině případů se použíá content-type application/xml.
+:max. velikost:	Maximální velikost zaslané zprávy je 200 kB. Lze dohodnout jinou velikost.
+:https:	HTTP server na straně odběratele může používat https protokol.

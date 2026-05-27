@@ -1,0 +1,32 @@
+Changelog
+=========
+
+version 1.2
+
+- added urlLink to situationRecord for additional description on the web
+- added: feedDescription, queueLength, accidentCause and safetyRelatedMessage tags
+- corrected location of globalNetworkLinear and globalNetworkPoint in the XML tree (as extension)
+- corrected type of the networkVersion to the simple string from multilingual string 
+- included changelog in the documentation
+
+version 1.1.0
+
+- removed pointByCoordinates and pointByMultiCoordinates as a sole location (without linear reference) since it is not supported by NDIC at the moment. Respective samples has been removed.
+- removed day-time validity selector to concept and schema
+- confirmed feed type addition to schema and samples
+- confirmed OpenLR location addition to schema
+
+version 1.1.0rc
+
+- added pointByCoordinates to concepts, schema and samples
+- added day-time validity selector to concept and schema
+- added feed type to schema and samples
+- added OpenLR location to schema
+
+version 1.0.1
+
+- revision of the documentation, proofreading, changes to examples
+
+version 1.0.0 
+
+- Initial format and documentation

@@ -1,0 +1,75 @@
+name:
+    "cs": NDIC
+    "en": NDIC
+description:
+    "cs": NDIC - Národní dopravní informační centrum
+    "en": NDIC - National traffic information centre
+organization: cz-rsd-cr
+contacts:
+    - role:
+          cs: Informace o poskytovaných dopravních informacích
+          en: Information about provided traffic information
+      persons:
+          - "NDIC/Ctirad Weissmann"
+data_access:
+    - role:
+          cs: Zřízení odběru dopravních informací
+          en: Subscription to traffic information sources
+      access_point:
+          - "NDIC/data subscription"
+    - role:
+          cs: Prohlížení dopravních informací
+          en: Traffic Map View
+      access_point:
+          - "NDIC/trafic map"
+    - role:
+          cs: Obecné informace o NDIC
+          en: General Information about NDIC
+      access_point:
+          - "NDIC/general info"
+conformance:
+    rtti: cz-ndic_DoC-2015-962_RTTI_RO-RA
+    srti: cz-ndic_DoC-2013-886_SRTI
+    sstp: cz-ndic_DoC-2013-885_SSTP
+    tisa: cz-ndic-tmc-certificate_2019_037_CZ
+processes:
+    ddrcontract:
+        name:
+            "cs": Bezplatné zřízení odběru dopravních dat
+            "en": Free of Charge Traffic Data Subscription
+        description:
+            "cs": |
+                Proces zřízení odběru probíhá v těchto krocích (viz také [zde](https://dopravniinfo.gov.cz/cs/pages/data-from-jsdi/traffic-information)):
+
+                - Odběratel posoudí vhodnost dopravních informací zde na stránkách registru a připraví se technicky k jejich odběru.
+                - Odběratel se přihlásí do registru odběrů [https://mobilitydata.rsd.cz](https://mobilitydata.rsd.cz). Zde může odběratel vytvářet žádosti o odběry dat.
+                - Odběratel musí vyplnit **podmínky použití dopravních informací**. Podepsané a naskenované podmínky zašle na emailovou adresu poskytovatele [mobilitydata@rsd.cz](mailto:mobilitydata@rsd.cz?subject=Odběr%20dat%20-%20licenční%20podmínky). Pro vyplnění podmínek použije odběratel stejné údaje, jako při prvním přihlášení do registru odběrů.
+                - Po akceptaci podmínek použití poskytovatelem může odběratel nastavovat odběry dat a odebírat data, ke kterým má udělený přístup.
+            "en": |
+                Process of subscription is as follows (see also [here](https://dopravniinfo.gov.cz/en/pages/data-from-jsdi/traffic-information)):
+
+                - The subscriber assess the suitability of the traffic information here on the registry website and prepare technical systems for reception.
+                - The subscriber logs into the subscription register [https://mobilitydata.rsd.cz](https://mobilitydata.rsd.cz). Here, subscribers can create subscription requests.
+                - The subscriber must fill in the **terms of use of traffic information**. The signed and scanned terms shall be sent to the email address of the provider [mobilitydata@rsd.cz](mailto:mobilitydata@rsd.cz?subject=Data%20subscription%20-%20licence%20terms). In order to fill in the terms, the subscriber shall use the same data as used in the subscription register.
+                - After accepting the terms of use by the provider, the subscriber can set up data subscriptions and subscribe to data that he has been granted access to.
+        terms_and_conditions:
+            - cz-ndic_terms-of-use_traffic-information_v1.0.2
+    ltcontract:
+        name:
+            "cs": Bezplatné zřízení odběru TMC lokační tabulky
+            "en": TMC Location Table Free Subscription
+        description:
+            "cs": |
+                Proces zřízení odběru probíhá v těchto krocích (viz také [zde](https://dopravniinfo.gov.cz/cs/pages/data-from-jsdi/traffic-information)):
+
+                - Odběratel se přihlásí do registru odběrů [https://mobilitydata.rsd.cz](https://mobilitydata.rsd.cz). Zde může odběratel vytvářet žádosti o odběry dat.
+                - Odběratel musí vyplnit **podmínky použití TMC lokační tabulky** a **objednávkový formulář** (formulář je přílohou podmínek). Podepsané a naskenované podmínky zašle společně s formulářem na emailovou adresu poskytovatele [mobilitydata@rsd.cz](mailto:mobilitydata@rsd.cz?subject=TMC%20lokační%20tabulka%20-%20licenční%20podmínky%20a%20dotazník). Pro vyplnění podmínek použije odběratel stejné údaje, jako při prvním přihlášení do registru odběrů.
+                - Po akceptaci podmínek použití poskytovatelem může odběratel zahájit odběr TMC lokačních tabulek.
+            "en": |
+                Process of subscription is as follows (see also [here](https://dopravniinfo.gov.cz/cs/pages/data-from-jsdi/traffic-information)):
+
+                - The subscriber logs into the subscription register [https://mobilitydata.rsd.cz](https://mobilitydata.rsd.cz). Here, subscribers can create subscription requests.
+                - The subscriber must fill in the **terms of use of TMC location table** and **order form** (form is attached to the terms). The signed and scanned terms shall be sent to the email address of the provider [mobilitydata@rsd.cz](mailto:mobilitydata@rsd.cz?subject=TMC%20location%20table%20-%20licence%20terms%20and%20questionaire). In order to fill in the terms, the subscriber shall use the same data as used in the subscription register.
+                - After accepting the terms of use by the provider, the subscriber can set up subscription to the TMC location tables.
+        terms_and_conditions:
+            - cz-ndic_terms-of-use_tmc-location-table_v1.0.4

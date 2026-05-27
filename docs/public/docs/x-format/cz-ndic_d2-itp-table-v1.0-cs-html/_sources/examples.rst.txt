@@ -1,0 +1,15 @@
+.. _examples:
+
+=========================
+Příloha A: Příklady zpráv
+=========================
+
+table_vrazne.xml - Statický popis odpočívky Vražné
+==================================================
+
+Publikace popisuje statické charakteristiky parkoviště na odpočívce Vražné. Příklad obsahuje jen
+jediný element typu `parkingRecord`, skutečná publikace by takových elementů obsahovala mnoho, např.
+všechny odpočívky provozované jedním operátorem.
+
+.. literalinclude:: ../../samples/table_vrazne.xml
+   :language: xml

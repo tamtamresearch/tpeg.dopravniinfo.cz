@@ -1,0 +1,121 @@
+.. _examples:
+
+=========================
+Příloha A: Příklady zpráv
+=========================
+
+accident.xml - nehoda nákladního vozidla s uzavřením komunikace
+===============================================================
+
+Publikace obsahuje právě jednu zprávu o nehodě nákladního vozidla a následného uzavření komunikace.
+
+.. literalinclude:: ../../samples/accident.xml
+   :language: xml
+
+Kořenový element a obálka publikace
+-----------------------------------
+
+Kořenový element `d2LogicalModel` deklaruje, že se jedná o zprávu používající DATEX II.
+
+Element `exchange` obsahuje identifikátor poskytovatele.
+
+Element `payloadPublication` je obálkou pro přenos samotných informací,
+obsahující především elementy `situation`, kterých může být mnoho (v našem případě je jeden).
+
+Atribut `xsi:type="SituationPublication"` v elementu `payloadPublication`
+určuje, že tato obálka je typu Publikace situace.
+
+Element `feedType` uvádí typ publikace, uri schématu.
+
+Element `publicationTime` uvádí čas vydání této publikace jako celku.
+
+Element `publicationCreator` identifikuje tvůrce publikace.
+
+Popis jedné konkrétní situace
+------------------------------ 
+
+Element `situationRecord` se v tomto případě vyskytuje v elementu `situation` dvakrát.
+Jednou pro popis uzavření komunikace a podruhé pro popis nehody která k uzavření vedla.
+
+Element `situationVersionTime` uvádí čas vydání této verze situace jako celku.
+
+Element `headerInformation` popisuje způsob nakládání s popisovanými informacemi.
+
+Element `urlLink` obsahuje odkaz na web kde je o dané situaci více informací.
+
+Popis události (co se stalo)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+První element `situationRecord` typu `xsi:type="Accident"` obsahuje popis příčiny, tedy nehodu zahrnující nákladní vozidlo `accidentInvolvingHeavyLorries`.
+Druhý element `situationRecord` typu `xsi:type="RoadOrCarriagewayOrLaneManagement"` obsahuje popis dopadu, tedy úplné uzavření komunikace`roadClosed`.
+
+Element `probabilityOfOccurrence` hodnotou `certain` stanovuje, že se tato událost určitě stala.
+
+Element `groupOfVehiclesInvolved` předchozí informaci částečně opakuje tím, že jako charakteristiku vozidla, které se nehody účastní uvádí `lorry`, tedy nákladní vozidlo.
+
+Časová platnost
+^^^^^^^^^^^^^^^
+
+Časová platnost situace je určena ve strukturách `validity` odhadem časového intervalu platnosti hodnotami od `overallStartTime` do `overallEndTime`.
+
+Poloha události
+^^^^^^^^^^^^^^^
+
+Poloha události popsána přímo v elementu `groupOfLocations` vnořeným popisem je typu `xsi:type="Linear"` tedy liniový typ polohy.
+
+V příkladu jsou použity 3 popisy polohy: 
+
+- tmc lokalizace pomocí lokačních tabulek v elementu `alertCLinear` typu `AlertCMethod2Linear`,
+- popis pomocí odkazů na id úseků v síti Global Network v rozšíření `globalNetworkLinear` a
+- popis pomocí routovací metody OpenLR v rozšíření `openlrExtendedLinear`.
+
+
+Poloha všech publikovaných událostí je typu `Linear`, i v případě bodových událostí typu nehoda, v takovém případě jsou počáteční a koncový bod události stejné.  Tedy `startPoint` a `endPoint` v `globalNetworkLinear` jsou stejné.
+
+Další obsah
+^^^^^^^^^^^
+
+Mimo časovou platnost situace dokument uvádí čas vydání první verze `situationRecordCreationTime` a aktuální verze `situationRecordVersionTime` záznamu `situationRecord`.
+
+Element `source` uvádí tvůrce této informace, tedy kdo tuto informaci vytvořil a odpovídá za její správnost.
+
+Element `generalPublicComment` obsahuje obecný popis děje popsaného ve zprávě, většinou jen v češtině. Jedná se o volný popis situace jejím tvůrcem.
+
+brokendownvehicles.xml - porouchané nákladní vozidlo
+====================================================
+
+Publikace obsahuje právě jednu zprávu o porouchaném nákladním
+vozidlu na sjezdu D7.
+
+.. literalinclude:: ../../samples/brokendownvehicles.xml
+   :language: xml
+
+Obálka publikace, časová platnost a poloha
+------------------------------------------
+
+Obálka publikace, časová platnost a poloha používají struktury shodné s předchozím příkladem.
+
+Rozdíl je výhradně v popisu jedné konkrétní situace v elementu `situationRecord`.
+
+Popis události (co se stalo)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Element `situationRecord` typu `xsi:type="VehicleObstruction"` obsahuje popis příčiny, tedy porouchané vozidlo `brokenDownVehicle`. a dále v elementu `impact` uvádí v `delays`, že důsledkem zpoždění o 259200 s.
+
+Element `probabilityOfOccurrence` hodnotou `certain` stanovuje, že se tato událost určitě stala.
+
+
+Časová platnost
+^^^^^^^^^^^^^^^
+
+Viz předchozí příklad.
+
+Poloha události
+^^^^^^^^^^^^^^^
+
+Viz předchozí příklad.
+
+Další obsah
+^^^^^^^^^^^
+
+Viz předchozí příklad.

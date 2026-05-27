@@ -1,0 +1,85 @@
+========
+Concepts
+========
+
+Described format allows publishing travel times on set of predefined routes. 
+
+Publication type ElaboratedDataPublication
+==========================================
+
+Format is based on DATEX II publication of type `ElaboratedDataPublication`
+[16157-5]_ and is used to publish information about travel times on defined routes.
+
+.. literalinclude:: ../../samples/travel-time.xml
+   :language: xml
+   :linenos:
+   :lineno-match:
+   :end-before: <basicData
+
+Travel time for particular route is given in element `elaboratedData`, which can appear in the publication multiple times, describing travel times on distinct routes. Element `elaboratedData` does not have its own identifier. Its uniqueness is guaranteed by publication time and by identifier of referenced location.
+
+Route description (by predefined locations)
+===========================================
+
+The *route* is described by a linear section on the road network, given by the presence of a vehicle detection. Since the position of the vehicle detectors or sections where the time is calculated does not change, the location in this profile is described by a reference (id) to a predefined location set defined in different document. The reference points to a class instance `PredefinedLocation` from package `PredefinedLocationsPublication`. Therefore, the location is not described directly in the file.
+
+Route of status information (travel time) is determined by reference to a set of predefined locations. To look up given location, it is necessary to obtain publication `PredefinedLocationsPublication`, related to this source of information and inside find location of identical type (by `targetClass`, here `PredefinedLocation`), with the same identifier and version.
+
+The route for which the calculated travel time is valid is specified by the `pertinentLocation` element.  It always has `xsi:type="LocationByReference"` and includes element `predefinedLocationReference` with the attribute `targetClass="PredefinedLocation"`.
+
+.. literalinclude:: ../../samples/travel-time.xml
+   :language: xml
+   :linenos:
+   :lineno-match:
+   :start-after: <basicData
+   :end-before: <vehicleType
+
+Travel time of personal cars and lories
+=======================================
+
+*Travel time* is expressed in seconds in attribute `travelTime` of type `DurationValue` in class `TravelTimeData`.
+
+Only current calculated travel time is expressed, other information
+(free flow travel time, normal travel time, free flow velocity,
+travel time trend) is not used.
+
+Profile provides only data calculated for personal cars and lorries and vehicles without type specification.
+
+.. literalinclude:: ../../samples/travel-time.xml
+   :language: xml
+   :linenos:
+   :lineno-match:
+   :start-after: </pertinentLocation>
+   :end-before: /basicData>
+
+Publishing only currently available data
+========================================
+
+Format provides travel time only for routes, for which data
+are available. Other routes, with no data available are omitted.
+
+=============
+Time validity
+=============
+
+The start of validity of travel times is given once for all records in the publication by the `timeDefault` element, of the type `DateTime` and class `ElaboratedDataPublication`.
+
+The stated validity time represents the current time to which the calculated data relates, it is the end of the measurement period.
+
+No further specification of validity is used.
+
+.. literalinclude:: ../../samples/travel-time.xml
+   :language: xml
+   :linenos:
+   :lineno-match:
+   :start-after: <payloadPublication
+   :end-before: <headerInformation>
+
+====================
+Location referencing
+====================
+
+The format describes locations exclusively by reference to a set of predefined routes (class `predefinedLocation`) in publication `PredefinedLocationsPublication` [16157-3]_..
+
+Location referencing methods are out of scope of this document and are described elsewhere.
+

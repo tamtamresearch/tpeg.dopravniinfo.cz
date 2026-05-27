@@ -1,0 +1,13 @@
+.. _examples:
+
+=========================
+Příloha A: Příklady zpráv
+=========================
+
+fcd-data-v2-01.xml - ukázka možných kombinací stavů
+===================================================
+
+Zpráva obsahuje několik různých kombinací stavů na segmentech podle toho jestli jde o sdružený či dělený dopravní proud a podle toho jestli se na úseku vyskytuje kongesce.
+
+.. literalinclude:: ../../samples/fcd-data-v2-01.xml
+   :language: xml

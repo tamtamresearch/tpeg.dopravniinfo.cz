@@ -1,0 +1,74 @@
+name:
+    "cs": DATEX II - Proměnné dopravní značení - pevné v1.1
+    "en": DATEX II - Variable Message Signs - fixed v1.1
+description:
+    "cs": Informace zobrazené na proměnném dopravním značení **na pevných místech (e.g. portály, polo-portály, sloupy, tunely, mosty atp.)** podél pozemních komunikací za účelem poskytování informací a řízení provozu, na území celé ČR, poskytované NDIC, ve chvíli jejich vzniku, ve formátu **DATEX II verze 3.3**.
+    "en": Information displayed on variable message signs **fixed to ground (e.g. portals, half-portals, poles, tunnels, bridges etc.)** along roads for information and traffic management purposes, provided by NDIC for the whole Czechia, pushed on occurrence, in a **DATEX II format version 3.3**.
+additional_description:
+    "cs": Datový zdroj popisuje právě zobrazované informace na jednotlivých značkách (na portále).
+    "en": Data source describes the information currently displayed on the individual signs (on the portal).
+content:
+    content_type: "dynamic"
+    resource_type: "data set"
+    dataset:
+        category:
+            [
+                Parking and rest area information,
+                Dynamic traffic signs and regulations,
+                Road work,
+                Unexpected road events and conditions,
+                Real-time traffic data,
+            ]
+        detailed_type:
+            [
+                Current availability of parking places (truck parking),
+                Road access conditions,
+                Lane access conditions,
+                Tunnel access conditions,
+                Dynamic speed limits,
+                Other temporary traffic management measures or plans,
+                Short-term road works,
+                Accidents and incidents,
+                Poor road conditions,
+                Weather conditions affecting road surface and visibility,
+                Expected delays,
+                Location and length of queues,
+            ]
+    language: [cs]
+linked_sources:
+    - cz-ndic_d2-vms-table-fixed-v1.1
+temporal:
+    start_date: 2022-02-16
+coverage:
+    area: CZ0
+    network: [Motorways, Arterial road network, Regional roads, Urban and local roads]
+transport_modes: [car, truck, motorcycle, bus]
+responsibilities:
+    publisher: cz-ndic
+conditions_of_use:
+    contract_or_licence: Contract and Free of charge
+    # process for applying for data
+    terms_and_conditions: ddrcontract
+access_info:
+    formats:
+        - cz-ndic_d2-vms-v1.1
+    protocols:
+        - cz-ndic_push-v1.1
+    access_point: ["NDIC/data subscription"]
+    access_url:
+        [
+            "https://mobilitydata.rsd.cz/DataSource/Detail?id=70C29F0E",
+            "https://mobilitydata.rsd.cz/DataSource/Detail?dsid=DF80484D",
+        ]
+quality_information:
+    status:
+        "cs": provozní
+        "en": production
+    status_description:
+        "cs": Od 10/2025 je k nahrazována novým datovým zdrojem rozšířeným o nové informace, s aktualizovanou dokumentací a novou polohovou sadou.
+        "en": As of October 2025, it is being replaced by a new data source enriched with additional information, updated documentation, and a revised location dataset.
+    update_frequency: On occurrence
+    quality_assesment:
+        "cs": interní procesy kontroly a křížová verifikace
+        "en": internal control mechanism and cross validation
+    ec_acts: [rtti, srti, sstp]

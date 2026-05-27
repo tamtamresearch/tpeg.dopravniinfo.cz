@@ -1,0 +1,26 @@
+name:
+    "cs": DATEX II Situation Publication - Uzavírky a omezení
+    "en": DATEX II Situation Publication - Restrictions
+version_info:
+    version: "1.2"
+    publish_date: 2023-08-29
+encoding: UTF-8
+syntax: XML
+#schema.type
+grammar: W3C XML Schema (XSD)
+model: DATEX II
+model_version: DATEX II v2.3
+#model.profile_base
+model_description: DATEX II v2.3/SituationPublication
+#extended_parts
+model_extension: "NetworkLocation"
+description:
+    "cs": Profil odvozený z DATEX II Situation Publication, verze 2.3 používaný pro poskytování informací o plánovaných uzavírkách a omezeních provozu.
+    "en": Profile derived from DATEX II Situation Publication, version 2.3, used for publishing information about planned closures and traffic restrictions.
+additional_description:
+    "cs": Verze 1.2 opravje rozšíření globalNetworkLinear, doplňuje atributy ´urlLink´, ´feedDescription´ a ´safetyRelatedMessage´ a zjednodušuje dokumentaci.
+    "en": Version 1.2 fixes the globalNetworkLinear extension, adds the ´urlLink´, ´feedDescription´ and ´safetyRelatedMessage´ attributes and simplifies the documentation.
+publications:
+    html: [cs, en]
+    pdf: [cs, en]
+    zip: [en-cs]

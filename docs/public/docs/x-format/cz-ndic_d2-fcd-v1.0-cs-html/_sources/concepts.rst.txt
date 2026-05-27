@@ -1,0 +1,334 @@
+========
+Koncepty
+========
+
+Popisovaný formát umožňuje poskytování informací získaných z FCD. Jedná se o dojezdové doby, rychlost dopravního proudu, stupně dopravní zátěže a odhad délky kolon na sadě předem definovaných poloh.
+
+Publikace typu ElaboratedDataPublication
+========================================
+
+Formát vychází z DATEX II publikace typu `ElaboratedDataPublication` [16157-5]_ a využívá ji pro přenos informací o dojezdových dobách, rychlostech a stupních dopravy na sadě předdefinovaných poloh. 
+
+Informace o **stupních dopravy**, **délce kolon** i s jejich **počátky a konci** jsou přidány prostřednictvím rozšíření úrovně B třídy `TrafficStatus` DATEX II modelu. 
+
+Informace o **kvalitě dat** a **počtu vozidel FCD** na segmentu, včetně jejich typu, jsou přidány prostřednictvím rozšíření úrovně B třídy `TravelTimeData` DATEX II modelu. 
+
+.. literalinclude:: ../../samples/fcd-compatibility-mode.xml
+   :language: xml
+   :linenos:
+   :lineno-match:
+   :end-before:  <!-- information from one segment -->
+
+Informace FCD pro jeden segment (polohu) je uvedena ve 3 elementech `elaboratedData`, ty totiž mohou obsahovat pouze jeden typ informace:
+
+*  hustota provozu ve třídě `TrafficStatus` + stupně provozu (dle CZ) a kolony v jejím rozšíření,
+*  rychlost dopravy ve třídě `TrafficSpeed` a
+*  čas průjezdu ve třídě `TravelTimeData` + kvalitativní parametry v jejím rozšíření.
+ 
+Element `elaboratedData` nemá vlastní unikátní identifikátor a je jednoznačně určen časem publikace a identifikátorem odkazované polohy.
+
+Identifikace profilu poskytovaných dopravních informací je uvedena v elementu `feedType` odkazujícím na konkrétní dokumentaci zveřejněnou v národním registru dopravních informací.
+
+
+Vypočítané FCD informace
+========================
+
+Stavové informace zahrnuté v tomto profilu jsou:
+
+* rychlost dopravního proudu [km/h] za
+
+  - aktuálních podmínek
+  - při volném provozu (freeFlow)
+
+* dojezdové doby [s] za
+
+  - aktuálních podmínek
+  - při volném provozu (freeFlow)
+    
+* aktuální zpoždění [s] (jako rozdíl aktuální - freeflow dojezdové doby)
+* hustotu provozu [-] (tak jak je stanovena výčtem `trafficStatusEnum`)
+
+Další informace zahrnuté v tomto profilu jsou:
+
+* reakční doby systému [s] (jako rozdíl doby dostupnosti vstupních dat a doby výpočtu stavové informace)
+
+Stavové informace zahrnuté v tomto profilu rozšířením třídy `TrafficStatus` jsou:
+
+* stupně provozu [-] (1-5 tak jak jsou používány v ČR)
+* kolony na segmentu, odhad jejich délky [m] a odhad počátku a konce [%] kolony na odkazovaném segmentu
+
+Společné kvalitativní parametry zahrnuté v tomto profilu rozšířením třídy `TravelTimeData` jsou:
+
+* míra spolehlivosti dat [-]
+* počet FCD vozidlových sond [-] na segmentu
+
+
+**Informace zahrnuté rozšířením jsou uvedeny na obrázku 1.**
+
+.. figure:: img/NdicFcdExtension.png
+  :alt: Rozšíření třídy TrafficStatus a TravelTimeData
+
+  Rozšíření třídy TrafficStatus a TravelTimeData. 
+
+Následující články jsou věnovány popisu jednotlivých stavových informací. 
+
+Míra spolehlivosti dat
+----------------------
+
+**Míra spolehlivosti dat** charakterizuje kvalitu datového vzorku a nabývá hodnot <0-1> kdy 1 znamená 100% spolehlivá data. Kvalita datového vzorku se hodnotí podle stáří použitých vstupních poloh, jejich počtu atp. Vzorec výpočtu není součástí tohoto profilu.
+
+Míra spolehlivosti dat je udávána pro segment v rozšíření `travelTimeDataExtension` v elementu `supplierCalculatedDataQuality` a platí pro všechny elementy `elaboratedData` vztahující se k danému segmentu. 
+
+.. literalinclude:: ../../samples/fcd-compatibility-mode.xml
+   :language: xml
+   :linenos:
+   :lineno-match:
+   :start-after:  <!-- extension: quality parameters and number of vehicles on the segment -->
+   :end-before: <numberOfFcdVehicles>
+
+Profil umožňuje (ale nevyžaduje) uvedení míry spolehlivosti dat pro každou vypočítanou hodnotu zvlášť a to atributem `supplierCalculatedDataQuality`. V případě uvedení má tato hodnota přednost před hodnotou na globálnější úrovni.
+
+.. literalinclude:: ../../samples/fcd-compatibility-mode.xml
+   :language: xml
+   :linenos:
+   :lineno-match:
+   :start-after: <!-- free flow vehicle speed information -->
+   :end-before: <!-- extension: quality parameters and number of vehicles on the segment -->
+
+Aktuální počet plovoucích vozidel
+---------------------------------
+
+Aktuální **počet plovoucích vozidel**, ze kterých byly hodnoty vypočítány, je udáván v elementu `numberOfFcdVehicles` v elementu `trafficStatusExtension`  a platí pro všechny elementy `elaboratedData` vztahující se k danému segmentu. 
+
+**Počet plovoucích vozidel** je možné specifikovat detailněji podle kategorie vozidla. Kategorie vozidel je vyjádřena hodnotou elementu `vehicleType` zanořenou do elementu `vehicleGroup`. Pro každou hodnotu `vehicleType` lze použít jednu `vehicleGroup` s tím, že hodnota `anyVehicle` se užívá pro vyjádření celkového počtu vozidel všech kategorií.
+
+.. literalinclude:: ../../samples/fcd-compatibility-mode.xml
+   :language: xml
+   :linenos:
+   :lineno-match:
+   :start-after: <supplierCalculatedDataQuality>
+   :end-before: </qualityParameters>
+
+Profil umožňuje (ale nevyžaduje) uvedení celkového počtu použitých plovoucích vozidel pro každou vypočítanou hodnotu zvlášť a to atributem `numberOfInputValuesUsed`.
+
+.. literalinclude:: ../../samples/fcd-compatibility-mode.xml
+   :language: xml
+   :linenos:
+   :lineno-match:
+   :start-after: <!-- traffic status information -->
+   :end-before: <!-- extension: traffic level and queue information -->
+
+Některá statistická data, jako jsou `freeFlowSpeed` nebo `freeFlowTravelTime`, jsou na počtu plovoucích vozidel nezávislá. V takovém případě je hodnota počtu vozidel, pokud je uvedena atributem `numberOfInputValuesUsed`, nastavena na `9999`. 
+
+.. literalinclude:: ../../samples/fcd-compatibility-mode.xml
+   :language: xml
+   :linenos:
+   :lineno-match:
+   :start-after: <!-- historical data from fcd vehicles database -->
+   :end-before: <!-- free flow vehicle speed information -->
+
+Rychlost dopravního proudu
+--------------------------
+
+**Rychlost dopravního proudu** [km/h] na segmentu je uvedena ve dvou samostatných elementech `elaboratedData`. Aktuální průměrná rychlost `averageVehicleSpeed` v měřeném časovém okně je uvedena ve třídě `TrafficSpeed` elementu `basicData`.
+
+.. literalinclude:: ../../samples/fcd-compatibility-mode.xml
+   :language: xml
+   :linenos:
+   :lineno-match:
+   :start-after: <!-- average vehicle speed information -->
+   :end-before: </basicData>
+
+Rychlost volného průjezdu vozidla `freeFlowSpeed` je uvedena ve třídě `TravelTimeData` v elementu `basicData`.
+
+.. literalinclude:: ../../samples/fcd-compatibility-mode.xml
+   :language: xml
+   :linenos:
+   :lineno-match:
+   :start-after: <!-- free flow vehicle speed information -->
+   :end-before: <!-- extension: quality parameters and number of vehicles on the segment -->
+
+Dojezdová doba a aktuální zpoždění
+----------------------------------
+
+**Dojezdová doba** [s] je uvedena v elementu `basicData` s `xsi:type="TravelTimeData"`. V tomto profilu jsou použity 2 různé typy dojezdových dob:
+
+* `travelTime`: aktuální průměrná dojezdová doba
+* `freeFlowTravelTime`: doba volného průjezdu
+
+.. literalinclude:: ../../samples/fcd-compatibility-mode.xml
+   :language: xml
+   :linenos:
+   :lineno-match:
+   :start-after: <!-- travel time information -->
+   :end-before: <!-- free flow vehicle speed information -->
+
+
+Profil poskytuje informace o dojezdové době bez rozlišení typu vozidel. 
+
+**Aktuální zpoždění** je vyjádřeno implicitně jako rozdíl hodnot aktuální průměrné dojezdové doby (`travelTime`) a doby volného průjezdu (`freeFlowTravelTime`).
+
+
+Stupně dopravy
+--------------
+
+**Hustota provozu** je vyjádřena hodnotou z číselníku `TrafficStatusEnum` jak je definováno v normě [16157-3]_ v tabulce A.125.
+
+
+.. literalinclude:: ../../samples/fcd-compatibility-mode.xml
+   :language: xml
+   :linenos:
+   :lineno-match:
+   :start-after: <!-- traffic status information -->
+   :end-before: <!-- extension: traffic level and queue information -->
+
+.. csv-table:: Hodnoty obsažené ve výčtu "TrafficStatusEnum"
+    :header-rows: 1
+    :widths: 8,8,45
+
+    "Název výčtové hodnoty","Určení","Definice" 
+     "impossible","Dopravní kolaps","Vozidla na komunikacích stojí nebo v kolonách jen velmi pomalu popojíždějí, průměrná rychlost je velmi malá."
+    "congested","Dopravní kolony","Tvoří se kolony vozidel, provoz není plynulý, průměrná rychlost je výrazně snížená, průjezd křižovatkami je narušen."
+    "heavy","Silný provoz","Tvoří se proudy vozidel, provoz je plynulý, avšak rychlost nižší než maximální povolená."
+    "freeFlow","Plynulý provoz","Doprava je v daném směru plynulá. Provoz probíhá nejvyšší povolenou nebo vyšší rychlostí a řidiči mohou volně přejíždět mezi pruhy."
+    "unknown","Neznámý","Dopravní podmínky jsou neznámé."
+
+Třída `TrafficStatus` je rozšířena (rozšíření úrovně B) o explicitní určení stupňů dopravy, tak jak jsou stanoveny a používány v ČR. Stupně provozu (1-5) jsou stanoveny v třídě `TrafficLevel` pomocí frází "level1" až "level5", v elementu `trafficLevelValue`. Jejich význam, uvedený v číselníku `TrafficLevelEnum`, vychází z podmínek stanovených v ČR. Další atributy, jako např. trend, se neuvádí.
+
+.. literalinclude:: ../../samples/fcd-compatibility-mode.xml
+   :language: xml
+   :linenos:
+   :lineno-match:
+   :start-after: <ndicFcdExtension>
+   :end-before: <queueInformation>
+
+Hodnota `TrafficLevel` je vypočítaná z % rozdílu aktuální rychlosti dopravního proudu a rychlosti dopravního proudu na volném segmentu.
+
+.. list-table:: Výpočet v definice stupňů provozu v publikaci FCD
+   :widths: 10 70 20
+   :header-rows: 1
+   
+   * - Stupeň
+     - Popis
+     - % rozdílu
+   * - 1
+     - provoz pouze jednotlivých vozidel, jízda je plynulá
+     - <85 %, 100 %)
+   * - 2
+     - provoz malých skupinek vozidel, jízda je plynulá, odbavování na křižovatkách bez problémů
+     - <75 %, 85 %)
+   * - 3
+     - tvoří se proudy vozidel, provoz je plynulý, avšak rychlost nižší než maximální povolená
+     - <50 %, 75 %)
+   * - 4
+     - tvoří se kolony vozidel, provoz není plynulý, průměrná rychlost je výrazně snížená, průjezd křižovatkami je narušen
+     - <20 %, 50 %)
+   * - 5
+     - dopravní kolaps – vozidla na komunikacích stojí nebo v kolonách jen velmi pomalu popojíždějí, průměrná rychlost je velmi malá
+     - <0 %, 20 %)
+
+
+Kolony
+------
+
+**Kolony** na segmentu jsou vyjádřeny implicitně dopravním stavem "level4" a "level5" a dále přítomností elementu `queueInformation`, který byl do třídy `TrafficStatus` dodán prostřednictvím rozšíření typu B modelu DATEX II. 
+
+Segmenty jsou interně děleny na menší části (úseky silniční sítě Global Network, GN). Přítomnost kongesce se vyhodnocuje vůči úsekům GN jako pokles rychlosti průjezdu tohoto úseku **pod 30 % rychlosti volného průjezdu.**
+
+Element `queueInformation` obsahuje agregované hodnoty z jednotlivých úseků segmentu na kterých byla vyhodnocena kongesce. Pokud na žádném z úseků segmentu nebyla vyhodnocena element `queueInformation` není přítomen. Element je přítomen pouze jedenkrát za segment, tomu jsou uzpůsobeny hodnoty jeho atributů (více viz popis atributů a obrázek níže).
+
+.. figure:: img/kongesce.png
+  :alt: Znázornění agregace jednotlivých kongescí na segmentu
+  
+  Znázornění agregace jednotlivých kongescí na segmentu
+
+.. literalinclude:: ../../samples/fcd-compatibility-mode.xml
+   :language: xml
+   :linenos:
+   :lineno-match:
+   :start-after: </trafficLevel>
+   :end-before: </ndicFcdExtension>
+
+Délka kolony na segmentu je vyjádřená v elementu `queueLength`, který udává agregovanou délku kolony pro všechny úseky segmentu [m]. Resp. suma délky úseků sítě Global Network (i na sebe nenavazujících), ležících na daném segmentu, na kterých byla detekována kongesce. 
+
+Počátek a konec kolony je uveden nepovinnými elementy `fromPoint` a `toPoint`, vyjadřujícími relativní "souřadnice" kolony vztažené vůči segmentu ve směru provozu. Kolona, dle této definice, začíná (`fromPoint`) v místě kdy do ní dorazí vozidla a končí (`toPoint`) na místě kde ji opouští a pokračují dále po segmentu. **Viz následující obrázek.**
+
+V případě více rozdělených kongescí na segmentu, například kolona detekovaná na 1. a 3. úseku GN element `fromPoint` udává pouze informaci o 1. koloně a element `toPoint` je dopočítán pomocí hodnoty `queueLength`.
+
+.. figure:: img/queue_position.png
+  :alt: Ukázka odkázaní na relativní polohu kolony na segmentu.
+
+  Ukázka odkázaní na relativní polohu kolony na segmentu. 
+
+Poskytování pouze právě dostupných dat
+======================================
+
+V případě nedostupnosti dat pro výpočet stavových informací na dané segmentu, se k této segmentu přenášejí pouze kvalitativní parametry, a pokud jsou, tak i historické údaje v elementu `basicData` třídy `TravelTimeData`.
+
+Trasa na které existují aktuální stavová data je tedy informačně pokryta 3 elementy `elaboratedData`, zatímco ta, ke které aktuální data neexistují pouze jedním.
+
+===============
+Časová platnost
+===============
+
+Publikace je periodicky aktualizována, hodnota v elementu `periodDefault` určuje běžnou délku intervalu aktualizace v sekundách.
+
+Hodnota `publicationTime` určuje pouze to, kdy byla publikace vytvořena, ale **není vztažným časem výpočtu**.
+
+Hodnota `timeDefault` určuje **společný vztažný čas hodnot všech záznamů** a je časem konce konkrétní periody měření a výpočtu.
+
+Žádné další určení platnosti údajů není používáno.
+
+.. literalinclude:: ../../samples/fcd-compatibility-mode.xml
+   :language: xml
+   :linenos:
+   :lineno-match:
+   :start-after: <feedType>
+   :end-before: <headerInformation>
+
+Stáří vstupních dat FCD
+=======================
+
+Každý jeden záznam je popsán elementem `basicData` a ve svém elementu `measurementOrCalculationTime` uvádí čas nejčerstvější vstupní informace, kterou využil pro výpočet svých stavových hodnot. K aktualizaci dochází pravidelně v intervalu 1 minuty, kdy se vyhodnocují trasy všech vozidel na sledované síti a jimi projeté úseky (části segmentu) a hodnoty k takto projetým úsekům. K poslední aktualizaci stavu segmentu dojde, když jej opustí poslední vozidlo.
+
+Stáří vstupních dat, použitých pro jednotlivé záznamy, tak lze vypočítat jako rozdíl `timeDefault` celé publikace a `measurementOrCalculationTime` hodnoty daného záznamu. Toto stáří použitých vstupních dat je určitým měřítkem **reakční doby systému**.
+
+Stavové hodnoty jednotlivých záznamů se počítají na základě jak aktuálních vstupních dat, tak také s použitím historických dat. Stavové hodnoty záznamu bez nových vstupních dat z FCD se mohou přesto v následujících publikacích měnit, protože jsou postupně zohledňována i data historická. Použitý algoritmus výpočtu je mimo rámec této dokumentace.
+
+V případě nedostatku podkladových dat pro výpočet stavů (dle algoritmu výpočtu) jsou elementy obsahující informace o **aktuální** rychlosti, stupních provozu a cestovním čase vynechány.
+
+.. literalinclude:: ../../samples/fcd-compatibility-mode.xml
+   :language: xml
+   :linenos:
+   :lineno-match:
+   :start-after: </publicationCreator>
+   :end-before: <pertinentLocation
+
+Míra použití historických dat při vypočtení stavové hodnoty se mimo jiné projeví i na hodnotě `supplierCalculatedDataQuality`.
+
+================
+Popisování poloh
+================
+
+FCD data jsou počítána pro předem definované segmenty silniční sítě. Délka segmentu může být dána 2 body ALERT-C lokační tabulky, úseky používané silniční sítě (GlobalNetwork), či požadavky vycházejícími z fyzického uspořádání komunikace. 
+
+Formát popisuje polohy výhradně odkazem, pomocí elementu `pertinentLocation`, do sady předem definovaných poloh (třída `PredefinedLocation`) v publikaci `PredefinedLocationsPublication` [16157-3]_. související s tímto zdrojem informací.  a v ní dohledat polohu shodného typu (dle `targetClass`, zde `PredefinedLocation`), se stejným identifikátorem a verzí.
+
+.. literalinclude:: ../../samples/fcd-compatibility-mode.xml
+   :language: xml
+   :linenos:
+   :lineno-match:
+   :start-after: <measurementOrCalculationTime>
+   :end-before: <!-- traffic status information -->
+
+Kromě popisu polohy elementem `PredefinedLocation` formát nepovinně umožňuje popsat polohu dalším odkazem, interním identifikátorem poskytovatelem, v elementu `source`.
+
+.. literalinclude:: ../../samples/fcd-compatibility-mode.xml
+   :language: xml
+   :linenos:
+   :lineno-match:
+   :start-after: <elaboratedData>
+   :end-before: <basicData xsi:type="TrafficStatus">
+
+Metody popisu polohy jsou mimo rámec tohoto dokumentu a jsou popsány jinde.
+

@@ -1,0 +1,36 @@
+# Contact Information
+
+{% if data.registry_metadata.contacts %}
+
+
+{% for contact in data.registry_metadata.contacts %}
+{% for person in contact.persons %}
+{% set person = data.persons[person] %}
+
+
+| in matters of | **{{ contact.role | locstr(lang) }}**
+| - | - |
+{% if person.name %}
+| name | {{ person.name }}
+{% endif %}
+{% if person.title %}
+| title | {{ person.title  | locstr(lang) }}
+{% endif %}
+{% if person.phone %}
+| phone | {{ person.phone }}
+{% endif %}
+{% if person.email %}
+| email | {{ person.email }}
+{% endif %}
+{% if person.web %}
+| web | {% for web in person.web %}[{{ web }}]({{ web }}) {% endfor %}
+{% endif %}
+{% if person.note %}
+| note | {{ person.note  | locstr(lang) }}
+{% endif %}
+
+{% endfor %}
+{% endfor %}
+
+
+{% endif %}

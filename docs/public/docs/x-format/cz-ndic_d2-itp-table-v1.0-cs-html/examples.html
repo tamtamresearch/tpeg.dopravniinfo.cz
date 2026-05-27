@@ -1,0 +1,550 @@
+
+
+<!doctype html>
+
+<html lang="cs" data-content_root="./">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Příloha A: Příklady zpráv &#8212; Dokumentace pro NDIC DATEX II Parking Situation Publication – Situace na parkovištích nákladních vozidel 1.0rev0</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/bizstyle.css?v=532c1bf3" />
+    
+    <script src="_static/documentation_options.js?v=98d9dfff"></script>
+    <script src="_static/doctools.js?v=888ff710"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/translations.js?v=0275affc"></script>
+    <script src="_static/bizstyle.js"></script>
+    <link rel="index" title="Rejstřík" href="genindex.html" />
+    <link rel="search" title="Vyhledávání" href="search.html" />
+    <link rel="next" title="Příloha B: W3C XML Schéma" href="format.html" />
+    <link rel="prev" title="Koncepty" href="concepts.html" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <!--[if lt IE 9]>
+    <script src="_static/css3-mediaqueries.js"></script>
+    <![endif]-->
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigace</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="Obecný rejstřík"
+             accesskey="I">rejstřík</a></li>
+        <li class="right" >
+          <a href="format.html" title="Příloha B: W3C XML Schéma"
+             accesskey="N">další</a> |</li>
+        <li class="right" >
+          <a href="concepts.html" title="Koncepty"
+             accesskey="P">předchozí</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Dokumentace pro NDIC DATEX II Parking Situation Publication – Situace na parkovištích nákladních vozidel 1.0rev0</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Příloha A: Příklady zpráv</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="priloha-a-priklady-zprav">
+<span id="examples"></span><h1>Příloha A: Příklady zpráv<a class="headerlink" href="#priloha-a-priklady-zprav" title="Link to this heading">¶</a></h1>
+<section id="table-vrazne-xml-staticky-popis-odpocivky-vrazne">
+<h2>table_vrazne.xml - Statický popis odpočívky Vražné<a class="headerlink" href="#table-vrazne-xml-staticky-popis-odpocivky-vrazne" title="Link to this heading">¶</a></h2>
+<p>Publikace popisuje statické charakteristiky parkoviště na odpočívce Vražné. Příklad obsahuje jen
+jediný element typu <cite>parkingRecord</cite>, skutečná publikace by takových elementů obsahovala mnoho, např.
+všechny odpočívky provozované jedním operátorem.</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
+<span class="nt">&lt;d2LogicalModel</span><span class="w"> </span><span class="na">modelBaseVersion=</span><span class="s">&quot;2&quot;</span><span class="w"> </span><span class="na">xmlns=</span><span class="s">&quot;http://datex2.eu/schema/2/2_0&quot;</span><span class="w"> </span><span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span><span class="nt">&gt;</span>
+<span class="w">  </span><span class="nt">&lt;exchange&gt;</span>
+<span class="w">    </span><span class="nt">&lt;supplierIdentification&gt;</span>
+<span class="w">      </span><span class="nt">&lt;country&gt;</span>cz<span class="nt">&lt;/country&gt;</span>
+<span class="w">      </span><span class="nt">&lt;nationalIdentifier&gt;</span>RSD<span class="w"> </span>CR<span class="nt">&lt;/nationalIdentifier&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/supplierIdentification&gt;</span>
+<span class="w">  </span><span class="nt">&lt;/exchange&gt;</span>
+<span class="w">  </span><span class="nt">&lt;payloadPublication</span><span class="w"> </span><span class="na">lang=</span><span class="s">&quot;cz&quot;</span><span class="w"> </span><span class="na">xsi:type=</span><span class="s">&quot;GenericPublication&quot;</span><span class="nt">&gt;</span>
+<span class="w">    </span><span class="nt">&lt;publicationTime&gt;</span>2016-07-20T15:25:51.153+02:00<span class="nt">&lt;/publicationTime&gt;</span>
+<span class="w">    </span><span class="nt">&lt;publicationCreator&gt;</span>
+<span class="w">      </span><span class="nt">&lt;country&gt;</span>cz<span class="nt">&lt;/country&gt;</span>
+<span class="w">      </span><span class="nt">&lt;nationalIdentifier&gt;</span>RSD<span class="w"> </span>CR<span class="nt">&lt;/nationalIdentifier&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/publicationCreator&gt;</span>
+<span class="w">    </span><span class="nt">&lt;genericPublicationName&gt;</span>ParkingTablePublication<span class="nt">&lt;/genericPublicationName&gt;</span>
+<span class="w">    </span><span class="nt">&lt;genericPublicationExtension&gt;</span>
+<span class="w">      </span><span class="nt">&lt;parkingTablePublication&gt;</span>
+<span class="w">        </span><span class="nt">&lt;headerInformation&gt;</span>
+<span class="w">          </span><span class="nt">&lt;confidentiality&gt;</span>noRestriction<span class="nt">&lt;/confidentiality&gt;</span>
+<span class="w">          </span><span class="nt">&lt;informationStatus&gt;</span>real<span class="nt">&lt;/informationStatus&gt;</span>
+<span class="w">        </span><span class="nt">&lt;/headerInformation&gt;</span>
+<span class="w">        </span><span class="cm">&lt;!-- Table identifier as required by guidance docs --&gt;</span>
+<span class="w">        </span><span class="nt">&lt;parkingTable</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;CZ-ITP-01&quot;</span><span class="w"> </span><span class="na">version=</span><span class="s">&quot;1&quot;</span><span class="nt">&gt;</span>
+<span class="w">          </span><span class="nt">&lt;parkingTableName&gt;</span>
+<span class="w">            </span><span class="nt">&lt;values&gt;</span>
+<span class="w">              </span><span class="nt">&lt;value</span><span class="w"> </span><span class="na">lang=</span><span class="s">&quot;en&quot;</span><span class="nt">&gt;</span>Czech<span class="w"> </span>Rest<span class="w"> </span>Areas<span class="nt">&lt;/value&gt;</span>
+<span class="w">            </span><span class="nt">&lt;/values&gt;</span>
+<span class="w">          </span><span class="nt">&lt;/parkingTableName&gt;</span>
+<span class="w">          </span><span class="nt">&lt;parkingTableVersionTime&gt;</span>2016-07-20T15:25:51.153+02:00<span class="nt">&lt;/parkingTableVersionTime&gt;</span>
+<span class="w">          </span><span class="cm">&lt;!-- Parking record identifier as specified by guidance docs composed of:</span>
+<span class="cm">               - country code (CZ)</span>
+<span class="cm">               - registered operator number: 2 hexa digit (01) </span>
+<span class="cm">               - parking serial number: 4 digit (0116) </span>
+<span class="cm">               i.e. CZ-01-0001 </span>
+<span class="cm">               the table number does not impose any structure to this ID </span>
+<span class="cm">             --&gt;</span>
+<span class="w">          </span><span class="nt">&lt;parkingRecord</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;CZ-01-0116&quot;</span><span class="w"> </span><span class="na">version=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">xsi:type=</span><span class="s">&quot;InterUrbanParkingSite&quot;</span><span class="nt">&gt;</span>
+<span class="w">            </span><span class="nt">&lt;parkingName&gt;</span>
+<span class="w">              </span><span class="nt">&lt;values&gt;</span>
+<span class="w">                </span><span class="nt">&lt;value</span><span class="w"> </span><span class="na">lang=</span><span class="s">&quot;cz&quot;</span><span class="nt">&gt;</span>Vražné<span class="nt">&lt;/value&gt;</span>
+<span class="w">              </span><span class="nt">&lt;/values&gt;</span>
+<span class="w">            </span><span class="nt">&lt;/parkingName&gt;</span>
+<span class="w">            </span><span class="nt">&lt;parkingRecordVersionTime&gt;</span>2016-07-20T15:25:51.153+02:00<span class="nt">&lt;/parkingRecordVersionTime&gt;</span>
+<span class="w">            </span><span class="cm">&lt;!-- operator identifier composed of:</span>
+<span class="cm">               - country code (CZ)</span>
+<span class="cm">               - registered operator number: 2 hexa digit (01) </span>
+<span class="cm">               - subcomponent number: 2 digit (01)... meaning local SSÚD or local provider responsible to global operator </span>
+<span class="cm">               i.e. CZ-01-01 </span>
+<span class="cm">               the table number does not impose any structure to this ID </span>
+<span class="cm">             --&gt;</span>
+<span class="w">            </span><span class="cm">&lt;!--DUMMY VALUES </span>
+<span class="cm">               instead of local responsible person the global contact for RSD CR is used </span>
+<span class="cm">             --&gt;</span>
+<span class="w">            </span><span class="nt">&lt;operator</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;CZ-01-01&quot;</span><span class="w"> </span><span class="na">version=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">xsi:type=</span><span class="s">&quot;ContactDetails&quot;</span><span class="nt">&gt;</span>
+<span class="w">              </span><span class="nt">&lt;contactOrganisationName&gt;</span>
+<span class="w">                </span><span class="nt">&lt;values&gt;</span>
+<span class="w">                  </span><span class="nt">&lt;value</span><span class="w"> </span><span class="na">lang=</span><span class="s">&quot;cz&quot;</span><span class="nt">&gt;</span>Ředitelství<span class="w"> </span>silnic<span class="w"> </span>a<span class="w"> </span>dálnic<span class="w"> </span>ČR<span class="nt">&lt;/value&gt;</span>
+<span class="w">                  </span><span class="nt">&lt;value</span><span class="w"> </span><span class="na">lang=</span><span class="s">&quot;en&quot;</span><span class="nt">&gt;</span>Road<span class="w"> </span>and<span class="w"> </span>Motorway<span class="w"> </span>Directorate<span class="w"> </span>of<span class="w"> </span>the<span class="w"> </span>Czech<span class="w"> </span>Republic<span class="nt">&lt;/value&gt;</span>
+<span class="w">                </span><span class="nt">&lt;/values&gt;</span>
+<span class="w">              </span><span class="nt">&lt;/contactOrganisationName&gt;</span>
+<span class="w">              </span><span class="nt">&lt;contactDetailsTelephoneNumber&gt;</span>+420241084111<span class="nt">&lt;/contactDetailsTelephoneNumber&gt;</span>
+<span class="w">              </span><span class="nt">&lt;contactDetailsEMail&gt;</span>posta@rsd.cz<span class="nt">&lt;/contactDetailsEMail&gt;</span>
+<span class="w">              </span><span class="nt">&lt;publishingAgreement&gt;</span>true<span class="nt">&lt;/publishingAgreement&gt;</span>
+<span class="w">            </span><span class="nt">&lt;/operator&gt;</span>
+<span class="w">            </span><span class="cm">&lt;!-- parking location composed of:</span>
+<span class="cm">              - road information + mileage</span>
+<span class="cm">              - GPS center coordinates </span>
+<span class="cm">              - ALERT-C location code </span>
+<span class="cm">            --&gt;</span>
+<span class="w">            </span><span class="nt">&lt;parkingLocation</span><span class="w"> </span><span class="na">xsi:type=</span><span class="s">&quot;Point&quot;</span><span class="nt">&gt;</span>
+<span class="w">              </span><span class="cm">&lt;!-- ALERT-C here</span>
+<span class="cm">                TAB ID 2, 25, version 6.0</span>
+<span class="cm">                LC: 23013</span>
+<span class="cm">                extent: 0</span>
+<span class="cm">                direction: 1 (negative) </span>
+<span class="cm">              --&gt;</span>
+<span class="w">              </span><span class="nt">&lt;alertCPoint</span><span class="w"> </span><span class="na">xsi:type=</span><span class="s">&quot;AlertCMethod2Point&quot;</span><span class="nt">&gt;</span>
+<span class="w">                </span><span class="nt">&lt;alertCLocationCountryCode&gt;</span>2<span class="nt">&lt;/alertCLocationCountryCode&gt;</span>
+<span class="w">                </span><span class="nt">&lt;alertCLocationTableNumber&gt;</span>25<span class="nt">&lt;/alertCLocationTableNumber&gt;</span>
+<span class="w">                </span><span class="nt">&lt;alertCLocationTableVersion&gt;</span>6.0<span class="nt">&lt;/alertCLocationTableVersion&gt;</span>
+<span class="w">                </span><span class="nt">&lt;alertCDirection&gt;</span>
+<span class="w">                  </span><span class="nt">&lt;alertCDirectionCoded&gt;</span>negative<span class="nt">&lt;/alertCDirectionCoded&gt;</span>
+<span class="w">                </span><span class="nt">&lt;/alertCDirection&gt;</span>
+<span class="w">                </span><span class="nt">&lt;alertCMethod2PrimaryPointLocation&gt;</span>
+<span class="w">                  </span><span class="nt">&lt;alertCLocation&gt;</span>
+<span class="w">                    </span><span class="nt">&lt;specificLocation&gt;</span>23013<span class="nt">&lt;/specificLocation&gt;</span>
+<span class="w">                  </span><span class="nt">&lt;/alertCLocation&gt;</span>
+<span class="w">                </span><span class="nt">&lt;/alertCMethod2PrimaryPointLocation&gt;</span>
+<span class="w">              </span><span class="nt">&lt;/alertCPoint&gt;</span>
+<span class="w">              </span><span class="nt">&lt;pointAlongLinearElement&gt;</span>
+<span class="w">                </span><span class="nt">&lt;directionRelativeAtPoint&gt;</span>opposite<span class="nt">&lt;/directionRelativeAtPoint&gt;</span>
+<span class="w">                </span><span class="nt">&lt;linearElement&gt;</span>
+<span class="w">                  </span><span class="nt">&lt;roadNumber&gt;</span>D1<span class="nt">&lt;/roadNumber&gt;</span>
+<span class="w">                </span><span class="nt">&lt;/linearElement&gt;</span>
+<span class="w">                </span><span class="cm">&lt;!-- if the parking is ON the highway then </span>
+<span class="cm">                    - distanceAlongLinearElement, else</span>
+<span class="cm">                    -  --&gt;</span>
+<span class="w">                </span><span class="nt">&lt;distanceAlongLinearElement</span><span class="w"> </span><span class="na">xsi:type=</span><span class="s">&quot;DistanceFromLinearElementStart&quot;</span><span class="nt">&gt;</span>
+<span class="w">                  </span><span class="nt">&lt;distanceAlong&gt;</span>319100<span class="nt">&lt;/distanceAlong&gt;</span>
+<span class="w">                </span><span class="nt">&lt;/distanceAlongLinearElement&gt;</span>
+<span class="w">              </span><span class="nt">&lt;/pointAlongLinearElement&gt;</span>
+<span class="w">              </span><span class="nt">&lt;pointByCoordinates&gt;</span>
+<span class="w">                </span><span class="nt">&lt;pointCoordinates&gt;</span>
+<span class="w">                  </span><span class="nt">&lt;latitude&gt;</span>49.63213<span class="nt">&lt;/latitude&gt;</span>
+<span class="w">                  </span><span class="nt">&lt;longitude&gt;</span>17.84566<span class="nt">&lt;/longitude&gt;</span>
+<span class="w">                </span><span class="nt">&lt;/pointCoordinates&gt;</span>
+<span class="w">              </span><span class="nt">&lt;/pointByCoordinates&gt;</span>
+<span class="w">            </span><span class="nt">&lt;/parkingLocation&gt;</span>
+<span class="w">            </span><span class="cm">&lt;!-- tarrifs and payments as required by guidance docs --&gt;</span>
+<span class="w">            </span><span class="nt">&lt;tariffsAndPayment&gt;</span>
+<span class="w">              </span><span class="nt">&lt;freeOfCharge&gt;</span>true<span class="nt">&lt;/freeOfCharge&gt;</span>
+<span class="w">            </span><span class="nt">&lt;/tariffsAndPayment&gt;</span>
+<span class="w">            </span><span class="cm">&lt;!-- information on available equipment and facilities ... in global scope </span>
+<span class="cm">              ALL facilities shall be here </span>
+<span class="cm">            --&gt;</span>
+<span class="w">            </span><span class="nt">&lt;parkingEquipmentOrServiceFacility</span><span class="w"> </span><span class="na">equipmentOrServiceFacilityIndex=</span><span class="s">&quot;1&quot;</span><span class="nt">&gt;</span>
+<span class="w">              </span><span class="nt">&lt;parkingEquipmentOrServiceFacility</span><span class="w"> </span><span class="na">xsi:type=</span><span class="s">&quot;ServiceFacility&quot;</span><span class="nt">&gt;</span>
+<span class="w">                </span><span class="nt">&lt;availability&gt;</span>available<span class="nt">&lt;/availability&gt;</span>
+<span class="w">                </span><span class="nt">&lt;nameOrBrand&gt;</span>
+<span class="w">                  </span><span class="nt">&lt;values&gt;</span>
+<span class="w">                    </span><span class="nt">&lt;value</span><span class="w"> </span><span class="na">lang=</span><span class="s">&quot;cz&quot;</span><span class="nt">&gt;</span>Shell<span class="nt">&lt;/value&gt;</span>
+<span class="w">                  </span><span class="nt">&lt;/values&gt;</span>
+<span class="w">                </span><span class="nt">&lt;/nameOrBrand&gt;</span>
+<span class="w">                </span><span class="nt">&lt;serviceFacilityType&gt;</span>petrolStation<span class="nt">&lt;/serviceFacilityType&gt;</span>
+<span class="w">              </span><span class="nt">&lt;/parkingEquipmentOrServiceFacility&gt;</span>
+<span class="w">            </span><span class="nt">&lt;/parkingEquipmentOrServiceFacility&gt;</span>
+<span class="w">            </span><span class="nt">&lt;parkingEquipmentOrServiceFacility</span><span class="w"> </span><span class="na">equipmentOrServiceFacilityIndex=</span><span class="s">&quot;2&quot;</span><span class="nt">&gt;</span>
+<span class="w">              </span><span class="nt">&lt;parkingEquipmentOrServiceFacility</span><span class="w"> </span><span class="na">xsi:type=</span><span class="s">&quot;ServiceFacility&quot;</span><span class="nt">&gt;</span>
+<span class="w">                </span><span class="nt">&lt;availability&gt;</span>available<span class="nt">&lt;/availability&gt;</span>
+<span class="w">                </span><span class="nt">&lt;serviceFacilityType&gt;</span>restaurant<span class="nt">&lt;/serviceFacilityType&gt;</span>
+<span class="w">              </span><span class="nt">&lt;/parkingEquipmentOrServiceFacility&gt;</span>
+<span class="w">            </span><span class="nt">&lt;/parkingEquipmentOrServiceFacility&gt;</span>
+<span class="w">            </span><span class="cm">&lt;!--TODO quite a few services here with lot of data --&gt;</span>
+<span class="w">            </span><span class="cm">&lt;!-- ************* </span>
+<span class="cm">                 example of equipment with a location </span>
+<span class="cm">                 *************</span>
+<span class="cm">            --&gt;</span>
+<span class="w">            </span><span class="nt">&lt;parkingEquipmentOrServiceFacility</span><span class="w"> </span><span class="na">equipmentOrServiceFacilityIndex=</span><span class="s">&quot;3&quot;</span><span class="nt">&gt;</span>
+<span class="w">              </span><span class="nt">&lt;parkingEquipmentOrServiceFacility</span><span class="w"> </span><span class="na">xsi:type=</span><span class="s">&quot;Equipment&quot;</span><span class="nt">&gt;</span>
+<span class="w">                </span><span class="nt">&lt;availability&gt;</span>available<span class="nt">&lt;/availability&gt;</span>
+<span class="w">                </span><span class="nt">&lt;accessibility&gt;</span>wheelChairAccessible<span class="nt">&lt;/accessibility&gt;</span>
+<span class="w">                </span><span class="nt">&lt;groupOfLocations</span><span class="w"> </span><span class="na">xsi:type=</span><span class="s">&quot;Point&quot;</span><span class="nt">&gt;</span>
+<span class="w">                  </span><span class="nt">&lt;pointByCoordinates&gt;</span>
+<span class="w">                    </span><span class="nt">&lt;pointCoordinates&gt;</span>
+<span class="w">                      </span><span class="nt">&lt;latitude&gt;</span>49.632171<span class="nt">&lt;/latitude&gt;</span>
+<span class="w">                      </span><span class="nt">&lt;longitude&gt;</span>17.8435696<span class="nt">&lt;/longitude&gt;</span>
+<span class="w">                    </span><span class="nt">&lt;/pointCoordinates&gt;</span>
+<span class="w">                  </span><span class="nt">&lt;/pointByCoordinates&gt;</span>
+<span class="w">                </span><span class="nt">&lt;/groupOfLocations&gt;</span>
+<span class="w">                </span><span class="nt">&lt;equipmentType&gt;</span>toilet<span class="nt">&lt;/equipmentType&gt;</span>
+<span class="w">              </span><span class="nt">&lt;/parkingEquipmentOrServiceFacility&gt;</span>
+<span class="w">            </span><span class="nt">&lt;/parkingEquipmentOrServiceFacility&gt;</span>
+<span class="w">            </span><span class="cm">&lt;!-- ************* </span>
+<span class="cm">                 groups of parking spaces, </span>
+<span class="cm">                 starting with statistics only ... </span>
+<span class="cm">                 - ref goods*</span>
+<span class="cm">                 - lorries*</span>
+<span class="cm">                 - buses</span>
+<span class="cm">                 - caravans</span>
+<span class="cm">                 - cars </span>
+<span class="cm">                 * only first two considered mandatory</span>
+<span class="cm">                 *************</span>
+<span class="cm">            --&gt;</span>
+<span class="w">            </span><span class="cm">&lt;!-- ** STAT:refrigerated goods ** --&gt;</span>
+<span class="w">            </span><span class="nt">&lt;groupOfParkingSpaces</span><span class="w"> </span><span class="na">groupIndex=</span><span class="s">&quot;1&quot;</span><span class="nt">&gt;</span>
+<span class="w">              </span><span class="nt">&lt;parkingSpaceBasics</span><span class="w"> </span><span class="na">xsi:type=</span><span class="s">&quot;GroupOfParkingSpaces&quot;</span><span class="nt">&gt;</span>
+<span class="w">                </span><span class="nt">&lt;assignedParkingAmongOthers&gt;</span>
+<span class="w">                  </span><span class="nt">&lt;vehicleCharacteristics&gt;</span>
+<span class="w">                    </span><span class="nt">&lt;vehicleCharacteristicsExtension&gt;</span>
+<span class="w">                      </span><span class="nt">&lt;vehicleCharacteristicsExtended&gt;</span>
+<span class="w">                        </span><span class="nt">&lt;loadType2&gt;</span>refrigeratedGoods<span class="nt">&lt;/loadType2&gt;</span>
+<span class="w">                      </span><span class="nt">&lt;/vehicleCharacteristicsExtended&gt;</span>
+<span class="w">                    </span><span class="nt">&lt;/vehicleCharacteristicsExtension&gt;</span>
+<span class="w">                  </span><span class="nt">&lt;/vehicleCharacteristics&gt;</span>
+<span class="w">                </span><span class="nt">&lt;/assignedParkingAmongOthers&gt;</span>
+<span class="w">                </span><span class="nt">&lt;parkingNumberOfSpaces&gt;</span>0<span class="nt">&lt;/parkingNumberOfSpaces&gt;</span>
+<span class="w">                </span><span class="nt">&lt;parkingTypeOfGroup&gt;</span>statisticsOnly<span class="nt">&lt;/parkingTypeOfGroup&gt;</span>
+<span class="w">              </span><span class="nt">&lt;/parkingSpaceBasics&gt;</span>
+<span class="w">            </span><span class="nt">&lt;/groupOfParkingSpaces&gt;</span>
+<span class="w">            </span><span class="cm">&lt;!-- ** STAT:lorries ** --&gt;</span>
+<span class="w">            </span><span class="nt">&lt;groupOfParkingSpaces</span><span class="w"> </span><span class="na">groupIndex=</span><span class="s">&quot;2&quot;</span><span class="nt">&gt;</span>
+<span class="w">              </span><span class="nt">&lt;parkingSpaceBasics</span><span class="w"> </span><span class="na">xsi:type=</span><span class="s">&quot;GroupOfParkingSpaces&quot;</span><span class="nt">&gt;</span>
+<span class="w">                </span><span class="nt">&lt;assignedParkingAmongOthers&gt;</span>
+<span class="w">                  </span><span class="nt">&lt;vehicleCharacteristics&gt;</span>
+<span class="w">                    </span><span class="nt">&lt;vehicleType&gt;</span>lorry<span class="nt">&lt;/vehicleType&gt;</span>
+<span class="w">                  </span><span class="nt">&lt;/vehicleCharacteristics&gt;</span>
+<span class="w">                </span><span class="nt">&lt;/assignedParkingAmongOthers&gt;</span>
+<span class="w">                </span><span class="nt">&lt;parkingNumberOfSpaces&gt;</span>37<span class="nt">&lt;/parkingNumberOfSpaces&gt;</span>
+<span class="w">                </span><span class="nt">&lt;parkingTypeOfGroup&gt;</span>statisticsOnly<span class="nt">&lt;/parkingTypeOfGroup&gt;</span>
+<span class="w">              </span><span class="nt">&lt;/parkingSpaceBasics&gt;</span>
+<span class="w">            </span><span class="nt">&lt;/groupOfParkingSpaces&gt;</span>
+<span class="w">            </span><span class="cm">&lt;!-- ** STAT:busses ** --&gt;</span>
+<span class="w">            </span><span class="nt">&lt;groupOfParkingSpaces</span><span class="w"> </span><span class="na">groupIndex=</span><span class="s">&quot;3&quot;</span><span class="nt">&gt;</span>
+<span class="w">              </span><span class="nt">&lt;parkingSpaceBasics</span><span class="w"> </span><span class="na">xsi:type=</span><span class="s">&quot;GroupOfParkingSpaces&quot;</span><span class="nt">&gt;</span>
+<span class="w">                </span><span class="nt">&lt;assignedParkingAmongOthers&gt;</span>
+<span class="w">                  </span><span class="nt">&lt;vehicleCharacteristics&gt;</span>
+<span class="w">                    </span><span class="nt">&lt;vehicleType&gt;</span>bus<span class="nt">&lt;/vehicleType&gt;</span>
+<span class="w">                  </span><span class="nt">&lt;/vehicleCharacteristics&gt;</span>
+<span class="w">                </span><span class="nt">&lt;/assignedParkingAmongOthers&gt;</span>
+<span class="w">                </span><span class="nt">&lt;parkingNumberOfSpaces&gt;</span>4<span class="nt">&lt;/parkingNumberOfSpaces&gt;</span>
+<span class="w">                </span><span class="nt">&lt;parkingTypeOfGroup&gt;</span>statisticsOnly<span class="nt">&lt;/parkingTypeOfGroup&gt;</span>
+<span class="w">              </span><span class="nt">&lt;/parkingSpaceBasics&gt;</span>
+<span class="w">            </span><span class="nt">&lt;/groupOfParkingSpaces&gt;</span>
+<span class="w">            </span><span class="cm">&lt;!-- ** STAT:caravans ** --&gt;</span>
+<span class="w">            </span><span class="nt">&lt;groupOfParkingSpaces</span><span class="w"> </span><span class="na">groupIndex=</span><span class="s">&quot;4&quot;</span><span class="nt">&gt;</span>
+<span class="w">              </span><span class="nt">&lt;parkingSpaceBasics</span><span class="w"> </span><span class="na">xsi:type=</span><span class="s">&quot;GroupOfParkingSpaces&quot;</span><span class="nt">&gt;</span>
+<span class="w">                </span><span class="nt">&lt;assignedParkingAmongOthers&gt;</span>
+<span class="w">                  </span><span class="nt">&lt;vehicleCharacteristics&gt;</span>
+<span class="w">                    </span><span class="nt">&lt;vehicleType&gt;</span>caravan<span class="nt">&lt;/vehicleType&gt;</span>
+<span class="w">                  </span><span class="nt">&lt;/vehicleCharacteristics&gt;</span>
+<span class="w">                </span><span class="nt">&lt;/assignedParkingAmongOthers&gt;</span>
+<span class="w">                </span><span class="nt">&lt;parkingNumberOfSpaces&gt;</span>6<span class="nt">&lt;/parkingNumberOfSpaces&gt;</span>
+<span class="w">                </span><span class="nt">&lt;parkingTypeOfGroup&gt;</span>statisticsOnly<span class="nt">&lt;/parkingTypeOfGroup&gt;</span>
+<span class="w">              </span><span class="nt">&lt;/parkingSpaceBasics&gt;</span>
+<span class="w">            </span><span class="nt">&lt;/groupOfParkingSpaces&gt;</span>
+<span class="w">            </span><span class="cm">&lt;!-- ** STAT:cars ** --&gt;</span>
+<span class="w">            </span><span class="nt">&lt;groupOfParkingSpaces</span><span class="w"> </span><span class="na">groupIndex=</span><span class="s">&quot;5&quot;</span><span class="nt">&gt;</span>
+<span class="w">              </span><span class="nt">&lt;parkingSpaceBasics</span><span class="w"> </span><span class="na">xsi:type=</span><span class="s">&quot;GroupOfParkingSpaces&quot;</span><span class="nt">&gt;</span>
+<span class="w">                </span><span class="nt">&lt;assignedParkingAmongOthers&gt;</span>
+<span class="w">                  </span><span class="nt">&lt;vehicleCharacteristics&gt;</span>
+<span class="w">                    </span><span class="nt">&lt;vehicleType&gt;</span>car<span class="nt">&lt;/vehicleType&gt;</span>
+<span class="w">                  </span><span class="nt">&lt;/vehicleCharacteristics&gt;</span>
+<span class="w">                </span><span class="nt">&lt;/assignedParkingAmongOthers&gt;</span>
+<span class="w">                </span><span class="nt">&lt;parkingNumberOfSpaces&gt;</span>32<span class="nt">&lt;/parkingNumberOfSpaces&gt;</span>
+<span class="w">                </span><span class="nt">&lt;parkingTypeOfGroup&gt;</span>statisticsOnly<span class="nt">&lt;/parkingTypeOfGroup&gt;</span>
+<span class="w">              </span><span class="nt">&lt;/parkingSpaceBasics&gt;</span>
+<span class="w">            </span><span class="nt">&lt;/groupOfParkingSpaces&gt;</span>
+<span class="w">            </span><span class="cm">&lt;!-- ** some of the statistical groups may be instantiated by groups of real parking places ** --&gt;</span>
+<span class="w">            </span><span class="cm">&lt;!-- ** INFO about one group ** --&gt;</span>
+<span class="w">            </span><span class="nt">&lt;groupOfParkingSpaces</span><span class="w"> </span><span class="na">groupIndex=</span><span class="s">&quot;10&quot;</span><span class="nt">&gt;</span>
+<span class="w">              </span><span class="nt">&lt;parkingSpaceBasics</span><span class="w"> </span><span class="na">xsi:type=</span><span class="s">&quot;GroupOfParkingSpaces&quot;</span><span class="nt">&gt;</span>
+<span class="w">                </span><span class="nt">&lt;parkingSpaceOrGroupIdentifier&gt;</span>
+<span class="w">                  </span><span class="nt">&lt;values&gt;</span>
+<span class="w">                    </span><span class="nt">&lt;value</span><span class="w"> </span><span class="na">lang=</span><span class="s">&quot;cz&quot;</span><span class="nt">&gt;</span>Řada<span class="w"> </span>B<span class="nt">&lt;/value&gt;</span>
+<span class="w">                  </span><span class="nt">&lt;/values&gt;</span>
+<span class="w">                </span><span class="nt">&lt;/parkingSpaceOrGroupIdentifier&gt;</span>
+<span class="w">                </span><span class="nt">&lt;parkingSpacePhysics&gt;</span>driveThrough<span class="nt">&lt;/parkingSpacePhysics&gt;</span>
+<span class="w">                </span><span class="nt">&lt;parkingSpacePhysics&gt;</span>openAir<span class="nt">&lt;/parkingSpacePhysics&gt;</span>
+<span class="w">                </span><span class="nt">&lt;parkingMode&gt;</span>parallelParking<span class="nt">&lt;/parkingMode&gt;</span>
+<span class="w">                </span><span class="nt">&lt;parkingReservation&gt;</span>notAvailable<span class="nt">&lt;/parkingReservation&gt;</span>
+<span class="w">                </span><span class="nt">&lt;parkingOccupanyDetectionType&gt;</span>singleSpaceDetection<span class="nt">&lt;/parkingOccupanyDetectionType&gt;</span>
+<span class="w">                </span><span class="nt">&lt;assignedParkingAmongOthers&gt;</span>
+<span class="w">                  </span><span class="nt">&lt;vehicleCharacteristics&gt;</span>
+<span class="w">                    </span><span class="nt">&lt;vehicleType&gt;</span>lorry<span class="nt">&lt;/vehicleType&gt;</span>
+<span class="w">                  </span><span class="nt">&lt;/vehicleCharacteristics&gt;</span>
+<span class="w">                </span><span class="nt">&lt;/assignedParkingAmongOthers&gt;</span>
+<span class="w">                </span><span class="nt">&lt;parkingNumberOfSpaces&gt;</span>15<span class="nt">&lt;/parkingNumberOfSpaces&gt;</span>
+<span class="w">                </span><span class="nt">&lt;parkingTypeOfGroup&gt;</span>adjacentSpaces<span class="nt">&lt;/parkingTypeOfGroup&gt;</span>
+<span class="w">                </span><span class="nt">&lt;realSubsetOfGroup&gt;</span>2<span class="nt">&lt;/realSubsetOfGroup&gt;</span>
+<span class="w">                </span><span class="nt">&lt;minimumParkingSpaceDimension&gt;</span>
+<span class="w">                  </span><span class="nt">&lt;dimensionLength&gt;</span>25<span class="nt">&lt;/dimensionLength&gt;</span>
+<span class="w">                  </span><span class="nt">&lt;dimensionWidth&gt;</span>5<span class="nt">&lt;/dimensionWidth&gt;</span>
+<span class="w">                </span><span class="nt">&lt;/minimumParkingSpaceDimension&gt;</span>
+<span class="w">                </span><span class="nt">&lt;parkingSpace</span><span class="w"> </span><span class="na">parkingSpaceIndex=</span><span class="s">&quot;36&quot;</span><span class="nt">&gt;</span>
+<span class="w">                  </span><span class="nt">&lt;parkingSpace&gt;</span>
+<span class="w">                    </span><span class="nt">&lt;location</span><span class="w"> </span><span class="na">xsi:type=</span><span class="s">&quot;Point&quot;</span><span class="nt">&gt;</span>
+<span class="w">                      </span><span class="nt">&lt;pointByCoordinates&gt;</span>
+<span class="w">                        </span><span class="nt">&lt;pointCoordinates&gt;</span>
+<span class="w">                          </span><span class="nt">&lt;latitude&gt;</span>49.631545<span class="nt">&lt;/latitude&gt;</span>
+<span class="w">                          </span><span class="nt">&lt;longitude&gt;</span>17.8420908<span class="nt">&lt;/longitude&gt;</span>
+<span class="w">                        </span><span class="nt">&lt;/pointCoordinates&gt;</span>
+<span class="w">                      </span><span class="nt">&lt;/pointByCoordinates&gt;</span>
+<span class="w">                    </span><span class="nt">&lt;/location&gt;</span>
+<span class="w">                  </span><span class="nt">&lt;/parkingSpace&gt;</span>
+<span class="w">                </span><span class="nt">&lt;/parkingSpace&gt;</span>
+<span class="w">                </span><span class="cm">&lt;!-- ***********************</span>
+<span class="cm">                any other parking spaces</span>
+<span class="cm">                ************************</span>
+<span class="cm">                --&gt;</span>
+<span class="w">              </span><span class="nt">&lt;/parkingSpaceBasics&gt;</span>
+<span class="w">            </span><span class="nt">&lt;/groupOfParkingSpaces&gt;</span>
+<span class="w">            </span><span class="cm">&lt;!-- ***********************</span>
+<span class="cm">                any other parking groups</span>
+<span class="cm">                ************************</span>
+<span class="cm">             --&gt;</span>
+<span class="w">            </span><span class="nt">&lt;groupOfParkingSpaces</span><span class="w"> </span><span class="na">groupIndex=</span><span class="s">&quot;14&quot;</span><span class="nt">&gt;</span>
+<span class="w">              </span><span class="nt">&lt;parkingSpaceBasics</span><span class="w"> </span><span class="na">xsi:type=</span><span class="s">&quot;GroupOfParkingSpaces&quot;</span><span class="nt">&gt;</span>
+<span class="w">                </span><span class="nt">&lt;parkingSpaceOrGroupIdentifier&gt;</span>
+<span class="w">                  </span><span class="nt">&lt;values&gt;</span>
+<span class="w">                    </span><span class="nt">&lt;value</span><span class="w"> </span><span class="na">lang=</span><span class="s">&quot;cz&quot;</span><span class="nt">&gt;</span>Řada<span class="w"> </span>B<span class="nt">&lt;/value&gt;</span>
+<span class="w">                  </span><span class="nt">&lt;/values&gt;</span>
+<span class="w">                </span><span class="nt">&lt;/parkingSpaceOrGroupIdentifier&gt;</span>
+<span class="w">                </span><span class="nt">&lt;parkingSpacePhysics&gt;</span>driveThrough<span class="nt">&lt;/parkingSpacePhysics&gt;</span>
+<span class="w">                </span><span class="nt">&lt;parkingSpacePhysics&gt;</span>openAir<span class="nt">&lt;/parkingSpacePhysics&gt;</span>
+<span class="w">                </span><span class="nt">&lt;parkingMode&gt;</span>parallelParking<span class="nt">&lt;/parkingMode&gt;</span>
+<span class="w">                </span><span class="nt">&lt;parkingReservation&gt;</span>notAvailable<span class="nt">&lt;/parkingReservation&gt;</span>
+<span class="w">                </span><span class="nt">&lt;parkingOccupanyDetectionType&gt;</span>singleSpaceDetection<span class="nt">&lt;/parkingOccupanyDetectionType&gt;</span>
+<span class="w">                </span><span class="nt">&lt;assignedParkingAmongOthers&gt;</span>
+<span class="w">                  </span><span class="nt">&lt;vehicleCharacteristics&gt;</span>
+<span class="w">                    </span><span class="nt">&lt;vehicleType&gt;</span>caravan<span class="nt">&lt;/vehicleType&gt;</span>
+<span class="w">                  </span><span class="nt">&lt;/vehicleCharacteristics&gt;</span>
+<span class="w">                </span><span class="nt">&lt;/assignedParkingAmongOthers&gt;</span>
+<span class="w">                </span><span class="nt">&lt;parkingNumberOfSpaces&gt;</span>3<span class="nt">&lt;/parkingNumberOfSpaces&gt;</span>
+<span class="w">                </span><span class="nt">&lt;parkingTypeOfGroup&gt;</span>adjacentSpaces<span class="nt">&lt;/parkingTypeOfGroup&gt;</span>
+<span class="w">                </span><span class="nt">&lt;realSubsetOfGroup&gt;</span>2<span class="nt">&lt;/realSubsetOfGroup&gt;</span>
+<span class="w">                </span><span class="nt">&lt;minimumParkingSpaceDimension&gt;</span>
+<span class="w">                  </span><span class="nt">&lt;dimensionLength&gt;</span>15<span class="nt">&lt;/dimensionLength&gt;</span>
+<span class="w">                  </span><span class="nt">&lt;dimensionWidth&gt;</span>5<span class="nt">&lt;/dimensionWidth&gt;</span>
+<span class="w">                </span><span class="nt">&lt;/minimumParkingSpaceDimension&gt;</span>
+<span class="w">                </span><span class="nt">&lt;parkingSpace</span><span class="w"> </span><span class="na">parkingSpaceIndex=</span><span class="s">&quot;33&quot;</span><span class="nt">&gt;</span>
+<span class="w">                  </span><span class="nt">&lt;parkingSpace&gt;</span>
+<span class="w">                    </span><span class="nt">&lt;location</span><span class="w"> </span><span class="na">xsi:type=</span><span class="s">&quot;Point&quot;</span><span class="nt">&gt;</span>
+<span class="w">                      </span><span class="nt">&lt;pointByCoordinates&gt;</span>
+<span class="w">                        </span><span class="nt">&lt;pointCoordinates&gt;</span>
+<span class="w">                          </span><span class="nt">&lt;latitude&gt;</span>49.6315382<span class="nt">&lt;/latitude&gt;</span>
+<span class="w">                          </span><span class="nt">&lt;longitude&gt;</span>17.8422427<span class="nt">&lt;/longitude&gt;</span>
+<span class="w">                        </span><span class="nt">&lt;/pointCoordinates&gt;</span>
+<span class="w">                      </span><span class="nt">&lt;/pointByCoordinates&gt;</span>
+<span class="w">                    </span><span class="nt">&lt;/location&gt;</span>
+<span class="w">                  </span><span class="nt">&lt;/parkingSpace&gt;</span>
+<span class="w">                </span><span class="nt">&lt;/parkingSpace&gt;</span>
+<span class="w">                </span><span class="nt">&lt;parkingSpace</span><span class="w"> </span><span class="na">parkingSpaceIndex=</span><span class="s">&quot;34&quot;</span><span class="nt">&gt;</span>
+<span class="w">                  </span><span class="nt">&lt;parkingSpace&gt;</span>
+<span class="w">                    </span><span class="nt">&lt;location</span><span class="w"> </span><span class="na">xsi:type=</span><span class="s">&quot;Point&quot;</span><span class="nt">&gt;</span>
+<span class="w">                      </span><span class="nt">&lt;pointByCoordinates&gt;</span>
+<span class="w">                        </span><span class="nt">&lt;pointCoordinates&gt;</span>
+<span class="w">                          </span><span class="nt">&lt;latitude&gt;</span>49.6315233<span class="nt">&lt;/latitude&gt;</span>
+<span class="w">                          </span><span class="nt">&lt;longitude&gt;</span>17.8421817<span class="nt">&lt;/longitude&gt;</span>
+<span class="w">                        </span><span class="nt">&lt;/pointCoordinates&gt;</span>
+<span class="w">                      </span><span class="nt">&lt;/pointByCoordinates&gt;</span>
+<span class="w">                    </span><span class="nt">&lt;/location&gt;</span>
+<span class="w">                  </span><span class="nt">&lt;/parkingSpace&gt;</span>
+<span class="w">                </span><span class="nt">&lt;/parkingSpace&gt;</span>
+<span class="w">                </span><span class="nt">&lt;parkingSpace</span><span class="w"> </span><span class="na">parkingSpaceIndex=</span><span class="s">&quot;35&quot;</span><span class="nt">&gt;</span>
+<span class="w">                  </span><span class="nt">&lt;parkingSpace&gt;</span>
+<span class="w">                    </span><span class="nt">&lt;location</span><span class="w"> </span><span class="na">xsi:type=</span><span class="s">&quot;Point&quot;</span><span class="nt">&gt;</span>
+<span class="w">                      </span><span class="nt">&lt;pointByCoordinates&gt;</span>
+<span class="w">                        </span><span class="nt">&lt;pointCoordinates&gt;</span>
+<span class="w">                          </span><span class="nt">&lt;latitude&gt;</span>49.6315043<span class="nt">&lt;/latitude&gt;</span>
+<span class="w">                          </span><span class="nt">&lt;longitude&gt;</span>17.8421139<span class="nt">&lt;/longitude&gt;</span>
+<span class="w">                        </span><span class="nt">&lt;/pointCoordinates&gt;</span>
+<span class="w">                      </span><span class="nt">&lt;/pointByCoordinates&gt;</span>
+<span class="w">                    </span><span class="nt">&lt;/location&gt;</span>
+<span class="w">                  </span><span class="nt">&lt;/parkingSpace&gt;</span>
+<span class="w">                </span><span class="nt">&lt;/parkingSpace&gt;</span>
+<span class="w">              </span><span class="nt">&lt;/parkingSpaceBasics&gt;</span>
+<span class="w">            </span><span class="nt">&lt;/groupOfParkingSpaces&gt;</span>
+<span class="w">            </span><span class="cm">&lt;!-- ***********************</span>
+<span class="cm">                any other parking groups</span>
+<span class="cm">                ************************</span>
+<span class="cm">             --&gt;</span>
+<span class="w">            </span><span class="nt">&lt;parkingSiteAddress</span><span class="w"> </span><span class="na">xsi:type=</span><span class="s">&quot;Contact&quot;</span><span class="nt">&gt;</span>
+<span class="w">              </span><span class="nt">&lt;contactNotDefined&gt;</span>true<span class="nt">&lt;/contactNotDefined&gt;</span>
+<span class="w">            </span><span class="nt">&lt;/parkingSiteAddress&gt;</span>
+<span class="w">            </span><span class="cm">&lt;!-- how the car park is being used --&gt;</span>
+<span class="w">            </span><span class="nt">&lt;parkingUsageScenario</span><span class="w"> </span><span class="na">scenarioIndex=</span><span class="s">&quot;1&quot;</span><span class="nt">&gt;</span>
+<span class="w">              </span><span class="nt">&lt;parkingUsageScenario&gt;</span>
+<span class="w">                </span><span class="nt">&lt;parkingUsageScenario&gt;</span>truckParking<span class="nt">&lt;/parkingUsageScenario&gt;</span>
+<span class="w">                </span><span class="nt">&lt;truckParkingDynamicManagement&gt;</span>noDynamicParkingManagement<span class="nt">&lt;/truckParkingDynamicManagement&gt;</span>
+<span class="w">              </span><span class="nt">&lt;/parkingUsageScenario&gt;</span>
+<span class="w">            </span><span class="nt">&lt;/parkingUsageScenario&gt;</span>
+<span class="w">            </span><span class="cm">&lt;!-- Parking access is the exact entry to the parking site</span>
+<span class="cm">                 not the exit of the highway.</span>
+<span class="cm">            --&gt;</span>
+<span class="w">            </span><span class="nt">&lt;parkingAccess</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;CZ-01-0116-A001&quot;</span><span class="nt">&gt;</span>
+<span class="w">              </span><span class="nt">&lt;accessCategory&gt;</span>vehicleEntrance<span class="nt">&lt;/accessCategory&gt;</span>
+<span class="w">              </span><span class="nt">&lt;primaryRoad&gt;</span>
+<span class="w">                </span><span class="nt">&lt;roadIdentifier&gt;</span>
+<span class="w">                  </span><span class="nt">&lt;values&gt;</span>
+<span class="w">                    </span><span class="nt">&lt;value</span><span class="w"> </span><span class="na">lang=</span><span class="s">&quot;cz&quot;</span><span class="nt">&gt;</span>D1<span class="nt">&lt;/value&gt;</span>
+<span class="w">                  </span><span class="nt">&lt;/values&gt;</span>
+<span class="w">                </span><span class="nt">&lt;/roadIdentifier&gt;</span>
+<span class="w">                </span><span class="nt">&lt;typeOfRoad&gt;</span>motorway<span class="nt">&lt;/typeOfRoad&gt;</span>
+<span class="w">                </span><span class="nt">&lt;roadDestination&gt;</span>
+<span class="w">                  </span><span class="nt">&lt;values&gt;</span>
+<span class="w">                    </span><span class="nt">&lt;value</span><span class="w"> </span><span class="na">lang=</span><span class="s">&quot;cz&quot;</span><span class="nt">&gt;</span>Bělotín<span class="nt">&lt;/value&gt;</span>
+<span class="w">                  </span><span class="nt">&lt;/values&gt;</span>
+<span class="w">                </span><span class="nt">&lt;/roadDestination&gt;</span>
+<span class="w">                </span><span class="nt">&lt;distanceToThisRoad&gt;</span>0<span class="nt">&lt;/distanceToThisRoad&gt;</span>
+<span class="w">              </span><span class="nt">&lt;/primaryRoad&gt;</span>
+<span class="w">              </span><span class="nt">&lt;location</span><span class="w"> </span><span class="na">xsi:type=</span><span class="s">&quot;Point&quot;</span><span class="nt">&gt;</span>
+<span class="w">                </span><span class="nt">&lt;pointByCoordinates&gt;</span>
+<span class="w">                  </span><span class="nt">&lt;pointCoordinates&gt;</span>
+<span class="w">                    </span><span class="nt">&lt;latitude&gt;</span>49.63213<span class="nt">&lt;/latitude&gt;</span>
+<span class="w">                    </span><span class="nt">&lt;longitude&gt;</span>17.84566<span class="nt">&lt;/longitude&gt;</span>
+<span class="w">                  </span><span class="nt">&lt;/pointCoordinates&gt;</span>
+<span class="w">                </span><span class="nt">&lt;/pointByCoordinates&gt;</span>
+<span class="w">              </span><span class="nt">&lt;/location&gt;</span>
+<span class="w">            </span><span class="nt">&lt;/parkingAccess&gt;</span>
+<span class="w">            </span><span class="nt">&lt;parkingAccess</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;CZ-01-0116-A002&quot;</span><span class="nt">&gt;</span>
+<span class="w">              </span><span class="nt">&lt;accessCategory&gt;</span>vehicleExit<span class="nt">&lt;/accessCategory&gt;</span>
+<span class="w">              </span><span class="nt">&lt;primaryRoad&gt;</span>
+<span class="w">                </span><span class="nt">&lt;roadIdentifier&gt;</span>
+<span class="w">                  </span><span class="nt">&lt;values&gt;</span>
+<span class="w">                    </span><span class="nt">&lt;value</span><span class="w"> </span><span class="na">lang=</span><span class="s">&quot;cz&quot;</span><span class="nt">&gt;</span>D1<span class="nt">&lt;/value&gt;</span>
+<span class="w">                  </span><span class="nt">&lt;/values&gt;</span>
+<span class="w">                </span><span class="nt">&lt;/roadIdentifier&gt;</span>
+<span class="w">                </span><span class="nt">&lt;typeOfRoad&gt;</span>motorway<span class="nt">&lt;/typeOfRoad&gt;</span>
+<span class="w">                </span><span class="nt">&lt;roadDestination&gt;</span>
+<span class="w">                  </span><span class="nt">&lt;values&gt;</span>
+<span class="w">                    </span><span class="nt">&lt;value</span><span class="w"> </span><span class="na">lang=</span><span class="s">&quot;cz&quot;</span><span class="nt">&gt;</span>Bělotín<span class="nt">&lt;/value&gt;</span>
+<span class="w">                  </span><span class="nt">&lt;/values&gt;</span>
+<span class="w">                </span><span class="nt">&lt;/roadDestination&gt;</span>
+<span class="w">                </span><span class="nt">&lt;distanceToThisRoad&gt;</span>0<span class="nt">&lt;/distanceToThisRoad&gt;</span>
+<span class="w">              </span><span class="nt">&lt;/primaryRoad&gt;</span>
+<span class="w">              </span><span class="nt">&lt;location</span><span class="w"> </span><span class="na">xsi:type=</span><span class="s">&quot;Point&quot;</span><span class="nt">&gt;</span>
+<span class="w">                </span><span class="nt">&lt;pointByCoordinates&gt;</span>
+<span class="w">                  </span><span class="nt">&lt;pointCoordinates&gt;</span>
+<span class="w">                    </span><span class="nt">&lt;latitude&gt;</span>49.630960<span class="nt">&lt;/latitude&gt;</span>
+<span class="w">                    </span><span class="nt">&lt;longitude&gt;</span>17.840672<span class="nt">&lt;/longitude&gt;</span>
+<span class="w">                  </span><span class="nt">&lt;/pointCoordinates&gt;</span>
+<span class="w">                </span><span class="nt">&lt;/pointByCoordinates&gt;</span>
+<span class="w">              </span><span class="nt">&lt;/location&gt;</span>
+<span class="w">            </span><span class="nt">&lt;/parkingAccess&gt;</span>
+<span class="w">            </span><span class="nt">&lt;parkingStandardsAndSecurity&gt;</span>
+<span class="w">              </span><span class="nt">&lt;labelSecurityLevel&gt;</span>none<span class="nt">&lt;/labelSecurityLevel&gt;</span>
+<span class="w">              </span><span class="nt">&lt;parkingSecurity&gt;</span>lighting<span class="nt">&lt;/parkingSecurity&gt;</span>
+<span class="w">              </span><span class="nt">&lt;parkingSecurity&gt;</span>fences<span class="nt">&lt;/parkingSecurity&gt;</span>
+<span class="w">            </span><span class="nt">&lt;/parkingStandardsAndSecurity&gt;</span>
+<span class="w">            </span><span class="nt">&lt;interUrbanParkingSiteLocation&gt;</span>motorway<span class="nt">&lt;/interUrbanParkingSiteLocation&gt;</span>
+<span class="w">          </span><span class="nt">&lt;/parkingRecord&gt;</span>
+<span class="w">        </span><span class="nt">&lt;/parkingTable&gt;</span>
+<span class="w">      </span><span class="nt">&lt;/parkingTablePublication&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/genericPublicationExtension&gt;</span>
+<span class="w">  </span><span class="nt">&lt;/payloadPublication&gt;</span>
+<span class="nt">&lt;/d2LogicalModel&gt;</span>
+</pre></div>
+</div>
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="index.html">
+              <img class="logo" src="_static/RSD-logo-07.jpg" alt="Logo"/>
+            </a></p>
+  <div>
+    <h3><a href="index.html">Table of Contents</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">Příloha A: Příklady zpráv</a><ul>
+<li><a class="reference internal" href="#table-vrazne-xml-staticky-popis-odpocivky-vrazne">table_vrazne.xml - Statický popis odpočívky Vražné</a></li>
+</ul>
+</li>
+</ul>
+
+  </div>
+  <div>
+    <h4>Přechozí téma</h4>
+    <p class="topless"><a href="concepts.html"
+                          title="předchozí kapitola">Koncepty</a></p>
+  </div>
+  <div>
+    <h4>Další téma</h4>
+    <p class="topless"><a href="format.html"
+                          title="další kapitola">Příloha B: W3C XML Schéma</a></p>
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>Tato stránka</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/examples.rst.txt"
+            rel="nofollow">Ukázat zdroj</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Rychlé vyhledávání</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="OK" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigace</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="Obecný rejstřík"
+             >rejstřík</a></li>
+        <li class="right" >
+          <a href="format.html" title="Příloha B: W3C XML Schéma"
+             >další</a> |</li>
+        <li class="right" >
+          <a href="concepts.html" title="Koncepty"
+             >předchozí</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Dokumentace pro NDIC DATEX II Parking Situation Publication – Situace na parkovištích nákladních vozidel 1.0rev0</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Příloha A: Příklady zpráv</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+    &#169; Veškerá práva vyhrazena 2017, Centrum dopravního výzkumu v.v.i..
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.5.
+    </div>
+  </body>
+</html>

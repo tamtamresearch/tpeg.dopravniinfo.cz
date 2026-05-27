@@ -1,0 +1,298 @@
+
+
+<!doctype html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Concepts &#8212; NDIC - DATEX II Situation Publication - Parking occupancy 1.0.0 documentation</title>
+    <link rel="stylesheet" href="_static/bizstyle.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/bizstyle.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Appendix A: Message examples" href="examples.html" />
+    <link rel="prev" title="Introduction" href="introduction.html" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <!--[if lt IE 9]>
+    <script type="text/javascript" src="_static/css3-mediaqueries.js"></script>
+    <![endif]-->
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="examples.html" title="Appendix A: Message examples"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="introduction.html" title="Introduction"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">NDIC - DATEX II Situation Publication - Parking occupancy 1.0.0 documentation</a> &#187;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="index.html">
+              <img class="logo" src="_static/logo.png" alt="Logo"/>
+            </a></p>
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Concepts</a><ul>
+<li><a class="reference internal" href="#publication-type-situationpublication">Publication type SituationPublication</a></li>
+<li><a class="reference internal" href="#event-description-only-nonroadeventinformation-carparks">Event description (only NonRoadEventInformation/CarParks)</a></li>
+<li><a class="reference internal" href="#location-description-by-predefined-locations">Location description (by predefined locations)</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#time-validity">Time validity</a></li>
+<li><a class="reference internal" href="#location-referencing">Location referencing</a></li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="introduction.html"
+                        title="previous chapter">Introduction</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="examples.html"
+                        title="next chapter">Appendix A: Message examples</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/concepts.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="concepts">
+<h1>Concepts<a class="headerlink" href="#concepts" title="Permalink to this headline">¶</a></h1>
+<p>Described format allows publishing parking occupancy related information for a set of predefined locations. This information belongs to category of traffic data (status), it is published in predefined intervals, the contents carry percentages of occupancy.</p>
+<div class="section" id="publication-type-situationpublication">
+<h2>Publication type SituationPublication<a class="headerlink" href="#publication-type-situationpublication" title="Permalink to this headline">¶</a></h2>
+<p>Format is based on DATEX II publication of type <cite>SituationPublication</cite>
+<a class="reference internal" href="introduction.html#id9" id="id1">[16157-3]</a>. Profile uses only small subset of possible structures.</p>
+<div class="highlight-xml notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span>
+<span class="nt">&lt;d2LogicalModel</span> <span class="na">modelBaseVersion=</span><span class="s">&quot;2&quot;</span> <span class="na">xmlns=</span><span class="s">&quot;http://datex2.eu/schema/2/2_0&quot;</span>
+<span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;exchange&gt;</span>
+    <span class="nt">&lt;supplierIdentification&gt;</span>
+      <span class="nt">&lt;country&gt;</span>cz<span class="nt">&lt;/country&gt;</span>
+      <span class="nt">&lt;nationalIdentifier&gt;</span>ITSPARKING<span class="nt">&lt;/nationalIdentifier&gt;</span>
+    <span class="nt">&lt;/supplierIdentification&gt;</span>
+  <span class="nt">&lt;/exchange&gt;</span>
+  <span class="nt">&lt;payloadPublication</span> <span class="na">lang=</span><span class="s">&quot;cs&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;SituationPublication&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;feedType&gt;</span>x-format:cz-ndic_d2-common-v1.1<span class="nt">&lt;/feedType&gt;</span>
+    <span class="nt">&lt;publicationTime&gt;</span>2016-05-18T18:49:21+02:00<span class="nt">&lt;/publicationTime&gt;</span>
+    <span class="nt">&lt;publicationCreator&gt;</span>
+      <span class="nt">&lt;country&gt;</span>cz<span class="nt">&lt;/country&gt;</span>
+      <span class="nt">&lt;nationalIdentifier&gt;</span>DRU<span class="nt">&lt;/nationalIdentifier&gt;</span>
+    <span class="nt">&lt;/publicationCreator&gt;</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+<div class="section" id="event-description-only-nonroadeventinformation-carparks">
+<h2>Event description (only NonRoadEventInformation/CarParks)<a class="headerlink" href="#event-description-only-nonroadeventinformation-carparks" title="Permalink to this headline">¶</a></h2>
+<p><cite>SituationPublication</cite> requires description by means of class <cite>Situation</cite>, which aggregates instances of class <cite>SituationRecord</cite>, namely descendants of class <cite>CarParks</cite>. Besides the <cite>SituationRecord</cite> it contains elements with information about service availability.</p>
+<p>Element <cite>situation</cite> describes one occupancy information, more particular occupancy information means more <cite>situation</cite> elements. Since the situation described may evolve over time, the element is versioned and has unique identifier. Each <cite>situation</cite> element contains one <cite>situationRecord</cite> element.</p>
+<p>The <cite>situationRecord</cite> element may, in the element <cite>situation</cite>, occur exactly once. The <cite>situationRecord</cite> element may evolve over time, so the element is versioned and has unique identifier.</p>
+<div class="highlight-xml notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61</pre></div></td><td class="code"><div class="highlight"><pre><span></span>    <span class="nt">&lt;situation</span> <span class="na">id=</span><span class="s">&quot;PR-2&quot;</span> <span class="na">version=</span><span class="s">&quot;8387&quot;</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;situationVersionTime&gt;</span>
+      2016-05-18T18:48:51+02:00<span class="nt">&lt;/situationVersionTime&gt;</span>
+      <span class="nt">&lt;headerInformation&gt;</span>
+        <span class="nt">&lt;confidentiality&gt;</span>noRestriction<span class="nt">&lt;/confidentiality&gt;</span>
+        <span class="nt">&lt;informationStatus&gt;</span>real<span class="nt">&lt;/informationStatus&gt;</span>
+        <span class="nt">&lt;urgency&gt;</span>normalUrgency<span class="nt">&lt;/urgency&gt;</span>
+      <span class="nt">&lt;/headerInformation&gt;</span>
+      <span class="nt">&lt;situationRecord</span> <span class="na">id=</span><span class="s">&quot;PR-2_CarParks&quot;</span> <span class="na">version=</span><span class="s">&quot;8387&quot;</span>
+      <span class="na">xsi:type=</span><span class="s">&quot;CarParks&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;situationRecordCreationTime&gt;</span>
+        2016-05-18T18:49:21+02:00<span class="nt">&lt;/situationRecordCreationTime&gt;</span>
+        <span class="nt">&lt;situationRecordVersionTime&gt;</span>
+        2016-05-18T18:48:51+02:00<span class="nt">&lt;/situationRecordVersionTime&gt;</span>
+        <span class="nt">&lt;probabilityOfOccurrence&gt;</span>riskOf<span class="nt">&lt;/probabilityOfOccurrence&gt;</span>
+        <span class="nt">&lt;source&gt;</span>
+          <span class="nt">&lt;sourceIdentification&gt;</span>ITSPARKING<span class="nt">&lt;/sourceIdentification&gt;</span>
+          <span class="nt">&lt;sourceName&gt;</span>
+            <span class="nt">&lt;values&gt;</span>
+              <span class="nt">&lt;value</span> <span class="na">lang=</span><span class="s">&quot;cs&quot;</span><span class="nt">&gt;</span>Správci parkovišť<span class="nt">&lt;/value&gt;</span>
+            <span class="nt">&lt;/values&gt;</span>
+          <span class="nt">&lt;/sourceName&gt;</span>
+        <span class="nt">&lt;/source&gt;</span>
+        <span class="nt">&lt;validity&gt;</span>
+          <span class="nt">&lt;validityStatus&gt;</span>definedByValidityTimeSpec<span class="nt">&lt;/validityStatus&gt;</span>
+          <span class="nt">&lt;validityTimeSpecification&gt;</span>
+            <span class="nt">&lt;overallStartTime&gt;</span>2016-05-18T18:48:51+02:00<span class="nt">&lt;/overallStartTime&gt;</span>
+            <span class="nt">&lt;overallEndTime&gt;</span>2016-05-18T19:03:51+02:00<span class="nt">&lt;/overallEndTime&gt;</span>
+          <span class="nt">&lt;/validityTimeSpecification&gt;</span>
+        <span class="nt">&lt;/validity&gt;</span>
+        <span class="nt">&lt;generalPublicComment&gt;</span>
+          <span class="nt">&lt;comment&gt;</span>
+            <span class="nt">&lt;values&gt;</span>
+              <span class="nt">&lt;value</span> <span class="na">lang=</span><span class="s">&quot;cs&quot;</span><span class="nt">&gt;</span>P+R Černý Most, Chlumecká, 50% obsazeno,
+              18.05.2016 18:48:51<span class="nt">&lt;/value&gt;</span>
+            <span class="nt">&lt;/values&gt;</span>
+          <span class="nt">&lt;/comment&gt;</span>
+        <span class="nt">&lt;/generalPublicComment&gt;</span>
+        <span class="nt">&lt;groupOfLocations</span> <span class="na">xsi:type=</span><span class="s">&quot;LocationByReference&quot;</span><span class="nt">&gt;</span>
+          <span class="nt">&lt;predefinedLocationReference</span> <span class="na">id=</span><span class="s">&quot;98D69F80-7E63-422B-A9B7-EEACE24C055C&quot;</span>
+          <span class="na">targetClass=</span><span class="s">&quot;PredefinedLocation&quot;</span> <span class="na">version=</span><span class="s">&quot;1&quot;</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;/groupOfLocations&gt;</span>
+        <span class="nt">&lt;carParkIdentity&gt;</span>P+R Černý Most<span class="nt">&lt;/carParkIdentity&gt;</span>
+        <span class="nt">&lt;carParkOccupancy&gt;</span>50<span class="nt">&lt;/carParkOccupancy&gt;</span>
+      <span class="nt">&lt;/situationRecord&gt;</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+<div class="section" id="location-description-by-predefined-locations">
+<h2>Location description (by predefined locations)<a class="headerlink" href="#location-description-by-predefined-locations" title="Permalink to this headline">¶</a></h2>
+<p>The position can be described by a point or a short linear section on the road network, given by the presence of a car park. Since the position of the car parks does not change, the location in this profile is described by a reference (id) to a predefined location set defined in different document. The reference points to a class instance <cite>PredefinedLocation</cite> from package <cite>PredefinedLocationsPublication</cite>. Therefore, the location is not described directly in the file.</p>
+<p>Location of a car park is determined by reference to a set of predefined locations. To look up given location, it is necessary to obtain publication <cite>PredefinedLocationsPublication</cite>, related to this source of information and inside find location of identical type (by <cite>targetClass</cite>, here <cite>PredefinedLocation</cite>), with the same identifier and version.</p>
+<p>The location for which the parking occupancy information is valid is specified by the <cite>groupOfLocations</cite> element re-typed to <cite>xsi:type=”LocationByReference”</cite>, that includes element <cite>predefinedLocationReference</cite> with the attribute <cite>targetClass=”PredefinedLocation”</cite>.</p>
+<div class="highlight-xml notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>55
+56
+57
+58</pre></div></td><td class="code"><div class="highlight"><pre><span></span>        <span class="nt">&lt;groupOfLocations</span> <span class="na">xsi:type=</span><span class="s">&quot;LocationByReference&quot;</span><span class="nt">&gt;</span>
+          <span class="nt">&lt;predefinedLocationReference</span> <span class="na">id=</span><span class="s">&quot;98D69F80-7E63-422B-A9B7-EEACE24C055C&quot;</span>
+          <span class="na">targetClass=</span><span class="s">&quot;PredefinedLocation&quot;</span> <span class="na">version=</span><span class="s">&quot;1&quot;</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;/groupOfLocations&gt;</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+</div>
+<div class="section" id="time-validity">
+<h1>Time validity<a class="headerlink" href="#time-validity" title="Permalink to this headline">¶</a></h1>
+<p>Time validity is stated independently for every single <cite>SituationRecord</cite> described in a situation and is defined by a time interval between two time instants. The class <cite>Validity</cite> is used with an instance of class <cite>OverallPeriod</cite> in the role of <cite>validityTimeSpecification</cite> and elements <cite>overallStartTime</cite> and <cite>overallStopTime</cite> to define start and end of the interval.</p>
+<p>Apart from methods mentioned above, no other methods for time validity
+specification are allowed (e.g. hours of validity or days of validity).</p>
+<div class="highlight-xml notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>40
+41
+42
+43
+44
+45
+46</pre></div></td><td class="code"><div class="highlight"><pre><span></span>        <span class="nt">&lt;validity&gt;</span>
+          <span class="nt">&lt;validityStatus&gt;</span>definedByValidityTimeSpec<span class="nt">&lt;/validityStatus&gt;</span>
+          <span class="nt">&lt;validityTimeSpecification&gt;</span>
+            <span class="nt">&lt;overallStartTime&gt;</span>2016-05-18T18:48:51+02:00<span class="nt">&lt;/overallStartTime&gt;</span>
+            <span class="nt">&lt;overallEndTime&gt;</span>2016-05-18T19:03:51+02:00<span class="nt">&lt;/overallEndTime&gt;</span>
+          <span class="nt">&lt;/validityTimeSpecification&gt;</span>
+        <span class="nt">&lt;/validity&gt;</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+<div class="section" id="location-referencing">
+<h1>Location referencing<a class="headerlink" href="#location-referencing" title="Permalink to this headline">¶</a></h1>
+<p>The format describes routes exclusively by a reference to set of predefined locations (class <cite>PredefinedLocation</cite>) in publication <cite>PredefinedLocationsPublication</cite> <a class="reference internal" href="introduction.html#id9" id="id2">[16157-3]</a>.</p>
+<p>Location referencing methods are out of scope of this document and are described elsewhere.</p>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="examples.html" title="Appendix A: Message examples"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="introduction.html" title="Introduction"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">NDIC - DATEX II Situation Publication - Parking occupancy 1.0.0 documentation</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2017, TamTam Research s.r.o..
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.4.
+    </div>
+  </body>
+</html>

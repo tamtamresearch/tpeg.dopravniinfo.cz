@@ -1,0 +1,72 @@
+.. _examples:
+
+=========================
+Příloha A: Příklady zpráv
+=========================
+
+parking.xml - obsazenost 50 %
+=============================
+
+Publikace obsahuje právě jednu zprávu o obsazenosti parkoviště P+R Černý most na 50 %.
+
+.. literalinclude:: samples/parking.xml
+   :language: xml
+
+Kořenový element a obálka publikace
+-----------------------------------
+
+Kořenový element `d2LogicalModel` deklaruje, že se jedná o zprávu používající formát DATEX II.
+
+Element `exchange` obsahuje identifikátor poskytovatele.
+
+Element `payloadPublication` je obálkou pro přenos samotných informací, obsahující především elementy `situation`, kterých může být mnoho (v našem případě je jeden).
+
+Atribut `xsi:type="SituationPublication"` v elementu `payloadPublication` určuje, že tato obálka je typu Publikace situace.
+
+Element `feedType` uvádí typ publikace, uri schématu.
+
+Element `publicationTime` uvádí čas vydání této publikace jako celku.
+
+Element `publicationCreator` identifikuje tvůrce publikace.
+
+Popis jedné konkrétní situace
+------------------------------
+
+Následující element `situation` se může opakovat a popisuje jednotlivé samostatné dopravní informace. Element `situationRecord` se v tomto případě vyskytuje v elementu `situation` právě jednou.
+
+Element `situationVersionTime` uvádí čas vydání této verze situace jako celku.
+
+Element `headerInformation` popisuje způsob nakládání s popisovanými informacemi.
+
+Popis události (co se stalo)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Atribut `xsi:type="CarParks"` elementu `situationRecord` určuje typ zprávy, jedinou používanou třídu v tomto formátu.
+
+Z této třídy jsou pak níže využity elementy `carParkIdentity` s hodnotou `P+R Černý Most` a element `carParkOccupancy` udávající konkrétní hodnotu obsazenosti `50` procent.
+
+
+Časová platnost
+^^^^^^^^^^^^^^^
+
+Časová platnost situace je určena ve strukturách `validity` odhadem časového intervalu platnosti hodnotami od `overallStartTime` do `overallEndTime`.
+
+
+Poloha události
+^^^^^^^^^^^^^^^
+
+Poloha události je vyjádřena odkazem do sady předem definovaných míst. Pro dohledání místa je proto nutno získat publikaci
+`PredefinedLocationsPublication` související s tímto zdrojem informací a v něm dohledat polohu shodného typu (dle `targetClass`, zde `PredefinedLocation`), se stejným identifikátorem a verzí.
+
+Poloha, pro kterou informace o počasí platí, je specifikována pomocí elementu `groupOfLocations`. Ten má vždy `xsi:type="LocationByReference"`. Samotný odkaz je proveden vnořeným elementem `predefinedLocationReference` s atributem `targetClass="PredefinedLocation"`.
+
+Atribut `id="98D69F80-7E63-422B-A9B7-EEACE24C055C"` odkazuje na předem definovanou polohu s daným identifikátorem a atribut `version="1"` upřesňuje, o kterou verzi popisu polohy jde.
+
+Další obsah
+^^^^^^^^^^^
+
+Mimo časovou platnost situace dokument uvádí čas vydání první verze `situationRecordCreationTime` a aktuální verze `situationRecordVersionTime` záznamu `situationRecord`.
+
+Element `source` uvádí tvůrce této informace, tedy kdo tuto informaci vytvořil a odpovídá za její správnost.
+
+Element `generalPublicComment` obsahuje obecný popis děje popsaného ve zprávě, většinou pouze v čj. Jedná se o volný popis situace jejím tvůrcem.

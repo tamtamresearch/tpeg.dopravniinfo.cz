@@ -1,0 +1,12 @@
+{% set items = formats %}
+{% set uri_type = "x-format" %}
+
+# Seznam formátů
+
+**Formát** definuje určité datové struktury. K popisu může použít schémata, příklady dat a souvisejícího popis. Formát však nepopisuje způsob výměny.
+
+| Název | Model | URI |
+|-------|-------|-----|
+{% for item_id, item in items -%}
+| [{{ item.name | locstr(lang) }}]({{ item_id }}) | `{{ item.model_version }}` | `{{ uri_type }}:{{ item_id }}` |
+{% endfor %}

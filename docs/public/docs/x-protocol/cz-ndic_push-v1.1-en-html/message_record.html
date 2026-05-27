@@ -1,0 +1,161 @@
+
+
+<!doctype html>
+
+<html lang="en" data-content_root="./">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Message, Records, and Their Validity &#8212; NDIC HTTP Protocol for Sending All Changes on Occurrence 1.1rev1 documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/bizstyle.css?v=532c1bf3" />
+    
+    <script src="_static/documentation_options.js?v=02661a48"></script>
+    <script src="_static/doctools.js?v=888ff710"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/bizstyle.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Typical Process of Establishing and Operating a Subscription with the PUSH Protocol" href="typical_deployment.html" />
+    <link rel="prev" title="Architecture" href="architecture.html" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <!--[if lt IE 9]>
+    <script src="_static/css3-mediaqueries.js"></script>
+    <![endif]-->
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="typical_deployment.html" title="Typical Process of Establishing and Operating a Subscription with the PUSH Protocol"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="architecture.html" title="Architecture"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">NDIC HTTP Protocol for Sending All Changes on Occurrence 1.1rev1 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Message, Records, and Their Validity</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="message-records-and-their-validity">
+<h1>Message, Records, and Their Validity<a class="headerlink" href="#message-records-and-their-validity" title="Link to this heading">¶</a></h1>
+<p>A record is comprehensive information of a certain type with its own identifier and a time validity, such as information about a road closure at a specific location, valid for a certain period. Because the description of reality can change over time, a record can be updated. This modified record will have the same identifier but an altered description of the reality.</p>
+<p>Records are always transmitted as part of a message, which can contain one or more records in their currently valid state.</p>
+<section id="interpretation-of-records-in-a-message">
+<h2>Interpretation of Records in a Message<a class="headerlink" href="#interpretation-of-records-in-a-message" title="Link to this heading">¶</a></h2>
+<p>This protocol assumes the use of a specific data format within a single subscription, but this format is determined at the data subscription level and is not defined by the protocol itself. The interpretation of what constitutes a record in the sent message and how long it remains valid needs to be inferred from the specification of the used message format.</p>
+</section>
+<section id="records-without-specified-expiration">
+<h2>Records Without Specified Expiration<a class="headerlink" href="#records-without-specified-expiration" title="Link to this heading">¶</a></h2>
+<p>Some records, such as expected travel times at a particular section, only mention the moment when the fact was recorded and do not specify an end to their validity. In such cases, the sender and receiver must make certain assumptions about the record’s validity, for example, 10 minutes from the declared moment of recording. The assumed validity duration may not necessarily match between the provider and the subscriber. The provider must ensure that the assumed validity allows them to send messages to subscribers under normal conditions. Subscribers determine their own assumed validity based on the nature of the provided information and its usage.</p>
+</section>
+<section id="records-with-explicitly-specified-long-validity">
+<h2>Records with Explicitly Specified Long Validity<a class="headerlink" href="#records-with-explicitly-specified-long-validity" title="Link to this heading">¶</a></h2>
+<p>Certain information, such as road closures, may explicitly state their validity, which can sometimes be quite long (even several years).</p>
+</section>
+<section id="natural-expiration-of-record-validity">
+<h2>Natural Expiration of Record Validity<a class="headerlink" href="#natural-expiration-of-record-validity" title="Link to this heading">¶</a></h2>
+<p>An individual record will cease to be valid at the moment indicated (or assumed) in the last version of the record as its validity end.</p>
+</section>
+<section id="premature-expiration-of-record-validity">
+<h2>Premature Expiration of Record Validity<a class="headerlink" href="#premature-expiration-of-record-validity" title="Link to this heading">¶</a></h2>
+<p>However, if a record’s validity, which has been currently valid, is shortened into the past, it is necessary to provide the subscriber with this new record so that they can also update the validity of the mentioned record on their side. Failure to send or process a record with a shortened validity results in the subscriber retaining records as valid, even though they are no longer valid.</p>
+</section>
+<section id="expiration-of-records-with-short-validity">
+<h2>Expiration of Records with Short Validity<a class="headerlink" href="#expiration-of-records-with-short-validity" title="Link to this heading">¶</a></h2>
+<p>If all records have zero or relatively short validity (e.g., information about estimated travel times at a particular section), there is no need to address premature expiration of validity since records on the subscriber’s side become invalid in a very short time.</p>
+</section>
+<section id="expiration-of-records-with-long-validity">
+<h2>Expiration of Records with Long Validity<a class="headerlink" href="#expiration-of-records-with-long-validity" title="Link to this heading">¶</a></h2>
+<p>When a record may have a relatively long validity over time, such as road closures, scenarios of premature expiration of validity need to be addressed thoroughly, particularly with consideration of the scenario <a class="reference internal" href="#premature-expiration-of-record-validity">Premature Expiration of Record Validity</a>.</p>
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="index.html">
+              <img class="logo" src="_static/RSD-logo-07.jpg" alt="Logo"/>
+            </a></p>
+  <div>
+    <h3><a href="index.html">Table of Contents</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">Message, Records, and Their Validity</a><ul>
+<li><a class="reference internal" href="#interpretation-of-records-in-a-message">Interpretation of Records in a Message</a></li>
+<li><a class="reference internal" href="#records-without-specified-expiration">Records Without Specified Expiration</a></li>
+<li><a class="reference internal" href="#records-with-explicitly-specified-long-validity">Records with Explicitly Specified Long Validity</a></li>
+<li><a class="reference internal" href="#natural-expiration-of-record-validity">Natural Expiration of Record Validity</a></li>
+<li><a class="reference internal" href="#premature-expiration-of-record-validity">Premature Expiration of Record Validity</a></li>
+<li><a class="reference internal" href="#expiration-of-records-with-short-validity">Expiration of Records with Short Validity</a></li>
+<li><a class="reference internal" href="#expiration-of-records-with-long-validity">Expiration of Records with Long Validity</a></li>
+</ul>
+</li>
+</ul>
+
+  </div>
+  <div>
+    <h4>Previous topic</h4>
+    <p class="topless"><a href="architecture.html"
+                          title="previous chapter">Architecture</a></p>
+  </div>
+  <div>
+    <h4>Next topic</h4>
+    <p class="topless"><a href="typical_deployment.html"
+                          title="next chapter">Typical Process of Establishing and Operating a Subscription with the PUSH Protocol</a></p>
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/message_record.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="typical_deployment.html" title="Typical Process of Establishing and Operating a Subscription with the PUSH Protocol"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="architecture.html" title="Architecture"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">NDIC HTTP Protocol for Sending All Changes on Occurrence 1.1rev1 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Message, Records, and Their Validity</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+    &#169; Copyright 2023, TamTam Research s.r.o..
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.5.
+    </div>
+  </body>
+</html>

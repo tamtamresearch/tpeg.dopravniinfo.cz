@@ -1,0 +1,188 @@
+========
+Concepts
+========
+
+This section highlights main concepts, used by this format. For complete
+description refer to schemas with definitions in comments.
+
+In this section are provided some snippets of real XML documents. For more
+examples, see :ref:`examples`
+
+XML Document Sections
+=====================
+
+The XML Document is built using following elements and sections:
+
+- DOC (document root)
+- INF (metadata)
+- MJD (container for messages)
+- MSG (message)
+
+Document root (`DOC`)
+---------------------
+
+The `DOC` element represents single publication (one instance of information message).
+
+Attribute `id` provides unique identity to given publication as a whole.
+
+.. literalinclude:: ../../samples/accident.xml
+   :language: xml
+   :linenos:
+   :end-before: <MSG
+
+Metadata (`INF`)
+----------------
+
+`INF` element provides meta-information about whole publication:
+
+- reference to ALERT-C event table version
+- reference to ALERT-C location table version used for describing locations
+- reference to GDF 4.0 map data set publisher and version
+- reference to state organization units and areas enumeration UIR-ADR
+
+.. literalinclude:: ../../samples/accident.xml
+   :language: xml
+   :linenos:
+   :start-after: extended
+   :end-before: <MSG
+
+Message container (`MJD`)
+-------------------------
+
+Single traffic messages are put into one parent element `MJD`. It can contain
+one or more messages.
+
+
+Traffic Message (`MSG`)
+-----------------------
+
+Particular message is represented by a `MSG` element. 
+
+The message itself has following sections:
+
+- validity `MTIME`
+- textual description of whole event `MTXT`
+- event description `MEVT` (*what* has happened)
+- location reference `MLOC` (*where*) to linear location
+- reference to a region in Czech Republic `MDST`
+
+.. literalinclude:: ../../samples/accident.xml
+   :language: xml
+   :linenos:
+   :lineno-match:
+   :start-after: <MJD
+   :end-before: </MJD>
+
+Message identity and version
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Message itself has unique identifier `id` and version. Version shall start from
+`0` and be incremented by each update.
+
+Validity of the message in time is specified by simple time range from start time to end time.
+
+.. literalinclude:: ../../samples/accident.xml
+   :language: xml
+   :linenos:
+   :lineno-match:
+   :start-after: <MJD
+   :end-before: <MTXT
+
+Event description
+^^^^^^^^^^^^^^^^^
+
+DDR is based in ALERT-C event catalogue and follows all the ALERT-C rules
+(multiple event codes, quantifiers...
+
+Apart from ALERT-C, free textual description can be used on many places.
+
+.. literalinclude:: ../../samples/accident.xml
+   :language: xml
+   :linenos:
+   :lineno-match:
+   :start-after: </MTXT>
+   :end-before: <MLOC>
+
+Location reference
+^^^^^^^^^^^^^^^^^^
+
+DDR is using only point and linear locations on road network.
+
+There are following location referencing methods used:
+
+- Free textual description
+- ALERT-C location codes (incl. direction and extent).
+- Reference to sequence of road segments as defined in GDF 4.0 based map data set.
+- Coordinate of head of the event
+- Reference to region in Czech Republic using enumeration UIR-ADR.
+- Road reference (where possible using mileage)
+
+.. literalinclude:: ../../samples/accident.xml
+   :language: xml
+   :linenos:
+   :lineno-match:
+   :start-after: </MEVT>
+   :end-before: </MSG>
+
+====================
+Location referencing
+====================
+
+Following is a selection of most used location referencing methods.
+
+Location description by means of ALERT-C
+========================================
+
+The first method describes position by ALERT-C codes, by element `TMCL`. The use of this method depends on the presence of the ALERT-C location at a given location.
+
+The `TMCL` method uses the primary location (attribute `primarycode`), extent (attribute `extent`) and direction (attribute`direction`) element to describe the event. Used location table is described at the level of document in element `INF`, so all messages `MSG` in the document must use same location table.
+
+The primary location is, by the ALERT-C principle, the place where the accident occurred or where the driver leaves the problem area. The secondary location is the end of the traffic queue or the place where the driver first enters the problem area.
+
+.. literalinclude:: ../../samples/accident.xml
+   :language: xml
+   :linenos:
+   :lineno-match:
+   :start-after: <TXPL>
+   :end-before: <SNTL
+   
+.. important::
+
+	The `direction` attribute is incorrectly reported. The value "-" is used instead of "+" and vice versa. 
+	We do not fix this error because we assume it is already historically incorporated in the systems of the subscribers. 
+	When implementing ALERT-C localization, please reverse the direction given in the file. 
+
+Location description using the Global Network
+=============================================
+
+The second method uses for location description identifiers of affected sections of the road network, specified by Global Network (GN) database, and event start and (end) coordinates (in the S-JTSK or WGS-84 reference system). 
+
+The `COORD` element describes the location of one event on the network. It is the location of the beginning of the event in the sense of traffic direction, in the specified coordinate system. For linear locations it is the tail of a traffic event, the place of first arrival or the secondary TMC location.
+
+As an undocumented option the "end" of event can be provided in an element `COORDEND`. This element is a end of event in the sense of traffic direction, in the specified coordinate system. For linear locations it is the head of a traffic event, the place where driver leaves a problem area or the primary TMC location.
+
+Elements `STEL` describes specific segments of the GN database by their identifier. (These elements may not have to be provided in a topological sequential order).
+
+This is native means of location referencing by NDIC.
+
+.. literalinclude:: ../../samples/obstacle.xml
+   :language: xml
+   :linenos:
+   :lineno-match:
+   :start-after: <TXPL>
+   :end-before: </MLOC>
+
+Location description by enumeration UIR-ADR and road name
+=========================================================
+
+The third method uses the "address" of the street or road (name, area, number, etc.).
+
+The `MDST/DEST` element describes the destination area by the administrative area affected and specific roads or streets affected. In elements `ROAD` or `STREET`.
+
+.. literalinclude:: ../../samples/obstacle.xml
+   :language: xml
+   :linenos:
+   :lineno-match:
+   :start-after: </MLOC>
+   :end-before: <DIVLOC>
+

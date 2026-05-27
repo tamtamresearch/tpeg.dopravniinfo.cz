@@ -1,0 +1,182 @@
+========
+Koncepty
+========
+
+Tato kapitola popisuje základní koncepce, používané v tomto formátu. Detailní popis viz definice ve schématech.
+
+Tato kapitola uvádí krátké ukázky ze skutečných XML dokumentů. Více ukázek viz :ref:`examples`.
+
+
+Části XML dokumentu
+===================
+
+XML dokument staví na následujících elementech a částech:
+- DOC (kořen dokumentu)
+- INF (metadata)
+- MJD (kontejner pro zprávy)
+- MSG (zprávy)
+
+Kořen dokumentu (`DOC`)
+-----------------------
+
+Element `DOC` představuje jednotlivou publikaci (jednu instanci přenášených dat).
+
+Atribut `id` uvádí identitu dané publikace jako celku.
+
+.. literalinclude:: ../../samples/accident.xml
+   :language: xml
+   :linenos:
+   :end-before: <MSG
+
+Metadata (`INF`)
+----------------
+
+Element `INF` popisuje meta-informace o celé publikaci:
+
+- referenci na číselník událostí ALERT-C (verzí) použitý v publikaci pro popis událostí
+- referenci na lokační tabulku ALERT-C (kódem země, číslem tabulky a verzí) použitou pro popis poloh v publikaci
+- referenci na použitou GDF 4.0 mapovou sadu (vydavatel a verze)
+- referenci na číselník organizačních jednotek ČR UIR-ADR
+
+.. literalinclude:: ../../samples/accident.xml
+   :language: xml
+   :linenos:
+   :start-after: extended
+   :end-before: <MSG
+
+Kontejner na zprávy (`MJD`)
+---------------------------
+
+Jednotlivé zprávy jsou umístěny do jednoho společného rodičovského elementu `MJD`. Tento element může obsahovat jednu nebo více zpráv.
+
+Zpráva (`MSG`)
+--------------
+
+Jednotlivé zprávy jsou reprezentovány elementem `MSG`.
+
+Samotná zpráva má následující části:
+
+- platnost v čase `MTIME`
+- textový popis celé události `MTXT`
+- popis události `MEVT` (*co* se stalo)
+- popis polohy `MLOC` (*kde* se to stalo)
+- odkaz na region v UIR-ADR `MDST`
+
+.. literalinclude:: ../../samples/accident.xml
+   :language: xml
+   :linenos:
+   :lineno-match:
+   :start-after: <MJD
+   :end-before: </MJD>
+
+Identita zprávy a verze
+^^^^^^^^^^^^^^^^^^^^^^^
+
+Samotná zpráva má vlastní unikátní identifikátor `id` a verzi. Verze začínají číslem `1` a s každou aktualizací je verze zvýšena o jedničku.
+
+Platnost zprávy v čase je specifikována jednoduchým intervalem platnosti od - do.
+
+.. literalinclude:: ../../samples/accident.xml
+   :language: xml
+   :linenos:
+   :lineno-match:
+   :start-after: <MJD
+   :end-before: <MTXT
+
+Popis události
+^^^^^^^^^^^^^^
+
+DDR používá číselník událostí ALERT-C a respektuje všechna pravidla daná ALERT-C (kódy vícečetných událostí, kvantifikátory ...)
+
+Kromě kódů z číselníku ALERT-C, je použit volný textový popis tak jak byl zadán operátorem.
+
+.. literalinclude:: ../../samples/accident.xml
+   :language: xml
+   :linenos:
+   :lineno-match:
+   :start-after: </MTXT>
+   :end-before: <MLOC>
+
+Popis polohy
+^^^^^^^^^^^^
+
+DDR používá k popisu polohy buď bodovou polohu (např. nehoda), liniovou polohu (např. kolona) na silniční síti či oblast.
+
+V DDR mohou být použity následující metody popisu polohy (alespoň jedna musí být použita):
+
+- volný textový popis (tak jak byl zadán operátorem).
+- Odkaz na polohu pomocí ALERT-C kódů (primární lokace, směr a rozsah).
+- Odkaz na segmenty silniční sítě GlobalNetwork.
+- Souřadnice (WGS-84, či SJTSK) počátku události (z pohledu řidiče = konec kolony).
+- Odkaz na organizační oblast v číselníku UIR-ADR.
+- Kilometrovníky s odkazem na komunikaci /pomocí jejího čísla)
+
+.. literalinclude:: ../../samples/accident.xml
+   :language: xml
+   :linenos:
+   :lineno-match:
+   :start-after: </MEVT>
+   :end-before: </MSG>
+
+================
+Popisování poloh
+================
+
+Níže uvedeme blíže jednotlivé metody popisu polohy.
+
+Popis polohy pomocí ALERT-C
+===========================
+
+První metoda je popis polohy pomocí ALERT-C kódů, v elementu `TMCL`. Použití této metody závisí na přítomnosti ALERT-C lokace v daném místě.
+
+Element `TMCL` používá k popisu události primární lokaci (atribut `primarycode`), rozsah (atribut `extent`) a směr (atribut `direction`). Použitá lokační tabulka je odkazována na úrovni celého dokumentu (musí tedy být pro všechny zprávy `MSG` v dokumentu stejná.
+
+Primární lokace je dle principu ALERT-C místo kde došlo k nehodě, či kde řidič opouští problémovou oblast. Sekundární lokace je konec kolony či místo, kde řidič poprvé vjíždí do problémové oblasti. 
+
+.. literalinclude:: ../../samples/accident.xml
+   :language: xml
+   :linenos:
+   :lineno-match:
+   :start-after: <TXPL>
+   :end-before: <SNTL
+   
+   
+.. important::
+
+	Atribut `direction` je chybně reportován. Místo hodnoty "+" je použita hodnota "-" a opačně. 
+	Tuto chybu neopravujeme protože předpokládáme že je již historicky zapracovaná do systémů odběratelů. 
+	Při implementaci ALERT-C lokalizace prosím obraťte směr udávaný v souboru na opačný. 
+
+Popis polohy pomocí úseků sítě Global Network
+=============================================
+
+Druhá metoda používá pro popis polohy konkrétní identifikátory úseků ovlivněné silniční sítě tak, jak jsou zaneseny v databázi Global Network (GN) a souřadnice počátku a konce události (v referenčním systému S-JTSK či WGS-84). 
+
+Element `COORD` popisuje souřadnice "počátku" události ve směru dopravy. U liniové události souřadnice značí počátek události ve smyslu směru dopravy, místo ke kterému dorazí řidič jako první, v TMC je to sekundární lokace.
+
+Volitelně lze ve formátu zpřístupnit i konec události ve směru dopravy `COORDEND`, U liniové události souřadnice značí konec události ve smyslu směru dopravy, tj. místo kde řidič opouští problémovou oblast, v TMC je to primární lokace) 
+
+Element `STEL` popisuje konkrétní úseky sítě GN prostřednictvím jejich identifikátoru. (Tyto elementy nemusí být pořadí tak jak na sebe na síti navazují) .
+
+Toto je nativní způsob zadávání polohy v NDIC.
+
+.. literalinclude:: ../../samples/obstacle.xml
+   :language: xml
+   :linenos:
+   :lineno-match:
+   :start-after: <TXPL>
+   :end-before: </MLOC>
+
+Popis polohy pomocí číselníku UIR-ADR
+=====================================
+
+Třetí metoda používá pro popis polohy "adresu" komunikace (název, oblast, číslo, atp.). 
+
+Element `MDST/DEST` popisuje cílovou destinaci problémové události, uvádí konkrétní oblast a v elementech `ROAD` či `STREET` číslo či název ovlivněné komunikace.
+
+.. literalinclude:: ../../samples/obstacle.xml
+   :language: xml
+   :linenos:
+   :lineno-match:
+   :start-after: </MLOC>
+   :end-before: <DIVLOC>

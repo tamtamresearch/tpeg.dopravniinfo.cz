@@ -1,0 +1,15 @@
+============================================================
+Příloha C: Alternativní XML Schéma: W3C XML Schema 1.0 (XSD)
+============================================================
+
+W3C XML Schema 1.0 je dnes pravděpodobně nejpopulárnější formát pro popis XML struktur.
+
+Níže uvedené schéma bylo vytvořeno transformací z RNC schématu a mělo by zobrazit všechna pravidla z RNC. V (nepravděpodobném) případě, že se vyskytnou rozdíly, považujte RELAX NG RNC za referenční verzi.
+
+
+`TrafficInformation.xsd` - kořen schématu
+=========================================
+
+.. literalinclude:: ../../schema/TrafficInformation-cs-3.2.5.xsd
+   :language: XML
+

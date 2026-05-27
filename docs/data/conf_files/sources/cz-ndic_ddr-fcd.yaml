@@ -1,0 +1,45 @@
+name:
+    "cs": DDR - FCD data
+    "en": DDR - FCD data
+description:
+    "cs": Dojezdové doby, rychlosti dopravního proudu, stavy dopravy, zpoždění, kolony včetně údajů o kvalitě vzorku, generované systémem FCD na území celé ČR, poskytované NDIC ve formátu DDR NDIC pro FCD data. Popisy polohy jsou odkázány do DATEX II publikace předdefinovaných poloh.
+    "en": Travel times, speed, traffic levels, traffic delays, traffic jam and statistical significance data, provided by NDIC for the whole Czechia, in a DDR NDIC format for FCD data. Location references are pointing to DATEX II predefined location set.
+content:
+    content_type: "dynamic"
+    resource_type: "data set"
+    dataset:
+        category: [Real-time traffic data]
+        detailed_type: [Speed, Location and length of queues, Travel times]
+    language: [cs]
+linked_sources:
+    - cz-ndic_d2-pls-fcd-v1.1
+temporal:
+    start_date: 2019-01-01
+coverage:
+    area: CZ0
+    network: [Motorways, Arterial road network, Regional roads, Urban and local roads]
+transport_modes: [car, truck, motorcycle, bus]
+responsibilities:
+    publisher: cz-ndic
+conditions_of_use:
+    contract_or_licence: Contract and Free of charge
+    # process for applying for data
+    terms_and_conditions: ddrcontract
+access_info:
+    formats:
+        - cz-ndic_ddr-fcd-v1.0
+    protocols:
+        - cz-ndic_push-v1.1
+    access_point: ["NDIC/data subscription"]
+    access_url: ["https://mobilitydata.rsd.cz/DataSource/Detail?id=6B6454D3"]
+quality_information:
+    status:
+        "cs": provozní
+        "en": production
+    status_description:
+        "cs": Od 12.3.2025 aktualizována podkladová lokalizační sada.
+        "en": As of 2025/03/12, update of the predefined location referencing set.
+    update_frequency: up to 5min
+    quality_assesment:
+        "cs": interní procesy kontroly a křížová verifikace
+        "en": internal control mechanism and cross validation

@@ -1,0 +1,53 @@
+name:
+    "cs": DATEX II - FCD data
+    "en": DATEX II - FCD data
+description:
+    "cs": Dojezdové doby, rychlosti dopravního proudu, stavy dopravy, zpoždění, kolony včetně údajů o kvalitě vzorku, generované systémem FCD na území celé ČR, poskytované NDIC ve formátu **DATEX II verze 2.3**. Popisy polohy jsou odkázány do DATEX II publikace předdefinovaných poloh.
+    "en": Travel times, speed, traffic levels, traffic delays, traffic jam and statistical significance data, provided by NDIC for the whole Czechia, in a **DATEX II format version 2.3**. Location references are pointing to DATEX II predefined location set.
+content:
+    content_type: "dynamic"
+    resource_type: "data set"
+    dataset:
+        category: [Real-time traffic data]
+        detailed_type: [Speed, Location and length of queues, Travel times]
+    language: [cs]
+pattern:
+    name:
+        "cs": Rozšířený text profilu dojezdové doby
+        "en": Travel time extended profile (Czech only)
+    file:
+        "cs": RTP-Dojezdove_doby_v1.1.pdf
+        "en": RTP-Dojezdove_doby_v1.1.pdf
+linked_sources:
+    - cz-ndic_d2-pls-fcd-v1.1
+temporal:
+    start_date: 2020-01-01
+coverage:
+    area: CZ0
+    network: [Motorways, Arterial road network, Regional roads, Urban and local roads]
+transport_modes: [car, truck, motorcycle, bus]
+responsibilities:
+    publisher: cz-ndic
+conditions_of_use:
+    contract_or_licence: Contract and Free of charge
+    # process for applying for data
+    terms_and_conditions: ddrcontract
+access_info:
+    formats:
+        - cz-ndic_d2-fcd-v1.0
+    protocols:
+        - cz-ndic_push-v1.1
+    access_point: ["NDIC/data subscription"]
+    access_url: ["https://mobilitydata.rsd.cz/DataSource/Detail?id=70C29F0E"]
+quality_information:
+    status:
+        "cs": provozní
+        "en": production
+    status_description:
+        "cs": Od 12.3.2025 aktualizována podkladová lokalizační sada.
+        "en": As of 2025/03/12, update of the predefined location referencing set.
+    update_frequency: up to 5min
+    quality_assesment:
+        "cs": interní procesy kontroly a křížová verifikace
+        "en": internal control mechanism and cross validation
+    ec_acts: [rtti]

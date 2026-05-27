@@ -1,0 +1,17 @@
+=======================
+Terms and Abbreviations
+=======================
+
+:provider: an entity that provides messages to subscribers
+:subscriber: an entity that receives messages from the provider
+:message: a complete data object containing one or more records, transmitted between the provider and the subscriber in a single step.
+:record: comprehensive information of a certain type with its own identifier and a time validity.
+:change record: a record that provides an updated description of a record with the same identifier that the subscriber previously received.
+:change message: a message that contains several new or changed records, thus not conveying a complete view of the state of all records.
+:snapshot: a message that describes a comprehensive view of all relevant records at a given moment.
+:curl: cURL is a command-line tool that allows, among other things, the initiation of HTTP communication with a web server. Users can send HTTP requests, modify headers and data, and receive responses.
+:source: a service that enables the provision of messages by a specific provider, for a specific region, in a specific message format, and using a specific protocol.
+:subscription registry: a web application available at `https://mobilitydata.rsd.cz <https://mobilitydata.rsd.cz>`_, allowing subscribers to create accounts and manage message subscriptions from various sources. The subscription registry also enables subscription management on the provider's side (subscription approvals, etc.).
+:subscription: a record in the subscription registry describing the parameters of what data the subscriber wants to receive from a source and how it should be done.
+:acceptable duration of (subscriber's system) unavailability: the time during which the subscriber's system can be unavailable, while the provider's system continues to attempt to reestablish previous communication. Exceeding this time will block the subscription, and the provider will cease to send data. This time is usually 24 hours but may vary.
+:maximal interval for repeated delivery attempts: the longest interval between repeated attempts to resend a message to an unavailable subscriber's system. This time is typically 15 minutes but may vary.

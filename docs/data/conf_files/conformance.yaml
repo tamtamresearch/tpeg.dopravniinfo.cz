@@ -1,0 +1,30 @@
+rtti:
+    decision_ref: "2015/962"
+    description:
+        "cs": Prohlášení o shodě s Nařízením Komise č. [2015/962](https://eur-lex.europa.eu/eli/reg_del/2015/962) „poskytování informací o dopravním provozu v reálném čase“
+        "en": Declaration of compliance with the Decision [2015/962](https://eur-lex.europa.eu/eli/reg_del/2015/962) „real-time traffic information provision"
+rtti2:
+    decision_ref: "2022/670"
+    description:
+        "cs": Prohlášení o shodě s Nařízením Komise č. [2022/670](https://eur-lex.europa.eu/eli/reg_del/2022/670) „poskytování informací o dopravním provozu v reálném čase“
+        "en": Declaration of compliance with the Decision [2022/670](https://eur-lex.europa.eu/eli/reg_del/2022/670) „real-time traffic information provision"
+srti:
+    decision_ref: "2013/886"
+    description:
+        "cs": Prohlášení o shodě s Nařízením Komise č. [886/2013](https://eur-lex.europa.eu/eli/reg_del/2013/886) „poskytování informací souvisejících s bezpečností silničního provozu“
+        "en": Declaration of compliance with the Decision [886/2013](https://eur-lex.europa.eu/eli/reg_del/2013/886) "provision of information related to road safety"
+sstp:
+    decision_ref: "2013/885"
+    description:
+        "cs": Prohlášení o shodě s Nařízením Komise č. [885/2013](https://eur-lex.europa.eu/eli/reg_del/2013/885) „poskytování informačních služeb týkajících se bezpečných a chráněných parkovacích míst pro nákladní a užitková vozidla“
+        "en": Declaration of compliance with the Decision [885/2013](https://eur-lex.europa.eu/eli/reg_del/2013/885) "provision of information services for safe and secure parking places for trucks and commercial vehicles"
+tisa:
+    decision_ref: "EN 14819-3/TISA-SP08001"
+    description:
+        "cs": Certifikát shody TMC Lokační tabulky se specifikací "EN 14819-3/TISA-SP08001".
+        "en": TMC Location Table Compliance Certificate with "EN 14819-3/TISA-SP08001".
+mmtis:
+    decision_ref: "2017/1926"
+    description:
+        "cs": Prohlášení o shodě s Nařízením Komise č. [2017/1926](https://eur-lex.europa.eu/eli/reg_del/2017/1926) „poskytování multimodálních informačních služeb o cestování v celé Unii“
+        "en": Declaration of compliance with the Decision [2017/1926](https://eur-lex.europa.eu/eli/reg_del/2017/1926) "provision of EU-wide multimodal travel information services"

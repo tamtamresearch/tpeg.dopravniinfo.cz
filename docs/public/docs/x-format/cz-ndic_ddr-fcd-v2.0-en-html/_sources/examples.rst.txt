@@ -1,0 +1,13 @@
+.. _examples:
+
+============================
+Appendix A: Message examples
+============================
+ 
+fcd-data-v2-01.xml - sample of possible combinations of statuses
+================================================================
+
+The message contains several different combinations of statuses on segments depending on whether the traffic stream is mixed or separated and whether congestion is present on the segment.
+
+.. literalinclude:: ../../samples/fcd-data-v2-01.xml
+   :language: xml

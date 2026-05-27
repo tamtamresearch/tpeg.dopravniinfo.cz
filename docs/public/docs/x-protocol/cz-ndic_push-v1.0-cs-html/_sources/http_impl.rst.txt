@@ -1,0 +1,46 @@
+Implementace pomocí HTTP POST
+=============================
+
+Role a scénáře
+--------------
+
+Odběratel musí zprovoznit webový server a poskytnout poskytovateli url, na které se mají data zasílat (tzv. doručovací url).
+
+Poskytovatel zasílá zprávu pomocí HTTP POST s tím, že zpráva je jediným obsahem těla požadavku.
+
+.. warning::
+    Neočekávejte multipart-form data nebo urlencoded form data!!!
+
+Odběratel potvrdí přijetí zprávy tím, že vrátí HTTP status kód `200`. Jakákoliv jiná hodnota je považována za požadavek o opakované zaslání téže zprávy.
+
+
+.. uml::
+   :caption: Sekvenční diagram pro implementaci pomocí HTTP
+   :scale: 50%
+   :align: center
+
+   Boundary Provider as "HTTP klient (poskytovatel)"
+   Boundary Consumer as "Web server (odběratel)"
+   group Relace
+        Provider -> Consumer: HTTP POST zpráva #1
+        Consumer --> Provider: HTTP status 200
+        Provider -> Consumer: HTTP POST zpráva #2
+        Consumer --> Provider: HTTP status 200
+        Provider -> Consumer: HTTP POST zpráva #3
+        group Opakované (neúspěšné) pokusy doručit zprávu
+            Consumer --> Provider: (žádná odpověď nebo HTTP status není 200)
+            Provider -> Consumer: HTTP POST zpráva #3
+        end
+        Consumer --> Provider: HTTP status 200
+        Provider -> Consumer: HTTP POST zpráva #n
+        Consumer --> Provider: HTTP status 200
+   end
+
+Ostatní vlastnosti HTTP
+-----------------------
+
+:autorizace:	Autorizace se nepoužívá. Po dohodě je možno použít odmítání požadavků zaslaných z jiných než dohodnutých IP adres.
+:komprese:	Odběratel nemůže přinutit poskytovatel k zasílání komprimovaných dat (s použitím content-encoding: gzip). Veškerý obsah je doručován tak jak je bez jakéhokoliv zakódování.
+:content type:	Očekávaný content-type záleží na specifikaci formátu a dohodě a jeho určení je mimo rámec specifikace tohoto protokolu. Ve většině případů se používá content-type application/xml.
+:max. velikost:	Maximální velikost zaslané zprávy je 200 kB. Lze dohodnout jinou velikost.
+:https:	HTTP server na straně odběratele může používat https protokol.

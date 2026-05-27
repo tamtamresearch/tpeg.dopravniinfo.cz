@@ -1,0 +1,62 @@
+{% if formats[key] -%}
+    {% set item = formats[key] %}
+    {% set uri_type = "x-format" -%}
+
+# Format: {{ item.name | locstr(lang) }}
+
+{{ item.description | locstr(lang) }}
+
+    {% if item.additional_description -%}
+{{ item.additional_description | locstr(lang) }}
+    {% endif %}
+
+## General parameters
+
+| Parameter [^cmc] | Value   |
+|------------------|---------|
+| uri | `{{ uri_type }}:{{ key }}` |
+| status | *version:* {{ item.version_info.version }}, *date:* {{ item.version_info.publish_date }} |
+| encoding | `{{ item.encoding }}` |
+| syntax | `{{ item.syntax }}` |
+| grammar | `{{ item.grammar }}` |
+| model | `{{ item.model }}` |
+    {% if item.model_description -%}
+| profile base | `{{ item.model_description }}` |
+    {% endif -%}
+| profile extension | `{{ item.model_extension }}` |
+
+    {% if item.publications %}
+
+## Publication of Format Specification
+
+The documentation below, **hosted here in the registry**, contains a conceptual description of the published information, including samples and schema in a **pdf** file. The **html** item, if present, has the same content as the pdf documentation. The **zip** item, if present, contains separately the pdf documentation, samples, schema and any supplementary files (e.g. examples).
+
+| Form | Language | File |
+|------|----------|------|
+        {% for pub_format, langs in item.publications -%}
+            {% for language in langs -%}
+                {% set format = pubformats[pub_format] -%}
+                {% set pub_url = format.format({ uri: key, lang: language, pub_format: pub_format }) %}
+| {{ pub_format }} | {{ language }} | [{{ pub_url }}](/docs/{{ uri_type }}/{{ pub_url }}){target="_blank" rel="noopener noreferrer"} |
+            {% endfor -%}
+        {% endfor -%}
+
+    {% endif %} {# if item.publications #}
+
+
+    {% if item.linked_documents -%}
+
+## Referenced format documentation
+
+The documentation below is **hosted on other sites**, it may be schematics, samples, documentation, or additional descriptions.
+
+| Description | Language | Link |
+|-------------|----------|------|
+        {% for linked_document in item.linked_documents -%}
+| {{ linked_document.description | locstr(lang) }} | {{ linked_document.language }} | [{{ linked_document.web }}]({{ linked_document.web }}) |
+        {% endfor -%}
+    {% endif %} {# if item.linked_documents #}
+
+[^cmc]: Classification corresponds to the Coordinated Metadata Catalogue [EU-EIP_Coord.MetadataCatalogue_v2.0_191115.pdf](/docs/data/EU-EIP_Coord.MetadataCatalogue_v2.0_191115.pdf) as defined by the EU-EIP project.
+
+{% endif -%} {# if formats[key] #}

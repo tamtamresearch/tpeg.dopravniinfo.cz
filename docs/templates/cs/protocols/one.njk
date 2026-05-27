@@ -1,0 +1,38 @@
+{% if protocols[key] -%}
+{% set item = protocols[key] %}
+{% set uri_type = "x-protocol" %}
+# Protokol: {{ item.name | locstr(lang) }}
+
+{{ item.description | locstr(lang) }}
+
+{% if item.additional_description -%}
+{{ item.additional_description | locstr(lang) }}
+{% endif -%}
+
+## Obecné parametry
+
+| Parametr [^cmc] | Hodnota |
+|-----------------|---------|
+| uri | `{{ uri_type }}:{{ key }}` |
+| status | *verze:* {{ item.version_info.version }}, *datum:* {{ item.version_info.publish_date }} |
+| rozhraní | `{{ item.interface }}` |
+| metoda | `{{ item.communication_method }}` |
+
+{% if item.publications -%}
+
+## Publikace dokumentace protokolu
+Níže uvedená dokumentace obsahuje koncepční popis způsobu publikace, včetně popisu implementace a příkladu.
+
+| Typ | Jazyk | Soubor |
+|-----|-------|--------|
+{% for pub_format, langs in item.publications -%}
+{% for lang in langs -%}
+{% set format = pubformats[pub_format] -%}
+{% set pub_url = format.format({ uri: key, lang: lang, pub_format: pub_format }) %}
+| {{ pub_format }} | {{ lang }} | [{{ pub_url }}](/docs/{{ uri_type }}/{{ pub_url }}){target="_blank" rel="noopener noreferrer"} |
+{% endfor -%}
+{% endfor -%}
+{% endif -%}
+{% endif %}
+
+[^cmc]: Klasifikace informací odpovídá požadavkům mezinárodního koordinovaného katalogu dat [EU-EIP_Coord.MetadataCatalogue_v2.0_191115.pdf](/docs/data/EU-EIP_Coord.MetadataCatalogue_v2.0_191115.pdf) dle projektu EU-EUP.

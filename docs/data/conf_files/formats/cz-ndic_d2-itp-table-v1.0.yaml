@@ -1,0 +1,30 @@
+name:
+    "cs": DATEX II Parking Table Publication – Tabulka parkovišť nákladních vozidel
+    "en": DATEX II Parking Table Publication – Table of Truck Rest Areas
+version_info:
+    version: "1.0"
+    publish_date: 2017-12-31
+encoding: UTF-8
+syntax: XML
+#schema.type
+grammar: W3C XML Schema (XSD)
+model: DATEX II
+model_version: DATEX II v2.3
+#model.profile_base
+model_description: DATEX II v2.3/ParkingTablePublication
+#extended_parts
+model_extension: "none"
+description:
+    "cs": |
+        Profil odvozený z DATEX II Parking Table Publication, verze 2.3, používaný pro informování dlouhodobě neměnném stavu (statických) informací o parkovištích, jejich uspořádání včetně individuálních parkovacích míst, vybavení a poskytovaných službách.
+    "en": |
+        Profile derived from DATEX II Parking Table Publication, version 2.3, used for publishing information about tong term valid status of (static) information about rest areas, their layout including individual parking spaces, facilities and services provided.
+additional_description:
+    "cs": |
+        <b>Součástí dokumentace formátu je i podrobně zpracovaný příklad jedné odpočívky jako samostatný dokument (v zip souboru).</b>
+    "en": |
+        <b>A detailed example of one rest area as a separate document is part of the format documentation. (in a zip file)</b>
+publications:
+    html: [cs]
+    pdf: [cs]
+    zip: [en-cs]

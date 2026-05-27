@@ -1,0 +1,22 @@
+name:
+    "cs": ALERT-C zpráva
+    "en": ALERT-C message
+version_info:
+    version: 14819-1
+    publish_date: 2018-12-08
+encoding: binary
+syntax: ALERT-C
+#schema.type
+grammar: RDS-TMC
+model: EN ISO 14819-1
+model_version: ALERT-C:2019
+#model.profile_base
+model_description: EN ISO 14819-1:2019
+#extended_parts
+model_extension: "none"
+description:
+    "cs": Popis dopravní informace sestávající z kódu (kódů) události z číselníku událostí daných normou ČSN EN 14819-2, lokalizovaných na položky v lokační tabulce (ČSN EN 14819-3) s uvedením trvání a doporučení objížďky.
+    "en": Description of traffic information consisting of the code(s) of the event from the event list given by the ČSN EN 14819-2 standard, localized to items in the location table (ČSN EN 14819-3) with the duration and detour recommendation.
+additional_description:
+    "cs": Více informací viz [wiki](https://cs.wikipedia.org/wiki/Traffic_Message_Channel).
+    "en": For more information see [wiki](https://en.wikipedia.org/wiki/Traffic_message_channel).

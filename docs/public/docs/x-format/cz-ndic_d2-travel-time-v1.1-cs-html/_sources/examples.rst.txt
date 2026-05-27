@@ -1,0 +1,62 @@
+.. _examples:
+
+=========================
+Příloha A: Příklady zpráv
+=========================
+
+travel-time.xml - dojezdová doba na jedné trase
+===============================================
+
+Publikace obsahuje jeden záznam o dojezdových dobách na jedné trase.
+
+Trasy jsou definovány v jiné publikaci typu `PredefinedLocationsPublication`, která zde není detailně popisována.
+
+Dojezdová doba k trase s identifikátorem `56472218-da2f-4986-880a-3ad8e3d2bf32` je `251` sekund.
+
+.. literalinclude:: ../../samples/travel-time.xml
+   :language: xml
+
+Kořenový element a obálka publikace
+-----------------------------------
+
+Kořenový element `d2LogicalModel` deklaruje, že se jedná o zprávu, používající DATEX II.
+
+Element `exchange` obsahuje identifikátor poskytovatele.
+
+Element `payloadPublication` je obálkou pro přenos samotných informací, obsahující především elementy `elaboratedData`, kterých může být mnoho (v této ukázce je jeden).
+
+Atribut `xsi:type="ElaboratedDataPublication"` v elementu `payloadPublication` určuje, že tato obálka je typu Vypočtená data.
+
+Element `feedType` uvádí typ publikace, uri schématu.
+
+Element `publicationTime` uvádí čas vydání publikace.
+
+Element `publicationCreator` identifikuje tvůrce publikace.
+
+`timeDefault` element uvádí čas platnosti vypočtených dojezdových dob, je to čas výpočtu všech hodnot dojezdových dob. 
+
+Element `periodDefault` uvádí vzorkovací periodu v sekundách.
+
+Popis vypočtené dojezdové doby na jedné trase
+---------------------------------------------
+
+Následující element `elaboratedData` se může opakovat a popisuje jednotlivé dílčí vypočtené dojezdové doby.
+
+Element `sourceIdentification` uvádí identifikaci úseku / zařízení, ke snadnější identifikaci  jako doplněk k identifikátoru polohy.
+
+Zanořený element `basicData` svým atributem `xsi:type="TravelTimeData"` uvádí, že hodnoty jsou ve významu dojezdové doby.
+
+Poloha stavové informace
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+Atribut `id="56472218-da2f-4986-880a-3ad8e3d2bf32"` v elementu `predefinedLocationReference` odkazuje na předem definovanou trasu s daným identifikátorem a atribut `version="1"` upřesňuje, o kterou verzi popisu polohy jde.
+
+Dojezdová doba
+^^^^^^^^^^^^^^
+
+Element `travelTime` uvádí v `duration` dojezdovou dobu v sekundách.
+
+Časová platnost
+^^^^^^^^^^^^^^^
+
+Počátek platnosti uvedených hodnot je uveden společně pro všechny záznamy a to v elementu `timeDefault`.

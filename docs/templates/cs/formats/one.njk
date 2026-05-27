@@ -1,0 +1,62 @@
+{% if formats[key] -%}
+    {% set item = formats[key] %}
+    {% set uri_type = "x-format" %}
+
+# Formát: {{ item.name | locstr(lang) }}
+
+{{ item.description | locstr(lang) }}
+
+    {% if item.additional_description -%}
+{{ item.additional_description | locstr(lang) }}
+    {% endif %}
+
+## Obecné parametry
+
+| Parametr [^cmc] | Hodnota |
+|-----------------|---------|
+| uri | `{{ uri_type }}:{{ key }}` |
+| status | *verze:* {{ item.version_info.version }}, *datum:* {{ item.version_info.publish_date }} |
+| kódování | `{{ item.encoding }}` |
+| syntaxe | `{{ item.syntax }}` |
+| gramatika | `{{ item.grammar }}` |
+| model | `{{ item.model }}` |
+    {% if item.model_description -%}
+| základ profilu | `{{ item.model_description }}` |
+    {% endif -%}
+| rozšíření profilu | `{{ item.model_extension }}` |
+
+    {% if item.publications -%}
+
+## Publikace dokumentace formátu
+
+Níže uvedená dokumentace, **hostovaná zde v registru**, obsahuje koncepční popis publikovaných informací včetně vzorků a schématu v **pdf** souboru (v případě převzaté dokumentace není výše uvedený obsah garantován). Položka **html**, pokud je přítomná, má stejný obsah jako pdf dokumentace. Položka **zip**, pokud je přítomná, obsahuje odděleně dokumentaci v pdf, vzorky, schémata a případnou doplňkovou dokumentaci (např. příklady).
+
+| Forma | Jazyk | Soubor |
+|-------|-------|--------|
+        {% for pub_format, langs in item.publications -%}
+            {% for lang in langs -%}
+                {% set format = pubformats[pub_format] -%}
+                {% set pub_url = format.format({ uri: key, lang: lang, pub_format: pub_format }) %}
+| {{ pub_format }} | {{ lang }} | [{{ pub_url }}](/docs/{{ uri_type }}/{{ pub_url }}){target="_blank" rel="noopener noreferrer"} |
+            {% endfor -%}
+        {% endfor -%}
+
+    {% endif %} {# if item.publications #}
+
+
+    {% if item.linked_documents -%}
+
+## Odkazovaná dokumentace formátu
+
+Níže je uvedená dokumentace, **hostovaná na jiných stránkách**, může se jednat o schémata, vzorky, dokumentaci, či doplňkové popisy.
+
+| Popis | Jazyk | Odkaz |
+|-------|-------|-------|
+        {% for linked_document in item.linked_documents -%}
+| {{ linked_document.description | locstr(lang) }} | {{ linked_document.language }} | [{{ linked_document.web }}]({{ linked_document.web }}) |
+        {% endfor -%}
+    {% endif %} {# if item.linked_documents #}
+
+[^cmc]: Klasifikace informací odpovídá požadavkům mezinárodního koordinovaného katalogu dat [EU-EIP_Coord.MetadataCatalogue_v2.0_191115.pdf](/docs/data/EU-EIP_Coord.MetadataCatalogue_v2.0_191115.pdf) dle projektu EU-EUP.
+
+{% endif -%} {# if formats[key] #}

@@ -1,0 +1,225 @@
+
+
+<!doctype html>
+
+<html lang="cs" data-content_root="./">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Příloha A: Příklady zpráv &#8212; Dokumentace pro NDIC - DATEX II Elaborated Data Publication - Hustota provozu 1.1rev0</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/bizstyle.css?v=532c1bf3" />
+    
+    <script src="_static/documentation_options.js?v=65a9e0b9"></script>
+    <script src="_static/doctools.js?v=888ff710"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/translations.js?v=0275affc"></script>
+    <script src="_static/bizstyle.js"></script>
+    <link rel="index" title="Rejstřík" href="genindex.html" />
+    <link rel="search" title="Vyhledávání" href="search.html" />
+    <link rel="next" title="Příloha B: W3C XML Schéma" href="format.html" />
+    <link rel="prev" title="Koncepty" href="concepts.html" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <!--[if lt IE 9]>
+    <script src="_static/css3-mediaqueries.js"></script>
+    <![endif]-->
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigace</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="Obecný rejstřík"
+             accesskey="I">rejstřík</a></li>
+        <li class="right" >
+          <a href="format.html" title="Příloha B: W3C XML Schéma"
+             accesskey="N">další</a> |</li>
+        <li class="right" >
+          <a href="concepts.html" title="Koncepty"
+             accesskey="P">předchozí</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Dokumentace pro NDIC - DATEX II Elaborated Data Publication - Hustota provozu 1.1rev0</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Příloha A: Příklady zpráv</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="priloha-a-priklady-zprav">
+<span id="examples"></span><h1>Příloha A: Příklady zpráv<a class="headerlink" href="#priloha-a-priklady-zprav" title="Link to this heading">¶</a></h1>
+<section id="traffic-levels-xml-hustota-provozu-na-dvou-mistech">
+<h2>traffic-levels.xml - hustota provozu na dvou místech<a class="headerlink" href="#traffic-levels-xml-hustota-provozu-na-dvou-mistech" title="Link to this heading">¶</a></h2>
+<p>Publikace obsahuje dva záznamy o hustotě provozu, každý na jiném místě.</p>
+<p>Trasy jsou definovány v jiné publikaci typu <cite>PredefinedLocationsPublication</cite>,
+která zde není detailně popisována.</p>
+<p>První trasa, s identifikátorem <cite>6D476A44-AA44-4947-AA4B-7C4DD79BB67E</cite>, má hustotu provozu
+<cite>heavy</cite>, tedy silný provoz.</p>
+<p>Druhá trasa, s identifikátorem <cite>5C8463E7-C547-4D30-B22A-4C95BEDE96B6</cite>, má hustotu provozu
+<cite>congested</cite>, tedy dopravní kolona.</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span>
+<span class="nt">&lt;d2LogicalModel</span><span class="w"> </span><span class="na">xmlns=</span><span class="s">&quot;http://datex2.eu/schema/2/2_0&quot;</span>
+<span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span><span class="w"> </span><span class="na">modelBaseVersion=</span><span class="s">&quot;2&quot;</span>
+<span class="na">xsi:schemaLocation=</span><span class="s">&quot;http://datex2.eu/schema/2/2_0 ../schema/schema.xsd&quot;</span><span class="nt">&gt;</span>
+<span class="w">  </span><span class="nt">&lt;exchange&gt;</span>
+<span class="w">    </span><span class="nt">&lt;supplierIdentification&gt;</span>
+<span class="w">      </span><span class="nt">&lt;country&gt;</span>cz<span class="nt">&lt;/country&gt;</span>
+<span class="w">      </span><span class="nt">&lt;nationalIdentifier&gt;</span>NDIC<span class="nt">&lt;/nationalIdentifier&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/supplierIdentification&gt;</span>
+<span class="w">  </span><span class="nt">&lt;/exchange&gt;</span>
+<span class="w">  </span><span class="nt">&lt;payloadPublication</span><span class="w"> </span><span class="na">xsi:type=</span><span class="s">&quot;ElaboratedDataPublication&quot;</span><span class="w"> </span><span class="na">lang=</span><span class="s">&quot;cz&quot;</span><span class="nt">&gt;</span>
+<span class="w">    </span><span class="nt">&lt;feedType&gt;</span>x-format:cz-ndic_d2-traffic-status-v1.1<span class="nt">&lt;/feedType&gt;</span>
+<span class="w">    </span><span class="nt">&lt;publicationTime&gt;</span>2017-07-28T16:05:04+02:00<span class="nt">&lt;/publicationTime&gt;</span>
+<span class="w">    </span><span class="nt">&lt;publicationCreator&gt;</span>
+<span class="w">      </span><span class="nt">&lt;country&gt;</span>cz<span class="nt">&lt;/country&gt;</span>
+<span class="w">      </span><span class="nt">&lt;nationalIdentifier&gt;</span>NDIC<span class="nt">&lt;/nationalIdentifier&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/publicationCreator&gt;</span>
+<span class="w">    </span><span class="nt">&lt;timeDefault&gt;</span>2017-07-28T16:10:04+02:00<span class="nt">&lt;/timeDefault&gt;</span>
+<span class="w">    </span><span class="nt">&lt;headerInformation&gt;</span>
+<span class="w">      </span><span class="nt">&lt;confidentiality&gt;</span>noRestriction<span class="nt">&lt;/confidentiality&gt;</span>
+<span class="w">      </span><span class="nt">&lt;informationStatus&gt;</span>real<span class="nt">&lt;/informationStatus&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/headerInformation&gt;</span>
+<span class="w">    </span><span class="nt">&lt;elaboratedData&gt;</span>
+<span class="w">      </span><span class="nt">&lt;source&gt;</span>
+<span class="w">        </span><span class="nt">&lt;sourceIdentification&gt;</span>ndic-secid-1-01<span class="nt">&lt;/sourceIdentification&gt;</span>
+<span class="w">      </span><span class="nt">&lt;/source&gt;</span>
+<span class="w">      </span><span class="nt">&lt;basicData</span><span class="w"> </span><span class="na">xsi:type=</span><span class="s">&quot;TrafficStatus&quot;</span><span class="nt">&gt;</span>
+<span class="w">        </span><span class="nt">&lt;pertinentLocation</span><span class="w"> </span><span class="na">xsi:type=</span><span class="s">&quot;LocationByReference&quot;</span><span class="nt">&gt;</span>
+<span class="w">          </span><span class="nt">&lt;predefinedLocationReference</span><span class="w"> </span><span class="na">targetClass=</span><span class="s">&quot;PredefinedLocation&quot;</span>
+<span class="w">          </span><span class="na">version=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;6D476A44-AA44-4947-AA4B-7C4DD79BB67E&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="w">        </span><span class="nt">&lt;/pertinentLocation&gt;</span>
+<span class="w">        </span><span class="nt">&lt;trafficStatus&gt;</span>
+<span class="w">          </span><span class="nt">&lt;trafficStatusValue&gt;</span>heavy<span class="nt">&lt;/trafficStatusValue&gt;</span>
+<span class="w">        </span><span class="nt">&lt;/trafficStatus&gt;</span>
+<span class="w">      </span><span class="nt">&lt;/basicData&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/elaboratedData&gt;</span>
+<span class="w">    </span><span class="nt">&lt;elaboratedData&gt;</span>
+<span class="w">      </span><span class="nt">&lt;basicData</span><span class="w"> </span><span class="na">xsi:type=</span><span class="s">&quot;TrafficStatus&quot;</span><span class="nt">&gt;</span>
+<span class="w">        </span><span class="nt">&lt;pertinentLocation</span><span class="w"> </span><span class="na">xsi:type=</span><span class="s">&quot;LocationByReference&quot;</span><span class="nt">&gt;</span>
+<span class="w">          </span><span class="nt">&lt;predefinedLocationReference</span><span class="w"> </span><span class="na">targetClass=</span><span class="s">&quot;PredefinedLocation&quot;</span>
+<span class="w">          </span><span class="na">version=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;5C8463E7-C547-4D30-B22A-4C95BEDE96B6&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="w">        </span><span class="nt">&lt;/pertinentLocation&gt;</span>
+<span class="w">        </span><span class="nt">&lt;trafficStatus&gt;</span>
+<span class="w">          </span><span class="nt">&lt;trafficStatusValue&gt;</span>congested<span class="nt">&lt;/trafficStatusValue&gt;</span>
+<span class="w">        </span><span class="nt">&lt;/trafficStatus&gt;</span>
+<span class="w">      </span><span class="nt">&lt;/basicData&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/elaboratedData&gt;</span>
+<span class="w">  </span><span class="nt">&lt;/payloadPublication&gt;</span>
+<span class="nt">&lt;/d2LogicalModel&gt;</span>
+</pre></div>
+</div>
+<section id="korenovy-element-a-obalka-publikace">
+<h3>Kořenový element a obálka publikace<a class="headerlink" href="#korenovy-element-a-obalka-publikace" title="Link to this heading">¶</a></h3>
+<p>Kořenový element <cite>d2LogicalModel</cite> deklaruje, že se jedná o nějakou zprávu, používající DATEX II.</p>
+<p>Element <cite>exchange</cite> obsahuje identifikátor poskytovatele.</p>
+<p>Element <cite>payloadPublication</cite> je obálkou pro přenos samotných informací, obsahující především elementy <cite>elaboratedData</cite>, kterých může být mnoho (v této ukázce jsou dva).</p>
+<p>Atribut <cite>xsi:type=“ElaboratedDataPublication“</cite> v elementu <cite>payloadPublication</cite> určuje, že tato obálka je typu Vypočtená data.</p>
+<p>Element <cite>feedType</cite> uvádí typ publikace, uri schématu.</p>
+<p>Element <cite>publicationTime</cite> uvádí čas vydání publikace.</p>
+<p>Element <cite>publicationCreator</cite> identifikuje tvůrce publikace.</p>
+<p><cite>timeDefault</cite> element uvádí čas platnosti vypočtených stavů dopravy, je to čas výpočtu všech hodnot hustoty provozu.</p>
+</section>
+<section id="popis-hustoty-provozu-na-jedne-trase">
+<h3>Popis hustoty provozu na jedné trase<a class="headerlink" href="#popis-hustoty-provozu-na-jedne-trase" title="Link to this heading">¶</a></h3>
+<p>Následující element <cite>elaboratedData</cite> se může opakovat a popisuje jednotlivé dílčí vypočtené stupně provozu.</p>
+<p>Element <cite>sourceIdentification</cite> uvádí identifikaci úseku / zařízení, ke snadnější identifikaci  jako doplněnk k identifikátoru polohy.</p>
+<p>Zanořený element <cite>basicData</cite> svým atributem <cite>xsi:type=“TrafficStatus“</cite> uvádí, že hodnoty jsou ve významu „hustota provozu“.</p>
+<section id="poloha-stavove-informace">
+<h4>Poloha stavové informace<a class="headerlink" href="#poloha-stavove-informace" title="Link to this heading">¶</a></h4>
+<p>Atributy <cite>id=“6D476A44-AA44-4947-AA4B-7C4DD79BB67E“</cite> a <cite>id=“5C8463E7-C547-4D30-B22A-4C95BEDE96B6“</cite> v elementech <cite>predefinedLocationReference</cite> jednotlivých záznamů <cite>elaboratedData</cite> odkazují na dvě předem definované trasy (místa) s daným identifikátorem a atributem <cite>version=“0“</cite> upřesňuje, o které verze popisu polohy jde.</p>
+</section>
+<section id="hustota-provozu">
+<h4>Hustota provozu<a class="headerlink" href="#hustota-provozu" title="Link to this heading">¶</a></h4>
+<p>Element <cite>trafficStatus</cite> uvádí v <cite>trafficStatusValue</cite> hustotu provozu výčtovým typem, v tomto případě s hodnotou <cite>heavy</cite> pro první místo a <cite>congested</cite> pro místo druhé.</p>
+</section>
+<section id="casova-platnost">
+<h4>Časová platnost<a class="headerlink" href="#casova-platnost" title="Link to this heading">¶</a></h4>
+<p>Počátek platnosti uvedených hodnot je uveden společně pro všechny záznamy a to v elementu <cite>timeDefault</cite>.</p>
+</section>
+</section>
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="index.html">
+              <img class="logo" src="_static/RSD-logo-07.jpg" alt="Logo"/>
+            </a></p>
+  <div>
+    <h3><a href="index.html">Table of Contents</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">Příloha A: Příklady zpráv</a><ul>
+<li><a class="reference internal" href="#traffic-levels-xml-hustota-provozu-na-dvou-mistech">traffic-levels.xml - hustota provozu na dvou místech</a><ul>
+<li><a class="reference internal" href="#korenovy-element-a-obalka-publikace">Kořenový element a obálka publikace</a></li>
+<li><a class="reference internal" href="#popis-hustoty-provozu-na-jedne-trase">Popis hustoty provozu na jedné trase</a><ul>
+<li><a class="reference internal" href="#poloha-stavove-informace">Poloha stavové informace</a></li>
+<li><a class="reference internal" href="#hustota-provozu">Hustota provozu</a></li>
+<li><a class="reference internal" href="#casova-platnost">Časová platnost</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  </div>
+  <div>
+    <h4>Přechozí téma</h4>
+    <p class="topless"><a href="concepts.html"
+                          title="předchozí kapitola">Koncepty</a></p>
+  </div>
+  <div>
+    <h4>Další téma</h4>
+    <p class="topless"><a href="format.html"
+                          title="další kapitola">Příloha B: W3C XML Schéma</a></p>
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>Tato stránka</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/examples.rst.txt"
+            rel="nofollow">Ukázat zdroj</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Rychlé vyhledávání</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="OK" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigace</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="Obecný rejstřík"
+             >rejstřík</a></li>
+        <li class="right" >
+          <a href="format.html" title="Příloha B: W3C XML Schéma"
+             >další</a> |</li>
+        <li class="right" >
+          <a href="concepts.html" title="Koncepty"
+             >předchozí</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Dokumentace pro NDIC - DATEX II Elaborated Data Publication - Hustota provozu 1.1rev0</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Příloha A: Příklady zpráv</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+    &#169; Veškerá práva vyhrazena 2018, TamTam Research s.r.o..
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.5.
+    </div>
+  </body>
+</html>

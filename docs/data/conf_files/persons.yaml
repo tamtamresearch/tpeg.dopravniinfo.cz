@@ -1,0 +1,30 @@
+"NDIC/Ctirad Weissmann":
+    name: Ctirad Weissmann
+    title:
+        "cs": Vedoucí oddělení poskytování dopravních informací
+        "en": Manager of traffic information distribution department
+    organization: cz-rsd-cr
+    phone: +420-954913578
+    email: ctirad.weissmann@rsd.cz
+"NDIC/Filip Tyc":
+    name: Filip Týc
+    title:
+        "cs": Vedoucí odboru Silniční databanky a NDIC na ŘSD
+        "en": Head of Department of Road Database and NTIC at ŘSD
+    organization: cz-rsd-cr
+    phone: +420-954901284
+    email: filip.tyc@rsd.cz
+"TTR/Petr Bures":
+    name: Petr Bureš
+    title:
+        "cs": Správce technického řešení registru dopravních informací (NAP)
+        "en": Maintainer of the Registry of the traffic information (NAP)
+    phone: +420-777131603
+    email: petr.bures@tamtamresearch.com
+"MDCR/Vaclav Macek":
+    name: Václav Macek
+    title:
+        "cs": referent na odboru veřejné dopravy
+        "en": referent of the Department of public transport
+    phone: +420-225131340
+    email: vaclav.macek@md.gov.cz

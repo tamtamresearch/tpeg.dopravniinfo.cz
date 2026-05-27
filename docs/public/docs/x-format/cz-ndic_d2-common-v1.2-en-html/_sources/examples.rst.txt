@@ -1,0 +1,118 @@
+.. _examples:
+
+============================
+Appendix A: Message examples
+============================
+
+accident.xml - truck accident with a road closure
+=================================================
+
+Publication contains exactly one message about a truck accident with a road closure.
+
+.. literalinclude:: ../../samples/accident.xml
+   :language: xml
+
+Root element and publication envelope
+-------------------------------------
+
+Root element `d2LogicalModel` declares, that this message is using DATEX II.
+
+Element `exchange` contains provider identifier.
+
+Element `payloadPublication` is an envelope for actual information payload containing general information and one or more elements `situation`, (in our case there is one).
+
+Attribute `xsi:type="SituationPublication"` in element `payloadPublication` determines, that this envelope is of type Situation publication.
+
+Element `feedType` states publication schema by its uri.
+
+Element `publicationTime` states publication time of this publication as a whole.
+
+Element `publicationCreator` identifies creator of the publication.
+
+Description of one specific situation
+-------------------------------------
+
+The `situationRecord` element occurs twice in the `situation` element in this case.
+Once for the description of the road closure and the second time for the description of the accident that led to the closure.
+
+Element `situationVersionTime` sets the time of the publication of this version of the situation.
+
+Element `headerInformation` describes how to handle the information described.
+
+The `urlLink` element contains a link to a website where there is more information about the situation.
+
+Event description (what happened)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The first element `situationRecord` of type `xsi:type="Accident"` contains the description of the cause, i.e. the accident involving the truck `accidentInvolvingHeavyLorries`.
+The second element `situationRecord` of type `xsi:type="RoadOrCarriagewayOrLaneManagement"` contains a description of the impact, i.e. the complete closure of the road `roadClosed`.
+
+The element `probabilityOfOccurrence` with the value `certain` specifies that the event has definitely happened.
+
+The `groupOfVehiclesInvolved` element partially repeats the previous information by specifying `lorry`, i.e. a truck, as the characteristic of the vehicle involved in the accident.
+
+Time validity
+^^^^^^^^^^^^^
+
+Estimated time validity is given in a structure `validity` by values of validity interval start `overallStartTime` and validity interval end `overallEndTime`.
+
+Event location
+^^^^^^^^^^^^^^
+
+The location of the event is described directly in the `groupOfLocations` element by the nested description of the `xsi:type="Linear"` type.
+
+In the example 3 location descriptions are used: 
+
+- tmc location using location tables in the `alertCLinear` element of type `AlertCMethod2Linear`,
+- description using references to Global Network segment id's in the `globalNetworkLinear` extension, and
+- description using the OpenLR routing method in the `openlrExtendedLinear` extension.
+
+
+The location of all published events is of type `Linear`, even in the case of point events of type accident, in which case the start and end points of the event are the same.  Thus, the `startPoint` and `endPoint` in the `globalNetworkLinear` are the same.
+
+
+Additional content
+^^^^^^^^^^^^^^^^^^
+
+The document states time of its first version in `situationRecordCreationTime` and time of current version in `situationRecordVersionTime` for each `situationRecord`.
+
+Element `source` lists the the creator of this information, who is responsible for its accuracy.
+
+The `generalPublicComment` element contains a description of the situation, usually only in czech language, generated manually by the operator.
+
+brokendownvehicles.xml - broken down lorry
+===========================================
+
+Publication contains information about one broken down lorry at the D7 exit link.
+
+.. literalinclude:: ../../samples/brokendownvehicles.xml
+   :language: xml
+
+Publication envelope, time validity and location
+------------------------------------------------
+
+Publication envelope, time validity and location is using identical structures as previous example.
+
+The only difference is in description of one concrete situation in element `situationRecord`.
+
+Event description (what happened)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The `situationRecord` element of the `xsi:type="VehicleObstruction"` type contains the description of the cause, i.e. the broken down vehicle `brokenDownVehicle` and further, in the `impact` element it states in `delays` that the result of the delay of 259200 s.
+
+The `probabilityOfOccurrence` element specifies by the value `certain` that the event definitely happened.
+
+Time validity
+^^^^^^^^^^^^^
+
+As in previous example.
+
+Event location
+^^^^^^^^^^^^^^
+
+As in previous example.
+
+Additional content
+^^^^^^^^^^^^^^^^^^
+
+As in previous example.

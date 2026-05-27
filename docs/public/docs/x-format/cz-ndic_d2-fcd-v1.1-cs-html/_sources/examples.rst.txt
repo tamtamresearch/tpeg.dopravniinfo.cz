@@ -1,0 +1,171 @@
+.. _examples:
+
+=========================
+Příloha A: Příklady zpráv
+=========================
+
+
+samples/fcd-all-lorry-car-sample.xml - data z FCD na 1 segmentu
+===============================================================
+
+.. literalinclude:: ../../samples/fcd-all-lorry-car-sample.xml
+   :language: xml
+
+Kořenový element a obálka publikace
+-----------------------------------
+
+Kořenový element `d2LogicalModel` deklaruje, že se jedná o zprávu, používající DATEX II.
+
+Element `exchange` identifikuje poskytovatele, **ŘSD**.
+
+Element `payloadPublication` typu `ElaboratedDataPublication` obsahuje, v tomto příkladu **9 elementů** `elaboratedData` s vypočítanými údaji k **jednomu segmentu**.
+
+Element `feedType` uvádí typ publikace, uri schématu: **x-format:cz-ndic_d2-fcd-v1.1**.
+
+Element `publicationTime` uvádí čas vydání publikace **2022-12-18T00:00:06+01:00**.
+
+Element `publicationCreator` identifikuje tvůrce publikace, **ŘSD**.
+
+Element `timeDefault` element uvádí čas výpočtu všech hodnot FCD uvedených ve zprávě **2022-12-17T23:59:35+01:00**. 
+
+Obecné charakteristiky elementů `elaboratedData`
+------------------------------------------------
+Několik charakteristik měření FCD je podobných / stejných pro všechny elementy `elaboratedData`, z důvodů úspory místa je uvádíme zde.
+
+Poloha stavové informace
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+Poloha segmentu je dána v elementem `predefinedLocationReference`. Zde se všechny vypočítané hodnoty vztahují k jednomu segmentu s id **6D476A44-AA44-4947-AA4B-7C4DD79BB67E** a verzí **0**. 
+
+Segmenty jsou definovány v jiné publikaci typu `PredefinedLocationsPublication`,
+která zde není detailně popisována.
+
+Časová platnost
+^^^^^^^^^^^^^^^
+
+Poslední čas výskytu vozidel na měřeném segmentu uvedený v elementech `measurementOrCalculationTime` je **2022-12-17T23:57:35+01:00**. Tato hodnota může být pro každý **segment** a pro každý **typ vozidla** jiná.
+
+Kvalita měření
+^^^^^^^^^^^^^^
+
+Kvalita měření uvedená v `supplierCalculatedDataQuality` je pro všechna vozidla bez rozlišení typu = **1** (věrohodné). Kvalita měření pro osobní vozidla je **0.850** a pro nákladní vozidla **0.750**.
+
+Tato hodnota by měla být pro všechny aktuální hodnoty měření na daném segmentu stejná.
+
+Počet vozidel na segmentu
+^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Počet vozidlových sond na daném segmentu, uvedený v atributech `numberOfInputValuesUsed`, byl za dobu měření (300 s) **9**, z toho byla **4** nákladní vozidla a **5** osobních vozidel.
+
+Tato hodnota by měla být pro všechny aktuální hodnoty měření na daném segmentu stejná.
+
+Identifikace zdroje
+^^^^^^^^^^^^^^^^^^^
+
+Nepovinný element `sourceIdentification` je uveden pouze v prvním elementu `elaboratedData` pro ukázku, jako alternativní identifikace polohy.
+
+Popis stupňů provozu a kolon
+----------------------------
+
+První 3 elementy `elaboratedData`, typu `TrafficStatus`, popisují vypočtený stupeň provozu i s kolonami.
+
+Všechny 3 elementy shodně uvádí stav provozu ( `trafficStatus` ) na čtyřstupňové škále, hodnotu **congested**.
+
+
+Stupně provozu
+^^^^^^^^^^^^^^
+
+Všechny 3 elementy shodně uvádí stupeň provozu na pětistupňové škále, stupeň č. 4. (**level4**).
+
+Délka kolon
+^^^^^^^^^^^
+
+Všechny 3 elementy popisují kolonu vozidel. Každý element se zde liší, vozidla stála v jinak dlouhých kolonách s jinými začátky a konci. Agregovaná délka kolony na segmentu v daném čase byla **148 m** pro všechna vozidla a **89 m** pro osobní a **148 m** pro nákladní vozidla.
+
+Elementy `toPoint` uvádějí stejný konec kolony **0,9 (90 % segmentu)** pro všechna vozidla.  Elementy `fromPoint` uvádějící začátek kolony se liší; pro osobní vozidla **0,6** a pro nákladní (a bez rozlišení) **0,4**. 
+
+Popis naměřené rychlosti
+------------------------
+
+Další 3 elementy `elaboratedData`, typu `TrafficSpeed`, popisují  vypočtenou rychlost dopravního proudu.
+
+Rychlost provozu
+^^^^^^^^^^^^^^^^
+
+Všechny 3 elementy uvádí aktuální průměrnou rychlost vozidel `averageVehicleSpeed`. Ta je **38 km/h** pro všechna vozidla a **58 km/h** pro osobní a **18 km/h** pro nákladní vozidla.
+
+Popis dojezdových dob a rychlosti
+---------------------------------
+
+Poslední 3 elementy `elaboratedData`, typu `TravelTimeData`, popisují vypočtené dojezdové doby a rychlost plynulého dopravního proudu.
+
+Dojezdové doby
+^^^^^^^^^^^^^^
+
+Element `travelTime` uvádí průměrnou aktuální dojezdovou dobu **549 s** pro všechna vozidla, **499 s** pro osobní a **587 s** pro nákladní vozidla.
+
+Element `freeFlowTravelTime` uvádí průměrnou dojezdovou dobu při plynulém provozu **259 s** pro všechna vozidla, **259 s** pro osobní a **279 s** pro nákladní vozidla.
+
+Rychlosti
+^^^^^^^^^
+
+Element `freeFlowSpeed` uvádí průměrnou rychlost při plynulém provozu **50 km/h** pro všechna vozidla, **55 km/h** pro osobní a **50 km/h** pro nákladní vozidla.
+
+
+samples/fcd-all-lorry-car-sample-no-data.xml - na 1 segmentu nejsou FCD data
+=============================================================================
+
+Vzorek obsahuje informace z FCD ke stejnému místu jako v předchozím vzorku. Rozdíl mezi vzorky spočívá v **nedostupnosti údajů pro vypočítání stavových informací**.
+
+.. literalinclude:: ../../samples/fcd-all-lorry-car-sample-no-data.xml
+   :language: xml
+
+V částech níže uvádíme pouze rozdíly od předchozího vzorku.
+
+Obecné charakteristiky elementů `elaboratedData`
+------------------------------------------------
+V následujících třech elementech `elaboratedData` jsou uvedeny jednotlivé charakteristiky měření FCD. Několik charakteristik je ale podobných / stejných pro všechny elementy `elaboratedData`, z důvodů úspory místa je uvádíme zde.
+
+Časová platnost
+^^^^^^^^^^^^^^^
+
+Počátek platnosti uvedených hodnot je uveden společně pro všechny záznamy v elementu `timeDefault` je **2022-12-17T23:59:35+01:00**.
+
+Poslední čas výskytu vozidel, zdrojů dat, uvedený v elementu `measurementOrCalculationTime` je **2022-12-17T22:57:35+01:00**, tedy před cca hodinu.
+
+Nedostupnost dat vede k neuvedení elementů obsahujících aktuální stavové informace.
+
+Kvalita měření
+^^^^^^^^^^^^^^
+
+Irelevantní, nejsou žádná data k výpočtu.
+
+Počet vozidel na segmentu
+^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Irelevantní, nejsou žádná data k výpočtu.
+
+Popis stupňů provozu a kolon
+----------------------------
+
+Irelevantní, nejsou žádná data k výpočtu.
+
+Popis naměřené rychlosti
+------------------------
+
+Irelevantní, nejsou žádná data k výpočtu.
+
+Popis dojezdových dob a rychlosti
+---------------------------------
+
+Element `elaboratedData` typu `TravelTimeData` je uveden a obsahuje pouze informace o plynulém dopravním proudu (pro všechny typy vozidel zvlášť).
+
+Dojezdové doby
+^^^^^^^^^^^^^^
+
+Element `freeFlowTravelTime` uvádí průměrnou dojezdovou dobu při plynulém provozu **259 s** pro všechna vozidla, **259 s** pro osobní a **279 s** pro nákladní vozidla.
+
+Rychlosti
+^^^^^^^^^
+
+Element `freeFlowSpeed` uvádí průměrnou rychlost při plynulém provozu **50 km/h** pro všechna vozidla, **55 km/h** pro osobní a **50 km/h** pro nákladní vozidla.

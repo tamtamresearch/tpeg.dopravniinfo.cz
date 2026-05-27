@@ -1,0 +1,66 @@
+.. _examples:
+
+
+============================
+Appendix A: Message examples
+============================
+
+travel-time.xml - travel time on a route
+========================================
+
+The publication contain one record about travel time on one route.
+
+Routes are defined in different publication of type `PredefinedLocationsPublication`, which is not described here in detail.
+
+The route, with identifier `56472218-da2f-4986-880a-3ad8e3d2bf32`, has travel time `251` seconds.
+
+.. literalinclude:: ../../samples/travel-time.xml
+   :language: xml
+
+Root element and publication envelope
+-------------------------------------
+
+Root element `d2LogicalModel` declares, that this message is using DATEX II.
+
+Element `exchange` contains provider identifier.
+
+Element `payloadPublication` is an envelope for actual information payload containing general information and one or more elements `elaboratedData`, (in our case there is one).
+
+Attribute `xsi:type="ElaboratedDataPublication"` in element `payloadPublication` determines, that this envelope is of type Elaborated data publication.
+
+Element `feedType` states publication schema by its uri.
+
+Element `publicationTime` gives time when publication has been created.
+
+Element `publicationCreator` identifies creator of the publication.
+
+`timeDefault` element gives start time of validity for all of calculated travel times, the time, for which all travel time values were calculated.
+
+Element `periodDefault` gives the sampling interval in seconds.
+
+
+Description of  calculated travel time on one route
+---------------------------------------------------
+
+Following element `elaboratedData` can be repeated and describes a calculated travel time on a particular route.
+
+Element `sourceIdentification` gives the identifier to the measuring site / equipment additionally to location identifier.
+
+Nested element `basicData` states by it's attribute `xsi:type="TravelTimeData"`, that given values are of type "travel time".
+
+Travel time location
+^^^^^^^^^^^^^^^^^^^^
+
+The attribute `id ="56472218-da2f-4986-880a-3ad8e3d2bf32" in element `predefinedLocationReference` refers to a predefined location (route) with a given identifier, and the attribute `version ='1'` specifies the version of the location description.
+
+Travel time
+^^^^^^^^^^^
+
+Element `travelTime` gives the travel time `duration` in seconds, in this case `199` seconds.
+
+Time validity
+^^^^^^^^^^^^^
+
+Time validity (start time) of calculated travel times is determined together for all records in element `timeDefault`.  
+
+

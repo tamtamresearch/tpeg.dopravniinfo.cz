@@ -1,0 +1,64 @@
+name:
+    "cs": DATEX II - Běžné dopravní informace (snímek)
+    "en": DATEX II - Common Traffic Information (snapshot)
+description:
+    "cs": Běžné dopravní informace obecného charakteru (nehody atp.), na území celé ČR, poskytované NDIC, na vyžádání jako snímek, v profilu běžné dopravní informace formátu **DATEX II verze 2.3**.
+    "en": Common traffic information (accidents etc.), provided by NDIC for the whole Czechia, on request as snapshot, in a common traffic information profile of **DATEX II model version 2.3**.
+additional_description:
+    "cs": Datový zdroj typu snímek vždy obsahuje všechny aktuálně a v budoucnu platné informace.
+    "en": Data source of type snapshot always contains all actual and future traffic information.
+content:
+    content_type: "dynamic"
+    resource_type: "data set"
+    dataset:
+        category: [Road work, Unexpected road events and conditions, Real-time traffic data]
+        detailed_type:
+            [
+                Long-term road works,
+                Short-term road works,
+                Accidents and incidents,
+                Poor road conditions,
+                Weather conditions affecting road surface and visibility,
+                Location and length of queues,
+            ]
+    language: [cs]
+pattern:
+    name:
+        "cs": Rozšířený text profilu pro běžné dopravní informace
+        "en": Common Traffic Information extended profile (Czech only)
+    file:
+        "cs": RTP-Bezne_dopravni_informace_v1.1.pdf
+        "en": RTP-Bezne_dopravni_informace_v1.1.pdf
+linked_sources:
+    - cz-ndic_tmc-location-table-v11.0
+temporal:
+    start_date: 2021-06-01
+coverage:
+    area: CZ0
+    network: [Motorways, Arterial road network, Regional roads, Urban and local roads]
+transport_modes: [car, truck, motorcycle, bus]
+responsibilities:
+    publisher: cz-ndic
+conditions_of_use:
+    contract_or_licence: Contract and Free of charge
+    # process for applying for data
+    terms_and_conditions: ddrcontract
+access_info:
+    formats:
+        - cz-ndic_d2-common-v1.1
+    protocols:
+        - cz-ndic_pull-v1.1
+    access_point: ["NDIC/data subscription"]
+    access_url: ["https://mobilitydata.rsd.cz/DataSource/Detail?id=8B3B786A"]
+quality_information:
+    status:
+        "cs": "provozní"
+        "en": "production"
+    status_description:
+        "cs": Od 23.9.2025 aktualizována lokalizace na nové verze polohových sad, Global Network (verze 25.06) a lokační tabulky (verze 11.0).
+        "en": As of 2025/09/23, update of location referencing to new versions of predefined location sets, Global Network (version 25.06) and Location Tables (version 11.0).
+    update_frequency: Up to 5min
+    quality_assesment:
+        "cs": interní procesy kontroly a křížová verifikace
+        "en": internal control mechanism and cross validation
+    ec_acts: [rtti, srti]

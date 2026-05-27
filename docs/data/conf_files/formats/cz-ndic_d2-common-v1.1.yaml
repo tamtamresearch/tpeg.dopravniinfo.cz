@@ -1,0 +1,26 @@
+name:
+    "cs": DATEX II Situation Publication - Běžné dopravní informace
+    "en": DATEX II Situation Publication - Common
+version_info:
+    version: "1.1"
+    publish_date: 2018-01-01
+encoding: UTF-8
+syntax: XML
+#schema.type
+grammar: W3C XML Schema (XSD)
+model: DATEX II
+model_version: DATEX II v2.3
+#model.profile_base
+model_description: DATEX II v2.3/SituationPublication
+#extended_parts
+model_extension: "NetworkLocation"
+description:
+    "cs": Profil odvozený z DATEX II Situation Publication, verze 2.3, používaný pro poskytování běžných dopravních informací obecného charakteru (nehody atp.).
+    "en": Profile derived from DATEX II Situation Publication, version 2.3, used for publishing common traffic information (accidents etc.).
+additional_description:
+    "cs": Formát je obsahem v mnohém odvozen od formátu DDR.
+    "en": The format has content derived from original format DDR.
+publications:
+    html: [cs, en]
+    pdf: [cs, en]
+    zip: [en-cs]

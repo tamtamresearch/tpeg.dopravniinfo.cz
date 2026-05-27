@@ -1,0 +1,19 @@
+Concepts
+========
+
+:provider:	the party providing data to a consumer.
+:consumer:	the party consuming data provided by a provider.
+:delivery url:	a url provided by HTTP server at consumer supposed to accept HTTP POST requests with message being the only content of request body.
+:event:	information having identity and validity in time describing something. An event may be updated in time.
+:situation:	collection of events.
+:snapshot:	situation describing all relevant events for one moment in time.
+:message:	data being sent by provider to consumer describing some information.
+:delta message:	a message, describing changes of a situation. It includes details about creation, modification and deletion of one or more events.
+:subscription:	the fact, that some consumer is configured at provider to consume data on given delivery url.
+:session:	sequence of all messages provided during single subscription.
+
+Provider provides delta messages. Initially, after subscription is created, all events which were created sooner but are still valid are sent via initial set of delta messages.
+
+These delta messages allow consumer to build his own initial snapshot.
+
+Later, as changes occur, further delta messages are sent and consumer shall be able updating the snapshot change by change.

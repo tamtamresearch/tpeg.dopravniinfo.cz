@@ -1,0 +1,24 @@
+name:
+    "cs": HTTP PULL na vyžádání
+    "en": HTTP PULL Upon Request
+version_info:
+    version: v1.1
+    publish_date: 2021-06-01
+interface: HTTP/HTTPS
+communication_method: Pull on request
+description:
+    "cs": |
+        Distribuce datové sady (statické datové sady či snímky dopravní situace) na vyžádání odběratelem, metodou HTTP PULL, zabezpečeno pomocí Basic Authentication. Protokol podporuje metodu if-modified-since a etag.
+    "en": |
+        Distribution of data sets (static data sets or traffic information snapshots) upon subscribers request by, HTTP PULL using Basic Authentication. Protocol supports method if-modified-since and etag.
+additional_description:
+    "cs": |
+        Aktualizace původního protokolu v1.0 ([dokumentace zde](../protocols/cz-ndic_pull-v1.0.md)) o zabezpečení a způsob indikace změny obsahu. Použitý v registru odběrů poskytovatele [https://mobilitydata.rsd.cz](https://mobilitydata.rsd.cz).
+
+        <b>Na kompletní dokumentaci se pracuje.</b>
+    "en": |
+        Updating the original protocol v1.0 ([documentation here](../protocols/cz-ndic_pull-v1.0.md)) to include security and indication of a content change (etag ...). Used in the subscription register [https://mobilitydata.rsd.cz](https://mobilitydata.rsd.cz).
+
+        <b>Documentation only available in Czech language. English version is in progress.</b>
+publications:
+    pdf: [cs]

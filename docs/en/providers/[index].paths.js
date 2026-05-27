@@ -1,0 +1,16 @@
+import {
+    generateIndexPathForKey,
+    getLanguageFromPath,
+    getParentDirName,
+    getWatchPath,
+} from "../../lib/pathGenerators.js";
+
+const lang = getLanguageFromPath(import.meta.url);
+const category = getParentDirName(import.meta.url);
+
+export default {
+    watch: getWatchPath(category, lang),
+    paths() {
+        return generateIndexPathForKey(category, lang);
+    },
+};

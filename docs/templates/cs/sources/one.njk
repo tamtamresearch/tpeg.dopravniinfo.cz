@@ -1,0 +1,117 @@
+{% if sources[key] -%}
+{% set uri_type = "x-source" -%}
+{% set cfg = sources[key] -%}
+{% set provider_id = cfg.responsibilities.publisher -%}
+{% set provider = providers[provider_id] -%}
+{% if cfg.conditions_of_use.terms_and_conditions -%}
+  {% set process_id = cfg.conditions_of_use.terms_and_conditions -%}
+  {% set process = provider.processes[process_id] -%}
+{% endif -%}
+{% if cfg.quality_information.status_description -%}
+  {% set stat_link = "[^status]" -%}
+{% endif -%}
+
+# Zdroj: {{ cfg.name | locstr(lang) }}
+
+{{ cfg.description | locstr(lang) }}
+
+{% if cfg.additional_description -%}
+{{ cfg.additional_description | locstr(lang) }}
+{% endif -%}
+
+## Obecné parametry
+
+| Parametr | Hodnota |
+|-----------|-------|
+| uri | `{{ uri_type }}:{{ key }}` |
+| poskytovatel | [{{ providers[provider_id].name | locstr(lang) }}](../providers/{{ provider_id }}) |
+| status | {{ cfg.quality_information.status | locstr(lang) }} {{ stat_link }}, poskytováno od: {{ cfg.temporal.start_date }}{% if cfg.temporal.last_update -%}, poslední aktualizace: {{ cfg.temporal.last_update | locstr(lang) }}{% endif -%}{% if cfg.temporal.end_date -%}, **ukončení: {{ cfg.temporal.end_date }}**{% endif -%} |
+| licence [^cmc] | `{{ cfg.conditions_of_use.contract_or_licence }}` |
+{% if cfg.conditions_of_use.terms_and_conditions -%}
+| proces zřízení odběru | [{{ process.name | locstr(lang) }}](../providers/{{ provider_id }}#process-{{ process_id }}) |
+{% endif -%}
+{% for format_id in cfg.access_info.formats -%}
+{% set format = formats[format_id] %}
+| model | `{{ format.model_description }}` |
+{% endfor -%}
+{% if cfg.pattern -%}
+| **použitý vzor** [^pattern] | [{{ cfg.pattern.name | locstr(lang) }}](/docs/{{ uri_type }}/{{ cfg.pattern.file | locstr(lang) }}) |
+{% endif %}
+
+## Obsah zdroje
+|Parametr [^cmc] | Hodnota |
+|----------|---------|
+| typ zdroje | `{{ cfg.content.resource_type }}` |
+| kategorie dat | {% for category in cfg.content.dataset.category %}`{{ category }}` {% endfor %} |
+| podrobný&nbsp;typ | {% for detailed_type in cfg.content.dataset.detailed_type -%}`{{ detailed_type }}` {% endfor %} |
+| jazyk&nbsp;datové&nbsp;sady | {% for language in cfg.content.language -%}`{{ language }}` {% endfor %} |
+
+{% if cfg.linked_sources %}
+### Související polohové zdroje
+|Parametr | Hodnota |
+|----------|---------|
+{% for linked_source_id in cfg.linked_sources -%}
+| související&nbsp;zdroje | [{{ sources[linked_source_id].name | locstr(lang) }}]({{ linked_source_id }}); uri:`x-source:{{ linked_source_id }}` {% if cfg.access_info.pls_key %}; pls_key:`{{ cfg.access_info.pls_key }}`{% endif %} |
+{% endfor %}
+{% endif %}
+
+## Pokrytí
+|Parametr [^cmc] | Hodnota |
+|----------|---------|
+| území | `{{ cfg.coverage.area }}` |
+| síť | {% for network in cfg.coverage.network %}`{{ network }}` {% endfor %} |
+{% if cfg.coverage.description -%}
+| popis | {{ cfg.coverage.description | locstr(lang) }} |
+{% endif -%}
+| módy&nbsp;přepravy | {% for transport_mode in cfg.transport_modes %}`{{ transport_mode }}` {% endfor %} |
+
+## Přístup a použité formáty a protokoly
+{% if cfg.access_info.access_point -%}
+{% for access_point_id in cfg.access_info.access_point -%}
+
+|Parametr | Hodnota |
+|----------|---------|
+{% set ap = access_points[access_point_id] -%}
+{% if ap.web -%}
+| přístup / API | {% for web in ap.web %}[{{ web }}]({{ web }}){% endfor %} |{% endif %}
+{% if ap.note -%}
+| poznámka | {{ ap.note | locstr(lang) }}{% endif -%}
+{% if ap.status -%}
+| stav | {{ ap.status | locstr(lang) }}{% endif -%}
+{% endfor %}
+{% endif %}
+
+### Formáty a protokoly
+|Parametr | Hodnota |
+|----------|---------|
+{% for format_id in cfg.access_info.formats -%}
+{% set format = formats[format_id] -%}
+| formát | [{{ format.name | locstr(lang) }}](../formats/{{ format_id }}), model:`{{ format.model_description }}`, uri:`x-format:{{ format_id }}` |
+{% endfor %}
+{% for protocol_id in cfg.access_info.protocols -%}
+{% set protocol = protocols[protocol_id] -%}
+| protokol | [{{ protocol.name | locstr(lang) }}](../protocols/{{ protocol_id }}), uri:`x-protocol:{{ protocol_id }}` |
+{% endfor %}
+
+## Informace o kvalitě
+|Parametr [^cmc] | Hodnota |
+|----------|---------|
+| četnost aktualizace | {{ cfg.quality_information.update_frequency }} |
+| posouzení kvality | {{ cfg.quality_information.quality_assesment | locstr(lang) }} |
+{% if cfg.quality_information.nb_assesment_date -%}
+| posouzení NB | {{ cfg.quality_information.nb_assesment_date }} |
+{% endif -%}
+{% if cfg.quality_information.ec_acts -%}
+| související Nařízení a [prohlášení o shodě](../providers/{{ cfg.responsibilities.publisher }}#conformance) | {% for act in cfg.quality_information.ec_acts -%}`{{ act }}` {% endfor %} |
+{% endif %}
+
+{% if stat_link -%}
+{{ stat_link }}: {{ cfg.quality_information.status_description | locstr(lang) }}
+{% endif %}
+
+[^cmc]: Klasifikace informací odpovídá požadavkům katalogu [EU-EIP_Coord.MetadataCatalogue_v2.0_191115.pdf](/docs/data/EU-EIP_Coord.MetadataCatalogue_v2.0_191115.pdf).
+
+{% if cfg.pattern -%}
+[^pattern]: Rozšířený text profilu specifikuje obsah zdroje podle metodiky [zde](/docs/{{ uri_type }}/Metodika_pro_vstupni_informace_NDIC_v1.1.pdf).
+{% endif -%}
+{% endif %}

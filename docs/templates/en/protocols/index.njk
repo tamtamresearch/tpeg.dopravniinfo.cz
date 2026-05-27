@@ -1,0 +1,12 @@
+# List of Protocols
+{% set items = protocols %}
+{% set uri_type = "x-protocol" %}
+
+**Protocol** defines rules and mechanisms for data exchange.  
+Protocol is dealing with data exchange process, not about the content being transferred.
+
+| Name | Description | URI |
+|------|-------------|-----|
+{% for item_id, item in items -%}
+| [{{ item.name | locstr(lang) }}]({{ item_id }}) | {{ item.description | locstr(lang) | wordwrap(10000) | trim }} | `{{ uri_type }}:{{ item_id }}` |
+{% endfor -%}

@@ -1,0 +1,374 @@
+
+
+<!doctype html>
+
+<html lang="en" data-content_root="./">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Appendix A: Message examples &#8212; NDIC - DATEX II Measured Data Publication - Detector Data 1.0rev1 documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/bizstyle.css?v=532c1bf3" />
+    
+    <script src="_static/documentation_options.js?v=ff16250e"></script>
+    <script src="_static/doctools.js?v=888ff710"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/bizstyle.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Appendix B: W3C XML Schema" href="format.html" />
+    <link rel="prev" title="Concepts" href="concepts.html" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <!--[if lt IE 9]>
+    <script src="_static/css3-mediaqueries.js"></script>
+    <![endif]-->
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="format.html" title="Appendix B: W3C XML Schema"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="concepts.html" title="Concepts"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">NDIC - DATEX II Measured Data Publication - Detector Data 1.0rev1 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Appendix A: Message examples</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="appendix-a-message-examples">
+<span id="examples"></span><h1>Appendix A: Message examples<a class="headerlink" href="#appendix-a-message-examples" title="Link to this heading">¶</a></h1>
+<section id="detector-data-xml-traffic-data-measured-at-one-equipment">
+<h2>detector-data.xml - traffic data measured at one equipment<a class="headerlink" href="#detector-data-xml-traffic-data-measured-at-one-equipment" title="Link to this heading">¶</a></h2>
+<p>Publication contains one record for one equipment capable to measure several characteristics.</p>
+<p>Equipment details (capabilities and location) are defined in different publication of type <cite>MeasurementSiteTablePublication</cite>, which is not described here in detail.</p>
+<p>The equipment, is identified by a measurement site table reference <cite>id=”CZ_DRU_MST_DET”</cite> (with version), and by measurement site reference <cite>id=”1307”</cite>, (with version).</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span>
+<span class="nt">&lt;d2LogicalModel</span><span class="w"> </span><span class="na">modelBaseVersion=</span><span class="s">&quot;2&quot;</span><span class="w"> </span><span class="na">xmlns=</span><span class="s">&quot;http://datex2.eu/schema/2/2_0&quot;</span><span class="w"> </span><span class="na">xmlns:xsd=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema&quot;</span><span class="w"> </span><span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span><span class="nt">&gt;</span>
+<span class="w">  </span><span class="nt">&lt;exchange&gt;</span>
+<span class="w">    </span><span class="nt">&lt;supplierIdentification&gt;</span>
+<span class="w">      </span><span class="nt">&lt;country&gt;</span>cz<span class="nt">&lt;/country&gt;</span>
+<span class="w">      </span><span class="nt">&lt;nationalIdentifier&gt;</span>DRU<span class="nt">&lt;/nationalIdentifier&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/supplierIdentification&gt;</span>
+<span class="w">  </span><span class="nt">&lt;/exchange&gt;</span>
+<span class="w">  </span><span class="nt">&lt;payloadPublication</span><span class="w"> </span><span class="na">lang=</span><span class="s">&quot;cs&quot;</span><span class="w"> </span><span class="na">xsi:type=</span><span class="s">&quot;MeasuredDataPublication&quot;</span><span class="nt">&gt;</span>
+<span class="w">    </span><span class="nt">&lt;feedType&gt;</span>x-format:cz-ndic_d2-detector-data-v1.0<span class="nt">&lt;/feedType&gt;</span>
+<span class="w">    </span><span class="nt">&lt;publicationTime&gt;</span>2018-03-29T08:00:29+02:00<span class="nt">&lt;/publicationTime&gt;</span>
+<span class="w">    </span><span class="nt">&lt;publicationCreator&gt;</span>
+<span class="w">      </span><span class="nt">&lt;country&gt;</span>cz<span class="nt">&lt;/country&gt;</span>
+<span class="w">      </span><span class="nt">&lt;nationalIdentifier&gt;</span>DRU<span class="nt">&lt;/nationalIdentifier&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/publicationCreator&gt;</span>
+<span class="w">    </span><span class="nt">&lt;measurementSiteTableReference</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;CZ_DRU_MST_DET&quot;</span><span class="w"> </span><span class="na">targetClass=</span><span class="s">&quot;MeasurementSiteTable&quot;</span><span class="w"> </span><span class="na">version=</span><span class="s">&quot;1&quot;</span><span class="nt">/&gt;</span>
+<span class="w">    </span><span class="nt">&lt;headerInformation&gt;</span>
+<span class="w">      </span><span class="nt">&lt;confidentiality&gt;</span>noRestriction<span class="nt">&lt;/confidentiality&gt;</span>
+<span class="w">      </span><span class="nt">&lt;informationStatus&gt;</span>real<span class="nt">&lt;/informationStatus&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/headerInformation&gt;</span>
+<span class="w">    </span><span class="nt">&lt;siteMeasurements&gt;</span>
+<span class="w">      </span><span class="nt">&lt;measurementSiteReference</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;1307&quot;</span><span class="w"> </span><span class="na">targetClass=</span><span class="s">&quot;MeasurementSiteRecord&quot;</span><span class="w"> </span><span class="na">version=</span><span class="s">&quot;1&quot;</span><span class="nt">/&gt;</span>
+<span class="w">      </span><span class="nt">&lt;measurementTimeDefault&gt;</span>2018-03-29T08:00:29+02:00<span class="nt">&lt;/measurementTimeDefault&gt;</span>
+<span class="w">      </span><span class="cm">&lt;!--start of overall characteristics: flow, occupancy and speed --&gt;</span>
+<span class="w">      </span><span class="nt">&lt;measuredValue</span><span class="w"> </span><span class="na">index=</span><span class="s">&quot;1&quot;</span><span class="nt">&gt;</span>
+<span class="w">        </span><span class="nt">&lt;measuredValue&gt;</span>
+<span class="w">          </span><span class="nt">&lt;basicData</span><span class="w"> </span><span class="na">xsi:type=</span><span class="s">&quot;TrafficFlow&quot;</span><span class="nt">&gt;</span>
+<span class="w">            </span><span class="nt">&lt;vehicleFlow&gt;</span>
+<span class="w">              </span><span class="nt">&lt;vehicleFlowRate&gt;</span>29<span class="nt">&lt;/vehicleFlowRate&gt;</span>
+<span class="w">            </span><span class="nt">&lt;/vehicleFlow&gt;</span>
+<span class="w">          </span><span class="nt">&lt;/basicData&gt;</span>
+<span class="w">        </span><span class="nt">&lt;/measuredValue&gt;</span>
+<span class="w">      </span><span class="nt">&lt;/measuredValue&gt;</span>
+<span class="w">      </span><span class="nt">&lt;measuredValue</span><span class="w"> </span><span class="na">index=</span><span class="s">&quot;2&quot;</span><span class="nt">&gt;</span>
+<span class="w">        </span><span class="nt">&lt;measuredValue&gt;</span>
+<span class="w">          </span><span class="nt">&lt;basicData</span><span class="w"> </span><span class="na">xsi:type=</span><span class="s">&quot;TrafficConcentration&quot;</span><span class="nt">&gt;</span>
+<span class="w">            </span><span class="nt">&lt;occupancy&gt;</span>
+<span class="w">              </span><span class="nt">&lt;percentage&gt;</span>0<span class="nt">&lt;/percentage&gt;</span>
+<span class="w">            </span><span class="nt">&lt;/occupancy&gt;</span>
+<span class="w">          </span><span class="nt">&lt;/basicData&gt;</span>
+<span class="w">        </span><span class="nt">&lt;/measuredValue&gt;</span>
+<span class="w">      </span><span class="nt">&lt;/measuredValue&gt;</span>
+<span class="w">      </span><span class="nt">&lt;measuredValue</span><span class="w"> </span><span class="na">index=</span><span class="s">&quot;3&quot;</span><span class="nt">&gt;</span>
+<span class="w">        </span><span class="nt">&lt;measuredValue&gt;</span>
+<span class="w">          </span><span class="nt">&lt;basicData</span><span class="w"> </span><span class="na">xsi:type=</span><span class="s">&quot;TrafficSpeed&quot;</span><span class="nt">&gt;</span>
+<span class="w">            </span><span class="nt">&lt;averageVehicleSpeed&gt;</span>
+<span class="w">              </span><span class="nt">&lt;speed&gt;</span>120<span class="nt">&lt;/speed&gt;</span>
+<span class="w">            </span><span class="nt">&lt;/averageVehicleSpeed&gt;</span>
+<span class="w">          </span><span class="nt">&lt;/basicData&gt;</span>
+<span class="w">        </span><span class="nt">&lt;/measuredValue&gt;</span>
+<span class="w">      </span><span class="nt">&lt;/measuredValue&gt;</span>
+<span class="w">      </span><span class="cm">&lt;!--end of overall characteristics: flow, occupancy and speed --&gt;</span>
+<span class="w">      </span><span class="cm">&lt;!--start of vehicle flow per hour, classes: 17-21 --&gt;</span>
+<span class="w">      </span><span class="nt">&lt;measuredValue</span><span class="w"> </span><span class="na">index=</span><span class="s">&quot;4&quot;</span><span class="nt">&gt;</span>
+<span class="w">        </span><span class="nt">&lt;measuredValue&gt;</span>
+<span class="w">          </span><span class="nt">&lt;basicData</span><span class="w"> </span><span class="na">xsi:type=</span><span class="s">&quot;TrafficFlow&quot;</span><span class="nt">&gt;</span>
+<span class="w">            </span><span class="nt">&lt;vehicleFlow&gt;</span>
+<span class="w">              </span><span class="nt">&lt;vehicleFlowRate&gt;</span>23<span class="nt">&lt;/vehicleFlowRate&gt;</span>
+<span class="w">            </span><span class="nt">&lt;/vehicleFlow&gt;</span>
+<span class="w">          </span><span class="nt">&lt;/basicData&gt;</span>
+<span class="w">        </span><span class="nt">&lt;/measuredValue&gt;</span>
+<span class="w">      </span><span class="nt">&lt;/measuredValue&gt;</span>
+<span class="w">      </span><span class="nt">&lt;measuredValue</span><span class="w"> </span><span class="na">index=</span><span class="s">&quot;5&quot;</span><span class="nt">&gt;</span>
+<span class="w">        </span><span class="nt">&lt;measuredValue&gt;</span>
+<span class="w">          </span><span class="nt">&lt;basicData</span><span class="w"> </span><span class="na">xsi:type=</span><span class="s">&quot;TrafficFlow&quot;</span><span class="nt">&gt;</span>
+<span class="w">            </span><span class="nt">&lt;vehicleFlow&gt;</span>
+<span class="w">              </span><span class="nt">&lt;vehicleFlowRate&gt;</span>0<span class="nt">&lt;/vehicleFlowRate&gt;</span>
+<span class="w">            </span><span class="nt">&lt;/vehicleFlow&gt;</span>
+<span class="w">          </span><span class="nt">&lt;/basicData&gt;</span>
+<span class="w">        </span><span class="nt">&lt;/measuredValue&gt;</span>
+<span class="w">      </span><span class="nt">&lt;/measuredValue&gt;</span>
+<span class="w">      </span><span class="nt">&lt;measuredValue</span><span class="w"> </span><span class="na">index=</span><span class="s">&quot;6&quot;</span><span class="nt">&gt;</span>
+<span class="w">        </span><span class="nt">&lt;measuredValue&gt;</span>
+<span class="w">          </span><span class="nt">&lt;basicData</span><span class="w"> </span><span class="na">xsi:type=</span><span class="s">&quot;TrafficFlow&quot;</span><span class="nt">&gt;</span>
+<span class="w">            </span><span class="nt">&lt;vehicleFlow&gt;</span>
+<span class="w">              </span><span class="nt">&lt;vehicleFlowRate&gt;</span>4<span class="nt">&lt;/vehicleFlowRate&gt;</span>
+<span class="w">            </span><span class="nt">&lt;/vehicleFlow&gt;</span>
+<span class="w">          </span><span class="nt">&lt;/basicData&gt;</span>
+<span class="w">        </span><span class="nt">&lt;/measuredValue&gt;</span>
+<span class="w">      </span><span class="nt">&lt;/measuredValue&gt;</span>
+<span class="w">      </span><span class="nt">&lt;measuredValue</span><span class="w"> </span><span class="na">index=</span><span class="s">&quot;7&quot;</span><span class="nt">&gt;</span>
+<span class="w">        </span><span class="nt">&lt;measuredValue&gt;</span>
+<span class="w">          </span><span class="nt">&lt;basicData</span><span class="w"> </span><span class="na">xsi:type=</span><span class="s">&quot;TrafficFlow&quot;</span><span class="nt">&gt;</span>
+<span class="w">            </span><span class="nt">&lt;vehicleFlow&gt;</span>
+<span class="w">              </span><span class="nt">&lt;vehicleFlowRate&gt;</span>2<span class="nt">&lt;/vehicleFlowRate&gt;</span>
+<span class="w">            </span><span class="nt">&lt;/vehicleFlow&gt;</span>
+<span class="w">          </span><span class="nt">&lt;/basicData&gt;</span>
+<span class="w">        </span><span class="nt">&lt;/measuredValue&gt;</span>
+<span class="w">      </span><span class="nt">&lt;/measuredValue&gt;</span>
+<span class="w">      </span><span class="nt">&lt;measuredValue</span><span class="w"> </span><span class="na">index=</span><span class="s">&quot;8&quot;</span><span class="nt">&gt;</span>
+<span class="w">        </span><span class="nt">&lt;measuredValue&gt;</span>
+<span class="w">          </span><span class="nt">&lt;basicData</span><span class="w"> </span><span class="na">xsi:type=</span><span class="s">&quot;TrafficFlow&quot;</span><span class="nt">&gt;</span>
+<span class="w">            </span><span class="nt">&lt;vehicleFlow&gt;</span>
+<span class="w">              </span><span class="nt">&lt;vehicleFlowRate&gt;</span>0<span class="nt">&lt;/vehicleFlowRate&gt;</span>
+<span class="w">            </span><span class="nt">&lt;/vehicleFlow&gt;</span>
+<span class="w">          </span><span class="nt">&lt;/basicData&gt;</span>
+<span class="w">        </span><span class="nt">&lt;/measuredValue&gt;</span>
+<span class="w">      </span><span class="nt">&lt;/measuredValue&gt;</span>
+<span class="w">      </span><span class="nt">&lt;measuredValue</span><span class="w"> </span><span class="na">index=</span><span class="s">&quot;9&quot;</span><span class="nt">&gt;</span>
+<span class="w">        </span><span class="nt">&lt;measuredValue&gt;</span>
+<span class="w">          </span><span class="nt">&lt;basicData</span><span class="w"> </span><span class="na">xsi:type=</span><span class="s">&quot;TrafficFlow&quot;</span><span class="nt">&gt;</span>
+<span class="w">            </span><span class="nt">&lt;vehicleFlow&gt;</span>
+<span class="w">              </span><span class="nt">&lt;vehicleFlowRate&gt;</span>0<span class="nt">&lt;/vehicleFlowRate&gt;</span>
+<span class="w">            </span><span class="nt">&lt;/vehicleFlow&gt;</span>
+<span class="w">          </span><span class="nt">&lt;/basicData&gt;</span>
+<span class="w">        </span><span class="nt">&lt;/measuredValue&gt;</span>
+<span class="w">      </span><span class="nt">&lt;/measuredValue&gt;</span>
+<span class="w">      </span><span class="cm">&lt;!--end of vehicle flow per hour, classes: 17-21 --&gt;</span>
+<span class="w">      </span><span class="cm">&lt;!--start of occupancy, classes: 17-21 with one error value --&gt;</span>
+<span class="w">      </span><span class="nt">&lt;measuredValue</span><span class="w"> </span><span class="na">index=</span><span class="s">&quot;10&quot;</span><span class="nt">&gt;</span>
+<span class="w">       </span><span class="nt">&lt;measuredValue&gt;</span>
+<span class="w">          </span><span class="nt">&lt;measurementEquipmentFault&gt;</span>
+<span class="w">            </span><span class="nt">&lt;faultLastUpdateTime&gt;</span>2018-03-21T15:59:21+02:00<span class="nt">&lt;/faultLastUpdateTime&gt;</span>
+<span class="w">            </span><span class="nt">&lt;measurementEquipmentFault&gt;</span>noDataValuesAvailable<span class="nt">&lt;/measurementEquipmentFault&gt;</span>
+<span class="w">          </span><span class="nt">&lt;/measurementEquipmentFault&gt;</span>
+<span class="w">        </span><span class="nt">&lt;/measuredValue&gt;</span>
+<span class="w">      </span><span class="nt">&lt;/measuredValue&gt;</span>
+<span class="w">      </span><span class="nt">&lt;measuredValue</span><span class="w"> </span><span class="na">index=</span><span class="s">&quot;11&quot;</span><span class="nt">&gt;</span>
+<span class="w">        </span><span class="nt">&lt;measuredValue&gt;</span>
+<span class="w">          </span><span class="nt">&lt;basicData</span><span class="w"> </span><span class="na">xsi:type=</span><span class="s">&quot;TrafficConcentration&quot;</span><span class="nt">&gt;</span>
+<span class="w">            </span><span class="nt">&lt;occupancy&gt;</span>
+<span class="w">              </span><span class="nt">&lt;percentage&gt;</span>0<span class="nt">&lt;/percentage&gt;</span>
+<span class="w">            </span><span class="nt">&lt;/occupancy&gt;</span>
+<span class="w">          </span><span class="nt">&lt;/basicData&gt;</span>
+<span class="w">        </span><span class="nt">&lt;/measuredValue&gt;</span>
+<span class="w">      </span><span class="nt">&lt;/measuredValue&gt;</span>
+<span class="w">      </span><span class="nt">&lt;measuredValue</span><span class="w"> </span><span class="na">index=</span><span class="s">&quot;12&quot;</span><span class="nt">&gt;</span>
+<span class="w">        </span><span class="nt">&lt;measuredValue&gt;</span>
+<span class="w">          </span><span class="nt">&lt;basicData</span><span class="w"> </span><span class="na">xsi:type=</span><span class="s">&quot;TrafficConcentration&quot;</span><span class="nt">&gt;</span>
+<span class="w">            </span><span class="nt">&lt;occupancy&gt;</span>
+<span class="w">              </span><span class="nt">&lt;percentage&gt;</span>0<span class="nt">&lt;/percentage&gt;</span>
+<span class="w">            </span><span class="nt">&lt;/occupancy&gt;</span>
+<span class="w">          </span><span class="nt">&lt;/basicData&gt;</span>
+<span class="w">        </span><span class="nt">&lt;/measuredValue&gt;</span>
+<span class="w">      </span><span class="nt">&lt;/measuredValue&gt;</span>
+<span class="w">      </span><span class="nt">&lt;measuredValue</span><span class="w"> </span><span class="na">index=</span><span class="s">&quot;13&quot;</span><span class="nt">&gt;</span>
+<span class="w">        </span><span class="nt">&lt;measuredValue&gt;</span>
+<span class="w">          </span><span class="nt">&lt;basicData</span><span class="w"> </span><span class="na">xsi:type=</span><span class="s">&quot;TrafficConcentration&quot;</span><span class="nt">&gt;</span>
+<span class="w">            </span><span class="nt">&lt;occupancy&gt;</span>
+<span class="w">              </span><span class="nt">&lt;percentage&gt;</span>0<span class="nt">&lt;/percentage&gt;</span>
+<span class="w">            </span><span class="nt">&lt;/occupancy&gt;</span>
+<span class="w">          </span><span class="nt">&lt;/basicData&gt;</span>
+<span class="w">        </span><span class="nt">&lt;/measuredValue&gt;</span>
+<span class="w">      </span><span class="nt">&lt;/measuredValue&gt;</span>
+<span class="w">      </span><span class="nt">&lt;measuredValue</span><span class="w"> </span><span class="na">index=</span><span class="s">&quot;14&quot;</span><span class="nt">&gt;</span>
+<span class="w">        </span><span class="nt">&lt;measuredValue&gt;</span>
+<span class="w">          </span><span class="nt">&lt;basicData</span><span class="w"> </span><span class="na">xsi:type=</span><span class="s">&quot;TrafficConcentration&quot;</span><span class="nt">&gt;</span>
+<span class="w">            </span><span class="nt">&lt;occupancy&gt;</span>
+<span class="w">              </span><span class="nt">&lt;percentage&gt;</span>0<span class="nt">&lt;/percentage&gt;</span>
+<span class="w">            </span><span class="nt">&lt;/occupancy&gt;</span>
+<span class="w">          </span><span class="nt">&lt;/basicData&gt;</span>
+<span class="w">        </span><span class="nt">&lt;/measuredValue&gt;</span>
+<span class="w">      </span><span class="nt">&lt;/measuredValue&gt;</span>
+<span class="w">      </span><span class="nt">&lt;measuredValue</span><span class="w"> </span><span class="na">index=</span><span class="s">&quot;15&quot;</span><span class="nt">&gt;</span>
+<span class="w">        </span><span class="nt">&lt;measuredValue&gt;</span>
+<span class="w">          </span><span class="nt">&lt;basicData</span><span class="w"> </span><span class="na">xsi:type=</span><span class="s">&quot;TrafficConcentration&quot;</span><span class="nt">&gt;</span>
+<span class="w">            </span><span class="nt">&lt;occupancy&gt;</span>
+<span class="w">              </span><span class="nt">&lt;percentage&gt;</span>0<span class="nt">&lt;/percentage&gt;</span>
+<span class="w">            </span><span class="nt">&lt;/occupancy&gt;</span>
+<span class="w">          </span><span class="nt">&lt;/basicData&gt;</span>
+<span class="w">        </span><span class="nt">&lt;/measuredValue&gt;</span>
+<span class="w">      </span><span class="nt">&lt;/measuredValue&gt;</span>
+<span class="w">      </span><span class="cm">&lt;!--end of occupancy, classes: 17-21 --&gt;</span>
+<span class="w">      </span><span class="cm">&lt;!--start averagge speed, classes: 16,18,19 --&gt;</span>
+<span class="w">      </span><span class="nt">&lt;measuredValue</span><span class="w"> </span><span class="na">index=</span><span class="s">&quot;16&quot;</span><span class="nt">&gt;</span>
+<span class="w">        </span><span class="nt">&lt;measuredValue&gt;</span>
+<span class="w">          </span><span class="nt">&lt;basicData</span><span class="w"> </span><span class="na">xsi:type=</span><span class="s">&quot;TrafficSpeed&quot;</span><span class="nt">&gt;</span>
+<span class="w">            </span><span class="nt">&lt;averageVehicleSpeed&gt;</span>
+<span class="w">              </span><span class="nt">&lt;speed&gt;</span>129<span class="nt">&lt;/speed&gt;</span>
+<span class="w">            </span><span class="nt">&lt;/averageVehicleSpeed&gt;</span>
+<span class="w">          </span><span class="nt">&lt;/basicData&gt;</span>
+<span class="w">        </span><span class="nt">&lt;/measuredValue&gt;</span>
+<span class="w">      </span><span class="nt">&lt;/measuredValue&gt;</span>
+<span class="w">      </span><span class="nt">&lt;measuredValue</span><span class="w"> </span><span class="na">index=</span><span class="s">&quot;18&quot;</span><span class="nt">&gt;</span>
+<span class="w">        </span><span class="nt">&lt;measuredValue&gt;</span>
+<span class="w">          </span><span class="nt">&lt;basicData</span><span class="w"> </span><span class="na">xsi:type=</span><span class="s">&quot;TrafficSpeed&quot;</span><span class="nt">&gt;</span>
+<span class="w">            </span><span class="nt">&lt;averageVehicleSpeed&gt;</span>
+<span class="w">              </span><span class="nt">&lt;speed&gt;</span>87<span class="nt">&lt;/speed&gt;</span>
+<span class="w">            </span><span class="nt">&lt;/averageVehicleSpeed&gt;</span>
+<span class="w">          </span><span class="nt">&lt;/basicData&gt;</span>
+<span class="w">        </span><span class="nt">&lt;/measuredValue&gt;</span>
+<span class="w">      </span><span class="nt">&lt;/measuredValue&gt;</span>
+<span class="w">      </span><span class="nt">&lt;measuredValue</span><span class="w"> </span><span class="na">index=</span><span class="s">&quot;19&quot;</span><span class="nt">&gt;</span>
+<span class="w">        </span><span class="nt">&lt;measuredValue&gt;</span>
+<span class="w">          </span><span class="nt">&lt;basicData</span><span class="w"> </span><span class="na">xsi:type=</span><span class="s">&quot;TrafficSpeed&quot;</span><span class="nt">&gt;</span>
+<span class="w">            </span><span class="nt">&lt;averageVehicleSpeed&gt;</span>
+<span class="w">              </span><span class="nt">&lt;speed&gt;</span>89<span class="nt">&lt;/speed&gt;</span>
+<span class="w">            </span><span class="nt">&lt;/averageVehicleSpeed&gt;</span>
+<span class="w">          </span><span class="nt">&lt;/basicData&gt;</span>
+<span class="w">        </span><span class="nt">&lt;/measuredValue&gt;</span>
+<span class="w">      </span><span class="nt">&lt;/measuredValue&gt;</span>
+<span class="w">      </span><span class="cm">&lt;!--end averagge speed, classes: 16,18,19 --&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/siteMeasurements&gt;</span>
+<span class="w">  </span><span class="nt">&lt;/payloadPublication&gt;</span>
+<span class="nt">&lt;/d2LogicalModel&gt;</span>
+</pre></div>
+</div>
+<section id="root-element-and-publication-envelope">
+<h3>Root element and publication envelope<a class="headerlink" href="#root-element-and-publication-envelope" title="Link to this heading">¶</a></h3>
+<p>Root element <cite>d2LogicalModel</cite> declares, that this message is using DATEX II.</p>
+<p>Element <cite>exchange</cite> contains provider identifier.</p>
+<p>Element <cite>payloadPublication</cite> is an envelope for actual information payload containing general information, measurement site table reference <cite>measurementSiteTableReference</cite> and one element <cite>siteMeasurements</cite>.</p>
+<p>Attribute <cite>xsi:type=”MeasuredDataPublication”</cite> in element <cite>payloadPublication</cite> determines, that this envelope is of type Measured data publication.</p>
+<p>Element <cite>feedType</cite> states publication schema by its uri.</p>
+<p>Element <cite>publicationTime</cite> gives publication time for the whole publication which might be the time, for which were all traffic status values calculated (start of validity).</p>
+<p>Element <cite>publicationCreator</cite> identifies creator of the publication.</p>
+</section>
+<section id="description-of-traffic-status-at-one-place">
+<h3>Description of traffic status at one place<a class="headerlink" href="#description-of-traffic-status-at-one-place" title="Link to this heading">¶</a></h3>
+<p>The element <cite>siteMeasurements</cite> contains one or more measurements referenced to a particular road equipment <cite>measurementSiteReference</cite>. the <cite>measurementSiteReference</cite> is identified by id and version.</p>
+<p><cite>measurementTimeDefault</cite> element gives time of validity for the set of measurement within one measurement site. It is also the time, when measured traffic data were created (i.e. the end of the measurement period).</p>
+<p>Following element <cite>measuredValue</cite> can be repeated and describes a measured traffic data for a particular measurement site.</p>
+<p>The equipment (traffic detector) has 21 capabilities defined. They are vehicle categorized versions of three traffic variables:</p>
+<ul class="simple">
+<li><p>traffic flow,</p></li>
+<li><p>traffic concentration,</p></li>
+<li><p>traffic speed.</p></li>
+</ul>
+<p>First 3 capabilities referenced in <cite>measuredValue</cite> with indexes 1-3 describe flow, occupancy and speed for all vehicles. Remaining capabilities describe these traffic values categorized by vehicle type.</p>
+<p>E.g. capabilities with indexes 4-9 describe traffic flow for:</p>
+<ul class="simple">
+<li><p>car,</p></li>
+<li><p>lorry,</p></li>
+<li><p>trailer,</p></li>
+<li><p>van,</p></li>
+<li><p>bus,</p></li>
+<li><p>motorcycle.</p></li>
+</ul>
+<p>The capabilities <cite>measuredValue</cite> with indexes 10-15 describe categorized occupancy and 16-21 categorized speed.</p>
+<p>Elements <cite>measuredValue</cite> with indexes 17, 20 and 21 are not present since the speed value could not be calculated (no vehicles of that class within measurement period).</p>
+<p>Nested element <cite>basicData</cite> contains the actual measured value of the given type.</p>
+<section id="time-validity">
+<h4>Time validity<a class="headerlink" href="#time-validity" title="Link to this heading">¶</a></h4>
+<p>Start of validity for measured data is stated by mandatory element <cite>measurementTimeDefault</cite>.</p>
+</section>
+</section>
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="index.html">
+              <img class="logo" src="_static/RSD-logo-07.jpg" alt="Logo"/>
+            </a></p>
+  <div>
+    <h3><a href="index.html">Table of Contents</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">Appendix A: Message examples</a><ul>
+<li><a class="reference internal" href="#detector-data-xml-traffic-data-measured-at-one-equipment">detector-data.xml - traffic data measured at one equipment</a><ul>
+<li><a class="reference internal" href="#root-element-and-publication-envelope">Root element and publication envelope</a></li>
+<li><a class="reference internal" href="#description-of-traffic-status-at-one-place">Description of traffic status at one place</a><ul>
+<li><a class="reference internal" href="#time-validity">Time validity</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  </div>
+  <div>
+    <h4>Previous topic</h4>
+    <p class="topless"><a href="concepts.html"
+                          title="previous chapter">Concepts</a></p>
+  </div>
+  <div>
+    <h4>Next topic</h4>
+    <p class="topless"><a href="format.html"
+                          title="next chapter">Appendix B: W3C XML Schema</a></p>
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/examples.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="format.html" title="Appendix B: W3C XML Schema"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="concepts.html" title="Concepts"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">NDIC - DATEX II Measured Data Publication - Detector Data 1.0rev1 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Appendix A: Message examples</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+    &#169; Copyright 2023, TamTam Research s.r.o..
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.5.
+    </div>
+  </body>
+</html>

@@ -1,0 +1,44 @@
+==============================================
+Příloha B: Reprezentativní XML Schéma RELAX NG
+==============================================
+
+K popisu struktury XML Je použito RELAX NG schéma v kompaktním formátu. Doporučujeme zkusit dané schéma přečíst, protože se nám tato forma jeví jako nejkompaktnější a nejčitelnější z dostupných typů schémat.
+
+Pokud však trváte na použití W3C XML Schema 1.0, přikládáme i tento typ schématu, které je vytvořeno konverzí z RELAX NG.
+
+RELAX NG Compact Syntax Schema (RNC)
+====================================
+
+RNC schéma popisuje očekávané struktury XML dokumentu.
+
+Kořenový element je uveden pomocí `start =`.
+
+Všechny další `<SomeName> =` elementy definují tzv. vzory.
+
+V našem schématu jsou následující sekce:
+
+- prolog (deklarace jmenného prostoru)
+- vložení jiných schéma (není využito v tomto případě)
+- definice kořenového elementu (`start =`)
+- vzory pro elementy
+- vzory pro atributy
+- vzory pro datové typy
+
+Komentáře `##` poskytují více detailů k významu jednotlivých částí.
+
+
+`WinterConditions.rnc` - kořen schématu
+---------------------------------------
+
+.. literalinclude:: ../../schema/WinterConditions-cs.rnc
+   :language: rnc
+
+.. _regioncodes-complete:
+
+`WinterConditionsRegionCodes.rnc` - číselník zimních zpravodajských oblastí
+---------------------------------------------------------------------------
+
+.. literalinclude:: ../../schema/WinterConditionsRegionCodes-cs.rnc
+   :language: rnc
+   :linenos:
+   :lineno-match:

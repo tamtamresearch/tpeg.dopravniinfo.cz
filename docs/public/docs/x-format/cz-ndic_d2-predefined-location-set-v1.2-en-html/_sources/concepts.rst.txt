@@ -1,0 +1,167 @@
+========
+Concepts
+========
+
+Described format allows publishing of predefined locations used for referencing of status information (travel times, level of service, tunnel status, parking occupancy, weather station reports etc.).
+
+Publication type PredefinedLocationPublication
+==============================================
+
+Format is based on DATEX II publication of type `PredefinedLocationPublication`
+[16157-3]_. The profile uses most of data structures, provided by this type of publication and extends it by proprietary location referencing.
+
+.. literalinclude:: ../../samples/predefined_location_samples_set.xml
+   :language: xml
+   :linenos:
+   :lineno-match:
+   :end-before: <predefinedLocationContainer
+
+
+Predefined location description
+===============================
+
+Each `predefinedLocationContainer` of type `xsi:type="PredefinedLocation"` contains a description of the location of one real world location. There are as many `predefinedLocationContainer` elements in the publication as there are predefined locations. The uniqueness of the predefined locations in this publication is guaranteed by the unique identifier and version.
+
+.. literalinclude:: ../../samples/predefined_location_samples_set.xml
+   :language: xml
+   :linenos:
+   :lineno-match:
+   :start-after: </headerInformation>
+   :end-before: <predefinedLocationName>
+
+In a publication, it is possible to use `predefinedLocationContainer` of type `xsi:type="PredefinedNonOrderedLocationGroup"` to describe multiple non-continuos locations together, each separate location is then contained in nested `predefinedLocation` elements.
+
+.. literalinclude:: ../../samples/predefined_location_loc_group.xml
+   :language: xml
+   :linenos:
+   :lineno-match:
+   :start-after: </headerInformation>
+   :end-before: <predefinedLocationName>
+
+   
+The location can be described by a point or a short line segment on the road network.  Locations of type area are not used. 
+
+The position description methods are further described in the chapter "Location description".
+
+=============
+Time validity
+=============
+
+The publication start of validity is defined by `publicationTime` for all predefined locations in the publication. No other time record is contained in the publication. 
+
+.. note::
+	In case of new publication due to changes to predefined location set, old locations remains the same, new locations get new id and updated locations got its version increased.
+
+.. literalinclude:: ../../samples/predefined_location_samples_set.xml
+   :language: xml
+   :linenos:
+   :lineno-match:
+   :start-after: <payloadPublication
+   :end-before: <publicationCreator
+
+====================
+Location referencing
+====================
+
+All locations in this publication are predefined and each is contained within element `PrefefinedLocationContainer` globally identified by its identifier and version (these are used to reference the location from other publications). Element `location` (descendant of `NetworkLocation`) with type `Point` or `Linear` contains description of one physical location in one or more location referencing methods.
+
+Three location description methods for a linear location and four location description methods for point location can be used to describe the location. The method use depends on method availability at the location. At least one location description shall be used.
+
+
+Location description by means of ALERT-C
+========================================
+
+The method describes the position using ALERT-C codes, class `alertCLinear` of type `AlertCMethod2Linear` is used. The use of this method depends on the presence of an ALERT-C location at a given location.
+
+The `alertCLinear` method uses a primary location (`alertCMethod2PrimaryPointLocation` element), a secondary location (`alertCMethod2SecondaryPointLocation` element) to describe the event. Of course, the method also contains elements allowing to identify a specific location table.
+
+The primary location is, according to the ALERT-C principle, the place where the accident occurred or where the driver leaves the problem area. The secondary location is the end of the convoy or where the driver first enters the problem area. 
+
+In order to find out the direction of the situation, the `alertCDirectionCoded` element is used, which takes the value `positive` if the direction of the traffic flow agrees with the coding of the given route. 
+
+.. important::
+
+	WARNING, the meaning of this attribute is therefore exactly the opposite of the `direction` attribute in RDS-TMC, which is used to find the secondary location.
+
+
+The `alertCLinear` element may occur multiple times in the situation description for long events that must be described by more than one ALERT-C path. This is because ALERT-C only allows locations to be chained within a single path.
+
+..  note::
+
+	The `alertCLinear` method is also used to describe a **point location** (even the inside of an intersection or tunnel, i.e. a short segment). When primary and secondary locations are the same. The direction can be read from the `alertCDirectionCoded` element).
+
+.. literalinclude:: ../../samples/predefined_location_samples_set.xml
+   :language: xml
+   :linenos:
+   :lineno-match:
+   :start-after: <!-- Sample of alertCLinear begin -->
+   :end-before: <!-- Sample of alertCLinear end -->
+
+Location description using mileage
+==================================
+
+The method uses `linearWithinLinearElement` for the description of the position using mileage. The `roadNumber` element describes the number of the affected road, the `directionRelativeOnLinearSection` element describes the direction of the affected road, and the `fromPoint` and `toPoint` elements describe the distance of the start and end of the event from the start of the road. 
+
+.. literalinclude:: ../../samples/predefined_location_samples_set.xml
+   :language: xml
+   :linenos:
+   :lineno-match:
+   :start-after: <!-- Sample of linearWithinLinearElement begin -->
+   :end-before: <!-- Sample of linearWithinLinearElement end -->
+
+The method for description of a point event `PointAlongLinearElement` differs by simply describing one distance from the beginning of the identified road instead of two.
+
+.. literalinclude:: ../../samples/predefined_location_samples_set.xml
+   :language: xml
+   :linenos:
+   :lineno-match:
+   :start-after: <!-- Sample of pointAlongLinearElement begin -->
+   :end-before: <!-- Sample of pointAlongLinearElement end -->
+
+Location description using the Global Network extension
+=======================================================
+
+Native method of position input in NDIC using **Extension of DATEX II model of level B**.
+
+The method describes, in the `globalNetworkLinear` element, the location using the segments `linearWithinLinearGNElement` of the Global Network (GN) road network, identified by the `networkVersion` version. Each segment contains a sequence, an identifier referring to the GN, and a relative truncation (for the first and last segment). Furthermore, the position is bounded by the elements `startPoint` and `endPoint` in coordinates (here S-JTSK).
+
+.. note::
+
+	The `globalNetworkLinear` method is also used to describe a **point location** (even the inside of an intersection or tunnel, i.e. a short segment). The `startPoint` and `endPoint` positions contain the same coordinate. 
+
+.. literalinclude:: ../../samples/predefined_location_samples_set.xml
+   :language: xml
+   :linenos:
+   :lineno-match:
+   :start-after: <!-- Sample of globalNetworkLinear begin -->
+   :end-before: <!-- Sample of globalNetworkLinear end -->
+   
+Location description using OpenLR extension
+===========================================
+
+The OpenLR method in the `openlrExtendedLinear` element, uses a routing algorithm to describe the location and thus allows on-the-fly localization.
+
+The method uses the reference points `openlrLocationReferencePoint` and `openlrLastLocationReferencePoint` containing coordinates, road direction, and a road type. These reference points are used as the start and end to find the road which is further refined using offsets to the actual extent of the event. In case 2 points are not enough the method allows to use intermediate points. 
+
+.. note::
+
+	To describe a **point location** (even the inside of an intersection or tunnel, i.e. a short segment) the `openlrExtendedLinear` method is also used, when offsets refer to a segment with zero length.
+
+.. literalinclude:: ../../samples/predefined_location_samples_set.xml
+   :language: xml
+   :linenos:
+   :lineno-match:
+   :start-after: <!-- Sample of openlrExtendedLinear begin -->
+   :end-before: <!-- Sample of openlrExtendedLinear end -->
+
+Location description using Coordinates
+======================================
+
+The method uses geographic coordinates to describe a situation location in element `pointByCoordinates` using WGS-84 coordinate system.
+
+.. literalinclude:: ../../samples/predefined_location_samples_set.xml
+   :language: xml
+   :linenos:
+   :lineno-match:
+   :start-after: <!-- Sample of pointByCoordinates begin -->
+   :end-before: <!-- Sample of pointByCoordinates end -->

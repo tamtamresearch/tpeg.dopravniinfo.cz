@@ -1,0 +1,56 @@
+name:
+    "cs": DATEX II - Parkoviště nákladních vozidel (předdefinované polohy)
+    "en": DATEX II - Truck Rest Areas (predefined locations)
+description:
+    "cs": Předdefinované informace o odpočívkách a parkovištích pro nákladní vozidla, využívané v dynamické publikaci inteligentního parkování, na území celé ČR, na vyžádání poskytované NDIC, ve formátu **DATEX II verze 2.3**.
+    "en": Predefined information about truck rest areas, used to reference their actual status, for the whole Czechia, provided by NDIC for download at users request, in a **DATEX II format version 2.3**.
+additional_description:
+    "cs": |
+        Datový zdroj popisuje základní charakteristiky parkovišť, vybavení a poskytované služby,  uspořádání odpočívky, adresu a polohu, včetně informací o individuálních parkovacích místech.
+
+        Polohy odpočívek včetně poloh jednotlivých parkovacích míst jsou také dostupné na [geoportálu ŘSD](https://geoportal.rsd.cz/apps/odpocivky-verejna) a celkové informace včetně služeb ve [webové aplikaci ŘSD](https://www.rsd.cz/mapa-odpocivek#/odpocivky).
+    "en": |
+        Data source describes the basic characteristics of the rest areas, the facilities and services provided, the layout of the rest area, the address and location, including information on individual parking spaces. 
+
+        Locations of rest areas and individual parking places are also available in [RSD geo portal](https://geoportal.rsd.cz/apps/odpocivky-verejna) and information about equipment, services and number of parking places in [RSD web application](https://www.rsd.cz/mapa-odpocivek#/odpocivky).
+content:
+    content_type: "static"
+    resource_type: "data set"
+    dataset:
+        category: [Parking and rest area information]
+        detailed_type: [Truck Parking - Location and conditions of parking places and service areas]
+    language: [cs]
+temporal:
+    start_date: 2016-08-16
+    last_update: 2016-08-16
+coverage:
+    area: CZ0
+    network: [Motorways, Arterial road network]
+transport_modes: [truck]
+responsibilities:
+    publisher: cz-ndic
+conditions_of_use:
+    contract_or_licence: Contract and Free of charge
+    # process for applying for data
+    terms_and_conditions: ddrcontract
+access_info:
+    formats:
+        - cz-ndic_d2-itp-table-v1.0
+    protocols:
+        - cz-ndic_pull-v1.1
+    access_point:
+        - "NDIC/data subscription"
+        - "EU/general data portal"
+    access_url: ["https://mobilitydata.rsd.cz/DataSource/Detail?dsid=18DFC8A0"]
+quality_information:
+    status:
+        "cs": provozní
+        "en": production
+    status_description:
+        "cs": datová sada vytvořena 07/2016, nová verze v přípravě (k 09/2025).
+        "en": dataset created at 07/2016, new version in preparation (as of 09/2025).
+    update_frequency: Not set up
+    quality_assesment:
+        "cs": interní procesy kontroly a křížová verifikace
+        "en": internal control mechanism and cross validation
+    ec_acts: [sstp]

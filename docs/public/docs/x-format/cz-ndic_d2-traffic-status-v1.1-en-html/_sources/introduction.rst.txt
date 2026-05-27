@@ -1,0 +1,79 @@
+============
+Introduction
+============
+
+
+This document shall be used by publisher and / or subscriber. Subscriber shall use it for format suitability evaluation and for possible implementation of received NDIC data import into own information system. Publisher shall use it as a specification of data to be published format and for possible implementation of data export from own information system into NDIC. 
+
+Here you can find:
+
+- conceptual description of published information
+- information about location referencing methods used
+- W3C XML schema of the format
+- data sample(s)
+
+Following topics are out of scope of this document and if present, shall be considered as informative only:
+
+- transfer protocol incl. access point, life cycle etc.
+- related data formats
+- typical data origin
+- typical data use
+
+General terms
+=============
+
+Following terms are used in this document:
+
+.. glossary::
+
+    format
+        description of data structure for transferring some kind of information
+
+    protocol
+        description of data transfer process and rules
+
+    NDIC
+            national traffic information centre
+
+    DATEX II model
+        class model for describing information related to the road traffic.
+        The model in form of UML is platform independent.
+
+        One of specific platforms for expressing the model is XML.
+
+        The model is extensive (it consists of few thousands of structural items representing term incl. definition) For reference data (UML class model in form of Enterprise Architect EAP file, XML schema etc.) see [d2ref]_.  For additional information see [d2supp]_.
+
+    (DATEX II) profile
+        simplified class model, still sufficient for specific needs. Profile is created from model by selecting only specific parts.
+
+    (DATEX II) extension
+        extended DATEX II model, adding data structures missing in standard model but needed for specific needs.
+
+    B level extension
+        Extension of DATEX II model, which is backward compatible with the original DATEX II model, even though it contains additional structures. [16157-1]_
+
+    C level extension
+        Extension of DATEX II model, which is not backward compatible with the original DATEX II model.
+
+    publication
+        an element of DATEX II model, serving as an envelope for transmitted
+        content of certain kind. Every sent DATEX II message contains exactly one element of publication type.  There are various types of publications, for example `SituationPublication` [16157-3]_, `ElaboratedDataPublication` [16157-5]_, `PredefinedLocationsPublication` [16157-3]_ etc.
+
+    (W3C) XML schema
+        language, which allows definition of rules for a XML document structure.
+
+    XSD
+        XML document containing XML schema. Sometimes it is synonym for XML schema itself.
+
+    uri
+        uniform resource identifier, text, used as unique identifier. In this document, every format has it's own uri.
+
+.. [16157-1] CEN TS 16157-1:2011 Intelligent transport systems – DATEX II data exchange specifications for traffic management and information – Part 1: Context and framework, https://standards.cencenelec.eu/dyn/www/f?p=CEN:110:0::::FSP_PROJECT:31061&cs=1ED8DA728BFDB3CF4C98EF696427A420D 
+.. [16157-2] CEN TS 16157-2:2011 Intelligent transport systems - DATEX II data exchange specifications for traffic management and information - Part 2: Location referencing, , https://standards.cencenelec.eu/dyn/www/f?p=CEN:110:0::::FSP_PROJECT:31062&cs=11C587676AF23E874354108C5B94B99F6 
+.. [16157-3] CEN TS 16157-3:2011 Intelligent transport systems - DATEX II data exchange specifications for traffic management and information - Part 3: Situation Publication, https://standards.cencenelec.eu/dyn/www/f?p=CEN:110:0::::FSP_PROJECT:31063&cs=154597D857428FFFF988477C51088FE30
+.. [16157-4] CEN TS 16157-4:2014 Intelligent transport systems - DATEX II data exchange specifications for traffic management and information - Part 4: Variable Message Sign (VMS) Publications, https://standards.cencenelec.eu/dyn/www/f?p=CEN:110:0::::FSP_PROJECT:37597&cs=1046FF87225820240FCDAE9E4EF3118EB
+.. [16157-5] CEN TS 16157-5:2014 Intelligent transport systems - DATEX II data exchange specifications for traffic management and information - Part 5: Measured and elaborated data publications, https://standards.cencenelec.eu/dyn/www/f?p=CEN:110:0::::FSP_PROJECT:37966&cs=110BD77D7F2B9A32FB04403D101009B89
+.. [16157-6] CEN TS 16157-6:2015 Intelligent transport systems - DATEX II data exchange specifications for traffic management and information - Part 6: Parking Publications, https://standards.cencenelec.eu/dyn/www/f?p=CEN:110:0::::FSP_PROJECT:40220&cs=1084702C54C56E3547969771C8305250B 
+.. [d2ref] DATEX II Current version/Reference set, https://docs.datex2.eu/downloads/.
+.. [d2supp] DATEX II Current version/Supporting, https://docs.datex2.eu/.
+.. [tl-wiki] Description (in Czech) of traffic levels as they are used in the Czech Republic, https://cs.wikipedia.org/wiki/Stupe%C5%88_provozu

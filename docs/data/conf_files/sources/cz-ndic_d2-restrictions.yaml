@@ -1,0 +1,53 @@
+name:
+    "cs": DATEX II - Uzavírky a omezení
+    "en": DATEX II - Restrictions
+description:
+    "cs": Plánované uzavírky a omezení provozu, na území celé ČR, poskytované NDIC, ve chvíli jejich vzniku, v profilu dopravní omezení formátu **DATEX II verze 2.3**.
+    "en": Planned closures and traffic restrictions, provided by NDIC for the whole Czechia, pushed on occurrence, in a restrictions profile of **DATEX II model version 2.3**.
+content:
+    content_type: "dynamic"
+    resource_type: "data set"
+    dataset:
+        category: [Road work]
+        detailed_type: [Long-term road works, Short-term road works]
+    language: [cs]
+pattern:
+    name:
+        "cs": Rozšířený text profilu pro uzavírky a omezení
+        "en": Restrictions extended profile information  (Czech only)
+    file:
+        "cs": RTP-Uzavirky_a_omezeni_v1.0.pdf
+        "en": RTP-Uzavirky_a_omezeni_v1.0.pdf
+linked_sources:
+    - cz-ndic_tmc-location-table-v11.0
+temporal:
+    start_date: 2018-01-01
+coverage:
+    area: CZ0
+    network: [Motorways, Arterial road network, Regional roads, Urban and local roads]
+transport_modes: [car, truck, motorcycle, bus]
+responsibilities:
+    publisher: cz-ndic
+conditions_of_use:
+    contract_or_licence: Contract and Free of charge
+    # process for applying for data
+    terms_and_conditions: ddrcontract
+access_info:
+    formats:
+        - cz-ndic_d2-restrictions-v1.1
+    protocols:
+        - cz-ndic_push-v1.1
+    access_point: ["NDIC/data subscription"]
+    access_url: ["https://mobilitydata.rsd.cz/DataSource/Detail?id=251278B8"]
+quality_information:
+    status:
+        "cs": "provozní"
+        "en": "production"
+    status_description:
+        "cs": Od 23.9.2025 aktualizována lokalizace na nové verze polohových sad, Global Network (verze 25.06) a lokační tabulky (verze 11.0).
+        "en": As of 2025/09/23, update of location referencing to new versions of predefined location sets, Global Network (version 25.06) and Location Tables (version 11.0).
+    update_frequency: On occurrence
+    quality_assesment:
+        "cs": interní procesy kontroly a křížová verifikace
+        "en": internal control mechanism and cross validation
+    ec_acts: [srti]

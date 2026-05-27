@@ -1,0 +1,26 @@
+name:
+    "cs": DATEX II Parking Situation Publication – Situace na parkovištích nákladních vozidel
+    "en": DATEX II Parking Situation Publication – Situation on Truck Rest Areas
+version_info:
+    version: "1.0"
+    publish_date: 2017-12-31
+encoding: UTF-8
+syntax: XML
+#schema.type
+grammar: W3C XML Schema (XSD)
+model: DATEX II
+model_version: DATEX II v2.3
+#model.profile_base
+model_description: DATEX II v2.3/ParkingSitationPublication
+#extended_parts
+model_extension: "none"
+description:
+    "cs": Profil odvozený z DATEX II Parking Status Publication, verze 2.3, používaný pro poskytování dynamických stavových informací o parkovištích pro nákladní vozidla (odpočívkách), včetně oprav a aktualizace informací uvedených ve statické publikaci.
+    "en": |
+        Profile derived from DATEX II Parking Status Publication, version 2.3, used for publishing dynamic status information about truck parking (rest areas), including corrections and updates of the information provided in the static publication.          
+
+        <b>Detailed documentation only available in Czech language. Following format specification contains only schema and samples.</b>
+publications:
+    html: [cs]
+    pdf: [cs]
+    zip: [en-cs]

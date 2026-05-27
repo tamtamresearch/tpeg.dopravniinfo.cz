@@ -1,0 +1,87 @@
+========
+Koncepty
+========
+Tento dokument popisuje dynamickou publikaci `ParkingSituationPublication`, která umožňuje popsat
+aktuální situaci na odpočívkách a kdykoliv ji dle potřeby aktualizovat.
+
+*Statickou publikací* zde myslíme `ParkingTablePublication`, protože poskytuje dlouhodobě platné (tedy relativně statické) informace o odpočívkách.
+
+*Dynamickou publikací* zde myslíme `ParkingSituationPublication`, protože se aktualizuje relativně často a má schopnost popisovat proměnlivost situace na odpočívkách.
+
+
+Doplnění informací ze statické publikace
+========================================
+Dynamická publikace vyžaduje statickou publikaci, protože na ni v řadě případů odkazuje. Základní
+struktura odpočívky je tedy plně dána statickou publikací, dynamická publikace nedokáže žádný z
+prvků parkoviště přidávat, dokáže jen aktualizovat informace o již existujících prvcích.
+
+Oprava statických informací
+---------------------------
+Dynamická publikace dokáže opravit statické informace v tom směru, že upřesní některé jejich atributy (např. kontaktní údaje, dostupnost dané služby či vybavení). Tyto "opravy" mohou být např. charakteru "restaurace uzavřena", "dvě z pěti toalet jsou mimo provoz" atp.
+
+Jde o jistou formu inventury statických informací a opravný dokument, který upřesňuje, jakou mají relativně dlouhodobé informace skutečnou hodnotu. Tyto opravné informace se mohou upřesňovat v řádu dnů, týdnů či měsíců.
+
+Doplnění stavových informací
+----------------------------
+Dynamická publikace dále doplňuje statické informace o aktuální stav, např. uvádí počet aktuálně volných parkovacích míst, obsazenost konkrétních parkovacích míst atp. Tyto informace se aktualizují v řádu minut až hodin.
+
+Struktura publikace `ParkingSituationPublication`
+=================================================
+Informace o situaci na parkovištích jsou proměnlivého charakteru a jsou poskytované pomocí publikace `ParkingSituationPublication` [16157-6]_, která sestává z těchto částí:
+
+- Úvodní obecné informace
+- Odkaz na tabulku odpočívek
+- Informace o stavu na odpočívce
+
+    - Čas aktualizace
+    - Stavy obsazenosti míst a zón
+    - Změny stavu zařízení a služeb
+    - Obecný stav odpočívky
+
+Každá jedna publikace je reprezentována jedním XML dokumentem.
+
+V každé publikaci je hlavním elementem `parkingStatusPublication`, ve které je odkaz `parkingTableReference` na tabulku parkovišť ze statické publikace a v ní je pro každou odpočívku jeden element `parkingRecordStatus` typu `ParkingSiteStatus`. V ní je elementem `parkingRecordReference` odkázáno na konkrétní odpočívku v tabulce odpočívek a tím je dán kontext pro identifikátory a indexy souvisejících objektů z této tabulky.
+
+Následující vnořené elementy (např. `parkingSpaceStatus`, `groupOfParkingSpacesStatus`) pak mohou
+popisovat aktuální stav dokazovaných parkovacích míst, jejich skupin atp.
+
+Element `parkingOccupancy` pak dovoluje popsat další souhrnné stavové informace.
+
+Objekty musí existovat v tabulce odpočívek
+==========================================
+Dynamická publikace dokáže posat aktuální stav prvků, jako jsou parkovací místo, skupina parkovacích míst, služby a vybavení, neumožňuje ale sama o sobě takové prvky definovat, protože se na ně může jen odkazovat.
+
+Odkazy jsou prováděny pomocí identifikátorů nebo indexů (více viz popis statické publikace).
+
+Různé typy informací o jedné odpočívce
+======================================
+Uvedeme zde několik (nikoliv všechny) příklady informací o jedné odpočívce.
+
+Obsazenost odpočívky
+--------------------
+Element `parkingOccupancy` dovolí vyjádřit souhrnné údaje o počtech volných a obsazených míst, o
+počtu parkujících vozidel a o trendu obsazenosti.
+
+Obsazenost statistické skupiny parkovacích míst
+-----------------------------------------------
+Statistické skupiny parkovacích míst jsou ve statické publikaci zavedeny proto, aby umožnily
+zjednodušeným způsobem vyjádřit počet parkovacích míst pro jednotlivé typy vozidel v rámci celé
+dopočívky. Dynamická publikace tyto skupiny využívá ze shodných důvodů a uvádí pro ně aktuální
+obsazenost, např. počet volných a obsazených míst a detekovaný počet parkujících vozidel.
+
+
+Obsazenost fyzické skupiny parkovacích míst
+--------------------------------------------
+Fyzické skupiny parkovacích míst jsou ve statické publikaci zavedeny proto, aby umožnily
+popsat prostorové uspořádání parkovacích míst.
+
+Dynamická publikace tyto skupiny využívá ze shodných důvodů a uvádí pro ně aktuální
+obsazenost, např. počet volných a obsazených míst a detekovaný počet parkujících vozidel.
+
+Stav služeb a vybavenosti
+-------------------------
+Pro každou indexovanou službu či zařízení vybavenosti lze pomocí `parkingEquipmentOrServiceFacilityStatus` reportovat změnu počtu zařízení a podpoložek (počet stojanů na čerpací stanici), počet volných zařízení či položek zařízení, otvírací dobu či provozní stav.
+
+Obecný stav odpočívky
+---------------------
+Ke každé odpočívce lze uvést její stav, tedy zda je otevřená (`parkingSiteOpeningStatus`) a jestli jsou dostupná parkovací místa (`parkingSiteStatus`).

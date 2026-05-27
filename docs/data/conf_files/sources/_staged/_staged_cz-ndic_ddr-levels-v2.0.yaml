@@ -1,0 +1,47 @@
+# cz-ndic_ddr-levels-v2.0:
+# name:
+# "cs": DDR - Stupně provozu
+# "en": DDR - Traffic Statuses
+# description:
+# "cs": Stupně provozu, na území celé ČR, poskytované NDIC, ve chvíli jejich vzniku, ve formátu DDR NDIC pro běžné dopravní informace. Významná revize formátu a doplnění popisu polohy OpenLR.
+# "en": Traffic statuses, provided by NDIC for the whole Czechia, pushed on occurrence, in a DDR format for common traffic information. Major revision of the format and addition of new location method OpenLR.
+# content:
+# content_type: "dynamic"
+# resource_type: "data set"
+# dataset:
+# category: [Real-time traffic data]
+# detailed_type: [Traffic volume]
+# language: [cs]
+# linked_sources:
+# - cz-ndic_tmc-location-table-v10.1
+# temporal:
+# start_date: 2021-04-01
+# coverage:
+# area: CZ0
+# network: [Motorways, Arterial road network, Regional roads, Urban and local roads]
+# transport_modes: [car, truck, motorcycle, bus]
+# responsibilities:
+# publisher: cz-ndic
+# conditions_of_use:
+# contract_or_licence: Contract and Free of charge
+# # process for applying for data
+# terms_and_conditions: ddrcontract
+# access_info:
+# formats:
+# - cz-ndic_ddr-common-v3.4
+# protocols:
+# - cz-ndic_push-v1.1
+# access_point: ["NDIC/data subscription"]
+# quality_information:
+# status:
+# "cs": v přípravě
+# "en": in preparation
+# status_description:
+# "cs": poskytováno 07/2020 jako náhrada za zdroj [cz-ndic_ddr-levels](../sources/cz-ndic_ddr-levels.md).
+# "en": published from 07/2020 as a replacement of the [cz-ndic_ddr-levels](../sources/cz-ndic_ddr-levels.md) source.
+# update_frequency: Up to 10 min
+# quality_assesment:
+# "cs": interní procesy kontroly a křížová verifikace
+# "en": internal control mechanism and cross validation
+# ec_acts: []
+

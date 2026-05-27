@@ -1,0 +1,23 @@
+name:
+    "cs": HTTP PUSH v okamžiku změny
+    "en": HTTP PUSH on Change occurrence
+version_info:
+    version: v1.1
+    publish_date: 2021-06-01
+interface: HTTP/HTTPS
+communication_method: Push on occurrence
+description:
+    "cs": Odesílání změnových zpráv v okamžiku vzniku na web server odběratele metodou HTTP POST, zabezpečeno pomocí Basic Authentication. Protokol specifikuje stavy při odběru a umožňuje odběrateli volbu komprimační metody, výběr souřadnic a výběr geografické oblasti.
+    "en": Sending change messages at the moment of creation to the subscriber's web server using the HTTP POST method, secured using Basic Authentication. The protocol specifies the subscription states, allows the subscriber to select the compression method, select the coordinates and select the geographic area.
+
+additional_description:
+    "cs": |
+        Aktualizace původního protokolu v1.0 ([dokumentace zde](../protocols/cz-ndic_push-v1.0.md)) o zabezpečení a způsob blokování nefunkčního odběru. Použitý v registru odběrů poskytovatele [https://mobilitydata.rsd.cz](https://mobilitydata.rsd.cz).
+
+        <b>Na kompletní dokumentaci se pracuje.</b>
+    "en": |
+        Updating the original protocol v1.0 ([documentation here](../protocols/cz-ndic_push-v1.0.md)) to include security and a way to block a non-functional subscription. Used in the subscription register [https://mobilitydata.rsd.cz](https://mobilitydata.rsd.cz).
+
+        <b>Documentation only available in Czech language. English version is in progress.</b>
+publications:
+    pdf: [cs]

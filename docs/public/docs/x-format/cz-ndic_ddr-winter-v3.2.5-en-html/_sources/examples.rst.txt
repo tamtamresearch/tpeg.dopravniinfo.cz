@@ -1,0 +1,21 @@
+.. _examples:
+
+============================
+Appendix A: Message examples
+============================
+
+dry-roads.xml
+=============
+
+Publication contains exactly one message about clear sky and ideal weather.
+
+.. literalinclude:: ../../samples/dry-roads.xml
+   :language: xml
+
+new-snow-cover.xml
+==================
+
+Publication contains exactly one message about snowing and new snow cover on roads.
+
+.. literalinclude:: ../../samples/new-snow-cover.xml
+   :language: xml

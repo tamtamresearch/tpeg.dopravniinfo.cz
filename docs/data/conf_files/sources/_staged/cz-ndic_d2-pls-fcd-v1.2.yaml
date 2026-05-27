@@ -1,0 +1,50 @@
+# cz-ndic_d2-pls-fcd-v1.2:
+# name:
+# "cs": DATEX II - FCD data (předdefinované polohy) v1.2
+# "en": DATEX II - FCD data (predefined locations) v1.2
+# description:
+# "cs": Předdefinované polohy, které jsou využívány v publikacích stavových událostí FCD dat, na území celé ČR, na vyžádání poskytované NDIC, v profilu předdefinovaných poloh formátu **DATEX II verze 2.3**.
+# "en": Predefined location data used to reference FCD status oriented events, for the whole Czechia, provided by NDIC for download at users request, in a predefined locations profile of **DATEX II model version 2.3**.
+# additional_description:
+# "cs": Datový zdroj popisuje polohu sledovaných úseků pro FCD data, ty jsou založeny na úsecích dle TMC lokační tabulky. Popis polohy je uveden v TMC, OpenLR, poloha podle komunikace a vlastní extenze pro Global Network.
+# "en": Data source describes location of FCD data segments, correspond RDS-TMC smallest sections.  LOcation is described in TMC format, OpenLR, position along the road and extension using Global Network database reference.
+# content:
+# content_type: "static"
+# resource_type: "data set"
+# dataset:
+# category: [Static road network data]
+# detailed_type: [Junctions, Road classification]
+# language: [cs]
+# linked_sources:
+# - cz-ndic_tmc-location-table-v10.1
+# temporal:
+# start_date: 2023-10-15
+# coverage:
+# area: CZ0
+# network: [Motorways, Arterial road network, Regional roads, Urban and local roads]
+# transport_modes: [car, truck, motorcycle, bus]
+# responsibilities:
+# publisher: cz-ndic
+# conditions_of_use:
+# contract_or_licence: Contract and Free of charge
+# # process for applying for data
+# terms_and_conditions: ddrcontract
+# access_info:
+# formats:
+# - cz-ndic_d2-predefined-location-set-v1.2
+# protocols:
+# - cz-ndic_pull-v1.1
+# access_point: ["NDIC/data subscription"]
+# quality_information:
+# status:
+# "cs": "**v přípravě**"
+# "en": "**staging**"
+# status_description:
+# "cs": "poskytováno od 10/2023; nahrazuje zdroj cz-ndic_d2-pls-fcd ve verzi 1.0; rozšíření a opravy formátu původního zdroje; více informací o změnách v dokumentaci formátu."
+# "en": "provided from 10/2023; replacing source cz-ndic_d2-pls-fcd in version 1.0; extensions and corrections to the format of the original resource; more information about the changes in the format documentation."
+# update_frequency: Less frequent than yearly
+# quality_assesment:
+# "cs": interní procesy kontroly a křížová verifikace
+# "en": internal control mechanism and cross validation
+# ec_acts: [rtti]
+

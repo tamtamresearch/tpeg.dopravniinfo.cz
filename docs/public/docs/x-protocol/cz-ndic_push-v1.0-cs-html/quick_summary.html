@@ -1,0 +1,124 @@
+
+
+<!doctype html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="cs">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Krátký souhrn &#8212; Dokumentace pro Protokol: NDIC HTTP odesílání všech změn při výskytu 1.0.1</title>
+    <link rel="stylesheet" href="_static/bizstyle.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '1.0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/translations.js"></script>
+    <script type="text/javascript" src="_static/bizstyle.js"></script>
+    <link rel="index" title="Rejstřík" href="genindex.html" />
+    <link rel="search" title="Vyhledávání" href="search.html" />
+    <link rel="next" title="Koncepty" href="concepts.html" />
+    <link rel="prev" title="Protokol: NDIC HTTP odesílání všech změn při výskytu" href="index.html" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <!--[if lt IE 9]>
+    <script type="text/javascript" src="_static/css3-mediaqueries.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigace</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="Obecný rejstřík"
+             accesskey="I">rejstřík</a></li>
+        <li class="right" >
+          <a href="concepts.html" title="Koncepty"
+             accesskey="N">další</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="Protokol: NDIC HTTP odesílání všech změn při výskytu"
+             accesskey="P">předchozí</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Dokumentace pro Protokol: NDIC HTTP odesílání všech změn při výskytu 1.0.1</a> &#187;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h4>Přechozí téma</h4>
+  <p class="topless"><a href="index.html"
+                        title="předchozí kapitola">Protokol: NDIC HTTP odesílání všech změn při výskytu</a></p>
+  <h4>Další téma</h4>
+  <p class="topless"><a href="concepts.html"
+                        title="další kapitola">Koncepty</a></p>
+  <div role="note" aria-label="source link">
+    <h3>Tato stránka</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/quick_summary.rst.txt"
+            rel="nofollow">Ukázat zdroj</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Rychlé vyhledávání</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="OK" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="kratky-souhrn">
+<h1>Krátký souhrn<a class="headerlink" href="#kratky-souhrn" title="Trvalý odkaz na tento nadpis">¶</a></h1>
+<p>Data se zasílají od poskytovatele odběrateli.</p>
+<ol class="arabic simple">
+<li>Odběratel musí provozovat HTTP server a musí poskytnout poskytovateli url (nazývané doručovací url), na které má poskytovatel data zasílat pomocí HTTP POST požadavku (doručovaná zpráva je jediným obsahem těla požadavku).</li>
+<li>Poskytovatel nakonfiguruje novou subskripci pro dané doručovací url.</li>
+<li>Poskytovatel na úvod odešle všechny zprávy, které byly vytvořeny v minulosti a jsou stále ještě platné.</li>
+<li>Ve chvíli, kdy nastanou změny relevantní pro daného odběratele, poskytovatel odešle změny odběrateli.</li>
+</ol>
+<p>Poskytovatel musí odesílat zprávy v pořadí a v jednom vlákně.</p>
+<p>Odběratel musí odpovědět stavovým kódem HTTP <cite>200</cite>.</p>
+<p>V případě, že nastanou problémy s doručením zprávy (doručovací url není dostupné nebo stavový HTTP kód nemá hodnotu 200), poskytovatel musí pokračovat v opakovaných pokusech zprávu doručit do doby, než uspěje.</p>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigace</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="Obecný rejstřík"
+             >rejstřík</a></li>
+        <li class="right" >
+          <a href="concepts.html" title="Koncepty"
+             >další</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="Protokol: NDIC HTTP odesílání všech změn při výskytu"
+             >předchozí</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Dokumentace pro Protokol: NDIC HTTP odesílání všech změn při výskytu 1.0.1</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2017, Jan Vlčinský.
+      Vytvořeno pomocí <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.3.
+    </div>
+  </body>
+</html>
