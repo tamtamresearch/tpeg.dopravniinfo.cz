@@ -9,14 +9,15 @@ This section documents what a consumer needs to integrate with the pilot TPEG se
 
 ## At a glance
 
-|                          |                                                   |
-| ------------------------ | ------------------------------------------------- |
-| **Standards family**     | TPEG2 (ISO 21219)                                 |
-| **Encoding**             | XML                                               |
-| **Delivery**             | IP-based pull / push (see [Protocol](./protocol)) |
-| **Location referencing** | TMC + OpenLR (per application format)             |
-| **Authentication**       | Per-subscriber, issued on subscription            |
-| **Coverage**             | Czech road network, ŘSD-managed                   |
+|                          |                                                                                                            |
+| ------------------------ | ---------------------------------------------------------------------------------------------------------- |
+| **Standards family**     | TPEG2 (ISO 21219)                                                                                          |
+| **Encoding**             | XML                                                                                                        |
+| **Delivery**             | IP-based pull / push (see [Protocol](./protocol))                                                          |
+| **Location referencing** | TMC + OpenLR (per application format)                                                                      |
+| **Authentication**       | Per-subscriber, issued on subscription                                                                     |
+| **Coverage**             | Czech road network, ŘSD-managed                                                                            |
+| **Upstream source**      | [DATEX II Common feed from ŘSD / NDIC](https://registr.dopravniinfo.cz/en/sources/cz-ndic_d2-common-pull/) |
 
 ## Published formats
 
