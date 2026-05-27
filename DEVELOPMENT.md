@@ -1,474 +1,153 @@
-# Development Guide
+# Development guide
 
-Complete guide for developing and contributing to the NDIC National Registry project.
+Workflow notes for editing and shipping the `tpeg.dopravniinfo.cz` site.
 
 ---
 
-## Running the Site
+## Running the site
 
-### Development Mode
-
-Start the VitePress development server with hot module replacement:
+### Development mode
 
 ```bash
 npm run docs:dev
 ```
 
-**What happens:**
+- Serves at `http://localhost:5173`.
+- Watches `docs/` and reloads on change via VitePress HMR.
+- For larger structural changes (added/removed files, config edits), press `R` in the terminal to restart.
 
-- Opens at `http://localhost:5173`
-- **Automatically watches** `docs/data/conf_files/` for changes
-- **Auto-compiles** YAML fragments to `compiled.yaml` when files change
-- HMR updates pages instantly (no validation)
-- Fast iteration for content changes
-
-**Note:** The dev server compiles but **does not validate** configuration. For validation, use the `ndic-build` CLI tool.
-
-**When configuration changes:**
-
-1. You edit a file in `docs/data/conf_files/`
-2. VitePress detects the change
-3. Configuration is compiled to `compiled.yaml`
-4. Pages are regenerated via templates
-5. Browser updates automatically via HMR
-
-### Production Build
-
-Build the complete static site:
+### Production build
 
 ```bash
 npm run docs:build
 ```
 
-Output directory: `docs/.vitepress/dist/`
+Output: `docs/.vitepress/dist/`. VitePress validates internal markdown links at build time. Set `VITEPRESS_IGNORE_DEAD_LINKS=1` to skip - for testing only, never in CI.
 
-### Preview Production Build
-
-Preview the production build locally:
+### Preview the production build
 
 ```bash
 npm run docs:preview
 ```
 
-This serves the built site from `docs/.vitepress/dist/`
-
 ---
 
-## Available Scripts
-
-### npm/pnpm Commands
+## Available scripts
 
 | Command                | Description                              |
 | ---------------------- | ---------------------------------------- |
 | `npm run docs:dev`     | Start development server with hot-reload |
 | `npm run docs:build`   | Build production site                    |
 | `npm run docs:preview` | Preview production build                 |
-| `npm run lint`         | Run ESLint on `docs/` directory          |
+| `npm run lint`         | Run ESLint over `docs/`                  |
 | `npm run lint:fix`     | Auto-fix ESLint issues                   |
-| `npm run format`       | Format code with Prettier                |
-| `npm run format:check` | Check code formatting                    |
-
-### ndic-build Commands
-
-| Command    | Description                                        |
-| ---------- | -------------------------------------------------- |
-| `build`    | Compile and validate configuration (default)       |
-| `compile`  | Compile YAML fragments to `compiled.yaml`          |
-| `validate` | Validate configuration against schema              |
-| `watch`    | Watch for changes and auto-rebuild with validation |
-| `info`     | Show configuration statistics                      |
-
-Run with `node docs/scripts/ndic-build.js <command>` or see help with `--help`
+| `npm run format`       | Format all files with Prettier           |
+| `npm run format:check` | Check formatting without writing         |
 
 ---
 
-## Code Quality & Git Hooks
+## Content authoring
 
-The project uses automated code quality tools.
+All content is **hand-written Markdown** under `docs/en/`. There is no compilation step from YAML or templates - the site is small enough that direct editing wins.
 
-### Pre-commit Hooks
+### Where things live
 
-Git hooks automatically run before each commit using `simple-git-hooks` and `lint-staged`:
+| Path                        | Purpose                                       |
+| --------------------------- | --------------------------------------------- |
+| `docs/en/index.md`          | Home page (VitePress `home` layout)           |
+| `docs/en/about/`            | About, license, contacts, issue tracker       |
+| `docs/en/tpeg/`             | What is TPEG, value proposition               |
+| `docs/en/pilot/`            | Pilot scope & status, changelog               |
+| `docs/en/technical/`        | Protocol page and format pages                |
+| `docs/en/subscribe/`        | Subscription instructions and mailto template |
+| `docs/en/faq.md`            | FAQ                                           |
+| `docs/cs/`                  | Czech placeholder (locale dormant)            |
+| `docs/public/`              | Static assets (logo, hero image, PDFs)        |
+| `docs/.vitepress/config.js` | Nav, sidebar, plugins, site metadata          |
+| `docs/.vitepress/theme/`    | Theme customisation                           |
 
-- **JavaScript/TypeScript/Vue/JSON** files:
-    - ESLint auto-fix
-    - Prettier formatting
+### Adding a page
 
-- **Markdown/YAML** files:
-    - Prettier formatting
+1. Create the Markdown file under `docs/en/<section>/`.
+2. Add an entry to the relevant sidebar group in `docs/.vitepress/config.js`.
+3. If the page deserves a top-nav entry, edit the `nav` array as well.
+4. Cross-link from related pages.
 
-### Manual Linting
+### Editing the home page
 
-Run linting manually:
+The hero, action buttons, and feature cards are configured in the front matter of `docs/en/index.md` (VitePress `home` layout). The body markdown below the front matter renders under the hero.
+
+---
+
+## Code quality & git hooks
+
+### Pre-commit
+
+`simple-git-hooks` + `lint-staged` run on staged files:
+
+- **JS / Vue / JSON / mjs**: ESLint auto-fix → Prettier.
+- **Markdown / YAML**: Prettier.
+
+### Manual
 
 ```bash
-# Check for lint errors
-npm run lint
-
-# Auto-fix lint errors
-npm run lint:fix
-
-# Check code formatting
-npm run format:check
-
-# Format all files
-npm run format
+npm run lint          # check
+npm run lint:fix      # fix
+npm run format:check  # check formatting
+npm run format        # write formatting
 ```
 
-### Configuration Files
+Configuration:
 
-- **ESLint:** `eslint.config.js`
-- **Prettier:** `prettier.config.js`, `.prettierignore`
-- **Git Hooks:** Configured in `package.json` under `simple-git-hooks` and `lint-staged`
-
----
-
-## Content Authoring
-
-### Primary Content Locations
-
-### Configuration Structure
-
-Each configuration type follows a consistent structure with multilingual support:
-
-```yaml
-entity_key:
-    name:
-        cs: "Czech Name"
-        en: "English Name"
-    description:
-        cs: "Czech description"
-        en: "English description"
-    # ... additional properties
-```
-
-**See:** `docs/data/conf_files/README.md` for detailed schema documentation.
-
----
-
-## Navigation & Theming
-
-### VitePress Configuration
-
-Main configuration: `docs/.vitepress/config.js`
-
-**Key sections:**
-
-```javascript
-export default defineConfig({
-    locales: {
-        root: {
-            /* English config */
-        },
-        cs: {
-            /* Czech config */
-        },
-    },
-    themeConfig: {
-        nav: [
-            /* Navigation items */
-        ],
-        sidebar: {
-            /* Sidebar configuration */
-        },
-    },
-});
-```
-
-### Adding New Static Pages
-
-To add explanatory pages (FAQ, About, etc.):
-
-1. Create markdown file in `docs/en/about/newpage.md` (and `docs/cs/about/newpage.md`)
-2. Add to navigation in `docs/.vitepress/config.js`:
-
-```javascript
-nav: [{ text: "About", link: "/about/newpage" }];
-```
-
-3. (Optional) Add to sidebar for that section
-
-### Theme Customization
-
-Custom theme components: `docs/.vitepress/theme/`
-
----
-
-## Quality & Validation
-
-### Linting & Formatting
-
-#### ESLint
-
-JavaScript linting with ESLint 9:
-
-```bash
-# Check for issues
-npm run lint
-
-# Auto-fix issues
-npm run lint:fix
-```
-
-**Configuration:** `eslint.config.js`
-
-#### Prettier
-
-Code formatting for all file types:
-
-```bash
-# Check formatting
-npm run format:check
-
-# Format all files
-npm run format
-```
-
-**Configuration:** `prettier.config.js`
-
-**Formats:** JavaScript, TypeScript, Vue, JSON, Markdown, YAML
-
-### Build-time Checks
-
-During production build (`npm run docs:build`):
-
-- VitePress validates internal markdown links
-- Dead links can optionally fail the build
-- Set `VITEPRESS_IGNORE_DEAD_LINKS=1` to ignore (for testing only)
+- ESLint: `eslint.config.js`
+- Prettier: `prettier.config.js`, `.prettierignore`
+- Hooks: `simple-git-hooks` and `lint-staged` blocks in `package.json`
 
 ---
 
 ## Deployment
 
-### Building for Production
+### Target
 
-Build the static site:
+The site is deployed as static files to the production domain **`tpeg.dopravniinfo.cz`** (GitHub Pages with a CNAME against the apex hostname).
+
+### Build
 
 ```bash
 npm run docs:build
 ```
 
-**Output:** `docs/.vitepress/dist/`
+Then deploy `docs/.vitepress/dist/` to the hosting target. A CI pipeline can do this automatically - adjust the existing pipeline configuration to point at this domain.
 
-This directory contains the complete static site ready for deployment.
+### Site URL configuration
 
-### GitLab CI/CD Pipeline
+If the deployment URL changes, update:
 
-The project includes automated deployment via GitLab Pages.
-
-**Configuration:** `.gitlab-ci.yml`
-
-**Pipeline:**
-
-1. Install Node.js dependencies
-2. Run `npm run docs:build`
-3. Move `docs/.vitepress/dist` to `public/`
-4. Deploy to GitLab Pages
-
-**Deployment URL:** https://tamtamresearch.gitlab.io/crocodile/ndic-nationalregistry/
-
-**Triggers:**
-
-- Pushes to `master` branch
-- Pushes to `feat.cicd` branch (for testing)
-
-### Environment Variables
-
-#### CI/CD Environment
-
-Optional environment variables for CI/CD:
-
-- `VITEPRESS_IGNORE_DEAD_LINKS` - Set to `"1"` to ignore dead links (testing only)
-
-#### Site Configuration
-
-Site URLs are configured in `docs/.vitepress/config.js`:
-
-```javascript
-sitemap: {
-    hostname: "https://registr.dopravniinfo.cz";
-}
-```
-
-Update this for production deployment.
-
-### Manual Deployment
-
-To deploy manually:
-
-1. Build the site: `npm run docs:build`
-2. Copy `docs/.vitepress/dist/` to your web server
-3. Configure server to serve static files
-4. (Optional) Set up redirects for clean URLs
-
-**Server requirements:**
-
-- Static file serving (Apache, Nginx, etc.)
-- Support for clean URLs (no `.html` extensions)
+- `sitemap.hostname` in `docs/.vitepress/config.js`
+- The `og:url` meta tag in the `head` array of `config.js`
 
 ---
 
-### Helper Scripts
+## Languages
 
-Located in `docs/scripts/`:
-
-| Script               | Purpose                |
-| -------------------- | ---------------------- |
-| `compile-config.js`  | YAML compilation logic |
-| `validate-config.js` | Schema validation      |
-| `config-schema.js`   | Zod schema definitions |
-| `watch-config.js`    | File watching          |
-
-### Data Loading
-
-`docs/lib/dataLoader.js` - Provides `loadMainData()` function to load and parse `compiled.yaml`.
-
-Used by:
-
-- VitePress config (for sidebar generation)
-- Template rendering
-- Helper utilities
-
-### Path Generators
-
-`docs/lib/pathGenerators.js` - Helper functions for generating URLs and paths in templates.
+- **English (root locale)** - published.
+- **Czech** - dormant. Locale block is present but commented out in `docs/.vitepress/config.js`. A placeholder lives at `docs/cs/index.md`. Only re-enable if ŘSD explicitly requests Czech content.
 
 ---
 
-## Architecture Details
+## Plugins
 
-### Configuration-Driven Generation
-
-**Primary source of truth:** The `docs/data/conf_files/` directory contains YAML configuration fragments that define all providers, sources, formats, and protocols. All content originates from these files.
-
-**Compilation paths:**
-
-1. **Development mode (`npm run docs:dev`)**: VitePress automatically watches `conf_files/`, compiles changes to `compiled.yaml`, and triggers HMR (Hot Module Replacement) for instant page updates. _Note: Validation does not run automatically in dev mode._
-
-2. **Manual compilation (`ndic-build` CLI)**: Use for larger configuration changes requiring validation. The CLI tool compiles, validates, and can watch for changes.
-
-**Flow:**
-
-```
-docs/data/conf_files/ (Primary Source of Truth)
-    │
-    ├─→ VitePress dev mode → compile → HMR update (no validation)
-    │
-    └─→ ndic-build CLI → compile + validate → compiled.yaml
-```
-
-### Build Pipeline Overview
-
-The static site is generated through a multi-stage pipeline:
-
-1. **Configuration Compilation**
-    - **Source**: `docs/data/conf_files/` (YAML fragments) - **PRIMARY SOURCE OF TRUTH**
-    - **Output**: `docs/data/compiled.yaml` (auto-generated, do not edit directly)
-    - **Methods**:
-        - VitePress dev mode (automatic, no validation)
-        - `ndic-build` CLI (manual, with validation)
-
-2. **Validation** (CLI only)
-    - Schema validation
-    - Cross-reference checking
-    - Configuration statistics
-
-3. **Template Rendering**
-    - Nunjucks templates in `docs/templates/` generate markdown files
-    - Uses data from `compiled.yaml`
-    - Generates both Czech and English versions
-
-4. **VitePress Build**
-    - Processes markdown into HTML
-    - Applies theme and styling
-    - Generates static assets
-
-5. **Optimization**
-    - Pagefind search indexing
-    - Asset optimization and bundling
-
-### Template System
-
-**Nunjucks** templates generate markdown pages from the compiled YAML configuration:
-
-- **`one.njk`** - Detail pages for individual entities (providers, sources, formats, protocols)
-- **`index.njk`** - List/index pages for each category
-- **Template Variables** - Full access to configuration data, locale information, and helper functions
-
-### Content Generation Flow
-
-**Source of Truth:** `docs/data/conf_files/` (YAML fragments)
-
-The compilation can happen through two different paths:
-
-#### Path 1: Manual/CLI Build (with validation)
-
-Used for bigger configuration changes and (mainly) validation:
-
-```
-docs/data/conf_files/     docs/scripts/ndic-build.js     docs/data/compiled.yaml
-(YAML fragments)    -->   (compile + validate)      -->   (validated output)
-   [SOURCE]                [✅ WITH VALIDATION]            [ready for use]
-```
-
-**When to use:** Before commits, for major changes, when validation is needed
-
-#### Path 2: Development Mode (auto-compilation, no validation)
-
-Used during active development with `npm run docs:dev`:
-
-```
-docs/data/conf_files/     confYamlCompiler.js plugin    docs/data/compiled.yaml       VitePress HMR
-(YAML fragments)    -->   (auto-compile on save)   -->  (unvalidated output)   -->    (live updates)
-   [SOURCE]                [⚠️ NO VALIDATION]             [watched by HMR]          [instant feedback]
-```
-
-**When to use:** Small changes to the content and development
+| Plugin                         | Purpose                              |
+| ------------------------------ | ------------------------------------ |
+| `vitepress-plugin-pagefind`    | Local search index                   |
+| `vitepress-plugin-llmstxt`     | LLM-friendly `llms.txt` for the site |
+| `vitepress-plugin-group-icons` | Custom icon support                  |
+| `markdown-it-footnote`         | Markdown footnote syntax             |
 
 ---
 
-## Project Structure Details
+## External resources
 
-### Key Directories
-
-| Path                         | Purpose                                                       |
-| ---------------------------- | ------------------------------------------------------------- |
-| `docs/data/conf_files/`      | **PRIMARY SOURCE OF TRUTH** - YAML configuration fragments    |
-| `docs/data/compiled.yaml`    | Compiled configuration (auto-generated, do not edit directly) |
-| `docs/templates/`            | Nunjucks templates for generating markdown pages              |
-| `docs/cs/` and `docs/en/`    | Generated markdown content (auto-generated from templates)    |
-| `docs/public/docs/`          | Static documentation files (PDFs, specifications, images)     |
-| `docs/.vitepress/config.js`  | VitePress configuration, navigation, and sidebar setup        |
-| `docs/scripts/ndic-build.js` | CLI tool for configuration management and validation          |
-| `docs/lib/`                  | Utility libraries for data loading and path generation        |
-| `docs/.vitepress/theme/`     | Theme customization                                           |
-
-### Configuration Files Structure
-
-```
-docs/data/conf_files/
-├── formats/          # Format definitions
-├── protocols/        # Protocol definitions
-├── providers/        # Provider information
-├── sources/          # Data source definitions
-├── organizations.yaml
-├── persons.yaml
-└── terms_and_conditions.yaml
-```
-
----
-
-## Additional Resources
-
-### Documentation
-
-- **VitePress Documentation:** https://vitepress.dev/
-- **Nunjucks Documentation:** https://mozilla.github.io/nunjucks/
-- **Configuration Schema:** `docs/data/conf_files/README.md`
-- **CLI Reference:** [CLI_REFERENCE.md](CLI_REFERENCE.md)
-
-### External Plugins
-
-- **VitePress Plugin: Pagefind** - Search functionality
-- **VitePress Plugin: LLMstxt** - LLM-friendly documentation
-- **VitePress Plugin: Group Icons** - Icon support in navigation
+- [VitePress documentation](https://vitepress.dev/)
+- [TPEG standards](https://tisa.org/) (TISA)
+- [ISO 21219](https://www.iso.org/standard/63110.html) - TPEG2

@@ -2,58 +2,58 @@
 layout: home
 
 hero:
-    name: "Czech National Traffic Information Registry"
-    text: ""
-    tagline: "Search and explore"
+    name: "Pilot TPEG service in Czechia"
+    text: "Study and pilot service of the TPEG standard"
+    tagline: "🛈 Pilot · Beta — this service is in pilot operation and may be discontinued in the near future."
     image:
         src: /images/ŘSD_logo.svg
-        alt: RSD
+        alt: ŘSD
     actions:
-        - theme: alt
-          text: Providers
-          link: ./providers
         - theme: brand
-          text: Sources
-          link: ./sources
+          text: Subscribe
+          link: /subscribe/
         - theme: alt
-          text: Protocols
-          link: ./protocols
+          text: What is TPEG
+          link: /tpeg/
         - theme: alt
-          text: Formats
-          link: ./formats
+          text: Technical specifications
+          link: /technical/
         - theme: alt
-          text: About
-          link: ./about
+          text: FAQ
+          link: /faq
+
+features:
+    - title: Learn what TPEG is
+      details: A brief, vendor-neutral introduction to the TPEG family of traffic and travel information formats and why we chose it for this pilot.
+      link: /tpeg/
+      linkText: Read the introduction
+    - title: Read the specs
+      details: Protocol and format specifications, with links to the official Format Specification Package (FSP) repositories on GitHub — XSD schemas, samples, and metadata.
+      link: /technical/
+      linkText: Open technical section
+    - title: Subscribe to the feed
+      details: Send a short e-mail to CEDA Maps with the required details. We will respond with access information and onboarding help.
+      link: /subscribe/
+      linkText: Start the subscription
 ---
 
-# Czech National Traffic Information Registry
+## What this site is
 
-National Traffic Information Registry ("Registry") provides information to organisations **interested** in traffic data subscription. It contains mainly overview of traffic information sources and their providers including the technical description of the formats and protocols and information about subscription process. The registry contains this information for subscribers:
+The **Pilot TPEG service in Czechia** is a study and pilot deployment of the [TPEG](/tpeg/) standard for traffic and travel information, delivered for the Czech road network. The service is operated by **CEDA Maps a.s.** in cooperation with ŘSD (Ředitelství silnic a dálnic).
 
-- [List of providers](providers/index) of traffic information;
-- [List of sources](sources/index) of traffic information available for subscription, with all required information about the source;
-- Instructions how to make a subscription (per source).
+This site is the public face of the pilot. It helps potential data consumers understand the service, evaluate its fitness for their use, and start a subscription.
 
-Following links provide more information about the functionality[^new_version]:
+## What you'll find here
 
-- [Information structure in registry](about/structure)
-- [Systems and roles in traffic information distribution](about/systems)
-- [FAQs](about/faq)
-- [Status of the registry implementation, changelog](about/scope)
+- **[About](/about/)** — project scope, terms of use, contacts, and how to report issues.
+- **[TPEG](/tpeg/)** — what the TPEG standard is and the value it brings to traffic information distribution.
+- **[Pilot](/pilot/)** — scope, status, and changelog of this pilot deployment.
+- **[Technical specifications](/technical/)** — the protocol used and the two TPEG2 formats currently published: [TPEG2-TFP](/technical/formats/tpeg2-tfp) and [TPEG2-TEC](/technical/formats/tpeg2-tec).
+- **[Subscribe](/subscribe/)** — how to request access to the data feed.
+- **[FAQ](/faq)** — answers to common questions.
 
-## Concept of the Registry
+## Status of the pilot
 
-The National Traffic Information Register ("Register") is the implementation of the **National Access Point** in accordance with the requirements of the ITS Directive [2010/40/EU](https://eur-lex.europa.eu/eli/dir/2010/40) amended by [2023/2661](https://eur-lex.europa.eu/eli/dir/2023/2661) and its related Delegated Regulations
+> **This is a pilot, beta-quality service.** It is intended for evaluation, integration testing, and feedback. The service may be modified, paused, or discontinued at short notice. Production systems should not depend on it without prior consultation with the operator.
 
-- Commission Regulation no. [886/2013](https://eur-lex.europa.eu/eli/reg_del/2013/886) „provision of safety related traffic information“, referred to as `srti`
-- Commission Regulation no. [885/2013](https://eur-lex.europa.eu/eli/reg_del/2013/885) „provision of parking information for safe and secure truck parking“, referred to as `sstp`
-- Commission Regulation no. [2022/670](https://eur-lex.europa.eu/eli/reg_del/2022/670) „provision of real time traffic information“ , referred to as `rtti`
-- Commission Regulation [2017/1926](https://eur-lex.europa.eu/eli/reg_del/2017/1926) "provision of EU-wide multimodal travel information services", referred to as `mmtis`
-
-These regulations require the individual EU Member States to establish and operate an information service (National Access Point) for all relevant traffic information provided[^type_of_info] within their territory.
-
-The National access point is implemented as **metadata directory**. Distribution interfaces of individual providers (where the data are subscribed to) are out of the scope.
-
-[^new_version]: Version 2.0 is currently in preparation, which will significantly change the system's functionality (the expected launch date of the new version is mid-2026).
-
-[^type_of_info]: Mandatory only traffic information listed in Commission Regulations.
+We are actively looking to talk to **potential consumers** — please get in touch through the [subscription process](/subscribe/) or open a [discussion](https://github.com/tamtamresearch/tpeg.dopravniinfo.cz/discussions) on GitHub.

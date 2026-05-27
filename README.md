@@ -1,60 +1,54 @@
-# Web - tpeg.dopravniinfo.cz
+# tpeg.dopravniinfo.cz
 
-Static site generator for the TPEG website. Built with VitePress.
+Static site for the **Pilot TPEG service in Czechia** - a study and pilot deployment of the TPEG2 standard for traffic and travel information distribution on the Czech road network.
 
-## Concepts
+Operated by **CEDA Maps a.s.** in cooperation with **ŘSD** (Czech road and motorway directorate).
 
-**TPEG website** The site serves as:
-
-- introduction for a data subscriber to new TPEG data source provided by RSD.
-- format and protocol information provider
+- Production site: <https://tpeg.dopravniinfo.cz>
+- Issues & discussions: <https://github.com/tamtamresearch/tpeg.dopravniinfo.cz>
 
 ---
 
-## Quick Start
+## What this repository is
+
+This is a [VitePress](https://vitepress.dev/) project that builds the public-relations / documentation site for the pilot. It is intentionally small: the site exists to introduce the service, link to the technical specifications, and walk consumers through the subscription process.
+
+For project background and the original scope see [`BRIEF.md`](BRIEF.md). For development workflows see [`DEVELOPMENT.md`](DEVELOPMENT.md).
+
+---
+
+## Quick start
 
 ### Prerequisites
 
-- **Node.js** version 20 or higher
-- **npm** package manager
+- **Node.js** 20 or higher
+- **npm** (or pnpm)
 
-### Installation
-
-1. Clone this repository
-2. Install dependencies:
+### Install
 
 ```bash
 npm install
-# or
-pnpm install
 ```
 
-### Development Server
+### Develop
 
-Start the development server with hot-reload:
+Start the dev server with hot module replacement:
 
 ```bash
 npm run docs:dev
 ```
 
-The site will be available at `http://localhost:5173`
+The site is served at <http://localhost:5173>. The dev server is responsive to single-file edits; if you add or delete files and the page does not update, press `R` in the terminal to restart.
 
-The server might not catch more significant changes like adding or deleting new files.
-In this case it is recommended to restart the server from the console (press key R).
-
-### Building for Production
-
-Build the static site:
+### Build
 
 ```bash
 npm run docs:build
 ```
 
-The built site will be in `docs/.vitepress/dist/`
+Output goes to `docs/.vitepress/dist/`.
 
-### Preview Production Build
-
-Preview the production build locally:
+### Preview a production build
 
 ```bash
 npm run docs:preview
@@ -62,64 +56,38 @@ npm run docs:preview
 
 ---
 
-## Architecture Overview
-
-### Multilingual Support
-
-Currently only English (en) variant exists.
-
----
-
-## Project Structure
+## Project structure
 
 ```
 tpeg.dopravniinfo.cz/
 ├── docs/
-│   ├── .vitepress/           # VitePress configuration
-│   ├── public/               # Static assets
-│   ├── cs/                   # Czech content (empty)
-│   └── en/                   # English content
-└── package.json              # Dependencies and scripts
+│   ├── .vitepress/         # VitePress configuration, theme, composables
+│   ├── public/             # Static assets (logos, PDFs, images)
+│   ├── en/                 # English content (the published locale)
+│   └── cs/                 # Czech content (dormant locale, placeholder only)
+├── BRIEF.md                # Project brief / original scope
+├── DEVELOPMENT.md
+└── package.json
 ```
+
+Content is hand-written Markdown. There is no YAML-driven generation pipeline - the site is small enough that direct editing is simpler.
 
 ---
 
-## Documentation
+## Languages
 
-- **[DEVELOPMENT.md](DEVELOPMENT.md)** - Development workflows, content authoring, deployment, and architecture details
-- **[CLI_REFERENCE.md](CLI_REFERENCE.md)** - Complete ndic-build CLI documentation
-- **Configuration Schema** - `docs/data/conf_files/README.md` - Detailed structure of YAML configuration
-
-### External Resources
-
-- **VitePress Documentation:** https://vitepress.dev/
-- **Nunjucks Documentation:** https://mozilla.github.io/nunjucks/
+The site is published in **English only**. A Czech locale block is present (commented out) in `docs/.vitepress/config.js` and a placeholder file exists at `docs/cs/index.md`. Activate the Czech locale only if ŘSD explicitly requests Czech content.
 
 ---
 
-## 📝 Common Tasks
+## Code quality
 
-### Editing Content
+- **Lint:** `npm run lint` / `npm run lint:fix`
+- **Format:** `npm run format` / `npm run format:check`
 
-1. Edit YAML files in `docs/data/conf_files/`
-2. Changes compile automatically in dev mode
-3. Preview updates in your browser
-
-### Validating Configuration
-
-```bash
-node docs/scripts/ndic-build.js validate
-```
-
-### Code Quality
-
-```bash
-npm run lint          # Check for issues
-npm run format        # Format all files
-```
+Pre-commit hooks run ESLint + Prettier on staged files via `simple-git-hooks` and `lint-staged`.
 
 ---
 
-**Maintained by:** TamTam Research  
-**Contact:** [Contact information]  
-**Site:** https://registr.dopravniinfo.cz/
+**Operator:** CEDA Maps a.s. (IČ 26429632)
+**Subscription enquiries:** [tpeg@ceda.cz](mailto:tpeg@ceda.cz)
