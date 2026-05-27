@@ -3,8 +3,8 @@ layout: home
 
 hero:
     name: "Pilot TPEG service in Czechia"
-    text: "Study and pilot service of the TPEG standard"
-    tagline: "Pilot, beta. The service may be paused or stopped at short notice."
+    text: ""
+    tagline: "Study and pilot service of the TPEG standard in Czechia."
     image:
         src: /images/logo.png
         alt: ŘSD
