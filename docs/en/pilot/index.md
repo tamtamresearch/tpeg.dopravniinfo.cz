@@ -44,6 +44,12 @@ Delivery is over the IP protocol described in the [Technical](/technical/) secti
 - **Not all TPEG2 application formats.** Only TEC and TFP are published. Parking, weather, fuel price, and the rest are out of scope for now.
 - **Not a registry or national access point.** That's a different system maintained elsewhere.
 
+## After the pilot
+
+The pilot is a step toward a **permanent TPEG2 service** for Czechia, not the end goal. Whether it becomes permanent depends on what we learn here and on real consumer interest. The more concretely you tell us what you'd use the data for, the stronger the case.
+
+Got a question or a tentative use case? We'd rather hear it now than miss the chance to fold it into the format profile. [Get in touch](/about/contacts) or [open a discussion](https://github.com/tamtamresearch/tpeg.dopravniinfo.cz/discussions).
+
 ## How to engage
 
 - Want to try the data? Start with [how to subscribe](/subscribe/).
