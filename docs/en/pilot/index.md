@@ -2,18 +2,23 @@
 
 ## Status at a glance
 
-|                          |                                                                                                   |
-| ------------------------ | ------------------------------------------------------------------------------------------------- |
-| **Stage**                | Pilot, beta                                                                                       |
-| **Service availability** | Best-effort, no SLA                                                                               |
-| **Cost to consumer**     | Free, for evaluation and integration testing                                                      |
-| **Operator**             | CEDA Maps a.s.                                                                                    |
-| **Data source**          | [ŘSD / NDIC, DATEX II Common](https://registr.dopravniinfo.cz/en/sources/cz-ndic_d2-common-pull/) |
-| **May be discontinued?** | Yes, at short notice                                                                              |
+|                          |                                                                                     |
+| ------------------------ | ----------------------------------------------------------------------------------- |
+| **Stage**                | Pilot, beta                                                                         |
+| **Service availability** | Best-effort, no SLA                                                                 |
+| **Cost to consumer**     | Free, for evaluation and integration testing                                        |
+| **Operator**             | CEDA Maps a.s.                                                                      |
+| **Data source**          | ŘSD / NDIC, via the [Czech National Access Point](https://registr.dopravniinfo.cz/) |
+| **May be discontinued?** | Yes, at short notice                                                                |
 
 ## Upstream data
 
-The pilot ingests the **DATEX II Common feed from ŘSD / NDIC** (source code [`cz-ndic_d2-common-pull`](https://registr.dopravniinfo.cz/en/sources/cz-ndic_d2-common-pull/) in the Czech National Access Point registry) and converts it to TPEG2 before publishing.
+The pilot ingests DATEX II feeds from ŘSD / NDIC, published via the [Czech National Access Point](https://registr.dopravniinfo.cz/), and converts them to TPEG2 before publishing:
+
+| Output format | Upstream DATEX II source(s)                                                                                                                                                                                        |
+| ------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| **TPEG2-TEC** | [DATEX II - Common Traffic Information (snapshot)](https://registr.dopravniinfo.cz/en/sources/cz-ndic_d2-common-pull/)                                                                                             |
+| **TPEG2-TFP** | [DATEX II - FCD data v2](https://registr.dopravniinfo.cz/en/sources/cz-ndic_d2-fcd-v2/) and [DATEX II - FCD data (predefined locations) v1.1](https://registr.dopravniinfo.cz/en/sources/cz-ndic_d2-pls-fcd-v1.1/) |
 
 ## What's in scope
 
