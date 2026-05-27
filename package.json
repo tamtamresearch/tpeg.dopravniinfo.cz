@@ -22,27 +22,22 @@
     "author": "",
     "license": "UNLICENSED",
     "dependencies": {
-        "js-yaml": "^4.1.0",
         "vue": "^3.5.18"
     },
     "devDependencies": {
         "@eslint/js": "^9.37.0",
-        "chokidar": "^3.6.0",
         "eslint": "^9.37.0",
         "eslint-config-prettier": "^10.1.8",
         "globals": "^16.4.0",
         "lint-staged": "^15.2.7",
         "markdown-it-footnote": "^4.0.0",
-        "markdown-it-mathjax3": "^4.3.2",
-        "nunjucks": "^3.2.4",
         "pagefind": "^1.4.0",
         "prettier": "^3.6.2",
         "simple-git-hooks": "^2.13.1",
         "vitepress": "^2.0.0-alpha.17",
         "vitepress-plugin-group-icons": "^1.6.3",
         "vitepress-plugin-llmstxt": "^0.5.0",
-        "vitepress-plugin-pagefind": "^0.4.15",
-        "zod": "^4.1.12"
+        "vitepress-plugin-pagefind": "^0.4.15"
     },
     "overrides": {
         "vitepress-plugin-llmstxt": {

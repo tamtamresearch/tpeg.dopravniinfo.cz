@@ -51,7 +51,7 @@ Top nav (6 items): **About · TPEG · Pilot · Technical · Subscribe · FAQ**. 
 ## Gotchas
 
 - **CRLF warnings on `git add`** are normal on Windows — Git is converting LF→CRLF in the working copy. Files are stored LF in the repo.
-- **Unused deps** in `package.json` left over from the registry-era pipeline: `js-yaml`, `nunjucks`, `markdown-it-mathjax3`, `zod`, `chokidar`. Also the `name` field is still `vitepress-nationalregistry`. Safe to clean up; not load-bearing.
+- **`name` field** in `package.json` is still `vitepress-nationalregistry`, left over from the registry-era project. Cosmetic; not load-bearing.
 - **Rollup warnings about `@vueuse/core` `/* #__PURE__ */` comments** during build are upstream noise — ignore.
 - `docs/cs/index.md` exists only so the dead `/cs/` route doesn't 404 with confusing content. Don't expand it without enabling the cs locale.
 

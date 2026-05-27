@@ -22,7 +22,6 @@ export default defineConfig({
     ignoreDeadLinks: !!process.env.VITEPRESS_IGNORE_DEAD_LINKS,
 
     markdown: {
-        math: true,
         config(md) {
             md.use(groupIconMdPlugin);
             md.use(footnote);
