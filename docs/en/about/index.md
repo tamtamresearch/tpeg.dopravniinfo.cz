@@ -4,6 +4,8 @@ The **Pilot TPEG service in Czechia** is a pilot deployment of the [TPEG](/tpeg/
 
 It's operated by **CEDA Maps a.s.** (IČ 26429632) for the Czech road authority **ŘSD** (Ředitelství silnic a dálnic) and the **NDIC** national traffic information centre.
 
+_Pilot delivered under public contract "Studie a pilotní ověření standardu TPEG" (Study and pilot verification of the TPEG standard), contracted on 2025-06-06 ([record on Hlídač státu](https://www.hlidacstatu.cz/verejnezakazky/zakazka/fa2df0911bea45b7806efb4740763cc6?qs=ico:26429632))._
+
 ## Purpose
 
 The site is here to:
