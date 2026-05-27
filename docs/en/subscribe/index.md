@@ -4,7 +4,7 @@ The pilot TPEG service is offered to **identified consumers**. We need to know w
 
 ## The short version
 
-📧 Send an e-mail to **[tpeg@ceda.cz](mailto:tpeg@ceda.cz)** with the six fields below. We'll reply with onboarding details (endpoint URLs, credentials, polling guidance).
+Send an e-mail to **[tpeg@ceda.cz](mailto:tpeg@ceda.cz)** with the six fields below. We'll reply with onboarding details (endpoint URLs, credentials, polling guidance).
 
 ## What to include
 
