@@ -1,8 +1,0 @@
-Other features of HTTP
-======================
-
-:authorization:	There is no authorization built in. Upon agreement, consumer may reject messages from other than agreed IP addresses.
-:compression:	Consumer may not force provider to send data in compressed form (using content-encoding: gzip). All content is delivered in plain without any content encoding.
-:content type:	Expected content type depends on format specification and agreement, it is not in scope of this protocol to require specific content type. In most cases the content type will be application/xml.
-:max size:	Default max size of posted content is 200 kB. Different content size may be agreed.
-:https:	HTTP server at consumer may use https protocol.
