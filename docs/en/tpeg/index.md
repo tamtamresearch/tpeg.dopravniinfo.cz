@@ -2,7 +2,9 @@
 
 **TPEG**, the _Transport Protocol Experts Group_ format, is a family of open standards for encoding **traffic and travel information** (TTI). It's designed to be exchanged between systems, languages, and delivery channels.
 
-TPEG was developed under the **TISA** (Traveller Information Services Association) umbrella and is standardised by ISO and CEN. Together with DATEX II it's one of the two families of TTI formats in wide use today. DATEX II tends to dominate back-office exchange between road authorities. TPEG sits closer to the end user.
+TPEG was developed under the **[TISA](https://tisa.org/)** (Traveller Information Services Association) umbrella and is standardised by ISO and CEN. Together with DATEX II it's one of the two families of TTI formats in wide use today. DATEX II tends to dominate back-office exchange between road authorities. TPEG sits closer to the end user.
+
+For a short, non-paywalled overview of the standard, see the **[TPEG primer](https://tisa.org/tpeg-primer/)** on the TISA site.
 
 ## A short history
 
@@ -36,5 +38,6 @@ See [why TPEG fits this pilot](./value) for the reasoning behind the choice.
 
 ## Further reading
 
+- [TPEG primer](https://tisa.org/tpeg-primer/), a short introduction maintained by TISA.
 - [TISA, Traveller Information Services Association](https://tisa.org/)
-- [ISO 21219, TPEG2](https://www.iso.org/standard/63110.html)
+- [ISO 21219-1, TPEG2 framework](https://www.iso.org/standard/79437.html), current edition.
