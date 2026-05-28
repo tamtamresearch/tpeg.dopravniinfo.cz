@@ -72,5 +72,5 @@ Developped by:
 We use so called Format Specification Package (FSP) repositories, documenting used data format. The FSP contains:
 
 - FORMAT.yaml: metadata about the format, incl. links to sample folder and to entry xsd file for validation
-    - `x-format:cz-ndic-tpeg2-tfp-v0.1`: <https://github.com/tamtamresearch/x-format_cz-ndic_tpeg2-tfp-v0.1>
+    - `x-format:cz-ndic_tpeg2-tfp-v0.1`: <https://github.com/tamtamresearch/x-format_cz-ndic_tpeg2-tfp-v0.1>
     - `x-format:cz-ndic_tpeg2-tec-v0.1`: <https://github.com/tamtamresearch/x-format_cz-ndic_tpeg2-tec-v0.1>
