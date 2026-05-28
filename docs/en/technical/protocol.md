@@ -13,7 +13,7 @@ The pilot service delivers TPEG2 messages over an **IP-based protocol**. This pa
 
 ## Interaction pattern
 
-The pilot supports a **pull model** as the primary interaction:
+The pilot uses a **pull model**:
 
 1. The consumer issues an HTTPS GET to the per-format feed endpoint.
 2. The server returns the current TPEG2 service frame with the active messages for that format.
@@ -21,11 +21,10 @@ The pilot supports a **pull model** as the primary interaction:
 
 Recommended polling cadence is in the per-format FSP metadata. Don't poll faster than recommended. The source data doesn't update faster than that.
 
-Push-style delivery may be offered to specific consumers on request.
-
 ## Authentication
 
-- Each subscriber gets an **individual credential** (HTTP header or basic auth, confirmed at onboarding).
+- **Authentication method**: HTTP Basic Auth over HTTPS.
+- **Credentials**: each subscriber gets an individual username/password pair, issued at onboarding.
 - Credentials are tied to a named consumer and can be **rotated** or **revoked** at any time, especially if the [terms of use](/about/license) aren't respected.
 
 ## Endpoints

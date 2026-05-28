@@ -13,7 +13,7 @@ This section documents what a consumer needs to integrate with the pilot TPEG se
 | ------------------------ | -------------------------------------------------------------------------- |
 | **Standards family**     | TPEG2 (ISO 21219)                                                          |
 | **Encoding**             | XML                                                                        |
-| **Delivery**             | IP-based pull / push (see [Protocol](./protocol))                          |
+| **Delivery**             | IP-based pull (see [Protocol](./protocol))                                 |
 | **Location referencing** | TMC + OpenLR (per application format)                                      |
 | **Authentication**       | Per-subscriber, issued on subscription                                     |
 | **Coverage**             | Czech road network, ŘSD-managed                                            |
