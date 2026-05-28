@@ -16,8 +16,8 @@ The pilot service delivers TPEG2 messages over an **IP-based protocol**. This pa
 The pilot uses a **pull model**:
 
 1. The consumer issues an HTTPS GET to the per-format feed endpoint.
-2. The server returns the current TPEG2 service frame with the active messages for that format.
-3. The consumer applies the message-lifecycle rules (create, update, cancel) from the TPEG2 toolkit to maintain its local state.
+2. The server returns a **full snapshot** of currently active messages for that format. The feed is not delta-encoded; every successful response is self-contained and replaces the previous one.
+3. The consumer derives create / update / cancel transitions by comparing successive snapshots against its local state, following the TPEG2 message-lifecycle rules.
 
 Recommended polling cadence is in the per-format FSP metadata. Don't poll faster than recommended. The source data doesn't update faster than that.
 
