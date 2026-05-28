@@ -82,20 +82,6 @@ export default defineConfig({
                             ],
                         },
                     ],
-                    "/tpeg/": [
-                        {
-                            text: "TPEG",
-                            collapsed: false,
-                            items: [{ text: "What is TPEG", link: "/tpeg/" }],
-                        },
-                    ],
-                    "/pilot/": [
-                        {
-                            text: "Pilot",
-                            collapsed: false,
-                            items: [{ text: "Scope & status", link: "/pilot/" }],
-                        },
-                    ],
                     "/technical/": [
                         {
                             text: "Technical",
@@ -113,13 +99,6 @@ export default defineConfig({
                                     ],
                                 },
                             ],
-                        },
-                    ],
-                    "/subscribe/": [
-                        {
-                            text: "Subscribe",
-                            collapsed: false,
-                            items: [{ text: "How to subscribe", link: "/subscribe/" }],
                         },
                     ],
                 },
