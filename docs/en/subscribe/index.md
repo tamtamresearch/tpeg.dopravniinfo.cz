@@ -15,7 +15,7 @@ Include all of these in your message:
 3. **E-mail**: the address we should use for operational correspondence (alerts, planned downtime, format updates).
 4. **Company name**: the legal entity that will consume the data.
 5. **Position**: your role in that organisation.
-6. **Purpose / expected use of the data**: a couple of sentences is enough. The more concretely you describe the use case, the faster we can help and the better we can tailor the format profiles.
+6. **Purpose / expected use of the data**: a couple of sentences is enough. The more concretely you describe the use case, the faster we can help and the better we can prioritise pilot improvements.
 
 If you have a specific use case in mind (research, journalism, education, public administration, commercial product), say so. That's exactly what we're trying to learn from the pilot.
 
