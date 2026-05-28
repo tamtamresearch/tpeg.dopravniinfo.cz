@@ -2,14 +2,15 @@
 
 ## Status at a glance
 
-|                          |                                                                                     |
-| ------------------------ | ----------------------------------------------------------------------------------- |
-| **Stage**                | Pilot, beta                                                                         |
-| **Service availability** | Best-effort, no SLA                                                                 |
-| **Cost to consumer**     | Free, for evaluation and integration testing                                        |
-| **Operator**             | CEDA Maps a.s.                                                                      |
-| **Data source**          | ŘSD / NDIC, via the [Czech National Access Point](https://registr.dopravniinfo.cz/) |
-| **May be discontinued?** | Yes, at short notice                                                                |
+|                                  |                                                                                     |
+| -------------------------------- | ----------------------------------------------------------------------------------- |
+| **Stage**                        | Pilot, beta                                                                         |
+| **Service availability**         | Best-effort, no SLA                                                                 |
+| **Guaranteed feed availability** | [TODO]                                                                              |
+| **Cost to consumer**             | Free, for evaluation and integration testing                                        |
+| **Operator**                     | CEDA Maps a.s.                                                                      |
+| **Data source**                  | ŘSD / NDIC, via the [Czech National Access Point](https://registr.dopravniinfo.cz/) |
+| **May be discontinued?**         | Yes, at short notice                                                                |
 
 ## Upstream data
 
