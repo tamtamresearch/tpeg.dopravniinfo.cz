@@ -65,6 +65,18 @@ Developped by:
 - GitHub discussions, issues
 - DNS records for registr.dopravniinfo.cz (to support GitHub pages on given domain)
 
+## Technical
+
+### Coverage
+
+The coverage for TPEG2-TEC and TPEG2-TFP matches the source data coverage, which is:
+
+| Parameter       | Value                                                                   |
+| --------------- | ----------------------------------------------------------------------- |
+| area            | CZ0                                                                     |
+| network         | Motorways, Arterial road network, Regional roads, Urban and local roads |
+| transport modes | car, truck, motorcycle, bus                                             |
+
 ## Content
 
 ### Format Specification Package repositories

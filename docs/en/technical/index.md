@@ -16,7 +16,7 @@ This section documents what a consumer needs to integrate with the pilot TPEG se
 | **Delivery**             | IP-based pull (see [Protocol](./protocol))                                 |
 | **Location referencing** | TMC + OpenLR (per application format)                                      |
 | **Authentication**       | Per-subscriber, issued on subscription                                     |
-| **Coverage**             | Czech road network, ŘSD-managed                                            |
+| **Coverage**             | Czechia (CZ0), see [Coverage](#coverage)                                   |
 | **Upstream source**      | DATEX II feeds from ŘSD / NDIC, see [Upstream data](/pilot/#upstream-data) |
 
 ## Published formats
@@ -27,6 +27,16 @@ This section documents what a consumer needs to integrate with the pilot TPEG se
 | **[TPEG2-TFP](./formats/tpeg2-tfp)** | `x-format:cz-ndic_tpeg2-tfp-v0.1` | Traffic flow and prediction.                       |
 
 Each format has its own **Format Specification Package (FSP)** on GitHub. The FSP holds `FORMAT.yaml` metadata, the entry XSD for validation, and a sample folder. Follow the links above for details.
+
+## Coverage
+
+The pilot's coverage matches the upstream ŘSD / NDIC source data, for both published formats:
+
+| Parameter           | Value                                                                   |
+| ------------------- | ----------------------------------------------------------------------- |
+| **Area**            | CZ0 (Czechia, NUTS-1)                                                   |
+| **Network**         | Motorways, arterial road network, regional roads, urban and local roads |
+| **Transport modes** | Car, truck, motorcycle, bus                                             |
 
 ## How to get started
 

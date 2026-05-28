@@ -21,7 +21,7 @@ Polling faster than recommended won't give you fresher data. The upstream source
 
 ### What is the coverage area?
 
-The Czech road network managed by ŘSD: motorways, expressways, and selected first-class roads. Exact coverage is in the FSP for each format.
+Czechia (CZ0): motorways, the arterial road network, regional roads, and urban and local roads. Transport modes covered are car, truck, motorcycle, and bus. Full breakdown is on the [Technical → Coverage](/technical/#coverage) page.
 
 ## Cost, terms, and access
 
