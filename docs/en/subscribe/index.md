@@ -36,11 +36,10 @@ The link below opens your e-mail client with the address, subject, and body pre-
 1. We confirm receipt within a few business days.
 2. We may come back with clarifying questions about the intended use.
 3. On approval, you get:
-    - sandbox endpoint URLs for the formats you asked for;
+    - endpoint URLs for the formats you asked for;
     - authentication credentials;
     - polling guidance and any consumer-specific notes;
     - the terms-of-use document for your records.
-4. After successful sandbox integration, you're moved to the production endpoint.
 
 ## Conditions
 

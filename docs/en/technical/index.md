@@ -33,4 +33,4 @@ Each format has its own **Format Specification Package (FSP)** on GitHub. The FS
 1. Read the [protocol](./protocol) page for transport, polling cadence, and credentials.
 2. Pick the format you care about and read its page.
 3. Validate your parser against the XSD and the samples in the FSP.
-4. [Subscribe](/subscribe/) to get production credentials and a sandbox URL.
+4. [Subscribe](/subscribe/) to get credentials and the feed endpoint URLs.
