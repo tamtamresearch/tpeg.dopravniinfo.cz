@@ -21,6 +21,8 @@ The pilot uses a **pull model**:
 
 Recommended polling cadence is in the per-format FSP metadata. Don't poll faster than recommended. The source data doesn't update faster than that.
 
+**Conditional requests are required.** The server supports `ETag` and `Last-Modified` response headers, and consumers must send `If-None-Match` and/or `If-Modified-Since` on each poll. When nothing has changed the server returns `304 Not Modified` with no body, which keeps the feed cheap to poll and the source bandwidth predictable.
+
 ## Authentication
 
 - **Authentication method**: HTTP Basic Auth over HTTPS.
