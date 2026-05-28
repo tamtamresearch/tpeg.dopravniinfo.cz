@@ -2,8 +2,6 @@
 
 A short list of questions we expect from people thinking about subscribing. If yours isn't here, ask on [GitHub discussions](https://github.com/tamtamresearch/tpeg.dopravniinfo.cz/discussions) or e-mail [tpeg@ceda.cz](mailto:tpeg@ceda.cz) and we'll add it.
 
----
-
 ## Service & delivery
 
 ### Do you broadcast TPEG over DAB?
@@ -25,8 +23,6 @@ Polling faster than recommended won't give you fresher data. The upstream source
 
 The Czech road network managed by ŘSD: motorways, expressways, and selected first-class roads. Exact coverage is in the FSP for each format.
 
----
-
 ## Cost, terms, and access
 
 ### How much does the pilot cost?
@@ -41,8 +37,6 @@ Any identified organisation with a stated use case. We don't exclude commercial 
 
 Yes. The pilot is contracted to run for at least 6 months [TODO: confirm dates], with a possible extension of up to 6 more. After that, the service may become permanent, move to a different operator, or be stopped, depending on the evaluation outcome. We'll give active subscribers prior notice of any planned change by e-mail, using the operational address you give us.
 
----
-
 ## Technical
 
 ### Which TPEG2 application formats do you publish?
@@ -56,7 +50,5 @@ Use the XSD and `samples/` from each format's FSP repository. The procedure is o
 ### Which location referencing methods do you use?
 
 Per-format. Both formats support **TMC** for compatibility and **OpenLR** for map-independent referencing. The exact set per format is in the FSP `FORMAT.yaml`.
-
----
 
 _The FAQ will grow as questions come in. [Open a discussion](https://github.com/tamtamresearch/tpeg.dopravniinfo.cz/discussions) if you have one._
