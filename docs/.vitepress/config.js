@@ -12,6 +12,8 @@ process.env.VITE_EXTRA_EXTENSIONS = extensionsNotHandledByVitePress;
 export default defineConfig({
     title: "Pilot TPEG service in Czechia",
 
+    base: process.env.VITEPRESS_BASE || "/",
+
     rewrites: {
         "en/:rest*": ":rest*",
     },
