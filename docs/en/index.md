@@ -51,6 +51,6 @@ This site is the public face of the pilot. It's here to help you understand what
 
 ## Status
 
-> **This is a pilot, beta-quality service.** It's for evaluation, integration testing, and feedback. The service can be changed, paused, or stopped at short notice. Don't build production systems on it without talking to us first.
+> **This is a pilot, beta-quality service.** It's for evaluation, integration testing, and feedback. The pilot is contracted to run for at least 6 months [TODO: confirm dates], with a possible extension of up to 6 more. After that, continuation depends on the evaluation outcome. Don't build production systems on it without talking to us first.
 
 We want to hear from people who'd actually use this. The fastest way to start a conversation is to [subscribe](/subscribe/) or [open a discussion](https://github.com/tamtamresearch/tpeg.dopravniinfo.cz/discussions) on GitHub.

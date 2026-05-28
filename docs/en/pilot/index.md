@@ -16,7 +16,8 @@ _Pilot delivered under public contract "Studie a pilotní ověření standardu T
 | **Cost to consumer**             | Free, for evaluation and integration testing                                        |
 | **Operator**                     | CEDA Maps a.s.                                                                      |
 | **Data source**                  | ŘSD / NDIC, via the [Czech National Access Point](https://registr.dopravniinfo.cz/) |
-| **May be discontinued?**         | Yes, at short notice                                                                |
+| **Pilot period**                 | At least 6 months, with a possible extension of up to 6 more [TODO: confirm dates]  |
+| **After the contracted period**  | Continuation depends on the evaluation outcome                                      |
 
 ## Upstream data
 
@@ -46,7 +47,7 @@ Delivery is over the IP protocol described in the [Technical](/technical/) secti
 
 ## What's not in scope
 
-- **No production SLA, support contract, or guaranteed retention.** The service can be paused or stopped between two updates of this page.
+- **No production SLA, support contract, or guaranteed retention.** The pilot has a minimum committed duration (see status table) but no formal availability guarantee within that period.
 - **No DAB or other broadcast delivery.** Pilot delivery is IP-only.
 - **Not all TPEG2 application formats.** Only TEC and TFP are published. Parking, weather, fuel price, and the rest are out of scope for now.
 - **Not a registry or national access point.** That's a different system maintained elsewhere.
