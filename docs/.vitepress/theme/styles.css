@@ -32,7 +32,7 @@
 }
 
 .VPNavBarTitle a span {
-    white-space: normal;
+    white-space: nowrap;
 }
 
 .vp-doc table thead:not(:has(th:not(:empty))) {

@@ -45,6 +45,7 @@ export default defineConfig({
     ],
 
     themeConfig: {
+        siteTitle: "TPEG Pilot · CZ",
         logo: { src: "/logo.png", width: 24, height: 24 },
 
         socialLinks: [{ icon: "github", link: "https://github.com/tamtamresearch/tpeg.dopravniinfo.cz" }],
