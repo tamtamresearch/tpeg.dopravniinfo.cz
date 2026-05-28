@@ -29,16 +29,16 @@ docs/
 ├── public/                # static assets (logo, pdfs/)
 ├── en/                    # published English content (root locale)
 │   ├── index.md           # home (VitePress `home` layout)
-│   ├── about/             # overview, license, contacts, issues
-│   ├── tpeg/              # what is TPEG, value proposition
-│   ├── pilot/             # scope & status, changelog
-│   ├── technical/         # protocol + formats/{tpeg2-tec, tpeg2-tfp}
+│   ├── about/             # overview (hub) + license, contacts, issues
+│   ├── tpeg/              # single page: what is TPEG
+│   ├── pilot/             # single page: scope & status
+│   ├── technical/         # overview + protocol + formats/{tpeg2-tec, tpeg2-tfp}
 │   ├── subscribe/         # subscription instructions (mailto: prefill)
 │   └── faq.md
 └── cs/index.md            # "locale dormant" placeholder only
 ```
 
-Top nav (6 items): **About · TPEG · Pilot · Technical · Subscribe · FAQ**. Sidebars are hand-rolled in `docs/.vitepress/config.js` — no dynamic generation.
+Top nav (6 items): **About · TPEG · Pilot · Technical · Subscribe · FAQ**. Sidebars are hand-rolled in `docs/.vitepress/config.js` — no dynamic generation. Sidebars are defined **only for sections with multiple pages** (`/about/`, `/technical/`); single-page sections (`/tpeg/`, `/pilot/`, `/subscribe/`, `/faq`) render full-width with no sidebar. Don't add a one-item sidebar to a section just to fill space.
 
 ## Conventions
 
@@ -47,6 +47,7 @@ Top nav (6 items): **About · TPEG · Pilot · Technical · Subscribe · FAQ**. 
 - **Internal links** are absolute (e.g. `/technical/formats/tpeg2-tec`) — VitePress validates them at build time. Set `VITEPRESS_IGNORE_DEAD_LINKS=1` only for testing, never in CI.
 - **PDFs** live in `docs/public/pdfs/` and are referenced as `/pdfs/<file>`. The extension is excluded from VitePress routing via `VITE_EXTRA_EXTENSIONS`.
 - **Hero image** is `docs/public/images/logo.png`
+- **FSP identifier convention**: `x-format:cz-ndic_tpeg2-<app>-v<version>` — note the **underscore** between `ndic` and `tpeg2`, and **hyphens** elsewhere. Same convention for the repo name (`x-format_cz-ndic_tpeg2-<app>-v<version>`). Don't introduce a hyphen between `ndic` and `tpeg2` — a typo of that exact kind already had to be cleaned up across docs once.
 
 ## Gotchas
 
@@ -58,7 +59,7 @@ Top nav (6 items): **About · TPEG · Pilot · Technical · Subscribe · FAQ**. 
 ## When editing content
 
 1. Edit the markdown under `docs/en/<section>/`.
-2. If you add a page, add it to the matching sidebar group in `docs/.vitepress/config.js`. Top-nav additions also go in `nav`.
+2. If you add a page, add it to the matching sidebar group in `docs/.vitepress/config.js` — but only if that section already has a sidebar (`/about/`, `/technical/`). If a single-page section grows to two pages, that's when you _create_ a sidebar for it. Top-nav additions also go in `nav`.
 3. Cross-link from related pages — the site is small and inter-linking is the main navigation aid alongside the sidebar.
 4. Run `npm run docs:build` before declaring done — the link checker catches typos in absolute paths.
 
