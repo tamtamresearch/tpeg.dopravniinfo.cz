@@ -86,10 +86,7 @@ export default defineConfig({
                         {
                             text: "TPEG",
                             collapsed: false,
-                            items: [
-                                { text: "What is TPEG", link: "/tpeg/" },
-                                { text: "Why TPEG fits this pilot", link: "/tpeg/value" },
-                            ],
+                            items: [{ text: "What is TPEG", link: "/tpeg/" }],
                         },
                     ],
                     "/pilot/": [
