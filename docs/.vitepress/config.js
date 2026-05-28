@@ -76,9 +76,9 @@ export default defineConfig({
                             collapsed: false,
                             items: [
                                 { text: "Overview", link: "/about/" },
-                                { text: "License & terms of use", link: "/about/license" },
+                                { text: "Terms of use", link: "/about/license" },
                                 { text: "Contacts", link: "/about/contacts" },
-                                { text: "Issue tracker", link: "/about/issues" },
+                                { text: "Issue tracker & discussions", link: "/about/issues" },
                             ],
                         },
                     ],

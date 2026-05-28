@@ -1,4 +1,4 @@
-# License & terms of use
+# Terms of use
 
 Data from the pilot is covered by the **NDIC Terms of Use for Traffic Information**.
 
