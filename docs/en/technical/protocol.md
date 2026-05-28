@@ -35,7 +35,7 @@ One endpoint per published format:
 | Format                           | Identifier                        |
 | -------------------------------- | --------------------------------- |
 | [TPEG2-TEC](./formats/tpeg2-tec) | `x-format:cz-ndic_tpeg2-tec-v0.1` |
-| [TPEG2-TFP](./formats/tpeg2-tfp) | `x-format:cz-ndic-tpeg2-tfp-v0.1` |
+| [TPEG2-TFP](./formats/tpeg2-tfp) | `x-format:cz-ndic_tpeg2-tfp-v0.1` |
 
 Endpoint URLs (sandbox and production), polling intervals, and recommended client behaviour are shared on subscription.
 

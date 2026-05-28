@@ -1,11 +1,11 @@
-# Technical specifications
+# Technical
 
 This section documents what a consumer needs to integrate with the pilot TPEG service:
 
 - the **[delivery protocol](./protocol)**, how messages are exchanged between the service and a consumer;
 - the **[formats](./formats/)**, what those messages look like on the wire.
 
-> This is pilot-stage documentation. Specs and endpoints can change in breaking ways. Active subscribers are notified by e-mail in advance.
+> This is pilot-stage documentation. Format definitions may evolve during the pilot. Breaking changes are announced to active subscribers by e-mail in advance.
 
 ## At a glance
 
@@ -24,7 +24,7 @@ This section documents what a consumer needs to integrate with the pilot TPEG se
 | Format                               | Identifier                        | Use                                                |
 | ------------------------------------ | --------------------------------- | -------------------------------------------------- |
 | **[TPEG2-TEC](./formats/tpeg2-tec)** | `x-format:cz-ndic_tpeg2-tec-v0.1` | Traffic events. Incidents, congestion, road works. |
-| **[TPEG2-TFP](./formats/tpeg2-tfp)** | `x-format:cz-ndic-tpeg2-tfp-v0.1` | Traffic flow and prediction.                       |
+| **[TPEG2-TFP](./formats/tpeg2-tfp)** | `x-format:cz-ndic_tpeg2-tfp-v0.1` | Traffic flow and prediction.                       |
 
 Each format has its own **Format Specification Package (FSP)** on GitHub. The FSP holds `FORMAT.yaml` metadata, the entry XSD for validation, and a sample folder. Follow the links above for details.
 

@@ -94,8 +94,8 @@ export default defineConfig({
                                     collapsed: false,
                                     items: [
                                         { text: "Overview", link: "/technical/formats/" },
-                                        { text: "TPEG2-TFP", link: "/technical/formats/tpeg2-tfp" },
                                         { text: "TPEG2-TEC", link: "/technical/formats/tpeg2-tec" },
+                                        { text: "TPEG2-TFP", link: "/technical/formats/tpeg2-tfp" },
                                     ],
                                 },
                             ],

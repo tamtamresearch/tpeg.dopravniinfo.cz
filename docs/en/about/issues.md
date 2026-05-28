@@ -12,7 +12,7 @@ We use **GitHub** for public feedback on the pilot and this site.
 
 A good report saves a round-trip. If you can, include:
 
-- the format and version (e.g. `x-format:cz-ndic-tpeg2-tfp-v0.1`);
+- the format and version (e.g. `x-format:cz-ndic_tpeg2-tfp-v0.1`);
 - a small sample of the data that triggers the problem;
 - what you expected and what you got;
 - your client or library and its version.

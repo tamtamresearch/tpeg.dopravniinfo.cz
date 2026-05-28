@@ -21,13 +21,5 @@ Traffic events on the Czech road network: incidents, congestion, road works, and
 
 Current traffic flow and predicted travel times on monitored road segments.
 
-- Identifier: `x-format:cz-ndic-tpeg2-tfp-v0.1`
+- Identifier: `x-format:cz-ndic_tpeg2-tfp-v0.1`
 - FSP: [tamtamresearch/x-format_cz-ndic_tpeg2-tfp-v0.1](https://github.com/tamtamresearch/x-format_cz-ndic_tpeg2-tfp-v0.1)
-
-## Profiling
-
-Both formats are **Czech profiles** of the corresponding TPEG2 application format. The underlying standard is the ISO/TISA spec, but vocabularies, code lists, and location-referencing choices are profiled for the Czech road network. The FSP `FORMAT.yaml` documents the profile.
-
-## What's not here
-
-The pilot doesn't publish other TPEG2 applications (parking, weather, fuel price, and so on). If your use case needs one of those, [tell us](/about/contacts). Interest from real consumers is one of the signals we use to plan future formats.
