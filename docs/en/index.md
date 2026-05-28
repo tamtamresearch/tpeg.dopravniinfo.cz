@@ -13,28 +13,25 @@ hero:
           text: Subscribe
           link: /subscribe/
         - theme: alt
+          text: What's in scope
+          link: /pilot/
+        - theme: alt
           text: What is TPEG
           link: /tpeg/
-        - theme: alt
-          text: Technical specifications
-          link: /technical/
-        - theme: alt
-          text: FAQ
-          link: /faq
 
 features:
-    - title: What TPEG is
-      details: A short intro to the TPEG family of traffic and travel information formats, and why we picked it for this pilot.
-      link: /tpeg/
-      linkText: Read the intro
     - title: Read the specs
       details: Protocol and format docs, with links to the Format Specification Package repositories on GitHub. XSDs, samples, metadata.
       link: /technical/
       linkText: Open technical section
-    - title: Subscribe
-      details: Send a short e-mail to CEDA Maps with the details we need. We reply with access info and help you get started.
-      link: /subscribe/
-      linkText: Start the subscription
+    - title: Common questions
+      details: Short answers to the practical questions, cost, update frequency, redistribution, and what to do when something looks wrong.
+      link: /faq
+      linkText: Read the FAQ
+    - title: About the project
+      details: Who operates the pilot, terms of use, contacts, and how to report issues.
+      link: /about/
+      linkText: About this project
 ---
 
 ## What this site is
