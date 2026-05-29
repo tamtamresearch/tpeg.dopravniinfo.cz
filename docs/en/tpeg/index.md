@@ -15,22 +15,51 @@ This pilot uses **TPEG2** application formats over an **IP-based protocol**. It'
 
 ## Anatomy of TPEG
 
-TPEG is a family, not a single format. It's layered:
+TPEG2 is a family of standards, not a single format. It's specified in the **ISO 21219 series**, authored in UML, and rendered in two physical encodings: **binary** and **XML**.
 
-1. **Toolkit (TPEG2-MMC, TPEG2-SNI, …)**: common building blocks. Message management, service and network information, datetime, and so on.
-2. **Location referencing (TPEG2-ULR, TMC, OpenLR)**: how a message points at a real-world place on the road network.
-3. **Application formats**: what a message is about. Each application is a separate specification:
+Every TPEG2 message has a three-container structure:
 
-| Application   | Subject                                                                         |
-| ------------- | ------------------------------------------------------------------------------- |
-| **TPEG2-TEC** | Traffic Event Compact. Incidents, congestion, road works.                       |
-| **TPEG2-TFP** | Traffic Flow & Prediction. Current and predicted traffic flow on road segments. |
-| TPEG2-PKI     | Parking information.                                                            |
-| TPEG2-WEA     | Weather.                                                                        |
-| TPEG2-FPI     | Fuel price information.                                                         |
-| _…and more_   |                                                                                 |
+1. **Message management** (TPEG2-MMC, [ISO 21219-6](https://www.iso.org/obp/ui/en#iso:std:iso:21219:-6:ed-1:v1:en)): identifiers, versioning, lifecycle, validity.
+2. **Application**: the actual payload. One application format per use case (see below).
+3. **Location referencing** (TPEG2-LRC, [ISO 21219-7](https://www.iso.org/obp/ui/en#iso:std:iso:21219:-7:ed-1:v1:en)): how the message points at a real-world place. Several methods are supported and can travel side-by-side in the same message; **OpenLR** ([ISO/TS 21219-22](https://www.iso.org/obp/ui/en#iso:std:iso:ts:21219:-22:ed-1:v1:en)) and **TMC** location codes ([ISO 17572-2](https://www.iso.org/obp/ui/en#iso:std:iso:17572:-2:ed-3:v1:en)) are the common ones in use today.
 
-For the pilot we publish **[TPEG2-TEC](/technical/formats/tpeg2-tec)** and **[TPEG2-TFP](/technical/formats/tpeg2-tfp)**.
+A toolkit of framework parts (introduction, modelling rules, service-frame wrapper) sits underneath. Consumers rarely interact with those directly.
+
+### Application formats
+
+| Application                                   | ISO part                                                                       | Subject                                                                 |
+| --------------------------------------------- | ------------------------------------------------------------------------------ | ----------------------------------------------------------------------- |
+| **[TPEG2-TEC](/technical/formats/tpeg2-tec)** | [ISO 21219-15](https://www.iso.org/obp/ui/en#iso:std:iso:21219:-15:ed-1:v1:en) | Traffic Event Compact. Incidents, congestion, road works.               |
+| **[TPEG2-TFP](/technical/formats/tpeg2-tfp)** | [ISO 21219-18](https://www.iso.org/obp/ui/en#iso:std:iso:21219:-18:ed-1:v1:en) | Traffic Flow & Prediction. Current and predicted flow on road segments. |
+| TPEG2-PKI                                     | [ISO 21219-14](https://www.iso.org/obp/ui/en#iso:std:iso:21219:-14:ed-1:v1:en) | Parking information.                                                    |
+| TPEG2-FPI                                     | [ISO 21219-16](https://www.iso.org/obp/ui/en#iso:std:iso:21219:-16:ed-1:v1:en) | Fuel price information.                                                 |
+| TPEG2-WEA                                     | [ISO 21219-19](https://www.iso.org/obp/ui/en#iso:std:iso:21219:-19:ed-1:v1:en) | Weather.                                                                |
+| TPEG2-EMI                                     | [ISO 21219-25](https://www.iso.org/obp/ui/en#iso:std:iso:21219:-25:ed-1:v1:en) | Electromobility information.                                            |
+
+The **bold** rows are what this pilot publishes.
+
+### Location referencing
+
+| Part      | ISO part                                                                             | Subject                                              |
+| --------- | ------------------------------------------------------------------------------------ | ---------------------------------------------------- |
+| TPEG2-OLR | [ISO/TS 21219-22](https://www.iso.org/obp/ui/en#iso:std:iso:ts:21219:-22:ed-1:v1:en) | OpenLR. Map-agnostic location encoding.              |
+| TPEG2-GLR | [ISO 21219-21](https://www.iso.org/obp/ui/en#iso:std:iso:21219:-21:ed-1:v1:en)       | Geographic location referencing (coordinates).       |
+| TPEG2-TLR | [ISO 17572-2](https://www.iso.org/obp/ui/en#iso:std:iso:17572:-2:ed-3:v1:en)         | Pre-coded location references (TMC location tables). |
+| TPEG2-DLR | [ISO 17572-3](https://www.iso.org/obp/ui/en#iso:std:iso:17572:-3:ed-2:v1:en)         | Dynamic location references.                         |
+
+### Toolkit
+
+| Part      | ISO part                                                                     | Subject                                                              |
+| --------- | ---------------------------------------------------------------------------- | -------------------------------------------------------------------- |
+| TPEG2-SFW | [ISO 21219-5](https://www.iso.org/obp/ui/en#iso:std:iso:21219:-5:ed-1:v1:en) | Service Frame Wrapper. Outer envelope for a TPEG2 service.           |
+| TPEG2-MMC | [ISO 21219-6](https://www.iso.org/obp/ui/en#iso:std:iso:21219:-6:ed-1:v1:en) | Message Management Container. Lifecycle, versioning, validity.       |
+| TPEG2-LRC | [ISO 21219-7](https://www.iso.org/obp/ui/en#iso:std:iso:21219:-7:ed-1:v1:en) | Location Referencing Container. Holds the per-message location refs. |
+
+### Special applications
+
+| Part      | ISO part                                                                     | Subject                                                                   |
+| --------- | ---------------------------------------------------------------------------- | ------------------------------------------------------------------------- |
+| TPEG2-SNI | [ISO 21219-9](https://www.iso.org/obp/ui/en#iso:std:iso:21219:-9:ed-1:v1:en) | Service and Network Information. Service-level metadata for a TPEG2 feed. |
 
 ## What TPEG offers
 
