@@ -89,5 +89,5 @@ Pre-commit hooks run ESLint + Prettier on staged files via `simple-git-hooks` an
 
 ---
 
-**Operator:** CEDA Maps a.s. (IČ 26429632)
+**Operator:** CEDA Maps a.s.
 **Subscription enquiries:** [tpeg@ceda.cz](mailto:tpeg@ceda.cz)

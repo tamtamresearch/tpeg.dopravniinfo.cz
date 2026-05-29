@@ -14,7 +14,8 @@ Use it for:
 
 Developped by:
 
-- CEDA Maps a.s. (IČ 26429632)
+- CEDA Maps a.s.
+- TamTam Research
 
 ## Purpose
 

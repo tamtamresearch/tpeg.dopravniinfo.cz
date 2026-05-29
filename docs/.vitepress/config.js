@@ -108,7 +108,7 @@ export default defineConfig({
 
                 footer: {
                     message: "Pilot TPEG service in Czechia - study and pilot verification of the TPEG standard",
-                    copyright: "by CEDA Maps a.s. (IČ 26429632)",
+                    copyright: "by CEDA Maps a.s.",
                 },
             },
         },
@@ -132,7 +132,7 @@ export default defineConfig({
         //         sidebar: { /* mirror EN structure with /cs/ prefix */ },
         //         footer: {
         //             message: "Pilotní služba TPEG v Česku",
-        //             copyright: "CEDA Maps a.s. (IČ 26429632)",
+        //             copyright: "CEDA Maps a.s.",
         //         },
         //     },
         // },

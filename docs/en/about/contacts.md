@@ -2,7 +2,7 @@
 
 ## Pilot service operator
 
-**CEDA Maps a.s.** (IČ 26429632)
+**CEDA Maps a.s.**
 
 - Subscription and general questions: [tpeg@ceda.cz](mailto:tpeg@ceda.cz)
 - [www.ceda.cz](https://www.ceda.cz)
