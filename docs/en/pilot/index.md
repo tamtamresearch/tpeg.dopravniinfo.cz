@@ -59,4 +59,3 @@ Got a question or a tentative use case? We'd rather hear it now than miss the ch
 
 - Want to try the data? Start with [how to subscribe](/subscribe/).
 - Want to discuss the format profile or a use case? [Open a discussion](https://github.com/tamtamresearch/tpeg.dopravniinfo.cz/discussions) on GitHub.
-- Found a defect? [File an issue](https://github.com/tamtamresearch/tpeg.dopravniinfo.cz/issues).
