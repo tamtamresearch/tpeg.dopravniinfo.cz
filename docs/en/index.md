@@ -34,7 +34,7 @@ features:
       linkText: About this project
 ---
 
-## What this site is
+##
 
 The **Pilot TPEG service in Czechia** is a pilot deployment of the [TPEG](/tpeg/) standard for traffic and travel information on the Czech road network. It's operated by **CEDA Maps a.s.** for ŘSD (Ředitelství silnic a dálnic).
 
