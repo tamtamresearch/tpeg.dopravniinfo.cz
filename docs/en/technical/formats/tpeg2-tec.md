@@ -37,13 +37,6 @@ The full specification (`FORMAT.yaml` metadata, entry XSD, and `samples/` folder
 
 - **FSP**: [tamtamresearch/x-format_cz-ndic_tpeg2-tec-v0.1](https://github.com/tamtamresearch/x-format_cz-ndic_tpeg2-tec-v0.1)
 
-## Validating your parser
-
-1. Clone or download the FSP.
-2. Pick a message from `samples/`.
-3. Validate it against the entry XSD referenced in `FORMAT.yaml`.
-4. Run it through your parser and check your in-memory representation against the documented fields.
-
 If the XSD or a sample doesn't match what the live feed produces, [file an issue](/about/issues). That's exactly the kind of mismatch the pilot is here to catch.
 
 ## See also

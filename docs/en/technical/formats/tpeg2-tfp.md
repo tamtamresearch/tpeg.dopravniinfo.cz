@@ -36,14 +36,6 @@ The supported set is in the FSP `FORMAT.yaml`.
 
 The FSP repository contains `FORMAT.yaml`, the entry XSD, and `samples/`.
 
-## Validating your parser
-
-Same procedure as for TEC:
-
-1. Clone the FSP.
-2. Validate a `samples/` message against the entry XSD.
-3. Run the sample through your parser and compare against documented fields.
-
 [File an issue](/about/issues) for any XSD, live-feed, or sample mismatch.
 
 ## See also
