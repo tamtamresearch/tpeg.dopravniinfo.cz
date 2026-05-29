@@ -2,13 +2,13 @@
 
 Czech profile of the TPEG2 **Traffic Flow & Prediction** application format.
 
-|                 |                                   |
-| --------------- | --------------------------------- |
-| **Identifier**  | `x-format:cz-ndic_tpeg2-tfp-v0.1` |
-| **Family**      | TPEG2 (ISO 21219)                 |
-| **Application** | TFP, Traffic Flow & Prediction    |
-| **Encoding**    | XML                               |
-| **Status**      | Pilot                             |
+|                 |                                                                                                                      |
+| --------------- | -------------------------------------------------------------------------------------------------------------------- |
+| **Identifier**  | `x-format:cz-ndic_tpeg2-tfp-v0.1`                                                                                    |
+| **Family**      | TPEG2 ([ISO 21219-1:2023](https://www.iso.org/obp/ui/en#iso:std:iso:21219:-1:ed-1:v1:en))                            |
+| **Application** | TFP, Traffic Flow & Prediction ([ISO 21219-18:2019](https://www.iso.org/obp/ui/en#iso:std:iso:21219:-18:ed-1:v1:en)) |
+| **Encoding**    | XML                                                                                                                  |
+| **Status**      | Pilot                                                                                                                |
 
 ## What it carries
 

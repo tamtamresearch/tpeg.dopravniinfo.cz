@@ -2,13 +2,13 @@
 
 Czech profile of the TPEG2 **Traffic Event Compact** application format.
 
-|                 |                                   |
-| --------------- | --------------------------------- |
-| **Identifier**  | `x-format:cz-ndic_tpeg2-tec-v0.1` |
-| **Family**      | TPEG2 (ISO 21219)                 |
-| **Application** | TEC, Traffic Event Compact        |
-| **Encoding**    | XML                               |
-| **Status**      | Pilot                             |
+|                 |                                                                                                                  |
+| --------------- | ---------------------------------------------------------------------------------------------------------------- |
+| **Identifier**  | `x-format:cz-ndic_tpeg2-tec-v0.1`                                                                                |
+| **Family**      | TPEG2 ([ISO 21219-1:2023](https://www.iso.org/obp/ui/en#iso:std:iso:21219:-1:ed-1:v1:en))                        |
+| **Application** | TEC, Traffic Event Compact ([ISO 21219-15:2023](https://www.iso.org/obp/ui/en#iso:std:iso:21219:-15:ed-1:v1:en)) |
+| **Encoding**    | XML                                                                                                              |
+| **Status**      | Pilot                                                                                                            |
 
 ## What it carries
 

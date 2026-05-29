@@ -9,15 +9,15 @@ This section documents what a consumer needs to integrate with the pilot TPEG se
 
 ## At a glance
 
-|                          |                                                                            |
-| ------------------------ | -------------------------------------------------------------------------- |
-| **Standards family**     | TPEG2 (ISO 21219)                                                          |
-| **Encoding**             | XML                                                                        |
-| **Delivery**             | IP-based pull (see [Protocol](./protocol))                                 |
-| **Location referencing** | TMC + OpenLR (per application format)                                      |
-| **Authentication**       | Per-subscriber, issued on subscription                                     |
-| **Coverage**             | Czechia (CZ0), see [Coverage](#coverage)                                   |
-| **Upstream source**      | DATEX II feeds from ŘSD / NDIC, see [Upstream data](/pilot/#upstream-data) |
+|                          |                                                                                           |
+| ------------------------ | ----------------------------------------------------------------------------------------- |
+| **Standards family**     | TPEG2 ([ISO 21219-1:2023](https://www.iso.org/obp/ui/en#iso:std:iso:21219:-1:ed-1:v1:en)) |
+| **Encoding**             | XML                                                                                       |
+| **Delivery**             | IP-based pull (see [Protocol](./protocol))                                                |
+| **Location referencing** | TMC + OpenLR (per application format)                                                     |
+| **Authentication**       | Per-subscriber, issued on subscription                                                    |
+| **Coverage**             | Czechia (CZ0), see [Coverage](#coverage)                                                  |
+| **Upstream source**      | DATEX II feeds from ŘSD / NDIC, see [Upstream data](/pilot/#upstream-data)                |
 
 ## Published formats
 

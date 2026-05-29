@@ -81,4 +81,4 @@ The **bold** rows are what this pilot publishes.
 
 - [TPEG primer](https://tisa.org/tpeg-primer/), a short introduction maintained by TISA.
 - [TISA, Traveller Information Services Association](https://tisa.org/)
-- [ISO 21219-1, TPEG2 framework](https://www.iso.org/standard/79437.html), current edition.
+- [ISO 21219-1:2023](https://www.iso.org/obp/ui/en#iso:std:iso:21219:-1:ed-1:v1:en), the TPEG2 framework document.
