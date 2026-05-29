@@ -39,7 +39,3 @@ One endpoint per published format:
 | [TPEG2-TFP](./formats/tpeg2-tfp) | `x-format:cz-ndic_tpeg2-tfp-v0.1` |
 
 Endpoint URLs, polling intervals, and recommended client behaviour are shared on subscription.
-
-## Versioning
-
-- Backwards-incompatible changes are possible during the pilot. We'll announce them to active subscribers by e-mail in advance.
