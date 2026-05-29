@@ -44,7 +44,7 @@ For the pilot we publish **[TPEG2-TEC](/technical/formats/tpeg2-tec)** and **[TP
 
 ## Caveats
 
-- **TPEG2 is heavier than TMC.** Message volume and complexity are higher. If your channel is very constrained, TMC may still be the better pick.
+- **TPEG2 is heavier than RDS-TMC.** Message volume and complexity are higher. If your channel is very constrained, RDS-TMC may still be the better pick. However, RDS-TMC rides on FM broadcast, which is on a sunset path across much of Europe in favour of DAB. Long-term planning around RDS-TMC needs to account for that.
 - **Tooling is thinner than for DATEX II.** Open-source TPEG2 tooling is less mature. Part of the point of the pilot is to surface and fix this.
 - **It's a pilot.** The technical value is real, but there are no operational commitments. See [scope and status](/pilot/).
 
