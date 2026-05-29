@@ -35,7 +35,7 @@ Any identified organisation with a stated use case. We don't exclude commercial 
 
 ### Will the service still be there in six months?
 
-Yes. The pilot is contracted to run for at least 6 months [TODO: confirm dates], with a possible extension of up to 6 more. After that, the service may become permanent, move to a different operator, or be stopped, depending on the evaluation outcome. We'll give active subscribers prior notice of any planned change by e-mail, using the operational address you give us.
+Yes. The pilot is guaranteed to run until **June 2027**. After that, the service may become permanent, move to a different operator, or be stopped, depending on the evaluation outcome. We'll give active subscribers prior notice of any planned change by e-mail, using the operational address you give us.
 
 ## Technical
 

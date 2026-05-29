@@ -12,12 +12,11 @@ _Pilot delivered under public contract "Studie a pilotní ověření standardu T
 | -------------------------------- | ----------------------------------------------------------------------------------- |
 | **Stage**                        | Pilot, beta                                                                         |
 | **Service availability**         | Best-effort, no SLA                                                                 |
-| **Guaranteed feed availability** | [TODO]                                                                              |
+| **Guaranteed feed availability** | Until **June 2027**                                                                 |
 | **Cost to consumer**             | Free, for evaluation and integration testing                                        |
 | **Operator**                     | CEDA Maps a.s.                                                                      |
 | **Data source**                  | ŘSD / NDIC, via the [Czech National Access Point](https://registr.dopravniinfo.cz/) |
-| **Pilot period**                 | At least 6 months, with a possible extension of up to 6 more [TODO: confirm dates]  |
-| **After the contracted period**  | Continuation depends on the evaluation outcome                                      |
+| **After June 2027**              | Continuation depends on the evaluation outcome                                      |
 
 ## Upstream data
 
