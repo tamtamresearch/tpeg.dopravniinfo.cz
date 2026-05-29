@@ -43,7 +43,3 @@ Endpoint URLs, polling intervals, and recommended client behaviour are shared on
 ## Versioning
 
 - Backwards-incompatible changes are possible during the pilot. We'll announce them to active subscribers by e-mail in advance.
-
-## Reference implementations
-
-We're not publishing a reference client in the pilot phase. If you're working on an open-source TPEG2 client and want to coordinate, [get in touch](/about/contacts).
