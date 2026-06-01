@@ -9,7 +9,7 @@
 **CEDA Maps a.s.**
 
 - Subscription and general questions: [tpeg@ceda.cz](mailto:tpeg@ceda.cz)
-- [www.ceda.cz](https://www.ceda.cz)
+- [www.ceda.eu](https://www.ceda.eu)
 
 ## Technical partner
 
