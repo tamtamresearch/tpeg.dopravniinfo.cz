@@ -108,7 +108,8 @@ export default defineConfig({
 
                 footer: {
                     message: "Pilot TPEG service in Czechia - study and pilot verification of the TPEG standard",
-                    copyright: "by CEDA Maps a.s.",
+                    copyright:
+                        '<a href="https://www.rsd.cz/">ŘSD</a> · <a href="https://www.ceda.eu">CEDA Maps a.s.</a> · <a href="https://www.tamtamresearch.com">TamTam Research s.r.o.</a>',
                 },
             },
         },
