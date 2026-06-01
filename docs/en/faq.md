@@ -15,7 +15,7 @@ If your use case specifically needs DAB transport, the pilot doesn't cover it. L
 It depends on the format. Recommended polling intervals are in each format's FSP `FORMAT.yaml`. Roughly:
 
 - **TPEG2-TEC**: minute-scale, driven by source events.
-- **TPEG2-TFP**: sub-minute to minute scale for flow snapshots.
+- **TPEG2-TFP**: 5 minutes for flow snapshots.
 
 Polling faster than recommended won't give you fresher data. The upstream source doesn't update faster.
 
