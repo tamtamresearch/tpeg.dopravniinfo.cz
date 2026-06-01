@@ -1,6 +1,6 @@
 # TPEG2-TEC, Traffic Event Compact
 
-Czech profile of the TPEG2 **Traffic Event Compact** application format.
+TPEG2 **Traffic Event Compact** as published on the Czech road network.
 
 |                 |                                                                                                                  |
 | --------------- | ---------------------------------------------------------------------------------------------------------------- |

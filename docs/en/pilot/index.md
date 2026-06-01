@@ -36,9 +36,9 @@ Delivery is over the IP protocol described in the [Technical](/technical/) secti
 
 ## Goals
 
-**Validate the format choices.** Confirm that TPEG2-TEC and TPEG2-TFP, as profiled for the Czech road network, work in practice for independent consumers.
+**Validate the format choices.** Confirm that TPEG2-TEC and TPEG2-TFP work in practice for independent consumers.
 
-**Build a small consumer community.** Find real consumers, learn their use cases, fold their feedback into the format profiles and the data itself.
+**Build a small consumer community.** Find real consumers, learn their use cases, fold their feedback into the formats and the data itself.
 
 **Inform a go/no-go decision.** What we learn from the pilot will feed into a decision about whether TPEG2 distribution becomes a permanent part of Czech TTI.
 
@@ -47,15 +47,14 @@ Delivery is over the IP protocol described in the [Technical](/technical/) secti
 - **No production SLA, support contract, or guaranteed retention.** The pilot has a minimum committed duration (see status table) but no formal availability guarantee within that period.
 - **No DAB or other broadcast delivery.** Pilot delivery is IP-only.
 - **Not all TPEG2 application formats.** Only TEC and TFP are published. Parking, weather, fuel price, and the rest are out of scope for now.
-- **Not a registry or national access point.** That's a different system maintained elsewhere.
 
 ## After the pilot
 
 The pilot is a step toward a **permanent TPEG2 service** for Czechia, not the end goal. Whether it becomes permanent depends on what we learn here and on real consumer interest. The more concretely you tell us what you'd use the data for, the stronger the case.
 
-Got a question or a tentative use case? We'd rather hear it now than miss the chance to fold it into the format profile. [Get in touch](/about/contacts) or [open a discussion](https://github.com/tamtamresearch/tpeg.dopravniinfo.cz/discussions).
+Got a question or a tentative use case? Feedback during the pilot shapes what comes after. [Get in touch](/about/contacts) or [open a discussion](https://github.com/tamtamresearch/tpeg.dopravniinfo.cz/discussions).
 
 ## How to engage
 
 - Want to try the data? Start with [how to subscribe](/subscribe/).
-- Want to discuss the format profile or a use case? [Open a discussion](https://github.com/tamtamresearch/tpeg.dopravniinfo.cz/discussions) on GitHub.
+- Want to discuss the formats or a use case? [Open a discussion](https://github.com/tamtamresearch/tpeg.dopravniinfo.cz/discussions) on GitHub.

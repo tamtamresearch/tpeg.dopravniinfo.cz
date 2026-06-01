@@ -1,6 +1,6 @@
 # TPEG2-TFP, Traffic Flow & Prediction
 
-Czech profile of the TPEG2 **Traffic Flow & Prediction** application format.
+TPEG2 **Traffic Flow & Prediction** as published on the Czech road network.
 
 |                 |                                                                                                                      |
 | --------------- | -------------------------------------------------------------------------------------------------------------------- |

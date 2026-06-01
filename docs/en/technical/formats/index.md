@@ -2,7 +2,7 @@
 
 The pilot publishes two TPEG2 application formats. Each one is documented in its own **Format Specification Package (FSP)**, a small GitHub repository with:
 
-- `FORMAT.yaml`: metadata about the format (name, version, profile, links);
+- `FORMAT.yaml`: metadata about the format (name, version, schema);
 - the entry **XSD** schema for validation;
 - a `samples/` folder with representative messages.
 
