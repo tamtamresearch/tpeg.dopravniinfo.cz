@@ -2,7 +2,7 @@
 
 The **Pilot TPEG service in Czechia** is a pilot deployment of the [TPEG](/tpeg/) standard for distribution of traffic and travel information on the Czech road network.
 
-Commissioned by the Czech road authority **ŘSD** (Ředitelství silnic a dálnic) and its national traffic information centre **NDIC** (Národní dopravní informační centrum). Operated by **[CEDA Maps a.s.](https://www.ceda.eu)** in cooperation with **[TamTam Research s.r.o.](https://www.tamtamresearch.com)** as technical partner.
+Commissioned by the Czech road and motorway directorate **ŘSD** (Ředitelství silnic a dálnic) and its national traffic information centre **NDIC** (Národní dopravní informační centrum). Operated by **[CEDA Maps a.s.](https://www.ceda.eu)** in cooperation with **[TamTam Research s.r.o.](https://www.tamtamresearch.com)** as technical partner.
 
 ## Status at a glance
 

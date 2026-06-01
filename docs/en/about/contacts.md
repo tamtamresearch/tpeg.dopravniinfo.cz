@@ -2,7 +2,7 @@
 
 ## Commissioned by
 
-**NDIC** (Národní dopravní informační centrum), the national traffic information centre operated by **Ředitelství silnic a dálnic s. p. (ŘSD)**, the Czech road and motorway directorate.
+**NDIC** (Národní dopravní informační centrum), the national traffic information centre operated by **[Ředitelství silnic a dálnic s. p. (ŘSD)](https://www.rsd.cz/)**, the Czech road and motorway directorate.
 
 ## Pilot service operator
 
