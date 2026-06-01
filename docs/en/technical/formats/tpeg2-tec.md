@@ -29,8 +29,6 @@ Events are anchored to the road network using TPEG2's supported location referen
 - **TMC**: traditional TMC location codes, for backward compatibility.
 - **OpenLR**: for dynamic and consumer-map-independent referencing.
 
-The exact set of supported methods is in the FSP `FORMAT.yaml`.
-
 ## Where to get the spec
 
 The full specification (`FORMAT.yaml` metadata, entry XSD, and `samples/` folder) is in a dedicated GitHub repository:

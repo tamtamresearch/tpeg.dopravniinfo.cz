@@ -28,8 +28,6 @@ Flow segments are anchored using TPEG2's supported location referencing methods:
 - **TMC**: for compatibility with existing client maps;
 - **OpenLR**: for map-independent referencing of arbitrary segments.
 
-The supported set is in the FSP `FORMAT.yaml`.
-
 ## Where to get the spec
 
 - **FSP**: [tamtamresearch/x-format_cz-ndic_tpeg2-tfp-v0.1](https://github.com/tamtamresearch/x-format_cz-ndic_tpeg2-tfp-v0.1)

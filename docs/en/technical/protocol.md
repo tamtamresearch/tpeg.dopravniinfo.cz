@@ -19,7 +19,7 @@ The pilot uses a **pull model**:
 2. The server returns a **full snapshot** of currently active messages for that format. The feed is not delta-encoded; every successful response is self-contained and replaces the previous one.
 3. The consumer derives create / update / cancel transitions by comparing successive snapshots against its local state, following the TPEG2 message-lifecycle rules.
 
-Recommended polling cadence is in the per-format FSP metadata. Don't poll faster than recommended. The source data doesn't update faster than that.
+Recommended polling cadence is shared with subscribers at onboarding. Don't poll faster than recommended. The source data doesn't update faster than that.
 
 **Conditional requests are required.** The server supports `ETag` and `Last-Modified` response headers, and consumers must send `If-None-Match` and/or `If-Modified-Since` on each poll. When nothing has changed the server returns `304 Not Modified` with no body, which keeps the feed cheap to poll and the source bandwidth predictable.
 

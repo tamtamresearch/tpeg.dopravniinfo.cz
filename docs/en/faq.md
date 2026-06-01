@@ -12,7 +12,7 @@ If your use case specifically needs DAB transport, the pilot doesn't cover it. L
 
 ### How often is the data updated?
 
-It depends on the format. Recommended polling intervals are in each format's FSP `FORMAT.yaml`. Roughly:
+It depends on the format. Recommended polling intervals are shared with subscribers at onboarding. Roughly:
 
 - **TPEG2-TEC**: minute-scale, driven by source events.
 - **TPEG2-TFP**: 5 minutes for flow snapshots.
@@ -49,6 +49,6 @@ Use the XSD and `samples/` from each format's FSP repository. The procedure is o
 
 ### Which location referencing methods do you use?
 
-Per-format. Both formats support **TMC** for compatibility and **OpenLR** for map-independent referencing. The exact set per format is in the FSP `FORMAT.yaml`.
+Per-format. Both formats support **TMC** for compatibility and **OpenLR** for map-independent referencing.
 
 _The FAQ will grow as questions come in. [Open a discussion](https://github.com/tamtamresearch/tpeg.dopravniinfo.cz/discussions) if you have one._
