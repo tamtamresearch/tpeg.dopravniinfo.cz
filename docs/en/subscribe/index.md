@@ -45,7 +45,7 @@ The link below opens your e-mail client with the address, subject, and body pre-
 
 - Use of the data is covered by the [terms of use](/about/license).
 - Credentials are tied to a named consumer organisation and **must not be shared**.
-- The pilot is **free** for evaluation. Commercial production use needs to be discussed in advance.
+- The pilot is **free** for evaluation.
 - The pilot has a minimum committed duration; continuation after that period depends on the evaluation outcome. See [pilot scope & status](/pilot/).
 
 ## Questions before subscribing?
