@@ -43,10 +43,6 @@ Yes. The pilot is guaranteed to run until **June 2027**. After that, the service
 
 **TPEG2-TEC** (events) and **TPEG2-TFP** (flow & prediction). See [Technical → Formats](/technical/formats/).
 
-### How do I validate my parser?
-
-Use the XSD and `samples/` from each format's FSP repository. The procedure is on each format page ([TEC](/technical/formats/tpeg2-tec), [TFP](/technical/formats/tpeg2-tfp)).
-
 ### Which location referencing methods do you use?
 
 Per-format. Both formats support **TMC** for compatibility and **OpenLR** for map-independent referencing.
