@@ -25,9 +25,9 @@ Recommended polling cadence is in the per-format FSP metadata. Don't poll faster
 
 ## Authentication
 
-- **Authentication method**: HTTP Basic Auth over HTTPS.
-- **Credentials**: each subscriber gets an individual username/password pair, issued at onboarding.
-- Credentials are tied to a named consumer and can be **rotated** or **revoked** at any time, especially if the [terms of use](/about/license) aren't respected.
+- **Authentication method**: access token over HTTPS.
+- **Credentials**: each subscriber gets an individual access token, issued at onboarding.
+- Tokens are tied to a named consumer and can be **revoked** at any time, especially if the [terms of use](/about/license) aren't respected.
 
 ## Endpoints
 
@@ -39,3 +39,5 @@ One endpoint per published format:
 | [TPEG2-TFP](./formats/tpeg2-tfp) | `x-format:cz-ndic_tpeg2-tfp-v0.1` |
 
 Endpoint URLs, polling intervals, and recommended client behaviour are shared on subscription.
+
+See the [OpenAPI specification](#) for the full endpoint reference. _[TODO: link to format spec repository once published.]_
