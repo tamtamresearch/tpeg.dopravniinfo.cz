@@ -1,6 +1,6 @@
 # Subscribe
 
-Two ways to engage with the pilot, depending on where you are.
+Two ways to engage with the pilot, depending on where you are. See the [privacy notice](/about/privacy) for how we handle the personal data you submit.
 
 <div style="display: flex; gap: 1rem; flex-wrap: wrap; margin: 1.75em 0;">
   <a class="VPButton brand" href="https://forms.office.com/Pages/ResponsePage.aspx?id=Qqu_0vPnEkaRRZJXwzn3AKtAlJkJmd5PjUXvlqaNJpVUQTMzOUVGVENKSEQ5NFRFWjNOQ1Y4SVFYRyQlQCN0PWcu&r56580e65bed041a1b93b561fa5646b34=%22Request%20API%20token%20(data%20access)%22" target="_blank" rel="noopener">

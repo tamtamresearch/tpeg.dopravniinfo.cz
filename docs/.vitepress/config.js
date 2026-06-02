@@ -80,6 +80,7 @@ export default defineConfig({
                             items: [
                                 { text: "Overview", link: "/about/" },
                                 { text: "Terms of use", link: "/about/license" },
+                                { text: "Privacy notice", link: "/about/privacy" },
                                 { text: "Contacts", link: "/about/contacts" },
                                 { text: "Issue tracker & discussions", link: "/about/issues" },
                             ],
@@ -109,7 +110,7 @@ export default defineConfig({
                 footer: {
                     message: "Pilot TPEG service in Czechia - study and pilot verification of the TPEG standard",
                     copyright:
-                        '<a href="https://www.rsd.cz/">ŘSD</a> · <a href="https://www.ceda.eu">CEDA Maps a.s.</a> · <a href="https://www.tamtamresearch.com">TamTam Research s.r.o.</a>',
+                        '<a href="https://www.rsd.cz/">ŘSD</a> · <a href="https://www.ceda.eu">CEDA Maps a.s.</a> · <a href="https://www.tamtamresearch.com">TamTam Research s.r.o.</a> · <a href="/about/privacy">Privacy</a>',
                 },
             },
         },
