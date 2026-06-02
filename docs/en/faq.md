@@ -31,7 +31,7 @@ Czechia (CZ0): motorways, the arterial road network, regional roads, and urban a
 
 ### Who can subscribe?
 
-Any identified organisation or individual. We don't exclude commercial users from the pilot, and we welcome hearing about intended use. The [subscription process](/subscribe/) lists what to include in the request.
+Any identified organisation or individual. We don't exclude commercial users from the pilot, and we welcome hearing about intended use. The [subscription page](/subscribe/) has the form for full data access and a separate form for registering interest only.
 
 ### Will the service still be there in six months?
 

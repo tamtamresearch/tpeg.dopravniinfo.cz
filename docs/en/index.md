@@ -13,6 +13,9 @@ hero:
           text: Subscribe
           link: /subscribe/
         - theme: alt
+          text: Register interest
+          link: /subscribe/#register-your-interest
+        - theme: alt
           text: What's in scope
           link: /pilot/
         - theme: alt
@@ -45,7 +48,7 @@ This site is the public face of the pilot. It's here to help you understand what
 - **[TPEG](/tpeg/)**: what the standard is and what it's good for.
 - **[Pilot](/pilot/)**: scope and status of this pilot.
 - **[Technical](/technical/)**: the protocol and the two published TPEG2 formats, [TPEG2-TFP](/technical/formats/tpeg2-tfp) and [TPEG2-TEC](/technical/formats/tpeg2-tec).
-- **[Subscribe](/subscribe/)**: how to request access to the feed.
+- **[Subscribe](/subscribe/)**: how to request access to the feed, or just register your interest.
 - **[FAQ](/faq)**.
 - **[About](/about/)**: project scope, terms of use, contacts, how to report issues.
 
@@ -55,4 +58,4 @@ This site is the public face of the pilot. It's here to help you understand what
 **This is a pilot, beta-quality service.** It's for evaluation, integration testing, and feedback. The pilot is guaranteed to run until **June 2027**. After that, continuation depends on the evaluation outcome. Don't build production systems on it without talking to us first.
 :::
 
-We want to hear from people who'd actually use this. The fastest way to start a conversation is to [subscribe](/subscribe/) or [open a discussion](https://github.com/tamtamresearch/tpeg.dopravniinfo.cz/discussions) on GitHub.
+We want to hear from people who'd actually use this. If you're ready to integrate, [subscribe to the feed](/subscribe/#subscribe-to-the-feed). If you're curious but not ready, [register your interest](/subscribe/#register-your-interest). For technical questions, [open a discussion](https://github.com/tamtamresearch/tpeg.dopravniinfo.cz/discussions) on GitHub.

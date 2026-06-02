@@ -56,5 +56,6 @@ Got a question or a tentative use case? Feedback during the pilot shapes what co
 
 ## How to engage
 
-- Want to try the data? Start with [how to subscribe](/subscribe/).
+- Want to try the data? Start with [how to subscribe](/subscribe/#subscribe-to-the-feed).
+- Curious but not ready to integrate? [Register your interest](/subscribe/#register-your-interest) and we'll keep you in the loop.
 - Want to discuss the formats or a use case? [Open a discussion](https://github.com/tamtamresearch/tpeg.dopravniinfo.cz/discussions) on GitHub.
