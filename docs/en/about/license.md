@@ -12,7 +12,7 @@ When you subscribe, you agree to these terms. They cover, among other things:
 - when access can be suspended or revoked.
 
 ::: info Free during the pilot
-The pilot is **free** for evaluation and integration testing. If you want to use it commercially, talk to us first.
+The pilot is **free** for evaluation and integration testing. If you want to use it commercially, we'd appreciate hearing from you first.
 :::
 
 If anything in the terms is unclear, e-mail [tpeg@ceda.cz](mailto:tpeg@ceda.cz) before you subscribe.
