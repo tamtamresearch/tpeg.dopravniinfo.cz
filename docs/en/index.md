@@ -48,8 +48,8 @@ This site is the public face of the pilot. It's here to help you understand what
 - **[TPEG](/tpeg/)**: what the standard is and what it's good for.
 - **[Pilot](/pilot/)**: scope and status of this pilot.
 - **[Technical](/technical/)**: the protocol and the two published TPEG2 formats, [TPEG2-TFP](/technical/formats/tpeg2-tfp) and [TPEG2-TEC](/technical/formats/tpeg2-tec).
-- **[Subscribe](/subscribe/)**: how to request access to the feed, or just register your interest.
-- **[FAQ](/faq)**.
+- **[Subscribe](/subscribe/)**: how to [request access to the feed](/subscribe/#subscribe-to-the-feed), or just [register your interest](/subscribe/#register-your-interest).
+- **[FAQ](/faq)**: short answers to the practical questions.
 - **[About](/about/)**: project scope, terms of use, contacts, how to report issues.
 
 ## Status

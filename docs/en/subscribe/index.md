@@ -11,7 +11,7 @@ Two ways to engage with the pilot, depending on where you are. See the [privacy 
   </a>
 </div>
 
-## Subscribe to the feed
+## Subscribe to the feed {#subscribe-to-the-feed}
 
 For developers and organisations ready to integrate. The form asks who you are, your organisation, and what you plan to do with the data. On approval, you receive an **API token**, endpoint URLs, polling guidance, and the terms-of-use document.
 
@@ -36,7 +36,7 @@ _We'll use your details to onboard you and for operational communication: servic
 - The pilot is **free** for evaluation.
 - The pilot has a minimum committed duration; continuation after that period depends on the evaluation outcome. See [pilot scope & status](/pilot/).
 
-## Register your interest
+## Register your interest {#register-your-interest}
 
 Not ready to integrate the feed yet? Tell us you're interested anyway.
 
