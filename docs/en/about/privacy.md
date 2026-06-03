@@ -23,7 +23,9 @@ We collect personal data through a single subscription form hosted on Microsoft 
 
 Fields collected: your name, e-mail, and, for data access requests, your organisation, role, and a description of intended use of the data.
 
-We do not use cookies or web analytics on this site itself. The form is hosted on `forms.office.com`; submitting it is also governed by [Microsoft's privacy statement](https://privacy.microsoft.com/).
+We use **[GoatCounter](https://www.goatcounter.com/)**, a cookieless and privacy-respecting analytics tool, to count page views and see which pages and referrers are popular. No cookies are set, no personal data is collected, and IP addresses are not retained. See [GoatCounter's privacy statement](https://www.goatcounter.com/help/privacy) for details.
+
+The subscription form is hosted on `forms.office.com`; submitting it is also governed by [Microsoft's privacy statement](https://privacy.microsoft.com/).
 
 ## Why we collect it and on what basis
 

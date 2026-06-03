@@ -42,6 +42,15 @@ export default defineConfig({
         ["meta", { property: "og:type", content: "website" }],
         ["meta", { property: "og:site_name", content: "Pilot TPEG service in Czechia" }],
         ["meta", { property: "og:url", content: "https://tpeg.dopravniinfo.cz/" }],
+        [
+            "script",
+            {
+                defer: "",
+                "data-goatcounter": "https://tpeg-dopravniinfo.goatcounter.com/count",
+                "data-goatcounter-settings": '{"allow_local": false}',
+                src: "//gc.zgo.at/count.js",
+            },
+        ],
     ],
 
     themeConfig: {
