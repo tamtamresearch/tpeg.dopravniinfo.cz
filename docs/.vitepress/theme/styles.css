@@ -67,3 +67,22 @@
 .VPHome {
     padding-bottom: 3rem;
 }
+
+/* Info callout: brand-blue accent bar, soft brand tint, brand-blue title. */
+.vp-doc .custom-block.info {
+    border: 1px solid rgba(0, 150, 220, 0.25);
+    border-left: 4px solid var(--vp-c-brand-1);
+    border-radius: 8px;
+    background-color: rgba(0, 150, 220, 0.08);
+    color: var(--vp-c-text-1);
+}
+
+.vp-doc .custom-block.info .custom-block-title {
+    color: var(--vp-c-brand-1);
+    font-weight: 600;
+}
+
+.dark .vp-doc .custom-block.info {
+    background-color: rgba(0, 150, 220, 0.14);
+    border-color: rgba(0, 150, 220, 0.4);
+}
