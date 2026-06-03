@@ -11,6 +11,8 @@ When you subscribe, you agree to these terms. They cover, among other things:
 - limitations of liability;
 - when access can be suspended or revoked.
 
-> The pilot is **free** for evaluation and integration testing. If you want to use it commercially, talk to us first.
+::: info Free during the pilot
+The pilot is **free** for evaluation and integration testing. If you want to use it commercially, talk to us first.
+:::
 
 If anything in the terms is unclear, e-mail [tpeg@ceda.cz](mailto:tpeg@ceda.cz) before you subscribe.

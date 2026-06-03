@@ -2,7 +2,9 @@
 
 The pilot service delivers TPEG2 messages over an **IP-based protocol**. This page is what an integrator needs to know to consume the feed.
 
-> This is a public summary. Full protocol details (endpoints, credentials, polling parameters) are shared with consumers as part of [how to subscribe](/subscribe/).
+::: info Public summary
+Full protocol details (endpoints, credentials, polling parameters) are shared with consumers as part of [how to subscribe](/subscribe/).
+:::
 
 ## Transport
 
