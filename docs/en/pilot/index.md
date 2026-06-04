@@ -2,23 +2,23 @@
 
 The **Pilot TPEG service in Czechia** is a pilot deployment of the [TPEG](/tpeg/) standard for distribution of traffic and travel information on the Czech road network.
 
-Commissioned by the Czech road and motorway directorate **ŘSD** (Ředitelství silnic a dálnic) and its national traffic information centre **NDIC** (Národní dopravní informační centrum). Operated by **[CEDA Maps a.s.](https://www.ceda.eu)** in cooperation with **[TamTam Research s.r.o.](https://www.tamtamresearch.com)** as technical partner.
+Commissioned by the Czech road and motorway directorate **[ŘSD](/about/contacts#rsd)** (Ředitelství silnic a dálnic) and its national traffic information centre **NDIC** (Národní dopravní informační centrum). Operated by **[CEDA Maps a.s.](/about/contacts#ceda)** in cooperation with **[TamTam Research s.r.o.](/about/contacts#tamtamresearch)** as technical partner.
 
 ## Status at a glance
 
-|                                  |                                                                                     |
-| -------------------------------- | ----------------------------------------------------------------------------------- |
-| **Stage**                        | Pilot, beta                                                                         |
-| **Service availability**         | Best-effort, no SLA                                                                 |
-| **Guaranteed feed availability** | Until **June 2027**                                                                 |
-| **Cost to consumer**             | Free, for evaluation and integration testing                                        |
-| **Operator**                     | CEDA Maps a.s.                                                                      |
-| **Data source**                  | ŘSD / NDIC, via the [Czech National Access Point](https://registr.dopravniinfo.cz/) |
-| **After June 2027**              | Continuation depends on the evaluation outcome                                      |
+|                                  |                                                                                                            |
+| -------------------------------- | ---------------------------------------------------------------------------------------------------------- |
+| **Stage**                        | Pilot, beta                                                                                                |
+| **Service availability**         | Best-effort, no SLA                                                                                        |
+| **Guaranteed feed availability** | Until **June 2027**                                                                                        |
+| **Cost to consumer**             | Free, for evaluation and integration testing                                                               |
+| **Operator**                     | [CEDA Maps a.s.](/about/contacts#ceda)                                                                     |
+| **Data source**                  | [ŘSD / NDIC](/about/contacts#rsd), via the [Czech National Access Point](https://registr.dopravniinfo.cz/) |
+| **After June 2027**              | Continuation depends on the evaluation outcome                                                             |
 
 ## Upstream data
 
-The pilot ingests DATEX II feeds from ŘSD / NDIC, published via the [Czech National Access Point](https://registr.dopravniinfo.cz/), and converts them to TPEG2 before publishing:
+The pilot ingests DATEX II feeds from [ŘSD / NDIC](/about/contacts#rsd), published via the [Czech National Access Point](https://registr.dopravniinfo.cz/), and converts them to TPEG2 before publishing:
 
 | Output format | Upstream DATEX II source(s)                                                                                                                                                                                        |
 | ------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |

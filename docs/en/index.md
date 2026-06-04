@@ -43,7 +43,7 @@ features:
 
 ##
 
-The **Pilot TPEG service in Czechia** is a pilot deployment of the [TPEG](/tpeg/) standard for traffic and travel information on the Czech road network. Commissioned by the Czech road and motorway directorate **ŘSD** (Ředitelství silnic a dálnic) and its national traffic information centre **NDIC** (Národní dopravní informační centrum). Operated by **[CEDA Maps a.s.](https://www.ceda.eu)** in cooperation with **[TamTam Research s.r.o.](https://www.tamtamresearch.com)** as technical partner.
+The **Pilot TPEG service in Czechia** is a pilot deployment of the [TPEG](/tpeg/) standard for traffic and travel information on the Czech road network. Commissioned by the Czech road and motorway directorate **[ŘSD](/about/contacts#rsd)** (Ředitelství silnic a dálnic) and its national traffic information centre **NDIC** (Národní dopravní informační centrum). Operated by **[CEDA Maps a.s.](/about/contacts#ceda)** in cooperation with **[TamTam Research s.r.o.](/about/contacts#tamtamresearch)** as technical partner.
 
 This site is the public face of the pilot. It's here to help you understand what the service is, decide if it fits your use, and start a subscription.
 

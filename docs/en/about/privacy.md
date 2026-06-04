@@ -8,7 +8,7 @@ This notice is a working draft. Items marked **[TODO]** need final wording from 
 
 ## Who we are
 
-The **data controller** is **CEDA Maps a.s.**, IČO 26429632, registered office Jihlavská 1558/21, Michle (Praha 4), 140 00 Praha, Czech Republic.
+The **data controller** is **[CEDA Maps a.s.](/about/contacts#ceda)**, IČO 26429632, registered office Jihlavská 1558/21, Michle (Praha 4), 140 00 Praha, Czech Republic.
 
 Contact for privacy questions: [TODO: e-mail address, e.g. tpeg@ceda.cz or a dedicated privacy contact].
 
@@ -41,9 +41,9 @@ The subscription form is hosted on `forms.office.com`; submitting it is also gov
 
 ## Who sees the data
 
-- **CEDA Maps a.s.** as the data controller and pilot operator.
-- **Ředitelství silnic a dálnic s. p. (ŘSD)** and **NDIC** as the project's commissioning authority, where needed for project reporting.
-- **TamTam Research s.r.o.** as the technical partner, where needed for technical onboarding.
+- **[CEDA Maps a.s.](/about/contacts#ceda)** as the data controller and pilot operator.
+- **[Ředitelství silnic a dálnic s. p. (ŘSD)](/about/contacts#rsd)** and **NDIC** as the project's commissioning authority, where needed for project reporting.
+- **[TamTam Research s.r.o.](/about/contacts#tamtamresearch)** as the technical partner, where needed for technical onboarding.
 - **Microsoft Corporation** as a processor for the MS Forms service and the underlying Microsoft 365 tenant.
 
 We do not sell or share personal data with any other third parties.

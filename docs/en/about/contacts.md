@@ -1,18 +1,19 @@
 # Contacts
 
-## Commissioned by
+## ŘSD (Ředitelství silnic a dálnic) {#rsd}
 
-**NDIC** (Národní dopravní informační centrum), the national traffic information centre operated by **[Ředitelství silnic a dálnic s. p. (ŘSD)](https://www.rsd.cz/)**, the Czech road and motorway directorate.
+- Pilot commissioning authority.
+- Czech road and motorway directorate.
+- Upstream traffic information is published via its national traffic information centre **NDIC** (Národní dopravní informační centrum).
+- [www.rsd.cz](https://www.rsd.cz/)
 
-## Pilot service operator
+## CEDA Maps a.s. {#ceda}
 
-**CEDA Maps a.s.**
-
+- Pilot service operator.
 - Subscription and general questions: [tpeg@ceda.cz](mailto:tpeg@ceda.cz)
 - [www.ceda.eu](https://www.ceda.eu)
 
-## Technical partner
+## TamTam Research s.r.o. {#tamtamresearch}
 
-**TamTam Research s.r.o.**, technical partner on the pilot.
-
+- Technical partner on the pilot.
 - [www.tamtamresearch.com](https://www.tamtamresearch.com)
