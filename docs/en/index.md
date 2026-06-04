@@ -24,17 +24,21 @@ hero:
 
 features:
     - title: Pilot
-      details: "This is a pilot for evaluation, integration testing, and feedback."
+      details: "For evaluation, integration testing, and feedback."
       link: /pilot/
       linkText: Pilot scope & status
-    - title: Read the specs
+    - title: Tech specs
       details: Protocol and format docs, with links to the Format Specification Package repositories on GitHub. XSDs, samples, metadata.
       link: /technical/
-      linkText: Open technical section
-    - title: About the project
-      details: Who operates the pilot, terms of use, contacts, and how to report issues.
-      link: /about/
-      linkText: About this project
+      linkText: Technical section
+    - title: Interest survey
+      details: We want to learn about your interest in TPEG content.
+      link: /subscribe/#register-your-interest
+      linkText: Register your interest
+    - title: Serving live data
+      details: Connect to the live feed.
+      link: /subscribe/#subscribe-to-the-feed
+      linkText: Subscribe to the feed
 ---
 
 ##
@@ -43,6 +47,6 @@ The **Pilot TPEG service in Czechia** is a pilot deployment of the [TPEG](/tpeg/
 
 This site is the public face of the pilot. It's here to help you understand what the service is, decide if it fits your use, and start a subscription.
 
-## We want hear from you
+## We want to hear from you
 
 We want to hear from people who'd actually use this. If you're ready to integrate, [subscribe to the feed](/subscribe/#subscribe-to-the-feed). If you're curious but not ready, [register your interest](/subscribe/#register-your-interest). For technical questions, [open a discussion](https://github.com/tamtamresearch/tpeg.dopravniinfo.cz/discussions) on GitHub.
