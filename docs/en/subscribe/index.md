@@ -33,7 +33,7 @@ _We'll use your details to onboard you and for operational communication: servic
 
 - Use of the data is covered by the [terms of use](/about/license).
 - Tokens are tied to a named consumer organisation and **must not be shared**.
-- The pilot is **free** for evaluation.
+- The pilot is **free** of charge.
 - The pilot has a minimum committed duration; continuation after that period depends on the evaluation outcome. See [pilot scope & status](/pilot/).
 
 ## Register your interest {#register-your-interest}

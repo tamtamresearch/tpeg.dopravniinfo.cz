@@ -27,7 +27,7 @@ Czechia (CZ0): motorways, the arterial road network, regional roads, and urban a
 
 ### How much does the pilot cost?
 
-**Free** for evaluation and integration testing during the pilot. See the [terms of use](/about/license) for the conditions and [pilot scope & status](/pilot/) for caveats about availability.
+The pilot is **free** of charge. See the [terms of use](/about/license) for the conditions and [pilot scope & status](/pilot/) for caveats about availability.
 
 ### Who can subscribe?
 
