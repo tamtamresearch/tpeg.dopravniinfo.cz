@@ -44,5 +44,5 @@ The pilot's coverage matches the upstream [ŘSD / NDIC](/about/contacts#rsd) sou
 
 1. Read the [protocol](./protocol) page for transport, polling cadence, and credentials.
 2. Pick the format you care about and read its page.
-3. Validate your parser against the XSD and the samples in the FSP.
+3. **(Optional)** Validate your parser against the XSD and the samples in the FSP.
 4. [Subscribe](/subscribe/) to get credentials and the feed endpoint URLs.
