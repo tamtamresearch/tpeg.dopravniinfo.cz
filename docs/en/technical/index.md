@@ -15,7 +15,7 @@ This is pilot-stage documentation. Breaking changes are announced to active subs
 | ------------------------ | ----------------------------------------------------------------------------------------- |
 | **Standards family**     | TPEG2 ([ISO 21219-1:2023](https://www.iso.org/obp/ui/en#iso:std:iso:21219:-1:ed-1:v1:en)) |
 | **Encoding**             | XML                                                                                       |
-| **Delivery**             | IP-based pull (see [Protocol](./protocol))                                                |
+| **Delivery**             | HTTPS pull (see [Protocol](./protocol))                                                   |
 | **Location referencing** | TMC + OpenLR (per application format)                                                     |
 | **Authentication**       | Per-subscriber, issued on subscription                                                    |
 | **Coverage**             | Czechia (CZ0), see [Coverage](#coverage)                                                  |

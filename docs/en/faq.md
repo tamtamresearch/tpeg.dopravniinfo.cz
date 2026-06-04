@@ -6,7 +6,7 @@ A short list of questions we expect from people thinking about subscribing. If y
 
 ### Do you broadcast TPEG over DAB?
 
-**No.** The pilot is **IP-only**. TPEG is often associated with DAB because TPEG1 was designed mainly with broadcast in mind, but TPEG2 doesn't care about the delivery channel. We deliver TPEG2 XML over HTTPS. See the [Protocol](/technical/protocol) page.
+**No.** The pilot **delivers data only over the internet**. TPEG is often associated with DAB because TPEG1 was designed for broadcast, but TPEG2 doesn't care about the delivery channel. We deliver TPEG2 XML over HTTPS. See the [Protocol](/technical/protocol) page.
 
 If your use case specifically needs DAB transport, the pilot doesn't cover it. Let us know anyway. Interest from real consumers helps shape what comes next.
 

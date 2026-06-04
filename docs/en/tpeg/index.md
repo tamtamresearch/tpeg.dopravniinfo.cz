@@ -11,7 +11,7 @@ For a short, non-paywalled overview of the standard, see the **[TPEG primer](htt
 - **TPEG1** (early 2000s): the original binary/XML toolkit, built for broadcast (DAB).
 - **TPEG2** (current): a modernised, UML-based generation. Same conceptual model, cleaner data structures, multiple physical encodings (XML, binary).
 
-This pilot uses **TPEG2** application formats over an **IP-based protocol**. It's not a DAB broadcast.
+This pilot uses **TPEG2** application formats **over the internet**. It's not a DAB broadcast.
 
 ## Anatomy of TPEG
 

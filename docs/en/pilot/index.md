@@ -45,7 +45,7 @@ Delivery is over the IP protocol described in the [Technical](/technical/) secti
 ## What's not in scope
 
 - **No production SLA, support contract, or guaranteed retention.** The pilot has a minimum committed duration (see status table) but no formal availability guarantee within that period.
-- **No DAB or other broadcast delivery.** Pilot delivery is IP-only.
+- **No DAB or other broadcast delivery.** The pilot delivers data only over the internet.
 - **Not all TPEG2 application formats.** Only TEC and TFP are published. Parking, weather, fuel price, and the rest are out of scope for now.
 
 ## After the pilot
