@@ -31,6 +31,49 @@
     padding: 18px;
 }
 
+/* VPHero's default .image-container has negative margins and a -32px translate
+   designed to let a single round logo + glow blob spill outside .image. With our
+   plain rectangular logo, that just shifts everything top-left. Reset the geometry
+   so the image sits centered inside .image. */
+.VPHero .image-container {
+    position: relative;
+    margin: 0;
+    width: 100%;
+    height: 240px;
+    transform: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Take the image out of absolute positioning (VPHero default) and let the flex
+   container center it. Then allow the wide-aspect combined logo to render larger
+   than VitePress's default 320x320 cap, which is sized for a square product mark. */
+.VPHero .image-src {
+    position: static;
+    top: auto;
+    left: auto;
+    transform: none;
+    max-width: 520px;
+    max-height: 200px;
+}
+
+@media (max-width: 959px) {
+    /* Reset VPHero's negative .image margins (designed to spill a single round logo
+       into the title area). */
+    .VPHero .image {
+        margin: 0 auto;
+        padding: 1rem 0;
+    }
+    .VPHero .image-container {
+        height: 160px;
+    }
+    .VPHero .image-src {
+        max-width: 360px;
+        max-height: 140px;
+    }
+}
+
 .VPNavBarTitle a span {
     white-space: nowrap;
 }

@@ -6,7 +6,7 @@ hero:
     text: ""
     tagline: "Study and pilot service of the TPEG standard in Czechia."
     image:
-        src: /images/logo.png
+        src: /images/logo_rsd_tpeg.png
         alt: ŘSD
     actions:
         - theme: brand
