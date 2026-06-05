@@ -42,7 +42,7 @@ Developped by:
 ## Topics
 
 - license for the data provided
-    - `./docs/public/pdfs/cz-ndic_terms-of-use_traffic-information_v1.0.3-en.pdf`
+    - `./docs/en/about/terms-of-use.md`
 - issue tracker (GitHub)
 - What is TPEG
 - What is pilot test of TPEG at ŘSD/NDIC/ČR

@@ -88,7 +88,7 @@ export default defineConfig({
                             collapsed: false,
                             items: [
                                 { text: "Overview", link: "/about/" },
-                                { text: "Terms of use", link: "/about/license" },
+                                { text: "Terms of use", link: "/about/terms-of-use" },
                                 { text: "Privacy notice", link: "/about/privacy" },
                                 { text: "Contacts", link: "/about/contacts" },
                                 { text: "Issue tracker & discussions", link: "/about/issues" },

@@ -29,7 +29,7 @@ Recommended polling cadence is shared with subscribers at onboarding. Don't poll
 
 - **Authentication method**: access token over HTTPS.
 - **Credentials**: each subscriber gets an individual access token, issued at onboarding.
-- Tokens are tied to a named consumer and can be **revoked** at any time, especially if the [terms of use](/about/license) aren't respected.
+- Tokens are tied to a named consumer and can be **revoked** at any time, especially if the [terms of use](/about/terms-of-use) aren't respected.
 
 ## Endpoints
 

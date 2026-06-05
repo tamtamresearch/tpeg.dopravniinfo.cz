@@ -31,7 +31,7 @@ _We'll use your details to onboard you and for operational communication: servic
 
 ### Conditions
 
-- Use of the data is covered by the [terms of use](/about/license).
+- Use of the data is covered by the [terms of use](/about/terms-of-use).
 - Tokens are tied to a named consumer organisation and **must not be shared**.
 - The pilot is **free** of charge.
 - The pilot has a minimum committed duration; continuation after that period depends on the evaluation outcome. See [pilot scope & status](/pilot/).
