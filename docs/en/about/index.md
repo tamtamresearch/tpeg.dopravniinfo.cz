@@ -9,4 +9,4 @@ For what the pilot is, what works today, and what doesn't, see [scope and status
 - [Terms of use](/about/terms-of-use)
 - [Privacy notice](/about/privacy)
 - [Contacts](/about/contacts)
-- [Issue tracker & discussions](/about/issues)
+- [Report a problem](/about/issues)

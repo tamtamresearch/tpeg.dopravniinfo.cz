@@ -35,7 +35,7 @@ The full specification (`FORMAT.yaml` metadata, entry XSD, and `samples/` folder
 
 - **FSP**: [tamtamresearch/x-format_cz-ndic_tpeg2-tec-v0.1](https://github.com/tamtamresearch/x-format_cz-ndic_tpeg2-tec-v0.1)
 
-If the XSD or a sample doesn't match what the live feed produces, [file an issue](/about/issues). That's exactly the kind of mismatch the pilot is here to catch.
+If the XSD or a sample doesn't match what the live feed produces, [let us know](/about/issues). That's exactly the kind of mismatch the pilot is here to catch.
 
 ## See also
 

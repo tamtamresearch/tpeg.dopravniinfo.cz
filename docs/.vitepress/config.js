@@ -91,7 +91,7 @@ export default defineConfig({
                                 { text: "Terms of use", link: "/about/terms-of-use" },
                                 { text: "Privacy notice", link: "/about/privacy" },
                                 { text: "Contacts", link: "/about/contacts" },
-                                { text: "Issue tracker & discussions", link: "/about/issues" },
+                                { text: "Report a problem", link: "/about/issues" },
                             ],
                         },
                     ],

@@ -1,14 +1,12 @@
-# Issue tracker & discussions
+# Report a problem
 
-We use **GitHub** for public feedback on the pilot and this site.
+If something on this site or in the feed doesn't look right, please tell us.
 
-## Where to file what
+- **Bug reports, broken links, wrong documentation, data anomalies, credentials or anything sensitive**: e-mail [tpeg@ceda.cz](mailto:tpeg@ceda.cz).
 
-- **Bug reports, broken links, wrong documentation**: [open an issue](https://github.com/tamtamresearch/tpeg.dopravniinfo.cz/issues).
-- **Questions, ideas, use-case discussion, feedback on the data**: [start a discussion](https://github.com/tamtamresearch/tpeg.dopravniinfo.cz/discussions).
-- **Anything sensitive** (credentials, contracts, personal data): e-mail [tpeg@ceda.cz](mailto:tpeg@ceda.cz) directly.
+We don't currently run a public issue tracker for the pilot. If demand for one grows during the pilot, we'll add it.
 
-## Before you file
+## Before you write
 
 A good report saves a round-trip. If you can, include:
 
@@ -17,4 +15,4 @@ A good report saves a round-trip. If you can, include:
 - what you expected and what you got;
 - your client or library and its version.
 
-We watch issues during Czech business hours. This is a pilot, so we can't promise response times.
+We read mail during Czech business hours. This is a pilot, so we can't promise response times.

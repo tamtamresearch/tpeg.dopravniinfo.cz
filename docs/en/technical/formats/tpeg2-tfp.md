@@ -34,7 +34,7 @@ Flow segments are anchored using TPEG2's supported location referencing methods:
 
 The FSP repository contains `FORMAT.yaml`, the entry XSD, and `samples/`.
 
-[File an issue](/about/issues) for any XSD, live-feed, or sample mismatch.
+[Let us know](/about/issues) about any XSD, live-feed, or sample mismatch.
 
 ## See also
 
