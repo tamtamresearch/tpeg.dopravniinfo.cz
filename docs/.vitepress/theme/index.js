@@ -1,6 +1,5 @@
 import DefaultTheme from "vitepress/theme";
 import { h } from "vue";
-import { useLanguageCookie } from "../composables/useLanguageCookie";
 import "./styles.css";
 
 export default {
@@ -13,8 +12,5 @@ export default {
                     "Content is not final and may change before official launch.",
                 ]),
         });
-    },
-    setup() {
-        useLanguageCookie();
     },
 };
