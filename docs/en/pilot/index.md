@@ -41,11 +41,11 @@ Delivery is over the IP protocol described in the [Technical](/technical/) secti
 
 **Build a small consumer community.** Find real consumers, learn their use cases, fold their feedback into the formats and the data itself.
 
-**Inform a go/no-go decision.** What we learn from the pilot will feed into a decision about whether TPEG2 distribution becomes a permanent part of Czech TTI.
+**Support the go/no-go decision.** What we learn from the pilot will feed into a decision about whether TPEG2 distribution becomes a permanent part of Czech TTI.
 
-## What's not in scope
+## What's out of scope
 
-- **No production SLA, support contract, or guaranteed retention.** The pilot has a minimum committed duration (see status table) but no formal availability guarantee within that period.
+- **No production SLA, support contract, or guaranteed availability.** The pilot has a minimum committed duration (see status table) but no formal availability guarantee within that period.
 - **No DAB or other broadcast delivery.** The pilot delivers data only over the internet.
 - **Not all TPEG2 application formats.** Only TEC and TFP are published. Parking, weather, fuel price, and the rest are out of scope for now.
 
