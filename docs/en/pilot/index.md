@@ -21,10 +21,11 @@ Commissioned by the Czech road and motorway directorate **[ŘSD](/about/contacts
 
 The pilot ingests DATEX II feeds from [ŘSD / NDIC](/about/contacts#rsd), published via the [Czech National Access Point](https://registr.dopravniinfo.cz/), and converts them to TPEG2 before publishing:
 
-| Output format | DATEX II source(s)                                                                                                                                                                                                 |
-| ------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| **TPEG2-TEC** | [DATEX II - Common Traffic Information (snapshot)](https://registr.dopravniinfo.cz/en/sources/cz-ndic_d2-common-pull/)                                                                                             |
-| **TPEG2-TFP** | [DATEX II - FCD data v2](https://registr.dopravniinfo.cz/en/sources/cz-ndic_d2-fcd-v2/) and [DATEX II - FCD data (predefined locations) v1.1](https://registr.dopravniinfo.cz/en/sources/cz-ndic_d2-pls-fcd-v1.1/) |
+| DATEX II source                                                                                                        | TPEG2 output                                                | Comment                                                                                                                                                  |
+| ---------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [DATEX II - Common Traffic Information (snapshot)](https://registr.dopravniinfo.cz/en/sources/cz-ndic_d2-common-pull/) | **[TPEG2-TEC](/technical/formats/tpeg2-tec)**               | Snapshot of currently active road network events. Republished as TPEG2-TEC, with each TPEG2 message carrying its own create / update / cancel lifecycle. |
+| [DATEX II - FCD data (predefined locations) v1.1](https://registr.dopravniinfo.cz/en/sources/cz-ndic_d2-pls-fcd-v1.1/) | **[TPEG2-TFP](/technical/formats/tpeg2-tfp)**, static feed  | Catalogue of monitored road segments and their location references. Republished as the TFP static feed.                                                  |
+| [DATEX II - FCD data v2](https://registr.dopravniinfo.cz/en/sources/cz-ndic_d2-fcd-v2/)                                | **[TPEG2-TFP](/technical/formats/tpeg2-tfp)**, dynamic feed | Live travel times, speeds, flow levels, and short-term predictions on the monitored segments. Republished as the TFP dynamic feed.                       |
 
 ## What's in scope
 
