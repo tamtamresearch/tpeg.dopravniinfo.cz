@@ -14,12 +14,10 @@ This page lists the formats. Click through for the per-format page on this site,
 
 Traffic events on the Czech road network: incidents, congestion, road works, and similar disruptive events.
 
-- Identifier: `x-format:cz-ndic_tpeg2-tec-v0.1`
 - FSP: [tamtamresearch/x-format_cz-ndic_tpeg2-tec-v0.1](https://github.com/tamtamresearch/x-format_cz-ndic_tpeg2-tec-v0.1)
 
 ### [TPEG2-TFP](./tpeg2-tfp), Traffic Flow & Prediction
 
-Current traffic flow and predicted travel times on monitored road segments.
+Current traffic flow and predicted travel times on monitored road segments. Delivered as two feeds: a **static** catalogue of predefined locations and a **dynamic** stream of measurements. See [Feeds](./tpeg2-tfp#feeds).
 
-- Identifier: `x-format:cz-ndic_tpeg2-tfp-v0.1`
 - FSP: [tamtamresearch/x-format_cz-ndic_tpeg2-tfp-v0.1](https://github.com/tamtamresearch/x-format_cz-ndic_tpeg2-tfp-v0.1)

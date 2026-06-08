@@ -28,6 +28,8 @@ This is pilot-stage documentation. Breaking changes are announced to active subs
 | **[TPEG2-TEC](./formats/tpeg2-tec)** | `x-format:cz-ndic_tpeg2-tec-v0.1` | Traffic events. Incidents, congestion, road works. |
 | **[TPEG2-TFP](./formats/tpeg2-tfp)** | `x-format:cz-ndic_tpeg2-tfp-v0.1` | Traffic flow and prediction.                       |
 
+TPEG2-TFP is delivered as two feeds, a static catalogue of predefined locations and a dynamic data stream; see [Feeds](./formats/tpeg2-tfp#feeds) on the TPEG2-TFP page.
+
 Each format has its own **Format Specification Package (FSP)** on GitHub. The FSP holds `FORMAT.yaml` metadata, the entry XSD for validation, and a sample folder. Follow the links above for details.
 
 ## Coverage
