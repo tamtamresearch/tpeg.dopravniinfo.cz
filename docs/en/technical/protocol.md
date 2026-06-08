@@ -33,12 +33,18 @@ Recommended polling cadence is shared with subscribers at onboarding. Don't poll
 
 ## Endpoints
 
-One endpoint per published format:
+One endpoint per published feed. A feed carries content for one TPEG2 application format. A format may be split across multiple feeds when the content separates cleanly (e.g. a static catalogue and the dynamic data that references it). In that case all feeds for the format share the same format identifier.
 
-| Format                           | Identifier                        |
-| -------------------------------- | --------------------------------- |
-| [TPEG2-TEC](./formats/tpeg2-tec) | `x-format:cz-ndic_tpeg2-tec-v0.1` |
-| [TPEG2-TFP](./formats/tpeg2-tfp) | `x-format:cz-ndic_tpeg2-tfp-v0.1` |
+**[TPEG2-TEC](./formats/tpeg2-tec)** — `x-format:cz-ndic_tpeg2-tec-v0.1`
+
+- Single feed: traffic events.
+
+**[TPEG2-TFP](./formats/tpeg2-tfp)** — `x-format:cz-ndic_tpeg2-tfp-v0.1`
+
+- **Static feed**: catalogue of predefined locations.
+- **Dynamic feed**: live measurements and predictions, referencing the predefined locations.
+
+See [Feeds](./formats/tpeg2-tfp#feeds) on the TPEG2-TFP page for what each TFP feed carries.
 
 Endpoint URLs, polling intervals, and recommended client behaviour are shared on subscription.
 

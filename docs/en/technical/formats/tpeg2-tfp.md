@@ -21,6 +21,17 @@ TPEG2-TFP describes **traffic flow** on the road network: quantitative state, no
 
 TFP and TEC complement each other. TEC tells you _that there's an incident with a 30-minute delay_; TFP tells you _the actual measured travel time on this stretch right now and in 15 minutes_.
 
+## Feeds
+
+TPEG2-TFP is published as two complementary feeds:
+
+- **Static feed, predefined locations**: the catalogue of monitored road segments with their identifiers, geometry, and location references. Updates infrequently, when the segment catalogue changes.
+- **Dynamic feed, live measurements**: the actual speed, travel time, flow level, and prediction values, referencing the segments defined in the static feed. Updates continuously.
+
+Consumers typically fetch the static feed once and refresh it occasionally, then poll the dynamic feed at the cadence their use case needs.
+
+The two feeds map to two separate ŘSD/NDIC DATEX II upstreams; see [Upstream data](/pilot/#upstream-data) on the Pilot page.
+
 ## Location referencing
 
 Flow segments are anchored using TPEG2's supported location referencing methods:
