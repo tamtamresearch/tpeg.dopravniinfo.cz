@@ -17,11 +17,11 @@ Commissioned by the Czech road and motorway directorate **[ŘSD](/about/contacts
 | **Data source**                  | [ŘSD / NDIC](/about/contacts#rsd), via the [Czech National Access Point](https://registr.dopravniinfo.cz/) |
 | **After June 2027**              | Continuation depends on the evaluation outcome                                                             |
 
-## Upstream data
+## Source data
 
 The pilot ingests DATEX II feeds from [ŘSD / NDIC](/about/contacts#rsd), published via the [Czech National Access Point](https://registr.dopravniinfo.cz/), and converts them to TPEG2 before publishing:
 
-| Output format | Upstream DATEX II source(s)                                                                                                                                                                                        |
+| Output format | DATEX II source(s)                                                                                                                                                                                                 |
 | ------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | **TPEG2-TEC** | [DATEX II - Common Traffic Information (snapshot)](https://registr.dopravniinfo.cz/en/sources/cz-ndic_d2-common-pull/)                                                                                             |
 | **TPEG2-TFP** | [DATEX II - FCD data v2](https://registr.dopravniinfo.cz/en/sources/cz-ndic_d2-fcd-v2/) and [DATEX II - FCD data (predefined locations) v1.1](https://registr.dopravniinfo.cz/en/sources/cz-ndic_d2-pls-fcd-v1.1/) |

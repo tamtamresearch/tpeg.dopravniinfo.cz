@@ -11,15 +11,15 @@ This is pilot-stage documentation. Breaking changes are announced to active subs
 
 ## At a glance
 
-|                          |                                                                                                   |
-| ------------------------ | ------------------------------------------------------------------------------------------------- |
-| **Standards family**     | TPEG2 ([ISO 21219-1:2023](https://www.iso.org/obp/ui/en#iso:std:iso:21219:-1:ed-1:v1:en))         |
-| **Encoding**             | XML                                                                                               |
-| **Delivery**             | HTTPS pull (see [Protocol](./protocol))                                                           |
-| **Location referencing** | TMC + OpenLR (per application format)                                                             |
-| **Authentication**       | Per-subscriber, issued on subscription                                                            |
-| **Coverage**             | Czechia (CZ0), see [Coverage](#coverage)                                                          |
-| **Upstream source**      | DATEX II feeds from [ŘSD / NDIC](/about/contacts#rsd), see [Upstream data](/pilot/#upstream-data) |
+|                          |                                                                                               |
+| ------------------------ | --------------------------------------------------------------------------------------------- |
+| **Standards family**     | TPEG2 ([ISO 21219-1:2023](https://www.iso.org/obp/ui/en#iso:std:iso:21219:-1:ed-1:v1:en))     |
+| **Encoding**             | XML                                                                                           |
+| **Delivery**             | HTTPS pull (see [Protocol](./protocol))                                                       |
+| **Location referencing** | TMC + OpenLR (per application format)                                                         |
+| **Authentication**       | Per-subscriber, issued on subscription                                                        |
+| **Coverage**             | Czechia (CZ0), see [Coverage](#coverage)                                                      |
+| **Source data**          | DATEX II feeds from [ŘSD / NDIC](/about/contacts#rsd), see [Source data](/pilot/#source-data) |
 
 ## Published formats
 
@@ -32,7 +32,7 @@ Each format has its own **Format Specification Package (FSP)** on GitHub. The FS
 
 ## Coverage
 
-The pilot's coverage matches the upstream [ŘSD / NDIC](/about/contacts#rsd) source data, for both published formats:
+The pilot's coverage matches the [ŘSD / NDIC](/about/contacts#rsd) source data, for both published formats:
 
 | Parameter           | Value                                                                   |
 | ------------------- | ----------------------------------------------------------------------- |

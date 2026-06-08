@@ -6,7 +6,7 @@
 
 - Pilot commissioning authority.
 - Czech road and motorway directorate.
-- Upstream traffic information is published via its national traffic information centre **NDIC** (Národní dopravní informační centrum).
+- Source traffic information is published via its national traffic information centre **NDIC** (Národní dopravní informační centrum).
 - [www.rsd.cz](https://www.rsd.cz/)
 
 ## CEDA Maps a.s. {#ceda}

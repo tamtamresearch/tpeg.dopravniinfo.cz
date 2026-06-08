@@ -17,7 +17,7 @@ It depends on the format. Recommended polling intervals are shared with subscrib
 - **TPEG2-TEC**: minute-scale, driven by source events.
 - **TPEG2-TFP**: 5 minutes for flow snapshots.
 
-Polling faster than recommended won't give you fresher data. The upstream source doesn't update faster.
+Polling faster than recommended won't give you fresher data. The source data doesn't update faster.
 
 ### What is the coverage area?
 

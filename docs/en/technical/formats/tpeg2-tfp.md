@@ -30,7 +30,7 @@ TPEG2-TFP is published as two complementary feeds:
 
 Consumers typically fetch the static feed once and refresh it occasionally, then poll the dynamic feed at the cadence their use case needs.
 
-The two feeds map to two separate ŘSD/NDIC DATEX II upstreams; see [Upstream data](/pilot/#upstream-data) on the Pilot page.
+The two feeds map to two separate ŘSD/NDIC DATEX II source feeds; see [Source data](/pilot/#source-data) on the Pilot page.
 
 ## Location referencing
 
