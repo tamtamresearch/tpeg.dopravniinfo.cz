@@ -10,6 +10,8 @@ If anything below is unclear, e-mail [tpeg@ceda.cz](mailto:tpeg@ceda.cz) before 
 During the pilot, the TPEG feed is delivered by [CEDA Maps](/about/contacts#ceda) as ŘSD's pilot operator. Clause 2 below refers to ŘSD's general distribution interface; for the pilot, the data is the same DTI delivered over a CEDA-operated endpoint, with the same terms applying.
 :::
 
+The terms below use both **NDIC** (Národní dopravní informační centrum) and **NTIC** (National Traffic Information Centre), the Czech and English abbreviations for the same body. Elsewhere on this site we use NDIC.
+
 ## Terms of Use of the Digitised Traffic Information
 
 _Version 1.0.3, valid on 21 October 2025._
