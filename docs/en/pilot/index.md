@@ -13,6 +13,7 @@ Commissioned by the Czech road and motorway directorate **[ŘSD](/about/contacts
 | **Guaranteed feed availability** | Until **June 2027**                                                                                        |
 | **Cost to consumer**             | Free of charge                                                                                             |
 | **Operator**                     | [CEDA Maps a.s.](/about/contacts#ceda)                                                                     |
+| **Technical partner**            | [TamTam Research s.r.o.](/about/contacts#tamtamresearch)                                                   |
 | **Data source**                  | [ŘSD / NDIC](/about/contacts#rsd), via the [Czech National Access Point](https://registr.dopravniinfo.cz/) |
 | **After June 2027**              | Continuation depends on the evaluation outcome                                                             |
 
