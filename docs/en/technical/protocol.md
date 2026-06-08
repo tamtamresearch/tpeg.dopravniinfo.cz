@@ -48,4 +48,4 @@ See [Feeds](./formats/tpeg2-tfp#feeds) on the TPEG2-TFP page for what each TFP f
 
 Endpoint URLs, polling intervals, and recommended client behaviour are shared on subscription.
 
-See the [OpenAPI specification](#) for the full endpoint reference. _[TODO: link to format spec repository once published.]_
+See the [OpenAPI specification](./api) for the full endpoint reference.

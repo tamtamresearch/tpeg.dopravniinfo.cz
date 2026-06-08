@@ -5,7 +5,7 @@ import { pagefindPlugin } from "vitepress-plugin-pagefind";
 import footnote from "markdown-it-footnote";
 
 const prod = !!process.env.NETLIFY || !!process.env.CI;
-const extensionsNotHandledByVitePress = "xlsx,docx,zip,pdf";
+const extensionsNotHandledByVitePress = "xlsx,docx,zip,pdf,yaml";
 
 process.env.VITE_EXTRA_EXTENSIONS = extensionsNotHandledByVitePress;
 
@@ -102,6 +102,7 @@ export default defineConfig({
                             items: [
                                 { text: "Overview", link: "/technical/" },
                                 { text: "Protocol", link: "/technical/protocol" },
+                                { text: "API specification", link: "/technical/api" },
                                 {
                                     text: "Formats",
                                     collapsed: false,

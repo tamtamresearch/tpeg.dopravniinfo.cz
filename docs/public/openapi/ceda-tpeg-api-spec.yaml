@@ -1,0 +1,173 @@
+openapi: 3.0.0
+info:
+  title: TPEG2 API
+  version: 0.1.0
+  description: |
+    HTTPS pull interface for the Pilot TPEG service in Czechia.
+
+    Three feeds are published: TPEG2-TEC (traffic events), TPEG2-TFP static
+    (location catalogue), and TPEG2-TFP dynamic (live measurements).
+
+    The operator host is issued to subscribers at onboarding.
+
+tags:
+  - name: TPEG2-TFP
+    description: Traffic Flow and Prediction
+  - name: TPEG2-TEC
+    description: Traffic Event Compact
+
+paths:
+  /dev/tpeg/tfp-static:
+    get:
+      summary: TPEG2-TFP static feed
+      description: |
+        Delivers `x-format:cz-ndic_tpeg2-tfp-v0.1`. Static catalogue of
+        monitored road segments (predefined locations) referenced by the
+        dynamic feed.
+      tags:
+        - TPEG2-TFP
+      security:
+        - tokenAuth: []
+      parameters:
+        - $ref: '#/components/parameters/IfNoneMatchHeader'
+        - $ref: '#/components/parameters/IfModifiedSinceHeader'
+      responses:
+        '200':
+          $ref: '#/components/responses/Xml200'
+        '304':
+          $ref: '#/components/responses/NotModified304'
+        '401':
+          $ref: '#/components/responses/Unauthorized401'
+        '500':
+          $ref: '#/components/responses/InternalError500'
+
+  /dev/tpeg/tfp-dynamic:
+    get:
+      summary: TPEG2-TFP dynamic feed
+      description: |
+        Delivers `x-format:cz-ndic_tpeg2-tfp-v0.1`. Live travel times, speeds,
+        flow levels, and short-term predictions on the segments defined in the
+        static feed.
+      tags:
+        - TPEG2-TFP
+      security:
+        - tokenAuth: []
+      parameters:
+        - $ref: '#/components/parameters/IfNoneMatchHeader'
+        - $ref: '#/components/parameters/IfModifiedSinceHeader'
+      responses:
+        '200':
+          $ref: '#/components/responses/Xml200'
+        '304':
+          $ref: '#/components/responses/NotModified304'
+        '401':
+          $ref: '#/components/responses/Unauthorized401'
+        '500':
+          $ref: '#/components/responses/InternalError500'
+
+  /dev/tpeg/tec:
+    get:
+      summary: TPEG2-TEC feed
+      description: |
+        Delivers `x-format:cz-ndic_tpeg2-tec-v0.1`. Full snapshot of currently
+        active traffic events on the Czech road network.
+      tags:
+        - TPEG2-TEC
+      security:
+        - tokenAuth: []
+      parameters:
+        - $ref: '#/components/parameters/IfNoneMatchHeader'
+        - $ref: '#/components/parameters/IfModifiedSinceHeader'
+      responses:
+        '200':
+          $ref: '#/components/responses/Xml200'
+        '304':
+          $ref: '#/components/responses/NotModified304'
+        '401':
+          $ref: '#/components/responses/Unauthorized401'
+        '500':
+          $ref: '#/components/responses/InternalError500'
+
+components:
+  securitySchemes:
+    tokenAuth:
+      type: apiKey
+      in: query
+      name: token
+      description: Per-subscriber API token, issued at onboarding.
+
+  parameters:
+    IfNoneMatchHeader:
+      name: If-None-Match
+      in: header
+      required: false
+      description: |
+        ETag value from the previous response, for conditional requests.
+        When the snapshot is unchanged the server returns 304.
+      schema:
+        type: string
+    IfModifiedSinceHeader:
+      name: If-Modified-Since
+      in: header
+      required: false
+      description: |
+        Last-Modified value from the previous response, for conditional
+        requests. When the snapshot is unchanged the server returns 304.
+      schema:
+        type: string
+        format: http-date
+
+  responses:
+    Xml200:
+      description: OK. TPEG2 XML payload for the requested feed.
+      headers:
+        ETag:
+          description: Entity tag. Send back in `If-None-Match` on the next poll.
+          schema:
+            type: string
+        Last-Modified:
+          description: HTTP date when the snapshot was last updated. Send back in `If-Modified-Since` on the next poll.
+          schema:
+            type: string
+            format: http-date
+        Content-Encoding:
+          description: "gzip when the request advertised `Accept-Encoding: gzip`."
+          schema:
+            type: string
+            example: gzip
+      content:
+        application/xml:
+          schema:
+            type: string
+
+    NotModified304:
+      description: |
+        Not Modified. Returned when the request carries `If-None-Match` and/or
+        `If-Modified-Since` matching the current snapshot, so no body is sent.
+      headers:
+        ETag:
+          description: Entity tag for cache validation.
+          schema:
+            type: string
+        Cache-Control:
+          description: Cache directives.
+          schema:
+            type: string
+            example: public, max-age=0, must-revalidate
+
+    Unauthorized401:
+      description: Unauthorized. Missing or invalid token.
+
+    InternalError500:
+      description: Internal Server Error.
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              statusCode:
+                type: integer
+                example: 500
+              body:
+                type: string
+                example: Failed to fetch object
