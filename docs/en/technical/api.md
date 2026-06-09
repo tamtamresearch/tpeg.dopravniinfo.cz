@@ -32,6 +32,7 @@ The pilot's HTTPS interface is described by an OpenAPI 3.0 specification. The en
 
 <script setup>
 import { onMounted } from 'vue'
+import { withBase } from 'vitepress'
 
 onMounted(() => {
   const start = Date.now()
@@ -41,7 +42,7 @@ onMounted(() => {
       return setTimeout(init, 50)
     }
     window.ui = window.SwaggerUIBundle({
-      url: '/openapi/ceda-tpeg-api-spec.yaml',
+      url: withBase('/openapi/ceda-tpeg-api-spec.yaml'),
       dom_id: '#swagger-ui',
       supportedSubmitMethods: [],
       deepLinking: true,
