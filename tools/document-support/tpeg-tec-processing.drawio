@@ -1,0 +1,67 @@
+<mxfile host="app.diagrams.net" agent="claude">
+  <diagram id="tpeg-tec-processing" name="TPEG-TEC processing">
+    <mxGraphModel dx="1571" dy="959" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1654" pageHeight="850" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="laneReceiving" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F5F5F5;strokeColor=none;verticalAlign=top;align=left;spacingLeft=8;spacingTop=4;fontColor=#999999;fontSize=10;" value="RECEIVING" vertex="1">
+          <mxGeometry height="420" width="360" x="200" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="laneProcessing" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F5F5F5;strokeColor=none;verticalAlign=top;align=left;spacingLeft=8;spacingTop=4;fontColor=#999999;fontSize=10;" value="PROCESSING" vertex="1">
+          <mxGeometry height="420" width="420" x="580" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="lanePublishing" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F5F5F5;strokeColor=none;verticalAlign=top;align=left;spacingLeft=8;spacingTop=4;fontColor=#999999;fontSize=10;" value="PUBLISHING" vertex="1">
+          <mxGeometry height="420" width="190" x="1020" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="fetcher" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFD966;strokeColor=#D6B656;arcSize=10;" value="InQMS fetcher&lt;div&gt;&lt;br&gt;&lt;div&gt;(Docker / EC2, 60 s)&lt;/div&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="70" width="130" x="230" y="200" as="geometry" />
+        </mxCell>
+        <mxCell id="s3raw" parent="1" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;fillColor=#00BEC4;strokeColor=#006E70;" value="S3&#xa;TEC raw data" vertex="1">
+          <mxGeometry height="90" width="120" x="410" y="190" as="geometry" />
+        </mxCell>
+        <mxCell id="sns" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E1D5E7;strokeColor=#9673A6;arcSize=10;" value="AWS SNS&#xa;topic" vertex="1">
+          <mxGeometry height="50" width="130" x="600" y="80" as="geometry" />
+        </mxCell>
+        <mxCell id="sqs" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DAE8FC;strokeColor=#6C8EBF;arcSize=10;" value="AWS SQS&#xa;fronta" vertex="1">
+          <mxGeometry height="50" width="130" x="790" y="80" as="geometry" />
+        </mxCell>
+        <mxCell id="processor" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFD966;strokeColor=#D6B656;arcSize=10;" value="DATEXtoTPEG&lt;br&gt;processor&lt;br&gt;&lt;br&gt;(Docker / EC2)" vertex="1">
+          <mxGeometry height="70" width="150" x="780" y="200" as="geometry" />
+        </mxCell>
+        <mxCell id="s3proc" parent="1" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;fillColor=#00BEC4;strokeColor=#006E70;" value="S3&#xa;TEC processed data" vertex="1">
+          <mxGeometry height="90" width="130" x="1050" y="190" as="geometry" />
+        </mxCell>
+        <mxCell id="e1" edge="1" parent="1" source="q8SRHsqCGR5317fC_2sN-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;fontSize=10;" target="fetcher" value="stahování dat&#xa;perioda 60 s">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="160" y="235.00000000000023" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e2" edge="1" parent="1" source="fetcher" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;fontSize=10;" target="s3raw" value="PUT objekt">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e3" edge="1" parent="1" source="s3raw" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;fontSize=10;dashed=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="sns" value="event notification">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="470" y="105" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e4" edge="1" parent="1" source="sns" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;fontSize=10;" target="sqs" value="odběr (subscription)">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e5" edge="1" parent="1" source="sqs" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;fontSize=10;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="processor" value="čtení zpráv">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e6" edge="1" parent="1" source="s3raw" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;fontSize=10;dashed=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="processor" value="čtení zdrojového objektu (GET)">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e7" edge="1" parent="1" source="processor" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;fontSize=10;" target="s3proc" value="zápis TPEG2-TEC XML">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="q8SRHsqCGR5317fC_2sN-2" parent="1" style="sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#5A6C86;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=11;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.traditional_server;" value="NDIC&lt;br&gt;(zdroj DATEX II)" vertex="1">
+          <mxGeometry height="68" width="68" x="53" y="201" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
