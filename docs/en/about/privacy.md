@@ -2,17 +2,11 @@
 
 How we handle personal data submitted through this site and through the subscription form linked from [Subscribe](/subscribe/).
 
-::: info Draft
-This notice is a working draft. Items marked **[TODO]** need final wording from CEDA before publication.
-:::
-
 ## Who we are
 
 The **data controller** is **[CEDA Maps a.s.](/about/contacts#ceda)**, IČO 26429632, registered office Jihlavská 1558/21, Michle (Praha 4), 140 00 Praha, Czech Republic.
 
-Contact for privacy questions: [TODO: e-mail address, e.g. tpeg@ceda.cz or a dedicated privacy contact].
-
-[TODO: confirm whether a Data Protection Officer (DPO) is appointed; if yes, include name and contact].
+Contact for privacy questions: [tpeg@ceda.cz](mailto:tpeg@ceda.cz).
 
 ## What we collect
 
@@ -54,12 +48,8 @@ Microsoft 365 may transfer data to data centres outside the EU/EEA. Microsoft pr
 
 ## How long we keep it
 
-[TODO: retention periods. Suggested baseline:
-
-- **Subscribe to the feed:** for the duration of the pilot and for **[TODO: N]** months afterwards, for support and audit purposes.
-- **Register your interest:** until you withdraw consent, or for **[TODO: N]** months after the end of the pilot, whichever comes first.
-
-Confirm with CEDA legal.]
+- **Subscribe to the feed:** for the duration of the pilot and for 12 months afterwards, for support and audit purposes.
+- **Register your interest:** until you withdraw consent, or for 12 months after the end of the pilot, whichever comes first.
 
 ## Your rights
 
@@ -73,7 +63,7 @@ Under the GDPR you have the right to:
 - Receive your data in a portable format, where applicable.
 - Lodge a complaint with the Czech Data Protection Authority, [Úřad pro ochranu osobních údajů](https://www.uoou.cz/).
 
-To exercise any of these rights, contact [TODO: privacy contact e-mail].
+To exercise any of these rights, contact [tpeg@ceda.cz](mailto:tpeg@ceda.cz).
 
 ## Automated decision-making
 
@@ -83,4 +73,4 @@ We do not use automated decision-making or profiling on personal data collected 
 
 We may update this notice. The "last updated" date below reflects the most recent change.
 
-_Last updated: [TODO: date]._
+_Last updated: 10 June 2026._
