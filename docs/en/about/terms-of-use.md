@@ -6,17 +6,19 @@ Use of pilot data is covered by ŘSD's **Terms of Use of the Digitised Traffic I
 If anything below is unclear, e-mail [tpeg@ceda.cz](mailto:tpeg@ceda.cz) before you subscribe.
 :::
 
-::: info Pilot delivery
-During the pilot, the TPEG feed is delivered by [CEDA Maps](/about/contacts#ceda) as ŘSD's pilot operator. Clause 2 below refers to ŘSD's general distribution interface; for the pilot, the data is the same DTI delivered over a CEDA-operated endpoint, with the same terms applying.
-:::
-
 The terms below use both **NDIC** (Národní dopravní informační centrum) and **NTIC** (National Traffic Information Centre), the Czech and English abbreviations for the same body. Elsewhere on this site we use NDIC.
 
-## Terms of Use of the Digitised Traffic Information
+<button onclick="window.print()" class="print-button">Print the Terms of Use</button>
+
+## Terms of Use of the Digitised Traffic Information {#dti-terms}
 
 _Version 1.0.3, valid on 21 October 2025._
 
 Issued by **Ředitelství silnic a dálnic s.p.** ("ŘSD"), Silniční databanka a NDIC, Slovenská 1142/7, 702 00 Ostrava - Přívoz, Czechia. Tel.: +420 954 901 111. IČO: 65993390. DIČ: CZ65993390.
+
+::: info Pilot delivery
+During the pilot, the TPEG feed is delivered by [CEDA Maps](/about/contacts#ceda) as ŘSD's pilot operator. Clause 2 below refers to ŘSD's general distribution interface; for the pilot, the data is the same DTI delivered over a CEDA-operated endpoint, with the same terms applying.
+:::
 
 1. Digitised traffic information (hereinafter referred to as "**DTI**") consists of traffic events (closures and restrictions, accidents, obstacles, road condition, winter reporting etc.), traffic data (levels of traffic, journey times, occupancy rates of car parks, weather information) and static data (location data for traffic information).
 
@@ -41,3 +43,84 @@ Issued by **Ředitelství silnic a dálnic s.p.** ("ŘSD"), Silniční databanka
 8. ŘSD may at any time unilaterally change the manner of provision of DTI, mainly the format thereof or a method of access. ŘSD shall make efforts to notify the users of such changes at least six months before their implementation.
 
 9. ŘSD reserves the right to change or amend these Terms at any time. The updated version of the Terms will always be sent to the user's email address and shall be published on the website [https://dopravniinfo.gov.cz](https://dopravniinfo.gov.cz).
+
+<style>
+/* Print button + tailored print stylesheet for this page only.
+   VitePress compiles .md as a Vue SFC, so this block is injected with the page
+   and removed on navigation away. Lives next to the markup it applies to. */
+
+.vp-doc .print-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    border: 1px solid var(--vp-c-brand-1);
+    border-radius: 6px;
+    background: var(--vp-c-brand-1);
+    color: #fff;
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.15s;
+}
+
+.vp-doc .print-button:hover {
+    background: var(--vp-c-brand-2);
+}
+
+@page {
+    /* Browser-injected headers/footers (date, title, url, page number) are a
+       user-controllable toggle in the print dialog and default to off for
+       "Save as PDF" in modern Chrome/Edge. */
+    margin: 1.5cm;
+}
+
+@media print {
+    /* Hide VitePress chrome. */
+    .VPNav,
+    .VPLocalNav,
+    .VPSidebar,
+    .VPDocAside,
+    .VPDocFooter,
+    .VPFooter,
+    .prerelease-banner,
+    .print-button {
+        display: none !important;
+    }
+
+    /* Let the document area span the full page. */
+    .VPContent,
+    .VPDoc,
+    .VPDoc .container,
+    .VPDoc .content {
+        margin: 0 !important;
+        padding: 0 !important;
+        max-width: 100% !important;
+    }
+
+    /* Print only the #dti-terms H2 section and everything after it.
+       VitePress wraps page content in <div data-pagefind-body> inside .vp-doc,
+       so the target H2 is one level deeper than .vp-doc itself. */
+    .vp-doc [data-pagefind-body] > * {
+        display: none !important;
+    }
+    .vp-doc [data-pagefind-body] > h2#dti-terms,
+    .vp-doc [data-pagefind-body] > h2#dti-terms ~ * {
+        display: revert !important;
+    }
+
+    /* Drop VitePress's H2 top border so it doesn't appear as a stray line above
+       the first heading in print. */
+    .vp-doc h2 {
+        border-top: 0 !important;
+        margin-top: 0 !important;
+        padding-top: 0 !important;
+    }
+
+    /* Keep at least 3 lines of a clause together at page boundaries. */
+    .vp-doc ol > li {
+        orphans: 3;
+        widows: 3;
+    }
+}
+</style>
