@@ -1,11 +1,11 @@
 # Contacts
 
-## ŘSD (Ředitelství silnic a dálnic) {#rsd}
+## ŘSD s. p. (Ředitelství silnic a dálnic s. p.) {#rsd}
 
 <div class="partner-logo"><img src="/images/RSD_logo.svg.png" alt="ŘSD logo" /></div>
 
-- Pilot commissioning authority.
 - Czech road and motorway directorate.
+- Pilot commissioning authority.
 - Source traffic information is published via its national traffic information centre **NDIC** (Národní dopravní informační centrum).
 - [www.rsd.cz](https://www.rsd.cz/)
 
