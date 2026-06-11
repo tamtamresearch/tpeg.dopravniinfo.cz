@@ -40,5 +40,5 @@ If the XSD or a sample doesn't match what the live feed produces, [let us know](
 ## See also
 
 - [Protocol](/technical/protocol), how TEC messages are delivered.
-- [TPEG2-TFP](./tpeg2-tfp), the companion flow & prediction format.
+- [TPEG2-TFP](./tpeg2-tfp), the companion flow format.
 - [What is TPEG](/tpeg/), the primer.
