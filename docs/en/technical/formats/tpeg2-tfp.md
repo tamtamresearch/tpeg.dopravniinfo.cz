@@ -14,12 +14,14 @@ TPEG2 **Traffic Flow & Prediction** as published on the Czech road network.
 
 TPEG2-TFP describes **traffic flow** on the road network: quantitative state, not narrative events. Per monitored segment it can carry:
 
-- current **speed** or **travel time**;
-- **flow level** (free flow, heavy, stationary, …);
-- **predicted** travel time or speed over the near future, where prediction data is available;
-- **confidence or quality** indicators where the source provides them.
+- **level of service (LOS)**, indicating the current traffic flow state;
+- average vehicle **speed**;
+- **free-flow travel time**;
+- **delay** relative to free-flow conditions;
+- data **quality indicator**;
+- traffic information **broken down by vehicle class**: all vehicles, passenger cars, or lorries.
 
-TFP and TEC complement each other. TEC tells you _that there's an incident with a 30-minute delay_; TFP tells you _the actual measured travel time on this stretch right now and in 15 minutes_.
+TFP and TEC complement each other. TEC tells you _that there's an incident with a 30-minute delay_; TFP tells you _the actual measured traffic conditions on this stretch right now_.
 
 ## Feeds
 
