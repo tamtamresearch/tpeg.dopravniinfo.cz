@@ -28,7 +28,7 @@ TFP and TEC complement each other. TEC tells you _that there's an incident with 
 TPEG2-TFP is published as two complementary feeds:
 
 - **Static feed, predefined locations**: the catalogue of monitored road segments with their identifiers, geometry, and location references. Updates infrequently, when the segment catalogue changes.
-- **Dynamic feed, live measurements**: the actual speed, travel time, flow level, and prediction values, referencing the segments defined in the static feed. Updates continuously.
+- **Dynamic feed, live measurements**: the actual traffic state data, including average speed, level of service, delay, and a related quality indicator. Each message is linked to the corresponding road segment definition in the static feed through the **messageID** element. Updates every 5 minutes.
 
 Consumers typically fetch the static feed once and refresh it occasionally, then poll the dynamic feed at the cadence their use case needs.
 
