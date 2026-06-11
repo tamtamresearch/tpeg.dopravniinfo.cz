@@ -42,7 +42,7 @@ One endpoint per published feed. A feed carries content for one TPEG2 applicatio
 **[TPEG2-TFP](./formats/tpeg2-tfp)** — `x-format:cz-ndic_tpeg2-tfp-v0.1`
 
 - **Static feed**: catalogue of predefined locations.
-- **Dynamic feed**: live measurements and predictions, referencing the predefined locations.
+- **Dynamic feed**: live measurements, referencing the predefined locations.
 
 See [Feeds](./formats/tpeg2-tfp#feeds) on the TPEG2-TFP page for what each TFP feed carries.
 

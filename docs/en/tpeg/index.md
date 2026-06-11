@@ -27,14 +27,14 @@ A toolkit of framework parts (introduction, modelling rules, service-frame wrapp
 
 ### Application formats
 
-| Application                                   | ISO part                                                                       | Subject                                                                 |
-| --------------------------------------------- | ------------------------------------------------------------------------------ | ----------------------------------------------------------------------- |
-| **[TPEG2-TEC](/technical/formats/tpeg2-tec)** | [ISO 21219-15](https://www.iso.org/obp/ui/en#iso:std:iso:21219:-15:ed-1:v1:en) | Traffic Event Compact. Incidents, congestion, road works.               |
-| **[TPEG2-TFP](/technical/formats/tpeg2-tfp)** | [ISO 21219-18](https://www.iso.org/obp/ui/en#iso:std:iso:21219:-18:ed-1:v1:en) | Traffic Flow & Prediction. Current and predicted flow on road segments. |
-| TPEG2-PKI                                     | [ISO 21219-14](https://www.iso.org/obp/ui/en#iso:std:iso:21219:-14:ed-1:v1:en) | Parking information.                                                    |
-| TPEG2-FPI                                     | [ISO 21219-16](https://www.iso.org/obp/ui/en#iso:std:iso:21219:-16:ed-1:v1:en) | Fuel price information.                                                 |
-| TPEG2-WEA                                     | [ISO 21219-19](https://www.iso.org/obp/ui/en#iso:std:iso:21219:-19:ed-1:v1:en) | Weather.                                                                |
-| TPEG2-EMI                                     | [ISO 21219-25](https://www.iso.org/obp/ui/en#iso:std:iso:21219:-25:ed-1:v1:en) | Electromobility information.                                            |
+| Application                                   | ISO part                                                                       | Subject                                                   |
+| --------------------------------------------- | ------------------------------------------------------------------------------ | --------------------------------------------------------- |
+| **[TPEG2-TEC](/technical/formats/tpeg2-tec)** | [ISO 21219-15](https://www.iso.org/obp/ui/en#iso:std:iso:21219:-15:ed-1:v1:en) | Traffic Event Compact. Incidents, congestion, road works. |
+| **[TPEG2-TFP](/technical/formats/tpeg2-tfp)** | [ISO 21219-18](https://www.iso.org/obp/ui/en#iso:std:iso:21219:-18:ed-1:v1:en) | Traffic Flow & Prediction. Current flow on road segments. |
+| TPEG2-PKI                                     | [ISO 21219-14](https://www.iso.org/obp/ui/en#iso:std:iso:21219:-14:ed-1:v1:en) | Parking information.                                      |
+| TPEG2-FPI                                     | [ISO 21219-16](https://www.iso.org/obp/ui/en#iso:std:iso:21219:-16:ed-1:v1:en) | Fuel price information.                                   |
+| TPEG2-WEA                                     | [ISO 21219-19](https://www.iso.org/obp/ui/en#iso:std:iso:21219:-19:ed-1:v1:en) | Weather.                                                  |
+| TPEG2-EMI                                     | [ISO 21219-25](https://www.iso.org/obp/ui/en#iso:std:iso:21219:-25:ed-1:v1:en) | Electromobility information.                              |
 
 The **bold** rows are what this pilot publishes.
 

@@ -41,7 +41,7 @@ Yes. The pilot is guaranteed to run until **June 2027**. After that, the service
 
 ### Which TPEG2 application formats do you publish?
 
-**TPEG2-TEC** (events) and **TPEG2-TFP** (flow & prediction). See [Technical → Formats](/technical/formats/).
+**TPEG2-TEC** (events) and **TPEG2-TFP** (flow). See [Technical → Formats](/technical/formats/).
 
 ### Which location referencing methods do you use?
 

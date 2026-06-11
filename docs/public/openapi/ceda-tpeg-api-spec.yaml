@@ -46,8 +46,7 @@ paths:
       summary: TPEG2-TFP dynamic feed
       description: |
         Delivers `x-format:cz-ndic_tpeg2-tfp-v0.1`. Live travel times, speeds,
-        flow levels, and short-term predictions on the segments defined in the
-        static feed.
+        and flow levels on the segments defined in the static feed.
       tags:
         - TPEG2-TFP
       security:

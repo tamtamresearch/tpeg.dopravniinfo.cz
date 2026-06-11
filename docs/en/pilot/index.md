@@ -25,14 +25,14 @@ The pilot ingests DATEX II feeds from [ŘSD / NDIC](/about/contacts#rsd), publis
 | ---------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | [DATEX II - Common Traffic Information (snapshot)](https://registr.dopravniinfo.cz/en/sources/cz-ndic_d2-common-pull/) | **[TPEG2-TEC](/technical/formats/tpeg2-tec)**               | Snapshot of currently active road network events. Republished as TPEG2-TEC, with each TPEG2 message carrying its own create / update / cancel lifecycle. |
 | [DATEX II - FCD data (predefined locations) v1.1](https://registr.dopravniinfo.cz/en/sources/cz-ndic_d2-pls-fcd-v1.1/) | **[TPEG2-TFP](/technical/formats/tpeg2-tfp)**, static feed  | Catalogue of monitored road segments and their location references. Republished as the TFP static feed.                                                  |
-| [DATEX II - FCD data v2](https://registr.dopravniinfo.cz/en/sources/cz-ndic_d2-fcd-v2/)                                | **[TPEG2-TFP](/technical/formats/tpeg2-tfp)**, dynamic feed | Live travel times, speeds, flow levels, and short-term predictions on the monitored segments. Republished as the TFP dynamic feed.                       |
+| [DATEX II - FCD data v2](https://registr.dopravniinfo.cz/en/sources/cz-ndic_d2-fcd-v2/)                                | **[TPEG2-TFP](/technical/formats/tpeg2-tfp)**, dynamic feed | Live travel times, speeds, and flow levels on the monitored segments. Republished as the TFP dynamic feed.                                               |
 
 ## What's in scope
 
 The pilot publishes traffic information for the Czech road network in two TPEG2 application formats:
 
 - **[TPEG2-TEC](/technical/formats/tpeg2-tec)**: traffic events (incidents, congestion, road works).
-- **[TPEG2-TFP](/technical/formats/tpeg2-tfp)**: traffic flow and predicted travel times on monitored road segments.
+- **[TPEG2-TFP](/technical/formats/tpeg2-tfp)**: traffic flow and travel times on monitored road segments.
 
 Delivery is over the IP protocol described in the [Technical](/technical/) section.
 
