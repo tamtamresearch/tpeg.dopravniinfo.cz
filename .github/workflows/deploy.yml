@@ -45,6 +45,11 @@ jobs:
               env:
                   GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
             - name: Install dependencies and build pages
+              env:
+                  # Set repository variable VITE_PRERELEASE_BANNER (Settings -> Secrets and
+                  # variables -> Actions -> Variables) to any non-empty value to show the
+                  # pre-release banner. Unset = hidden.
+                  VITE_PRERELEASE_BANNER: ${{ vars.VITE_PRERELEASE_BANNER }}
               run: |
                   npm ci
                   if [ "${{ steps.check-domain.outputs.has_custom_domain }}" = "false" ]; then

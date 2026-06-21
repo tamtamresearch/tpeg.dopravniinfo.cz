@@ -56,6 +56,27 @@ npm run docs:preview
 
 ---
 
+## Environment variables
+
+| Variable                 | Default   | Effect                                                                                                              |
+| ------------------------ | --------- | ------------------------------------------------------------------------------------------------------------------- |
+| `VITE_PRERELEASE_BANNER` | _(unset)_ | Set to any non-empty value to show the "Pre-release website" banner at the bottom of every page. Hidden when unset. |
+
+Because it is read in client-side theme code, the variable must keep the `VITE_` prefix to be exposed by Vite. Set it for a one-off build:
+
+```bash
+# bash
+VITE_PRERELEASE_BANNER=1 npm run docs:build
+```
+
+```bat
+:: Windows cmd (note: no trailing space after the value)
+set VITE_PRERELEASE_BANNER=1
+npm run docs:build
+```
+
+---
+
 ## Project structure
 
 ```
