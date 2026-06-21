@@ -58,9 +58,11 @@ npm run docs:preview
 
 ## Environment variables
 
-| Variable                 | Default   | Effect                                                                                                              |
-| ------------------------ | --------- | ------------------------------------------------------------------------------------------------------------------- |
-| `VITE_PRERELEASE_BANNER` | _(unset)_ | Set to any non-empty value to show the "Pre-release website" banner at the bottom of every page. Hidden when unset. |
+| Variable                      | Default   | Effect                                                                                                                                                                         |
+| ----------------------------- | --------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `VITE_PRERELEASE_BANNER`      | _(unset)_ | Set to any non-empty value to show the "Pre-release website" banner at the bottom of every page. Hidden when unset.                                                            |
+| `VITEPRESS_BASE`              | `/`       | Base public path the site is served from, e.g. `/repo-name/` for a GitHub Pages project site. The deploy workflow sets this automatically when no custom domain is configured. |
+| `VITEPRESS_IGNORE_DEAD_LINKS` | _(unset)_ | Set to any non-empty value to skip the build-time internal link check. Use only for local testing, never in CI.                                                                |
 
 Because it is read in client-side theme code, the variable must keep the `VITE_` prefix to be exposed by Vite. Set it for a one-off build:
 
