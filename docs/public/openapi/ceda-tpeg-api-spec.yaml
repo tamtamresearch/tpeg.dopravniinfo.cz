@@ -8,7 +8,8 @@ info:
     Three feeds are published: TPEG2-TEC (traffic events), TPEG2-TFP static
     (location catalogue), and TPEG2-TFP dynamic (live measurements).
 
-    The operator host is issued to subscribers at onboarding.
+servers:
+  - url: https://online.ceda.cz
 
 tags:
   - name: TPEG2-TFP
